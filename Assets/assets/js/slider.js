@@ -51,6 +51,10 @@ function injectStyles() {
                 padding: 1rem;
             }
         }
+
+            .industry-image {
+    border-radius: 10px;
+}
         
         .card-text, .card-body ul {
             font-size: 1rem;
@@ -135,7 +139,7 @@ const cardContents = {
             </div>
             <div class="col-md-6">
                 <div class="card-body d-flex align-items-center justify-content-center h-100">
-                    <img src="https://d2csxpduxe849s.cloudfront.net/media/E32629C6-9347-4F84-81FEAEF7BFA342B3/700E4D82-4F55-4EE1-9B6CA0C194C84956/182DC208-2737-40B8-A720EEBF9FA9B88F/WebsiteJpg_XL-FMTEC_Main%20Visual_Red_Website.jpg" alt="Manufacturing Facility" class="img-fluid rounded">
+                    <img src="https://d2csxpduxe849s.cloudfront.net/media/E32629C6-9347-4F84-81FEAEF7BFA342B3/700E4D82-4F55-4EE1-9B6CA0C194C84956/182DC208-2737-40B8-A720EEBF9FA9B88F/WebsiteJpg_XL-FMTEC_Main%20Visual_Red_Website.jpg" alt="Manufacturing Facility" class="img-fluid rounded industry-image">
                 </div>
             </div>
         </div>

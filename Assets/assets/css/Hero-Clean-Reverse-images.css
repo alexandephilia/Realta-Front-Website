@@ -671,7 +671,6 @@ body.dark-mode .btn-custom.whatsapp-btn i {
 }
 
  .img-fluid {
-  min-height: 300px;
   object-fit: contain;
   max-width: 100%;
 }
