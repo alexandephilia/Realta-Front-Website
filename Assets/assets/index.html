@@ -1,0 +1,3909 @@
+<!DOCTYPE html>
+<html data-bs-theme="light" lang="en" class="light-mode">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Realta Chakradarma</title>
+
+    <!-- the favicon -->
+    <link rel="icon" type="image/png" href="assets/img/r.png">
+
+
+    <!-- Preload fonts -->
+    <link rel="preload" href="assets/fonts/important-font.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="assets/font/proxima-nova/ProximaNova-Regular.woff2" as="font" type="font/woff2"
+        crossorigin>
+    <link rel="preload" href="assets/font/proxima-nova/ProximaNova-Bold.woff2" as="font" type="font/woff2" crossorigin>
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/Hero-Clean-Reverse-images.css">
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="stylesheet" href="assets/css/navbar.css">
+    <link rel="stylesheet" href="assets/css/blog.css">
+    <link rel="stylesheet" href="assets/css/responsive.css">
+    <link rel="stylesheet" href="assets/css/mobilenav.css">
+
+
+
+
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;700&family=Roboto:wght@400;500&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Zilla+Slab:wght@400;700&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"> -->
+    <link rel="stylesheet" href="assets/fontawesome/css/all.min.css">
+
+    <!-- Slick Carousel -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css">
+
+    <!-- Owl Carousel -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
+
+    <!-- Scripts -->
+    <script src="assets/js/slider.js"></script>
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+</head>
+
+<style>
+    .dynamic-text-container {
+        font-size: 45px;
+        font-weight: 700;
+        height: 1em;
+        overflow: hidden;
+    }
+
+    .letter {
+        display: inline-block;
+        opacity: 0;
+        transform: translateY(20px);
+        filter: blur(5px);
+        transition: all 0.3s ease;
+    }
+
+    .letter.active {
+        opacity: 1;
+        transform: translateY(0);
+        filter: blur(0);
+    }
+
+    .letter.fade-out {
+        opacity: 0;
+        transform: translateY(-20px);
+        filter: blur(5px);
+    }
+
+    @media (max-width: 768px) {
+        .dynamic-text-container {
+            font-size: 2.5rem;
+            font-weight: 700;
+            height: 1em;
+            overflow: hidden;
+        }
+
+    }
+
+    #mainNav {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 1030;
+        transition: all 0.3s ease-in-out;
+        padding-right: 30px !important;
+    }
+
+    #mainNav.navbar-scrolled {
+        background-color: #fff;
+        /* or any color you prefer */
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    body {
+        padding-top: 80px;
+    }
+</style>
+
+<body>
+    <header>
+
+        <nav class="navbar navbar-expand-lg sticky-top navbar-shrink navbar-light" id="mainNav">
+            <div class="container-fluid container-lg px-2">
+                <a class="navbar-logo d-flex align-items-center" href="/">
+                    <img src="assets/img/realta.png" alt="Realta Logo" class="realta-logo">
+                </a>
+                <style>
+                    .realta-logo {
+                        width: 140px;
+                        height: 50%;
+                    }
+
+                    @media (min-width: 992px) {
+                        .realta-logo {
+                            margin-left: 15px;
+                        }
+                    }
+
+                    @media (max-width: 767px) {
+                        .realta-logo {
+                            width: 120px;
+                            height: auto;
+                            margin-left: -10px;
+                        }
+                    }
+                </style>
+                <div class="navbar-mobile-actions">
+                    <button id="darkModeToggleNav" class="btn-custom download-btn ms-1"
+                        style="border: none; min-width: fit-content; margin-right: 0.4rem;">
+                        <i class="fas fa-moon"></i>
+                    </button>
+                    <!-- Language switch button -->
+                    <!-- Language switch dropdown -->
+                    <div class="custom-dropdown">
+                        <button id="languageSwitch" class="btn-custom download-btn ms-1" type="button"
+                            style="border: none; min-width: fit-content; margin-right: 1.4rem;">
+                            <i class="fas fa-globe"></i>
+                        </button>
+                        <ul class="custom-dropdown-menu">
+                            <li><a href="#" data-lang="en">EN</a></li>
+                            <li><a href="#" data-lang="id">ID</a></li>
+                        </ul>
+                    </div>
+                    <div class="nav-drawer" data-bs-toggle="offcanvas" data-bs-target="#sidebar"
+                        aria-controls="sidebar">
+                        <i class="fas fa-bars" style="font-size: 1.7rem;"></i>
+                    </div>
+                </div>
+                <!-- Mobile responsive navigation menu -->
+                <div class="offcanvas offcanvas-end" tabindex="-1" id="sidebar" aria-labelledby="sidebarLabel">
+                    <div class="offcanvas-header">
+                        <div>
+                            <h5 class="offcanvas-title" id="sidebarLabel"
+                                style="margin-left: 33px; margin-bottom: 20px; font-size: 30px;">Menu</h5>
+                        </div>
+                        <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas"
+                            aria-label="Close"></button>
+                    </div>
+                    <div class="offcanvas-body">
+                        <div class="sidebar-menu">
+                            <div class="sidebar-item">
+                                <h2 class="product-header" data-bs-toggle="collapse" data-bs-target="#productsSubmenu"
+                                    aria-expanded="false">
+                                    Products <i class="fas fa-chevron-right arrow-icon"></i>
+                                </h2>
+                                <div id="productsSubmenu" class="collapse">
+                                    <ul class="product-list">
+                                        <li>
+                                            <div class="product-header" data-bs-toggle="collapse"
+                                                data-bs-target="#hmsSubmenu" aria-expanded="false"
+                                                style="font-size: 1rem; font-weight: 400;">
+                                                Hotel Management System <i class="fas fa-chevron-right arrow-icon"></i>
+                                            </div>
+                                            <div id="hmsSubmenu" class="collapse product-submenu">
+                                                <p>Comprehensive solution for efficient hotel operations and guest
+                                                    management.</p>
+                                                <a href="#" class="discover-link">Discover HMS ›</a>
+                                                <h3 class="modules-heading">MODULES</h3>
+                                                <ul class="modules-list">
+                                                    <li>
+                                                        <strong>Reservation Management</strong>
+                                                        <span>Streamline booking processes</span>
+                                                    </li>
+                                                    <li>
+                                                        <strong>Front Desk Operations</strong>
+                                                        <span>Efficient check-in and check-out</span>
+                                                    </li>
+                                                    <li>
+                                                        <strong>Housekeeping Management</strong>
+                                                        <span>Optimize room maintenance</span>
+                                                    </li>
+                                                    <li>
+                                                        <strong>Revenue Management</strong>
+                                                        <span>Maximize profitability</span>
+                                                    </li>
+                                                    <li>
+                                                        <strong>Guest Experience Management</strong>
+                                                        <span>Enhance customer satisfaction</span>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="product-header" data-bs-toggle="collapse"
+                                                data-bs-target="#gcsSubmenu" aria-expanded="false"
+                                                style="font-size: 1rem; font-weight: 400;">
+                                                Golf Course System <i class="fas fa-chevron-right arrow-icon"></i>
+                                            </div>
+                                            <div id="gcsSubmenu" class="collapse product-submenu">
+                                                <p>Integrated system for efficient golf course management and
+                                                    operations.</p>
+                                                <a href="#" class="discover-link">Discover GCS ›</a>
+                                                <h3 class="modules-heading">MODULES</h3>
+                                                <ul class="modules-list">
+                                                    <li>
+                                                        <strong>Tee Time Management</strong>
+                                                        <span>Optimize scheduling and bookings</span>
+                                                    </li>
+                                                    <li>
+                                                        <strong>Member Management</strong>
+                                                        <span>Streamline membership processes</span>
+                                                    </li>
+                                                    <li>
+                                                        <strong>Pro Shop Management</strong>
+                                                        <span>Inventory and sales management</span>
+                                                    </li>
+                                                    <li>
+                                                        <strong>Tournament Management</strong>
+                                                        <span>Organize and manage events</span>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="product-header" data-bs-toggle="collapse"
+                                                data-bs-target="#hrSystemSubmenu" aria-expanded="false"
+                                                style="font-size: 1rem; font-weight: 400;">
+                                                HR System <i class="fas fa-chevron-right arrow-icon"></i>
+                                            </div>
+                                            <div id="hrSystemSubmenu" class="collapse product-submenu">
+                                                <p>Comprehensive human resource management solution for businesses of
+                                                    all sizes.</p>
+                                                <a href="#" class <div id="container-header"
+                                                    class="container py-5">discover-link">Discover HR System ›</a>
+                                                <h3 class="modules-heading">MODULES</h3>
+                                                <ul class="modules-list">
+                                                    <li>
+                                                        <strong>Employee Management</strong>
+                                                        <span>Centralize employee data and records</span>
+                                                    </li>
+                                                    <li>
+                                                        <strong>Payroll Processing</strong>
+                                                        <span>Automate salary calculations and payments</span>
+                                                    </li>
+                                                    <li>
+                                                        <strong>Time and Attendance</strong>
+                                                        <span>Track employee work hours and absences</span>
+                                                    </li>
+                                                    <li>
+                                                        <strong>Performance Management</strong>
+                                                        <span>Set goals and conduct evaluations</span>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="product-header" data-bs-toggle="collapse"
+                                                data-bs-target="#propertyTenantSubmenu" aria-expanded="false"
+                                                style="font-size: 1rem; font-weight: 400;">
+                                                Property and Tenant System <i
+                                                    class="fas fa-chevron-right arrow-icon"></i>
+                                            </div>
+                                            <div id="propertyTenantSubmenu" class="collapse product-submenu">
+                                                <p>Efficient management solution for property owners and landlords.</p>
+                                                <a href="#" class="discover-link">Discover Property and Tenant System
+                                                    ›</a>
+                                                <h3 class="modules-heading">MODULES</h3>
+                                                <ul class="modules-list">
+                                                    <li>
+                                                        <strong>Property Management</strong>
+                                                        <span>Organize and track property details</span>
+                                                    </li>
+                                                    <li>
+                                                        <strong>Tenant Management</strong>
+                                                        <span>Manage tenant information and leases</span>
+                                                    </li>
+                                                    <li>
+                                                        <strong>Rent Collection</strong>
+                                                        <span>Automate rent payments and tracking</span>
+                                                    </li>
+                                                    <li>
+                                                        <strong>Maintenance Requests</strong>
+                                                        <span>Handle and track property maintenance</span>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="product-header" data-bs-toggle="collapse"
+                                                data-bs-target="#itsmSubmenu" aria-expanded="false"
+                                                style="font-size: 1rem; font-weight: 400;">
+                                                ITSM, ITAM & Unified Endpoint Management <i
+                                                    class="fas fa-chevron-right arrow-icon"></i>
+                                            </div>
+                                            <div id="itsmSubmenu" class="collapse product-submenu">
+                                                <p>Comprehensive IT Service Management solution for streamlined IT
+                                                    operations.</p>
+                                                <a href="#" class="discover-link">Discover ITSM, ITAM & Unified Endpoint
+                                                    Management ›</a>
+                                                <h3 class="modules-heading">MODULES</h3>
+                                                <ul class="modules-list">
+                                                    <li>
+                                                        <strong>Incident Management</strong>
+                                                        <span>Efficiently handle and resolve IT issues</span>
+                                                    </li>
+                                                    <li>
+                                                        <strong>Change Management</strong>
+                                                        <span>Control and implement IT changes</span>
+                                                    </li>
+                                                    <li>
+                                                        <strong>Asset Management</strong>
+                                                        <span>Track and manage IT assets</span>
+                                                    </li>
+                                                    <li>
+                                                        <strong>Service Catalog</strong>
+                                                        <span>Organize and offer IT services</span>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="product-header" data-bs-toggle="collapse"
+                                                data-bs-target="#erpSubmenu" aria-expanded="false"
+                                                style="font-size: 1rem; font-weight: 400;">
+                                                ERP & EAM <i class="fas fa-chevron-right arrow-icon"></i>
+                                            </div>
+                                            <div id="erpSubmenu" class="collapse product-submenu">
+                                                <p>Integrated Enterprise Resource Planning solution for business
+                                                    management.</p>
+                                                <a href="#" class="discover-link">Discover ERP & EAM ›</a>
+                                                <h3 class="modules-heading">MODULES</h3>
+                                                <ul class="modules-list">
+                                                    <li>
+                                                        <strong>Financial Management</strong>
+                                                        <span>Manage accounting and finances</span>
+                                                    </li>
+                                                    <li>
+                                                        <strong>Supply Chain Management</strong>
+                                                        <span>Optimize procurement and logistics</span>
+                                                    </li>
+                                                    <li>
+                                                        <strong>Manufacturing</strong>
+                                                        <span>Streamline production processes</span>
+                                                    </li>
+                                                    <li>
+                                                        <strong>Customer Relationship Management</strong>
+                                                        <span>Enhance customer interactions</span>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="sidebar-item">
+                                <h2 class="product-header" data-bs-toggle="collapse" data-bs-target="#resourcesSubmenu"
+                                    aria-expanded="false style=" font-size: 1.1rem;"">
+                                    Resources <i class="fas fa-chevron-right arrow-icon"></i>
+                                </h2>
+                                <div id="resourcesSubmenu" class="collapse">
+                                    <ul class="submenu-list">
+                                        <li><a href="#">Blog</a></li>
+                                        <li><a href="#">Webinars</a></li>
+                                        <li><a href="#">White Papers</a></li>
+                                        <li><a href="#">Case Studies</a></li>
+                                        <li><a href="#">eBooks</a></li>
+                                        <li><a href="#">Product Videos</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="sidebar-item">
+                                <h2 class="product-header" data-bs-toggle="collapse" data-bs-target="#partnersSubmenu"
+                                    aria-expanded="false">
+                                    Partners <i class="fas fa-chevron-right arrow-icon"></i>
+                                </h2>
+                                <div id="partnersSubmenu" class="collapse">
+                                    <!-- Add partners submenu content here -->
+                                </div>
+                            </div>
+                            <div class="sidebar-item">
+                                <h2 class="product-header" data-bs-toggle="collapse" data-bs-target="#companySubmenu"
+                                    aria-expanded="false">
+                                    Company <i class="fas fa-chevron-right arrow-icon"></i>
+                                </h2>
+                                <div id="companySubmenu" class="collapse">
+                                    <ul class="submenu-list">
+                                        <li><a href="#">About Us</a></li>
+                                        <li><a href="#">Our Team</a></li>
+                                        <li><a href="#">Careers</a></li>
+                                        <li><a href="#">News</a></li>
+                                        <li><a href="#">Contact</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="sidebar-item">
+                                <h2 class="product-header">
+                                    <a href="#" onclick="navigateWithLoading('blog.html'); return false;"
+                                        style="text-decoration: none; color: inherit;">Blog</a>
+                                </h2>
+                            </div>
+                        </div>
+                        <div class="get-started-container">
+                            <a href="https://api.whatsapp.com/send?phone=628111221789&text=Hallo%20PT%20Realta..."
+                                target="_blank" rel="noopener noreferrer" class="btn btn-success btn-block"
+                                style="width: 100%;">
+                                <i class="fab fa-whatsapp"></i> Contact Us
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <style>
+                    @media (min-width: 992px) {
+                        #sidebar {
+                            display: none !important;
+                        }
+
+                        .offcanvas-backdrop {
+                            display: none !important;
+                        }
+
+                        body {
+                            overflow: auto !important;
+                            padding-right: 0 !important;
+                        }
+                    }
+                </style>
+
+
+                <style>
+                    .custom-dropdown {
+                        position: relative;
+                        display: inline-block;
+                    }
+
+                    .custom-dropdown-menu {
+                        display: none;
+                        position: absolute;
+                        top: 69%;
+                        right: 5%;
+                        /* Changed from -10% to -5% to move slightly to the left */
+                        background: rgba(179, 179, 179, 0.137);
+                        backdrop-filter: blur(10px);
+                        border-radius: 10px;
+                        width: 80px;
+                        /* Further reduced width for an even smaller dropdown */
+                        z-index: 1000;
+                        list-style-type: none;
+                        padding: 0.25rem 0;
+                        /* Reduced padding for a smaller dropdown */
+                        margin: 0.5rem 0 0 0;
+                        border: 1px solid rgba(255, 255, 255, 0.18);
+                    }
+
+                    .custom-dropdown-menu li {
+                        padding: 0.2rem 0;
+                        /* Reduced padding for smaller items */
+                        text-align: center;
+                        /* Centered text */
+                    }
+
+                    .custom-dropdown-menu li a {
+                        color: #333;
+                        padding: 0.3rem 0.3rem;
+                        /* Adjusted padding for better alignment */
+                        text-decoration: none;
+                        display: block;
+                        font-size: 0.8rem;
+                        /* Reduced font size for smaller dropdown */
+                        transition: background-color 0.3s ease;
+                    }
+
+                    .custom-dropdown-menu li a:hover {
+                        background-color: rgba(126, 126, 126, 0.5);
+                        color: #fff;
+                        /* Change text color on hover */
+                        transform: scale(1.05);
+                        /* Slightly enlarge the item */
+                        border-radius: 10px;
+                        /* Added border radius for hover background */
+                        transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
+                        /* Smooth transition */
+                    }
+
+                    .custom-dropdown:hover .custom-dropdown-menu {
+                        display: block;
+
+                    }
+                </style>
+                <div class="full-screen-sidebar">
+                    <style>
+                        @media (min-width: 992px) {
+                            .full-screen-sidebar {
+                                margin-right: -35px;
+                            }
+                        }
+
+                        @media (max-width: 768px) {
+                            .full-screen-sidebar {
+                                margin-right: 0;
+                            }
+                        }
+                    </style>
+                    <ul class="sidebar-nav justify-content-end align-items-center"
+                        style="padding: 0; margin: 0; list-style-type: none;">
+
+                        <li class="me-1"><a class="nav-link dropdown-toggle" href="#" id="solutionsDropdown"
+                                role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Solusi <i class="fas fa-chevron-down ms-1 fa-xs"></i>
+                            </a></li>
+                        <li class="me-1"><a class="nav-link dropdown-toggle" href="#" id="industriDropdown"
+                                role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Industri <i class="fas fa-chevron-down ms-1 fa-xs"></i>
+                            </a></li>
+                        <li class="me-1"><a class="nav-link dropdown-toggle" href="#" id="partnerDropdown" role="button"
+                                data-bs-toggle="dropdown" aria-expanded="false">
+                                Partner <i class="fas fa-chevron-down ms-1 fa-xs"></i>
+                            </a></li>
+                        <li class="me-1"><a class="nav-link dropdown-toggle" href="#" id="konsultasiDropdown"
+                                role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Konsultasi <i class="fas fa-chevron-down ms-1 fa-xs"></i>
+                            </a></li>
+                        <li><a class="nav-link dropdown-toggle" href="#" id="tentangRealtaDropdown" role="button"
+                                data-bs-toggle="dropdown" aria-expanded="false">
+                                Tentang Realta <i class="fas fa-chevron-down ms-1 fa-xs"></i>
+                            </a></li>
+                    </ul>
+                    <div class="sidebar-actions d-flex justify-content-end align-items-center"
+                        style="margin-bottom: 1rem;">
+                        <a class="btn-custom whatsapp-btn me-2"
+                            href="https://api.whatsapp.com/send?phone=628111221789&text=Hallo%20PT%20Realta..."
+                            target="_blank" rel="noopener noreferrer" style="font-size: 0.8em;">
+                            <i class="fab fa-whatsapp"></i>
+                            <span><strong>Whatsapp</strong></span>
+                        </a>
+                        <button id="darkModeToggleSidebar" class="btn-custom ms-2">
+                            <i class="fas fa-moon"></i>
+                        </button>
+                        <div class="custom-dropdown">
+                            <button id="languageSwitch" class="btn-custom download-btn ms-1" type="button"
+                                style="border: none; min-width: fit-content; margin-right: 1.4rem;">
+                                <i class="fas fa-globe"></i>
+                            </button>
+                            <ul class="custom-dropdown-menu">
+                                <li><a href="#" data-lang="en">EN</a></li>
+                                <li><a href="#" data-lang="id">ID</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="mega-dropdown" id="solutionsDropdownContent">
+                <div class="dropdown-content">
+                    <div class="product-categories">
+                        <div class="product-category active" data-product="hms">Hotel Management System</div>
+                        <div class="product-category" data-product="gcs">Golf Course System</div>
+                        <div class="product-category" data-product="hrs">HR System</div>
+                        <div class="product-category" data-product="pts">Property & Tenancy System</div>
+                        <div class="product-category" data-product="itm">ITSM, ITAM & Unified Endpoint Management</div>
+                        <div class="product-category" data-product="erp">ERP & EAM</div>
+                        <div class="all-products">All products ›</div>
+                    </div>
+                    <div class="product-details" id="product-details">
+                        <!-- Content will be dynamically updated here -->
+                    </div>
+                </div>
+            </div>
+            <div class="mega-dropdown" id="industriDropdownContent">
+                <div class="dropdown-content">
+                    <div class="product-categories">
+                        <div class="product-category active" data-product="manufacturing">Manufacturing</div>
+                        <div class="product-category" data-product="healthcare">Healthcare</div>
+                        <div class="product-category" data-product="retail">Retail</div>
+                        <div class="all-products">All industries ›</div>
+                    </div>
+                    <div class="product-details" id="industri-details">
+                        <!-- Content will be dynamically updated here -->
+                    </div>
+                </div>
+            </div>
+            <div class="mega-dropdown" id="partnerDropdownContent">
+                <div class="dropdown-content">
+                    <div class="product-categories">
+                        <div class="product-category active" data-product="reseller">Reseller Program</div>
+                        <div class="product-category" data-product="technology">Technology Partners</div>
+                        <div class="all-products">All partners ›</div>
+                    </div>
+                    <div class="product-details" id="partner-details">
+                        <!-- Content will be dynamically updated here -->
+                    </div>
+                </div>
+            </div>
+            <div class="mega-dropdown" id="konsultasiDropdownContent">
+                <div class="dropdown-content">
+                    <div class="product-categories">
+                        <div class="product-category active" data-product="business">Business Consultation</div>
+                        <div class="product-category" data-product="technical">Technical Consultation</div>
+                        <div class="all-products">All consultations ›</div>
+                    </div>
+                    <div class="product-details" id="konsultasi-details">
+                        <!-- Content will be dynamically updated here -->
+                    </div>
+                </div>
+            </div>
+            <div class="mega-dropdown" id="tentangRealtaDropdownContent">
+                <div class="dropdown-content">
+                    <div class="product-categories">
+                        <div class="product-category active" data-product="about">About Us</div>
+                        <div class="product-category" data-product="careers">Careers</div>
+                        <div class="product-category" data-product="blog">Blog</div>
+                        <div class="all-products">Learn more ›</div>
+                    </div>
+                    <div class="product-details" id="tentangRealta-details">
+                        <!-- Content will be dynamically updated here -->
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <body>
+        <!-- LOADING -->
+        <div id="loading-overlay" class="loading-overlay">
+            <div class="loading-container">
+                <div class="loading-text">Loading...</div>
+                <div class="spinner">
+                    <div class="spinner-inner"></div>
+                </div>
+            </div>
+        </div>
+        <script>
+            function navigateWithLoading(url) {
+                const loadingOverlay = document.getElementById('loading-overlay');
+                loadingOverlay.style.display = 'flex'; // Show the loading overlay
+                document.body.style.overflow = 'hidden'; // Prevent scrolling
+
+                // Wait for the animation to complete before navigating
+                setTimeout(function () {
+                    window.location.href = url;
+                }, 2000); // Adjust the delay as needed (in milliseconds)
+            }
+
+            document.addEventListener('DOMContentLoaded', function () {
+                // This script block can contain other page initialization code
+            });
+        </script>
+        <style>
+            .loading-overlay {
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background-color: rgba(255, 255, 255, 0.8);
+                backdrop-filter: blur(5px);
+                display: none;
+                /* Initially hidden */
+                justify-content: center;
+                align-items: center;
+                z-index: 9999;
+            }
+
+            .loading-container {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .loading-text {
+                font-size: 24px;
+                font-weight: bold;
+                margin-bottom: 20px;
+                color: #9054d0;
+                opacity: 0;
+                animation: fade-in 0.5s ease-in-out forwards;
+                animation-delay: 0.5s;
+                /* Add a delay to the fade-in animation */
+            }
+
+            .spinner {
+                width: 80px;
+                height: 80px;
+                border-radius: 50%;
+                border: 4px solid rgba(52, 152, 219, 0.2);
+                border-top-color: #9054d0;
+                animation: spin 1s ease-in-out infinite;
+            }
+
+            @keyframes spin {
+                0% {
+                    transform: rotate(0deg);
+                }
+
+                100% {
+                    transform: rotate(360deg);
+                }
+            }
+
+            @keyframes fade-in {
+                0% {
+                    opacity: 0;
+                    transform: translateY(-20px);
+                }
+
+                100% {
+                    opacity: 1;
+                    transform: translateY(0);
+                }
+            }
+
+            .product-banner {
+                cursor: pointer;
+            }
+        </style>
+        <!-- LOADING -->
+
+
+        <section id="home" style="margin-bottom: 0; position: relative; overflow: hidden;">
+            <div class="circle-blur"></div>
+            <div id="container-header" class="container-fluid">
+                <div id="container-headerin" class="container-fluid container-xl">
+                    <!-- Carousel Start -->
+                    <style>
+                        @keyframes fadeInRight {
+                            from {
+                                opacity: 0;
+                                transform: translate3d(100%, 0, 0);
+                            }
+
+                            to {
+                                opacity: 1;
+                                transform: translate3d(0, 0, 0);
+                            }
+                        }
+
+                        @keyframes fadeOutLeft {
+                            from {
+                                opacity: 1;
+                            }
+
+                            to {
+                                opacity: 0;
+                                transform: translate3d(-100%, 0, 0);
+                            }
+                        }
+
+                        .carousel-item {
+                            display: block;
+                            position: absolute;
+                            opacity: 0;
+                            right: 0;
+                            transition: none;
+                        }
+
+                        .carousel-item.active {
+                            position: relative;
+                            opacity: 1;
+                            animation: fadeInRight 0.6s;
+                        }
+
+                        .carousel-item-next.carousel-item-start,
+                        .carousel-item-prev.carousel-item-end {
+                            position: relative;
+                            transform: translate3d(0, 0, 0);
+                        }
+
+                        .carousel-item-next.carousel-item-start {
+                            animation: fadeInRight 0.6s;
+                        }
+
+                        .carousel-item-prev.carousel-item-end {
+                            animation: fadeInRight 0.6s reverse;
+                        }
+
+                        .carousel-item-next,
+                        .carousel-item-prev {
+                            position: absolute;
+                            top: 0;
+                            animation: fadeOutLeft 0.6s;
+                        }
+                    </style>
+
+                    <div id="businessCarousel" class="carousel slide custom-carousel" data-bs-ride="carousel">
+                        <!-- Indicators -->
+                        <div class="carousel-indicators">
+                            <button type="button" data-bs-target="#businessCarousel" data-bs-slide-to="0" class="active"
+                                aria-current="true" aria-label="Slide 1"></button>
+                            <button type="button" data-bs-target="#businessCarousel" data-bs-slide-to="1"
+                                aria-label="Slide 2"></button>
+                        </div>
+
+                        <div class="carousel-inner">
+                            <!-- Slide 1 -->
+                            <div class="carousel-item active">
+                                <div class="row gy-5 align-items-center">
+                                    <!-- Left Column -->
+                                    <div
+                                        class="col-lg-7 d-flex flex-column justify-content-center align-items-start text-lg-start p-4 p-lg-5">
+                                        <div class="mb-4">
+                                            <div class="logo-text">
+                                                <p>
+                                                    We are Hiring
+                                                    <span class="online-indicator"></span>
+                                                </p>
+                                            </div>
+                                            <h1 class="display-3 fw-bold mb-1">Manage Your</h1>
+                                            <span class="dynamic-text-container-1"></span>
+                                            <h1 class="display-3 fw-bold mb-1">Better Than Ever</h1>
+                                            <h3 class="lead mb-3 fw-bold">Improve your company's performance with
+                                                real-time Visibility, Control, and Automation.</h3>
+                                        </div>
+                                        <a class="btn-custom img-animate mobile-responsive" role="button"
+                                            href="#contact">
+                                            <i class="fa-brands fa-whatsapp me-2"></i>Contact Us
+                                        </a>
+                                        <!-- stacked -->
+                                        <div class="stacked-avatars">
+                                            <img src="assets/img/team/real-1.gif" alt="Avatar 1" class="avatar">
+                                            <img src="assets/img/team/real2.jpg" alt="Avatar 1" class="avatar">
+                                            <img src="assets/img/team/real-3.gif" alt="Avatar 1" class="avatar">
+                                        </div>
+                                        <div class="rating">
+                                            <span class="stars">★★★★★</span>
+                                            <span class="text">Trusted by 1 Million users</span>
+                                        </div>
+                                    </div>
+
+                                    <style>
+                                        .stacked-avatars {
+
+                                            display: flex;
+                                            align-items: center;
+                                            margin-top: 35px;
+                                        }
+
+                                        .avatar {
+                                            width: 45px;
+                                            height: 45px;
+                                            border-radius: 50%;
+                                            border: 2px solid #fff;
+                                            margin-right: -10px;
+                                            /* Negative margin for overlap */
+                                        }
+
+                                        .rating {
+                                            margin-top: 3px;
+                                            margin-left: 16px;
+                                        }
+
+                                        .stars {
+                                            color: #ffd700;
+                                            /* Gold color for stars */
+                                            margin-right: 5px;
+                                        }
+
+                                        .text {
+                                            font-size: 16px;
+                                            color: #666;
+                                        }
+                                    </style>
+                                    <!-- Right Column -->
+                                    <div class="col-lg-5 d-flex justify-content-center align-items-center">
+                                        <div class="tilt-container">
+                                            <img class="header img-fluid img-animate tilt-image"
+                                                src="assets/img/image-removebg-preview.png" alt="Business Image"
+                                                style="max-width: 100%; height: auto;">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Slide 2 -->
+                            <div class="carousel-item">
+                                <div class="row gy-5 align-items-center">
+                                    <div
+                                        class="col-lg-7 d-flex flex-column justify-content-center align-items-start text-lg-start p-4 p-lg-5">
+                                        <div class="mb-4">
+                                            <div class="logo-text">
+                                                <p>
+                                                    We are Hiring
+                                                    <span class="online-indicator"></span>
+                                                </p>
+                                            </div>
+                                            <h1 class="display-3 fw-bold mb-1">Transform Your</h1>
+                                            <span class="dynamic-text-container-2"></span>
+                                            <h1 class="display-3 fw-bold mb-1">Better Than Ever</h1>
+                                            <h3 class="lead mb-3 fw-bold">Revolutionize your business processes with
+                                                cutting-edge technology for enhanced efficiency and growth.</h3>
+                                        </div>
+                                        <a class="btn-custom img-animate mobile-responsive" role="button"
+                                            href="#contact">
+                                            <i class="fa-brands fa-whatsapp me-2"></i>Get Started
+                                        </a>
+                                        <div class="stacked-avatars">
+                                            <img src="assets/img/team/real-1.gif" alt="Avatar 1" class="avatar">
+                                            <img src="assets/img/team/real2.jpg" alt="Avatar 1" class="avatar">
+                                            <img src="assets/img/team/real-3.gif" alt="Avatar 1" class="avatar">
+                                        </div>
+                                        <div class="rating">
+                                            <span class="stars">★★★★★</span>
+                                            <span class="text">Trusted by 1 Million users</span>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-5 d-flex justify-content-center align-items-center">
+                                        <div class="tilt-container">
+                                            <img class="header img-fluid img-animate tilt-image"
+                                                src="assets/img/image-removebg-preview.png" alt="Business Image"
+                                                style="max-width: 100%; height: auto;">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Carousel End -->
+                </div>
+            </div>
+        </section>
+
+        <style>
+            .logo-text {
+                display: inline-block;
+                background-color: rgba(248, 249, 250, 0.1);
+                backdrop-filter: blur(10px);
+                -webkit-backdrop-filter: blur(10px);
+                padding: 3px 10px;
+                color: rgba(51, 51, 51, 0.8);
+                border: 1px solid rgba(225, 228, 231, 0.644);
+                border-radius: 15px;
+                margin-bottom: 10px;
+            }
+
+            .logo-text p {
+                margin: 0;
+                font-size: 0.9vw;
+                /* Responsive font size */
+                display: flex;
+                font-weight: bold;
+                align-items: center;
+            }
+
+            .online-indicator {
+                width: 8px;
+                height: 8px;
+                background-color: #28a745;
+                border-radius: 50%;
+                display: inline-block;
+                margin-left: 5px;
+                animation: blink 1s infinite;
+            }
+
+            @keyframes blink {
+
+                0%,
+                100% {
+                    opacity: 1;
+                }
+
+                50% {
+                    opacity: 0.5;
+                }
+            }
+
+
+            /* Dark mode styles */
+            body.dark-mode .logo-text {
+                background-color: rgba(30, 30, 30, 0.452);
+                border-color: rgba(255, 255, 255, 0.1);
+                color: #ffffff;
+            }
+
+            body.dark-mode .logo-text p {
+                color: #e0e0e0;
+            }
+
+            body.dark-mode .online-indicator {
+                background-color: #4CAF50;
+                /* A brighter green for better visibility in dark mode */
+            }
+
+            .gradient-text {
+                background: linear-gradient(90deg, #7209d4, #2832d4 33%, #00a5b2);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+                background-clip: text;
+                color: transparent;
+            }
+
+            .dynamic-text-container-1,
+            .dynamic-text-container-2,
+            .dynamic-text-container {
+                font-weight: 700;
+                line-height: 1.2;
+                display: inline-block;
+                min-height: 1.2em;
+                overflow: visible;
+            }
+
+            /* Desktop styles */
+            @media (min-width: 992px) {
+                .display-3 {
+                    font-size: 3.5vw;
+                    /* Responsive font size */
+                    line-height: 1.2;
+                    margin-bottom: 2vh;
+                    /* Responsive margin */
+                }
+
+                .dynamic-text-container-1,
+                .dynamic-text-container-2,
+                .dynamic-text-container {
+                    font-size: 3.5vw;
+                    /* Match display-3 size */
+                }
+
+                .lead {
+                    font-size: 1.8vw;
+                    /* Responsive font size */
+                    margin-top: 2vh;
+                    margin-bottom: 3vh;
+                    line-height: 1.6;
+                }
+
+                .btn-custom {
+                    margin-top: 1.1vh;
+                    font-size: 0.9vw;
+                    /* Slightly smaller button text */
+                    padding: 0.9vh 1.8vw;
+                    /* Slightly reduced padding */
+                    display: inline-flex;
+                    align-items: center;
+                    justify-content: center;
+                    font-weight: bolder;
+                    min-height: 3.6vh;
+                    /* Slightly reduced minimum height */
+                }
+
+                .btn-custom i {
+                    margin-right: 0.4vw;
+                    /* Slightly reduced space between icon and text */
+                }
+            }
+
+            /* Tablet styles */
+            @media (min-width: 768px) and (max-width: 991px) {
+
+                .display-3,
+                .dynamic-text-container-1,
+                .dynamic-text-container-2,
+                .dynamic-text-container {
+                    font-size: 32px !important;
+                }
+
+                .lead {
+                    font-size: 16px !important;
+                }
+            }
+
+            /* Mobile styles */
+            @media (max-width: 767px) {
+                .logo-text p {
+                    margin: 0;
+                    font-size: 2.5vw;
+                    /* Responsive font size */
+                    display: flex;
+                    align-items: center;
+                }
+
+                .logo-text {
+                    font-size: 12px !important;
+                    padding: 8px 12px;
+                    white-space: nowrap;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    max-width: 100%;
+
+                    /* Glass effect styles */
+                    background-color: rgba(240, 240, 240, 0.452);
+                    backdrop-filter: blur(10px);
+                    -webkit-backdrop-filter: blur(10px);
+                    /* For Safari */
+                    border-radius: 15px;
+                    border: 1px solid rgba(255, 255, 255, 0.18);
+                }
+
+                #container-header,
+                #container-headerin {
+                    padding: 0 !important;
+                    width: 100% !important;
+                }
+
+                #home {
+                    padding-top: 25px;
+                }
+
+                .container,
+                .row {
+                    padding: 0 !important;
+                }
+
+                .col-lg-7.d-flex.flex-column.justify-content-center.align-items-start.text-lg-start {
+                    padding: 15px !important;
+                    width: 100%;
+                }
+
+                .display-3,
+                .dynamic-text-container-1,
+                .dynamic-text-container-2,
+                .dynamic-text-container {
+                    font-size: 35px !important;
+                    line-height: 1.3;
+                    word-wrap: break-word;
+                    margin-bottom: 0.5rem;
+                }
+
+                .lead {
+                    font-size: 14px !important;
+                    line-height: 1.4;
+                    margin-top: 8px;
+                    font-weight: bold !important;
+                    word-wrap: break-word;
+                }
+
+                h1,
+                h3 {
+                    max-width: 100%;
+                    overflow-wrap: break-word;
+                }
+
+                .btn-custom.mobile-responsive {
+                    font-size: 14px !important;
+                    padding: 6px 13px !important;
+                    margin-top: 10px;
+                }
+            }
+
+            /* Extra small devices */
+            @media (max-width: 576px) {
+
+                .dynamic-text-container-1,
+                .dynamic-text-container-2,
+                .dynamic-text-container {
+                    font-size: 24px;
+                }
+            }
+        </style>
+
+        <style>
+            #technology-delivery {
+                position: relative;
+                overflow: visible;
+            }
+
+            .spline-container {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 160%;
+                height: 100%;
+                z-index: -1;
+                display: none;
+            }
+
+            spline-viewer {
+                width: 100%;
+                height: 100%;
+            }
+        </style>
+
+
+
+        <section id="technology-delivery" class="clipped-section">
+
+            <style>
+                @media (max-width: 768px) {
+                    .glass-text {
+                        font-size: 1.8rem !important;
+                    }
+                }
+            </style>
+            <div class="blur-orb top-left"></div>
+            <div class="blur-orb bottom-right"></div>
+            <div class="blur-overlay"></div>
+            <div class="container-fluid container-lg px-3 p-4">
+                <div class="row justify-content-center">
+                    <div class="col-12 py-4 px-5">
+                        <div class="card glass-card">
+                            <div class="card-body">
+                                <div class="row gy-4">
+                                    <!-- Top Column -->
+                                    <div class="col-12">
+                                        <div class="text-center">
+                                            <h2 class="mb-2 glass-text">
+                                                Delivering Technology for
+                                                <br>
+                                                <span class="gradient-text">Leading Organizations</span>
+                                            </h2>
+                                            <style>
+                                                .gradient-text {
+                                                    background: linear-gradient(90deg, #7209d4, #2832d4 33%, #00a5b2);
+                                                    -webkit-background-clip: text;
+                                                    -webkit-text-fill-color: transparent;
+                                                    background-clip: text;
+                                                    color: transparent;
+                                                }
+                                            </style>
+                                            <h3 class="mb-0 glass-subtext">
+                                                Across South-East Asia & Japan
+                                            </h3>
+                                        </div>
+                                    </div>
+                                    <style>
+                                        @media (max-width: 768px) {
+                                            .glass-text {
+                                                font-size: 35px !important;
+                                                line-height: 1.3 !important;
+                                            }
+
+                                            #partners-logo {
+                                                padding-top: 15%;
+                                            }
+
+
+                                            .glass-subtext {
+                                                font-size: 18px !important;
+                                                line-height: 1.4 !important;
+                                            }
+                                        }
+
+                                        @media (max-width: 576px) {
+                                            .glass-text {
+                                                font-size: 35px !important;
+                                            }
+
+                                            .glass-subtext {
+                                                font-size: 18px !important;
+                                            }
+                                        }
+                                    </style>
+                                    <!-- Bottom Column -->
+
+                                    <div id="partners-logo" class="col-12"
+                                        style="cursor: default; pointer-events: none;">
+
+                                        <div class="row justify-content-around align-items-center pt-5 mb-0 g-5">
+                                            <div class="col-12 col-md-11 mb-4">
+                                                <div class="d-flex flex-row flex-wrap justify-content-center gap-5">
+                                                    <div id="partner-logo-1" class="partner-logo mx-3 mb-4">
+                                                        <img src="assets/img/partners/Accor_logo_Gold-gradient_RVB_digital.png"
+                                                            alt="Partner 1" class="img-fluid">
+                                                    </div>
+                                                    <div id="partner-logo-2" class="partner-logo mx-3 mb-4">
+                                                        <img src="assets/img/partners/Logo-Astra-Otoparts-PNG-–-IfoxSoft.Com_-950x500.png"
+                                                            alt="Partner 2" class="img-fluid">
+                                                    </div>
+                                                    <div id="partner-logo-3" class="partner-logo mx-3 mb-4">
+                                                        <img src="assets/img/partners/bank-tabungan-negara-seeklogo.png"
+                                                            alt="Partner 3" class="img-fluid">
+                                                    </div>
+                                                    <div id="partner-logo-4" class="partner-logo mx-3 mb-4">
+                                                        <img src="assets/img/partners/Logo-BCA-PNG.png" alt="Partner 4"
+                                                            class="img-fluid">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-12 col-md-11 mb-4">
+                                                <div class="d-flex flex-row flex-wrap justify-content-center gap-5">
+                                                    <div id="partner-logo-5" class="partner-logo mx-3 mb-4">
+                                                        <img src="assets/img/partners/pngegg.png" alt="Partner 5"
+                                                            class="img-fluid">
+                                                    </div>
+                                                    <div id="partner-logo-6" class="partner-logo mx-3 mb-4">
+                                                        <img src="assets/img/partners/Energizer.png" alt="Partner 6"
+                                                            class="img-fluid">
+                                                    </div>
+                                                    <div id="partner-logo-7" class="partner-logo mx-3 mb-4">
+                                                        <img src="assets/img/partners/Hilton.png" alt="Partner 7"
+                                                            class="img-fluid">
+                                                    </div>
+                                                    <div id="partner-logo-8" class="partner-logo mx-3 mb-4">
+                                                        <img src="assets/img/partners/Hyundai.png" alt="Partner 8"
+                                                            class="img-fluid">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-12 col-md-11 mb-4">
+                                                <div class="d-flex flex-row flex-wrap justify-content-center gap-5">
+                                                    <div id="partner-logo-9" class="partner-logo mx-3 mb-4">
+                                                        <img src="assets/img/partners/indofood.png" alt="Partner 9"
+                                                            class="img-fluid">
+                                                    </div>
+                                                    <div id="partner-logo-10" class="partner-logo mx-3 mb-4">
+                                                        <img src="assets/img/partners/kalbe.png" alt="Partner 10"
+                                                            class="img-fluid">
+                                                    </div>
+                                                    <div id="partner-logo-11" class="partner-logo mx-3 mb-4">
+                                                        <img src="assets/img/partners/kao.png" alt="Partner 11"
+                                                            class="img-fluid">
+                                                    </div>
+                                                    <div id="partner-logo-12" class="partner-logo mx-3 mb-4">
+                                                        <img src="assets/img/partners/Mercure Hotels.png"
+                                                            alt="Partner 12" class="img-fluid">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-12 pb-5 col-md-11 mb-4">
+                                                <div class="d-flex flex-row flex-wrap justify-content-center gap-5">
+                                                    <div id="partner-logo-13" class="partner-logo mx-3 mb-4">
+                                                        <img src="assets/img/partners/novotel.png" alt="Partner 13"
+                                                            class="img-fluid">
+                                                    </div>
+                                                    <div id="partner-logo-14" class="partner-logo mx-3 mb-4">
+                                                        <img src="assets/img/partners/prudential.png" alt="Partner 14"
+                                                            class="img-fluid">
+                                                    </div>
+                                                    <div id="partner-logo-15" class="partner-logo mx-3 mb-4">
+                                                        <img src="assets/img/partners/sultan.png" alt="Partner 15"
+                                                            class="img-fluid">
+                                                    </div>
+                                                    <div id="partner-logo-16" class="partner-logo mx-3 mb-4">
+                                                        <img src="assets/img/partners/yakult.png" alt="Partner 16"
+                                                            class="img-fluid">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <style>
+                                        .partner-logo {
+                                            width: 150px;
+                                            height: 100px;
+                                            display: flex;
+                                            align-items: center;
+                                            justify-content: center;
+                                            margin: 1rem;
+                                        }
+
+                                        .partner-logo img {
+                                            max-width: 100%;
+                                            max-height: 100%;
+                                            object-fit: contain;
+                                        }
+
+                                        @media (max-width: 992px) {
+                                            .partner-logo {
+                                                width: 120px;
+                                                height: 80px;
+                                                margin: 0.5rem;
+                                            }
+                                        }
+
+                                        @media (max-width: 768px) {
+                                            .row {
+                                                --bs-gutter-y: 0.15rem;
+                                            }
+
+                                            .partner-logo {
+                                                width: 80px;
+                                                height: 60px;
+                                                margin: 0.3rem;
+                                            }
+
+                                            .d-flex.flex-row.flex-wrap {
+                                                justify-content: space-between;
+                                            }
+
+                                            .col-12.col-md-11.mb-4 {
+                                                padding-left: 5px;
+                                                padding-right: 5px;
+                                            }
+                                        }
+                                    </style>
+                                    </style>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card glass-card-bottom" style="cursor: default; pointer-events: none;">
+                            <div class="card-body">
+                                <div class="row">
+                                    <!-- Statistics Section -->
+                                    <div class="col-12">
+                                        <div class="row row-cols-1 row-cols-md-3 text-center">
+                                            <div class="col d-flex flex-column mb-3 mb-md-0">
+                                                <h2 class="stat-number" data-target="500">0</h2>
+                                                <h2 class="stat-description">Successful Projects Delivered</h2>
+                                            </div>
+                                            <div class="col d-flex flex-column mb-3 mb-md-0">
+                                                <h2 class="stat-number" data-target="50">0</h2>
+                                                <h2 class="stat-description">Strategic Partnerships</h2>
+                                            </div>
+                                            <div class="col d-flex flex-column">
+                                                <h2 class="stat-number" data-target="10">0</h2>
+                                                <h2 class="stat-description">Years of Excellence</h2>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Add the circle-blur2 div here -->
+            <div class="circle-blur2"></div>
+        </section>
+
+        <!-- Second Section
+        <div class="container py-4">
+            <div class="row gy-3 align-items-center">
+                <!- Left Column -->
+        <!-- <div class="col-md-6 d-flex justify-content-center justify-content-md-center">
+                    <div style="max-width: 420x;">
+                        <p class="mb-2" style="font-size: 1.2rem;">
+                            Delivering Technology For
+                            <span class="hover-effect" style="color: #000; padding: 0.2em;">
+                                <strong>Leading Organizations</strong>
+                            </span> across South-East Asia & Japan.
+                        </p>
+                    </div>
+                </div> -->
+        <!-- Right Column -->
+        <!-- <div class="col-md-6 d-flex justify-content-center justify-content-md-end">
+                    <img class="rounded img-fluid img-animate" src="assets/img/logo.png" alt="Logo" style="max-width: 100%; min-height: 200px; max-height: 800px;">
+                </div>
+            </div>
+        </div>  -->
+
+        
+
+        <section id="products">
+            <style>
+                @media (max-width: 768px) {
+                    #products {
+                        padding-left: 0 !important;
+                        padding-right: 0 !important;
+                        margin-top: 25% !important;
+                        margin-bottom: -20% !important;
+                    }
+                }
+            </style>
+            <!-- PRODUCT 1 -->
+            <div class="container py-4 pb-2 py-xl-5 product-container">
+                <div class="row gy-4 align-items-center position-relative">
+                    <div class="shape-behind">
+                        <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                            <path fill="#5d2d90"
+                                d="M39.9,-51.3C54.9,-39.2,72.2,-30.3,76.1,-17.6C80,-4.9,70.5,11.7,60.6,25.5C50.7,39.4,40.4,50.5,27.5,57.7C14.6,65,-0.9,68.3,-17.8,66.2C-34.7,64.1,-53,56.6,-65.6,42.8C-78.1,29,-85,9,-81.9,-8.7C-78.8,-26.4,-65.7,-41.7,-50.8,-54C-35.9,-66.3,-18,-75.5,-2.2,-72.9C13.5,-70.3,27,-63.5,39.9,-51.3Z"
+                                transform="translate(100 100)" />
+                        </svg>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="m-xl-5 position-relative">
+                            <img class="rounded img-fluid img-animate w-100 fit-cover"
+                                style="min-height: 50px; max-height: 400px;" src="assets/img/feature1.png"
+                                alt="Feature 1">
+                            <div class="img-backdrop"></div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="text-start" style="max-width: 420px; margin: 0 auto;">
+                            <h2 class="text-uppercase fw-bold">Visibility</h2>
+                            <h3 class="fw-bold">All process integration with one system</h3>
+                            <p class="my-3">Tincidunt laoreet leo, adipiscing taciti tempor. Primis senectus sapien,
+                                risus
+                                donec ad fusce augue interdum.</p>
+                            <a href="#" class="btn-custom img-animate me-2 d-inline-block">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- PRODUCT 2 -->
+            <div class="container py-4 py-xl-5 product-container">
+                <div class="row gy-4 align-items-center position-relative">
+                    <div class="shape-behind shape-behind-right">
+                        <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                            <path fill="#5d2d90"
+                                d="M39.9,-51.3C54.9,-39.2,72.2,-30.3,76.1,-17.6C80,-4.9,70.5,11.7,60.6,25.5C50.7,39.4,40.4,50.5,27.5,57.7C14.6,65,-0.9,68.3,-17.8,66.2C-34.7,64.1,-53,56.6,-65.6,42.8C-78.1,29,-85,9,-81.9,-8.7C-78.8,-26.4,-65.7,-41.7,-50.8,-54C-35.9,-66.3,-18,-75.5,-2.2,-72.9C13.5,-70.3,27,-63.5,39.9,-51.3Z"
+                                transform="translate(100 100)" />
+                        </svg>
+                    </div>
+                    <div class="col-md-6 order-md-2">
+                        <div class="m-xl-5 position-relative">
+                            <img class="rounded img-fluid img-animate fit-cover w-100"
+                                style="min-height: 250px; max-height: 400px;" src="assets/img/feature2.png"
+                                alt="Feature 2">
+                            <div class="img-backdrop"></div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 order-md-1">
+                        <div class="text-center text-md-start" style="max-width: 420px; margin: 0 auto;">
+                            <h2 class="text-uppercase fw-bold">Control</h2>
+                            <h3 class="fw-bold">Easily manage all business activity</h3>
+                            <p class="my-3">Tincidunt laoreet leo, adipiscing taciti tempor. Primis senectus sapien,
+                                risus
+                                donec ad fusce augue interdum.</p>
+
+                            <div class="card mx-auto mx-md-0"
+                                style="max-width: 300px; box-shadow: 0 3px 15px rgba(0, 0, 0, 0.1); margin-bottom: 20px;">
+                                <div class="card-body" style="padding: 10px;">
+                                    <div class="icon d-flex align-items-center mb-2">
+                                        <i class="fas fa-circle"
+                                            style="font-size: 0.5em; color: #007bff; margin-right: 5px;"></i>
+                                        <p class="fw-bold m-0">Power BI</p>
+                                    </div>
+                                    <div class="icon d-flex align-items-center">
+                                        <i class="fas fa-circle"
+                                            style="font-size: 0.5em; color: #007bff; margin-right: 5px;"></i>
+                                        <p class="fw-bold m-0">Digital Pulse</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- PRODUCT 3 -->
+
+            <div class="container py-4 py-xl-5 product-container">
+                <div class="row gy-4 align-items-center position-relative">
+                    <div class="shape-behind">
+                        <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                            <path fill="#5d2d90"
+                                d="M39.9,-51.3C54.9,-39.2,72.2,-30.3,76.1,-17.6C80,-4.9,70.5,11.7,60.6,25.5C50.7,39.4,40.4,50.5,27.5,57.7C14.6,65,-0.9,68.3,-17.8,66.2C-34.7,64.1,-53,56.6,-65.6,42.8C-78.1,29,-85,9,-81.9,-8.7C-78.8,-26.4,-65.7,-41.7,-50.8,-54C-35.9,-66.3,-18,-75.5,-2.2,-72.9C13.5,-70.3,27,-63.5,39.9,-51.3Z"
+                                transform="translate(100 100)" />
+                        </svg>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="m-xl-5 position-relative">
+                            <img class="rounded img-fluid img-animate w-100 fit-cover"
+                                style="min-height: 250px; max-height: 400px;" src="assets/img/feature1.png"
+                                alt="Feature 1">
+                            <div class="img-backdrop"></div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="text-start" style="max-width: 420px; margin: 0 auto;">
+                            <h2 class="text-uppercase fw-bold">Automation</h2>
+                            <h3 class="fw-bold">All process integration with one system</h3>
+                            <p class="my-3">Tincidunt laoreet leo, adipiscing taciti tempor. Primis senectus sapien,
+                                risus
+                                donec ad fusce augue interdum.</p>
+                            <a href="#" class="btn-custom img-animate me-2 d-inline-block">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <style>
+                @media (max-width: 786px) {
+                    .product-container {
+                        margin-top: 60px;
+                        margin-bottom: 60px;
+                        padding-top: 70px;
+                        padding-bottom: 50px;
+                        width: 100% !important;
+                    }
+
+                    .product-container:not(:last-child) {
+                        border-bottom: 15px solid rgba(224, 224, 224, 0);
+                    }
+
+                    .product-container .row {
+                        margin-left: -20px;
+                        margin-right: -20px;
+                    }
+
+                    .product-container .col-md-6 {
+                        padding-left: 20px;
+                        padding-right: 20px;
+                    }
+
+                    .product-container .img-animate {
+                        margin-bottom: 40px;
+                    }
+
+                    .product-container h2 {
+                        margin-top: 30px;
+                    }
+                }
+            </style>
+            <!-- Add this CSS to your stylesheet or in a <style> tag in the <head> -->
+            <style>
+
+            </style>
+        </section>
+
+        
+       
+
+
+
+        <section id="industry" class="industry-section">
+            <div class="container p-4">
+                <div class="text-center">
+                    <div class="text-center">
+                        <h1 class="industry-title">A Solution based on
+                            <span class="gradient-text">Your Industry</span>
+                        </h1>
+                        <h3 class="mb-4 industry-subtitle">Tailored solutions to meet your specific industry needs</h3>
+                    </div>
+
+                    <style>
+                        .industry-title {
+                            font-weight: bolder;
+                            font-size: 48px;
+                            line-height: 1.2;
+                        }
+
+                        .gradient-text {
+                            background: linear-gradient(90deg, #7209d4, #2832d4 33%, #00a5b2);
+                            -webkit-background-clip: text;
+                            -webkit-text-fill-color: transparent;
+                            background-clip: text;
+                            color: transparent;
+                        }
+
+                        .industry-subtitle {
+                            font-size: 24px;
+                            line-height: 1.4;
+                        }
+
+                        @media (max-width: 768px) {
+                            .industry-title {
+                                font-size: 36px;
+                            }
+
+                            .industry-subtitle {
+                                font-size: 0.9rem !important;
+                            }
+                        }
+
+                        @media (max-width: 480px) {
+                            .industry-title {
+                                font-size: 28px;
+                            }
+
+                            .industry-subtitle {
+                                font-size: 18px;
+                            }
+                        }
+                    </style>
+                
+
+                        <div class="row">
+                            <div class="col-md-4">
+                                <ul class="list-unstyled" id="featureList" style="padding-top: 20px;">
+                                    <li class="feature-item active" data-feature="hospitality">
+                                        <span class="feature-number">01</span>
+                                        <div class="feature-content">
+                                            <span class="feature-title">Hospitality</span>
+                                            <div class="feature-description"></div>
+                                        </div>
+                                    </li>
+                                    <li class="feature-item" data-feature="manufacturing">
+                                        <span class="feature-number">02</span>
+                                        <div class="feature-content">
+                                            <span class="feature-title">Manufacturing</span>
+                                            <div class="feature-description"></div>
+                                        </div>
+                                    </li>
+                                    <li class="feature-item" data-feature="finance">
+                                        <span class="feature-number">03</span>
+                                        <div class="feature-content">
+                                            <span class="feature-title">Finance</span>
+                                            <div class="feature-description"></div>
+                                        </div>
+                                    </li>
+                                    <li class="feature-item" data-feature="healthcare">
+                                        <span class="feature-number">04</span>
+                                        <div class="feature-content">
+                                            <span class="feature-title">Healthcare</span>
+                                            <div class="feature-description"></div>
+                                        </div>
+                                    </li>
+                                    <li class="feature-item" data-feature="retail">
+                                        <span class="feature-number">05</span>
+                                        <div class="feature-content">
+                                            <span class="feature-title">Retail</span>
+                                            <div class="feature-description"></div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="col-md-8">
+                                <div id="featureContent" class="feature-content-wrapper">
+                                    <img id="featureImage" src="" alt="Feature Image">
+                                    <iframe id="featureVideo" src="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="display: none;"></iframe>
+                                    <div id="featureTextContent" class="mt-4">
+                                        <h3 id="featureTitle" class="slide-in text-left"></h3>
+                                        <p id="featureDescription" class="slide-in text-left"></p>
+                                        <ul id="featureBullets" class="slide-in text-left">
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <style>
+                
+                        .feature-item {
+                            cursor: pointer;
+                            padding: 15px;
+                            margin-top: 20px;
+                            margin-bottom: 35px;
+                            border-radius: 5px;
+                            transition: background-color 0.3s;
+                            width: 80%;
+                            display: flex;
+                            align-items: left;
+                            font-size: 18px;
+                            opacity: 0;
+                            transform: translateY(20px);
+                            transition: opacity 0.5s, transform 0.5s, background-color 0.3s;
+                        }
+                        .feature-item.fade-in {
+                            opacity: 1;
+                            transform: translateY(0);
+                        }
+                        .feature-item:hover {
+                            background-color: #f0e6ff; /* Light purple for hover */
+                        }
+                        .feature-item.active {
+                            background-color: #e6d9ff; /* Slightly darker purple for active state */
+                            font-weight: 500;
+                        }
+                        .feature-number {
+                            font-size: 24px;
+                            font-weight: bold;
+                            color: #6c757d;
+                            margin-right: 20px;
+                            flex-shrink: 0;
+                            transition: color 0.3s, transform 0.3s;
+                        }
+                        .feature-item.active .feature-number {
+                            color: #8a2be2; /* Purple color for active state */
+                            transform: scale(1.1); /* Slightly larger when active */
+                        }
+                        .feature-content {
+                            display: flex;
+                            flex-direction: column;
+                            padding-right: 15px;
+                        }
+                        .feature-title {
+                            font-weight: bold;
+                            text-align: left;
+                        }
+                        .feature-content-wrapper {
+                            position: relative;
+                            overflow: hidden;
+                            transition: opacity 0.5s;
+                            border-radius: 20px;
+                            display: flex;
+                            flex-direction: column;
+                        }
+                        .feature-content-wrapper img,
+                        .feature-content-wrapper iframe {
+                            width: 100%;
+                            height: auto;
+                            object-fit: cover;
+                            opacity: 0;
+                            transform: scale(0.5);
+                            transition: opacity 0.5s, transform 0.5s ease-out;
+                            border-radius: 20px 20px 0 0;
+                            margin-top: 26px;
+                        }
+                        .feature-content-wrapper iframe {
+                            height: 450px;
+                        }
+                        .feature-content-wrapper.fade-in img,
+                        .feature-content-wrapper.fade-in iframe {
+                            opacity: 1;
+                            transform: scale(1);
+                        }
+                        .feature-description {
+                            text-align: left;
+                            margin-top: 5px;
+                            font-size: 14px;
+                            color: #6c757d;
+                        }
+                        h1 {
+                            font-weight: 700;
+                            opacity: 0;
+                            transform: translateY(-20px);
+                            transition: opacity 0.5s, transform 0.5s;
+                        }
+                        h1.fade-in {
+                            opacity: 1;
+                            transform: translateY(0);
+                        }
+
+                        .slide-in {
+                            opacity: 0;
+                            transform: translateX(-50px);
+                            transition: opacity 0.5s, transform 0.5s;
+                        }
+                        .slide-in.active {
+                            opacity: 1;
+                            transform: translateX(0);
+                        }
+
+                        #featureTextContent {
+                            background: rgba(255, 255, 255, 0.2);
+                            backdrop-filter: blur(10px);
+                            padding: 20px;
+                            border-radius: 0 0 20px 20px;
+                            color: #333;
+                        }
+                        #featureTextContent h3 {
+                            margin-top: 0;
+                            text-align: left;
+                        }
+                        #featureTextContent ul {
+                            padding-left: 20px;
+                            text-align: left;
+                        }
+                        #featureTextContent p {
+                            text-align: left;
+                        }
+
+                        /* Mobile responsiveness */
+                        @media (max-width: 768px) {
+                            .feature-item {
+                                width: 100%;
+                                margin: 10px auto 20px;
+                                font-size: 20px !important;
+                                text-align: center;
+                            }
+                            .feature-number {
+                                font-size: 20px;
+                                margin-right: 10px;
+                                display: inline-block;
+                            }
+                            .feature-content-wrapper iframe {
+                                height: 200px; /* Adjusted height for mobile */
+                                margin: 0 auto;
+                                display: block;
+                                width: 100%; /* Ensure it takes full width */
+                                max-width: 100%; /* Prevent overflow */
+                            }
+                            #featureTextContent {
+                                padding: 15px;
+                                text-align: center;
+                            }
+                            #featureTextContent h3 {
+                                font-size: 20px;
+                                text-align: center;
+                            }
+                            #featureTextContent p,
+                            #featureTextContent ul {
+                                font-size: 15px !important;
+                                text-align: center;
+                                max-width: 100%;
+                                margin-bottom: 4px;
+                                margin-top: 4px;
+
+                            }
+                            #featureTextContent ul {
+                                display: inline-block;
+                                text-align: left;
+                                padding-left: 20px;
+                            }
+                            #featureTextContent ul li {
+                                margin-top: 10px;
+                            }
+                        }
+
+                        @media (max-width: 480px) {
+                            .feature-item {
+                                font-size: 16px !important;
+                            }
+                            .feature-number {
+                                font-size: 18px;
+                            }
+                            .feature-content-wrapper iframe {
+                                height: 200px;
+                            }
+                            h1 {
+                                font-size: 22px;
+                            }
+                            #featureTextContent h3 {
+                                font-size: 18px;
+                            }
+                            #featureTextContent p,
+                            #featureTextContent ul {
+                                font-size: 14px !important;
+                            }
+                            #featureTextContent ul li {
+                                margin-bottom: 8px;
+                            }
+                        }
+                    </style>
+
+                    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
+                    <script>
+                        document.addEventListener('DOMContentLoaded', function() {
+                            const featureList = document.getElementById('featureList');
+                            const featureContent = document.getElementById('featureContent');
+                            const featureContentWrapper = document.getElementById('featureContent');
+                            const pageTitle = document.querySelector('h1');
+                            const featureTitle = document.getElementById('featureTitle');
+                            const featureDescription = document.getElementById('featureDescription');
+                            const featureBullets = document.getElementById('featureBullets');
+                            const featureImage = document.getElementById('featureImage');
+                            const featureVideo = document.getElementById('featureVideo');
+                
+                            const features = {
+                                hospitality: {
+                                    description: "Streamline hotel operations with our comprehensive hospitality management system.",
+                                    video: "https://www.youtube.com/embed/5yjaj5UZRlY",
+                                    title: "Hospitality Management",
+                                    bullets: [
+                                        "Efficient room booking and management",
+                                        "Integrated guest services",
+                                        "Revenue optimization tools"
+                                    ]
+                                },
+                                manufacturing: {
+                                    description: "Optimize production processes and inventory management for manufacturing industries.",
+                                    image: "https://d2csxpduxe849s.cloudfront.net/media/E32629C6-9347-4F84-81FEAEF7BFA342B3/700E4D82-4F55-4EE1-9B6CA0C194C84956/182DC208-2737-40B8-A720EEBF9FA9B88F/WebsiteJpg_XL-FMTEC_Main%20Visual_Red_Website.jpg",
+                                    title: "Manufacturing Solutions",
+                                    bullets: [
+                                        "Real-time production tracking",
+                                        "Supply chain management",
+                                        "Quality control integration"
+                                    ]
+                                },
+                                finance: {
+                                    description: "Secure and efficient financial management solutions for banks and financial institutions.",
+                                    video: "https://www.youtube.com/embed/0ncLRRLvdfk",
+                                    title: "Financial Services",
+                                    bullets: [
+                                        "Advanced fraud detection",
+                                        "Automated compliance reporting",
+                                        "Multi-currency support"
+                                    ]
+                                },
+                                healthcare: {
+                                    description: "Comprehensive healthcare management system for hospitals and clinics.",
+                                    image: "path_to_healthcare_image.jpg",
+                                    title: "Healthcare Management",
+                                    bullets: [
+                                        "Electronic health records (EHR)",
+                                        "Patient scheduling and billing",
+                                        "Telemedicine integration"
+                                    ]
+                                },
+                                retail: {
+                                    description: "Enhance customer experience and streamline operations for retail businesses.",
+                                    image: "/jan-display.96e60af5.png",
+                                    title: "Retail Solutions",
+                                    bullets: [
+                                        "Point of Sale (POS) systems",
+                                        "Inventory management",
+                                        "Customer loyalty programs"
+                                    ]
+                                }
+                            };
+                            function updateFeatureContent(feature, animate = true) {
+                                const featureItem = featureList.querySelector(`.feature-item[data-feature="${feature}"]`);
+                                const descriptionElement = featureItem.querySelector('.feature-description');
+                                
+                                if (animate) {
+                                    featureContentWrapper.classList.remove('fade-in');
+                                    
+                                    if (features[feature].video) {
+                                        featureImage.style.display = 'none';
+                                        featureVideo.style.display = 'block';
+                                        featureVideo.src = features[feature].video;
+                                    } else {
+                                        featureVideo.style.display = 'none';
+                                        featureImage.style.display = 'block';
+                                        featureImage.src = features[feature].image;
+                                    }
+                                    
+                                    // Use GSAP for smoother content animation
+                                    gsap.fromTo(featureContentWrapper, 
+                                        { opacity: 0, scale: 0.8 },
+                                        { 
+                                            opacity: 1, 
+                                            scale: 1, 
+                                            duration: 0.4, 
+                                            ease: "power2.out",
+                                            onStart: () => {
+                                                featureContentWrapper.classList.add('fade-in');
+                                            }
+                                        }
+                                    );
+                                    
+                                    descriptionElement.textContent = features[feature].description;
+                                    
+                                    gsap.fromTo(descriptionElement, 
+                                        { y: 20, opacity: 0 },
+                                        { y: 0, opacity: 1, duration: 0.5, delay: 0.3, ease: "power2.out" }
+                                    );
+                                } else {
+                                    if (features[feature].video) {
+                                        featureImage.style.display = 'none';
+                                        featureVideo.style.display = 'block';
+                                        featureVideo.src = features[feature].video;
+                                    } else {
+                                        featureVideo.style.display = 'none';
+                                        featureImage.style.display = 'block';
+                                        featureImage.src = features[feature].image;
+                                    }
+                                    descriptionElement.textContent = features[feature].description;
+                                    featureContentWrapper.classList.add('fade-in');
+                                }
+                
+                                // Update text content
+                                featureTitle.textContent = features[feature].title;
+                                featureDescription.textContent = features[feature].description;
+                                
+                                // Clear and update bullet points
+                                featureBullets.innerHTML = '';
+                                features[feature].bullets.forEach(bullet => {
+                                    const li = document.createElement('li');
+                                    li.textContent = bullet;
+                                    featureBullets.appendChild(li);
+                                });
+                
+                                if (animate) {
+                                    // Animate text content
+                                    [featureTitle, featureDescription, featureBullets].forEach((element, index) => {
+                                        element.classList.remove('active');
+                                        setTimeout(() => {
+                                            element.classList.add('active');
+                                        }, 100 * (index + 1));
+                                    });
+                                } else {
+                                    [featureTitle, featureDescription, featureBullets].forEach(element => {
+                                        element.classList.add('active');
+                                    });
+                                }
+                            }
+                
+                            featureList.addEventListener('click', function(e) {
+                                const clickedItem = e.target.closest('.feature-item');
+                                if (clickedItem && !clickedItem.classList.contains('active')) {
+                                    const previousActive = featureList.querySelector('.feature-item.active');
+                                    
+                                    // Reset the previously active item
+                                    if (previousActive) {
+                                        gsap.to(previousActive, { 
+                                            scale: 1, 
+                                            opacity: 1, 
+                                            backgroundColor: 'transparent', 
+                                            duration: 0.3 
+                                        });
+                                        previousActive.classList.remove('active');
+                                    }
+                
+                                    // Animate the clicked item
+                                    clickedItem.classList.add('active');
+                                    gsap.to(clickedItem, { 
+                                        scale: 1.05, 
+                                        opacity: 1, 
+                                        duration: 0.3, 
+                                        backgroundColor: '#e6d9ff', // Purple background for active state
+                                        ease: "back.out(1.7)"
+                                    });
+                                    
+                                    const feature = clickedItem.getAttribute('data-feature');
+                                    updateFeatureContent(feature);
+                                }
+                            });
+                
+                            // Page load animations
+                            gsap.to(pageTitle, { opacity: 1, y: 0, duration: 0.5, delay: 0.2 });
+                            
+                            gsap.from('.feature-item', {
+                                opacity: 0,
+                                y: 20,
+                                duration: 0.5,
+                                stagger: 0.1,
+                                ease: "back.out(1.7)",
+                                onComplete: () => {
+                                    document.querySelectorAll('.feature-item').forEach(item => {
+                                        item.style.opacity = 1;
+                                        item.style.transform = 'translateY(0)';
+                                    });
+                                }
+                            });
+                
+                            // Set initial state to "01 Hospitality"
+                            const hospitalityFeature = document.querySelector('.feature-item[data-feature="hospitality"]');
+                            hospitalityFeature.classList.add('active');
+                            updateFeatureContent('hospitality', false);
+                
+                            // Animate the initial feature content
+                            setTimeout(() => {
+                                featureContentWrapper.classList.add('fade-in');
+                                gsap.to(featureContentWrapper, { 
+                                    opacity: 1, 
+                                    scale: 1, 
+                                    duration: 0.5, 
+                                    delay: 0.2 
+                                });
+                            }, 700);
+                        });
+                    </script>
+
+
+
+                
+                <!-- <div class="tags-container-wrapper">
+                        <div class="scroll-indicator scroll-left">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <polyline points="15 18 9 12 15 6"></polyline>
+                            </svg>
+                        </div>
+                        <div class="tags-container">
+                            <div class="tags-wrapper">
+                                <span class="tag-item" onclick="toggleCard(this, 'hospitality')">
+                                    Hospitality
+                                </span>
+                                <span class="tag-item" onclick="toggleCard(this, 'manufacturing')">
+                                    </i> Manufacturing
+                                </span>
+                                <span class="tag-item" onclick="toggleCard(this, 'finance')">
+                                    FSI (Finance)
+                                </span>
+                                <span class="tag-item" onclick="toggleCard(this, 'property')">
+                                    Property
+                                </span>
+                                <span class="tag-item" onclick="toggleCard(this, 'industry')">
+                                    Others
+                                </span>
+                            </div>
+                        </div>
+                        <div class="scroll-indicator scroll-right">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+                <div id="contentCards" class="row justify-content-center p-4">
+                </div>  -->
+
+
+
+                </div>
+        </section>
+
+
+
+        <section id="partners" class="partners-section py-4">
+            <div class="container p-4 py-xl-5">
+                <h1 class="text-center partners-heading">Together We Build
+                    <span class="gradient-text">Solutions for You</span>
+                </h1>
+
+                <h3 class="text-center mb-5 partners-subheading">Real Partnership To Deliver A Reliable Solution</h3>
+
+                <style>
+                    .partners-heading {
+                        font-weight: bolder;
+                        font-size: 48px;
+                        line-height: 1.2;
+                        margin-bottom: 1rem;
+                    }
+
+                    .gradient-text {
+                        background: linear-gradient(90deg, #7209d4, #2832d4 33%, #00a5b2);
+                        -webkit-background-clip: text;
+                        -webkit-text-fill-color: transparent;
+                        background-clip: text;
+                        color: transparent;
+                    }
+
+                    .partners-subheading {
+                        font-size: 24px;
+                        line-height: 1.4;
+                    }
+
+                    @media (max-width: 768px) {
+                        .partners-heading {
+                            font-size: 36px;
+                        }
+
+                        .partners-subheading {
+                            font-size: 0.9rem !important;
+                        }
+                    }
+
+                    @media (max-width: 480px) {
+                        .partners-heading {
+                            font-size: 28px;
+                        }
+
+                        .partners-subheading {
+                            font-size: 18px;
+                        }
+                    }
+                </style>
+                <div class="card-marquee">
+                    <div class="card-body p-0">
+                        <div class="partner-row">
+                            <div class="partner-title">
+                                <h5 class="fw-bold">CLOUD <br> PARTNERS</h5>
+                            </div>
+                            <div class="logo-container" id="cloudPartnersContainer">
+                                <!-- Cloud partner logos will be inserted here -->
+                            </div>
+                        </div>
+                        <div class="partner-row">
+                            <div class="partner-title">
+                                <h5 class="fw-bold">TECHNOLOGY PARTNERS</h5>
+                            </div>
+                            <div class="logo-container" id="technologyPartnersContainer">
+                                <!-- Technology partner logos will be inserted here -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <style>
+                    @media (max-width: 768px) {
+                        .container {
+                            width: 85% !important;
+                        }
+
+                        .logo-container {
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                        }
+
+                        .logo-container img {
+                            max-width: 100%;
+                            height: auto;
+                        }
+
+                        .solution-card {
+                            width: 90%;
+                            margin-left: auto;
+                            margin-right: auto;
+                        }
+
+                        .solution-card img {
+                            width: 50%;
+                            max-height: 100px;
+                        }
+
+                        .solution-card h3 {
+                            font-size: 1.1rem;
+                        }
+
+                        .solution-card p {
+                            font-size: 0.9rem;
+                        }
+                    }
+                </style>
+            </div>
+        </section>
+
+        <!-- Cards Section -->
+        <section id="solutions" class="py-5">
+            <div class="container p-4">
+                <h1 class="solution-title text-center mb-2">Solution for <span class="gradient-text">Each
+                        Business</span></h1>
+                <h3 class="solution-subtitle text-center mb-5">Real Partnership To Deliver A Reliable Solution.</h3>
+
+                <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-4 justify-content-center align-items-stretch">
+                    <!-- Hotel Management System -->
+                    <div class="col">
+                        <div class="card h-100 solution-card">
+                            <div class="card-body d-flex flex-column">
+                                <div class="image-container mb-3">
+                                    <img src="assets/img/probes1.png" alt="Rhapsody"
+                                        class="card-img-top solution-image">
+                                </div>
+                                <h3 class="card-title h5 text-center mb-3">HOTEL MANAGEMENT SYSTEM</h3>
+                                <p class="card-text text-muted text-center small flex-grow-1">Streamline your hotel
+                                    operations with our comprehensive management system. From reservations to
+                                    housekeeping, we've got you covered.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Golf Course System -->
+                    <div class="col">
+                        <div class="card h-100 solution-card">
+                            <div class="card-body d-flex flex-column">
+                                <div class="image-container mb-3">
+                                    <img src="assets/img/golf.png" alt="Golf Course System"
+                                        class="card-img-top solution-image">
+                                </div>
+                                <h3 class="card-title h5 text-center mb-3">GOLF COURSE SYSTEM</h3>
+                                <p class="card-text text-muted text-center small flex-grow-1">Enhance your golf course
+                                    management with our tailored system. From tee time bookings to pro shop inventory,
+                                    we help you stay on par.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- HR System -->
+                    <div class="col">
+                        <div class="card h-100 solution-card">
+                            <div class="card-body d-flex flex-column">
+                                <div class="image-container mb-3">
+                                    <img src="assets/img/probes3.png" alt="SIAP" class="card-img-top solution-image">
+                                </div>
+                                <h3 class="card-title h5 text-center mb-3">HR SYSTEM</h3>
+                                <p class="card-text text-muted text-center small flex-grow-1">Simplify your human
+                                    resources processes with our comprehensive HR system. From recruitment to
+                                    performance management, we help you nurture your most valuable asset - your people.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Property & Tenancy System -->
+                    <div class="col">
+                        <div class="card h-100 solution-card">
+                            <div class="card-body d-flex flex-column">
+                                <div class="image-container mb-3">
+                                    <img src="assets/img/probes4.png" alt="Bimasakti"
+                                        class="card-img-top solution-image">
+                                </div>
+                                <h3 class="card-title h5 text-center mb-3">PROPERTY & TENANCY SYSTEM</h3>
+                                <p class="card-text text-muted text-center small flex-grow-1">Efficiently manage your
+                                    properties and tenants with our robust system. From lease management to maintenance
+                                    requests, we help you maximize your real estate investments.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- ITSM, ITAM & Unified Endpoint Management -->
+                    <div class="col">
+                        <div class="card h-100 solution-card">
+                            <div class="card-body d-flex flex-column">
+                                <div class="image-container mb-3">
+                                    <img src="assets/img/probes5.png" alt="Ivanti" class="card-img-top solution-image">
+                                </div>
+                                <h3 class="card-title h5 text-center mb-3">ITSM, ITAM & UNIFIED ENDPOINT MANAGEMENT</h3>
+                                <p class="card-text text-muted text-center small flex-grow-1">Optimize your IT
+                                    operations with our integrated management solutions. From service management to
+                                    asset tracking and endpoint security, we keep your technology running smoothly.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- ERP & EAM -->
+                    <div class="col">
+                        <div class="card h-100 solution-card">
+                            <div class="card-body d-flex flex-column">
+                                <div class="image-container mb-3">
+                                    <img src="assets/img/probes6.png" alt="BSI" class="card-img-top solution-image">
+                                </div>
+                                <h3 class="card-title h5 text-center mb-3">ERP & EAM</h3>
+                                <p class="card-text text-muted text-center small flex-grow-1">Integrate your business
+                                    processes and asset management with our powerful ERP and EAM solutions. From finance
+                                    to maintenance, we help you drive efficiency across your organization.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <style>
+            .solution-title {
+                font-weight: bolder;
+                font-size: 48px;
+                line-height: 1.2;
+            }
+
+            .solution-subtitle {
+                font-size: 24px;
+                line-height: 1.4;
+            }
+
+
+
+            .gradient-text {
+                background: linear-gradient(90deg, #7209d4, #2832d4 33%, #00a5b2);
+                -webkit-background-clip: text;
+                background-clip: text;
+                color: transparent;
+            }
+
+            .solution-card {
+                transition: all 0.3s ease;
+                border: none;
+                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+                height: 100%;
+            }
+
+            .solution-card:hover {
+                transform: translateY(-5px);
+                box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+            }
+
+            .image-container {
+                height: 120px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+
+            .solution-image {
+                max-width: 80%;
+                max-height: 100%;
+                object-fit: contain;
+            }
+
+            .card-title {
+                font-family: 'Proxima Nova', sans-serif;
+                font-weight: 700;
+                font-size: 1.3rem;
+                line-height: 1.2;
+                min-height: 2.4em;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+
+            .card-text {
+                font-family: var(--font-family-base, 'Proxima Nova', sans-serif);
+                font-weight: 400;
+                font-size: 1rem;
+                line-height: 1.6;
+                color: var(--text-color, #333);
+                margin-bottom: 1.25rem;
+            }
+
+            @media (max-width: 991px) {
+                .container {
+                    max-width: 90%;
+                }
+            }
+
+            @media (max-width: 768px) {
+                .row {
+                    --bs-gutter-y: 1.78rem;
+                }
+
+                .solution-title {
+                    font-size: 2rem;
+                }
+
+                .solution-subtitle {
+                    font-size: 1.1rem;
+                }
+
+                .card-title {
+                    font-size: 1.3rem;
+                    min-height: 2.4em;
+                }
+
+                .card-text {
+                    font-size: 1rem;
+                    line-height: 1.5;
+                    margin-bottom: 0.75rem;
+                }
+
+                .solution-card {
+                    margin-bottom: 0.8rem;
+                    width: 106%;
+                    margin-left: -3%;
+                    margin-right: -3%;
+                }
+
+                .image-container {
+                    height: 90px;
+                }
+            }
+        </style>
+
+
+
+        <!-- TESTIMONIAL -->
+        <div id="video-overlay" class="video-overlay">
+            <div class="video-container">
+                <button id="close-video" class="close-video">&times;</button>
+                <div class="video-wrapper">
+                    <iframe id="popup-video" src="https://www.youtube.com/embed/sjL6Gl6ZIqs" frameborder="0"
+                        allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                </div>
+            </div>
+        </div>
+        <style>
+            .video-overlay {
+                display: none;
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background-color: rgba(179, 176, 176, 0.8);
+                backdrop-filter: blur(6px);
+                z-index: 9999;
+                justify-content: center;
+                align-items: center;
+            }
+
+            .video-container {
+                position: relative;
+                width: 90%;
+                max-width: 800px;
+                border-radius: 15px;
+                padding: 20px;
+            }
+
+            .video-wrapper {
+                position: relative;
+                width: 100%;
+                padding-top: 56.25%;
+                /* 16:9 aspect ratio */
+            }
+
+            #popup-video {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                border-radius: 5px;
+            }
+
+            .close-video {
+                position: absolute !important;
+                top: -5px !important;
+                right: -5px !important;
+                font-size: 40px !important;
+                color: #ffffff !important;
+                background-color: rgba(0, 0, 0, 0.5) !important;
+                border: none !important;
+                cursor: pointer !important;
+                width: 30px !important;
+                height: 30px !important;
+                border-radius: 50% !important;
+                display: flex !important;
+                justify-content: center !important;
+                align-items: center !important;
+                transition: background-color 0.3s !important;
+                z-index: 1 !important;
+            }
+
+            .close-video:hover {
+                background-color: rgba(0, 0, 0, 0.7);
+            }
+
+            .play-icon {
+                cursor: pointer;
+            }
+
+            @media (max-width: 768px) {
+                .video-container {
+                    width: 100%;
+                    padding: 10px;
+                    margin: 0 auto;
+                }
+
+                .video-wrapper {
+                    padding-top: 75%;
+                    /* 4:3 aspect ratio for better mobile viewing */
+                }
+
+                .close-video {
+                    top: 5px !important;
+                    right: 5px !important;
+                    width: 30px !important;
+                    height: 30px !important;
+                    font-size: 20px !important;
+                }
+
+                .play-icon {
+                    transform: scale(0.8);
+                }
+            }
+        </style>
+
+
+        </div>
+
+
+
+        <section id="testi" class="py-5">
+            <div class="container py-4 ">
+                <div class="floating-orbs"></div>
+                <style>
+                    .testimonial-heading {
+                        font-size: 3rem;
+                        font-weight: bold;
+                        letter-spacing: 1px;
+                        text-align: center;
+                        margin-bottom: 1.5rem;
+                    }
+
+                    .testimonial-subheading {
+                        font-size: 1.5rem;
+                        text-align: center;
+                        margin-top: 1rem;
+                        margin-bottom: 1rem;
+                    }
+
+                    @media (max-width: 768px) {
+                        .testimonial-heading {
+                            font-size: 2.5rem;
+                            text-align: center;
+                        }
+
+                        .testimonial-subheading {
+                            font-size: 1.2rem;
+                            text-align: center;
+                        }
+
+                        #testi {
+                            padding: none !important;
+                            display: flex;
+                            flex-direction: column;
+                            align-items: center;
+                            margin-bottom: -20px;
+                        }
+
+                        .unique-testimonial-slider {
+                            margin: 0 auto;
+                            max-width: 90%;
+                        }
+
+                        .unique-testimonial-avatar {
+                            width: 80px;
+                            height: 80px;
+                            margin: 0 auto;
+                        }
+
+                        .unique-testimonial-name {
+                            font-size: 1.2rem;
+                            text-align: center;
+                        }
+
+                        .unique-testimonial-title {
+                            font-size: 0.9rem;
+                            text-align: center;
+                        }
+
+                        .unique-testimonial-text {
+                            font-size: 0.95rem;
+                            text-align: center;
+                        }
+                    }
+
+                    @media (max-width: 768px) {
+                        .unique-testimonial-card {
+                            pointer-events: none;
+                            cursor: default;
+                        }
+
+                        .unique-testimonial-card:hover {
+                            transform: none;
+                            box-shadow: none;
+                        }
+
+                        .unique-testimonial-slider input[type="radio"] {
+                            display: none;
+                        }
+
+                        .unique-testimonial-slider label {
+                            pointer-events: none;
+                        }
+
+                        .unique-testimonial-cards-container {
+                            transform: none !important;
+                            transition: none !important;
+                        }
+
+                        .play-icon {
+                            pointer-events: auto !important;
+                            cursor: pointer !important;
+                        }
+                    }
+                </style>
+                <h1 class="testimonial-heading">Testimonial</h1>
+                <h3 class="testimonial-subheading">What Our Customers Say</h3>
+                <svg width="100" height="20" viewBox="0 0 100 20" class="d-block mx-auto mb-5">
+                    <line x1="0" y1="10" x2="100" y2="10" stroke="#5d2d90" stroke-width="2" />
+                </svg>
+                <div class="row justify-content-center">
+                    <div class="col-12">
+                        <div class="unique-testimonial-slider">
+                            <input type="radio" name="unique-testimonial-radio" id="unique-testimonial-item-1" checked>
+                            <input type="radio" name="unique-testimonial-radio" id="unique-testimonial-item-2">
+                            <input type="radio" name="unique-testimonial-radio" id="unique-testimonial-item-3">
+                            <div class="unique-testimonial-cards-container">
+                                <label class="unique-testimonial-card" for="unique-testimonial-item-1"
+                                    id="unique-testimonial-1">
+                                    <div class="unique-testimonial-content">
+                                        <div class="text-center d-flex flex-column  h-100">
+                                            <div>
+                                                <div class="position-relative d-inline-block">
+                                                    <img src="assets/img/team/avatar2.jpg" alt="Avatar"
+                                                        class="unique-testimonial-avatar mb-3">
+                                                    <div class="play-button-pulse"></div>
+                                                    <i class="fas fa-play play-icon" id="play-testimonial-video"></i>
+                                                </div>
+                                                <h2 class="unique-testimonial-name mb-1">John Doe</h2>
+                                                <p class="unique-testimonial-title mb-3">CEO, Tech Innovators</p>
+                                            </div>
+                                            <blockquote class="unique-testimonial-text mt-4">
+                                                This product has completely transformed my workflow. It's intuitive,
+                                                powerful, and a joy to use every day!
+                                            </blockquote>
+                                        </div>
+                                    </div>
+                                </label>
+                                <label class="unique-testimonial-card" for="unique-testimonial-item-2"
+                                    id="unique-testimonial-2">
+                                    <div class="unique-testimonial-content">
+                                        <div class="text-center d-flex flex-column  h-100">
+                                            <div>
+                                                <div class="position-relative d-inline-block">
+                                                    <img src="assets/img/team/avatar5.jpg" alt="Avatar"
+                                                        class="unique-testimonial-avatar mb-3">
+                                                    <!-- <div class="play-button-pulse"></div>
+                                            <i class="fas fa-play play-icon"></i> -->
+                                                </div>
+                                                <h2 class="unique-testimonial-name mb-1">Jane Smith</h2>
+                                                <p class="unique-testimonial-title mb-3">CTO, Digital Solutions</p>
+                                            </div>
+                                            <blockquote class="unique-testimonial-text mt-4">
+                                                I can't imagine running my business without this tool. It's been a
+                                                game-changer for our team's productivity.
+                                            </blockquote>
+                                        </div>
+                                    </div>
+                                </label>
+                                <label class="unique-testimonial-card" for="unique-testimonial-item-3"
+                                    id="unique-testimonial-3">
+                                    <div class="unique-testimonial-content">
+                                        <div class="text-center d-flex flex-column  h-100">
+                                            <div>
+                                                <div class="position-relative d-inline-block">
+                                                    <img src="assets/img/team/avatar4.jpg" alt="Avatar"
+                                                        class="unique-testimonial-avatar mb-3">
+                                                    <!-- <div class="play-button-pulse"></div>
+                                            <i class="fas fa-play play-icon"></i> -->
+                                                </div>
+                                                <h2 class="unique-testimonial-name mb-1">Mike Johnson</h2>
+                                                <p class="unique-testimonial-title mb-3">Founder, StartUp Success</p>
+                                            </div>
+                                            <blockquote class="unique-testimonial-text mt-4">
+                                                The customer support is outstanding. They've gone above and beyond to
+                                                ensure our success with the platform.
+                                            </blockquote>
+                                        </div>
+                                    </div>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <script>
+            document.addEventListener('DOMContentLoaded', function () {
+                const slider = document.querySelector('.unique-testimonial-slider');
+                const testimonials = document.querySelectorAll('.unique-testimonial-card');
+                const playButtons = document.querySelectorAll('.play-icon');
+                let startX, moveX;
+                let activeIndex = 0;
+                const testimonialCount = testimonials.length;
+                let isMobile = window.innerWidth <= 768; // Adjust this threshold as needed
+
+                function changeTestimonial(index) {
+                    activeIndex = (index + testimonialCount) % testimonialCount;
+                    document.getElementById(`unique-testimonial-item-${activeIndex + 1}`).checked = true;
+                }
+
+                function handleSwipe(direction) {
+                    changeTestimonial(activeIndex + direction);
+                }
+
+                function handleInteraction(e) {
+                    if (isMobile && !e.target.closest('.play-icon')) {
+                        // Prevent default behavior on mobile except for play button
+                        e.preventDefault();
+                    }
+
+                    if (e.type.startsWith('touch')) {
+                        startX = e.touches[0].clientX;
+                    } else if (e.type === 'mousedown' && !isMobile) {
+                        startX = e.clientX;
+                    }
+                }
+
+                function handleMove(e) {
+                    if (isMobile || (e.type === 'mousemove' && e.buttons === 1)) {
+                        moveX = e.type.startsWith('touch') ? e.touches[0].clientX : e.clientX;
+                    }
+                }
+
+                function handleEnd() {
+                    if (startX !== undefined && moveX !== undefined) {
+                        const swipeThreshold = slider.offsetWidth * 0.15;
+                        if (startX - moveX > swipeThreshold) {
+                            handleSwipe(1); // Swipe left
+                        } else if (moveX - startX > swipeThreshold) {
+                            handleSwipe(-1); // Swipe right
+                        }
+                    }
+                    startX = undefined;
+                    moveX = undefined;
+                }
+
+                // Touch events (primarily for mobile)
+                slider.addEventListener('touchstart', handleInteraction, { passive: false });
+                slider.addEventListener('touchmove', handleMove, { passive: true });
+                slider.addEventListener('touchend', handleEnd);
+
+                // Mouse events (primarily for desktop)
+                if (!isMobile) {
+                    slider.addEventListener('mousedown', handleInteraction);
+                    slider.addEventListener('mousemove', handleMove);
+                    slider.addEventListener('mouseup', handleEnd);
+                    slider.addEventListener('mouseleave', handleEnd);
+                }
+
+                // Keyboard navigation
+                document.addEventListener('keydown', (e) => {
+                    if (e.key === 'ArrowLeft') {
+                        handleSwipe(-1);
+                    } else if (e.key === 'ArrowRight') {
+                        handleSwipe(1);
+                    }
+                });
+
+                // Auto-rotate testimonials
+                setInterval(() => {
+                    handleSwipe(1);
+                }, 5000);
+
+                // Resize event for responsiveness
+                window.addEventListener('resize', () => {
+                    isMobile = window.innerWidth <= 768; // Update isMobile status on resize
+                    updateMobileStyles();
+                });
+
+                function updateMobileStyles() {
+                    if (isMobile) {
+                        testimonials.forEach(card => {
+                            card.style.pointerEvents = 'none';
+                            card.style.cursor = 'default';
+                        });
+                        playButtons.forEach(button => {
+                            button.style.pointerEvents = 'auto';
+                            button.style.cursor = 'pointer';
+                        });
+                    } else {
+                        testimonials.forEach(card => {
+                            card.style.pointerEvents = '';
+                            card.style.cursor = '';
+                        });
+                        playButtons.forEach(button => {
+                            button.style.pointerEvents = '';
+                            button.style.cursor = '';
+                        });
+                    }
+                }
+
+                updateMobileStyles();
+            });
+        </script>
+
+
+
+        <!-- BLOG -->
+        <section id="blog" class="py-5">
+            <div class="container p-4">
+                <div class="blog-header text-center">
+                    <h1 style="font-weight: bolder; font-size: 48px;">Blog</h1>
+                    <p class="">Stay informed and inspired with our latest articles covering a wide range of topics from
+                        career advice to latest our insights.</p>
+                </div>
+                <div id="blog-posts-container" class="blog-posts">
+                    <!-- Blog posts will be dynamically inserted here -->
+                </div>
+                <div class="pagination">
+                    <span class="active"></span>
+                    <span></span>
+                </div>
+            </div>
+        </section>
+
+
+
+        <section id="qa" class="py-5 position-relative">
+            <div class="container p-4">
+                <div class="row">
+                    <div class="col-lg-12 text-center mb-4">
+                        <h1 class="faq-title" style="font-weight: bolder; font-size: 48px;">Q&A</h1>
+                        <h3 class="faq-subtitle mb-4">Find answers to common questions about our services and solutions
+                        </h3>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-5 mb-4 mb-lg-0">
+                        <div class="faq-illustration" style="padding-top: 15px;">
+                            <img src="assets/img/faq2.png" alt="FAQ Illustration" class="img-fluid">
+                        </div>
+                    </div>
+                    <div class="col-lg-7">
+                        <div class="faq-container">
+                            <div class="accordion" id="faqAccordion">
+                                <!-- Q&A Item 1 -->
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header" id="headingOne">
+                                        <button class="accordion-button collapsed" type="button"
+                                            data-bs-toggle="collapse" data-bs-target="#collapseOne"
+                                            aria-expanded="false" aria-controls="collapseOne">
+                                            <div class="button-content">
+                                                <div class="icon-container">
+                                                    <i class="fas fa-question"></i>
+                                                </div>
+                                                <span>What services do you offer?</span>
+                                            </div>
+                                            <span style="margin-left: auto; font-size: 0.8em;">&#9660;</span>
+                                        </button>
+                                    </h2>
+                                    <div id="collapseOne" class="accordion-collapse collapse"
+                                        aria-labelledby="headingOne" data-bs-parent="#faqAccordion">
+                                        <div class="accordion-body">
+                                            We offer a wide range of services including web design, mobile app
+                                            development, SEO
+                                            optimization, and digital marketing strategies. Our team of experts is
+                                            dedicated to
+                                            providing tailored solutions to meet your specific business needs.
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Q&A Item 2 -->
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header" id="headingTwo">
+                                        <button class="accordion-button collapsed" type="button"
+                                            data-bs-toggle="collapse" data-bs-target="#collapseTwo"
+                                            aria-expanded="false" aria-controls="collapseTwo">
+                                            <div class="button-content">
+                                                <div class="icon-container">
+                                                    <i class="fas fa-question"></i>
+                                                </div>
+                                                <span>How long does a typical project take?</span>
+                                            </div>
+                                            <span style="margin-left: auto; font-size: 0.8em;">&#9660;</span>
+                                        </button>
+                                    </h2>
+                                    <div id="collapseTwo" class="accordion-collapse collapse"
+                                        aria-labelledby="headingTwo" data-bs-parent="#faqAccordion">
+                                        <div class="accordion-body">
+                                            Project timelines can vary depending on the scope and complexity of the
+                                            work. A
+                                            simple website might take 2-4 weeks, while a more complex application could
+                                            take
+                                            several months. We always provide a detailed timeline during our initial
+                                            consultation.
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Add more Q&A items here -->
+                            </div>
+                        <style>
+                            @media (max-width: 767px) {
+                                .accordion-body {
+                                    font-size: 14px !important;
+                                    padding: 15px;
+
+                                }
+
+                                .accordion-button span {
+                                    font-size: 15px;
+                                }
+                                
+                                .accordion-button {
+                                    font-size: 16px impora !important;
+                                    padding: 15px;
+                                }
+                                
+                                .icon-container {
+                                    width: 30px;
+                                    height: 30px;
+                                    margin-right: 10px;
+                                }
+                                
+                                .icon-container i {
+                                    font-size: 14px;
+                                }
+                            }
+                        </style>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <style>
+            .container {
+                position: relative;
+            }
+
+            .faq-image {
+                position: absolute;
+                top: -33px;
+                right: 42%;
+                max-width: 195px;
+                height: auto;
+                z-index: 6;
+            }
+        </style>
+
+
+
+        <section id="separator" class="py-0">
+            <div class="container p-4">
+                <div class="banner">
+                    <div class="banner-content">
+                        <h2>Unlock superior coverage for your team</h2>
+                        <p>Build a culture of employee delight by taking the first step towards Benefits</p>
+                        <button class="btn-custom" onclick="scheduleCall()">Schedule a call</button>
+                    </div>
+                    <img src="assets/img/handshake.png" alt="Business Handshake" class="banner-image">
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="pb-5">
+            <div class="container p-4">
+                <div class="row justify-content-between">
+                    <div id="contact-info" class="col-lg-5 left-column >
+                        <h1 class=" mb-3 contact-heading" style="font-size: 33px;">What Are You Waiting For?<br> <span style="font-weight: bold;">Just Make It Happen!</span></h1>
+                        <p class="text-muted mb-4 contact-text" style="font-size: 18px;">
+                            We'll have a Business Development Representative contact you within
+                            <span style="font-weight: bold;">24 business hours.</span>
+                        </p>
+
+
+
+                        <div class="d-flex gap-3 mb-4">
+                            <div class="award">2019</div>
+                            <div class="award">2020</div>
+                            <div class="award">2021</div>
+                        </div>
+
+
+
+
+                        <h3 class="h5 fw-bold mb-2 company-name">PT. REALTA CHAKRADARMA</h3>
+                        <h3 class="headquarter-title">Headquarter Address:</h3>
+                        <p class="mb-4 address-details">
+                            Jl. Peron Merdeling No. 25A,<br>
+                            Petojo Selatan, Gambir,<br>
+                            Jakarta Pusat - 10160, Indonesia
+                        </p>
+
+                        <div class="map-wrapper mb-4" style="width: 85%;">
+                            <iframe
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.3279995766406!2d106.8142527!3d-6.172364!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f67f4f44dc2f%3A0x124b0a0f4cb7e845!2sPT%20Realta%20Chakradarma!5e0!3m2!1sen!2sid!4v1653668623967"
+                                frameborder="0" style="border:0" allowfullscreen="">
+                            </iframe>
+                        </div>
+
+                        <p class="mb-2">Phone: +62 21 - 386 1772</p>
+                        <p class="mb-4">Fax: +62 21 - 386 1771</p>
+                        <p class="mb-4">
+                            For sales and marketing, contact our office: <br>
+                            <a href="mailto:contact@realta.co.id" class="text-decoration-none">
+                                (contact@realta.co.id)</a>
+                        </p>
+
+                        <div class="d-flex gap-2">
+                            <a href="https://www.facebook.com/yourpage" class="social-icon" aria-label="Facebook">
+                                <i class="fab fa-facebook-f"></i>
+                            </a>
+                            <a href="https://www.linkedin.com/yourpage" class="social-icon" aria-label="LinkedIn">
+                                <i class="fab fa-linkedin-in"></i>
+                            </a>
+                            <a href="https://www.twitter.com/yourpage" class="social-icon twitter-icon"
+                                aria-label="Twitter">
+                                X
+                            </a>
+                        </div>
+                    </div>
+
+                    <div id="contact-form"
+                        class="col-lg-5  right-column right-column-custom p-4 p-md-5 order-1 order-lg-2">
+                        <form class="needs-validation" novalidate>
+                            <div class="mb-3">
+                                <label for="service" class="form-label">Select A Service</label>
+                                <select id="service" class="form-select" required>
+                                    <option value="">Choose...</option>
+                                    <option>Hospitality Management System</option>
+                                    <option>Hotel Booking System</option>
+                                    <option>Event Management</option>
+                                    <option>Restaurant POS</option>
+                                </select>
+                                <div class="invalid-feedback">
+                                    Please select a service.
+                                </div>
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="company" class="form-label">Company</label>
+                                <input type="text" class="form-control" id="company" placeholder="Company" required>
+                                <div class="invalid-feedback">
+                                    Please enter your company name.
+                                </div>
+                            </div>
+
+                            <div class="row mb-3">
+                                <div class="col-md-6 mb-3 mb-md-0">
+                                    <label for="phone" class="form-label">Mobile Phone</label>
+                                    <input type="tel" class="form-control" id="phone" placeholder="Mobile Phone"
+                                        required pattern="^\+?\d{0,13}">
+                                    <div class="invalid-feedback">
+                                        Please enter a valid mobile phone number.
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="email" class="form-label">Email</label>
+                                    <input type="email" class="form-control" id="email" placeholder="Email" required>
+                                    <div class="invalid-feedback">
+                                        Please enter a valid email address.
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="employees" class="form-label">Total Employee</label>
+                                <select id="employees" class="form-select" required>
+                                    <option value="">Choose...</option>
+                                    <option>1-50</option>
+                                    <option>51-100</option>
+                                    <option>101-500</option>
+                                    <option>501-1000</option>
+                                    <option>1001-5000</option>
+                                    <option>More than 5000</option>
+                                </select>
+                                <div class="invalid-feedback">
+                                    Please select the total number of employees.
+                                </div>
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="fullname" class="form-label">Fullname</label>
+                                <input type="text" class="form-control" id="fullname" placeholder="Fullname" required>
+                                <div class="invalid-feedback">
+                                    Please enter your full name.
+                                </div>
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="message" class="form-label">Message</label>
+                                <textarea id="message" class="form-control" rows="4" placeholder="Message"
+                                    required></textarea>
+                                <div class="invalid-feedback">
+                                    Please enter a message.
+                                </div>
+                            </div>
+
+                            <div class="mb-3 form-check">
+                                <input type="checkbox" class="form-check-input" id="terms" required>
+                                <label class="form-check-label" for="terms">
+                                    Before submitting please read our <br>
+                                    <a href="#" class="text-decoration-none">Term and Condition</a> &
+                                    <a href="#" class="text-decoration-none">Privacy Policy</a>
+                                </label>
+                                <div class="invalid-feedback">
+                                    You must agree to the terms and conditions.
+                                </div>
+                            </div>
+
+                            <button type="submit" class="btn-footer text-white btn-lg w-100 rounded-pill">Tell
+                                us your problem</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <style>
+            @media (max-width: 991px) {
+                #contact .row {
+                    display: flex;
+                    flex-direction: column;
+                }
+
+                #contact-form {
+                    order: 2;
+                }
+
+                #contact-info {
+                    order: 1;
+                }
+            }
+        </style>
+
+<section id="newsletter-cta" class="py-4">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-md-7 text-start">
+                <h2 class="mb-3 fw-bold gradient-text">Stay Informed, Stay Ahead</h2>
+                <p class="mb-4">Join our newsletter for exclusive insights and expert tips.</p>
+                <form class="mb-3">
+                    <div class="input-group input-group-lg" style="max-width: 500px;">
+                        <input type="email" class="form-control" placeholder="Email address" aria-label="Email address" required style="border-radius: 10px 0 0 10px;">
+                        <button class="btn btn-primary" type="submit" style="border-radius: 0 10px 10px 0;">Subscribe</button>
+                    </div>
+                </form>
+                <p class="text-muted small">By subscribing, you agree to our <a href="#" class="text-decoration-none">Privacy Policy</a> and <a href="#" class="text-decoration-none">Terms of Service</a>.</p>
+            </div>
+            <div class="col-md-5">
+                <div class="d-flex justify-content-md-end align-items-center mb-3">
+                    <img src="assets/img/footer1.png" alt="Logo 1" class="footer-logo me-3" style="max-height: 90px; width: auto;">
+                    <img src="assets/img/footer2.png" alt="Logo 2" class="footer-logo" style="max-height: 90px; width: auto;">
+                </div>
+                <div class="text-md-end">
+                    <p class="mb-2 text-muted small" style="font-size: 0.9rem;">&copy; 2024 Realta. All rights reserved.</p>
+                    <a href="https://www.realta.co.id/site/privacy-policy.html" class="text-muted small me-3" style="font-size: 0.9rem;">Privacy Policy</a>
+                    <span class="text-muted small me-3" style="font-size: 0.9rem;">|</span>
+                    <a href="https://www.realta.co.id/site/privacy-policy.html" class="text-muted small" style="font-size: 0.9rem;">Terms</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<style>
+    #newsletter-cta {
+        background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+        transition: background 0.3s ease;
+    }
+    #newsletter-cta .gradient-text {
+        background: linear-gradient(90deg, #7209d4, #2832d4 33%, #00a5b2);
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+        font-size: 2rem;
+    }
+    #newsletter-cta .btn-primary {
+        background: linear-gradient(90deg, #7209d4, #2832d4);
+        border: none;
+        transition: all 0.3s ease;
+    }
+    #newsletter-cta .form-control {
+        border: 2px solid #e0e0e0;
+        transition: all 0.3s ease;
+    }
+    #newsletter-cta .form-control:focus {
+        border-color: #7209d4;
+        box-shadow: 0 0 0 0.2rem rgba(114,9,212,0.25);
+    }
+    body.dark-mode #newsletter-cta {
+        background: #282828;
+    }
+    body.dark-mode #newsletter-cta .gradient-text {
+        background: linear-gradient(90deg, #a742ff, #4b5eff 33%, #00d5e6);
+        -webkit-background-clip: text;
+        background-clip: text;
+    }
+    body.dark-mode #newsletter-cta .btn-primary {
+        background: linear-gradient(90deg, #a742ff, #4b5eff);
+    }
+    body.dark-mode #newsletter-cta .form-control {
+        border-color: #4a5568;
+        color: #fff;
+    }
+    body.dark-mode #newsletter-cta .form-control::placeholder {
+        color: #a0aec0;
+    }
+    body.dark-mode #newsletter-cta .text-muted {
+        color: #a0aec0 !important;
+    }
+    body.dark-mode #newsletter-cta a {
+        color: #00d5e6;
+    }
+    @media (max-width: 767px) {
+        #newsletter-cta .gradient-text {
+            font-size: 1.5rem;
+        }
+        #newsletter-cta .row {
+            text-align: center;
+        }
+        #newsletter-cta .col-md-7 {
+            text-align: center;
+        }
+        #newsletter-cta .col-md-5 {
+            margin-top: 2rem;
+        }
+        #newsletter-cta .d-flex {
+            justify-content: center !important;
+        }
+        #newsletter-cta .text-md-end {
+            text-align: center !important;
+        }
+        #newsletter-cta .form-control {
+            font-size: 0.8rem;
+        }
+    }
+</style>
+        <!-- <footer class="bg-primary-gradient">
+        <div class="container py-4 py-lg-5">
+            <div class="row justify-content-center">
+                <div class="col-sm-4 col-md-3 text-center text-lg-start d-flex flex-column">
+                    <h3 class="fs-6 fw-bold">Services</h3>
+                    <ul class="list-unstyled">
+                        <li><a href="#">Web design</a></li>
+                        <li><a href="#">Development</a></li>
+                        <li><a href="#">Hosting</a></li>
+                    </ul>
+                </div>
+                <div class="col-sm-4 col-md-3 text-center text-lg-start d-flex flex-column">
+                    <h3 class="fs-6 fw-bold">About</h3>
+                    <ul class="list-unstyled">
+                        <li><a href="#">Company</a></li>
+                        <li><a href="#">Team</a></li>
+                        <li><a href="#">Legacy</a></li>
+                    </ul>
+                </div>
+                <div class="col-sm-4 col-md-3 text-center text-lg-start d-flex flex-column">
+                    <h3 class="fs-6 fw-bold">Careers</h3>
+                    <ul class="list-unstyled">
+                        <li><a href="#">Job openings</a></li>
+                        <li><a href="#">Employee success</a></li>
+                        <li><a href="#">Benefits</a></li>
+                    </ul>
+                </div>
+                <div
+                    class="col-lg-3 text-center text-lg-start d-flex flex-column align-items-center order-first align-items-lg-start order-lg-last">
+                    <div class="fw-bold d-flex align-items-center mb-2"><span
+                            class="bs-icon-sm bs-icon-circle bs-icon-primary d-flex justify-content-center align-items-center bs-icon me-2"><svg
+                                xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor"
+                                viewBox="0 0 16 16" class="bi bi-bezier">
+                                <path fill-rule="evenodd"
+                                    d="M0 10.5A1.5 1.5 0 0 1 1.5 9h1A1.5 1.5 0 0 1 4 10.5v1A1.5 1.5 0 0 1 2.5 13h-1A1.5 1.5 0 0 1 0 11.5zm1.5-.5a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5zm10.5.5A1.5 1.5 0 0 0 13.5 9h1a1.5 1.5 0 0 1 1.5 1.5v1a1.5 1.5 0 0 1-1.5 1.5h-1a1.5 1.5 0 0 1-1.5-1.5zm1.5-.5a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5zM6 4.5A1.5 1.5 0 0 1 7.5 3h1A1.5 1.5 0 0 1 10 4.5v1A1.5 1.5 0 0 1 8.5 7h-1A1.5 1.5 0 0 1 6 5.5zM7.5 4a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5z">
+                                </path>
+                                <path
+                                    d="M6 4.5H1.866a1 1 0 1 0 0 1h2.668A6.517 6.517 0 0 0 1.814 9H2.5c.123 0 .244.015.358.043a5.517 5.517 0 0 1 3.185-3.185A1.503 1.503 0 0 1 6 5.5zm3.957 1.358A1.5 1.5 0 0 0 10 5.5v-1h4.134a1 1 0 1 1 0 1h-2.668a6.517 6.517 0 0 1 2.72 3.5H13.5c-.123 0-.243.015-.358.043a5.517 5.517 0 0 0-3.185-3.185z">
+                                </path>
+                            </svg></span><span>Brand</span></div>
+                    <p class="text-muted">Sem eleifend donec molestie, integer quisque orci aliquam.</p>
+                </div>
+            </div>
+            <hr>
+            <div class="text-muted d-flex justify-content-between align-items-center pt-3">
+                <p class="mb-0">Copyright © 2024 Brand</p>
+                <ul class="list-inline mb-0">
+                    <li class="list-inline-item"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em"
+                            fill="currentColor" viewBox="0 0 16 16" class="bi bi-facebook">
+                            <path
+                                d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951">
+                            </path>
+                        </svg></li>
+                    <li class="list-inline-item"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em"
+                            fill="currentColor" viewBox="0 0 16 16" class="bi bi-twitter">
+                            <path
+                                d="M5.026 15c6.038 0 9.341-5.003 9.341-9.334 0-.14 0-.282-.006-.422A6.685 6.685 0 0 0 16 3.542a6.658 6.658 0 0 1-1.889.518 3.301 3.301 0 0 0 1.447-1.817 6.533 6.533 0 0 1-2.087.793A3.286 3.286 0 0 0 7.875 6.03a9.325 9.325 0 0 1-6.767-3.429 3.289 3.289 0 0 0 1.018 4.382A3.323 3.323 0 0 1 .64 6.575v.045a3.288 3.288 0 0 0 2.632 3.218 3.203 3.203 0 0 1-.865.115 3.23 3.23 0 0 1-.614-.057 3.283 3.283 0 0 0 3.067 2.277A6.588 6.588 0 0 1 .78 13.58a6.32 6.32 0 0 1-.78-.045A9.344 9.344 0 0 0 5.026 15">
+                            </path>
+                        </svg></li>
+                    <li class="list-inline-item"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em"
+                            fill="currentColor" viewBox="0 0 16 16" class="bi bi-instagram">
+                            <path
+                                d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.917 3.917 0 0 0-1.417.923A3.927 3.927 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.916 3.916 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.926 3.926 0 0 0-.923-1.417A3.911 3.911 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0h.003zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599.28.28.453.546.598.92.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.47 2.47 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.478 2.478 0 0 1-.92-.598 2.48 2.48 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233 0-2.136.008-2.388.046-3.231.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92.28-.28.546-.453.92-.598.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045v.002zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92zm-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217zm0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334">
+                            </path>
+                        </svg></li>
+                </ul>
+            </div>
+        </div>
+    </footer> -->
+        <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+        <script src="assets/js/bold-and-bright.js"></script>
+        <script src="assets/js/slider.js"></script>
+        <script src="assets/js/blog.js"></script>
+        <script src="assets/js/mobilenav.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="assets/js/text.js"></script>
+        <script src="assets/js/navbar.js"></script>
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+        <!-- Bootstrap JS -->
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.1.3/js/bootstrap.min.js"></script>
+
+        <script>
+            document.addEventListener('DOMContentLoaded', function () {
+                const tiltImages = document.querySelectorAll('.tilt-image');
+
+                tiltImages.forEach(image => {
+                    image.addEventListener('mousemove', tiltEffect);
+                    image.addEventListener('mouseout', resetTilt);
+                });
+
+                function tiltEffect(event) {
+                    const img = event.currentTarget;
+                    const imgRect = img.getBoundingClientRect();
+                    const centerX = imgRect.width / 2;
+                    const centerY = imgRect.height / 2;
+                    const mouseX = event.clientX - imgRect.left - centerX;
+                    const mouseY = event.clientY - imgRect.top - centerY;
+                    const rotateX = (mouseY / centerY) * 10;
+                    const rotateY = -(mouseX / centerX) * 10;
+
+                    img.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+                }
+
+                function resetTilt(event) {
+                    event.currentTarget.style.transform = 'perspective(1000px) rotateX(0) rotateY(0)';
+                }
+            });
+        </script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+        <script>
+            $(document).ready(function () {
+                $('.nav-link').on('click', function (e) {
+                    e.preventDefault();
+                    var target = $(this).attr('href');
+
+                    $('.loading').show();
+                    $('.tab-content').removeClass('active');
+                    $('.nav-link').removeClass('active');
+                    $(this).addClass('active');
+
+                    setTimeout(function () {
+                        $('.loading').hide();
+                        $(target).addClass('active');
+                    }, 500);
+                });
+            });
+        </script>
+
+        <script>
+            const slider = document.querySelector('.tags-wrapper');
+            const tags = document.querySelectorAll('.tag-item');
+            const leftScroll = document.querySelector('.scroll-left');
+            const rightScroll = document.querySelector('.scroll-right');
+            let isDown = false;
+            let startX;
+            let scrollLeft;
+
+            // Draggable functionality
+            slider.addEventListener('mousedown', (e) => {
+                isDown = true;
+                slider.style.cursor = 'grabbing';
+                startX = e.pageX - slider.offsetLeft;
+                scrollLeft = slider.scrollLeft;
+            });
+
+            slider.addEventListener('mouseleave', () => {
+                isDown = false;
+                slider.style.cursor = 'grab';
+            });
+
+            slider.addEventListener('mouseup', () => {
+                isDown = false;
+                slider.style.cursor = 'grab';
+            });
+
+            slider.addEventListener('mousemove', (e) => {
+                if (!isDown) return;
+                e.preventDefault();
+                const x = e.pageX - slider.offsetLeft;
+                const walk = (x - startX) * 2;
+                slider.scrollLeft = scrollLeft - walk;
+            });
+
+            // Scroll buttons functionality with fading effect
+            function scrollWithFade(direction) {
+                tags.forEach(tag => tag.classList.add('fading'));
+
+                setTimeout(() => {
+                    slider.scrollBy({ left: direction * 100, behavior: 'smooth' });
+
+                    setTimeout(() => {
+                        tags.forEach(tag => tag.classList.remove('fading'));
+                    }, 300);
+                }, 300);
+            }
+
+            leftScroll.addEventListener('click', () => scrollWithFade(-1));
+            rightScroll.addEventListener('click', () => scrollWithFade(1));
+
+            // Tag selection functionality
+            tags.forEach(tag => {
+                tag.addEventListener('click', () => {
+                    tags.forEach(t => t.classList.remove('active'));
+                    tag.classList.add('active');
+                });
+            });
+
+            // Show/hide scroll indicators based on scroll position
+            function updateScrollIndicators() {
+                leftScroll.style.display = slider.scrollLeft > 0 ? 'flex' : 'none';
+                rightScroll.style.display =
+                    slider.scrollLeft < slider.scrollWidth - slider.clientWidth ? 'flex' : 'none';
+            }
+
+            slider.addEventListener('scroll', updateScrollIndicators);
+            window.addEventListener('resize', updateScrollIndicators);
+            updateScrollIndicators();
+        </script>
+
+        <!-- CARD EFFECTS -->
+        <script>
+            document.addEventListener('DOMContentLoaded', function () {
+                const cards = document.querySelectorAll('.solution-card');
+
+                cards.forEach(card => {
+                    card.addEventListener('mouseenter', function () {
+                        this.style.boxShadow = '0 8px 16px rgba(0,0,0,0.2)';
+                    });
+
+                    card.addEventListener('mouseleave', function () {
+                        this.style.boxShadow = '0 4px 8px rgba(0,0,0,0.1)';
+                    });
+                });
+            });
+        </script>
+
+<script>
+    var url = 'https://wati-integration-prod-service.clare.ai/v2/watiWidget.js?54712';
+    var s = document.createElement('script');
+    s.type = 'text/javascript';
+    s.async = true;
+    s.src = url;
+    var options = {
+    "enabled":true,
+    "chatButtonSetting":{
+        "backgroundColor":"#00e785",
+        // "ctaText":"Chat with us",
+        "borderRadius":"25",
+        "marginLeft": "0",
+        "marginRight": "25",
+        "marginBottom": "25",
+        "ctaIconWATI":false,
+        "position":"right"
+    },
+    "brandSetting":{
+        "brandName":"Realta",
+        "brandSubTitle":"undefined",
+        "brandImg":"https://www.wati.io/wp-content/uploads/2023/04/Wati-logo.svg",
+        "welcomeText":"Hi there!\nHow can we help you?",
+        "messageText":"Hello, %0A I have a question about {{page_link}}",
+        "backgroundColor":"#00e785",
+        "ctaText":"Chat with us",
+        "borderRadius":"25",
+        "autoShow":false,
+        "phoneNumber":"628111221789"
+    }
+    };
+    s.onload = function() {
+        CreateWhatsappChatWidget(options);
+    };
+    var x = document.getElementsByTagName('script')[0];
+    x.parentNode.insertBefore(s, x);
+</script>
+
+        <!-- Cookie Consent Popup -->
+        <div id="cookie-consent" class="cookie-consent">
+            <div class="cookie-content">
+                <button id="close-cookie" class="close-cookie">&times;</button>
+                <div class="cookie-header">
+                    <svg class="cookie-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="64"
+                        height="64">
+                        <path fill="currentColor"
+                            d="M510.52 255.82c-69.97-.85-126.47-57.69-126.47-127.86-70.17 0-127-56.49-127.86-126.45-27.26-4.14-55.13.3-79.72 12.82l-69.13 35.22a132.221 132.221 0 0 0-57.79 57.81l-35.1 68.88a132.645 132.645 0 0 0-12.82 80.95l12.08 76.27a132.521 132.521 0 0 0 37.16 72.96l54.77 54.76a132.036 132.036 0 0 0 72.71 37.06l76.71 12.15c27.51 4.36 55.7-.11 80.53-12.76l69.13-35.21a132.273 132.273 0 0 0 57.79-57.81l35.1-68.88c12.56-24.64 17.01-52.58 12.91-79.91zM176 368c-17.67 0-32-14.33-32-32s14.33-32 32-32 32 14.33 32 32-14.33 32-32 32zm32-160c-17.67 0-32-14.33-32-32s14.33-32 32-32 32 14.33 32 32-14.33 32-32 32zm160 128c-17.67 0-32-14.33-32-32s14.33-32 32-32 32 14.33 32 32-14.33 32-32 32z" />
+                    </svg>
+                </div>
+                <h3>Cookie Consent</h3>
+                <p>We use cookies to enhance your browsing experience and analyze our traffic. By clicking "Accept All",
+                    you consent to our use of cookies. For more information, please read our <a href="#"
+                        class="cookie-link">cookie policy</a>.</p>
+                <div class="cookie-buttons">
+                    <button id="accept-cookies" class="btn-cookie btn-accept">Accept All</button>
+                    <button id="refuse-cookies" class="btn-cookie btn-refuse">Refuse</button>
+                </div>
+            </div>
+        </div>
+
+        <style>
+            .cookie-consent {
+                position: fixed;
+                bottom: -100%;
+                left: 50%;
+                transform: translateX(-50%);
+                background-color: rgba(255, 255, 255, 0.671);
+                backdrop-filter: blur(10px);
+                -webkit-backdrop-filter: blur(10px);
+                padding: 20px;
+                width: 50%;
+                max-width: 100%;
+                box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+                z-index: 1000;
+                border-radius: 20px 20px 0 0;
+                border: 1px solid rgba(255, 255, 255, 0.18);
+                font-family: 'Proxima Nova', sans-serif;
+                color: #333333;
+                opacity: 0;
+                transition: bottom 0.5s ease-in-out, opacity 0.5s ease-in-out;
+            }
+
+            .cookie-consent.show {
+                bottom: 0;
+                opacity: 1;
+            }
+
+            .cookie-content {
+                max-width: 1200px;
+                margin: 0 auto;
+                padding: 20px;
+                position: relative;
+                text-align: center;
+            }
+
+            .cookie-header {
+                display: flex;
+                justify-content: center;
+                margin-bottom: 15px;
+            }
+
+            .cookie-icon {
+                color: #0056b3;
+                animation: rotateCookie 2s ease-in-out infinite;
+            }
+
+            @keyframes rotateCookie {
+                0% {
+                    transform: rotate(0deg);
+                }
+
+                25% {
+                    transform: rotate(10deg);
+                }
+
+                75% {
+                    transform: rotate(-10deg);
+                }
+
+                100% {
+                    transform: rotate(0deg);
+                }
+            }
+
+            .cookie-consent h3 {
+                margin: 0 0 15px 0;
+                font-size: 24px;
+                font-weight: 600;
+            }
+
+            .cookie-consent p {
+                margin: 0 0 24px 0;
+                font-size: 18px;
+                line-height: 1.6;
+            }
+
+            .cookie-link {
+                color: #0056b3;
+                text-decoration: none;
+            }
+
+            .cookie-link:hover {
+                text-decoration: underline;
+            }
+
+            .cookie-buttons {
+                display: flex;
+                justify-content: center;
+            }
+
+            .btn-cookie {
+                padding: 14px 24px;
+                border: none;
+                border-radius: 6px;
+                cursor: pointer;
+                font-size: 18px;
+                font-weight: 600;
+                transition: all 0.3s ease;
+                margin-left: 12px;
+            }
+
+            .btn-accept {
+                background-color: #0056b3;
+                color: white;
+            }
+
+            .btn-accept:hover {
+                background-color: #004494;
+            }
+
+            .btn-refuse {
+                background-color: #f1f1f1;
+                color: #333333;
+            }
+
+            .btn-refuse:hover {
+                background-color: #e1e1e1;
+            }
+
+            .close-cookie {
+                position: absolute;
+                top: 12px;
+                right: 18px;
+                background: none;
+                border: none;
+                font-size: 28px;
+                cursor: pointer;
+                color: #999;
+                transition: color 0.3s ease;
+            }
+
+            .close-cookie:hover {
+                color: #333;
+            }
+
+            body.dark-mode .cookie-consent {
+                background-color: rgba(38, 26, 60, 0.7);
+                color: #ffffff;
+                backdrop-filter: blur(10px);
+                -webkit-backdrop-filter: blur(10px);
+                border: 1px solid rgba(255, 255, 255, 0.1);
+                box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+            }
+
+            body.dark-mode .btn-accept {
+                background-color: rgba(106, 27, 154, 0.8);
+                backdrop-filter: blur(4px);
+                -webkit-backdrop-filter: blur(4px);
+                border: 1px solid rgba(255, 255, 255, 0.18);
+            }
+
+            body.dark-mode .btn-accept:hover {
+                background-color: rgba(74, 20, 140, 0.9);
+            }
+
+            body.dark-mode .btn-refuse {
+                background-color: rgba(60, 47, 80, 0.8);
+                color: #ffffff;
+                backdrop-filter: blur(4px);
+                -webkit-backdrop-filter: blur(4px);
+                border: 1px solid rgba(255, 255, 255, 0.18);
+            }
+
+            body.dark-mode .btn-refuse:hover {
+                background-color: rgba(46, 36, 64, 0.9);
+            }
+
+            body.dark-mode .close-cookie {
+                color: rgba(160, 160, 160, 0.8);
+                text-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+            }
+
+            body.dark-mode .close-cookie:hover {
+                color: rgba(255, 255, 255, 0.9);
+            }
+
+            body.dark-mode .cookie-link {
+                color: rgba(138, 75, 204, 0.9);
+                text-shadow: 0 0 8px rgba(138, 75, 204, 0.3);
+            }
+
+            @media (min-width: 768px) {
+                .cookie-content {
+                    padding: 30px;
+                }
+
+                .cookie-consent h3 {
+                    font-size: 24px;
+                    margin-bottom: 10px;
+                }
+
+                .cookie-consent p {
+                    font-size: 16px;
+                    line-height: 1.4;
+                }
+
+                .btn-cookie {
+                    font-size: 16px;
+                    padding: 12px 20px;
+                }
+            }
+
+            @media (max-width: 767px) {
+                .cookie-consent {
+                    width: 90%;
+                    max-width: none;
+                }
+
+                .cookie-content {
+                    padding: 15px;
+                }
+
+                .cookie-consent h3 {
+                    font-size: 18px;
+                    margin-bottom: 8px;
+                }
+
+                .cookie-consent p {
+                    font-size: 14px;
+                    line-height: 1.6;
+                    font-weight: 400;
+                    color: #666;
+                    margin-bottom: 15px;
+                    text-align: center;
+                    max-width: 90%;
+                    margin-left: auto;
+                    margin-right: auto;
+                    overflow-wrap: break-word;
+                }
+
+                .btn-cookie {
+                    font-size: 14px;
+                    padding: 10px 16px;
+                    width: 100%;
+                    margin-bottom: 10px;
+                }
+
+                .cookie-buttons {
+                    display: flex;
+                    flex-direction: column;
+                }
+            }
+        </style>
+
+        <script>
+            document.addEventListener('DOMContentLoaded', function () {
+                const cookieConsent = document.getElementById('cookie-consent');
+                const acceptButton = document.getElementById('accept-cookies');
+                const refuseButton = document.getElementById('refuse-cookies');
+                const closeButton = document.getElementById('close-cookie');
+
+                function hideCookieConsent() {
+                    cookieConsent.classList.remove('show');
+                    setTimeout(() => {
+                        cookieConsent.style.display = 'none';
+                    }, 500);
+                }
+
+                function showCookieConsent() {
+                    cookieConsent.style.display = 'block';
+                    setTimeout(() => {
+                        cookieConsent.classList.add('show');
+                    }, 10);
+                }
+
+                // Check if user has already made a choice about cookies
+                if (!localStorage.getItem('cookiesChoice')) {
+                    setTimeout(showCookieConsent, 1000);
+                }
+
+                acceptButton.addEventListener('click', function () {
+                    localStorage.setItem('cookiesChoice', 'accepted');
+                    hideCookieConsent();
+                });
+
+                refuseButton.addEventListener('click', function () {
+                    localStorage.setItem('cookiesChoice', 'refused');
+                    hideCookieConsent();
+                });
+
+                closeButton.addEventListener('click', hideCookieConsent);
+            });
+        </script>
+
+
+    </body>
+
+</html>
