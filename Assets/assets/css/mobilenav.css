@@ -324,3 +324,63 @@ body.offcanvas-open {
 .arrow-icon.fa-chevron-down {
     transform: rotate(90deg);
 }
+
+
+/* Dark mode styles for mobile nav */
+body.dark-mode #sidebar {
+    background-color: #261a3c;
+    color: #f0f0f0;
+}
+
+body.dark-mode .sidebar-menu {
+    background-color: #261a3c;
+}
+
+body.dark-mode .sidebar-item h2,
+body.dark-mode .product-header {
+    color: #ffffff;
+}
+
+body.dark-mode .submenu-list a {
+    color: #d0d0d0;
+}
+
+body.dark-mode .submenu-list a:hover {
+    color: #9054d0;
+}
+
+body.dark-mode .modules-heading {
+    color: #b0b0b0;
+}
+
+body.dark-mode .btn-danger {
+    background-color: #8a2c96;
+    border-color: #8a2c96;
+}
+
+body.dark-mode .btn-danger:hover {
+    background-color: #a742b3;
+    border-color: #a742b3;
+}
+
+body.dark-mode .arrow-icon {
+    color: #ffffff;
+}
+
+body.dark-mode .get-started-container .btn-success {
+    background-color: #2e7d32;
+    border-color: #2e7d32;
+}
+
+body.dark-mode .get-started-container .btn-success:hover {
+    background-color: #388e3c;
+    border-color: #388e3c;
+}
+
+body.dark-mode .offcanvas-header .btn-close {
+    filter: invert(1);
+}
+
+body.dark-mode .product-submenu.show {
+    background-color: #261a3c;
+}

@@ -653,7 +653,7 @@
             <div class="navbar-banner__container">
                 <div class="navbar-banner__content">
                     <div class="navbar-banner__icon"><i class="fas fa-calendar-alt"></i></div>
-                                        <div class="navbar-banner__text">
+                    <div class="navbar-banner__text">
                         <strong>Exclusive Event:</strong> Join our Annual Tech Summit 2045
                         <span class="navbar-banner__highlight">Early Bird Discount: 30% OFF</span>
                     </div>
@@ -871,63 +871,62 @@
             }
 
             /* Banner position when scrolled */
-          
         </style>
         <script>
-         document.addEventListener('DOMContentLoaded', function () {
-    var navbar = document.querySelector('.navbar');
-    var navbarBanner = document.querySelector('.navbar-banner');
-    var lastScrollTop = 0;
-    var scrollThreshold = 10;
+            document.addEventListener('DOMContentLoaded', function () {
+                var navbar = document.querySelector('.navbar');
+                var navbarBanner = document.querySelector('.navbar-banner');
+                var lastScrollTop = 0;
+                var scrollThreshold = 10;
 
-    function handleScroll() {
-        var bannerHeight = navbarBanner.offsetHeight;
-        var scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+                function handleScroll() {
+                    var bannerHeight = navbarBanner.offsetHeight;
+                    var scrollTop = window.pageYOffset || document.documentElement.scrollTop;
 
-        if (Math.abs(scrollTop - lastScrollTop) > scrollThreshold) {
-            if (scrollTop > lastScrollTop && scrollTop > bannerHeight) {
-                // Scrolling down
-                navbar.classList.add('navbar-shrink');
-                navbarBanner.classList.add('navbar-banner--scrolled');
-                navbarBanner.classList.remove('show');
-                navbar.style.transform = 'translateY(0)';
-            } else if (scrollTop <= lastScrollTop && scrollTop > bannerHeight) {
-                // Scrolling up
-                navbar.classList.add('navbar-shrink', 'navbar--banner-scrolled');
-                navbarBanner.classList.add('navbar-banner--scrolled', 'show');
-                navbar.style.transform = 'translateY(' + bannerHeight + 'px)';
-            } else {
-                // At the top
-                navbar.classList.remove('navbar-shrink', 'navbar--banner-scrolled');
-                navbarBanner.classList.remove('navbar-banner--scrolled', 'show');
-                navbar.style.transform = 'translateY(0)';
-            }
+                    if (Math.abs(scrollTop - lastScrollTop) > scrollThreshold) {
+                        if (scrollTop > lastScrollTop && scrollTop > bannerHeight) {
+                            // Scrolling down
+                            navbar.classList.add('navbar-shrink');
+                            navbarBanner.classList.add('navbar-banner--scrolled');
+                            navbarBanner.classList.remove('show');
+                            navbar.style.transform = 'translateY(0)';
+                        } else if (scrollTop <= lastScrollTop && scrollTop > bannerHeight) {
+                            // Scrolling up
+                            navbar.classList.add('navbar-shrink', 'navbar--banner-scrolled');
+                            navbarBanner.classList.add('navbar-banner--scrolled', 'show');
+                            navbar.style.transform = 'translateY(' + bannerHeight + 'px)';
+                        } else {
+                            // At the top
+                            navbar.classList.remove('navbar-shrink', 'navbar--banner-scrolled');
+                            navbarBanner.classList.remove('navbar-banner--scrolled', 'show');
+                            navbar.style.transform = 'translateY(0)';
+                        }
 
-            lastScrollTop = scrollTop;
-        }
-    }
+                        lastScrollTop = scrollTop;
+                    }
+                }
 
-    // Only add scroll event listener if not on mobile
-    if (window.innerWidth > 991.98) {
-        window.addEventListener('scroll', handleScroll);
-        // Initial call to set correct state on page load
-        handleScroll();
-    }
+                // Only add scroll event listener if not on mobile
+                if (window.innerWidth > 991.98) {
+                    window.addEventListener('scroll', handleScroll);
+                    // Initial call to set correct state on page load
+                    handleScroll();
+                }
 
-    // Update on window resize
-    window.addEventListener('resize', function() {
-        if (window.innerWidth > 991.98) {
-            window.addEventListener('scroll', handleScroll);
-            handleScroll();
-        } else {
-            window.removeEventListener('scroll', handleScroll);
-            // Reset styles for mobile
-            navbar.classList.remove('navbar-shrink', 'navbar--banner-scrolled');
-            navbarBanner.classList.remove('navbar-banner--scrolled', 'show');
-            navbar.style.transform = '';
-        }
-    });
-});
+                // Update on window resize
+                window.addEventListener('resize', function () {
+                    if (window.innerWidth > 991.98) {
+                        window.addEventListener('scroll', handleScroll);
+                        handleScroll();
+                    } else {
+                        window.removeEventListener('scroll', handleScroll);
+                        // Reset styles for mobile
+                        navbar.classList.remove('navbar-shrink', 'navbar--banner-scrolled');
+                        navbarBanner.classList.remove('navbar-banner--scrolled', 'show');
+                        navbar.style.transform = '';
+                    }
+                });
+            });
         </script>
     </header>
 
@@ -3959,7 +3958,8 @@
                 background-color: rgba(255, 255, 255, 0.671);
                 backdrop-filter: blur(10px);
                 -webkit-backdrop-filter: blur(10px);
-                padding: 15px; /* Reduced padding */
+                padding: 15px;
+                /* Reduced padding */
                 width: 30%;
                 max-width: 100%;
                 box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
@@ -3970,8 +3970,10 @@
                 color: #333333;
                 opacity: 0;
                 transition: bottom 0.5s ease-in-out, opacity 0.5s ease-in-out;
-                max-height: 90vh; /* Added max-height */
-                overflow-y: auto; /* Added scrolling if content exceeds max-height */
+                max-height: 90vh;
+                /* Added max-height */
+                overflow-y: auto;
+                /* Added scrolling if content exceeds max-height */
             }
 
             .cookie-consent.show {
