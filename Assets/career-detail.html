@@ -1217,6 +1217,110 @@
             <!-- LOADING -->
 
             <div class="container mt-5">
+                <!-- Add the BACK button -->
+                <div class="row mb-4">
+                    <div class="col-12">
+                        <a href="javascript:history.back()" class="back-btn">
+                            <svg class="arr-1" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M7.8284 13.0001L13.1924 18.3641L11.7782 19.7783L4 12.0001L11.7782 4.22193L13.1924 5.63614L7.8284 11.0001H20V13.0001H7.8284Z"/>
+                            </svg>
+                            <span class="text">BACK</span>
+                            <span class="circle"></span>
+                            <svg class="arr-2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M7.8284 13.0001L13.1924 18.3641L11.7782 19.7783L4 12.0001L11.7782 4.22193L13.1924 5.63614L7.8284 11.0001H20V13.0001H7.8284Z"/>
+                            </svg>
+                        </a>
+                    </div>
+
+                    <style>
+                    .back-btn {
+                        position: relative;
+                        display: inline-flex;
+                        align-items: center;
+                        gap: 4px;
+                        padding: 10px 25px;  /* Reduced padding */
+                        border: 3px solid;   /* Reduced border width */
+                        border-color: transparent;
+                        font-size: 14px;     /* Reduced font size */
+                        background-color: inherit;
+                        border-radius: 8px;  /* Reduced border radius */
+                        font-weight: 600;
+                        color: #6a11cb;
+                        box-shadow: 0 0 0 2px #6a11cb;
+                        cursor: pointer;
+                        overflow: hidden;
+                        transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+                        text-decoration: none;
+                      }
+          
+                      .back-btn svg {
+                        position: absolute;
+                        width: 20px;         /* Reduced SVG size */
+                        fill: #6a11cb;
+                        z-index: 9;
+                        transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+                      }
+          
+                      .back-btn .arr-1 {
+                        left: 12px;         /* Adjusted position */
+                      }
+          
+                      .back-btn .arr-2 {
+                        right: -20%;          /* Adjusted position */
+                      }
+          
+                      .back-btn .circle {
+                        position: absolute;
+                        top: 50%;
+                        left: 50%;
+                        transform: translate(-50%, -50%);
+                        width: 16px;         /* Reduced initial circle size */
+                        height: 16px;
+                        background-color: rgb(0, 0, 0) ;
+                        border-radius: 50%;
+                        opacity: 0;
+                        transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+                      }
+          
+                      .back-btn .text {
+                        position: relative;
+                        z-index: 1;
+                        transform: translateX(10px);  /* Adjusted transform */
+                        transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+                      }
+          
+                      .back-btn:hover {
+                            background-color: #000; /* Add this line */
+                            box-shadow: 0 0 0 10px transparent;  /* Reduced shadow size */
+                            color: #ffffff !important;
+                            border-radius: 10px;  /* Adjusted hover border radius */
+                            }
+          
+                      .back-btn:hover .arr-1 {
+                        left: -20%;         /* Adjusted position */
+                      }
+          
+                      .back-btn:hover .arr-2 {
+                        right: 12px;          /* Adjusted position */
+                      }
+          
+                      .back-btn:hover .text {
+                        transform: translateX(-10px);  /* Adjusted transform */
+                      }
+          
+                      .back-btn:hover svg {
+                        fill: #ffffff;
+                      }
+          
+                      .back-btn:active {
+                        scale: 0.95;
+                        box-shadow: 0 0 0 3px #6a11cb;  /* Reduced active shadow size */
+                      }
+          
+                 
+                    </style>
+          
+                </div>
                 <h1 class="text-center mb-2 gradient-text">Job Application</h1>
                 <div class="separator mb-5"></div>
                 <style>

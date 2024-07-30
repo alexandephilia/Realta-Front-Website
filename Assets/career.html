@@ -1287,62 +1287,191 @@
         <section id="career-benefits" class="py-5">
             <h2 class="text-center mb-5">Why Work With Us?</h2>
             <div class="container">
-                <div class="row g-4">
-                    <div class="col-md-4 mb-4">
-                        <div class="card h-100 border-0 shadow-sm">
-                            <div class="card-body text-center">
-                                <i class="fas fa-balance-scale fa-3x mb-3"></i>
-                                <h4 class="card-title">Integrity</h4>
-                                <p class="card-text">We make a personal commitment to follow ethical practices in every interaction and maintain our values at all times.</p>
-                            </div>
+                <div class="timeline">
+                    <div class="timeline-item" data-aos="fade-up">
+                        <div class="timeline-icon">
+                            <i class="fas fa-balance-scale"></i>
+                        </div>
+                        <div class="timeline-content">
+                            <h4>Integrity</h4>
+                            <p>We make a personal commitment to follow ethical practices in every interaction and maintain our values at all times.</p>
                         </div>
                     </div>
-                    <div class="col-md-4 mb-4">
-                        <div class="card h-100 border-0 shadow-sm">
-                            <div class="card-body text-center">
-                                <i class="fas fa-users fa-3x mb-3"></i>
-                                <h4 class="card-title">Teamwork</h4>
-                                <p class="card-text">To achieve the ultimate success, individual talent should be put together as a team. Teamwork can be achieved by ensuring each one respects the other.</p>
-                            </div>
+                    <div class="timeline-item" data-aos="fade-up" data-aos-delay="200">
+                        <div class="timeline-icon">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <div class="timeline-content right">
+                            <h4>Teamwork</h4>
+                            <p>To achieve the ultimate success, individual talent should be put together as a team. Teamwork can be achieved by ensuring each one respects the other.</p>
                         </div>
                     </div>
-                    <div class="col-md-4 mb-4">
-                        <div class="card h-100 border-0 shadow-sm">
-                            <div class="card-body text-center">
-                                <i class="fas fa-lightbulb fa-3x mb-3"></i>
-                                <h4 class="card-title">Holistic</h4>
-                                <p class="card-text">Based on the concept of holism (the whole is greater than the sum of the parts), each individual is encouraged to develop their own never-ending series of skills regardless.</p>
-                            </div>
+                    <div class="timeline-item" data-aos="fade-up" data-aos-delay="400">
+                        <div class="timeline-icon">
+                            <i class="fas fa-lightbulb"></i>
+                        </div>
+                        <div class="timeline-content">
+                            <h4>Holistic</h4>
+                            <p>Based on the concept of holism (the whole is greater than the sum of the parts), each individual is encouraged to develop their own never-ending series of skills regardless.</p>
                         </div>
                     </div>
-                    <div class="col-md-4 mb-4">
-                        <div class="card h-100 border-0 shadow-sm">
-                            <div class="card-body text-center">
-                                <i class="fas fa-trophy fa-3x mb-3"></i>
-                                <h4 class="card-title">Achievement</h4>
-                                <p class="card-text">We set our goals and strive to achieve them. We have the energy to drive a long-term vision and the resilience to stay ahead in the business.</p>
-                            </div>
+                    <div class="timeline-item" data-aos="fade-up" data-aos-delay="600">
+                        <div class="timeline-icon">
+                            <i class="fas fa-trophy"></i>
+                        </div>
+                        <div class="timeline-content right">
+                            <h4>Achievement</h4>
+                            <p>We set our goals and strive to achieve them. We have the energy to drive a long-term vision and the resilience to stay ahead in the business.</p>
                         </div>
                     </div>
-                    <div class="col-md-4 mb-4">
-                        <div class="card h-100 border-0 shadow-sm">
-                            <div class="card-body text-center">
-                                <i class="fas fa-palette fa-3x mb-3"></i>
-                                <h4 class="card-title">Creativity</h4>
-                                <p class="card-text">Always full of creative and original ideas. We offer innovative and unconventional solutions. We are committed to continuous innovation that sparks products and services.</p>
-                            </div>
+                    <div class="timeline-item" data-aos="fade-up" data-aos-delay="800">
+                        <div class="timeline-icon">
+                            <i class="fas fa-palette"></i>
+                        </div>
+                        <div class="timeline-content">
+                            <h4>Creativity</h4>
+                            <p>Always full of creative and original ideas. We offer innovative and unconventional solutions. We are committed to continuous innovation that sparks products and services.</p>
                         </div>
                     </div>
-                    <div class="col-md-4 mb-4">
-                        <div class="card h-100 border-0 shadow-sm">
-                            <div class="card-body text-center">
-                                <i class="fas fa-chart-line fa-3x mb-3"></i>
-                                <h4 class="card-title">Advancement</h4>
-                                <p class="card-text">Always learn, teach and learn. Results oriented learning and advancement. Continuous improvement in all aspects.</p>
-                            </div>
+                    <div class="timeline-item" data-aos="fade-up" data-aos-delay="1000">
+                        <div class="timeline-icon">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <div class="timeline-content right">
+                            <h4>Advancement</h4>
+                            <p>Always learn, teach and learn. Results oriented learning and advancement. Continuous improvement in all aspects.</p>
                         </div>
                     </div>
                 </div>
+
+                <style>
+                    .timeline {
+                        position: relative;
+                        max-width: 1200px;
+                        margin: 0 auto;
+                        padding: 50px 0;
+                    }
+                    .timeline::after {
+                        content: '';
+                        position: absolute;
+                        width: 6px;
+                        background-color: #611f69;
+                        top: 0;
+                        bottom: 0;
+                        left: 50%;
+                        margin-left: -3px;
+                    }
+                    .timeline-item {
+                        padding: 10px 50px;
+                        position: relative;
+                        background-color: inherit;
+                        width: 50%;
+                        box-sizing: border-box;
+                    }
+                    .timeline-item::after {
+                        content: '';
+                        position: absolute;
+                        width: 25px;
+                        height: 25px;
+                        right: -13px;
+                        background-color: white;
+                        border: 4px solid #611f69;
+                        top: 20px;
+                        border-radius: 50%;
+                        z-index: 1;
+                    }
+                    .timeline-item:nth-child(even) {
+                        left: 50%;
+                    }
+                    .timeline-item:nth-child(odd) {
+                        left: 0;
+                    }
+                    .timeline-item:nth-child(even)::after {
+                        left: -16px;
+                    }
+                    .timeline-content {
+                        padding: 20px 30px;
+                        background-color: white;
+                        position: relative;
+                        border-radius: 6px;
+                        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+                    }
+                    .timeline-icon {
+                        position: absolute;
+                        width: 50px;
+                        height: 50px;
+                        background-color: #611f69;
+                        top: 15px;
+                        border-radius: 50%;
+                        z-index: 2;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                    }
+                    .timeline-item:nth-child(odd) .timeline-icon {
+                        right: -25px;
+                    }
+                    .timeline-item:nth-child(even) .timeline-icon {
+                        left: -25px;
+                    }
+                    #career-benefits .fas {
+                        color: white;
+                    }
+                    body.dark-mode .timeline::after {
+                        background-color: rgba(138, 44, 150, 0.5);
+                        backdrop-filter: blur(10px);
+                    }
+                    body.dark-mode .timeline-item::after {
+                        background-color: rgba(90, 28, 95, 0.3);
+                        border-color: rgba(138, 44, 150, 0.7);
+                        backdrop-filter: blur(5px);
+                    }
+                    body.dark-mode .timeline-content {
+                        background-color: rgba(60, 60, 60, 0);
+                        color: #f0f0f0;
+                        backdrop-filter: blur(15px);
+                        box-shadow: 0 8px 32px 0 rgba(30, 31, 51, 0.774);
+                        border: 1px solid rgba(255, 255, 255, 0.18);
+                    }
+                    body.dark-mode .timeline-icon {
+                        background-color: rgba(138, 44, 150, 0.8);
+                        backdrop-filter: blur(8px);
+                    }
+                    body.dark-mode #career-benefits .fas {
+                        color: white;
+                    }
+                    
+                    @media screen and (max-width: 768px) {
+                        .timeline::after {
+                            left: 31px;
+                        }
+                        .timeline-item {
+                            width: 100%;
+                            padding-left: 70px;
+                            padding-right: 25px;
+                        }
+                        .timeline-item::after {
+                            left: 15px;
+                        }
+                        .timeline-item:nth-child(even) {
+                            left: 0;
+                        }
+                        .timeline-item:nth-child(even)::after {
+                            left: 20px;
+                        }
+                        .timeline-icon {
+                            left: 6px;
+                        }
+                        .timeline-content {
+                            width: 100%;
+                            margin-left: 20px;
+                        }
+                        .timeline-item:nth-child(odd) .timeline-icon,
+                        .timeline-item:nth-child(even) .timeline-icon {
+                            left: 6px;
+                        }
+                    }
+                </style>
             </div>
            
         </section>
@@ -1486,7 +1615,78 @@
                                 <span class="badge badge-jobs me-2">New</span>
                             </div>
                         </div>
-                        <a href="career-detail.html" class="btn btn-outline-primary">Apply</a>
+                        <a href="career-detail.html" class="btn btn-outline-primary apply-btn blog-btn">
+                            <svg class="arr-1" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z"/>
+                            </svg>
+                            <span class="text">Apply</span>
+                            <span class="circle"></span>
+                            <svg class="arr-2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z"/>
+                            </svg>
+                        </a>
+                        <style>
+                            .apply-btn {
+                                position: relative;
+                                display: inline-flex;
+                                align-items: center;
+                                gap: 4px;
+                                padding: 10px 25px;
+                                border: 3px solid transparent;
+                                font-size: 14px;
+                                background-color: inherit;
+                                border-radius: 8px;
+                                font-weight: 600;
+                                color: #6a11cb;
+                                box-shadow: 0 0 0 2px #6a11cb;
+                                cursor: pointer;
+                                overflow: hidden;
+                                transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+                                text-decoration: none;
+                            }
+                            .apply-btn svg {
+                                position: absolute;
+                                width: 20px;
+                                fill: #6a11cb;
+                                z-index: 9;
+                                transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+                            }
+                            .apply-btn .arr-1 { right: 12px; }
+                            .apply-btn .arr-2 { left: -20%; }
+                            .apply-btn .circle {
+                                position: absolute;
+                                top: 50%;
+                                left: 50%;
+                                transform: translate(-50%, -50%);
+                                width: 16px;
+                                height: 16px;
+                                background-color: rgb(0, 0, 0);
+                                border-radius: 50%;
+                                opacity: 0;
+                                transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+                            }
+                            .apply-btn .text {
+                                position: relative;
+                                z-index: 1;
+                                transform: translateX(-10px);
+                                transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+                            }
+                            .apply-btn:hover {
+                                background-color: #000000;
+                                box-shadow: 0 0 0 10px transparent;
+                                color: #ffffff !important;
+                                text-decoration: none;
+                                border-radius: 10px;
+                            }
+                            .apply-btn:hover .arr-1 { right: -20%; }
+                            .apply-btn:hover .arr-2 { left: 12px; }
+                            .apply-btn:hover .text { transform: translateX(10px); }
+                            .apply-btn:hover svg { fill: #ffffff; }
+                            .apply-btn:active {
+                                scale: 0.95;
+                                box-shadow: 0 0 0 3px #6a11cb;
+                            }
+                        </style>
                     </div>
                 </div>
                 <div class="separator d-flex align-items-center my-4">
@@ -1503,7 +1703,16 @@
                                 <span class="badge badge-jobs me-2">Full-time</span>
                             </div>
                         </div>
-                        <a href="#" class="btn btn-outline-primary">Apply</a>
+                        <a href="career-detail.html" class= apply-btn ">
+                            <svg class="arr-1" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z"/>
+                            </svg>
+                            <span class="text">Apply</span>
+                            <span class="circle"></span>
+                            <svg class="arr-2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z"/>
+                            </svg>
+                        </a>
                     </div>
                 </div>
                 <div class="job-item p-4 mb-3 rounded shadow-sm">
@@ -1515,7 +1724,16 @@
                                 <span class="badge badge-jobs me-2">Experienced</span>
                             </div>
                         </div>
-                        <a href="#" class="btn btn-outline-primary">Apply</a>
+                        <a href="career-detail.html" class= apply-btn ">
+                            <svg class="arr-1" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z"/>
+                            </svg>
+                            <span class="text">Apply</span>
+                            <span class="circle"></span>
+                            <svg class="arr-2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z"/>
+                            </svg>
+                        </a>
                     </div>
                 </div>
                 <div class="job-item p-4 mb-3 rounded shadow-sm">
@@ -1527,7 +1745,16 @@
                                 <span class="badge badge-jobs me-2">Contract</span>
                             </div>
                         </div>
-                        <a href="#" class="btn btn-outline-primary">Apply</a>
+                        <a href="career-detail.html" class= apply-btn ">
+                            <svg class="arr-1" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z"/>
+                            </svg>
+                            <span class="text">Apply</span>
+                            <span class="circle"></span>
+                            <svg class="arr-2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z"/>
+                            </svg>
+                        </a>
                     </div>
                 </div>
                 <div class="separator d-flex align-items-center my-4">
@@ -1544,7 +1771,16 @@
                                 <span class="badge badge-jobs me-2">Mid-level</span>
                             </div>
                         </div>
-                        <a href="#" class="btn btn-outline-primary">Apply</a>
+                        <a href="career-detail.html" class= apply-btn ">
+                            <svg class="arr-1" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z"/>
+                            </svg>
+                            <span class="text">Apply</span>
+                            <span class="circle"></span>
+                            <svg class="arr-2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z"/>
+                            </svg>
+                        </a>
                     </div>
                 </div>
                 <div class="job-item p-4 mb-3 rounded shadow-sm">
@@ -1556,7 +1792,16 @@
                                 <span class="badge badge-jobs me-2">Entry-level</span>
                             </div>
                         </div>
-                        <a href="#" class="btn btn-outline-primary">Apply</a>
+                        <a href="career-detail.html" class= apply-btn ">
+                            <svg class="arr-1" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z"/>
+                            </svg>
+                            <span class="text">Apply</span>
+                            <span class="circle"></span>
+                            <svg class="arr-2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z"/>
+                            </svg>
+                        </a>
                     </div>
                 </div>
                 <div class="job-item p-4 mb-3 rounded shadow-sm">
@@ -1568,7 +1813,16 @@
                                 <span class="badge badge-jobs me-2">Full-time</span>
                             </div>
                         </div>
-                        <a href="#" class="btn btn-outline-primary">Apply</a>
+                        <a href="career-detail.html" class= apply-btn ">
+                            <svg class="arr-1" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z"/>
+                            </svg>
+                            <span class="text">Apply</span>
+                            <span class="circle"></span>
+                            <svg class="arr-2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z"/>
+                            </svg>
+                        </a>
                     </div>
                 </div>
                 <style>
