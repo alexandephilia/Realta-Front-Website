@@ -417,7 +417,8 @@
                                     <ul class="submenu-list">
                                         <li><a href="#">About Us</a></li>
                                         <li><a href="#">Our Team</a></li>
-                                        <li><a href="#">Careers</a></li>
+                                        <li><a href="#" onclick="navigateWithLoading('career.html'); return false;"
+                                            style="text-decoration: none; color: inherit;">Career</a></li>
                                         <li><a href="#">News</a></li>
                                         <li><a href="#">Contact</a></li>
                                     </ul>
@@ -733,10 +734,10 @@
             }
 
             .navbar-banner__highlight {
-                background-color: #9054d0;
-                color: #ffffff;
+                background-color: #9054d034;
+                color: #000000;
                 padding: 4px 10px;
-                border-radius: 20px;
+                border-radius: 10px;
                 margin-left: 12px;
                 display: inline-block;
                 font-weight: bold;
@@ -821,8 +822,10 @@
             }
 
             .dark-mode .navbar-banner__highlight {
-                background-color: #b388ff;
-                color: #333;
+                background-color: #9054d034;
+                color: #ffffff;
+                padding: 4px 10px;
+                border-radius: 10px;
             }
 
             .dark-mode .navbar-banner__cta {
