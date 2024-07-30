@@ -32,7 +32,7 @@
     <link rel="stylesheet" href="assets/fontawesome/css/all.min.css">
 </head>
 
-<body>
+
     <header>
 
         <nav class="navbar navbar-expand-lg sticky-top navbar-shrink navbar-light" id="mainNav">
@@ -87,7 +87,7 @@
                     <div class="offcanvas-header">
                         <div>
                             <h5 class="offcanvas-title" id="sidebarLabel"
-                                style="margin-left: 33px; margin-bottom: 20px; font-size: 30px; color: #ffffff;">Menu</h5>
+                                style="margin-left: 33px; margin-bottom: 20px; font-size: 30px;">Menu</h5>
                         </div>
                         <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas"
                             aria-label="Close"></button>
@@ -332,7 +332,8 @@
                                     <ul class="submenu-list">
                                         <li><a href="#">About Us</a></li>
                                         <li><a href="#">Our Team</a></li>
-                                        <li><a href="#">Careers</a></li>
+                                        <li><a href="#" onclick="navigateWithLoading('career.html'); return false;"
+                                            style="text-decoration: none; color: inherit;">Career</a></li>
                                         <li><a href="#">News</a></li>
                                         <li><a href="#">Contact</a></li>
                                     </ul>
@@ -348,7 +349,7 @@
                         <div class="get-started-container">
                             <a href="https://api.whatsapp.com/send?phone=628111221789&text=Hallo%20PT%20Realta..."
                                 target="_blank" rel="noopener noreferrer" class="btn btn-success btn-block"
-                                style="width: 100%; background-color: #4FCE5D; border-color: #4FCE5D;">
+                                style="width: 100%;">
                                 <i class="fab fa-whatsapp"></i> Contact Us
                             </a>
                         </div>
@@ -359,6 +360,7 @@
                     @media (min-width: 992px) {
                         #sidebar {
                             display: none !important;
+                            z-index: 2031;
                         }
 
                         .offcanvas-backdrop {
@@ -562,11 +564,12 @@
                 </div>
             </div>
         </nav>
+
         <div class="navbar-banner">
             <div class="navbar-banner__container">
                 <div class="navbar-banner__content">
                     <div class="navbar-banner__icon"><i class="fas fa-calendar-alt"></i></div>
-                                        <div class="navbar-banner__text">
+                    <div class="navbar-banner__text">
                         <strong>Exclusive Event:</strong> Join our Annual Tech Summit 2045
                         <span class="navbar-banner__highlight">Early Bird Discount: 30% OFF</span>
                     </div>
@@ -583,8 +586,40 @@
                 font-size: 16px;
                 transition: all 0.5s cubic-bezier(0.25, 0.1, 0.25, 1);
                 position: relative;
-                z-index: 101;
+                z-index: 1;
                 overflow: hidden;
+            }
+
+            .navbar-banner--scrolled {
+                position: fixed;
+                top: 0;
+                left: 0;
+                right: 0;
+                z-index: 102;
+                /* Above the navbar */
+                transform: translateY(-100%);
+                transition: transform 0.5s cubic-bezier(0.25, 0.1, 0.25, 1);
+            }
+
+            .navbar-banner--scrolled.show {
+                transform: translateY(0);
+            }
+
+            /* Adjust navbar position when banner is scrolled */
+            .navbar--banner-scrolled {
+                top: 40px;
+                /* Adjust this value based on your banner height */
+                transition: top 0.5s cubic-bezier(0.25, 0.1, 0.25, 1);
+            }
+
+            /* Navbar transition */
+            .navbar {
+                transition: all 0.5s cubic-bezier(0.25, 0.1, 0.25, 1);
+            }
+
+            /* Ensure the banner transition is smooth */
+            .navbar-banner {
+                transition: all 0.5s cubic-bezier(0.25, 0.1, 0.25, 1);
             }
 
             .navbar-banner__container {
@@ -614,10 +649,10 @@
             }
 
             .navbar-banner__highlight {
-                background-color: #9054d0;
-                color: #ffffff;
+                background-color: #9054d034;
+                color: #000000;
                 padding: 4px 10px;
-                border-radius: 20px;
+                border-radius: 10px;
                 margin-left: 12px;
                 display: inline-block;
                 font-weight: bold;
@@ -702,8 +737,10 @@
             }
 
             .dark-mode .navbar-banner__highlight {
-                background-color: #b388ff;
-                color: #333;
+                background-color: #9054d034;
+                color: #ffffff;
+                padding: 4px 10px;
+                border-radius: 10px;
             }
 
             .dark-mode .navbar-banner__cta {
@@ -752,97 +789,159 @@
             }
 
             /* Banner position when scrolled */
-            .navbar-banner--scrolled {
-                position: fixed;
-                top: 0;
-                left: 0;
-                right: 0;
-                z-index: 101;
-                /* Above the navbar */
-                transform: translateY(-100%);
-                transition: transform 0.5s cubic-bezier(0.25, 0.1, 0.25, 1);
+        </style>
+        <script>
+            document.addEventListener('DOMContentLoaded', function () {
+                var navbar = document.querySelector('.navbar');
+                var navbarBanner = document.querySelector('.navbar-banner');
+                var lastScrollTop = 0;
+                var scrollThreshold = 10;
+
+                function handleScroll() {
+                    var bannerHeight = navbarBanner.offsetHeight;
+                    var scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+                    if (Math.abs(scrollTop - lastScrollTop) > scrollThreshold) {
+                        if (scrollTop > lastScrollTop && scrollTop > bannerHeight) {
+                            // Scrolling down
+                            navbar.classList.add('navbar-shrink');
+                            navbarBanner.classList.add('navbar-banner--scrolled');
+                            navbarBanner.classList.remove('show');
+                            navbar.style.transform = 'translateY(0)';
+                        } else if (scrollTop <= lastScrollTop && scrollTop > bannerHeight) {
+                            // Scrolling up
+                            navbar.classList.add('navbar-shrink', 'navbar--banner-scrolled');
+                            navbarBanner.classList.add('navbar-banner--scrolled', 'show');
+                            navbar.style.transform = 'translateY(' + bannerHeight + 'px)';
+                        } else {
+                            // At the top
+                            navbar.classList.remove('navbar-shrink', 'navbar--banner-scrolled');
+                            navbarBanner.classList.remove('navbar-banner--scrolled', 'show');
+                            navbar.style.transform = 'translateY(0)';
+                        }
+
+                        lastScrollTop = scrollTop;
+                    }
+                }
+
+                // Only add scroll event listener if not on mobile
+                if (window.innerWidth > 991.98) {
+                    window.addEventListener('scroll', handleScroll);
+                    // Initial call to set correct state on page load
+                    handleScroll();
+                }
+
+                // Update on window resize
+                window.addEventListener('resize', function () {
+                    if (window.innerWidth > 991.98) {
+                        window.addEventListener('scroll', handleScroll);
+                        handleScroll();
+                    } else {
+                        window.removeEventListener('scroll', handleScroll);
+                        // Reset styles for mobile
+                        navbar.classList.remove('navbar-shrink', 'navbar--banner-scrolled');
+                        navbarBanner.classList.remove('navbar-banner--scrolled', 'show');
+                        navbar.style.transform = '';
+                    }
+                });
+            });
+        </script>
+    </header>
+<body>
+     <!-- LOADING -->
+     <div id="loading-overlay" class="loading-overlay">
+        <div class="loading-container">
+            <div class="loading-text">Loading...</div>
+            <div class="spinner">
+                <div class="spinner-inner"></div>
+            </div>
+        </div>
+    </div>
+    <script>
+        function navigateWithLoading(url) {
+            const loadingOverlay = document.getElementById('loading-overlay');
+            loadingOverlay.style.display = 'flex'; // Show the loading overlay
+            document.body.style.overflow = 'hidden'; // Prevent scrolling
+
+            // Wait for the animation to complete before navigating
+            setTimeout(function () {
+                window.location.href = url;
+            }, 2000); // Adjust the delay as needed (in milliseconds)
+        }
+
+        document.addEventListener('DOMContentLoaded', function () {
+            // This script block can contain other page initialization code
+        });
+    </script>
+    <style>
+        .loading-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(5px);
+            display: none;
+            /* Initially hidden */
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+        }
+
+        .loading-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .loading-text {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 20px;
+            color: #9054d0;
+            opacity: 0;
+            animation: fade-in 0.5s ease-in-out forwards;
+            animation-delay: 0.5s;
+            /* Add a delay to the fade-in animation */
+        }
+
+        .spinner {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            border: 4px solid rgba(52, 152, 219, 0.2);
+            border-top-color: #9054d0;
+            animation: spin 1s ease-in-out infinite;
+        }
+
+        @keyframes spin {
+            0% {
+                transform: rotate(0deg);
             }
 
-            .navbar-banner--scrolled.show {
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        @keyframes fade-in {
+            0% {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+
+            100% {
+                opacity: 1;
                 transform: translateY(0);
             }
+        }
 
-            /* Adjust navbar position when banner is scrolled */
-            .navbar--banner-scrolled {
-                top: 40px;
-                /* Adjust this value based on your banner height */
-                transition: top 0.5s cubic-bezier(0.25, 0.1, 0.25, 1);
-            }
-
-            /* Navbar transition */
-            .navbar {
-                transition: all 0.5s cubic-bezier(0.25, 0.1, 0.25, 1);
-            }
-
-            /* Ensure the banner transition is smooth */
-            .navbar-banner {
-                transition: all 0.5s cubic-bezier(0.25, 0.1, 0.25, 1);
-            }
-        </style>
-         <script>
-            document.addEventListener('DOMContentLoaded', function () {
-       var navbar = document.querySelector('.navbar');
-       var navbarBanner = document.querySelector('.navbar-banner');
-       var lastScrollTop = 0;
-       var scrollThreshold = 10;
-   
-       function handleScroll() {
-           var bannerHeight = navbarBanner.offsetHeight;
-           var scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-   
-           if (Math.abs(scrollTop - lastScrollTop) > scrollThreshold) {
-               if (scrollTop > lastScrollTop && scrollTop > bannerHeight) {
-                   // Scrolling down
-                   navbar.classList.add('navbar-shrink');
-                   navbarBanner.classList.add('navbar-banner--scrolled');
-                   navbarBanner.classList.remove('show');
-                   navbar.style.transform = 'translateY(0)';
-               } else if (scrollTop <= lastScrollTop && scrollTop > bannerHeight) {
-                   // Scrolling up
-                   navbar.classList.add('navbar-shrink', 'navbar--banner-scrolled');
-                   navbarBanner.classList.add('navbar-banner--scrolled', 'show');
-                   navbar.style.transform = 'translateY(' + bannerHeight + 'px)';
-               } else {
-                   // At the top
-                   navbar.classList.remove('navbar-shrink', 'navbar--banner-scrolled');
-                   navbarBanner.classList.remove('navbar-banner--scrolled', 'show');
-                   navbar.style.transform = 'translateY(0)';
-               }
-   
-               lastScrollTop = scrollTop;
-           }
-       }
-   
-       // Only add scroll event listener if not on mobile
-       if (window.innerWidth > 991.98) {
-           window.addEventListener('scroll', handleScroll);
-           // Initial call to set correct state on page load
-           handleScroll();
-       }
-   
-       // Update on window resize
-       window.addEventListener('resize', function() {
-           if (window.innerWidth > 991.98) {
-               window.addEventListener('scroll', handleScroll);
-               handleScroll();
-           } else {
-               window.removeEventListener('scroll', handleScroll);
-               // Reset styles for mobile
-               navbar.classList.remove('navbar-shrink', 'navbar--banner-scrolled');
-               navbarBanner.classList.remove('navbar-banner--scrolled', 'show');
-               navbar.style.transform = '';
-           }
-       });
-   });
-           </script>
-      
-    </header>
-
+        .product-banner {
+            cursor: pointer;
+        }
+    </style>
+    <!-- LOADING -->
     <main>
         <style>
             /* body text p 1.25rem */
