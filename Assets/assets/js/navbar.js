@@ -442,7 +442,7 @@ handleCategories('#tentangRealtaDropdownContent', 'tentangRealta-details', {
         </div>
     `,
     careers: `
-        <div class="product-banner" style="background-image: url('assets/img/careers.jpg');">   
+        <div class="product-banner" style="background-image: url('assets/img/career.png');" onclick="navigateWithLoading('career.html');">       
             <div class="glare"></div>
             <div class="product-banner-content">
                 <h2 class="product-title">Careers at Realta</h2>

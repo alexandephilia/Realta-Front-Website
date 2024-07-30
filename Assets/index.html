@@ -652,7 +652,7 @@
                 <div class="navbar-banner__content">
                     <div class="navbar-banner__icon"><i class="fas fa-calendar-alt"></i></div>
                                         <div class="navbar-banner__text">
-                        <strong>Exclusive Event:</strong> Join our Annual Tech Summit 2023
+                        <strong>Exclusive Event:</strong> Join our Annual Tech Summit 2045
                         <span class="navbar-banner__highlight">Early Bird Discount: 30% OFF</span>
                     </div>
                     <a href="#" class="navbar-banner__cta">Register Now</a>
@@ -874,32 +874,35 @@
                 var navbar = document.querySelector('.navbar');
                 var navbarBanner = document.querySelector('.navbar-banner');
                 var lastScrollTop = 0;
-
+                var scrollThreshold = 10; // Adjust this value to change sensitivity
+        
                 function handleScroll() {
                     var bannerHeight = navbarBanner.offsetHeight;
                     var scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-
-                    if (scrollTop > lastScrollTop && scrollTop > bannerHeight) {
-                        // Scrolling down
-                        navbar.classList.add('navbar-shrink');
-                        navbarBanner.classList.add('navbar-banner--scrolled');
-                        navbarBanner.classList.remove('show');
-                        navbar.style.transform = 'translateY(0)';
-                    } else if (scrollTop <= lastScrollTop && scrollTop > bannerHeight) {
-                        // Scrolling up
-                        navbar.classList.add('navbar-shrink', 'navbar--banner-scrolled');
-                        navbarBanner.classList.add('navbar-banner--scrolled', 'show');
-                        navbar.style.transform = 'translateY(' + bannerHeight + 'px)';
-                    } else {
-                        // At the top
-                        navbar.classList.remove('navbar-shrink', 'navbar--banner-scrolled');
-                        navbarBanner.classList.remove('navbar-banner--scrolled', 'show');
-                        navbar.style.transform = 'translateY(0)';
+        
+                    if (Math.abs(scrollTop - lastScrollTop) > scrollThreshold) {
+                        if (scrollTop > lastScrollTop && scrollTop > bannerHeight) {
+                            // Scrolling down
+                            navbar.classList.add('navbar-shrink');
+                            navbarBanner.classList.add('navbar-banner--scrolled');
+                            navbarBanner.classList.remove('show');
+                            navbar.style.transform = 'translateY(0)';
+                        } else if (scrollTop <= lastScrollTop && scrollTop > bannerHeight) {
+                            // Scrolling up
+                            navbar.classList.add('navbar-shrink', 'navbar--banner-scrolled');
+                            navbarBanner.classList.add('navbar-banner--scrolled', 'show');
+                            navbar.style.transform = 'translateY(' + bannerHeight + 'px)';
+                        } else {
+                            // At the top
+                            navbar.classList.remove('navbar-shrink', 'navbar--banner-scrolled');
+                            navbarBanner.classList.remove('navbar-banner--scrolled', 'show');
+                            navbar.style.transform = 'translateY(0)';
+                        }
+        
+                        lastScrollTop = scrollTop;
                     }
-
-                    lastScrollTop = scrollTop;
                 }
-
+        
                 window.addEventListener('scroll', handleScroll);
                 // Initial call to set correct state on page load
                 handleScroll();
@@ -3918,7 +3921,7 @@
                 <h3>Cookie Consent</h3>
                 <p>We use cookies to enhance your browsing experience and analyze our traffic. By clicking "Accept All",
                     you consent to our use of cookies. For more information, please read our <a href="#"
-                        class="cookie-link">cookie policy</a>.</p>
+                        class="cookie-link">Cookie Policy</a>.</p>
                 <div class="cookie-buttons">
                     <button id="accept-cookies" class="btn-cookie btn-accept">Accept All</button>
                     <button id="refuse-cookies" class="btn-cookie btn-refuse">Refuse</button>
@@ -3935,8 +3938,8 @@
                 background-color: rgba(255, 255, 255, 0.671);
                 backdrop-filter: blur(10px);
                 -webkit-backdrop-filter: blur(10px);
-                padding: 20px;
-                width: 50%;
+                padding: 15px; /* Reduced padding */
+                width: 30%;
                 max-width: 100%;
                 box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
                 z-index: 1000;
@@ -3946,6 +3949,8 @@
                 color: #333333;
                 opacity: 0;
                 transition: bottom 0.5s ease-in-out, opacity 0.5s ease-in-out;
+                max-height: 90vh; /* Added max-height */
+                overflow-y: auto; /* Added scrolling if content exceeds max-height */
             }
 
             .cookie-consent.show {

@@ -293,14 +293,7 @@ body.dark-mode .module {
     transform: rotate(0deg) scale(1.1);
 }
 
-.all-products {
-    color: rgba(133, 22, 188, 0.8);
-    font-size: 16px;
-    margin-top: 25px;
-    cursor: pointer;
-    font-weight: 500;
-    padding: 12px 20px;
-}
+
 
 /* Media query for responsiveness */
 @media (max-width: 992px) {
@@ -870,7 +863,7 @@ body.dark-mode .module {
     margin-top: 25px;
     cursor: pointer;
     font-weight: 500;
-    padding: 12px 20px;
+    padding: 12px 18px !important;
 }
 
 /* Media query for responsiveness */
