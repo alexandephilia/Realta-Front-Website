@@ -3935,13 +3935,15 @@
             <div class="cookie-content">
                 <button id="close-cookie" class="close-cookie">&times;</button>
                 <div class="cookie-header">
-                    <svg class="cookie-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="40" height="40">
+                    <svg class="cookie-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="48" height="48">
                         <path fill="currentColor"
                             d="M510.52 255.82c-69.97-.85-126.47-57.69-126.47-127.86-70.17 0-127-56.49-127.86-126.45-27.26-4.14-55.13.3-79.72 12.82l-69.13 35.22a132.221 132.221 0 0 0-57.79 57.81l-35.1 68.88a132.645 132.645 0 0 0-12.82 80.95l12.08 76.27a132.521 132.521 0 0 0 37.16 72.96l54.77 54.76a132.036 132.036 0 0 0 72.71 37.06l76.71 12.15c27.51 4.36 55.7-.11 80.53-12.76l69.13-35.21a132.273 132.273 0 0 0 57.79-57.81l35.1-68.88c12.56-24.64 17.01-52.58 12.91-79.91zM176 368c-17.67 0-32-14.33-32-32s14.33-32 32-32 32 14.33 32 32-14.33 32-32 32zm32-160c-17.67 0-32-14.33-32-32s14.33-32 32-32 32 14.33 32 32-14.33 32-32 32zm160 128c-17.67 0-32-14.33-32-32s14.33-32 32-32 32 14.33 32 32-14.33 32-32 32z" />
                     </svg>
                 </div>
                 <h3>Cookie Consent</h3>
-                <p>We use cookies and similar technologies to enhance your browsing experience, personalize content, analyze our website traffic, and provide targeted advertisements. By clicking "Accept All", you consent to our use of cookies and other tracking technologies. These help us understand how you interact with our site, improve our services, and deliver more relevant content to you. For more detailed information about the cookies we use and your rights, please read our comprehensive <a href="#" class="cookie-link">Cookie Policy</a>.</p>
+                <p>We use cookies to enhance your browsing experience and analyze our traffic. By clicking "Accept All",
+                    you consent to our use of cookies. For more information, please read our <a href="#"
+                        class="cookie-link">Cookie Policy</a>.</p>
                 <div class="cookie-buttons">
                     <button id="accept-cookies" class="btn-cookie btn-accept">Accept All</button>
                     <button id="refuse-cookies" class="btn-cookie btn-refuse">Refuse</button>
@@ -3953,45 +3955,44 @@
             .cookie-consent {
                 position: fixed;
                 bottom: -100%;
-                left: 0;
-                right: 0;
+                left: 50%;
+                transform: translateX(-50%);
                 background-color: rgba(255, 255, 255, 0.95);
                 backdrop-filter: blur(10px);
                 -webkit-backdrop-filter: blur(10px);
                 padding: 20px;
-                width: 100%;
-                box-shadow: 0 -5px 20px rgba(0, 0, 0, 0.1);
+                width: 90%;
+                max-width: 400px;
+                box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
                 z-index: 1000;
+                border-radius: 20px;
+                border: 1px solid rgba(255, 255, 255, 0.18);
                 font-family: 'Proxima Nova', sans-serif;
                 color: #333333;
                 opacity: 0;
                 transition: all 0.5s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+                max-height: 90vh;
                 overflow-y: auto;
             }
 
             .cookie-consent.show {
-                bottom: 0;
+                bottom: 20px;
                 opacity: 1;
             }
 
             .cookie-content {
-                max-width: 1200px;
-                margin: 0 auto;
-                display: flex;
-                flex-direction: column;
-                align-items: flex-start;
+                text-align: center;
             }
 
             .cookie-header {
                 display: flex;
-                align-items: center;
+                justify-content: center;
                 margin-bottom: 15px;
             }
 
             .cookie-icon {
                 color: #0056b3;
                 animation: rotateCookie 3s ease-in-out infinite;
-                margin-right: 15px;
             }
 
             @keyframes rotateCookie {
@@ -4001,7 +4002,7 @@
             }
 
             .cookie-consent h3 {
-                margin: 0;
+                margin: 0 0 15px 0;
                 font-size: 22px;
                 font-weight: 600;
             }
@@ -4011,7 +4012,6 @@
                 font-size: 16px;
                 line-height: 1.6;
                 color: #555;
-                width: 100%;
             }
 
             .cookie-link {
@@ -4027,13 +4027,14 @@
 
             .cookie-buttons {
                 display: flex;
-                gap: 20px;
+                justify-content: center;
+                gap: 10px;
             }
 
             .btn-cookie {
-                padding: 12px 25px;
+                padding: 12px 20px;
                 border: none;
-                border-radius: 5px;
+                border-radius: 30px;
                 cursor: pointer;
                 font-size: 16px;
                 font-weight: 600;
@@ -4064,11 +4065,11 @@
 
             .close-cookie {
                 position: absolute;
-                top: 15px;
-                right: 20px;
+                top: 10px;
+                right: 15px;
                 background: none;
                 border: none;
-                font-size: 28px;
+                font-size: 24px;
                 cursor: pointer;
                 color: #999;
                 transition: color 0.3s ease;
@@ -4081,7 +4082,7 @@
             body.dark-mode .cookie-consent {
                 background-color: rgba(38, 26, 60, 0.95);
                 color: #ffffff;
-                box-shadow: 0 -5px 20px rgba(0, 0, 0, 0.3);
+                box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
             }
 
             body.dark-mode .btn-accept {
@@ -4117,28 +4118,23 @@
                 color: #9d4edd;
             }
 
-            @media (max-width: 768px) {
-                .cookie-content {
-                    flex-direction: column;
-                    align-items: flex-start;
+            @media (max-width: 480px) {
+                .cookie-consent {
+                    width: 95%;
+                    padding: 15px;
                 }
 
-                .cookie-header {
-                    margin-bottom: 20px;
+                .cookie-consent h3 {
+                    font-size: 20px;
                 }
 
                 .cookie-consent p {
-                    padding-right: 0;
-                    margin-bottom: 25px;
-                }
-
-                .cookie-buttons {
-                    width: 100%;
-                    justify-content: space-between;
+                    font-size: 14px;
                 }
 
                 .btn-cookie {
-                    flex: 1;
+                    padding: 10px 16px;
+                    font-size: 14px;
                 }
             }
         </style>
