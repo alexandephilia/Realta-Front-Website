@@ -444,6 +444,7 @@
                     @media (min-width: 992px) {
                         #sidebar {
                             display: none !important;
+                            z-index: 2031;
                         }
 
                         .offcanvas-backdrop {
@@ -647,6 +648,7 @@
                 </div>
             </div>
         </nav>
+
         <div class="navbar-banner">
             <div class="navbar-banner__container">
                 <div class="navbar-banner__content">
@@ -668,8 +670,40 @@
                 font-size: 16px;
                 transition: all 0.5s cubic-bezier(0.25, 0.1, 0.25, 1);
                 position: relative;
-                z-index: 101;
+                z-index: 1;
                 overflow: hidden;
+            }
+
+            .navbar-banner--scrolled {
+                position: fixed;
+                top: 0;
+                left: 0;
+                right: 0;
+                z-index: 102;
+                /* Above the navbar */
+                transform: translateY(-100%);
+                transition: transform 0.5s cubic-bezier(0.25, 0.1, 0.25, 1);
+            }
+
+            .navbar-banner--scrolled.show {
+                transform: translateY(0);
+            }
+
+            /* Adjust navbar position when banner is scrolled */
+            .navbar--banner-scrolled {
+                top: 40px;
+                /* Adjust this value based on your banner height */
+                transition: top 0.5s cubic-bezier(0.25, 0.1, 0.25, 1);
+            }
+
+            /* Navbar transition */
+            .navbar {
+                transition: all 0.5s cubic-bezier(0.25, 0.1, 0.25, 1);
+            }
+
+            /* Ensure the banner transition is smooth */
+            .navbar-banner {
+                transition: all 0.5s cubic-bezier(0.25, 0.1, 0.25, 1);
             }
 
             .navbar-banner__container {
@@ -837,76 +871,63 @@
             }
 
             /* Banner position when scrolled */
-            .navbar-banner--scrolled {
-                position: fixed;
-                top: 0;
-                left: 0;
-                right: 0;
-                z-index: 101;
-                /* Above the navbar */
-                transform: translateY(-100%);
-                transition: transform 0.5s cubic-bezier(0.25, 0.1, 0.25, 1);
-            }
-
-            .navbar-banner--scrolled.show {
-                transform: translateY(0);
-            }
-
-            /* Adjust navbar position when banner is scrolled */
-            .navbar--banner-scrolled {
-                top: 40px;
-                /* Adjust this value based on your banner height */
-                transition: top 0.5s cubic-bezier(0.25, 0.1, 0.25, 1);
-            }
-
-            /* Navbar transition */
-            .navbar {
-                transition: all 0.5s cubic-bezier(0.25, 0.1, 0.25, 1);
-            }
-
-            /* Ensure the banner transition is smooth */
-            .navbar-banner {
-                transition: all 0.5s cubic-bezier(0.25, 0.1, 0.25, 1);
-            }
+          
         </style>
         <script>
-            document.addEventListener('DOMContentLoaded', function () {
-                var navbar = document.querySelector('.navbar');
-                var navbarBanner = document.querySelector('.navbar-banner');
-                var lastScrollTop = 0;
-                var scrollThreshold = 10; // Adjust this value to change sensitivity
-        
-                function handleScroll() {
-                    var bannerHeight = navbarBanner.offsetHeight;
-                    var scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-        
-                    if (Math.abs(scrollTop - lastScrollTop) > scrollThreshold) {
-                        if (scrollTop > lastScrollTop && scrollTop > bannerHeight) {
-                            // Scrolling down
-                            navbar.classList.add('navbar-shrink');
-                            navbarBanner.classList.add('navbar-banner--scrolled');
-                            navbarBanner.classList.remove('show');
-                            navbar.style.transform = 'translateY(0)';
-                        } else if (scrollTop <= lastScrollTop && scrollTop > bannerHeight) {
-                            // Scrolling up
-                            navbar.classList.add('navbar-shrink', 'navbar--banner-scrolled');
-                            navbarBanner.classList.add('navbar-banner--scrolled', 'show');
-                            navbar.style.transform = 'translateY(' + bannerHeight + 'px)';
-                        } else {
-                            // At the top
-                            navbar.classList.remove('navbar-shrink', 'navbar--banner-scrolled');
-                            navbarBanner.classList.remove('navbar-banner--scrolled', 'show');
-                            navbar.style.transform = 'translateY(0)';
-                        }
-        
-                        lastScrollTop = scrollTop;
-                    }
-                }
-        
-                window.addEventListener('scroll', handleScroll);
-                // Initial call to set correct state on page load
-                handleScroll();
-            });
+         document.addEventListener('DOMContentLoaded', function () {
+    var navbar = document.querySelector('.navbar');
+    var navbarBanner = document.querySelector('.navbar-banner');
+    var lastScrollTop = 0;
+    var scrollThreshold = 10;
+
+    function handleScroll() {
+        var bannerHeight = navbarBanner.offsetHeight;
+        var scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+        if (Math.abs(scrollTop - lastScrollTop) > scrollThreshold) {
+            if (scrollTop > lastScrollTop && scrollTop > bannerHeight) {
+                // Scrolling down
+                navbar.classList.add('navbar-shrink');
+                navbarBanner.classList.add('navbar-banner--scrolled');
+                navbarBanner.classList.remove('show');
+                navbar.style.transform = 'translateY(0)';
+            } else if (scrollTop <= lastScrollTop && scrollTop > bannerHeight) {
+                // Scrolling up
+                navbar.classList.add('navbar-shrink', 'navbar--banner-scrolled');
+                navbarBanner.classList.add('navbar-banner--scrolled', 'show');
+                navbar.style.transform = 'translateY(' + bannerHeight + 'px)';
+            } else {
+                // At the top
+                navbar.classList.remove('navbar-shrink', 'navbar--banner-scrolled');
+                navbarBanner.classList.remove('navbar-banner--scrolled', 'show');
+                navbar.style.transform = 'translateY(0)';
+            }
+
+            lastScrollTop = scrollTop;
+        }
+    }
+
+    // Only add scroll event listener if not on mobile
+    if (window.innerWidth > 991.98) {
+        window.addEventListener('scroll', handleScroll);
+        // Initial call to set correct state on page load
+        handleScroll();
+    }
+
+    // Update on window resize
+    window.addEventListener('resize', function() {
+        if (window.innerWidth > 991.98) {
+            window.addEventListener('scroll', handleScroll);
+            handleScroll();
+        } else {
+            window.removeEventListener('scroll', handleScroll);
+            // Reset styles for mobile
+            navbar.classList.remove('navbar-shrink', 'navbar--banner-scrolled');
+            navbarBanner.classList.remove('navbar-banner--scrolled', 'show');
+            navbar.style.transform = '';
+        }
+    });
+});
         </script>
     </header>
 
