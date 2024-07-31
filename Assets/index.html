@@ -3444,12 +3444,35 @@
                         </iframe>
                     </div>
 
-                    <p class="mb-2">Phone: <a href="" class="text-decoration-none fw-bold">+62 21 - 386 1772</a></p>
-                    <p class="mb-4 ">Email: <a href="mailto:info@realta.co.id" class="text-decoration-none fw-bold">info@realta.co.id</a></p>
-                    <p class="mb-4">
-                        For sales and marketing, contact our<br>
-                        Official WhatsApp: <a href="https://wa.me/628111221789" class="text-decoration-none fw-bold">+62 811 1221 789</a> (chat only)
-                    </p>
+                    <div class="contact-info mb-4">
+                        <style>
+                            .contact-item {
+                                display: flex;
+                                align-items: flex-start;
+                                margin-bottom: 10px;
+                            }
+                            .contact-icon {
+                                font-size: 14px;
+                                margin-right: 10px;
+                                margin-top: 3px;
+                            }
+                        </style>
+                        <div class="contact-item">
+                            <i class="fas fa-phone contact-icon"></i>
+                            <p class="mb-0">Phone: <a href="tel:+62213861772" class="text-decoration-none fw-bold">+62 21 - 386 1772</a></p>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-envelope contact-icon"></i>
+                            <p class="mb-0">Email: <a href="mailto:info@realta.co.id" class="text-decoration-none fw-bold">info@realta.co.id</a></p>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fab fa-whatsapp contact-icon"></i>
+                            <p class="mb-0">
+                                For sales and marketing, contact our Official WhatsApp:<br>
+                                <a href="https://wa.me/628111221789" class="text-decoration-none fw-bold" style="color: #3bc05a;">+62 811 1221 789</a>
+                            </p>
+                        </div>
+                    </div>
 
                     <div class="d-flex gap-2">
                         <a href="https://www.facebook.com/yourpage" class="social-icon" aria-label="Facebook">
@@ -3468,6 +3491,30 @@
                 <div id="contact-form" class="col-lg-5  right-column right-column-custom p-4 p-md-5 order-1 order-lg-2">
                     <form class="needs-validation" novalidate>
                         <div class="mb-3">
+                            <label for="fullname" class="form-label">Name</label>
+                            <input type="text" class="form-control" id="fullname" placeholder="Name" required>
+                            <div class="invalid-feedback">
+                                Please enter your full name.
+                            </div>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="company" class="form-label">Company Name</label>
+                            <input type="text" class="form-control" id="company" placeholder="Company" required>
+                            <div class="invalid-feedback">
+                                Please enter your company name.
+                            </div>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="jobTitle" class="form-label">Job Title</label>
+                            <input type="text" class="form-control" id="jobTitle" placeholder="Job Title" required>
+                            <div class="invalid-feedback">
+                                Please enter your job title.
+                            </div>
+                        </div>
+
+                        <div class="mb-3">
                             <label for="service" class="form-label">Select A Service</label>
                             <select id="service" class="form-select" required>
                                 <option value="">Choose...</option>
@@ -3485,30 +3532,19 @@
                                 Please select a service.
                             </div>
                         </div>
-
                         <div class="mb-3">
-                            <label for="company" class="form-label">Company</label>
-                            <input type="text" class="form-control" id="company" placeholder="Company" required>
+                            <label for="phone" class="form-label">Mobile Phone</label>
+                            <input type="tel" class="form-control" id="phone" placeholder="Mobile Phone" required
+                                pattern="^\+?\d{0,13}">
                             <div class="invalid-feedback">
-                                Please enter your company name.
+                                Please enter a valid mobile phone number.
                             </div>
                         </div>
-
-                        <div class="row mb-3">
-                            <div class="col-md-6 mb-3 mb-md-0">
-                                <label for="phone" class="form-label">Mobile Phone</label>
-                                <input type="tel" class="form-control" id="phone" placeholder="Mobile Phone" required
-                                    pattern="^\+?\d{0,13}">
-                                <div class="invalid-feedback">
-                                    Please enter a valid mobile phone number.
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <label for="email" class="form-label">Email</label>
-                                <input type="email" class="form-control" id="email" placeholder="Email" required>
-                                <div class="invalid-feedback">
-                                    Please enter a valid email address.
-                                </div>
+                        <div class="mb-3">
+                            <label for="email" class="form-label">Email</label>
+                            <input type="email" class="form-control" id="email" placeholder="Email" required>
+                            <div class="invalid-feedback">
+                                Please enter a valid email address.
                             </div>
                         </div>
 
@@ -3529,14 +3565,6 @@
                         </div>
 
                         <div class="mb-3">
-                            <label for="fullname" class="form-label">Fullname</label>
-                            <input type="text" class="form-control" id="fullname" placeholder="Fullname" required>
-                            <div class="invalid-feedback">
-                                Please enter your full name.
-                            </div>
-                        </div>
-
-                        <div class="mb-3">
                             <label for="message" class="form-label">Message</label>
                             <textarea id="message" class="form-control" rows="4" placeholder="Message"
                                 required></textarea>
@@ -3545,15 +3573,17 @@
                             </div>
                         </div>
 
-                        <div class="mb-3 form-check">
-                            <input type="checkbox" class="form-check-input" id="terms" required>
-                            <label class="form-check-label" for="terms">
-                                Before submitting please read our <br>
-                                <a href="#" class="text-decoration-none">Term and Condition</a> &
-                                <a href="#" class="text-decoration-none">Privacy Policy</a>
-                            </label>
-                            <div class="invalid-feedback">
-                                You must agree to the terms and conditions.
+                        <div class="mb-3 form-check text-center">
+                            <div class="d-inline-block text-start">
+                                <input type="checkbox" class="form-check-input" id="terms" required>
+                                <label class="form-check-label" for="terms">
+                                    Before submitting please read our <br>
+                                    <a href="#" class="text-decoration-none">Term and Condition</a> &
+                                    <a href="#" class="text-decoration-none">Privacy Policy</a>
+                                </label>
+                                <div class="invalid-feedback">
+                                    You must agree to the terms and conditions.
+                                </div>
                             </div>
                         </div>
 
@@ -3585,7 +3615,7 @@
                                     inset 0 0 0 1px rgba(255, 255, 255, 0.3),
                                     0 5px 10px rgba(0, 0, 0, 0.1),
                                     0 10px 20px rgba(0, 0, 0, 0.1);
-                                margin: 0 auto;
+                                margin: 20px auto 0; /* Added top margin to move the button slightly down */
                             }
 
                             .submit-btn .icon {
@@ -3708,7 +3738,7 @@
         }
 
         #newsletter-cta .btn-primary {
-            background: linear-gradient(90deg, #7209d4, #2832d4);
+            background: linear-gradient(to bottom, #9054d0, #7a4bd7);
             border: none;
             transition: all 0.3s ease;
         }
@@ -4011,7 +4041,12 @@
         });
     </script>
 
-    <script>
+  <script>
+    function isMobileDevice() {
+        return window.innerWidth <= 768; // Adjust this threshold as needed
+    }
+
+    if (isMobileDevice()) {
         var url = 'https://wati-integration-prod-service.clare.ai/v2/watiWidget.js?54712';
         var s = document.createElement('script');
         s.type = 'text/javascript';
@@ -4021,7 +4056,6 @@
             "enabled": true,
             "chatButtonSetting": {
                 "backgroundColor": "#00e785",
-                // "ctaText":"Chat with us",
                 "borderRadius": "25",
                 "marginLeft": "0",
                 "marginRight": "25",
@@ -4047,7 +4081,30 @@
         };
         var x = document.getElementsByTagName('script')[0];
         x.parentNode.insertBefore(s, x);
-    </script>
+    }
+
+    // Add event listener for window resize
+    window.addEventListener('resize', function() {
+        if (isMobileDevice()) {
+            if (!document.querySelector('script[src="' + url + '"]')) {
+                var s = document.createElement('script');
+                s.type = 'text/javascript';
+                s.async = true;
+                s.src = url;
+                s.onload = function () {
+                    CreateWhatsappChatWidget(options);
+                };
+                var x = document.getElementsByTagName('script')[0];
+                x.parentNode.insertBefore(s, x);
+            }
+        } else {
+            var widget = document.getElementById('whatsapp-chat-widget');
+            if (widget) {
+                widget.remove();
+            }
+        }
+    });
+</script>
 
     <!-- Cookie Consent Popup -->
     <div id="cookie-consent" class="cookie-consent">

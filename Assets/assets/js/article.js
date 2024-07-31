@@ -42,21 +42,8 @@ function renderFullArticle(post) {
           <img src="${post.imageAlt}" alt="Additional image" class="img-fluid w-80">
         </div>
       ` : ''}
-      <aside class="bg-light p-3 mb-4 rounded aside-custom">
-        <h4 class="aside-title">Quick Facts</h4>
-        <ul class="aside-list">
-          <li>Microsoft and Apple's significant shift in AI strategy</li>
-          <li>Potential impact on the AI industry landscape</li>
-          <li>Implications for future collaborations and competition</li>
-        </ul>
-      </aside>
-      ${post.challenges ? `
-        <h3 class="mt-4 mb-3">Challenges and Considerations</h3>
-        <p>The article raises several important questions:</p>
-        <ol>
-          ${post.challenges.map(challenge => `<li>${challenge}</li>`).join('')}
-        </ol>
-      ` : ''}
+      
+     
       ${post.conclusion ? `
         <h3 class="mt-4 mb-3">What This Means for the Tech Industry</h3>
         <p>${post.conclusion}</p>

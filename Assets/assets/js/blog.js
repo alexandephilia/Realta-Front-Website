@@ -92,7 +92,8 @@ document.addEventListener('DOMContentLoaded', function () {
               <span class="me-3">${post.date}</span>
               <span>${post.type}</span>
             </div>
-C          </div>
+            <a href="article.html?id=${post.id}" class="read-more">Read more</a>
+          </div>
         </div>
       `;
       container.appendChild(postElement);
