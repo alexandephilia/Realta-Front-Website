@@ -11,7 +11,8 @@
 
     <!-- Preload fonts -->
     <link rel="preload" href="assets/fonts/important-font.woff2" as="font" type="font/woff2" crossorigin>
-    <link rel="preload" href="assets/font/proxima-nova/ProximaNova-Regular.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="assets/font/proxima-nova/ProximaNova-Regular.woff2" as="font" type="font/woff2"
+        crossorigin>
     <link rel="preload" href="assets/font/proxima-nova/ProximaNova-Bold.woff2" as="font" type="font/woff2" crossorigin>
 
     <!-- Stylesheets -->
@@ -24,7 +25,9 @@
 
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;700&family=Roboto:wght@400;500&display=swap"
+        rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Zilla+Slab:wght@400;700&display=swap" rel="stylesheet">
 
@@ -33,40 +36,454 @@
 </head>
 
 
-    <header>
+<header>
 
-        <nav class="navbar navbar-expand-lg sticky-top navbar-shrink navbar-light" id="mainNav">
-            <div class="container-fluid container-lg px-2">
-                <a class="navbar-logo d-flex align-items-center" href="/">
-                    <img src="assets/img/realta.png" alt="Realta Logo" class="realta-logo">
-                </a>
-                <style>
+    <nav class="navbar navbar-expand-lg sticky-top navbar-shrink navbar-light" id="mainNav">
+        <div class="container-fluid container-lg px-2">
+            <a class="navbar-logo d-flex align-items-center" href="/">
+                <img src="assets/img/realta.png" alt="Realta Logo" class="realta-logo">
+            </a>
+            <style>
+                .realta-logo {
+                    width: 140px;
+                    height: 50%;
+                }
+
+                @media (min-width: 992px) {
                     .realta-logo {
-                        width: 140px;
-                        height: 50%;
+                        margin-left: 15px;
+                    }
+                }
+
+                @media (max-width: 767px) {
+                    .realta-logo {
+                        width: 120px;
+                        height: auto;
+                        margin-left: -10px;
+                    }
+                }
+            </style>
+            <div class="navbar-mobile-actions">
+                <button id="darkModeToggleNav" class="btn-custom download-btn ms-1"
+                    style="border: none; min-width: fit-content; margin-right: 0.4rem;">
+                    <i class="fas fa-moon"></i>
+                </button>
+                <!-- Language switch button -->
+                <!-- Language switch dropdown -->
+                <div class="custom-dropdown">
+                    <button id="languageSwitch" class="btn-custom download-btn ms-1" type="button"
+                        style="border: none; min-width: fit-content; margin-right: 1.4rem;">
+                        <i class="fas fa-globe"></i>
+                    </button>
+                    <ul class="custom-dropdown-menu">
+                        <li><a href="#" data-lang="en">EN</a></li>
+                        <li><a href="#" data-lang="id">ID</a></li>
+                    </ul>
+                </div>
+                <div class="nav-drawer" data-bs-toggle="offcanvas" data-bs-target="#sidebar" aria-controls="sidebar">
+                    <i class="fas fa-bars" style="font-size: 1.7rem;"></i>
+                </div>
+            </div>
+            <!-- Mobile responsive navigation menu -->
+            <div class="offcanvas offcanvas-end" tabindex="-1" id="sidebar" aria-labelledby="sidebarLabel">
+                <div class="offcanvas-header">
+                    <div>
+                        <h5 class="offcanvas-title" id="sidebarLabel"
+                            style="margin-left: 33px; margin-bottom: 20px; font-size: 30px;">Menu</h5>
+                    </div>
+                    <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas"
+                        aria-label="Close"></button>
+                </div>
+                <div class="offcanvas-body">
+                    <div class="sidebar-menu">
+                        <div class="sidebar-item">
+                            <h2 class="product-header" data-bs-toggle="collapse" data-bs-target="#productsSubmenu"
+                                aria-expanded="false">
+                                Products <i class="fas fa-chevron-right arrow-icon"></i>
+                            </h2>
+                            <div id="productsSubmenu" class="collapse">
+                                <ul class="product-list">
+                                    <li>
+                                        <div class="product-header" data-bs-toggle="collapse"
+                                            data-bs-target="#hmsSubmenu" aria-expanded="false"
+                                            style="font-size: 1rem; font-weight: 400;">
+                                            Hotel Management System <i class="fas fa-chevron-right arrow-icon"></i>
+                                        </div>
+                                        <div id="hmsSubmenu" class="collapse product-submenu">
+                                            <p>Comprehensive solution for efficient hotel operations and guest
+                                                management.</p>
+                                            <a href="#" class="discover-link">Discover HMS ›</a>
+                                            <h3 class="modules-heading">MODULES</h3>
+                                            <ul class="modules-list">
+                                                <li>
+                                                    <strong>Reservation Management</strong>
+                                                    <span>Streamline booking processes</span>
+                                                </li>
+                                                <li>
+                                                    <strong>Front Desk Operations</strong>
+                                                    <span>Efficient check-in and check-out</span>
+                                                </li>
+                                                <li>
+                                                    <strong>Housekeeping Management</strong>
+                                                    <span>Optimize room maintenance</span>
+                                                </li>
+                                                <li>
+                                                    <strong>Revenue Management</strong>
+                                                    <span>Maximize profitability</span>
+                                                </li>
+                                                <li>
+                                                    <strong>Guest Experience Management</strong>
+                                                    <span>Enhance customer satisfaction</span>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="product-header" data-bs-toggle="collapse"
+                                            data-bs-target="#gcsSubmenu" aria-expanded="false"
+                                            style="font-size: 1rem; font-weight: 400;">
+                                            Golf Course System <i class="fas fa-chevron-right arrow-icon"></i>
+                                        </div>
+                                        <div id="gcsSubmenu" class="collapse product-submenu">
+                                            <p>Integrated system for efficient golf course management and
+                                                operations.</p>
+                                            <a href="#" class="discover-link">Discover GCS ›</a>
+                                            <h3 class="modules-heading">MODULES</h3>
+                                            <ul class="modules-list">
+                                                <li>
+                                                    <strong>Tee Time Management</strong>
+                                                    <span>Optimize scheduling and bookings</span>
+                                                </li>
+                                                <li>
+                                                    <strong>Member Management</strong>
+                                                    <span>Streamline membership processes</span>
+                                                </li>
+                                                <li>
+                                                    <strong>Pro Shop Management</strong>
+                                                    <span>Inventory and sales management</span>
+                                                </li>
+                                                <li>
+                                                    <strong>Tournament Management</strong>
+                                                    <span>Organize and manage events</span>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="product-header" data-bs-toggle="collapse"
+                                            data-bs-target="#hrSystemSubmenu" aria-expanded="false"
+                                            style="font-size: 1rem; font-weight: 400;">
+                                            HR System <i class="fas fa-chevron-right arrow-icon"></i>
+                                        </div>
+                                        <div id="hrSystemSubmenu" class="collapse product-submenu">
+                                            <p>Comprehensive human resource management solution for businesses of
+                                                all sizes.</p>
+                                            <a href="#" class <div id="container-header"
+                                                class="container py-5">discover-link">Discover HR System ›</a>
+                                            <h3 class="modules-heading">MODULES</h3>
+                                            <ul class="modules-list">
+                                                <li>
+                                                    <strong>Employee Management</strong>
+                                                    <span>Centralize employee data and records</span>
+                                                </li>
+                                                <li>
+                                                    <strong>Payroll Processing</strong>
+                                                    <span>Automate salary calculations and payments</span>
+                                                </li>
+                                                <li>
+                                                    <strong>Time and Attendance</strong>
+                                                    <span>Track employee work hours and absences</span>
+                                                </li>
+                                                <li>
+                                                    <strong>Performance Management</strong>
+                                                    <span>Set goals and conduct evaluations</span>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="product-header" data-bs-toggle="collapse"
+                                            data-bs-target="#propertyTenantSubmenu" aria-expanded="false"
+                                            style="font-size: 1rem; font-weight: 400;">
+                                            Property and Tenant System <i class="fas fa-chevron-right arrow-icon"></i>
+                                        </div>
+                                        <div id="propertyTenantSubmenu" class="collapse product-submenu">
+                                            <p>Efficient management solution for property owners and landlords.</p>
+                                            <a href="#" class="discover-link">Discover Property and Tenant System
+                                                ›</a>
+                                            <h3 class="modules-heading">MODULES</h3>
+                                            <ul class="modules-list">
+                                                <li>
+                                                    <strong>Property Management</strong>
+                                                    <span>Organize and track property details</span>
+                                                </li>
+                                                <li>
+                                                    <strong>Tenant Management</strong>
+                                                    <span>Manage tenant information and leases</span>
+                                                </li>
+                                                <li>
+                                                    <strong>Rent Collection</strong>
+                                                    <span>Automate rent payments and tracking</span>
+                                                </li>
+                                                <li>
+                                                    <strong>Maintenance Requests</strong>
+                                                    <span>Handle and track property maintenance</span>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="product-header" data-bs-toggle="collapse"
+                                            data-bs-target="#itsmSubmenu" aria-expanded="false"
+                                            style="font-size: 1rem; font-weight: 400;">
+                                            ITSM, ITAM & Unified Endpoint Management <i
+                                                class="fas fa-chevron-right arrow-icon"></i>
+                                        </div>
+                                        <div id="itsmSubmenu" class="collapse product-submenu">
+                                            <p>Comprehensive IT Service Management solution for streamlined IT
+                                                operations.</p>
+                                            <a href="#" class="discover-link">Discover ITSM, ITAM & Unified Endpoint
+                                                Management ›</a>
+                                            <h3 class="modules-heading">MODULES</h3>
+                                            <ul class="modules-list">
+                                                <li>
+                                                    <strong>Incident Management</strong>
+                                                    <span>Efficiently handle and resolve IT issues</span>
+                                                </li>
+                                                <li>
+                                                    <strong>Change Management</strong>
+                                                    <span>Control and implement IT changes</span>
+                                                </li>
+                                                <li>
+                                                    <strong>Asset Management</strong>
+                                                    <span>Track and manage IT assets</span>
+                                                </li>
+                                                <li>
+                                                    <strong>Service Catalog</strong>
+                                                    <span>Organize and offer IT services</span>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="product-header" data-bs-toggle="collapse"
+                                            data-bs-target="#erpSubmenu" aria-expanded="false"
+                                            style="font-size: 1rem; font-weight: 400;">
+                                            ERP & EAM <i class="fas fa-chevron-right arrow-icon"></i>
+                                        </div>
+                                        <div id="erpSubmenu" class="collapse product-submenu">
+                                            <p>Integrated Enterprise Resource Planning solution for business
+                                                management.</p>
+                                            <a href="#" class="discover-link">Discover ERP & EAM ›</a>
+                                            <h3 class="modules-heading">MODULES</h3>
+                                            <ul class="modules-list">
+                                                <li>
+                                                    <strong>Financial Management</strong>
+                                                    <span>Manage accounting and finances</span>
+                                                </li>
+                                                <li>
+                                                    <strong>Supply Chain Management</strong>
+                                                    <span>Optimize procurement and logistics</span>
+                                                </li>
+                                                <li>
+                                                    <strong>Manufacturing</strong>
+                                                    <span>Streamline production processes</span>
+                                                </li>
+                                                <li>
+                                                    <strong>Customer Relationship Management</strong>
+                                                    <span>Enhance customer interactions</span>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="sidebar-item">
+                            <h2 class="product-header" data-bs-toggle="collapse" data-bs-target="#resourcesSubmenu"
+                                aria-expanded="false style=" font-size: 1.1rem;"">
+                                Resources <i class="fas fa-chevron-right arrow-icon"></i>
+                            </h2>
+                            <div id="resourcesSubmenu" class="collapse">
+                                <ul class="submenu-list">
+                                    <li><a href="#">Blog</a></li>
+                                    <li><a href="#">Webinars</a></li>
+                                    <li><a href="#">White Papers</a></li>
+                                    <li><a href="#">Case Studies</a></li>
+                                    <li><a href="#">eBooks</a></li>
+                                    <li><a href="#">Product Videos</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="sidebar-item">
+                            <h2 class="product-header" data-bs-toggle="collapse" data-bs-target="#partnersSubmenu"
+                                aria-expanded="false">
+                                Partners <i class="fas fa-chevron-right arrow-icon"></i>
+                            </h2>
+                            <div id="partnersSubmenu" class="collapse">
+                                <!-- Add partners submenu content here -->
+                            </div>
+                        </div>
+                        <div class="sidebar-item">
+                            <h2 class="product-header" data-bs-toggle="collapse" data-bs-target="#companySubmenu"
+                                aria-expanded="false">
+                                Company <i class="fas fa-chevron-right arrow-icon"></i>
+                            </h2>
+                            <div id="companySubmenu" class="collapse">
+                                <ul class="submenu-list">
+                                    <li><a href="#">About Us</a></li>
+                                    <li><a href="#">Our Team</a></li>
+                                    <li><a href="#" onclick="navigateWithLoading('career.html'); return false;"
+                                            style="text-decoration: none; color: inherit;">Career</a></li>
+                                    <li><a href="#">News</a></li>
+                                    <li><a href="#">Contact</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="sidebar-item">
+                            <h2 class="product-header">
+                                <a href="#" onclick="navigateWithLoading('blog.html'); return false;"
+                                    style="text-decoration: none; color: inherit;">Blog</a>
+                            </h2>
+                        </div>
+                    </div>
+                    <div class="get-started-container">
+                        <a href="https://api.whatsapp.com/send?phone=628111221789&text=Hallo%20PT%20Realta..."
+                            target="_blank" rel="noopener noreferrer" class="btn btn-success btn-block"
+                            style="width: 100%;">
+                            <i class="fab fa-whatsapp"></i> Contact Us
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <style>
+                @media (min-width: 992px) {
+                    #sidebar {
+                        display: none !important;
+                        z-index: 2031;
                     }
 
+                    .offcanvas-backdrop {
+                        display: none !important;
+                    }
+
+                    body {
+                        overflow: auto !important;
+                        padding-right: 0 !important;
+                    }
+                }
+            </style>
+
+
+            <style>
+                .custom-dropdown {
+                    position: relative;
+                    display: inline-block;
+                }
+
+                .custom-dropdown-menu {
+                    display: none;
+                    position: absolute;
+                    top: 69%;
+                    right: 5%;
+                    /* Changed from -10% to -5% to move slightly to the left */
+                    background: rgba(179, 179, 179, 0.137);
+                    backdrop-filter: blur(10px);
+                    border-radius: 10px;
+                    width: 80px;
+                    /* Further reduced width for an even smaller dropdown */
+                    z-index: 1000;
+                    list-style-type: none;
+                    padding: 0.25rem 0;
+                    /* Reduced padding for a smaller dropdown */
+                    margin: 0.5rem 0 0 0;
+                    border: 1px solid rgba(255, 255, 255, 0.18);
+                }
+
+                .custom-dropdown-menu li {
+                    padding: 0.2rem 0;
+                    /* Reduced padding for smaller items */
+                    text-align: center;
+                    /* Centered text */
+                }
+
+                .custom-dropdown-menu li a {
+                    color: #333;
+                    padding: 0.3rem 0.3rem;
+                    /* Adjusted padding for better alignment */
+                    text-decoration: none;
+                    display: block;
+                    font-size: 0.8rem;
+                    /* Reduced font size for smaller dropdown */
+                    transition: background-color 0.3s ease;
+                }
+
+                .custom-dropdown-menu li a:hover {
+                    background-color: rgba(126, 126, 126, 0.5);
+                    color: #fff;
+                    /* Change text color on hover */
+                    transform: scale(1.05);
+                    /* Slightly enlarge the item */
+                    border-radius: 10px;
+                    /* Added border radius for hover background */
+                    transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
+                    /* Smooth transition */
+                }
+
+                .custom-dropdown:hover .custom-dropdown-menu {
+                    display: block;
+
+                }
+            </style>
+            <div class="full-screen-sidebar">
+                <style>
                     @media (min-width: 992px) {
-                        .realta-logo {
-                            margin-left: 15px;
+                        .full-screen-sidebar {
+                            margin-right: -35px;
                         }
                     }
 
-                    @media (max-width: 767px) {
-                        .realta-logo {
-                            width: 120px;
-                            height: auto;
-                            margin-left: -10px;
+                    @media (max-width: 768px) {
+                        .full-screen-sidebar {
+                            margin-right: 0;
                         }
                     }
                 </style>
-                <div class="navbar-mobile-actions">
-                    <button id="darkModeToggleNav" class="btn-custom download-btn ms-1"
-                        style="border: none; min-width: fit-content; margin-right: 0.4rem;">
+                <ul class="sidebar-nav justify-content-end align-items-center"
+                    style="padding: 0; margin: 0; list-style-type: none;">
+
+                    <li class="me-1"><a class="nav-link dropdown-toggle" href="#" id="solutionsDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            Solusi <i class="fas fa-chevron-down ms-1 fa-xs"></i>
+                        </a></li>
+                    <li class="me-1"><a class="nav-link dropdown-toggle" href="#" id="industriDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            Industri <i class="fas fa-chevron-down ms-1 fa-xs"></i>
+                        </a></li>
+                    <li class="me-1"><a class="nav-link dropdown-toggle" href="#" id="partnerDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            Partner <i class="fas fa-chevron-down ms-1 fa-xs"></i>
+                        </a></li>
+                    <li class="me-1"><a class="nav-link dropdown-toggle" href="#" id="konsultasiDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            Konsultasi <i class="fas fa-chevron-down ms-1 fa-xs"></i>
+                        </a></li>
+                    <li><a class="nav-link dropdown-toggle" href="#" id="tentangRealtaDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            Tentang Realta <i class="fas fa-chevron-down ms-1 fa-xs"></i>
+                        </a></li>
+                </ul>
+                <div class="sidebar-actions d-flex justify-content-end align-items-center" style="margin-bottom: 1rem;">
+                    <a class="btn-custom whatsapp-btn me-2"
+                        href="https://api.whatsapp.com/send?phone=628111221789&text=Hallo%20PT%20Realta..."
+                        target="_blank" rel="noopener noreferrer" style="font-size: 0.8em; background-color: #4FCE5D;">
+                        <i class="fab fa-whatsapp"></i>
+                        <span><strong>Whatsapp</strong></span>
+                    </a>
+                    <button id="darkModeToggleSidebar" class="btn-custom ms-2">
                         <i class="fas fa-moon"></i>
                     </button>
-                    <!-- Language switch button -->
-                    <!-- Language switch dropdown -->
                     <div class="custom-dropdown">
                         <button id="languageSwitch" class="btn-custom download-btn ms-1" type="button"
                             style="border: none; min-width: fit-content; margin-right: 1.4rem;">
@@ -77,779 +494,363 @@
                             <li><a href="#" data-lang="id">ID</a></li>
                         </ul>
                     </div>
-                    <div class="nav-drawer" data-bs-toggle="offcanvas" data-bs-target="#sidebar"
-                        aria-controls="sidebar">
-                        <i class="fas fa-bars" style="font-size: 1.7rem;"></i>
-                    </div>
-                </div>
-                <!-- Mobile responsive navigation menu -->
-                <div class="offcanvas offcanvas-end" tabindex="-1" id="sidebar" aria-labelledby="sidebarLabel">
-                    <div class="offcanvas-header">
-                        <div>
-                            <h5 class="offcanvas-title" id="sidebarLabel"
-                                style="margin-left: 33px; margin-bottom: 20px; font-size: 30px;">Menu</h5>
-                        </div>
-                        <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas"
-                            aria-label="Close"></button>
-                    </div>
-                    <div class="offcanvas-body">
-                        <div class="sidebar-menu">
-                            <div class="sidebar-item">
-                                <h2 class="product-header" data-bs-toggle="collapse" data-bs-target="#productsSubmenu"
-                                    aria-expanded="false">
-                                    Products <i class="fas fa-chevron-right arrow-icon"></i>
-                                </h2>
-                                <div id="productsSubmenu" class="collapse">
-                                    <ul class="product-list">
-                                        <li>
-                                            <div class="product-header" data-bs-toggle="collapse"
-                                                data-bs-target="#hmsSubmenu" aria-expanded="false"
-                                                style="font-size: 1rem; font-weight: 400;">
-                                                Hotel Management System <i class="fas fa-chevron-right arrow-icon"></i>
-                                            </div>
-                                            <div id="hmsSubmenu" class="collapse product-submenu">
-                                                <p>Comprehensive solution for efficient hotel operations and guest
-                                                    management.</p>
-                                                <a href="#" class="discover-link">Discover HMS ›</a>
-                                                <h3 class="modules-heading">MODULES</h3>
-                                                <ul class="modules-list">
-                                                    <li>
-                                                        <strong>Reservation Management</strong>
-                                                        <span>Streamline booking processes</span>
-                                                    </li>
-                                                    <li>
-                                                        <strong>Front Desk Operations</strong>
-                                                        <span>Efficient check-in and check-out</span>
-                                                    </li>
-                                                    <li>
-                                                        <strong>Housekeeping Management</strong>
-                                                        <span>Optimize room maintenance</span>
-                                                    </li>
-                                                    <li>
-                                                        <strong>Revenue Management</strong>
-                                                        <span>Maximize profitability</span>
-                                                    </li>
-                                                    <li>
-                                                        <strong>Guest Experience Management</strong>
-                                                        <span>Enhance customer satisfaction</span>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <div class="product-header" data-bs-toggle="collapse"
-                                                data-bs-target="#gcsSubmenu" aria-expanded="false"
-                                                style="font-size: 1rem; font-weight: 400;">
-                                                Golf Course System <i class="fas fa-chevron-right arrow-icon"></i>
-                                            </div>
-                                            <div id="gcsSubmenu" class="collapse product-submenu">
-                                                <p>Integrated system for efficient golf course management and
-                                                    operations.</p>
-                                                <a href="#" class="discover-link">Discover GCS ›</a>
-                                                <h3 class="modules-heading">MODULES</h3>
-                                                <ul class="modules-list">
-                                                    <li>
-                                                        <strong>Tee Time Management</strong>
-                                                        <span>Optimize scheduling and bookings</span>
-                                                    </li>
-                                                    <li>
-                                                        <strong>Member Management</strong>
-                                                        <span>Streamline membership processes</span>
-                                                    </li>
-                                                    <li>
-                                                        <strong>Pro Shop Management</strong>
-                                                        <span>Inventory and sales management</span>
-                                                    </li>
-                                                    <li>
-                                                        <strong>Tournament Management</strong>
-                                                        <span>Organize and manage events</span>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <div class="product-header" data-bs-toggle="collapse"
-                                                data-bs-target="#hrSystemSubmenu" aria-expanded="false"
-                                                style="font-size: 1rem; font-weight: 400;">
-                                                HR System <i class="fas fa-chevron-right arrow-icon"></i>
-                                            </div>
-                                            <div id="hrSystemSubmenu" class="collapse product-submenu">
-                                                <p>Comprehensive human resource management solution for businesses of
-                                                    all sizes.</p>
-                                                <a href="#" class <div id="container-header"
-                                                    class="container py-5">discover-link">Discover HR System ›</a>
-                                                <h3 class="modules-heading">MODULES</h3>
-                                                <ul class="modules-list">
-                                                    <li>
-                                                        <strong>Employee Management</strong>
-                                                        <span>Centralize employee data and records</span>
-                                                    </li>
-                                                    <li>
-                                                        <strong>Payroll Processing</strong>
-                                                        <span>Automate salary calculations and payments</span>
-                                                    </li>
-                                                    <li>
-                                                        <strong>Time and Attendance</strong>
-                                                        <span>Track employee work hours and absences</span>
-                                                    </li>
-                                                    <li>
-                                                        <strong>Performance Management</strong>
-                                                        <span>Set goals and conduct evaluations</span>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <div class="product-header" data-bs-toggle="collapse"
-                                                data-bs-target="#propertyTenantSubmenu" aria-expanded="false"
-                                                style="font-size: 1rem; font-weight: 400;">
-                                                Property and Tenant System <i
-                                                    class="fas fa-chevron-right arrow-icon"></i>
-                                            </div>
-                                            <div id="propertyTenantSubmenu" class="collapse product-submenu">
-                                                <p>Efficient management solution for property owners and landlords.</p>
-                                                <a href="#" class="discover-link">Discover Property and Tenant System
-                                                    ›</a>
-                                                <h3 class="modules-heading">MODULES</h3>
-                                                <ul class="modules-list">
-                                                    <li>
-                                                        <strong>Property Management</strong>
-                                                        <span>Organize and track property details</span>
-                                                    </li>
-                                                    <li>
-                                                        <strong>Tenant Management</strong>
-                                                        <span>Manage tenant information and leases</span>
-                                                    </li>
-                                                    <li>
-                                                        <strong>Rent Collection</strong>
-                                                        <span>Automate rent payments and tracking</span>
-                                                    </li>
-                                                    <li>
-                                                        <strong>Maintenance Requests</strong>
-                                                        <span>Handle and track property maintenance</span>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <div class="product-header" data-bs-toggle="collapse"
-                                                data-bs-target="#itsmSubmenu" aria-expanded="false"
-                                                style="font-size: 1rem; font-weight: 400;">
-                                                ITSM, ITAM & Unified Endpoint Management <i
-                                                    class="fas fa-chevron-right arrow-icon"></i>
-                                            </div>
-                                            <div id="itsmSubmenu" class="collapse product-submenu">
-                                                <p>Comprehensive IT Service Management solution for streamlined IT
-                                                    operations.</p>
-                                                <a href="#" class="discover-link">Discover ITSM, ITAM & Unified Endpoint
-                                                    Management ›</a>
-                                                <h3 class="modules-heading">MODULES</h3>
-                                                <ul class="modules-list">
-                                                    <li>
-                                                        <strong>Incident Management</strong>
-                                                        <span>Efficiently handle and resolve IT issues</span>
-                                                    </li>
-                                                    <li>
-                                                        <strong>Change Management</strong>
-                                                        <span>Control and implement IT changes</span>
-                                                    </li>
-                                                    <li>
-                                                        <strong>Asset Management</strong>
-                                                        <span>Track and manage IT assets</span>
-                                                    </li>
-                                                    <li>
-                                                        <strong>Service Catalog</strong>
-                                                        <span>Organize and offer IT services</span>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <div class="product-header" data-bs-toggle="collapse"
-                                                data-bs-target="#erpSubmenu" aria-expanded="false"
-                                                style="font-size: 1rem; font-weight: 400;">
-                                                ERP & EAM <i class="fas fa-chevron-right arrow-icon"></i>
-                                            </div>
-                                            <div id="erpSubmenu" class="collapse product-submenu">
-                                                <p>Integrated Enterprise Resource Planning solution for business
-                                                    management.</p>
-                                                <a href="#" class="discover-link">Discover ERP & EAM ›</a>
-                                                <h3 class="modules-heading">MODULES</h3>
-                                                <ul class="modules-list">
-                                                    <li>
-                                                        <strong>Financial Management</strong>
-                                                        <span>Manage accounting and finances</span>
-                                                    </li>
-                                                    <li>
-                                                        <strong>Supply Chain Management</strong>
-                                                        <span>Optimize procurement and logistics</span>
-                                                    </li>
-                                                    <li>
-                                                        <strong>Manufacturing</strong>
-                                                        <span>Streamline production processes</span>
-                                                    </li>
-                                                    <li>
-                                                        <strong>Customer Relationship Management</strong>
-                                                        <span>Enhance customer interactions</span>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="sidebar-item">
-                                <h2 class="product-header" data-bs-toggle="collapse" data-bs-target="#resourcesSubmenu"
-                                    aria-expanded="false style=" font-size: 1.1rem;"">
-                                    Resources <i class="fas fa-chevron-right arrow-icon"></i>
-                                </h2>
-                                <div id="resourcesSubmenu" class="collapse">
-                                    <ul class="submenu-list">
-                                        <li><a href="#">Blog</a></li>
-                                        <li><a href="#">Webinars</a></li>
-                                        <li><a href="#">White Papers</a></li>
-                                        <li><a href="#">Case Studies</a></li>
-                                        <li><a href="#">eBooks</a></li>
-                                        <li><a href="#">Product Videos</a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="sidebar-item">
-                                <h2 class="product-header" data-bs-toggle="collapse" data-bs-target="#partnersSubmenu"
-                                    aria-expanded="false">
-                                    Partners <i class="fas fa-chevron-right arrow-icon"></i>
-                                </h2>
-                                <div id="partnersSubmenu" class="collapse">
-                                    <!-- Add partners submenu content here -->
-                                </div>
-                            </div>
-                            <div class="sidebar-item">
-                                <h2 class="product-header" data-bs-toggle="collapse" data-bs-target="#companySubmenu"
-                                    aria-expanded="false">
-                                    Company <i class="fas fa-chevron-right arrow-icon"></i>
-                                </h2>
-                                <div id="companySubmenu" class="collapse">
-                                    <ul class="submenu-list">
-                                        <li><a href="#">About Us</a></li>
-                                        <li><a href="#">Our Team</a></li>
-                                        <li><a href="#" onclick="navigateWithLoading('career.html'); return false;"
-                                            style="text-decoration: none; color: inherit;">Career</a></li>
-                                        <li><a href="#">News</a></li>
-                                        <li><a href="#">Contact</a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="sidebar-item">
-                                <h2 class="product-header">
-                                    <a href="#" onclick="navigateWithLoading('blog.html'); return false;"
-                                        style="text-decoration: none; color: inherit;">Blog</a>
-                                </h2>
-                            </div>
-                        </div>
-                        <div class="get-started-container">
-                            <a href="https://api.whatsapp.com/send?phone=628111221789&text=Hallo%20PT%20Realta..."
-                                target="_blank" rel="noopener noreferrer" class="btn btn-success btn-block"
-                                style="width: 100%;">
-                                <i class="fab fa-whatsapp"></i> Contact Us
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <style>
-                    @media (min-width: 992px) {
-                        #sidebar {
-                            display: none !important;
-                            z-index: 2031;
-                        }
-
-                        .offcanvas-backdrop {
-                            display: none !important;
-                        }
-
-                        body {
-                            overflow: auto !important;
-                            padding-right: 0 !important;
-                        }
-                    }
-                </style>
-
-
-                <style>
-                    .custom-dropdown {
-                        position: relative;
-                        display: inline-block;
-                    }
-
-                    .custom-dropdown-menu {
-                        display: none;
-                        position: absolute;
-                        top: 69%;
-                        right: 5%;
-                        /* Changed from -10% to -5% to move slightly to the left */
-                        background: rgba(179, 179, 179, 0.137);
-                        backdrop-filter: blur(10px);
-                        border-radius: 10px;
-                        width: 80px;
-                        /* Further reduced width for an even smaller dropdown */
-                        z-index: 1000;
-                        list-style-type: none;
-                        padding: 0.25rem 0;
-                        /* Reduced padding for a smaller dropdown */
-                        margin: 0.5rem 0 0 0;
-                        border: 1px solid rgba(255, 255, 255, 0.18);
-                    }
-
-                    .custom-dropdown-menu li {
-                        padding: 0.2rem 0;
-                        /* Reduced padding for smaller items */
-                        text-align: center;
-                        /* Centered text */
-                    }
-
-                    .custom-dropdown-menu li a {
-                        color: #333;
-                        padding: 0.3rem 0.3rem;
-                        /* Adjusted padding for better alignment */
-                        text-decoration: none;
-                        display: block;
-                        font-size: 0.8rem;
-                        /* Reduced font size for smaller dropdown */
-                        transition: background-color 0.3s ease;
-                    }
-
-                    .custom-dropdown-menu li a:hover {
-                        background-color: rgba(126, 126, 126, 0.5);
-                        color: #fff;
-                        /* Change text color on hover */
-                        transform: scale(1.05);
-                        /* Slightly enlarge the item */
-                        border-radius: 10px;
-                        /* Added border radius for hover background */
-                        transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
-                        /* Smooth transition */
-                    }
-
-                    .custom-dropdown:hover .custom-dropdown-menu {
-                        display: block;
-
-                    }
-                </style>
-                <div class="full-screen-sidebar">
-                    <style>
-                        @media (min-width: 992px) {
-                            .full-screen-sidebar {
-                                margin-right: -35px;
-                            }
-                        }
-
-                        @media (max-width: 768px) {
-                            .full-screen-sidebar {
-                                margin-right: 0;
-                            }
-                        }
-                    </style>
-                    <ul class="sidebar-nav justify-content-end align-items-center"
-                        style="padding: 0; margin: 0; list-style-type: none;">
-
-                        <li class="me-1"><a class="nav-link dropdown-toggle" href="#" id="solutionsDropdown"
-                                role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                Solusi <i class="fas fa-chevron-down ms-1 fa-xs"></i>
-                            </a></li>
-                        <li class="me-1"><a class="nav-link dropdown-toggle" href="#" id="industriDropdown"
-                                role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                Industri <i class="fas fa-chevron-down ms-1 fa-xs"></i>
-                            </a></li>
-                        <li class="me-1"><a class="nav-link dropdown-toggle" href="#" id="partnerDropdown" role="button"
-                                data-bs-toggle="dropdown" aria-expanded="false">
-                                Partner <i class="fas fa-chevron-down ms-1 fa-xs"></i>
-                            </a></li>
-                        <li class="me-1"><a class="nav-link dropdown-toggle" href="#" id="konsultasiDropdown"
-                                role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                Konsultasi <i class="fas fa-chevron-down ms-1 fa-xs"></i>
-                            </a></li>
-                        <li><a class="nav-link dropdown-toggle" href="#" id="tentangRealtaDropdown" role="button"
-                                data-bs-toggle="dropdown" aria-expanded="false">
-                                Tentang Realta <i class="fas fa-chevron-down ms-1 fa-xs"></i>
-                            </a></li>
-                    </ul>
-                    <div class="sidebar-actions d-flex justify-content-end align-items-center"
-                        style="margin-bottom: 1rem;">
-                        <a class="btn-custom whatsapp-btn me-2"
-                            href="https://api.whatsapp.com/send?phone=628111221789&text=Hallo%20PT%20Realta..."
-                            target="_blank" rel="noopener noreferrer" style="font-size: 0.8em; background-color: #4FCE5D;">
-                            <i class="fab fa-whatsapp"></i>
-                            <span><strong>Whatsapp</strong></span>
-                        </a>
-                        <button id="darkModeToggleSidebar" class="btn-custom ms-2">
-                            <i class="fas fa-moon"></i>
-                        </button>
-                        <div class="custom-dropdown">
-                            <button id="languageSwitch" class="btn-custom download-btn ms-1" type="button"
-                                style="border: none; min-width: fit-content; margin-right: 1.4rem;">
-                                <i class="fas fa-globe"></i>
-                            </button>
-                            <ul class="custom-dropdown-menu">
-                                <li><a href="#" data-lang="en">EN</a></li>
-                                <li><a href="#" data-lang="id">ID</a></li>
-                            </ul>
-                        </div>
-                    </div>
                 </div>
             </div>
-            <div class="mega-dropdown" id="solutionsDropdownContent">
-                <div class="dropdown-content">
-                    <div class="product-categories">
-                        <div class="product-category active" data-product="hms">Hotel Management System</div>
-                        <div class="product-category" data-product="gcs">Golf Course System</div>
-                        <div class="product-category" data-product="hrs">HR System</div>
-                        <div class="product-category" data-product="pts">Property & Tenancy System</div>
-                        <div class="product-category" data-product="itm">ITSM, ITAM & Unified Endpoint Management</div>
-                        <div class="product-category" data-product="erp">ERP & EAM</div>
-                        <div class="all-products">All products ›</div>
-                    </div>
-                    <div class="product-details" id="product-details">
-                        <!-- Content will be dynamically updated here -->
-                    </div>
-                </div>
-            </div>
-            <div class="mega-dropdown" id="industriDropdownContent">
-                <div class="dropdown-content">
-                    <div class="product-categories">
-                        <div class="product-category active" data-product="manufacturing">Manufacturing</div>
-                        <div class="product-category" data-product="healthcare">Healthcare</div>
-                        <div class="product-category" data-product="retail">Retail</div>
-                        <div class="all-products">All industries ›</div>
-                    </div>
-                    <div class="product-details" id="industri-details">
-                        <!-- Content will be dynamically updated here -->
-                    </div>
-                </div>
-            </div>
-            <div class="mega-dropdown" id="partnerDropdownContent">
-                <div class="dropdown-content">
-                    <div class="product-categories">
-                        <div class="product-category active" data-product="reseller">Reseller Program</div>
-                        <div class="product-category" data-product="technology">Technology Partners</div>
-                        <div class="all-products">All partners ›</div>
-                    </div>
-                    <div class="product-details" id="partner-details">
-                        <!-- Content will be dynamically updated here -->
-                    </div>
-                </div>
-            </div>
-            <div class="mega-dropdown" id="konsultasiDropdownContent">
-                <div class="dropdown-content">
-                    <div class="product-categories">
-                        <div class="product-category active" data-product="business">Business Consultation</div>
-                        <div class="product-category" data-product="technical">Technical Consultation</div>
-                        <div class="all-products">All consultations ›</div>
-                    </div>
-                    <div class="product-details" id="konsultasi-details">
-                        <!-- Content will be dynamically updated here -->
-                    </div>
-                </div>
-            </div>
-            <div class="mega-dropdown" id="tentangRealtaDropdownContent">
-                <div class="dropdown-content">
-                    <div class="product-categories">
-                        <div class="product-category active" data-product="about">About Us</div>
-                        <div class="product-category" data-product="careers">Careers</div>
-                        <div class="product-category" data-product="blog">Blog</div>
-                        <div class="all-products">Learn more ›</div>
-                    </div>
-                    <div class="product-details" id="tentangRealta-details">
-                        <!-- Content will be dynamically updated here -->
-                    </div>
-                </div>
-            </div>
-        </nav>
-
-        <div class="navbar-banner">
-            <div class="navbar-banner__container">
-                <div class="navbar-banner__content">
-                    <div class="navbar-banner__icon"><i class="fas fa-calendar-alt"></i></div>
-                    <div class="navbar-banner__text">
-                        <strong>Exclusive Event:</strong> Join our Annual Tech Summit 2045
-                        <span class="navbar-banner__highlight">Early Bird Discount: 30% OFF</span>
-                    </div>
-                    <a href="#" class="navbar-banner__cta">Register Now</a>
-                </div>
-            </div>
-            <div class="navbar-banner__blur navbar-banner__blur--1"></div>
-            <div class="navbar-banner__blur navbar-banner__blur--2"></div>
         </div>
-        <style>
-            .navbar-banner {
-                background-color: #f0f0f0;
-                padding: 12px 0;
-                font-size: 16px;
-                transition: all 0.5s cubic-bezier(0.25, 0.1, 0.25, 1);
-                position: relative;
-                z-index: 1;
-                overflow: hidden;
-            }
+        <div class="mega-dropdown" id="solutionsDropdownContent">
+            <div class="dropdown-content">
+                <div class="product-categories">
+                    <div class="product-category active" data-product="hms">Hotel Management System</div>
+                    <div class="product-category" data-product="gcs">Golf Course System</div>
+                    <div class="product-category" data-product="hrs">HR System</div>
+                    <div class="product-category" data-product="pts">Property & Tenancy System</div>
+                    <div class="product-category" data-product="itm">ITSM, ITAM & Unified Endpoint Management</div>
+                    <div class="product-category" data-product="erp">ERP & EAM</div>
+                    <div class="all-products">All products ›</div>
+                </div>
+                <div class="product-details" id="product-details">
+                    <!-- Content will be dynamically updated here -->
+                </div>
+            </div>
+        </div>
+        <div class="mega-dropdown" id="industriDropdownContent">
+            <div class="dropdown-content">
+                <div class="product-categories">
+                    <div class="product-category active" data-product="manufacturing">Manufacturing</div>
+                    <div class="product-category" data-product="healthcare">Healthcare</div>
+                    <div class="product-category" data-product="retail">Retail</div>
+                    <div class="all-products">All industries ›</div>
+                </div>
+                <div class="product-details" id="industri-details">
+                    <!-- Content will be dynamically updated here -->
+                </div>
+            </div>
+        </div>
+        <div class="mega-dropdown" id="partnerDropdownContent">
+            <div class="dropdown-content">
+                <div class="product-categories">
+                    <div class="product-category active" data-product="reseller">Reseller Program</div>
+                    <div class="product-category" data-product="technology">Technology Partners</div>
+                    <div class="all-products">All partners ›</div>
+                </div>
+                <div class="product-details" id="partner-details">
+                    <!-- Content will be dynamically updated here -->
+                </div>
+            </div>
+        </div>
+        <div class="mega-dropdown" id="konsultasiDropdownContent">
+            <div class="dropdown-content">
+                <div class="product-categories">
+                    <div class="product-category active" data-product="business">Business Consultation</div>
+                    <div class="product-category" data-product="technical">Technical Consultation</div>
+                    <div class="all-products">All consultations ›</div>
+                </div>
+                <div class="product-details" id="konsultasi-details">
+                    <!-- Content will be dynamically updated here -->
+                </div>
+            </div>
+        </div>
+        <div class="mega-dropdown" id="tentangRealtaDropdownContent">
+            <div class="dropdown-content">
+                <div class="product-categories">
+                    <div class="product-category active" data-product="about">About Us</div>
+                    <div class="product-category" data-product="careers">Careers</div>
+                    <div class="product-category" data-product="blog">Blog</div>
+                    <div class="all-products">Learn more ›</div>
+                </div>
+                <div class="product-details" id="tentangRealta-details">
+                    <!-- Content will be dynamically updated here -->
+                </div>
+            </div>
+        </div>
+    </nav>
 
-            .navbar-banner--scrolled {
-                position: fixed;
-                top: 0;
-                left: 0;
-                right: 0;
-                z-index: 102;
-                /* Above the navbar */
-                transform: translateY(-100%);
-                transition: transform 0.5s cubic-bezier(0.25, 0.1, 0.25, 1);
-            }
+    <div class="navbar-banner">
+        <div class="navbar-banner__container">
+            <div class="navbar-banner__content">
+                <div class="navbar-banner__icon"><i class="fas fa-calendar-alt"></i></div>
+                <div class="navbar-banner__text">
+                    <strong>Exclusive Event:</strong> Join our Annual Tech Summit 2045
+                    <span class="navbar-banner__highlight">Early Bird Discount: 30% OFF</span>
+                </div>
+                <a href="#" class="navbar-banner__cta">Register Now</a>
+            </div>
+        </div>
+        <div class="navbar-banner__blur navbar-banner__blur--1"></div>
+        <div class="navbar-banner__blur navbar-banner__blur--2"></div>
+    </div>
+    <style>
+        .navbar-banner {
+            background-color: #f0f0f0;
+            padding: 12px 0;
+            font-size: 16px;
+            transition: all 0.5s cubic-bezier(0.25, 0.1, 0.25, 1);
+            position: relative;
+            z-index: 1;
+            overflow: hidden;
+        }
 
-            .navbar-banner--scrolled.show {
+        .navbar-banner--scrolled {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 102;
+            /* Above the navbar */
+            transform: translateY(-100%);
+            transition: transform 0.5s cubic-bezier(0.25, 0.1, 0.25, 1);
+        }
+
+        .navbar-banner--scrolled.show {
+            transform: translateY(0);
+        }
+
+        /* Adjust navbar position when banner is scrolled */
+        .navbar--banner-scrolled {
+            top: 40px;
+            /* Adjust this value based on your banner height */
+            transition: top 0.5s cubic-bezier(0.25, 0.1, 0.25, 1);
+        }
+
+        /* Navbar transition */
+        .navbar {
+            transition: all 0.5s cubic-bezier(0.25, 0.1, 0.25, 1);
+        }
+
+        /* Ensure the banner transition is smooth */
+        .navbar-banner {
+            transition: all 0.5s cubic-bezier(0.25, 0.1, 0.25, 1);
+        }
+
+        .navbar-banner__container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+
+        .navbar-banner__content {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            z-index: 2;
+        }
+
+        .navbar-banner__icon {
+            font-size: 28px;
+            margin-right: 20px;
+            color: #9054d0;
+            animation: navbar-banner-float 3s ease-in-out infinite;
+        }
+
+        .navbar-banner__text {
+            text-align: center;
+            font-weight: 500;
+        }
+
+        .navbar-banner__highlight {
+            background-color: #9054d034;
+            color: #000000;
+            padding: 4px 10px;
+            border-radius: 10px;
+            margin-left: 12px;
+            display: inline-block;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .navbar-banner__cta {
+            background-color: #9054d0;
+            color: white;
+            padding: 8px 20px;
+            border-radius: 10px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            margin-left: 25px;
+            white-space: nowrap;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .navbar-banner__cta:hover {
+            background-color: #7641b0;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .navbar-banner__blur {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(40px);
+            opacity: 0.6;
+            z-index: 1;
+            transition: all 0.5s ease;
+        }
+
+        .navbar-banner__blur--1 {
+            width: 120px;
+            height: 120px;
+            background-color: rgba(144, 84, 208, 0.4);
+            top: -60px;
+            left: 10%;
+            animation: navbar-banner-pulse 6s ease-in-out infinite alternate;
+        }
+
+        .navbar-banner__blur--2 {
+            width: 100px;
+            height: 100px;
+            background-color: rgba(255, 165, 0, 0.4);
+            bottom: -50px;
+            right: 15%;
+            animation: navbar-banner-pulse 6s ease-in-out infinite alternate-reverse;
+        }
+
+        @keyframes navbar-banner-float {
+
+            0%,
+            100% {
                 transform: translateY(0);
             }
 
-            /* Adjust navbar position when banner is scrolled */
-            .navbar--banner-scrolled {
-                top: 40px;
-                /* Adjust this value based on your banner height */
-                transition: top 0.5s cubic-bezier(0.25, 0.1, 0.25, 1);
+            50% {
+                transform: translateY(-6px);
+            }
+        }
+
+        @keyframes navbar-banner-pulse {
+            0% {
+                transform: scale(1);
+                opacity: 0.6;
             }
 
-            /* Navbar transition */
-            .navbar {
-                transition: all 0.5s cubic-bezier(0.25, 0.1, 0.25, 1);
+            100% {
+                transform: scale(1.2);
+                opacity: 0.8;
             }
+        }
 
-            /* Ensure the banner transition is smooth */
+        /* Dark mode styles */
+        .dark-mode .navbar-banner {
+            background-color: #2c2c2c;
+            color: #ffffff;
+        }
+
+        .dark-mode .navbar-banner__highlight {
+            background-color: #9054d034;
+            color: #ffffff;
+            padding: 4px 10px;
+            border-radius: 10px;
+        }
+
+        .dark-mode .navbar-banner__cta {
+            background-color: #b388ff;
+            color: #333;
+        }
+
+        .dark-mode .navbar-banner__cta:hover {
+            background-color: #9b6dff;
+        }
+
+        .dark-mode .navbar-banner__blur--1 {
+            background-color: rgba(179, 136, 255, 0.4);
+        }
+
+        .dark-mode .navbar-banner__blur--2 {
+            background-color: rgba(255, 215, 0, 0.4);
+        }
+
+        /* Responsive styles */
+        @media (max-width: 768px) {
             .navbar-banner {
-                transition: all 0.5s cubic-bezier(0.25, 0.1, 0.25, 1);
-            }
-
-            .navbar-banner__container {
-                max-width: 1200px;
-                margin: 0 auto;
-                padding: 0 15px;
+                font-size: 14px;
+                padding: 15px 0;
             }
 
             .navbar-banner__content {
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                position: relative;
-                z-index: 2;
+                flex-direction: column;
             }
 
             .navbar-banner__icon {
-                font-size: 28px;
-                margin-right: 20px;
-                color: #9054d0;
-                animation: navbar-banner-float 3s ease-in-out infinite;
-            }
-
-            .navbar-banner__text {
-                text-align: center;
-                font-weight: 500;
+                margin-right: 0;
+                margin-bottom: 10px;
             }
 
             .navbar-banner__highlight {
-                background-color: #9054d034;
-                color: #000000;
-                padding: 4px 10px;
-                border-radius: 10px;
-                margin-left: 12px;
-                display: inline-block;
-                font-weight: bold;
-                transition: all 0.3s ease;
-                box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+                display: block;
+                margin-left: 0;
+                margin-top: 8px;
             }
 
             .navbar-banner__cta {
-                background-color: #9054d0;
-                color: white;
-                padding: 8px 20px;
-                border-radius: 10px;
-                text-decoration: none;
-                font-weight: bold;
-                transition: all 0.3s ease;
-                margin-left: 25px;
-                white-space: nowrap;
-                box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+                margin-left: 0;
+                margin-top: 15px;
             }
+        }
 
-            .navbar-banner__cta:hover {
-                background-color: #7641b0;
-                transform: translateY(-2px);
-                box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-            }
+        /* Banner position when scrolled */
+    </style>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            var navbar = document.querySelector('.navbar');
+            var navbarBanner = document.querySelector('.navbar-banner');
+            var lastScrollTop = 0;
+            var scrollThreshold = 10;
 
-            .navbar-banner__blur {
-                position: absolute;
-                border-radius: 50%;
-                filter: blur(40px);
-                opacity: 0.6;
-                z-index: 1;
-                transition: all 0.5s ease;
-            }
+            function handleScroll() {
+                var bannerHeight = navbarBanner.offsetHeight;
+                var scrollTop = window.pageYOffset || document.documentElement.scrollTop;
 
-            .navbar-banner__blur--1 {
-                width: 120px;
-                height: 120px;
-                background-color: rgba(144, 84, 208, 0.4);
-                top: -60px;
-                left: 10%;
-                animation: navbar-banner-pulse 6s ease-in-out infinite alternate;
-            }
-
-            .navbar-banner__blur--2 {
-                width: 100px;
-                height: 100px;
-                background-color: rgba(255, 165, 0, 0.4);
-                bottom: -50px;
-                right: 15%;
-                animation: navbar-banner-pulse 6s ease-in-out infinite alternate-reverse;
-            }
-
-            @keyframes navbar-banner-float {
-
-                0%,
-                100% {
-                    transform: translateY(0);
-                }
-
-                50% {
-                    transform: translateY(-6px);
-                }
-            }
-
-            @keyframes navbar-banner-pulse {
-                0% {
-                    transform: scale(1);
-                    opacity: 0.6;
-                }
-
-                100% {
-                    transform: scale(1.2);
-                    opacity: 0.8;
-                }
-            }
-
-            /* Dark mode styles */
-            .dark-mode .navbar-banner {
-                background-color: #2c2c2c;
-                color: #ffffff;
-            }
-
-            .dark-mode .navbar-banner__highlight {
-                background-color: #9054d034;
-                color: #ffffff;
-                padding: 4px 10px;
-                border-radius: 10px;
-            }
-
-            .dark-mode .navbar-banner__cta {
-                background-color: #b388ff;
-                color: #333;
-            }
-
-            .dark-mode .navbar-banner__cta:hover {
-                background-color: #9b6dff;
-            }
-
-            .dark-mode .navbar-banner__blur--1 {
-                background-color: rgba(179, 136, 255, 0.4);
-            }
-
-            .dark-mode .navbar-banner__blur--2 {
-                background-color: rgba(255, 215, 0, 0.4);
-            }
-
-            /* Responsive styles */
-            @media (max-width: 768px) {
-                .navbar-banner {
-                    font-size: 14px;
-                    padding: 15px 0;
-                }
-
-                .navbar-banner__content {
-                    flex-direction: column;
-                }
-
-                .navbar-banner__icon {
-                    margin-right: 0;
-                    margin-bottom: 10px;
-                }
-
-                .navbar-banner__highlight {
-                    display: block;
-                    margin-left: 0;
-                    margin-top: 8px;
-                }
-
-                .navbar-banner__cta {
-                    margin-left: 0;
-                    margin-top: 15px;
-                }
-            }
-
-            /* Banner position when scrolled */
-        </style>
-        <script>
-            document.addEventListener('DOMContentLoaded', function () {
-                var navbar = document.querySelector('.navbar');
-                var navbarBanner = document.querySelector('.navbar-banner');
-                var lastScrollTop = 0;
-                var scrollThreshold = 10;
-
-                function handleScroll() {
-                    var bannerHeight = navbarBanner.offsetHeight;
-                    var scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-
-                    if (Math.abs(scrollTop - lastScrollTop) > scrollThreshold) {
-                        if (scrollTop > lastScrollTop && scrollTop > bannerHeight) {
-                            // Scrolling down
-                            navbar.classList.add('navbar-shrink');
-                            navbarBanner.classList.add('navbar-banner--scrolled');
-                            navbarBanner.classList.remove('show');
-                            navbar.style.transform = 'translateY(0)';
-                        } else if (scrollTop <= lastScrollTop && scrollTop > bannerHeight) {
-                            // Scrolling up
-                            navbar.classList.add('navbar-shrink', 'navbar--banner-scrolled');
-                            navbarBanner.classList.add('navbar-banner--scrolled', 'show');
-                            navbar.style.transform = 'translateY(' + bannerHeight + 'px)';
-                        } else {
-                            // At the top
-                            navbar.classList.remove('navbar-shrink', 'navbar--banner-scrolled');
-                            navbarBanner.classList.remove('navbar-banner--scrolled', 'show');
-                            navbar.style.transform = 'translateY(0)';
-                        }
-
-                        lastScrollTop = scrollTop;
-                    }
-                }
-
-                // Only add scroll event listener if not on mobile
-                if (window.innerWidth > 991.98) {
-                    window.addEventListener('scroll', handleScroll);
-                    // Initial call to set correct state on page load
-                    handleScroll();
-                }
-
-                // Update on window resize
-                window.addEventListener('resize', function () {
-                    if (window.innerWidth > 991.98) {
-                        window.addEventListener('scroll', handleScroll);
-                        handleScroll();
+                if (Math.abs(scrollTop - lastScrollTop) > scrollThreshold) {
+                    if (scrollTop > lastScrollTop && scrollTop > bannerHeight) {
+                        // Scrolling down
+                        navbar.classList.add('navbar-shrink');
+                        navbarBanner.classList.add('navbar-banner--scrolled');
+                        navbarBanner.classList.remove('show');
+                        navbar.style.transform = 'translateY(0)';
+                    } else if (scrollTop <= lastScrollTop && scrollTop > bannerHeight) {
+                        // Scrolling up
+                        navbar.classList.add('navbar-shrink', 'navbar--banner-scrolled');
+                        navbarBanner.classList.add('navbar-banner--scrolled', 'show');
+                        navbar.style.transform = 'translateY(' + bannerHeight + 'px)';
                     } else {
-                        window.removeEventListener('scroll', handleScroll);
-                        // Reset styles for mobile
+                        // At the top
                         navbar.classList.remove('navbar-shrink', 'navbar--banner-scrolled');
                         navbarBanner.classList.remove('navbar-banner--scrolled', 'show');
-                        navbar.style.transform = '';
+                        navbar.style.transform = 'translateY(0)';
                     }
-                });
+
+                    lastScrollTop = scrollTop;
+                }
+            }
+
+            // Only add scroll event listener if not on mobile
+            if (window.innerWidth > 991.98) {
+                window.addEventListener('scroll', handleScroll);
+                // Initial call to set correct state on page load
+                handleScroll();
+            }
+
+            // Update on window resize
+            window.addEventListener('resize', function () {
+                if (window.innerWidth > 991.98) {
+                    window.addEventListener('scroll', handleScroll);
+                    handleScroll();
+                } else {
+                    window.removeEventListener('scroll', handleScroll);
+                    // Reset styles for mobile
+                    navbar.classList.remove('navbar-shrink', 'navbar--banner-scrolled');
+                    navbarBanner.classList.remove('navbar-banner--scrolled', 'show');
+                    navbar.style.transform = '';
+                }
             });
-        </script>
-    </header>
+        });
+    </script>
+</header>
+
 <body>
-     <!-- LOADING -->
-     <div id="loading-overlay" class="loading-overlay">
+    <!-- LOADING -->
+    <div id="loading-overlay" class="loading-overlay">
         <div class="loading-container">
             <div class="loading-text">Loading...</div>
             <div class="spinner">
@@ -969,20 +970,22 @@
                 color: #c76bd2;
             }
 
-          
+
             body.dark-mode .btn {
                 background-color: #8a2c96;
                 border-color: #8a2c96;
             }
 
-            .btn:hover, .btn:focus {
+            .btn:hover,
+            .btn:focus {
                 background-color: #4a1751;
                 border-color: #4a1751;
                 text-decoration: none;
                 color: #ffffff;
             }
 
-            body.dark-mode .btn:hover, body.dark-mode .btn:focus {
+            body.dark-mode .btn:hover,
+            body.dark-mode .btn:focus {
                 background-color: #a742b3;
                 border-color: #a742b3;
             }
@@ -997,12 +1000,14 @@
                 border-color: #8a2c96;
             }
 
-            .btn-primary:hover, .btn-primary:focus {
+            .btn-primary:hover,
+            .btn-primary:focus {
                 background-color: #4a1751;
                 border-color: #4a1751;
             }
 
-            body.dark-mode .btn-primary:hover, body.dark-mode .btn-primary:focus {
+            body.dark-mode .btn-primary:hover,
+            body.dark-mode .btn-primary:focus {
                 background-color: #a742b3;
                 border-color: #a742b3;
             }
@@ -1045,6 +1050,7 @@
             body.dark-mode #careers p.lead {
                 color: #d0d0d0;
             }
+
             #careers .text-muted {
                 color: #777 !important;
                 font-size: 1rem;
@@ -1116,7 +1122,8 @@
                     <div class="col-lg-6">
                         <h3 class="mb-3 text-primary">Career at Realta</h3>
                         <h1 class="mb-4 display-4 fw-bold">Join Our Teams</h1>
-                        <p class="mb-4 lead">Explore exciting career opportunities with us. We're always looking for talented individuals to join our team and make a difference in the world of technology.</p>
+                        <p class="mb-4 lead">Explore exciting career opportunities with us. We're always looking for
+                            talented individuals to join our team and make a difference in the world of technology.</p>
                         <div class="d-flex flex-column align-items-start">
                             <a href="#career-opportunities" class="btn btn-primary btn-lg mb-3 px-5 py-3 rounded-pill">
                                 View Open Positions
@@ -1128,74 +1135,78 @@
                         </div>
                     </div>
                     <div class="col-lg-6 d-flex justify-content-end position-relative">
-                        <img src="assets/img/career/career-hero.jpg" alt="Team collaboration" class="career-image img-fluid rounded-3 shadow-lg" style="margin-right: -40px;">
+                        <img src="assets/img/career/career-hero.jpg" alt="Team collaboration"
+                            class="career-image img-fluid rounded-3 shadow-lg" style="margin-right: -40px;">
                         <style>
                             @media (max-width: 767px) {
                                 .career-stat {
                                     display: none;
                                 }
-                            @media (max-width: 767px) {
-                                #careers .container {
-                                    padding: 2rem 1rem;
+
+                                @media (max-width: 767px) {
+                                    #careers .container {
+                                        padding: 2rem 1rem;
+                                    }
+
+                                    #careers .row {
+                                        flex-direction: column;
+                                        align-items: center;
+                                        text-align: center;
+                                    }
+
+                                    #careers .col-lg-6 {
+                                        width: 100%;
+                                    }
+
+                                    #careers h1.display-4 {
+                                        font-size: 2rem;
+                                    }
+
+                                    #careers .lead {
+                                        font-size: 1rem;
+                                    }
+
+                                    #careers .d-flex.flex-column {
+                                        align-items: center;
+                                    }
+
+                                    #careers .btn-lg {
+                                        padding: 0.75rem 1.5rem;
+                                        font-size: 1rem;
+                                        width: 100%;
+                                        max-width: 300px;
+                                        margin: 0 auto;
+                                    }
+
+                                    #careers .text-muted {
+                                        justify-content: center;
+                                        align-items: center;
+                                        text-align: center;
+                                        margin-top: 1rem;
+                                        width: 100%;
+                                        display: flex;
+                                    }
+
+                                    #careers .career-image {
+                                        margin-right: 0;
+                                        margin-top: 2rem;
+                                        max-width: 100%;
+                                    }
                                 }
-                                
-                                #careers .row {
-                                    flex-direction: column;
-                                    align-items: center;
-                                    text-align: center;
-                                }
-                                
-                                #careers .col-lg-6 {
-                                    width: 100%;
-                                }
-                                
-                                #careers h1.display-4 {
-                                    font-size: 2rem;
-                                }
-                                
-                                #careers .lead {
-                                    font-size: 1rem;
-                                }
-                                
-                                #careers .d-flex.flex-column {
-                                    align-items: center;
-                                }
-                                
-                                #careers .btn-lg {
-                                    padding: 0.75rem 1.5rem;
-                                    font-size: 1rem;
-                                    width: 100%;
-                                    max-width: 300px;
-                                    margin: 0 auto;
-                                }
-                                
-                                #careers .text-muted {
-                                    justify-content: center;
-                                    align-items: center;
-                                    text-align: center;
-                                    margin-top: 1rem;
-                                    width: 100%;
-                                    display: flex;
-                                }
-                                
-                                #careers .career-image {
-                                    margin-right: 0;
-                                    margin-top: 2rem;
-                                    max-width: 100%;
-                                }
-                            }
                             }
                         </style>
-                        <div class="position-absolute top-0 start-0 bg-light p-3 rounded-3 shadow-sm career-stat" style="transform: translate(-20%, -20%);">
+                        <div class="position-absolute top-0 start-0 bg-light p-3 rounded-3 shadow-sm career-stat"
+                            style="transform: translate(-20%, -20%);">
                             <h4 class="mb-0">Join 500+</h4>
                             <p class="mb-0">Happy Employees</p>
                         </div>
-                        <div class="position-absolute bottom-0 end-0 bg-primary p-3 rounded-3 shadow-sm career-stat" style="transform: translate(20%, 20%);">
+                        <div class="position-absolute bottom-0 end-0 bg-primary p-3 rounded-3 shadow-sm career-stat"
+                            style="transform: translate(20%, 20%);">
                             <h4 class="mb-0">4.8 ★★★★★</h4>
                             <p class="mb-0">Employee Rating</p>
                         </div>
                     </div>
-                  
+
                 </div>
             </div>
         </section>
@@ -1203,9 +1214,12 @@
             #career-benefits {
                 background-color: #ffffff;
                 position: relative;
-                padding-top: 60px;  /* Adjust as needed */
-                padding-bottom: 60px;  /* Adjust as needed */
+                padding-top: 60px;
+                /* Adjust as needed */
+                padding-bottom: 60px;
+                /* Adjust as needed */
             }
+
             #career-benefits h2 {
                 color: #ffffff;
                 position: absolute;
@@ -1218,7 +1232,7 @@
                 padding: 5px 25px;
                 z-index: 1;
                 font-weight: bold;
-                text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+                text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
             }
 
             @media (max-width: 768px) {
@@ -1236,22 +1250,26 @@
                     text-align: center;
                 }
             }
+
             #career-benefits .card {
                 transition: transform 0.3s ease;
                 pointer-events: none;
                 box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 8px !important;
             }
-          
+
             #career-benefits .card-body {
                 padding: 2rem;
             }
+
             #career-benefits .fas {
                 color: #611f69;
             }
+
             #career-benefits .card-title {
                 color: #611f69;
                 font-weight: bold;
             }
+
             #career-benefits .card-text {
                 color: #333;
             }
@@ -1260,18 +1278,23 @@
             body.dark-mode #career-benefits {
                 background-color: #261a3c;
             }
+
             body.dark-mode #career-benefits h2 {
                 background-color: #8a2c96;
             }
+
             body.dark-mode #career-benefits .card {
                 background-color: #3c3c3c;
             }
+
             body.dark-mode #career-benefits .fas {
                 color: #b388ff;
             }
+
             body.dark-mode #career-benefits .card-title {
                 color: #b388ff;
             }
+
             body.dark-mode #career-benefits .card-text {
                 color: #f0f0f0;
             }
@@ -1287,7 +1310,8 @@
                         </div>
                         <div class="timeline-content">
                             <h4>Integrity</h4>
-                            <p>We make a personal commitment to follow ethical practices in every interaction and maintain our values at all times.</p>
+                            <p>We make a personal commitment to follow ethical practices in every interaction and
+                                maintain our values at all times.</p>
                         </div>
                     </div>
                     <div class="timeline-item" data-aos="fade-up" data-aos-delay="200">
@@ -1296,7 +1320,8 @@
                         </div>
                         <div class="timeline-content right">
                             <h4>Teamwork</h4>
-                            <p>To achieve the ultimate success, individual talent should be put together as a team. Teamwork can be achieved by ensuring each one respects the other.</p>
+                            <p>To achieve the ultimate success, individual talent should be put together as a team.
+                                Teamwork can be achieved by ensuring each one respects the other.</p>
                         </div>
                     </div>
                     <div class="timeline-item" data-aos="fade-up" data-aos-delay="400">
@@ -1305,7 +1330,9 @@
                         </div>
                         <div class="timeline-content">
                             <h4>Holistic</h4>
-                            <p>Based on the concept of holism (the whole is greater than the sum of the parts), each individual is encouraged to develop their own never-ending series of skills regardless.</p>
+                            <p>Based on the concept of holism (the whole is greater than the sum of the parts), each
+                                individual is encouraged to develop their own never-ending series of skills regardless.
+                            </p>
                         </div>
                     </div>
                     <div class="timeline-item" data-aos="fade-up" data-aos-delay="600">
@@ -1314,7 +1341,8 @@
                         </div>
                         <div class="timeline-content right">
                             <h4>Achievement</h4>
-                            <p>We set our goals and strive to achieve them. We have the energy to drive a long-term vision and the resilience to stay ahead in the business.</p>
+                            <p>We set our goals and strive to achieve them. We have the energy to drive a long-term
+                                vision and the resilience to stay ahead in the business.</p>
                         </div>
                     </div>
                     <div class="timeline-item" data-aos="fade-up" data-aos-delay="800">
@@ -1323,7 +1351,9 @@
                         </div>
                         <div class="timeline-content">
                             <h4>Creativity</h4>
-                            <p>Always full of creative and original ideas. We offer innovative and unconventional solutions. We are committed to continuous innovation that sparks products and services.</p>
+                            <p>Always full of creative and original ideas. We offer innovative and unconventional
+                                solutions. We are committed to continuous innovation that sparks products and services.
+                            </p>
                         </div>
                     </div>
                     <div class="timeline-item" data-aos="fade-up" data-aos-delay="1000">
@@ -1332,7 +1362,8 @@
                         </div>
                         <div class="timeline-content right">
                             <h4>Advancement</h4>
-                            <p>Always learn, teach and learn. Results oriented learning and advancement. Continuous improvement in all aspects.</p>
+                            <p>Always learn, teach and learn. Results oriented learning and advancement. Continuous
+                                improvement in all aspects.</p>
                         </div>
                     </div>
                 </div>
@@ -1344,6 +1375,7 @@
                         margin: 0 auto;
                         padding: 50px 0;
                     }
+
                     .timeline::after {
                         content: '';
                         position: absolute;
@@ -1354,6 +1386,7 @@
                         left: 50%;
                         margin-left: -3px;
                     }
+
                     .timeline-item {
                         padding: 10px 50px;
                         position: relative;
@@ -1361,6 +1394,7 @@
                         width: 50%;
                         box-sizing: border-box;
                     }
+
                     .timeline-item::after {
                         content: '';
                         position: absolute;
@@ -1373,22 +1407,27 @@
                         border-radius: 50%;
                         z-index: 1;
                     }
+
                     .timeline-item:nth-child(even) {
                         left: 50%;
                     }
+
                     .timeline-item:nth-child(odd) {
                         left: 0;
                     }
+
                     .timeline-item:nth-child(even)::after {
                         left: -16px;
                     }
+
                     .timeline-content {
                         padding: 20px 30px;
                         background-color: white;
                         position: relative;
                         border-radius: 6px;
-                        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+                        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
                     }
+
                     .timeline-icon {
                         position: absolute;
                         width: 50px;
@@ -1401,24 +1440,30 @@
                         align-items: center;
                         justify-content: center;
                     }
+
                     .timeline-item:nth-child(odd) .timeline-icon {
                         right: -25px;
                     }
+
                     .timeline-item:nth-child(even) .timeline-icon {
                         left: -25px;
                     }
+
                     #career-benefits .fas {
                         color: white;
                     }
+
                     body.dark-mode .timeline::after {
                         background-color: rgba(138, 44, 150, 0.5);
                         backdrop-filter: blur(10px);
                     }
+
                     body.dark-mode .timeline-item::after {
                         background-color: rgba(90, 28, 95, 0.3);
                         border-color: rgba(138, 44, 150, 0.7);
                         backdrop-filter: blur(5px);
                     }
+
                     body.dark-mode .timeline-content {
                         background-color: rgba(60, 60, 60, 0);
                         color: #f0f0f0;
@@ -1426,39 +1471,48 @@
                         box-shadow: 0 8px 32px 0 rgba(30, 31, 51, 0.774);
                         border: 1px solid rgba(255, 255, 255, 0.18);
                     }
+
                     body.dark-mode .timeline-icon {
                         background-color: rgba(138, 44, 150, 0.8);
                         backdrop-filter: blur(8px);
                     }
+
                     body.dark-mode #career-benefits .fas {
                         color: white;
                     }
-                    
+
                     @media screen and (max-width: 768px) {
                         .timeline::after {
                             left: 31px;
                         }
+
                         .timeline-item {
                             width: 100%;
                             padding-left: 70px;
                             padding-right: 25px;
                         }
+
                         .timeline-item::after {
                             left: 15px;
                         }
+
                         .timeline-item:nth-child(even) {
                             left: 0;
                         }
+
                         .timeline-item:nth-child(even)::after {
                             left: 20px;
                         }
+
                         .timeline-icon {
                             left: 6px;
                         }
+
                         .timeline-content {
                             width: 100%;
                             margin-left: 20px;
                         }
+
                         .timeline-item:nth-child(odd) .timeline-icon,
                         .timeline-item:nth-child(even) .timeline-icon {
                             left: 6px;
@@ -1466,14 +1520,15 @@
                     }
                 </style>
             </div>
-           
+
         </section>
-        
+
         <section id="career-opportunities" class="py-5">
             <div class="container">
                 <h2 class="text-center mb-4">Career opportunities</h2>
-                <p class="text-center mb-5">Explore our open roles for something that's right for you. To apply for a position or to be considered for future opportunities.</p>
-                
+                <p class="text-center mb-5">Explore our open roles for something that's right for you. To apply for a
+                    position or to be considered for future opportunities.</p>
+
                 <div class="row mb-4">
                     <style>
                         .form-select {
@@ -1599,269 +1654,299 @@
                         }
 
                         /* Mobile responsive styles */
-    @media (max-width: 768px) {
-        .job-item {
-            padding: 0rem;
-        }
+                        @media (max-width: 768px) {
+                            .job-item {
+                                padding: 0rem;
+                            }
 
-        .job-item h5 {
-            font-size: 1.1rem;
-        }
+                            .job-item h5 {
+                                font-size: 1.1rem;
+                            }
 
-        .job-item p {
-            font-size: 0.9rem;
-        }
+                            .job-item p {
+                                font-size: 0.9rem;
+                            }
 
-        .badge-jobs {
-            font-size: 0.8rem;
-        }
-       
-        .apply-btn {
-            font-size: 0.7rem;  /* Slightly reduced for mobile */
-        }
-    }
+                            .badge-jobs {
+                                font-size: 0.8rem;
+                            }
+
+                        }
                     </style>
-                   <div class="job-item p-4 mb-3 rounded shadow-sm">
-                    <div class="d-flex justify-content-between align-items-center">
-                        <div>
-                            <h5 class="mb-1">Customer Success Manager</h5>
-                            <p class="mb-0 text-muted">Sales - Jakarta</p>
-                            <div class="mt-2">
-                                <span class="badge badge-jobs me-2">New</span>
+                    <div class="job-item p-4 mb-3 rounded shadow-sm">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div>
+                                <h5 class="mb-1">Customer Success Manager <span
+                                        class=" badge-jobs badge-new ms-2">New</span></h5>
+                                <p class="mb-0 text-muted">Sales - Jakarta</p>
+                                <p class="mb-0 text-muted">Management</p>
                             </div>
-                        </div>
-                        <a href="career-detail.html" class="apply-btn">
-                            <svg class="arr-1" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z"/>
-                            </svg>
-                            <span class="text">Apply</span>
-                            <span class="circle"></span>
-                            <svg class="arr-2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z"/>
-                            </svg>
-                        </a>
-                        <style>
-                            .apply-btn {
-                                position: relative;
-                                display: inline-flex;
-                                align-items: center;
-                                gap: 4px;
-                                padding: 10px 25px;
-                                border: 3px solid transparent;
-                                font-size: 14px;
-                                background-color: inherit;
-                                border-radius: 8px;
-                                font-weight: 600;
-                                color: #6a11cb;
-                                box-shadow: 0 0 0 2px #6a11cb;
-                                cursor: pointer;
-                                overflow: hidden;
-                                transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
-                                text-decoration: none;
-                            }
-                            .apply-btn svg {
-                                position: absolute;
-                                width: 20px;
-                                fill: #6a11cb;
-                                z-index: 9;
-                                transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
-                            }
-                            .apply-btn .arr-1 { right: 12px; }
-                            .apply-btn .arr-2 { left: -20%; }
-                            .apply-btn .circle {
-                                position: absolute;
-                                top: 50%;
-                                left: 50%;
-                                transform: translate(-50%, -50%);
-                                width: 16px;
-                                height: 16px;
-                                background-color: rgb(0, 0, 0);
-                                border-radius: 50%;
-                                opacity: 0;
-                                transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
-                            }
-                            .apply-btn .text {
-                                position: relative;
-                                z-index: 1;
-                                transform: translateX(-10px);
-                                transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
-                            }
-                            .apply-btn:hover {
-                                background-color: #000000;
-                                box-shadow: 0 0 0 10px transparent;
-                                color: #ffffff !important;
-                                text-decoration: none;
-                                border-radius: 10px;
-                            }
-                            .apply-btn:hover .arr-1 { right: -20%; }
-                            .apply-btn:hover .arr-2 { left: 12px; }
-                            .apply-btn:hover .text { transform: translateX(10px); }
-                            .apply-btn:hover svg { fill: #ffffff; }
-                            .apply-btn:active {
-                                scale: 0.95;
-                                box-shadow: 0 0 0 3px #6a11cb;
-                            }
-                        </style>
-                    </div>
-                </div>
-                <div class="separator d-flex align-items-center my-4">
-                    <div class="line flex-grow-1"></div>
-                    <div class="separator-text px-4">New Opportunities</div>
-                    <div class="line flex-grow-1"></div>
-                </div>
-                <div class="job-item p-4 mb-3 rounded shadow-sm">
-                    <div class="d-flex justify-content-between align-items-center">
-                        <div>
-                            <h5 class="mb-1">Software Engineer</h5>
-                            <p class="mb-0 text-muted">Engineering - Semarang</p>
-                            <div class="mt-2">
-                                <span class="badge badge-jobs me-2">Full-time</span>
-                            </div>
-                        </div>
-                        <a href="career-detail.html" class="apply-btn">
-                            <svg class="arr-1" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z"/>
-                            </svg>
-                            <span class="text">Apply</span>
-                            <span class="circle"></span>
-                            <svg class="arr-2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z"/>
-                            </svg>
-                        </a>
-                    </div>
-                </div>
-                <div class="job-item p-4 mb-3 rounded shadow-sm">
-                    <div class="d-flex justify-content-between align-items-center">
-                        <div>
-                            <h5 class="mb-1">Data Scientist</h5>
-                            <p class="mb-0 text-muted">Analytics - Bali</p>
-                            <div class="mt-2">
-                                <span class="badge badge-jobs me-2">Experienced</span>
-                            </div>
-                        </div>
-                        <a href="career-detail.html" class="apply-btn">
-                            <svg class="arr-1" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z"/>
-                            </svg>
-                            <span class="text">Apply</span>
-                            <span class="circle"></span>
-                            <svg class="arr-2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z"/>
-                            </svg>
-                        </a>
-                    </div>
-                </div>
-                <div class="job-item p-4 mb-3 rounded shadow-sm">
-                    <div class="d-flex justify-content-between align-items-center">
-                        <div>
-                            <h5 class="mb-1">UX Designer</h5>
-                            <p class="mb-0 text-muted">Design - Jakarta</p>
-                            <div class="mt-2">
-                                <span class="badge badge-jobs me-2">Contract</span>
-                            </div>
-                        </div>
-                        <a href="career-detail.html" class="apply-btn">
-                            <svg class="arr-1" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z"/>
-                            </svg>
-                            <span class="text">Apply</span>
-                            <span class="circle"></span>
-                            <svg class="arr-2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z"/>
-                            </svg>
-                        </a>
-                    </div>
-                </div>
-                <div class="separator d-flex align-items-center my-4">
-                    <div class="line flex-grow-1"></div>
-                    <div class="separator-text px-4">Marketing</div>
-                    <div class="line flex-grow-1"></div>
-                </div>
-                <div class="job-item p-4 mb-3 rounded shadow-sm">
-                    <div class="d-flex justify-content-between align-items-center">
-                        <div>
-                            <h5 class="mb-1">Digital Marketing Specialist</h5>
-                            <p class="mb-0 text-muted">Marketing - Semarang</p>
-                            <div class="mt-2">
-                                <span class="badge badge-jobs me-2">Mid-level</span>
-                            </div>
-                        </div>
-                        <a href="career-detail.html" class="apply-btn">
-                            <svg class="arr-1" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z"/>
-                            </svg>
-                            <span class="text">Apply</span>
-                            <span class="circle"></span>
-                            <svg class="arr-2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z"/>
-                            </svg>
-                        </a>
-                    </div>
-                </div>
-                <div class="job-item p-4 mb-3 rounded shadow-sm">
-                    <div class="d-flex justify-content-between align-items-center">
-                        <div>
-                            <h5 class="mb-1">Content Writer</h5>
-                            <p class="mb-0 text-muted">Marketing - Bali</p>
-                            <div class="mt-2">
-                                <span class="badge badge-jobs me-2">Entry-level</span>
-                            </div>
-                        </div>
-                        <a href="career-detail.html" class="apply-btn">
-                            <svg class="arr-1" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z"/>
-                            </svg>
-                            <span class="text">Apply</span>
-                            <span class="circle"></span>
-                            <svg class="arr-2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z"/>
-                            </svg>
-                        </a>
-                    </div>
-                </div>
-                <div class="job-item p-4 mb-3 rounded shadow-sm">
-                    <div class="d-flex justify-content-between align-items-center">
-                        <div>
-                            <h5 class="mb-1">Social Media Manager</h5>
-                            <p class="mb-0 text-muted">Marketing - Jakarta</p>
-                            <div class="mt-2">
-                                <span class="badge badge-jobs me-2">Full-time</span>
-                            </div>
-                        </div>
-                        <a href="career-detail.html" class="apply-btn">
-                            <svg class="arr-1" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z"/>
-                            </svg>
-                            <span class="text">Apply</span>
-                            <span class="circle"></span>
-                            <svg class="arr-2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z"/>
-                            </svg>
-                        </a>
-                    </div>
-                </div>
-                <style>
-                    .badge-jobs {
-                        background-color: #611f69;
-                        color: #ffffff;
-                    }
-                    .separator {
-                        width: 100%;
-                    }
-                    .separator .line {
-                        height: 1px;
-                        background-color: #e0e0e0;
-                    }
-                    .separator-text {
-                        background-color: #611f69;
-                        border-radius: 10px;
-                        padding: 8px 20px;
-                        font-size: 0.9rem;
-                        color: #ffffff;
-                        font-weight: bold;
-                    }
+                            <a href="career-detail.html" class="apply-btn">
+                                <span class="text">Apply</span>
+                            </a>
+                            <style>
+                                .apply-btn {
+                                    display: flex;
+                                    justify-content: center;
+                                    align-items: center;
+                                    padding: 10px 20px;
+                                    background-color: #611f69;
+                                    outline-offset: -3px;
+                                    border-radius: 10px;
+                                    border: none;
+                                    color: white;
+                                    cursor: pointer;
+                                    transition: 400ms;
+                                    text-decoration: none;
+                                    overflow: hidden;
+                                    position: relative;
+                                }
 
-                    .dark-mode .separator {
+                                .apply-btn .text {
+                                    color: white;
+                                    font-weight: 700;
+                                    font-size: 1em;
+                                    transition: 400ms;
+                                    position: relative;
+                                    left: 0;
+                                }
+
+                                .apply-btn::after {
+                                    content: '\2192'; /* Right arrow Unicode */
+                                    position: absolute;
+                                    font-size: 2em;
+                                    opacity: 0;
+                                    transition: 400ms;
+                                    right: -20px;
+                                }
+
+                                .apply-btn:hover {
+                                    background-color: #81b29a;
+                                    text-decoration: none;
+                                    border: 2px solid #81b29a;
+                                    transform: translateY(-3px);
+                                    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+                                    transition: all 0.3s ease;
+                                }
+
+                                .apply-btn:active {
+                                    transform: translateY(-1px);
+                                    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+                                }
+
+                                .apply-btn:hover .text {
+                                    opacity: 0;
+                                    left: -20px;
+                                }
+
+                                .apply-btn:hover::after {
+                                    opacity: 1;
+                                    color: white;
+                                    right: 47%;
+                                    transform: translateX(50%);
+                                }
+
+                                body.dark-mode .apply-btn {
+                                    background-color: #a742b3;
+                                    outline-color: #a742b3;
+                                }
+
+                                body.dark-mode .apply-btn:hover {
+                                    background-color: transparent;
+                                }
+
+                                body.dark-mode .apply-btn:hover .text {
+                                    color: #a742b3;
+                                }
+
+                                @media (max-width: 768px) {
+                                    .apply-btn {
+                                        padding: 8px 12px;
+                                    }
+
+                                    .apply-btn .text {
+                                        font-size: 0.9em;
+                                    }
+                                }
+                            </style>
+                        </div>
+                    </div>
+                    <div class="separator d-flex align-items-center my-4">
+                        <div class="line flex-grow-1"></div>
+                        <div class="separator-text px-4">New Opportunities</div>
+                        <div class="line flex-grow-1"></div>
+                    </div>
+                    <div class="job-item p-4 mb-3 rounded shadow-sm">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div>
+                                <h5 class="mb-1">Software Engineer <span class=" badge-jobs badge-full-time ms-2">Full-time</span></h5>
+                                <p class="mb-0 text-muted">Engineering - Semarang</p>
+                                <p class="mb-0 text-muted">Senior Level</p>
+                            </div>
+                            <a href="career-detail.html" class="apply-btn">
+                                <span class="text">Apply</span>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="job-item p-4 mb-3 rounded shadow-sm">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div>
+                                <h5 class="mb-1">Data Scientist <span class=" badge-jobs badge-experienced ms-2">Experienced</span></h5>
+                                <p class="mb-0 text-muted">Analytics - Bali</p>
+                            </div>
+                            <a href="career-detail.html" class="apply-btn">
+                                <span class="text">Apply</span>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="job-item p-4 mb-3 rounded shadow-sm">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div>
+                                <h5 class="mb-1">UX Designer <span class=" badge-jobs badge-contract ms-2">Contract</span></h5>
+                                <p class="mb-0 text-muted">Design - Jakarta</p>
+                                <p class="mb-0 text-muted">Entry Level</p>
+
+                            </div>
+                            <a href="career-detail.html" class="apply-btn">
+                                <span class="text">Apply</span>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="separator d-flex align-items-center my-4">
+                        <div class="line flex-grow-1"></div>
+                        <div class="separator-text px-4">Marketing</div>
+                        <div class="line flex-grow-1"></div>
+                    </div>
+                    <div class="job-item p-4 mb-3 rounded shadow-sm">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div>
+                                <h5 class="mb-1">Digital Marketing Specialist <span
+                                        class=" badge-jobs badge-experienced ms-2">Experienced</span></h5>
+                                <p class="mb-0 text-muted">Marketing - Semarang</p>
+                                <p class="mb-0 text-muted">Senior Level</p>
+
+                            </div>
+                            <a href="career-detail.html" class="apply-btn">
+                                <span class="text">Apply</span>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="job-item p-4 mb-3 rounded shadow-sm">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div>
+                                <h5 class="mb-1">Content Writer <span class=" badge-jobs badge-full-time ms-2">Full-time</span></h5>
+                                <p class="mb-0 text-muted">Marketing - Bali</p>
+                                <p class="mb-0 text-muted">Senior Level</p>
+                            </div>
+                            <a href="career-detail.html" class="apply-btn">
+                                <span class="text">Apply</span>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="job-item p-4 mb-3 rounded shadow-sm">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div>
+                                <h5 class="mb-1">Social Media Manager <span class=" badge-jobs badge-full-time ms-2">Full-time</span>
+                                </h5>
+                                <p class="mb-0 text-muted">Marketing - Jakarta</p>
+                                <p class="mb-0 text-muted">Senior Level</p>
+
+                            </div>
+                            <a href="career-detail.html" class="apply-btn">
+                                <span class="text">Apply</span>
+                            </a>
+                        </div>
+                    </div>
+                    <style>
+                        .badge-jobs {
+                            padding: 0.35em 0.65em;
+                            font-size: 0.65em;
+                            font-weight: 700;
+                            line-height: 1;
+                            margin-right: 10px;
+                            text-align: center;
+                            white-space: nowrap;
+                            vertical-align: baseline;
+                            border-radius: 10px;
+                            transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+                        }
+
+                        .badge-new {
+                            background-color: #75d48b;
+                            color: #000000;
+                        }
+
+                        .badge-full-time {
+                            background-color: #699fda;
+                            color: #000000;
+                        }
+
+                        .badge-experienced {
+                            background-color: #ffc107;
+                            color: #000000;
+                        }
+
+                        .badge-contract {
+                            background-color: #c3ccd3;
+                            color: #000000;
+                        }
+
+                        .badge-mid-level {
+                            background-color: #17a2b8;
+                            color: #ffffff;
+                        }
+
+                        .badge-entry-level {
+                            background-color: #dc3545;
+                            color: #ffffff;
+                        }
+
+                        /* Dark mode styles */
+                        body.dark-mode .badge-new {
+                            background-color: #34c759;
+                        }
+
+                        body.dark-mode .badge-full-time {
+                            background-color: #0a84ff;
+                        }
+
+                        body.dark-mode .badge-experienced {
+                            background-color: #ffd60a;
+                            color: #1c1c1e;
+                        }
+
+                        body.dark-mode .badge-contract {
+                            background-color: #8e8e93;
+                        }
+
+                        body.dark-mode .badge-mid-level {
+                            background-color: #64d2ff;
+                        }
+
+                        body.dark-mode .badge-entry-level {
+                            background-color: #ff453a;
+                        }
+
+
+                        .separator {
+                            width: 100%;
+                        }
+
+                        .separator .line {
+                            height: 1px;
+                            background-color: #e0e0e0;
+                        }
+
+                        .separator-text {
+                            background-color: #611f69;
+                            border-radius: 10px;
+                            padding: 8px 20px;
+                            font-size: 0.9rem;
+                            color: #ffffff;
+                            font-weight: bold;
+                        }
+
+                        .dark-mode .separator {
                             color: #b0b0b0;
                         }
 
@@ -1873,11 +1958,11 @@
                         .dark-mode .separator .line {
                             background-color: #4a4a4a;
                         }
-                </style>
-            </div>
+                    </style>
+                </div>
         </section>
 
-    
+
 
 
     </main>
@@ -2037,5 +2122,3 @@
 </body>
 
 </html>
-
-
