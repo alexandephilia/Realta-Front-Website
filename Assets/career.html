@@ -1523,8 +1523,21 @@
 
                         .timeline-item {
                             width: 100%;
-                            padding-left: 70px;
-                            padding-right: 25px;
+                            padding-left: 50px;
+                            padding-right: 20px;
+                            margin-bottom: 1.5rem;
+                        }
+
+                        .timeline-item {
+                            font-size: 0.9rem;
+                        }
+
+                        .timeline-content h3 {
+                            font-size: 1.1rem;
+                        }
+
+                        .timeline-content p {
+                            font-size: 0.85rem;
                         }
 
                         .timeline-item::after {
@@ -1687,26 +1700,64 @@
                             background-color: #a742b3;
                             border-color: #a742b3;
                         }
-
                         /* Mobile responsive styles */
                         @media (max-width: 768px) {
                             .job-item {
-                                padding: 0rem;
+                                padding: 1.5rem;
+                                margin-bottom: 1.5rem;
+                                text-align: center;
+                                display: flex;
+                                flex-direction: column;
+                                align-items: center;
                             }
 
                             .job-item h5 {
-                                font-size: 1.1rem;
-                            }
-
-                            .job-item p {
-                                font-size: 0.9rem;
+                                font-size: 1.3rem;
+                                margin-bottom: 0.5rem;
+                                display: block;
+                                text-align: center;
                             }
 
                             .badge-jobs {
-                                font-size: 0.8rem;
+                                font-size: 0.9rem;
+                                padding: 5px;
+                                display: block;
+                                margin: 0.5rem auto 0.75rem;
+                                white-space: nowrap;
+                                overflow: hidden;
+                                text-overflow: ellipsis;
                             }
 
+                            .job-item p {
+                                font-size: 1rem;
+                                margin-bottom: 0.5rem;
+                                text-align: center;
+                            }
+
+                            .apply-btn {
+                                padding: 10px 20px;
+                                font-size: 1rem;
+                                margin: 1rem auto 0;
+                                display: block;
+                            }
+
+                            .job-item .d-flex {
+                                flex-direction: column;
+                                align-items: center;
+                                width: 100%;
+                            }
+
+                            .job-item .apply-btn {
+                                margin-top: 1.5rem;
+                            }
+
+                            .job-item h5 + .badge-jobs {
+                                order: 1;
+                            }
                         }
+                    
+
+            
                     </style>
                     <div class="job-item p-4 mb-3 rounded shadow-sm">
                         <div class="d-flex justify-content-between align-items-center">
@@ -1725,7 +1776,7 @@
                                     justify-content: center;
                                     align-items: center;
                                     padding: 10px 20px;
-                                    background-color: #732e7af1;
+                                    background-color: #81b29a;
                                     outline-offset: -3px;
                                     border-radius: 10px;
                                     border: none;
