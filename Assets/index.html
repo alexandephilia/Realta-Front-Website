@@ -1749,7 +1749,7 @@
         <!-- PRODUCT 1 -->
         <div class="container py-4 pb-2 py-xl-5 product-container">
             <div class="row gy-4 align-items-center position-relative">
-              
+                <div class="product-blur product-blur-1"></div>
                 <div class="col-md-6">
                     <div class="m-xl-5 position-relative">
                         <img class="rounded img-fluid img-animate w-100 fit-cover"
@@ -1767,13 +1767,12 @@
                     </div>
                 </div>
             </div>
-            <div class="product-blur product-blur-1"></div>
         </div>
 
         <style>
             .product-container {
                 position: relative;
-                overflow: hidden;
+                overflow: visible;
             }
 
             .product-blur {
@@ -1781,7 +1780,6 @@
                 width: 300px;
                 height: 300px;
                 border-radius: 50%;
-                -webkit-filter: blur(80px);
                 filter: blur(80px);
                 z-index: 0;
             }
@@ -1797,24 +1795,6 @@
             .col-md-6 {
                 position: relative;
                 z-index: 1;
-            }
-
-            @media (max-width: 768px) {
-                .product-container {
-                    overflow: visible;
-                }
-
-                .product-blur {
-                    width: 150px;
-                    height: 150px;
-                    -webkit-filter: blur(40px);
-                    filter: blur(40px);
-                }
-
-                .product-blur-1 {
-                    right: 50%;
-                    transform: translate(50%, -50%);
-                }
             }
         </style>
 
@@ -1858,19 +1838,7 @@
         </div>
 
         <style>
-            .product-container {
-                position: relative;
-                overflow: visible;
-            }
-
-            .product-blur {
-                position: absolute;
-                width: 300px;
-                height: 300px;
-                border-radius: 50%;
-                filter: blur(80px);
-                z-index: 0;
-            }
+           
 
             .product-blur-2 {
                 background-image: linear-gradient(132deg, #8A2BE2 27%, #4169E1 50%, #5486a6 79%);
@@ -1880,10 +1848,7 @@
                 transform: translateY(-50%);
             }
 
-            .col-md-6 {
-                position: relative;
-                z-index: 1;
-            }
+        
         </style>
         <!-- PRODUCT 3 -->
         <div class="container py-4 py-xl-5 product-container">
@@ -1909,20 +1874,7 @@
         </div>
 
         <style>
-            .product-container {
-                position: relative;
-                overflow: visible;
-            }
-
-            .product-blur {
-                position: absolute;
-                width: 300px;
-                height: 300px;
-                border-radius: 50%;
-                filter: blur(80px);
-                z-index: 0;
-            }
-
+         
             .product-blur-3 {
                 background-image: linear-gradient(132deg, #8A2BE2 27%, #4169E1 50%, #5486a6 79%);
                 top: 50%;
@@ -1931,10 +1883,7 @@
                 transform: translateY(-50%);
             }
 
-            .col-md-6 {
-                position: relative;
-                z-index: 1;
-            }
+          
         </style>
         <style>
             @media (max-width: 786px) {
