@@ -947,13 +947,13 @@
             justify-content: center;
             align-items: center;
             z-index: 9999;
-            transition: opacity 0.5s ease-out, visibility 0.5s ease-out;
+            transition: transform 0.5s ease-out, opacity 0.5s ease-out;
             overflow: hidden;
         }
     
-        #loading-screen.hidden {
-            opacity: 0;
-            visibility: hidden;
+        #loading-screen.slide-up {
+            transform: translateY(-100%);
+            opacity: 1;
         }
     
         .loading-logo {
@@ -966,7 +966,6 @@
             50% { transform: scale(1.1); }
             100% { transform: scale(1); }
         }
-    
     </style>
     <!-- LOADING -->
     <div id="loading-overlay" class="loading-overlay">
@@ -4454,22 +4453,20 @@
     </script>
 
     <!-- Loading Initial -->
-<script>
-    window.addEventListener('load', function() {
-        const loadingScreen = document.getElementById('loading-screen');
-        const body = document.body;
-
-        setTimeout(function() {
-            loadingScreen.classList.add('hidden');
-            body.classList.add('loaded');
-            
-            // Remove the loading screen from the DOM after the transition
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Simulate loading time (replace this with your actual loading logic)
             setTimeout(function() {
-                loadingScreen.remove();
-            }, 500);
-        }, 1000); // Adjust this delay as needed
-    });
-</script>
+                const loadingScreen = document.getElementById('loading-screen');
+                loadingScreen.classList.add('slide-up');
+                
+                // Remove the loading screen from the DOM after the transition
+                loadingScreen.addEventListener('transitionend', function() {
+                    loadingScreen.remove();
+                });
+            }, 2000); // Adjust the timeout as needed (2000ms = 2 seconds)
+        });
+    </script>
 </body>
 
 </html>
