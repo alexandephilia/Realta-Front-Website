@@ -1079,9 +1079,19 @@ body.dark-mode .glass-dropdown .dropdown-item:hover {
   }
   
   .dropdown-menu .dropdown-item {
-    font-size: 0.875rem !important;
+    font-size: 0.8rem !important;
+    white-space: normal;
+    overflow: visible;
+    word-wrap: break-word;
+    max-width: 100%;
+    line-height: 1.4;
+    padding: 0.5rem 1rem;
   }
   
+  .dropdown-menu {
+    max-height: 300px;
+    overflow-y: auto;
+  }
   .nav-toggle {
     width: 30px;
     height: 24px;
@@ -1248,16 +1258,7 @@ body.dark-mode .glass-dropdown .dropdown-item:hover {
       color: var(--dark-text);
     }
   }
-  
-  .nav-link {
-    color: var(--text-color);
-    font-size: 0.4rem;
-    text-decoration: none;
-    transition: all var(--transition-speed) ease;
-    position: relative;
-    padding: 0.5rem 0.25rem;
-    border-radius: 15px;
-  }
+
   
   .nav-link::after {
     content: '';
@@ -1335,17 +1336,7 @@ body.dark-mode .glass-dropdown .dropdown-item:hover {
     font-weight: 800;
     padding: 0 0rem;
   }
-  
-  .nav-link {
-    color: var(--text-color);
-    font-size: 1rem;
-    text-decoration: none;
-    transition: all var(--transition-speed) ease;
-    position: relative;
-    padding: 0.5rem 0.25rem;
-    border-radius: 15px;
-  }
-  
+
  
   
   .nav-link:hover::after,
@@ -1384,9 +1375,6 @@ body.dark-mode .glass-dropdown .dropdown-item:hover {
       width: 100%;
     }
   
-    .nav-link {
-      font-size: 1.2rem;
-    }
   
     .full-screen-sidebar {
       position: fixed;
@@ -1483,12 +1471,7 @@ body.dark-mode .glass-dropdown .dropdown-item:hover {
   .nav-toggle span:nth-child(2), .nav-toggle span:nth-child(3) { top: 10px; }
   .nav-toggle span:nth-child(4) { top: 20px; }
   
-  /* Navbar links */
-  .nav-link {
-    color: #333;
-    transition: color 0.3s ease;
-  }
-  
+
   .nav-link:hover {
     color: #9e44b4 !important
 }
