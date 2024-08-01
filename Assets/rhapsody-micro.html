@@ -1,861 +1,427 @@
+<!DOCTYPE html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<body>
+    <title>Rhapsody Hotel</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+        <title>Realta Chakradarma</title>
+    
+        <!-- the favicon -->
+        <link rel="icon" type="image/png" href="assets/img/r.png">
+    
+    
+        <!-- Preload fonts -->
+        <link rel="preload" href="assets/fonts/important-font.woff2" as="font" type="font/woff2" crossorigin>
+        <link rel="preload" href="assets/font/proxima-nova/ProximaNova-Regular.woff2" as="font" type="font/woff2"
+            crossorigin>
+        <link rel="preload" href="assets/font/proxima-nova/ProximaNova-Bold.woff2" as="font" type="font/woff2" crossorigin>
+    
+        <!-- Stylesheets -->
+        <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+        <link rel="stylesheet" href="assets/css/styles.css">
+        <!-- <link rel="stylesheet" href="assets/css/blog.css"> -->
+        <link rel="stylesheet" href="assets/css/responsive.css">
+        <link rel="stylesheet" href="assets/css/navbar-micro.css">
+    
+        <!-- Fonts -->
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+        <link
+            href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;700&family=Roboto:wght@400;500&display=swap"
+            rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Zilla+Slab:wght@400;700&display=swap" rel="stylesheet">
+    
+        <!-- Font Awesome -->
+        <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"> -->
+        <link rel="stylesheet" href="assets/fontawesome/css/all.min.css">
+    
+        <!-- Slick Carousel -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css">
+    
+        <!-- Owl Carousel -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+        <link rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
+    
+        <!-- Scripts -->
+        <script src="assets/js/slider.js"></script>
+        <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    
     <style>
-    
-        /* Mobile Responsive Styles */
-        @media screen and (max-width: 768px) {
-            .container {
-                width: 95%;
-                padding: 30px 15px;
-                margin-top: 80px; /* Increased top margin to account for fixed navbar */
-            }
-    
-            .hero-section {
-                padding: 20px 0;
-                min-height: auto;
-            }
-    
-            .hero-title {
-                font-size: 3rem; /* Reduced font size for mobile */
-                letter-spacing: 2px;
-            }
-    
-            .hero-subtitle {
-                font-size: 1rem;
-                letter-spacing: 1px;
-                margin-bottom: 30px;
-            }
-    
-            .video-container {
-                margin: 20px auto;
-            }
-    
-            .hero-cta {
+        /* Custom CSS */
+        :root {
+            --primary-color: #007bff;
+            --secondary-color: #6c757d;
+            --accent-color: #ffc107;
+            --text-color: #333;
+            --bg-color: #f8f9fa;
+            --white: #ffffff;
+        }
+        body {
+            font-family: 'proxima-nova', sans-serif;
+        }
+        /* Force Proxima Nova for all elements */
+     
+        
+        .navbar-brand {
+            font-weight: bold;
+            font-size: 1.8rem;
+            color: black;
+            transition: color 0.3s ease;
+        }
+        .navbar-brand img {
+            height: 50px; /* Increased from 40px to 50px for larger size */
+            width: auto; /* Maintain aspect ratio */
+            max-width: 100%; /* Ensure it doesn't overflow its container */
+            object-fit: contain; /* Maintain aspect ratio while fitting within dimensions */
+        }
+        .navbar-brand:hover {
+            color: #333;
+        }
+        .nav-link {
+            color: var(--text-color);
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+        .nav-link:hover {
+            color: var(--primary-color);
+        }
+        .btn-outline-secondary {
+            text-shadow: none;
+            background-color: rgba(158, 68, 180, 0.308);
+            border-radius: 10px;
+            border-color: #9e44b4;
+            color: white;
+            transition: all 0.3s ease;
+            padding: 0.375rem 0.75rem; /* Reduced padding */
+            backdrop-filter: blur(5px);
+            -webkit-backdrop-filter: blur(5px);
+        }
+        .btn-outline-secondary:hover {
+            background-color: rgba(158, 68, 180, 0.8);
+            border-color: #9e44b4;
+            color: var(--white);
+            text-shadow: none;
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+        }
+        .btn-dark {
+            background-color: var(--text-color);
+            border: none;
+            transition: all 0.3s ease;
+        }
+        .btn-dark:hover {
+            background-color: var(--primary-color);
+        }
+        .sub-nav {
+            background-color: var(--bg-color);
+            padding: 15px 0;
+            border-bottom: 1px solid #e0e0e0;
+            text-align: center;
+        }
+        .sub-nav .nav {
+            display: inline-flex;
+            justify-content: center;
+        }
+        .sub-nav .nav-item {
+            margin: 0 15px;
+            transition: transform 0.3s ease;
+        }
+        .sub-nav .nav-item:hover {
+            transform: translateY(-3px);
+        }
+        .sub-nav .nav-link {
+            color: var(--text-color);
+            text-decoration: none;
+            font-size: 1rem;
+            display: flex;
+            align-items: center;
+        }
+        .sub-nav .icon {
+            margin-right: 10px;
+            font-size: 1.2rem;
+        }
+        .career-link {
+            background-color: var(--accent-color);
+            padding: 10px 0;
+            text-align: center;
+            font-size: 1rem;
+            font-weight: 500;
+        }
+        .career-link a {
+            color: var(--text-color);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        .career-link a:hover {
+            color: var(--primary-color);
+        }
+        /* New styles for mobile responsiveness */
+        @media (max-width: 991px) {
+            .navbar-collapse {
+                background-color: var(--bg-color);
+                padding: 20px;
+                border-radius: 10px;
+                margin-top: 15px;
+                box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+                display: flex;
                 flex-direction: column;
-                align-items: center;
-                gap: 15px;
+                align-items: stretch;
+                transition: all 0.2s cubic-bezier(0.68, -0.6, 0.32, 1.6);
+                opacity: 0;
+                transform: scale(0.95) translateY(-20px);
+                transform-origin: top;
+                max-height: 0;
+                overflow: hidden;
             }
-    
+            .navbar-collapse.show {
+                opacity: 1;
+                transform: scale(1) translateY(0);
+                max-height: 1000px; /* Adjust this value based on your content */
+            }
+            .navbar-nav {
+                margin-bottom: 15px;
+                width: 100%;
+                border-bottom: 1px solid #e0e0e0;
+                padding-bottom: 15px;
+            }
+            .nav-item {
+                margin-bottom: 10px;
+                width: 100%;
+            }
+            .nav-link {
+                display: block;
+                font-size: 1rem;
+                padding: 8px 0;
+                transition: all 0.3s ease;
+                width: 100%;
+                text-align: left;
+            }
+            .nav-link:hover {
+                color: var(--primary-color);
+                transform: translateX(5px);
+            }
+            .d-flex.ms-3 {
+                flex-direction: column;
+                align-items: stretch;
+                margin-top: auto;
+                width: 100%;
+                padding-top: 15px;
+            }
+            .btn-group {
+                display: flex;
+                flex-direction: column;
+                width: 100%;
+            }
             .btn {
                 width: 100%;
-                max-width: 200px;
-            }
-    
-            /* Adjust navbar for mobile */
-            .navbar {
                 padding: 10px;
-                width: 90%;
-                top: 10px;
+                font-size: 1rem;
+                transition: all 0.3s ease;
+                border-radius: 10px;
             }
-    
-            .navbar-logo img {
-                height: 30px;
+            .btn:last-child {
+                margin-bottom: 0;
             }
-    
-            /* Ensure body padding accounts for smaller navbar */
-            body {
-                padding-top: calc(10px + 50px + 20px); /* 10px top + navbar height + extra space */
+            .btn:hover {
+                transform: translateY(-2px);
+                box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+            }
+            .sub-nav .nav {
+                flex-wrap: wrap;
+                justify-content: space-between;
+            }
+            .sub-nav .nav-item {
+                flex-basis: calc(50% - 10px);
+                margin-bottom: 15px;
+                background-color: var(--white);
+                border-radius: 8px;
+                padding: 15px;
+                box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+                transition: all 0.3s ease;
+            }
+            .sub-nav .nav-item:hover {
+                transform: translateY(-3px);
+                box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+            }
+            .sub-nav .nav-link {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+            .sub-nav .icon {
+                font-size: 1.5rem;
+                margin-bottom: 10px;
+            }
+            .sub-nav small {
+                display: block;
+                margin-top: 5px;
+                font-size: 0.8rem;
             }
         }
-    
-        /* Additional styles for very small screens */
-        @media screen and (max-width: 480px) {
-            .hero-title {
-                font-size: 2.5rem;
-            }
-    
-            .hero-subtitle {
-                font-size: 0.9rem;
-            }
-    
-            .btn {
-                font-size: 0.9rem;
-                height: 40px;
+        @media (max-width: 575px) {
+            .sub-nav .nav-item {
+                flex-basis: 100%;
             }
         }
     </style>
-    
-<nav class="navbar">
-    <div class="navbar-logo">
-        <img src="https://media.licdn.com/dms/image/D4E12AQFBIGph2WOOcA/article-cover_image-shrink_600_2000/0/1714060183377?e=2147483647&v=beta&t=W2Wo_a3akkG_OkCLwYebqYeWiQs3XqfQg-UxwooZIYs" alt="Logo">
-    </div>
-    <ul class="navbar-items">
-        <li><a href="#home">Home</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#services">Services</a></li>
-        <li><a href="#blog">Blog</a></li>
-    </ul>
-    <button class="navbar-button"></button>
-</nav>
-
-<div class="mobile-menu">
-    <button class="mobile-menu-button"></button>
-</div>
-<div class="container">
-    <header class="hero-section">
-        <h1 class="hero-title">Alexander</h1>
-        <p class="hero-subtitle">Where Vision Meets Execution</p>
-
-        <style>
-             .hero-subtitle {
-                font-size: 1.5rem; /* Increased font size for better visibility */
-                color: #e0e0e0; /* Slightly brighter color for better contrast */
-                margin-bottom: 50px; /* Increased bottom margin for spacing */
-                font-weight: 400; /* Slightly bolder for better readability */
-                letter-spacing: 2px; /* Increased letter spacing for a more modern look */
-                text-transform: uppercase; /* Uppercase for added emphasis */
-                opacity: 0; /* Start with 0 opacity for fade-in effect */
-                animation: fadeIn 1.5s ease-out forwards 0.5s; /* Fade-in animation with delay */
-                text-shadow: 0 2px 10px rgba(255, 255, 255, 0.589); /* Subtle text glow effect */
-            }
-
-            @keyframes fadeIn {
-                from { opacity: 0; transform: translateY(20px); }
-                to { opacity: 1; transform: translateY(0); }
-            }
-
-            @import url('https://fonts.googleapis.com/css2?family=Inter:wght@700&display=swap');
-
-            .hero-title {
-                font-family: 'Orbitron', sans-serif; /* Futuristic, sci-fi inspired font */
-                font-size: 6rem; /* Larger size for impact */
-                font-weight: 700; /* Bold weight */
-                color: #ffffff;
-                margin: 0 0 20px; /* Add some bottom margin */
-                text-align: center;
-                text-transform: uppercase;
-                letter-spacing: 4px; /* Increased letter spacing for a modern look */
-                line-height: 1;
-                position: relative;
-            }
-
-            .hero-title::after {
-                content: '';
-                display: block;
-                width: 60px;
-                height: 4px;
-                background-color: #ffffff;
-                margin: 20px auto 0;
-            }
-
-            /* Fade-in animation */
-            @keyframes fadeIn {
-                from { opacity: 0; }
-                to { opacity: 1; }
-            }
-
-            .hero-title {
-                animation: fadeIn 1.5s ease-out;
-            }
-        </style>
-        <div class="video-container">
-            <video autoplay loop muted playsinline>
-                <source src="https://www.cursor.com/videos/chat.mp4" type="video/mp4">
-                Your browser doesn't support the video tag.
-            </video>
-        </div>
-        <style>
-            .video-container {
-                width: 100%;
-                max-width: 800px;
-                margin: 40px auto;
-                overflow: hidden;
-            }
-            .video-container video {
-                width: 100%;
-                height: auto;
-                display: block;
-                filter: grayscale(100%); /* Apply grayscale filter for minimalist look */
-            }
-        </style>
-        <div class="hero-cta">
-            <a href="#" class="btn btn-primary"></a>
-            <a href="#" class="btn btn-secondary"></a>
-        </div>
-        <style>
-           
-            .hero-cta {
-                display: flex;
-                gap: 20px;
-            }
-
-            .btn {
-                padding: 0.15rem 0.5rem;
-                font-size: 1rem;
-                font-weight: 700;
-                text-decoration: none;
-                border-radius: 12px;
-                cursor: pointer;
-                transition: all 0.4s ease, background-color 0.6s ease;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                overflow: hidden;
-                width: 120px;
-                height: 44px;
-                position: relative;
-                background-color: #ffffff;
-                color: #000000;
-                box-shadow: 0 4px 6px rgba(255, 255, 255, 0.1);
-                text-transform: uppercase;
-                letter-spacing: 1px;
-            }
-
-            .btn::before {
-                content: '';
-                position: absolute;
-                top: 0;
-                left: -100%;
-                width: 100%;
-                height: 100%;
-                background: linear-gradient(120deg, transparent, rgba(255, 255, 255, 0.3), transparent);
-                transition: all 0.6s ease;
-            }
-
-            .btn::after {
-                content: attr(data-text);
-                position: absolute;
-                left: 50%;
-                transform: translateX(-50%);
-                transition: all 0.4s ease;
-            }
-
-            .btn:hover::before {
-                left: 100%;
-            }
-
-            .btn:hover {
-                background-color: #000000;
-                color: #ffffff;
-                transform: translateY(-2px) scale(1.05);
-                box-shadow: 0 6px 10px rgba(255, 255, 255, 0.2);
-                transition-delay: 0.2s;
-            }
-
-            .btn:hover::after {
-                content: attr(data-hover-text);
-            }
-
-            .btn-primary {
-                color: #000000;
-                background-color: #ffffff;
-                border: 2px solid #ffffff;
-            }
-
-            .btn-primary::after {
-                content: "Start";
-            }
-
-            .btn-primary:hover::after {
-                content: "Now";
-                
-            }
-
-            .btn-secondary {
-                color: #000000;
-                background-color: #ffffff;
-                border: 2px solid #ffffff;
-            }
-
-            .btn-secondary::before {
-                background: linear-gradient(120deg, transparent, rgba(0, 0, 0, 0.3), transparent);
-            }
-
-            .btn-secondary::after {
-                content: 'Learn';
-            }
-
-            .btn-secondary:hover {
-                background-color: #000000;
-                color: #ffffff;
-                transition-delay: 0.2s;
-            }
-
-            .btn-secondary:hover::after {
-                content: 'More';
-            }
-
-            @media screen and (max-width: 768px) {
-                .btn {
-                    font-size: 14px;
-                    padding: 4px 10px;
-                    min-width: 120px;
-                }
-
-                .hero-cta {
-                    flex-direction: column;
-                    align-items: center;
-                    gap: 15px;
-                }
-
-                .btn-primary, .btn-secondary {
-                    width: 100%;
-                    max-width: 200px;
-                }
-            }
-        </style>
-    </header>
-</div>
-
 </head>
-</body>
-<style>
-    .container {
-        max-width: 940px; /* Increased max-width for a more badass layout */
-        width: 90%; /* Responsive width, you dipshit */
-        margin: 50px auto 0; /* Pushed away from the top by 50px */
-        padding: 50px; /* Slightly reduced padding */
-        background-color: #000000; /* Dark gray instead of pure black, easier on the eyes */
-        border-radius: 15px; /* Slightly less rounded corners */
-        color: #f0f0f0; /* Light gray text for better readability */
-        box-shadow: 0 0 20px rgba(255, 255, 255, 0.1); /* Subtle glow effect */
-        transform: translateY(25px); /* Additional push effect */
-        transition: transform 0.3s ease; /* Smooth transition for any hover effects */
-    }
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-white sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="#"><img src="assets/img/hotel/logo (1).png" alt="Rhapsody Logo" height="30"></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Solution</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Why Rhapsody</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="productDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Product Overview <i class="fas fa-chevron-down"></i>
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="productDropdown">
+                            <li><a class="dropdown-item" href="#">Front Office</a></li>
+                            <li><a class="dropdown-item" href="#">Back Office</a></li>
+                            <li><a class="dropdown-item" href="#">Logistic System</a></li>
+                            <li><a class="dropdown-item" href="#">ICT One Solution</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="blogDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Blog <i class="fas fa-chevron-down"></i>
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="blogDropdown">
+                            <li><a class="dropdown-item" href="#">Article & News</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Contact</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="aboutDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            About Realta <i class="fas fa-chevron-down"></i>
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="aboutDropdown">
+                            <li><a class="dropdown-item" href="#">Realta Chakradarma (Home)</a></li>
+                            <li><a class="dropdown-item" href="#">EAM & ERP</a></li>
+                            <li><a class="dropdown-item" href="#">Golf Course System</a></li>
+                            <li><a class="dropdown-item" href="#">HR System</a></li>
+                            <li><a class="dropdown-item" href="#">ITSM, ITAM, Unified Endpoint Management</a></li>
+                            <li><a class="dropdown-item" href="#">Property & Tenancy System</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+                <!-- <div class="d-flex justify-content-center">
+                    <div class="d-flex justify-content-center">
+                        <button class="btn btn-custom me-2">Guest Portal</button>
+                    </div>
+                </div> -->
+            </div>
+        </div>
+    </nav>
 
-    .hero-section {
-        text-align: center;
-        padding: 40px 0; /* Increased padding */
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: flex-start;
-        min-height: 75vh;
-        padding-top: 5vh;
-    }
-
-    .hero-cta {
-        display: flex;
-        gap: 20px;
-    }
-
-    /* Alright, let's add some fucking mobile responsiveness to this shit */
-    @media screen and (max-width: 768px) {
-        /* Time to make this container our bitch on smaller screens */
-        .container {
-            width: 95%; /* Wider container for mobile, because why the fuck not? */
-            padding: 0 10px; /* Give it some breathing room, you claustrophobic bastard */
-        }
-
-        /* Let's shrink that hero title down to size */
-        .hero-title {
-            font-size: 2.5rem; /* Smaller font size for mobile, don't want it taking up the whole damn screen */
-        }
-
-        /* Subtitle needs to chill too */
-        .hero-subtitle {
-            font-size: 1.2rem; /* Slightly smaller, but still readable, you blind fuck */
-        }
-
-        /* Stack those CTA buttons like a goddamn Jenga tower */
-        .hero-cta {
-            flex-direction: column; /* Vertical stack, because horizontal is so last year */
-            align-items: center; /* Center those buttons like you mean it */
-        }
-
-        /* Buttons need some love too */
-        .btn {
-            width: 100%; /* Full width buttons, go big or go home */
-            margin-bottom: 10px; /* Space 'em out, we're not savages */
-        }
-
-        
-    }
-</style>
-
-
-<style>
-   
-    .navbar {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding: 1.5rem;
-        background-color: #000000;
-        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-        border-radius: 25px;
-        position: fixed;
-        top: 20px;
-        left: 50%;
-        transform: translateX(-50%);
-        width: 79%; /* Reduced from 95% to 80% */
-        max-width: 1000px; /* Reduced from 1200px to 1000px */
-        z-index: 1000;
-        margin: 0 auto;
-    }
-
-    /* Ensure the content below the navbar is not hidden */
-    body {
-        padding-top: calc(20px + 1.5rem * 2 + 40px); /* 20px top + navbar height + extra space */
-        font-family: 'Helvetica Neue', Arial, sans-serif; /* Adding a fucking nice font family */
-    }
-    
-    
-    .navbar-logo img {
-        height: 40px;
-    }
-
-    .navbar-items {
-        display: flex;
-        list-style-type: none;
-    }
-
-    .navbar-items li {
-        margin: 0 1.5rem;
-    }
-
-    .navbar-items a {
-        text-decoration: none;
-        color: #ffffff;
-        font-weight: 500;
-        transition: color 0.3s ease;
-    }
-
-    .navbar-items a:hover {
-        color: #007bff;
-    }
-
-    .navbar-button {
-        padding: 0.75rem 1.5rem;
-        background-color: #ffffff;
-        color: rgb(0, 0, 0);
-        border: none;
-        font-family: 'Helvetica Neue', Arial, sans-serif !important;
-        border-radius: 10px;
-        cursor: pointer;
-        font-weight: 600;
-        transition: all 0.3s ease;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        overflow: hidden;
-        font-size: 1rem;
-        width: 100px; /* Set a fixed width to maintain button size */
-        height: 42px;
-        position: relative;
-    }
-
-    .navbar-button::before {
-        content: "\2709"; /* Black envelope icon */
-        position: absolute;
-        font-size: 1.8rem;
-        left: -30px;
-        transition: all 0.3s ease;
-    }
-
-    .navbar-button::after {
-        content: "Contact";
-        position: absolute;
-        left: 50%;
-        transform: translateX(-50%);
-        transition: all 0.3s ease;
-    }
-
-    .navbar-button:hover {
-        background-color: #0deb2a;
-        color: #000000;
-        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-
-    }
-
-    .navbar-button:hover::before {
-        left: 50%;
-        transform: translateX(-50%) translateY(-5%);
-    }
-
-    .navbar-button:hover::after {
-        opacity: 0;
-    }
-
-    /* MOBILE MENU */
-    .mobile-menu {
-        display: none;
-    }
-    .mobile-menu-button {
-        position: fixed;
-        bottom: 40px;
-        left: 50%;
-        transform: translateX(-50%);
-        width: 50px;
-        height: 50px;
-        background-color: rgb(0, 0, 0);
-        color: white;
-        border: 2px solid white;
-        border-radius: 25px;
-        cursor: pointer;
-        font-size: 1.2rem;
-        transition: all 0.3s ease-in-out;
-        z-index: 1000;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        overflow: hidden;
-        text-align: center;
-        line-height: 50px;
-    }
-
-    .mobile-menu-button::before {
-        content: "\2630"; /* Hamburger icon */
-        transition: all 0.3s ease-in-out;
-    }
-
-    .mobile-menu-button:hover {
-        width: 120px;
-        background-color: rgb(0, 0, 0);
-        box-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
-    }
-
-    .mobile-menu-button:hover::before {
-        content: "Menu";
-    }
-
-
-    @keyframes wobbleAndSlideDown {
-        0% { transform: translateX(-50%) rotate(0deg); }
-        15% { transform: translateX(-52%) rotate(-5deg); }
-        30% { transform: translateX(-48%) rotate(3deg); }
-        45% { transform: translateX(-51%) rotate(-3deg); }
-        60% { transform: translateX(-49%) rotate(2deg); }
-        75% { transform: translateX(-50%) rotate(-1deg); }
-        100% { transform: translateX(-50%) translateY(100px) rotate(0deg); }
-    }
-
-    .mobile-menu-button.active {
-        animation: wobbleAndSlideDown 0.6s ease-in-out forwards;
-        opacity: 0;
-        transition: opacity 0.3s ease-in-out 0.3s;
-    }
-    .mobile-menu-close {
-        position: fixed;
-        bottom: 40px;
-        left: 50%;
-        transform: translateX(-50%) translateY(100px);
-        padding: 0.75rem 1.5rem;
-        background-color: rgba(255, 255, 255, 0.1);
-        color: white;
-        border: 1px solid rgba(255, 255, 255, 0.2);
-        border-radius: 50px;
-        cursor: pointer;
-        font-size: 1.2rem;
-        opacity: 0;
-        transition: all 0.3s cubic-bezier(0.25, 0.1, 0.25, 1);
-        z-index: 1000;
-        backdrop-filter: blur(10px);
-        -webkit-backdrop-filter: blur(10px);
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        width: 50px;
-        height: 50px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-
-    .mobile-menu-close:hover {
-        background-color: rgba(255, 59, 48, 0.2);
-        color: #ff3b30;
-        transform: translateX(-50%) translateY(95px);
-        box-shadow: 0 8px 15px rgba(255, 59, 48, 0.2);
-        width: auto;
-        padding: 0.75rem 1.5rem;
-    }
-
-    .mobile-menu-close::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background: radial-gradient(circle at center, rgba(255, 59, 48, 0.2) 0%, transparent 70%);
-        opacity: 0;
-        transition: opacity 0.3s ease;
-        border-radius: 50px;
-    }
-
-    .mobile-menu-close:hover::before {
-        opacity: 1;
-    }
-
-    @keyframes modernPulseAndExpand {
-        0% { 
-            transform: translateX(-50%) translateY(100px) scale(1);
-            width: 50px;
-        }
-        50% { 
-            transform: translateX(-50%) translateY(95px) scale(1.05);
-            width: auto;
-        }
-        100% { 
-            transform: translateX(-50%) translateY(100px) scale(1);
-            width: auto;
-        }
-    }
-
-    .mobile-menu-close:hover {
-        animation: modernPulseAndExpand 1s cubic-bezier(0.4, 0, 0.2, 1) forwards;
-    }
-
-    .mobile-menu-close::after {
-        content: 'Close';
-        opacity: 0;
-        width: 0;
-        overflow: hidden;
-        transition: opacity 0.3s ease, width 0.3s ease;
-    }
-
-    .mobile-menu-close:hover::after {
-        opacity: 1;
-        width: auto;
-        margin-left: 8px;
-    }
-
-    @keyframes bounceAndSlideUp {
-        0% { transform: translateX(-50%) translateY(100px); }
-        20% { transform: translateX(-50%) translateY(80px); }
-        40% { transform: translateX(-50%) translateY(95px); }
-        60% { transform: translateX(-50%) translateY(85px); }
-        80% { transform: translateX(-50%) translateY(92px); }
-        100% { transform: translateX(-50%) translateY(0); }
-    }
-
-    .mobile-menu-close.active {
-        animation: bounceAndSlideUp 0.7s ease-in-out 0.2s forwards;
-        opacity: 1;
-        transition: opacity 0.3s ease-in-out;
-    }
-    .mobile-menu-drawer {
-        position: fixed;
-        bottom: 20px;
-        left: 50%;
-        width: 0;
-        height: 0;
-        background-color: rgba(0, 0, 0, 0.8);
-        overflow: hidden;
-        z-index: 999;
-        backdrop-filter: blur(15px);
-        -webkit-backdrop-filter: blur(15px);
-        box-shadow: 0 -5px 20px rgba(0, 0, 0, 0.2);
-        opacity: 0;
-        border-radius: 50%;
-        transform: translate(-50%, 50%);
-        transition: all 0.8s cubic-bezier(0.25, 0.1, 0.25, 1);
-    }
-
-    .mobile-menu-drawer.active {
-        width: 100vw;
-        height: 100vh;
-        opacity: 1;
-        bottom: 0;
-        border-radius: 0;
-        transform: translate(-50%, 0);
-        transition: width 0.3s cubic-bezier(0.34, 1.56, 0.64, 1),
-                    height 0.3s cubic-bezier(0.34, 1.56, 0.64, 1),
-                    border-radius 0.3s ease-out;
-    }
-
-    @keyframes expandDrawer {
-        0% {
-            width: 0;
-            height: 0;
-            border-radius: 50%;
-        }
-        50% {
-            width: 120vw;
-            height: 120vh;
-            border-radius: 30%;
-        }
-        100% {
-            width: 100vw;
-            height: 100vh;
-            border-radius: 0;
-        }
-    }
-
-    .mobile-menu-drawer::before {
-        content: '';
-        position: absolute;
-        top: 45%;
-        left: 50%;
-        width: 10px;
-        height: 10px;
-        background-color: rgba(0, 0, 0, 0.8);
-        border-radius: 50%;
-        transform: translate(-50%, -50%) scale(0);
-        transition: transform 0.3s ease-out;
-    }
-
-    .mobile-menu-drawer.active::before {
-        transform: translate(-50%, -50%) scale(200);
-        opacity: 0;
-        transition: transform 0.3s ease-out, opacity 0.3s ease-out;
-    }
-
-    @keyframes fadeInContent {
-        0% { 
-            opacity: 0; 
-            transform: translateY(30px) scale(0.9) rotateX(20deg);
-            filter: blur(15px);
-        }
-        100% { 
-            opacity: 1; 
-            transform: translateY(0) scale(1) rotateX(0deg);
-            filter: blur(0);
-        }
-    }
-
-    .mobile-menu-drawer.active > * {
-        animation: fadeInContent 1.5s cubic-bezier(0.25, 0.1, 0.25, 1) 0.4s forwards;
-        opacity: 0;
-        filter: blur(15px);
-        transform-origin: center top;
-        will-change: opacity, transform, filter;
-    }
-
-    .mobile-menu-drawer ul {
-        list-style-type: none;
-        padding: 2rem;
-        margin: 0;
-        height: 100%;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        opacity: 0;
-        transform: translateY(30px) scale(0.95);
-        transition: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
-    }
-
-    .mobile-menu-drawer.active ul {
-        opacity: 1;
-        transform: translateY(0) scale(1);
-    }
-
-    .mobile-menu-drawer li {
-        margin-bottom: 2rem;
-        opacity: 0;
-        transform: translateX(-20px);
-        transition: opacity 0.5s ease-out, transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
-        transition-delay: calc(0.1s * var(--item-index, 0));
-    }
-
-    .mobile-menu-drawer.active li {
-        opacity: 1;
-        transform: translateX(0);
-    }
-
-    .mobile-menu-drawer a {
-        text-decoration: none;
-        color: #ffffff;
-        font-size: 1.6rem;
-        font-weight: 500;
-        letter-spacing: 0.5px;
-        transition: all 0.3s ease-in-out;
-        position: relative;
-        padding-bottom: 5px;
-    }
-
-    .mobile-menu-drawer a::after {
-        content: '';
-        position: absolute;
-        width: 0;
-        height: 2px;
-        bottom: 0;
-        left: 0;
-        background-color: #ffffff;
-        transition: width 0.3s ease-in-out;
-    }
-
-    .mobile-menu-drawer a:hover {
-        color: #ffffff;
-        transform: translateY(-3px);
-    }
-
-    .mobile-menu-drawer a:hover::after {
-        width: 100%;
-    }
-
-    @media (max-width: 768px) {
-        .navbar {
-            position: fixed;
-            top: 25px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 85%;
-            max-width: 400px;
-            background-color: rgb(0, 0, 0);
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
-            padding: 15px 10px;
-            border-radius: 30px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            z-index: 999;
-        }
-
-        .navbar-logo {
-            display: flex;
-            justify-content: center;
-            width: 100%;
-        }
-
-        .navbar-logo img {
-            height: 30px;
-            display: block;
-        }
-
-        .navbar-items {
-            display: none;
-        }
-
-        .navbar-button {
-            display: none
-        }
-
-        .mobile-menu {
-            display: block;
-        }
-    }
-
-    
-</style>
-
-<script>
-    document.addEventListener('DOMContentLoaded', function() {
-        const menuButton = document.querySelector('.mobile-menu-button');
-        const closeButton = document.createElement('button');
-        closeButton.classList.add('mobile-menu-close');
-        closeButton.textContent = 'X';
-        document.body.appendChild(closeButton);
-
-        const menuDrawer = document.createElement('div');
-        menuDrawer.classList.add('mobile-menu-drawer');
-        menuDrawer.innerHTML = `
-            <ul>
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#services">Services</a></li>
-                <li><a href="#contact">Contact</a></li>
+    <div class="sub-nav">
+        <div class="container">
+            <ul class="nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="#"><i class="fas fa-globe icon"></i> Page one</a>
+                    <small class="d-block text-muted">Learn more about our services</small>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#"><i class="fas fa-plane icon"></i> Page two</a>
+                    <small class="d-block text-muted">Find your dream vacation</small>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#"><i class="fas fa-map-marked-alt icon"></i> Page three</a>
+                    <small class="d-block text-muted">Plan your next adventure</small>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#"><i class="fas fa-lightbulb icon"></i> Page four</a>
+                    <small class="d-block text-muted">Get inspired by our travel ideas</small>
+                </li>
             </ul>
-        `;
-        document.body.appendChild(menuDrawer);
-
-        menuButton.addEventListener('click', function() {
-            menuButton.classList.add('active');
-            setTimeout(() => {
-                closeButton.classList.add('active');
-                menuDrawer.classList.add('active');
-            }, 300);
+        </div>
+    </div>
+    <!-- <div class="career-link">   
+        Looking for a new career? <a href="#">Get in touch</a>
+    </div> -->
+    <section class="rhapsody-header parallax-section py-4">
+        <div class="parallax-background" style="background-image: url('assets/img/hotel/hotel.jpg');"></div>
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@300;400;700&display=swap" rel="stylesheet">
+                    <h1 class="display-3 text-center mb-4 text-white" style="font-family: 'Unbounded', sans-serif;">Experience Rhapsody Hotel <br> Management System</h1>
+                    <p class="lead text-center text-light mb-5" style="font-family: 'Unbounded', sans-serif;">Trusted Partner for Leading Operators in Indonesia and Asia.</p>
+                    <div class="text-center mt-5">
+                        <a href="#" class="btn btn-outline-secondary btn-lg">See More Clients</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <style>
+        .parallax-section {
+            position: relative;
+            overflow: hidden;
+            min-height: 600px;
+            display: flex;
+            font-family: 'proxima-nova', sans-serif;
+            align-items: center;
+            color: #fff;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+        .parallax-background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            z-index: -1;
+            filter: brightness(0.7);
+        }
+        .parallax-background::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(128, 0, 128, 0.2); /* Slight purple opacity */
+            z-index: 1;
+        }
+    </style>
+    <script>
+        window.addEventListener('scroll', function() {
+            var scrolled = window.pageYOffset;
+            var parallax = document.querySelector('.parallax-background');
+            parallax.style.transform = 'translateY(' + (scrolled * 0.4) + 'px)';
         });
+    </script>
 
-        closeButton.addEventListener('click', function() {
-            closeButton.classList.remove('active');
-            menuDrawer.classList.remove('active');
-            setTimeout(() => {
-                menuButton.classList.remove('active');
-            }, 300);
-        });
-    });
-</script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
