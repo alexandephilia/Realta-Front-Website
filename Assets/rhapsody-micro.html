@@ -125,7 +125,7 @@
 
         .btn-outline-secondary {
             text-shadow: none;
-            background-color: rgba(158, 68, 180, 0.308);
+            background-color: rgb(158, 68, 180);
             border-radius: 10px;
             border-color: #9e44b4;
             color: white;
@@ -136,9 +136,18 @@
             -webkit-backdrop-filter: blur(5px);
         }
 
+        .gradient-text {
+            background: linear-gradient(90deg, #7209d4, #9d28d4 33%, #8ddee4);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            color: transparent;
+        }
+
         .btn-outline-secondary:hover {
-            background-color: rgba(158, 68, 180, 0.8);
+            background-color: rgba(158, 68, 180, 0.808);
             border-color: #9e44b4;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
             color: var(--white);
             text-shadow: none;
             backdrop-filter: blur(10px);
@@ -414,15 +423,9 @@
                     </li>
                 </ul>
             </div>
-            <!-- <div class="d-flex justify-content-center">
-                    <div class="d-flex justify-content-center">
-                        <button class="btn btn-custom me-2">Guest Portal</button>
-                    </div>
-                </div> -->
-        </div>
         </div>
     </nav>
-    <div class="sub-nav mb-0 d-none d-md-block">
+    <div class="sub-nav mb-0 d-none d-md-block sticky-top" style="top: 75px; z-index: 5;">
         <div class="container">
             <ul class="nav">
                 <li class="nav-item">
@@ -454,9 +457,9 @@
                 <div class="col-12">
                     <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@300;400;700&display=swap"
                         rel="stylesheet">
-                    <h1 class="display-3 text-center mb-4 text-white slide-in"
+                    <H1 class="display-3 text-center mb-4 text-white slide-in"
                         style="font-family: 'Unbounded', sans-serif;">
-                        Experience Rhapsody Hotel <br> Management System</h1>
+                        Rhapsody Hotel <br> Management System</H1>
                     <p class="lead text-center text-light mb-5 slide-in" style="font-family: 'Unbounded', sans-serif;">
                         Trusted
                         Partner for Leading Operators in Indonesia and Asia.</p>
@@ -566,7 +569,7 @@
 
         @media (max-width: 576px) {
             .parallax-section {
-                min-height: 300px;
+                min-height: 500px;
             }
 
             h1.display-3 {
@@ -578,6 +581,1469 @@
             }
         }
     </style>
+
+    <style>
+        .advanced-section {
+            position: relative;
+            overflow: visible;
+            background-color: transparent;
+            margin-top: -90px;
+            /* Increased negative margin for more overlap */
+            z-index: 2;
+        }
+
+        .card-container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 30px;
+        }
+
+        .card {
+            width: 320px;
+            height: 100%;
+            background-color: #fff;
+            border-radius: 12px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+            padding: 0px;
+            margin: 10px;
+            opacity: 0;
+            transform: translateY(50px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .card h3 {
+            margin-top: 0;
+            color: #333;
+            font-size: 1.5rem;
+            padding: 20px 20px 0;
+        }
+
+        .card p {
+            margin-bottom: 15px;
+            color: #666;
+            padding: 0 20px;
+            flex-grow: 1;
+        }
+
+        .card-icon {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            color: #007bff;
+            padding: 0 20px;
+        }
+
+        .card-img {
+            width: 120%;
+            height: 450px;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+
+        @media (max-width: 768px) {
+            .advanced-section {
+                margin-top: -100px;
+                /* Adjusted for mobile to maintain some overlap */
+                padding: 0 15px;
+                /* Add padding to ensure content doesn't touch screen edges */
+            }
+
+            .card-container {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .card {
+                width: 100%;
+                max-width: 320px;
+                margin: 15px 0;
+            }
+
+            .card-img {
+                width: 100%;
+                height: auto;
+                max-height: 300px;
+                object-fit: cover;
+            }
+        }
+    </style>
+
+    <section class="advanced-section">
+        <div class="container-fluid p-0">
+            <div class="card-container">
+                <div class="card">
+                    <img src="assets/img/hotel/1.jpg" alt="Advanced Feature 1" class="card-img">
+                </div>
+                <div class="card">
+                    <img src="assets/img/hotel/2.png" alt="Advanced Feature 2" class="card-img">
+                </div>
+                <div class="card">
+                    <img src="assets/img/hotel/3.png" alt="Advanced Feature 3" class="card-img">
+                </div>
+            </div>
+            <div class="text-center mt-4">
+                <a href="#" class="btn btn-outline-secondary btn-lg">Contact Us</a>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        function isElementInViewport(el) {
+            var rect = el.getBoundingClientRect();
+            return (
+                rect.top <= (window.innerHeight || document.documentElement.clientHeight) &&
+                rect.bottom >= 0 &&
+                rect.left <= (window.innerWidth || document.documentElement.clientWidth) &&
+                rect.right >= 0
+            );
+        }
+
+        function handleScroll() {
+            var cards = document.querySelectorAll('.card');
+            cards.forEach((card, index) => {
+                if (isElementInViewport(card)) {
+                    setTimeout(() => {
+                        card.classList.add('visible');
+                    }, index * 200); // Stagger the animation
+                }
+            });
+        }
+
+        window.addEventListener('scroll', handleScroll);
+        window.addEventListener('load', handleScroll);
+        // Trigger the handleScroll function immediately after page load
+        setTimeout(handleScroll, 100);
+    </script>
+
+
+    <section class="ict-one-solution py-5 mt-5">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-6 fade-in-left">
+                    <img src="assets/img/hotel/feature-ict.png" alt="ICT One Solution" class="img-fluid">
+                </div>
+                <div class="col-md-6 text-center fade-in-right">
+                    <h2 class="mb-4 gradient-text fw-bold" style="text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.13);">ICT ONE
+                        SOLUTION</h2>
+                    <h3 class="mb-3">Hotel System</h3>
+                    <p class="mb-4">Rhapsody is designed to meet new trends in the hospitality industry, including
+                        service apartments. The golf course system and administration is seamlessly integrated into the
+                        hotel system. Point of Sales with comprehensive sales and operations reports are available for
+                        management analysis. Catering/banquet functions with menu analysis and other functionalities
+                        will assist in managing/calculating cost.</p>
+                    <a href="#" class="btn btn-outline-secondary btn-sm d-inline-block mx-auto"
+                        style="max-width: 200px;">Learn More</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="features py-5">
+        <div class="container">
+            <div class="row text-center justify-content-center">
+                <div class="col-md-2 col-sm-4 mb-4 feature-item">
+                    <img src="assets/img/hotel/icon-1.png" alt="Feature 1" class="img-fluid mb-3"
+                        style="max-width: 80px;">
+                    <p>Property Management System</p>
+                </div>
+                <div class="col-md-2 col-sm-4 mb-4 feature-item">
+                    <img src="assets/img/hotel/icon-2.png" alt="Feature 2" class="img-fluid mb-3"
+                        style="max-width: 80px;">
+                    <p>Point of Sale System</p>
+                </div>
+                <div class="col-md-2 col-sm-4 mb-4 feature-item">
+                    <img src="assets/img/hotel/icon-3.png" alt="Feature 3" class="img-fluid mb-3"
+                        style="max-width: 80px;">
+                    <p>Spa & Wellness Management</p>
+                </div>
+                <div class="col-md-2 col-sm-4 mb-4 feature-item">
+                    <img src="assets/img/hotel/icon-4.png" alt="Feature 4" class="img-fluid mb-3"
+                        style="max-width: 80px;">
+                    <p>Sales & Catering</p>
+                </div>
+                <div class="col-md-2 col-sm-4 mb-4 feature-item">
+                    <img src="assets/img/hotel/icon-5.png" alt="Feature 5" class="img-fluid mb-3"
+                        style="max-width: 80px;">
+                    <p>Business Intelligence</p>
+                </div>
+                <div class="col-md-2 col-sm-4 mb-4 feature-item">
+                    <img src="assets/img/hotel/icon-6.png" alt="Feature 6" class="img-fluid mb-3"
+                        style="max-width: 80px;">
+                    <p>Central Reservation</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <style>
+        .fade-in-left,
+        .fade-in-right {
+            opacity: 0;
+            transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+        }
+
+        .fade-in-left {
+            transform: translateX(-50px);
+        }
+
+        .fade-in-right {
+            transform: translateX(50px);
+        }
+
+        .fade-in-left.visible,
+        .fade-in-right.visible {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .feature-item {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+        }
+
+        .feature-item.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+
+    <script>
+        function isElementInViewport(el) {
+            var rect = el.getBoundingClientRect();
+            return (
+                rect.top <= (window.innerHeight || document.documentElement.clientHeight) &&
+                rect.bottom >= 0 &&
+                rect.left <= (window.innerWidth || document.documentElement.clientWidth) &&
+                rect.right >= 0
+            );
+        }
+
+        function handleScroll() {
+            var fadeElements = document.querySelectorAll('.fade-in-left, .fade-in-right, .feature-item');
+            fadeElements.forEach((el, index) => {
+                if (isElementInViewport(el)) {
+                    setTimeout(() => {
+                        el.classList.add('visible');
+                    }, index * 100);
+                }
+            });
+        }
+
+        window.addEventListener('scroll', handleScroll);
+        window.addEventListener('load', handleScroll);
+        // Trigger the handleScroll function immediately after page load
+        setTimeout(handleScroll, 100);
+    </script>
+
+
+    <style>
+        .why-rhapsody-section h2 {
+            font-size: 2.5rem;
+            color: #333;
+            margin-bottom: 50px;
+            position: relative;
+        }
+
+        .why-rhapsody-section h2::after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, #c393da, #aa84b6, #c393da, transparent);
+        }
+
+        .why-rhapsody-section h2::before {
+            content: '';
+            position: absolute;
+            top: -30px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 1.5rem;
+            color: #7209d4;
+        }
+
+        .why-rhapsody-item {
+            transition: all 0.3s ease;
+            border: none;
+            border-radius: 10px;
+            background: rgba(255, 255, 255, 0.35);
+            backdrop-filter: blur(4px);
+            -webkit-backdrop-filter: blur(4px);
+            box-shadow: 0 3px 8px 0 rgba(31, 38, 135, 0.205);
+            border: 1px solid rgba(255, 255, 255, 0.18);
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+
+        /* .why-rhapsody-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+        } */
+        .why-rhapsody-item .card-body {
+            padding: 10px;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+        }
+
+        .why-rhapsody-item img {
+            width: 80px;
+            height: 80px;
+            margin-bottom: 20px;
+            transition: transform 0.3s ease;
+            align-self: center;
+        }
+
+        .why-rhapsody-item h3 {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 15px;
+            color: #7c5e85;
+            flex-grow: 0;
+            height: 3em;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .why-rhapsody-item p {
+            font-size: 1rem;
+            color: #666;
+            line-height: 1.6;
+            flex-grow: 1;
+            display: flex;
+            align-items: center;
+            text-align: center;
+            margin-bottom: 0;
+            padding: 0 10px;
+        }
+
+        .rhapsody-feature-card {
+            padding: 0 10px;
+            width: 28.333333%;
+        }
+    </style>
+
+    <style>
+        .why-rhapsody-section {
+            background-image: url('assets/img/hotel/bg-1.png');
+            background-size: cover;
+            background-position: center;
+            position: relative;
+            padding: 80px 0;
+            border-radius: 40px;
+            overflow: hidden;
+        }
+
+        .why-rhapsody-section::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(241, 241, 241, 0.76);
+            z-index: 1;
+            backdrop-filter: blur(5px);
+            -webkit-backdrop-filter: blur(5px);
+            border-radius: 40px;
+        }
+
+        .why-rhapsody-section>* {
+            position: relative;
+            z-index: 2;
+
+            @media (max-width: 991px) {
+                .why-rhapsody-section {
+                    padding: 60px 0;
+                }
+
+                .rhapsody-feature-card {
+                    width: 100%;
+                    margin-bottom: 20px;
+                    display: flex;
+                    justify-content: center;
+                }
+
+                .why-rhapsody-item {
+                    height: auto;
+                    max-width: 80%;
+                }
+
+                .why-rhapsody-item h3 {
+                    font-size: 1.5rem;
+                }
+
+                .why-rhapsody-item p {
+                    font-size: 0.9rem;
+                }
+            }
+
+            @media (max-width: 767px) {
+                .why-rhapsody-section {
+                    padding: 40px 0;
+                    border-radius: 20px;
+                }
+
+                .why-rhapsody-section::after {
+                    border-radius: 20px;
+                }
+
+                h2.gradient-text {
+                    font-size: 1.8rem;
+                }
+
+                .rhapsody-feature-card {
+                    max-width: 90%;
+                    margin-left: auto;
+                    margin-right: auto;
+                }
+            }
+
+            @media (max-width: 575px) {
+                .why-rhapsody-section {
+                    padding: 30px 0;
+                }
+
+                h2.gradient-text {
+                    font-size: 1.5rem;
+                }
+
+                .why-rhapsody-item h3 {
+                    font-size: 1.3rem;
+                }
+
+                .rhapsody-feature-card {
+                    max-width: 100%;
+                }
+            }
+        }
+    </style>
+    <section class="why-rhapsody-section">
+        <div class="container">
+            <h2 class="text-center gradient-text fw-bold" style="text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.13);">WHY
+                RHAPSODY</h2>
+            <div class="row justify-content-center g-3">
+                <div class="col-4  rhapsody-feature-card">
+                    <div class="card h-100 why-rhapsody-item text-center">
+                        <div class="card-body">
+                            <img src="assets/img/hotel/feature-1.png" alt="Business Clarity & Synergy" class="mb-3">
+                            <h3 class="card-title">Business Clarity & Synergy</h3>
+                            <p class="card-text">Enhance your hotel's efficiency with our integrated management
+                                solutions</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-4  rhapsody-feature-card">
+                    <div class="card h-100 why-rhapsody-item text-center">
+                        <div class="card-body">
+                            <img src="assets/img/hotel/feature-2.png"
+                                alt="Ensuring Service Excellence & Revenue Realization" class="mb-3">
+                            <h3 class="card-title">Ensuring Service Excellence & Revenue Realization</h3>
+                            <p class="card-text">Optimize your revenue streams and elevate guest experiences</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-4  rhapsody-feature-card">
+                    <div class="card h-100 why-rhapsody-item text-center">
+                        <div class="card-body">
+                            <img src="assets/img/hotel/feature-3.png" alt="One Stop Service" class="mb-3">
+                            <h3 class="card-title">One Stop Service</h3>
+                            <p class="card-text">Access all your hotel management needs in one comprehensive platform
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-4  rhapsody-feature-card">
+                    <div class="card h-100 why-rhapsody-item text-center">
+                        <div class="card-body">
+                            <img src="assets/img/hotel/feature-4.png" alt="Seamless Integration & Reporting System"
+                                class="mb-3">
+                            <h3 class="card-title">Seamless Integration & Reporting System</h3>
+                            <p class="card-text">Enjoy smooth data flow and insightful reports across all departments
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-4  rhapsody-feature-card">
+                    <div class="card h-100 why-rhapsody-item text-center">
+                        <div class="card-body">
+                            <img src="assets/img/hotel/feature-5.png" alt="Superior Cost Price Effectiveness"
+                                class="mb-3">
+                            <h3 class="card-title">Superior Cost Price Effectiveness</h3>
+                            <p class="card-text">Maximize your ROI with our cost-effective hotel management solutions
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-4 rhapsody-feature-card">
+                    <div class="card h-100 why-rhapsody-item text-center">
+                        <div class="card-body">
+                            <img src="assets/img/hotel/feature-6.png" alt="Comprehensive Hotel Management System"
+                                class="mb-3">
+                            <h3 class="card-title">Comprehensive Hotel Management System</h3>
+                            <p class="card-text">Manage all aspects of your hotel operations with our all-in-one system
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="cta" class="py-4 mt-4">
+        <div class="container">
+            <div class="row justify-content-center align-items-center">
+                <div class="col-4 offset-1 text-md-start text-center">
+                    <h2 class="mb-3 gradient-text">Want to talk about solution?</h2>
+                    <p class="mb-4">Let's get started right now.</p>
+                </div>
+                <div class="col-4 offset-2 text-md-start text-center">
+                    <a href="#" class="btn btn-outline-secondary btn-lg d-inline-block mx-auto"
+                        style="max-width: 200px;">REQUEST DEMO</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <style>
+        #cta h2 {
+            font-size: 2rem;
+            font-weight: bold;
+        }
+
+        #cta p {
+            font-size: 1.25rem;
+            color: #6c757d;
+        }
+
+        #cta .btn-primary {
+            background-color: #007bff;
+            border-color: #007bff;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+
+        #cta .btn-primary:hover {
+            background-color: #0056b3;
+            border-color: #0056b3;
+        }
+
+        .gradient-text {
+            background: linear-gradient(90deg, #7209d4, #2832d4 33%, #00a5b2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            color: transparent;
+        }
+
+        @media (max-width: 767px) {
+            #cta .col-4 {
+                width: 100%;
+                margin-left: 0;
+                margin-bottom: 20px;
+            }
+
+            #cta .row {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            #cta .text-md-start {
+                text-align: center !important;
+            }
+        }
+    </style>
+
+
+
+    <section id="feature-accordion" class="py-5">
+        <div class="container">
+            <h2 class="text-center mb-5 gradient-text">FEATURES AND MODULE</h2>
+            <p class="text-center mb-4">Streamline hospitality transaction processes to boost business results.</p>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="accordion" id="featureAccordionTwo">
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="headingOne">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                                    Rhapsody Front Office
+                                </button>
+                            </h2>
+                            <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne"
+                                data-bs-parent="#featureAccordionOne">
+                                <div class="accordion-body">
+                                    <ul>
+                                        <li>Sales</li>
+                                        <li>Reservation</li>
+                                        <li>Housekeeping</li>
+                                        <li>Check-In</li>
+                                    </ul>
+                                    <a href="#" class="btn-outline-secondary" style="margin-left: 20px;">Explore
+                                        More</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="accordion" id="featureAccordionTwo">
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="headingTwo">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                    Rhapsody Back Office
+                                </button>
+                            </h2>
+                            <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
+                                data-bs-parent="#featureAccordionTwo">
+                                <div class="accordion-body">
+                                    <ul>
+                                        <li>Account Receivable</li>
+                                        <li>Cash & Bank</li>
+                                        <li>Food Asset</li>
+                                        <li>General Ledger</li>
+                                    </ul>
+                                    <a href="#" class="btn-outline-secondary" style="margin-left: 20px;">Explore
+                                        More</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="accordion" id="featureAccordionThree">
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="headingThree">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                    Rhapsody Logistic
+                                </button>
+                            </h2>
+                            <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree"
+                                data-bs-parent="#featureAccordionThree">
+                                <div class="accordion-body">
+                                    <ul>
+                                        <li>Purchasing</li>
+                                        <li>Receiving</li>
+                                        <li>Inventory</li>
+                                        <li>Cost Control</li>
+                                    </ul>
+                                    <a href="#" class="btn-outline-secondary" style="margin-left: 20px;">Explore
+                                        More</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <style>
+        #feature-accordion h2 {
+            color: #333;
+            font-weight: bold;
+        }
+
+        .accordion-item {
+            border: none;
+            margin-bottom: 1rem;
+        }
+
+        .accordion-button {
+            background-color: #fff;
+            color: #333;
+            font-weight: 600;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .accordion-button:not(.collapsed) {
+            background-color: #c69ad8ce;
+            color: #ffffff;
+        }
+
+        .accordion-button:focus {
+            box-shadow: 0 0 0 0.25rem rgba(0, 123, 255, 0.25);
+        }
+
+        .accordion-body {
+            background-color: #fff;
+            border-top: 1px solid rgba(0, 0, 0, 0.125);
+            padding: 1.25rem;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            height: 250px;
+            overflow-y: auto;
+        }
+    </style>
+
+
+
+    <section id="technology-delivery" class="clipped-section">
+
+        <style>
+            #technology-delivery {
+                padding-top: 100px;
+            }
+
+            @media (max-width: 768px) {
+                .glass-text {
+                    font-size: 1.8rem !important;
+                }
+            }
+        </style>
+        <div class="container-fluid container-lg px-3 p-4">
+            <div class="row justify-content-center">
+                <div class="col-12 py-4 px-5">
+                    <div class="glass-card p-4">
+                        <div class="card-section">
+                            <div class="row gy-4">
+                                <!-- Top Column -->
+                                <div class="col-12">
+                                    <div class="text-center">
+                                        <h2 class="mb-2 mt-5 glass-text">
+                                            Delivering Technology for
+                                            <br>
+                                            <span class="gradient-text">Leading Organizations</span>
+                                        </h2>
+                                        <style>
+                                            .gradient-text {
+                                                background: linear-gradient(90deg, #7209d4, #2832d4 33%, #00a5b2);
+                                                -webkit-background-clip: text;
+                                                -webkit-text-fill-color: transparent;
+                                                background-clip: text;
+                                                color: transparent;
+                                            }
+                                        </style>
+                                        <h3 class="mb-0 glass-subtext">
+                                            Across South-East Asia & Japan
+                                        </h3>
+                                    </div>
+                                </div>
+                                <style>
+                                    .glass-text {
+                                        font-size: 42px;
+                                        font-weight: bolder;
+                                    }
+
+                                    @media (max-width: 768px) {
+                                        .glass-text {
+                                            font-size: 35px !important;
+                                            line-height: 1.3 !important;
+                                        }
+
+                                        #partners-logo {
+                                            padding-top: 15%;
+                                        }
+
+                                        .glass-subtext {
+                                            font-size: 18px !important;
+                                            line-height: 1.4 !important;
+                                        }
+                                    }
+
+                                    @media (max-width: 576px) {
+                                        .glass-text {
+                                            font-size: 35px !important;
+                                        }
+
+                                        .glass-subtext {
+                                            font-size: 18px !important;
+                                        }
+                                    }
+                                </style>
+                                <!-- Bottom Column -->
+
+                                <div id="partners-logo" class="col-12" style="cursor: default; pointer-events: none;">
+
+                                    <div class="row justify-content-around align-items-center pt-5 mb-0 g-5">
+                                        <div class="col-12 col-md-11 mb-4">
+                                            <div class="d-flex flex-row flex-wrap justify-content-center gap-5">
+                                                <div id="partner-logo-1" class="partner-logo mx-3 mb-4">
+                                                    <img src="assets/img/partners/Accor_logo_Gold-gradient_RVB_digital.png"
+                                                        alt="Partner 1" class="img-fluid" loading="lazy">
+                                                </div>
+                                                <div id="partner-logo-2" class="partner-logo mx-3 mb-4">
+                                                    <img src="assets/img/partners/Logo-Astra-Otoparts-PNG-–-IfoxSoft.Com_-950x500.png"
+                                                        alt="Partner 2" class="img-fluid" loading="lazy">
+                                                </div>
+                                                <div id="partner-logo-3" class="partner-logo mx-3 mb-4">
+                                                    <img src="assets/img/partners/bank-tabungan-negara-seeklogo.png"
+                                                        alt="Partner 3" class="img-fluid" loading="lazy">
+                                                </div>
+                                                <div id="partner-logo-4" class="partner-logo mx-3 mb-4">
+                                                    <img src="assets/img/partners/Logo-BCA-PNG.png" alt="Partner 4"
+                                                        class="img-fluid" loading="lazy">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-12 col-md-11 mb-4">
+                                            <div class="d-flex flex-row flex-wrap justify-content-center gap-5">
+                                                <div id="partner-logo-5" class="partner-logo mx-3 mb-4">
+                                                    <img src="assets/img/partners/pngegg.png" alt="Partner 5"
+                                                        class="img-fluid" loading="lazy">
+                                                </div>
+                                                <div id="partner-logo-6" class="partner-logo mx-3 mb-4">
+                                                    <img src="assets/img/partners/Energizer.png" alt="Partner 6"
+                                                        class="img-fluid" loading="lazy">
+                                                </div>
+                                                <div id="partner-logo-7" class="partner-logo mx-3 mb-4">
+                                                    <img src="assets/img/partners/Hilton.png" alt="Partner 7"
+                                                        class="img-fluid" loading="lazy">
+                                                </div>
+                                                <div id="partner-logo-8" class="partner-logo mx-3 mb-4">
+                                                    <img src="assets/img/partners/Hyundai.png" alt="Partner 8"
+                                                        class="img-fluid" loading="lazy">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-12 col-md-11 mb-4">
+                                            <div class="d-flex flex-row flex-wrap justify-content-center gap-5">
+                                                <div id="partner-logo-9" class="partner-logo mx-3 mb-4">
+                                                    <img src="assets/img/partners/indofood.png" alt="Partner 9"
+                                                        class="img-fluid" loading="lazy">
+                                                </div>
+                                                <div id="partner-logo-10" class="partner-logo mx-3 mb-4">
+                                                    <img src="assets/img/partners/kalbe.png" alt="Partner 10"
+                                                        class="img-fluid" loading="lazy">
+                                                </div>
+                                                <div id="partner-logo-11" class="partner-logo mx-3 mb-4">
+                                                    <img src="assets/img/partners/kao.png" alt="Partner 11"
+                                                        class="img-fluid" loading="lazy">
+                                                </div>
+                                                <div id="partner-logo-12" class="partner-logo mx-3 mb-4">
+                                                    <img src="assets/img/partners/Mercure Hotels.png" alt="Partner 12"
+                                                        class="img-fluid" loading="lazy">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-12 pb-5 col-md-11 mb-4">
+                                            <div class="d-flex flex-row flex-wrap justify-content-center gap-5">
+                                                <div id="partner-logo-13" class="partner-logo mx-3 mb-4">
+                                                    <img src="assets/img/partners/novotel.png" alt="Partner 13"
+                                                        class="img-fluid" loading="lazy">
+                                                </div>
+                                                <div id="partner-logo-14" class="partner-logo mx-3 mb-4">
+                                                    <img src="assets/img/partners/prudential.png" alt="Partner 14"
+                                                        class="img-fluid" loading="lazy">
+                                                </div>
+                                                <div id="partner-logo-15" class="partner-logo mx-3 mb-4">
+                                                    <img src="assets/img/partners/sultan.png" alt="Partner 15"
+                                                        class="img-fluid" loading="lazy">
+                                                </div>
+                                                <div id="partner-logo-16" class="partner-logo mx-3 mb-4">
+                                                    <img src="assets/img/partners/yakult.png" alt="Partner 16"
+                                                        class="img-fluid" loading="lazy">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <style>
+                                    .partner-logo {
+                                        width: 150px;
+                                        height: 100px;
+                                        display: flex;
+                                        align-items: center;
+                                        justify-content: center;
+                                        margin: 1rem;
+                                    }
+
+                                    .partner-logo img {
+                                        max-width: 100%;
+                                        max-height: 100%;
+                                        object-fit: contain;
+                                    }
+
+                                    @media (max-width: 992px) {
+                                        .partner-logo {
+                                            width: 120px;
+                                            height: 80px;
+                                            margin: 0.5rem;
+                                        }
+                                    }
+
+                                    @media (max-width: 768px) {
+                                        .row {
+                                            --bs-gutter-y: 0.15rem;
+                                        }
+
+                                        .partner-logo {
+                                            width: 80px;
+                                            height: 60px;
+                                            margin: 0.3rem;
+                                        }
+
+                                        .d-flex.flex-row.flex-wrap {
+                                            justify-content: space-between;
+                                        }
+
+                                        .col-12.col-md-11.mb-4 {
+                                            padding-left: 5px;
+                                            padding-right: 5px;
+                                        }
+                                    }
+                                </style>
+                                </style>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <style>
+            .glass-card {
+                /* Add a semi-transparent background to give the glass-like effect */
+                background-image: linear-gradient(90deg, rgba(0, 0, 0, .03), rgba(249, 249, 249, 0));
+                /* Increase the blur radius to create a more pronounced effect */
+                -webkit-backdrop-filter: blur(10px);
+                backdrop-filter: blur(10px);
+                /* Add a slight opacity to the border to enhance the glass-like effect */
+                /* Increase the box shadow to create more depth */
+                box-shadow: 0 3px 6px 0 rgba(31, 38, 135, 0.4);
+                /* Keep the border radius as it is to maintain the rounded corners */
+                border-radius: 10px;
+                margin-left: -15px;
+                margin-right: -15px;
+                border-radius: 0 !important;
+                padding: 1rem !important;
+                border-radius: 10px !important;
+            }
+        </style>
+
+    </section>
+
+    <section id="separator" class="py-0">
+        <div class="container p-4">
+            <div class="banner">
+                <div class="banner-content">
+                    <h2>Ready to Achieve Outstanding Performance?</h2>
+                    <p>Experience the power of the Rhapsody system and transform your team's performance today!</p>
+                    <button class="btn-custom" onclick="scheduleCall()"
+                        style="background: linear-gradient(to bottom, #9054d0, #7a4bd7);">Schedule a call</button>
+                </div>
+                <img src="assets/img/handshake.png" alt="Business Handshake" class="banner-image">
+            </div>
+        </div>
+    </section>
+
+
+    <section id="contact" class="pb-5">
+        <div class="container p-4">
+            <div class="row justify-content-between">
+                <div id="contact-info" class="col-lg-5 left-column >
+                    <h1 class=" mb-3 contact-heading" style="font-size: 33px;">What Are You Waiting For?<br> <span
+                        style="font-weight: bold;">Just Make It Happen!</span></h1>
+                    <p class="text-muted mb-4 contact-text" style="font-size: 18px;">
+                        We'll have a Business Development Representative contact you within
+                        <span style="font-weight: bold;">24 business hours.</span>
+                    </p>
+                    <style>
+                        .award {
+                            font-size: 18px;
+                            /* Consistent font size for awards */
+                            font-weight: bold;
+                            /* Make the text bold for emphasis */
+                        }
+
+                        .company-name {
+                            font-size: 24px;
+                            /* Consistent font size for company name */
+                        }
+
+                        .headquarter-title {
+                            font-size: 20px;
+                            /* Consistent font size for headquarter title */
+                        }
+
+                        .address-details {
+                            font-size: 16px;
+                            /* Consistent font size for address details */
+                        }
+                    </style>
+                    <div class="d-flex gap-3 mb-4">
+                        <div class="award">2019</div>
+                        <div class="award">2020</div>
+                        <div class="award">2021</div>
+                    </div>
+                    <div class="company-info">
+                        <h3 class="h5 fw-bold mb-2 company-name">PT. REALTA CHAKRADARMA</h3>
+                        <h3 class="headquarter-title">Headquarter Address:</h3>
+                        <p class="mb-4 address-details">
+                            Jl. Petojo Melintang No. 25A<br>
+                            Petojo Selatan - Gambir<br>
+                            Jakarta Pusat 10160<br>
+                            Indonesia
+                        </p>
+                    </div>
+
+                    <div class="map-wrapper mb-4" style="width: 85%;">
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.3279995766406!2d106.8142527!3d-6.172364!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f67f4f44dc2f%3A0x124b0a0f4cb7e845!2sPT%20Realta%20Chakradarma!5e0!3m2!1sen!2sid!4v1653668623967"
+                            frameborder="0" style="border:0" allowfullscreen="">
+                        </iframe>
+                    </div>
+
+                    <div class="contact-info mb-4">
+                        <style>
+                            .contact-item {
+                                display: flex;
+                                align-items: flex-start;
+                                margin-bottom: 10px;
+                                font-size: 16px;
+                                /* Consistent font size for contact items */
+
+                            }
+
+                            .contact-icon {
+                                font-size: 14px;
+                                margin-right: 10px;
+                                margin-top: 3px;
+                            }
+                        </style>
+                        <div class="contact-item">
+                            <i class="fas fa-phone contact-icon"></i>
+                            <p class="mb-0">Phone: <a href="tel:+62213861772" class="text-decoration-none fw-bold">+62
+                                    21 - 386 1772</a></p>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-envelope contact-icon"></i>
+                            <p class="mb-0">Email: <a href="mailto:info@realta.co.id"
+                                    class="text-decoration-none fw-bold">info@realta.co.id</a></p>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fab fa-whatsapp contact-icon"></i>
+                            <p class="mb-0">
+                                For sales and marketing, contact our Official WhatsApp:<br>
+                                <a href="https://wa.me/628111221789" class="text-decoration-none fw-bold"
+                                    style="color: #3bc05a;">+62 811 1221 789</a>
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="social-icons d-flex gap-3">
+                        <a href="https://www.facebook.com/yourpage" class="social-icon" aria-label="Facebook">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="https://www.linkedin.com/yourpage" class="social-icon" aria-label="LinkedIn">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="https://www.twitter.com/yourpage" class="social-icon" aria-label="Twitter">
+                            <i class="fab fa-x-twitter"></i>
+                        </a>
+                        <a href="https://www.instagram.com/yourpage" class="social-icon" aria-label="Instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="https://www.youtube.com/yourchannel" class="social-icon" aria-label="YouTube">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                    </div>
+                </div>
+                <style>
+                    .social-icons {
+                        display: flex;
+                        align-items: center;
+                    }
+
+                    .social-icon {
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        width: 40px;
+                        height: 40px;
+                        border-radius: 50%;
+                        color: white;
+                        text-decoration: none;
+                        transition: all 0.3s ease;
+                    }
+
+                    .social-icon:hover {
+                        transform: translateY(-3px);
+                        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+                        background-image: none !important;
+                        background-color: #f0f0f0 !important;
+                        color: #333 !important;
+                    }
+
+                    .social-icon i {
+                        font-size: 18px;
+                    }
+
+                    .social-icon[aria-label="Facebook"] {
+                        background-color: #3b5998;
+                    }
+
+                    .social-icon[aria-label="LinkedIn"] {
+                        background-color: #0077b5;
+                    }
+
+                    .social-icon[aria-label="Twitter"] {
+                        background-color: #475258;
+                    }
+
+                    .social-icon[aria-label="Instagram"] {
+                        background-color: #a19551;
+                    }
+
+                    .social-icon[aria-label="YouTube"] {
+                        background-color: #e62e2e;
+                    }
+                </style>
+                <div id="contact-form" class="col-lg-5  right-column right-column-custom p-4 p-md-5 order-1 order-lg-2">
+                    <form class="needs-validation" novalidate>
+                        <div class="mb-3">
+                            <label for="fullname" class="form-label">Name</label>
+                            <input type="text" class="form-control" id="fullname" placeholder="Name" required>
+                            <div class="invalid-feedback">
+                                Please enter your full name.
+                            </div>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="company" class="form-label">Company Name</label>
+                            <input type="text" class="form-control" id="company" placeholder="Company" required>
+                            <div class="invalid-feedback">
+                                Please enter your company name.
+                            </div>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="jobTitle" class="form-label">Job Title</label>
+                            <input type="text" class="form-control" id="jobTitle" placeholder="Job Title" required>
+                            <div class="invalid-feedback">
+                                Please enter your job title.
+                            </div>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="service" class="form-label">Select A Service</label>
+                            <select id="service" class="form-select" required>
+                                <option value="">Choose...</option>
+                                <option>Hospitality</option>
+                                <option>Golf</option>
+                                <option>Property & Tenancy</option>
+                                <option>Human Resource (HR)</option>
+                                <option>ITSM</option>
+                                <option>ITAM</option>
+                                <option>ERP</option>
+                                <option>EAM</option>
+                                <option>Other</option>
+                            </select>
+                            <div class="invalid-feedback">
+                                Please select a service.
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="phone" class="form-label">Mobile Phone</label>
+                            <input type="tel" class="form-control" id="phone" placeholder="Mobile Phone" required
+                                pattern="^\+?\d{0,13}">
+                            <div class="invalid-feedback">
+                                Please enter a valid mobile phone number.
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="email" class="form-label">Email</label>
+                            <input type="email" class="form-control" id="email" placeholder="Email" required>
+                            <div class="invalid-feedback">
+                                Please enter a valid email address.
+                            </div>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="employees" class="form-label">Total Employee</label>
+                            <select id="employees" class="form-select" required>
+                                <option value="">Choose...</option>
+                                <option>1-50</option>
+                                <option>51-100</option>
+                                <option>101-500</option>
+                                <option>501-1000</option>
+                                <option>1001-5000</option>
+                                <option>More than 5000</option>
+                            </select>
+                            <div class="invalid-feedback">
+                                Please select the total number of employees.
+                            </div>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="message" class="form-label">Message</label>
+                            <textarea id="message" class="form-control" rows="4" placeholder="Message"
+                                required></textarea>
+                            <div class="invalid-feedback">
+                                Please enter a message.
+                            </div>
+                        </div>
+
+                        <div class="mb-3 form-check text-center">
+                            <div class="d-inline-block text-start">
+                                <input type="checkbox" class="form-check-input" id="terms" required>
+                                <label class="form-check-label" for="terms">
+                                    Before submitting please read our <br>
+                                    <a href="#" class="text-decoration-none">Term and Condition</a> &
+                                    <a href="#" class="text-decoration-none">Privacy Policy</a>
+                                </label>
+                                <div class="invalid-feedback">
+                                    You must agree to the terms and conditions.
+                                </div>
+                            </div>
+                        </div>
+
+                        <button type="submit" class="btn submit-btn w-100">
+                            <i class="fas fa-paper-plane icon"></i>
+                            <span class="text">Submit</span>
+                        </button>
+
+                        <style>
+                            .submit-btn {
+                                position: relative;
+                                overflow: hidden;
+                                display: inline-flex;
+                                align-items: center;
+                                justify-content: center;
+                                width: 100%;
+                                height: 60px;
+                                font-size: 1.2rem;
+                                letter-spacing: 1px;
+                                text-transform: uppercase;
+                                border: none;
+                                border-radius: 10px;
+                                background: linear-gradient(to bottom, #9054d0, #7a4bd7);
+                                color: #ffffff;
+                                cursor: pointer;
+                                transition: all 0.3s ease-in-out;
+                                box-shadow:
+                                    inset 0 30px 30px -15px rgba(255, 255, 255, 0.1),
+                                    inset 0 0 0 1px rgba(255, 255, 255, 0.3),
+                                    0 5px 10px rgba(0, 0, 0, 0.1),
+                                    0 10px 20px rgba(0, 0, 0, 0.1);
+                                margin: 20px auto 0;
+                                /* Added top margin to move the button slightly down */
+                            }
+
+                            .submit-btn .icon {
+                                margin-right: 10px;
+                                font-size: 1.5rem;
+                                transition: all 0.5s ease-in-out;
+                                color: #ffffff;
+                            }
+
+                            .submit-btn .text {
+                                transition: all 0.5s ease-in-out;
+                                color: #ffffff;
+
+                            }
+
+                            .submit-btn:hover {
+                                background: linear-gradient(to bottom, #4CAF50, #45a049);
+                                box-shadow:
+                                    inset 0 20px 20px -10px rgba(255, 255, 255, 0.15),
+                                    inset 0 0 0 1px rgba(255, 255, 255, 0.3),
+                                    0 5px 10px rgba(0, 0, 0, 0.1),
+                                    0 8px 16px rgba(0, 0, 0, 0.1);
+                            }
+
+                            .submit-btn:hover .text {
+                                transform: translateX(320px);
+                                color: #ffffff;
+                            }
+
+                            .submit-btn:hover .icon {
+                                transform: translateX(45px);
+                                /* Adjusted to move to the middle */
+                                color: #ffffff;
+                            }
+
+                            @media (max-width: 768px) {
+                                .submit-btn:hover .icon {
+                                    transform: translateX(40px);
+                                    /* Reduced movement for smaller screens */
+                                }
+                            }
+
+                            .submit-btn:active {
+                                transform: translateY(3px);
+                                box-shadow:
+                                    inset 0 15px 15px -15px rgba(0, 0, 0, 0.3),
+                                    inset 0 0 0 1px rgba(255, 255, 255, 0.1),
+                                    0 2px 5px rgba(0, 0, 0, 0.1),
+                                    0 5px 10px rgba(0, 0, 0, 0.1);
+                            }
+                        </style>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <style>
+        @media (max-width: 991px) {
+            #contact .row {
+                display: flex;
+                flex-direction: column;
+            }
+
+            #contact-form {
+                order: 2;
+            }
+
+            #contact-info {
+                order: 1;
+            }
+        }
+    </style>
+
+    <section id="newsletter-cta" class="py-4 mb-0">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-7 text-start">
+                    <h2 class="mb-3 fw-bold gradient-text">Stay Informed, Stay Ahead</h2>
+                    <p class="mb-4">Join our newsletter for exclusive insights and expert tips.</p>
+                    <form class="mb-3">
+                        <div class="input-group input-group-lg" style="max-width: 500px;">
+                            <input type="email" class="form-control" placeholder="Email address"
+                                aria-label="Email address" required style="border-radius: 10px 0 0 10px;">
+                            <button class="btn btn-primary" type="submit"
+                                style="border-radius: 0 10px 10px 0;">Subscribe</button>
+                        </div>
+                    </form>
+                    <p class="text-muted small">By subscribing, you agree to our <a href="#"
+                            class="text-decoration-none">Privacy Policy</a> and <a href="#"
+                            class="text-decoration-none">Terms of Service</a>.</p>
+                </div>
+                <div class="col-md-5">
+                    <div class="d-flex justify-content-md-end align-items-center mb-3">
+                        <img src="assets/img/footer1.png" alt="Logo 1" class="footer-logo me-3"
+                            style="max-height: 90px; width: auto;">
+                        <img src="assets/img/footer2.png" alt="Logo 2" class="footer-logo"
+                            style="max-height: 90px; width: auto;">
+                    </div>
+                    <div class="text-md-end">
+                        <p class="mb-2 text-muted small" style="font-size: 0.9rem;">&copy; 2024 Realta. All rights
+                            reserved.</p>
+                        <a href="https://www.realta.co.id/site/privacy-policy.html" class="text-muted small me-3"
+                            style="font-size: 0.9rem;">Privacy Policy</a>
+                        <span class="text-muted small me-3" style="font-size: 0.9rem;">|</span>
+                        <a href="https://www.realta.co.id/site/privacy-policy.html" class="text-muted small"
+                            style="font-size: 0.9rem;">Terms</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <style>
+        #newsletter-cta {
+            background: linear-gradient(135deg, #f5f7fa 0%, #a588bd 100%);
+            transition: background 0.3s ease;
+            border-radius: 10px 10px 0 0;
+        }
+
+        #newsletter-cta .gradient-text {
+            background: linear-gradient(90deg, #7209d4, #2832d4 33%, #00a5b2);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            font-size: 2rem;
+        }
+
+        #newsletter-cta .btn-primary {
+            background: linear-gradient(to bottom, #9054d0, #7a4bd7);
+            border: none;
+            transition: all 0.3s ease;
+        }
+
+        #newsletter-cta .form-control {
+            border: 2px solid #e0e0e0;
+            transition: all 0.3s ease;
+        }
+
+        #newsletter-cta .form-control:focus {
+            border-color: #7209d4;
+            box-shadow: 0 0 0 0.2rem rgba(114, 9, 212, 0.25);
+        }
+
+        body.dark-mode #newsletter-cta {
+            background: #282828;
+        }
+
+        body.dark-mode #newsletter-cta .gradient-text {
+            background: linear-gradient(90deg, #a742ff, #4b5eff 33%, #00d5e6);
+            -webkit-background-clip: text;
+            background-clip: text;
+        }
+
+        body.dark-mode #newsletter-cta .btn-primary {
+            background: linear-gradient(90deg, #a742ff, #4b5eff);
+        }
+
+        body.dark-mode #newsletter-cta .form-control {
+            border-color: #4a5568;
+            color: #fff;
+        }
+
+        body.dark-mode #newsletter-cta .form-control::placeholder {
+            color: #a0aec0;
+        }
+
+        body.dark-mode #newsletter-cta .text-muted {
+            color: #a0aec0 !important;
+        }
+
+        body.dark-mode #newsletter-cta a {
+            color: #00d5e6;
+        }
+
+        @media (max-width: 767px) {
+            #newsletter-cta .gradient-text {
+                font-size: 1.5rem;
+            }
+
+            #newsletter-cta .row {
+                text-align: center;
+            }
+
+            #newsletter-cta .col-md-7 {
+                text-align: center;
+            }
+
+            #newsletter-cta .col-md-5 {
+                margin-top: 2rem;
+            }
+
+            #newsletter-cta .d-flex {
+                justify-content: center !important;
+            }
+
+            #newsletter-cta .text-md-end {
+                text-align: center !important;
+            }
+
+            #newsletter-cta .form-control {
+                font-size: 0.8rem;
+            }
+        }
+    </style>
+
+
+    <!-- END -->
+
     <script>
         window.addEventListener('scroll', function () {
             var scrolled = window.pageYOffset;
