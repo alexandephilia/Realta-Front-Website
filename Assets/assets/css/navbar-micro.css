@@ -1643,6 +1643,27 @@ body.dark-mode .glass-dropdown .dropdown-item:hover {
     height: auto;
   }
 
+  @media (max-width: 768px) {
+    .banner {
+      text-align: center !important;
+      padding: 2rem 1rem !important;
+      display: flex !important;
+      flex-direction: column !important;
+      align-items: center !important;
+    }
+    
+    .banner-image {
+      display: block;
+      width: 100%;
+      height: auto;
+      position: absolute;
+      top: 0;
+      left: 0;
+      opacity: 0.5;
+      z-index: 0;
+    }
+  }
+
   
   
 .award {
@@ -1671,4 +1692,6 @@ body.dark-mode .glass-dropdown .dropdown-item:hover {
     width: 100%;
     height: 100%;
   }
+  
+
   
