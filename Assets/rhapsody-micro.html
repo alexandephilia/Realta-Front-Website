@@ -226,21 +226,17 @@
                 display: flex;
                 flex-direction: column;
                 align-items: stretch;
-                transition: all 0.2s cubic-bezier(0.68, -0.6, 0.32, 1.6);
+                transition: all 0.1s ease-in-out;
                 opacity: 0;
-                transform: scale(0.95) translateY(-20px);
-                transform-origin: top;
+                transform: translateY(-20px);
                 max-height: 0;
-
                 overflow: hidden;
-
             }
 
             .navbar-collapse.show {
                 opacity: 1;
-                transform: scale(1) translateY(0);
-                max-height: 1000px;
-                /* Adjust this value based on your content */
+                transform: translateY(0);
+                max-height: 1000px; /* Adjust this value based on your content */
             }
 
             .navbar-nav {
@@ -2193,8 +2189,16 @@
                     <div class="d-flex justify-content-md-end align-items-center mb-3">
                         <img src="assets/img/footer1.png" alt="Logo 1" class="footer-logo me-3"
                             style="max-height: 90px; width: auto;">
-                        <img src="assets/img/footer2.png" alt="Logo 2" class="footer-logo"
+                        <img src="assets/sticker.png" alt="Logo 2" class="footer-logo dark-mode-image"
                             style="max-height: 90px; width: auto;">
+                        <style>
+                            .dark-mode-image {
+                                content: url('assets/sticker.png');
+                            }
+                            body.dark-mode .dark-mode-image {
+                                content: url('assets/img/footer2.png');
+                            }
+                        </style>
                     </div>
                     <div class="text-md-end">
                         <p class="mb-2 text-muted small" style="font-size: 0.9rem;">&copy; 2024 Realta. All rights

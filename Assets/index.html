@@ -3767,8 +3767,16 @@
                     <div class="d-flex justify-content-md-end align-items-center mb-3">
                         <img src="assets/img/footer1.png" alt="Logo 1" class="footer-logo me-3"
                             style="max-height: 90px; width: auto;">
-                        <img src="assets/img/footer2.png" alt="Logo 2" class="footer-logo"
+                        <img src="assets/sticker.png" alt="Logo 2" class="footer-logo dark-mode-image"
                             style="max-height: 90px; width: auto;">
+                        <style>
+                            .dark-mode-image {
+                                content: url('assets/sticker.png');
+                            }
+                            body.dark-mode .dark-mode-image {
+                                content: url('assets/img/footer2.png');
+                            }
+                        </style>
                     </div>
                     <div class="text-md-end">
                         <p class="mb-2 text-muted small" style="font-size: 0.9rem;">&copy; 2024 Realta. All rights
