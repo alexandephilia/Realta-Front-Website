@@ -554,8 +554,6 @@
             font-weight: 600;
         }
         
-    
-
         .icon {
             font-size: 12px !important;
         }
@@ -586,6 +584,15 @@
             .navbar {
                 top: 0;
                 z-index: 5;
+            }
+            .sub-nav {
+                display: none !important;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .sub-nav {
+                display: none !important;
             }
         }
     </style>
@@ -632,21 +639,72 @@
                     <li class="nav-item">
                         <a class="nav-link" href="#">Contact</a>
                     </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="aboutDropdown" role="button"
-                            data-bs-toggle="dropdown" aria-expanded="false">
-                            About Realta <i class="fas fa-chevron-down"></i>
-                        </a>
-                        <ul class="dropdown-menu glassmorphism" aria-labelledby="aboutDropdown">
-                            <li><a class="dropdown-item" href="#">Realta Chakradarma (Home)</a></li>
-                            <li><a class="dropdown-item" href="#">EAM & ERP</a></li>
-                            <li><a class="dropdown-item" href="#">Golf Course System</a></li>
-                            <li><a class="dropdown-item" href="#">HR System</a></li>
-                            <li><a class="dropdown-item" href="#">ITSM, ITAM, Unified Endpoint Management</a></li>
-                            <li><a class="dropdown-item" href="#">Property & Tenancy System</a></li>
-                        </ul>
-                    </li>
+                    
                 </ul>
+                <div class="d-flex ms-3">
+                    <a href="#" class="custom-link"  onclick="navigateWithLoading('index.html')">
+                        <span class="arrow"><i class="fas fa-chevron-left"></i></span>
+                        <span class="link-text">Back to Main Site</span>
+                    </a>
+                </div>
+                <style>
+                    .custom-link {
+                        display: inline-flex;
+                        align-items: center;
+                        padding: 10px 20px;
+                        width: fit-content;
+                        color: #9054d0;
+                        font-size: 12px;
+                        text-decoration: none;
+                        font-weight: bold;
+                        transition: all 0.3s ease;
+                        border: 2px solid #9054d0;
+                        border-radius: 10px;
+                        overflow: hidden;
+                        position: relative;
+                    }
+
+                    .custom-link .arrow {
+                        margin-right: 10px;
+                        transition: transform 0.3s ease;
+                    }
+
+                    .custom-link .link-text {
+                        position: relative;
+                        z-index: 1;
+                    }
+
+                    .custom-link:hover {
+                        color: #ffffff;
+                        background-color: #9054d0;
+                    }
+
+                    .custom-link:hover .arrow {
+                        transform: translateX(-5px);
+                    }
+
+                    .custom-link::after {
+                        content: '';
+                        position: absolute;
+                        top: 0;
+                        left: -100%;
+                        width: 100%;
+                        height: 100%;
+                        background-color: #9054d0;
+                        transition: all 0.3s ease;
+                        z-index: 0;
+                    }
+
+                    .custom-link:hover::after {
+                        left: 0;
+                    }
+
+                    @media (min-width: 992px) {
+                        .custom-link {
+                            display: none;
+                        }
+                    }
+                </style>
             </div>
         </div>
     </nav>
