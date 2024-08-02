@@ -29,6 +29,7 @@
     <link rel="stylesheet" href="assets/css/responsive.css">
     <link rel="stylesheet" href="assets/css/navbar-micro.css">
 
+
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
     <link
@@ -86,9 +87,9 @@
         }
 
         .navbar-brand img {
-            height: 50px;
+            height: 50px !important;
             /* Increased from 40px to 50px for larger size */
-            width: auto;
+            width: auto !important;
             /* Maintain aspect ratio */
             max-width: 100%;
             /* Ensure it doesn't overflow its container */
@@ -166,8 +167,8 @@
 
         .sub-nav {
             background-color: var(--bg-color);
-            padding: 15px 0;
-            border-bottom: 1px solid #e0e0e0;
+            padding: 3px 0;
+            border-bottom: 1px solid #f2e9f6;
             text-align: center;
         }
 
@@ -364,6 +365,230 @@
 </head>
 
 <body>
+    <!-- LOADING -->
+    <div id="loading-overlay" class="loading-overlay">
+        <div class="loading-container">
+            <div class="loading-text">Loading...</div>
+            <div class="spinner">
+                <div class="spinner-inner"></div>
+            </div>
+        </div>
+    </div>
+    <script>
+        function navigateWithLoading(url) {
+            const loadingOverlay = document.getElementById('loading-overlay');
+            loadingOverlay.style.display = 'flex'; // Show the loading overlay
+            document.body.style.overflow = 'hidden'; // Prevent scrolling
+
+            // Wait for the animation to complete before navigating
+            setTimeout(function () {
+                window.location.href = url;
+            }, 2000); // Adjust the delay as needed (in milliseconds)
+        }
+
+        document.addEventListener('DOMContentLoaded', function () {
+            // This script block can contain other page initialization code
+        });
+    </script>
+    <style>
+        .loading-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(5px);
+            display: none;
+            /* Initially hidden */
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+        }
+
+        .loading-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .loading-text {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 20px;
+            color: #9054d0;
+            opacity: 0;
+            animation: fade-in 0.5s ease-in-out forwards;
+            animation-delay: 0.5s;
+            /* Add a delay to the fade-in animation */
+        }
+
+        .spinner {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            border: 4px solid rgba(52, 152, 219, 0.2);
+            border-top-color: #9054d0;
+            animation: spin 1s ease-in-out infinite;
+        }
+
+        @keyframes spin {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        @keyframes fade-in {
+            0% {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .product-banner {
+            cursor: pointer;
+        }
+    </style>
+    <!-- LOADING -->
+
+
+
+    <div class="sub-nav mb-0 d-flex justify-content-between d-md-block sticky-top">
+      
+        <div class="container d-flex justify-content-between align-items-center">
+            <div class="logo-container">
+                <a class="navbar-brand" href="#" onclick="navigateWithLoading('index.html')"><span style="color: #9d28d4; font-size: 18px;">Realta</span> Main Site</a>
+            </div>
+            
+            <nav class="nav-container">
+                <ul class="nav">
+                    <li class="nav-master-item dropdown ">
+                        <a class="nav-link dropdown-toggle" href="#" id="solutionDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="color: #777777 !important;">
+                            Solution <i class="fas fa-chevron-down icon"></i>
+                        </a>
+                        <ul class="dropdown-menu glassmorphism" aria-labelledby="solutionDropdown">
+                            <li><a class="dropdown-item" href="#">Hotel Management System</a></li>
+                            <li><a class="dropdown-item" href="#">Golf Course System</a></li>
+                            <li><a class="dropdown-item" href="#">HR System</a></li>
+                            <li><a class="dropdown-item" href="#">Property & Tenancy System</a></li>
+                            <li><a class="dropdown-item" href="#">ITSM, ITAM & Unified Endpoint Management</a></li>
+                            <li><a class="dropdown-item" href="#">ERP & EAM</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-master-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="industryDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="color: #777777 !important;">
+                            Industry <i class="fas fa-chevron-down icon"></i>
+                        </a>
+                        <ul class="dropdown-menu glassmorphism" aria-labelledby="industryDropdown">
+                            <li><a class="dropdown-item" href="#">Manufacturing</a></li>
+                            <li><a class="dropdown-item" href="#">Healthcare</a></li>
+                            <li><a class="dropdown-item" href="#">Retail</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-master-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="partnerDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="color: #777777 !important;">
+                            Partner <i class="fas fa-chevron-down icon"></i>
+                        </a>
+                        <ul class="dropdown-menu glassmorphism" aria-labelledby="partnerDropdown">
+                            <li><a class="dropdown-item" href="#">Reseller Program</a></li>
+                            <li><a class="dropdown-item" href="#">Technology Partners</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-master-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="consultationDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="color: #777777 !important;">
+                            Consultation <i class="fas fa-chevron-down icon"></i>
+                        </a>
+                        <ul class="dropdown-menu glassmorphism" aria-labelledby="consultationDropdown">
+                            <li><a class="dropdown-item" href="#">Business Consultation</a></li>
+                            <li><a class="dropdown-item" href="#">Technical Consultation</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-master-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="aboutDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="color: #777777 !important;">
+                            About Realta <i class="fas fa-chevron-down icon"></i>
+                        </a>
+                        <ul class="dropdown-menu glassmorphism" aria-labelledby="aboutDropdown">
+                            <li><a class="dropdown-item" href="#">About Us</a></li>
+                            <li><a class="dropdown-item" href="#">Careers</a></li>
+                            <li><a class="dropdown-item" href="#">Blog</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+            <div class="icons-container">
+                <!-- Add your icons here -->
+                <a href="#" class="icon-link" style="margin-right: 20px;"><i class="fas fa-sun"></i></a>
+                <a href="#" class="icon-link" style="margin-right: 20px;"><i class="fas fa-globe"></i></a>
+            </div>
+        </div>
+    </div>
+
+    <style>
+        .sub-nav {
+            top: 0;
+            z-index: 6;
+        }
+    
+        .sub-nav .nav-link {
+            font-weight: 500 !important;
+        }
+    
+        .navbar {
+            top: 45px;
+            /* Adjust this value as needed */
+            z-index: 5;
+        }
+    
+        .navbar-brand {
+            font-size: 20px;
+            color: #777777;
+            font-weight: 600;
+        }
+        
+    
+
+        .icon {
+            font-size: 12px !important;
+        }
+        .navbar-toggler {
+            border: none;
+            background-color: transparent;
+            padding: 0.25rem 0.75rem;
+            font-size: 1.25rem;
+            transition: all 0.3s ease;
+        }
+
+        .navbar-toggler:focus,
+        .navbar-toggler:active,
+        .navbar-toggler-icon:focus {
+            outline: none;
+            box-shadow: none;
+            border: none;
+        }
+
+        .navbar-toggler:hover {
+            background-color: rgba(0, 0, 0, 0.05);
+        }
+
+        .navbar-toggler-icon {
+            background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%280, 0, 0, 0.55%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+        }
+        @media (max-width: 991px) {
+            .navbar {
+                top: 0;
+                z-index: 5;
+            }
+        }
+    </style>
     <nav class="navbar navbar-expand-lg navbar-light bg-white sticky-top">
         <div class="container">
             <a class="navbar-brand" href="#"><img src="assets/img/hotel/logo (1).png" alt="Rhapsody Logo"
@@ -425,28 +650,7 @@
             </div>
         </div>
     </nav>
-    <div class="sub-nav mb-0 d-none d-md-block sticky-top" style="top: 75px; z-index: 5;">
-        <div class="container">
-            <ul class="nav">
-                <li class="nav-item">
-                    <a class="nav-link" href="#"><i class="fas fa-globe icon"></i> Page one</a>
-                    <small class="d-block text-muted">Learn more about our services</small>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#"><i class="fas fa-plane icon"></i> Page two</a>
-                    <small class="d-block text-muted">Find your dream vacation</small>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#"><i class="fas fa-map-marked-alt icon"></i> Page three</a>
-                    <small class="d-block text-muted">Plan your next adventure</small>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#"><i class="fas fa-lightbulb icon"></i> Page four</a>
-                    <small class="d-block text-muted">Get inspired by our travel ideas</small>
-                </li>
-            </ul>
-        </div>
-    </div>
+   
     <!-- <div class="career-link">   
         Looking for a new career? <a href="#">Get in touch</a>
     </div> -->
