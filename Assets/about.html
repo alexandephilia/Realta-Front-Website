@@ -1855,7 +1855,7 @@
                 }
 
                 .cta-content {
-                    width: 83.33%;
+                    width: 90%; /* Increased from 83.33% to 90% */
                     text-align: center;
                     padding: 3rem;
                     border-radius: 15px;
@@ -1882,7 +1882,6 @@
                     box-shadow: none;
                     border: none;
                 }
-
 
                 .cta-description {
                     font-size: 1.25rem;
@@ -1933,6 +1932,28 @@
 
                 .blue-icon {
                     color: rgba(52, 152, 219, 0.8);
+                }
+
+                /* Mobile responsive styles */
+                @media (max-width: 768px) {
+                    .cta-content {
+                        width: 95%;
+                        padding: 2rem;
+                    }
+
+                    .cta-description {
+                        font-size: 1rem;
+                    }
+
+                    .cta-button {
+                        font-size: 1rem;
+                        padding: 0.6rem 1.2rem;
+                    }
+
+                    .feature-item {
+                        margin: 0.5rem;
+                        font-size: 0.9rem;
+                    }
                 }
             </style>
 
