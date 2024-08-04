@@ -1499,8 +1499,11 @@ document.addEventListener('DOMContentLoaded', function() {
         width: 83.33%;
         text-align: center;
         padding: 3rem;
-        border-radius: 10px;
-        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.171);
+        border-radius: 15px;
+        background: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(10px);
+        box-shadow: 0 4px 10px rgba(31, 38, 135, 0.37);
+        border: 1px solid rgba(255, 255, 255, 0.18);
         position: relative;
         overflow: hidden;
     }
@@ -1518,13 +1521,14 @@ document.addEventListener('DOMContentLoaded', function() {
         font-size: 1.25rem;
         margin-bottom: 1.5rem;
         position: relative;
+        color: rgba(0, 0, 0, 0.8);
     }
     .cta-button {
         display: inline-block;
         padding: 0.75rem 1.5rem;
         font-size: 1.25rem;
         border-radius: 50px;
-        background: linear-gradient(45deg, #9054d0, #3498db);
+        background: linear-gradient(45deg, rgba(144, 84, 208, 0.8), rgba(52, 152, 219, 0.8));
         color: white;
         text-decoration: none;
         border: none;
@@ -1535,6 +1539,7 @@ document.addEventListener('DOMContentLoaded', function() {
     .cta-button:hover {
         transform: translateY(-2px);
         box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+        background: linear-gradient(45deg, rgba(144, 84, 208, 1), rgba(52, 152, 219, 1));
     }
     .cta-features {
         display: flex;
@@ -1544,16 +1549,16 @@ document.addEventListener('DOMContentLoaded', function() {
     }
     .feature-item {
         margin: 0.5rem 1rem;
-        color: #6c757d;
+        color: rgba(0, 0, 0, 0.7);
     }
     .feature-icon {
         margin-right: 0.5rem;
     }
     .purple-icon {
-        color: #9054d0;
+        color: rgba(144, 84, 208, 0.8);
     }
     .blue-icon {
-        color: #3498db;
+        color: rgba(52, 152, 219, 0.8);
     }
 </style>
 
