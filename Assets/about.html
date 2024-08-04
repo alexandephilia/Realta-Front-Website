@@ -1507,6 +1507,7 @@ document.addEventListener('DOMContentLoaded', function() {
         position: relative;
         overflow: hidden;
     }
+
     .cta-background {
         position: absolute;
         top: 0;
@@ -1516,6 +1517,13 @@ document.addEventListener('DOMContentLoaded', function() {
         background: linear-gradient(45deg, rgba(144, 84, 208, 0.1), rgba(52, 152, 219, 0.1));
         z-index: -1;
     }
+
+    body.dark-mode .cta-content {
+            background: transparent;
+            box-shadow: none;
+            border: none;
+        }
+   
 
     .cta-description {
         font-size: 1.25rem;
