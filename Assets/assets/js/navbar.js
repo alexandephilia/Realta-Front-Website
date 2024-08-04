@@ -418,7 +418,7 @@ handleCategories('#konsultasiDropdownContent', 'konsultasi-details', {
 handleDropdown('tentangRealtaDropdown', 'tentangRealtaDropdownContent');
 handleCategories('#tentangRealtaDropdownContent', 'tentangRealta-details', {
     about: `
-    <div class="product-banner" style="background-image: url('assets/img/tentang.jpg');">   
+    <div class="product-banner" style="background-image: url('assets/img/tentang.jpg');" onclick="navigateWithLoading('about.html');">   
             <div class="glare"></div>
             <div class="product-banner-content">
                 <h2 class="product-title">About Realta</h2>
