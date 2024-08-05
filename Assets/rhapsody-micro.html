@@ -28,6 +28,8 @@
     <!-- <link rel="stylesheet" href="assets/css/blog.css"> -->
     <link rel="stylesheet" href="assets/css/responsive.css">
     <link rel="stylesheet" href="assets/css/navbar-micro.css">
+    <link rel="stylesheet" href="assets/css/navbar.css">
+
 
 
     <!-- Fonts -->
@@ -70,6 +72,12 @@
 
         body {
             font-family: 'proxima-nova', sans-serif;
+        }
+
+        section {
+            position: relative;
+            padding-top: 0px !important;
+            padding-bottom: 0px !important;
         }
 
         /* Force Proxima Nova for all elements */
@@ -124,6 +132,10 @@
             color: var(--primary-color);
         }
 
+        body.dark-mode .nav-link {
+            color: white !important;
+        }
+
         .btn-outline-secondary {
             text-shadow: none;
             background-color: rgb(158, 68, 180);
@@ -172,6 +184,11 @@
             text-align: center;
         }
 
+        body.dark-mode .sub-nav {
+            background-color: #30214d;
+            border-bottom-color: #1c1c1c;
+        }
+
         .sub-nav .nav {
             display: inline-flex;
             justify-content: center;
@@ -194,9 +211,22 @@
             align-items: center;
         }
 
+        body.dark-mode .sub-nav .nav-link {
+            color: var(--dark-text-color);
+        }
+
+        body.dark-mode .sub-nav .logo-container img {
+            filter: grayscale(100%) brightness(1000%);
+            transition: filter 0.3s ease;
+        }
+
         .sub-nav .icon {
             margin-right: 10px;
             font-size: 1.2rem;
+        }
+
+        body.dark-mode .sub-nav .icon {
+            color: var(--dark-text-color);
         }
 
         .career-link {
@@ -236,7 +266,8 @@
             .navbar-collapse.show {
                 opacity: 1;
                 transform: translateY(0);
-                max-height: 1000px; /* Adjust this value based on your content */
+                max-height: 1000px;
+                /* Adjust this value based on your content */
             }
 
             .navbar-nav {
@@ -342,7 +373,7 @@
         }
 
         .dropdown-menu.glassmorphism {
-            background: rgba(255, 255, 255, 0.753);
+            background: rgba(255, 255, 255, 0.962);
             backdrop-filter: blur(10px);
             -webkit-backdrop-filter: blur(10px);
             border: 1px solid rgba(255, 255, 255, 0.1);
@@ -454,7 +485,7 @@
             cursor: pointer;
         }
 
-        .nav-link{
+        .nav-link {
             color: #000000 !important;
         }
     </style>
@@ -463,16 +494,19 @@
 
 
     <div class="sub-nav mb-0 d-flex justify-content-between d-md-block sticky-top">
-      
         <div class="container d-flex justify-content-between align-items-center">
             <div class="logo-container">
-                <a class="navbar-brand" href="#" onclick="navigateWithLoading('index.html')"><span style="color: #9d28d4; font-size: 18px;">Realta</span> Main Site</a>
+                <a class="" href="#" onclick="navigateWithLoading('index.html')">
+                    <img src="assets/img/hotel/logo (1).png" alt="Realta Main Site"
+                        style="max-width: 100px; height: auto; margin-left: 20px;">
+                </a>
             </div>
-            
+
             <nav class="nav-container">
-                <ul class="nav">
-                    <li class="nav-master-item dropdown ">
-                        <a class="nav-link dropdown-toggle" href="#" id="solutionDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="color: #777777 !important;">
+                <ul class="horizontal-nav">
+                    <li class="nav-master-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="solutionDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
                             Solution <i class="fas fa-chevron-down icon"></i>
                         </a>
                         <ul class="dropdown-menu glassmorphism" aria-labelledby="solutionDropdown">
@@ -485,8 +519,9 @@
                         </ul>
                     </li>
                     <li class="nav-master-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="industryDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="color: #777777 !important;">
-                            Industry <i class="fas fa-chevron-down icon"></i>
+                        <a class="nav-link dropdown-toggle" href="#" id="industryDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            Why Rhapsody <i class="fas fa-chevron-down icon"></i>
                         </a>
                         <ul class="dropdown-menu glassmorphism" aria-labelledby="industryDropdown">
                             <li><a class="dropdown-item" href="#">Manufacturing</a></li>
@@ -495,68 +530,117 @@
                         </ul>
                     </li>
                     <li class="nav-master-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="partnerDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="color: #777777 !important;">
-                            Partner <i class="fas fa-chevron-down icon"></i>
+                        <a class="nav-link dropdown-toggle" href="#" id="productOverviewDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            Product Overview <i class="fas fa-chevron-down icon"></i>
                         </a>
-                        <ul class="dropdown-menu glassmorphism" aria-labelledby="partnerDropdown">
+                        <ul class="dropdown-menu glassmorphism" aria-labelledby="productOverviewDropdown">
                             <li><a class="dropdown-item" href="#">Reseller Program</a></li>
                             <li><a class="dropdown-item" href="#">Technology Partners</a></li>
                         </ul>
                     </li>
                     <li class="nav-master-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="consultationDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="color: #777777 !important;">
-                            Consultation <i class="fas fa-chevron-down icon"></i>
+                        <a class="nav-link dropdown-toggle" href="#" id="consultationDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            Blog <i class="fas fa-chevron-down icon"></i>
                         </a>
                         <ul class="dropdown-menu glassmorphism" aria-labelledby="consultationDropdown">
-                            <li><a class="dropdown-item" href="#">Business Consultation</a></li>
-                            <li><a class="dropdown-item" href="#">Technical Consultation</a></li>
+                            <li><a class="dropdown-item" href="#">Article & News</a></li>
                         </ul>
                     </li>
-                    <li class="nav-master-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="aboutDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="color: #777777 !important;">
-                            About Realta <i class="fas fa-chevron-down icon"></i>
-                        </a>
-                        <ul class="dropdown-menu glassmorphism" aria-labelledby="aboutDropdown">
-                            <li><a class="dropdown-item" href="#">About Us</a></li>
-                            <li><a class="dropdown-item" href="#">Careers</a></li>
-                            <li><a class="dropdown-item" href="#">Blog</a></li>
-                        </ul>
-                    </li>
+                    <!-- add more here items comments -->
                 </ul>
             </nav>
-            <div class="icons-container">
-                <!-- Add your icons here -->
-                <a href="#" class="icon-link" style="margin-right: 20px;"><i class="fas fa-sun"></i></a>
-                <a href="#" class="icon-link" style="margin-right: 20px;"><i class="fas fa-globe"></i></a>
-            </div>
+            <style>
+                .nav-container {
+                    display: flex;
+                    justify-content: center;
+                    width: 100%;
+                }
+
+                .horizontal-nav {
+                    display: flex;
+                    justify-content: center;
+                    list-style-type: none;
+                    padding: 0;
+                    margin: 0;
+                    width: 100%;
+                }
+
+                .nav-master-item {
+                    margin: 0 5px;
+                }
+
+                .nav-link {
+                    color: #777777;
+                    text-decoration: none;
+                    white-space: nowrap;
+                    font-size: 14px;
+                }
+
+                .icon {
+                    font-size: 10px;
+                    margin-left: 3px;
+                }
+            </style>
+            <!-- <div class="icons-container horizontal-nav">
+               
+            </div> -->
         </div>
     </div>
 
     <style>
+        /* Styles for the sub-nav */
         .sub-nav {
+            position: fixed;
             top: 0;
-            z-index: 6;
+            left: 0;
+            right: 0;
+            z-index: 1030;
+            background-color: #f8f9fa;
+            /* Adjust color as needed */
+            height: 60px;
+            /* Reduced height */
         }
-    
+
+        /* Styles for the main nav */
+        #mainNav {
+            position: fixed;
+            top: 60px;
+            /* Adjusted to match new sub-nav height */
+            left: 0;
+            right: 0;
+            z-index: 1020;
+            /* Slightly lower than sub-nav */
+            background-color: #fff;
+            /* Adjust color as needed */
+            box-shadow: 0 2px 4px rgba(0, 0, 0, .1);
+            /* Optional: adds a subtle shadow */
+        }
+
+
         .sub-nav .nav-link {
             font-weight: 500 !important;
+            padding: 10px 15px;
+            /* Adjusted padding */
         }
-    
+
         .navbar {
-            top: 45px;
+            top: 40px;
             /* Adjust this value as needed */
             z-index: 5;
         }
-    
+
         .navbar-brand {
-            font-size: 20px;
+            font-size: 18px;
             color: #777777;
             font-weight: 600;
         }
-        
+
         .icon {
-            font-size: 12px !important;
+            font-size: 10px !important;
         }
+
         .navbar-toggler {
             border: none;
             background-color: transparent;
@@ -580,11 +664,13 @@
         .navbar-toggler-icon {
             background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%280, 0, 0, 0.55%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
         }
+
         @media (max-width: 991px) {
             .navbar {
-                top: 0;
                 z-index: 5;
+                top: 0px !important;
             }
+
             .sub-nav {
                 display: none !important;
             }
@@ -596,119 +682,534 @@
             }
         }
     </style>
-    <nav class="navbar navbar-expand-lg navbar-light bg-white sticky-top">
-        <div class="container">
-            <a class="navbar-brand" href="#"><img src="assets/img/hotel/logo (1).png" alt="Rhapsody Logo"
-                    height="30"></a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
-                <ul class="navbar-nav mb-2 mb-lg-0">
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Solution</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Why Rhapsody</a>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="productDropdown" role="button"
-                            data-bs-toggle="dropdown" aria-expanded="false">
-                            Product Overview <i class="fas fa-chevron-down"></i>
-                        </a>
-                        <ul class="dropdown-menu glassmorphism" aria-labelledby="productDropdown">
-                            <li><a class="dropdown-item" href="#">Front Office</a></li>
-                            <li><a class="dropdown-item" href="#">Back Office</a></li>
-                            <li><a class="dropdown-item" href="#">Logistic System</a></li>
-                            <li><a class="dropdown-item" href="#">ICT One Solution</a></li>
-                        </ul>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="blogDropdown" role="button"
-                            data-bs-toggle="dropdown" aria-expanded="false">
-                            Blog <i class="fas fa-chevron-down"></i>
-                        </a>
-                        <ul class="dropdown-menu glassmorphism " aria-labelledby="blogDropdown">
-                            <li><a class="dropdown-item" href="#">Article & News</a></li>
-                        </ul>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Contact</a>
-                    </li>
-                    
-                </ul>
-                <div class="d-flex ms-3">
-                    <a href="#" class="custom-link"  onclick="navigateWithLoading('index.html')">
-                        <span class="arrow"><i class="fas fa-chevron-left"></i></span>
-                        <span class="link-text">Back to Main Site</span>
-                    </a>
+    <nav class="navbar navbar-expand-lg sticky-top navbar-shrink navbar-light" id="mainNav">
+        <div class="container-fluid container-lg px-2">
+            <a class="navbar-logo d-flex align-items-center" href="/">
+                <img src="assets/img/realta.png" alt="Realta Logo" class="realta-logo">
+            </a>
+            <style>
+                .realta-logo {
+                    width: 140px;
+                    height: 50%;
+                }
+
+                @media (min-width: 992px) {
+                    .realta-logo {
+                        margin-left: 15px;
+                    }
+                }
+
+                @media (max-width: 767px) {
+                    .realta-logo {
+                        width: 120px;
+                        height: auto;
+                        margin-left: -10px;
+                    }
+                }
+            </style>
+            <div class="navbar-mobile-actions">
+                <button id="darkModeToggleNav" class="btn-custom download-btn ms-1"
+                    style="border: none; min-width: fit-content; margin-right: 0.4rem;">
+                    <i class="fas fa-moon"></i>
+                </button>
+                <!-- Language switch button -->
+                <!-- Language switch dropdown -->
+                <div class="custom-dropdown">
+                    <button id="languageSwitch" class="btn-custom download-btn ms-1" type="button"
+                        style="border: none; min-width: fit-content; margin-right: 1.4rem;">
+                        <i class="fas fa-globe"></i>
+                    </button>
+                    <ul class="custom-dropdown-menu">
+                        <li><a href="#" data-lang="en">EN</a></li>
+                        <li><a href="#" data-lang="id">ID</a></li>
+                    </ul>
                 </div>
+                <div class="nav-drawer" data-bs-toggle="offcanvas" data-bs-target="#sidebar" aria-controls="sidebar">
+                    <i class="fas fa-bars" style="font-size: 1.7rem;"></i>
+                </div>
+            </div>
+            <!-- Mobile responsive navigation menu -->
+            <div class="offcanvas offcanvas-end" tabindex="-1" id="sidebar" aria-labelledby="sidebarLabel">
+                <div class="offcanvas-header">
+                    <div>
+                        <h5 class="offcanvas-title" id="sidebarLabel"
+                            style="margin-left: 33px; margin-bottom: 20px; font-size: 30px;">Menu</h5>
+                    </div>
+                    <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas"
+                        aria-label="Close"></button>
+                </div>
+                <div class="offcanvas-body">
+                    <div class="sidebar-menu">
+                        <div class="sidebar-item">
+                            <h2 class="product-header" data-bs-toggle="collapse" data-bs-target="#productsSubmenu"
+                                aria-expanded="false">
+                                Products <i class="fas fa-chevron-right arrow-icon"></i>
+                            </h2>
+                            <div id="productsSubmenu" class="collapse">
+                                <ul class="product-list">
+                                    <li>
+                                        <div class="product-header" data-bs-toggle="collapse"
+                                            data-bs-target="#hmsSubmenu" aria-expanded="false"
+                                            style="font-size: 1rem; font-weight: 400;">
+                                            Hotel Management System <i class="fas fa-chevron-right arrow-icon"></i>
+                                        </div>
+                                        <div id="hmsSubmenu" class="collapse product-submenu">
+                                            <p>Comprehensive solution for efficient hotel operations and guest
+                                                management.</p>
+                                            <a href="#" class="discover-link">Discover HMS ›</a>
+                                            <h3 class="modules-heading">MODULES</h3>
+                                            <ul class="modules-list">
+                                                <li>
+                                                    <strong>Reservation Management</strong>
+                                                    <span>Streamline booking processes</span>
+                                                </li>
+                                                <li>
+                                                    <strong>Front Desk Operations</strong>
+                                                    <span>Efficient check-in and check-out</span>
+                                                </li>
+                                                <li>
+                                                    <strong>Housekeeping Management</strong>
+                                                    <span>Optimize room maintenance</span>
+                                                </li>
+                                                <li>
+                                                    <strong>Revenue Management</strong>
+                                                    <span>Maximize profitability</span>
+                                                </li>
+                                                <li>
+                                                    <strong>Guest Experience Management</strong>
+                                                    <span>Enhance customer satisfaction</span>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="product-header" data-bs-toggle="collapse"
+                                            data-bs-target="#gcsSubmenu" aria-expanded="false"
+                                            style="font-size: 1rem; font-weight: 400;">
+                                            Golf Course System <i class="fas fa-chevron-right arrow-icon"></i>
+                                        </div>
+                                        <div id="gcsSubmenu" class="collapse product-submenu">
+                                            <p>Integrated system for efficient golf course management and
+                                                operations.</p>
+                                            <a href="#" class="discover-link">Discover GCS ›</a>
+                                            <h3 class="modules-heading">MODULES</h3>
+                                            <ul class="modules-list">
+                                                <li>
+                                                    <strong>Tee Time Management</strong>
+                                                    <span>Optimize scheduling and bookings</span>
+                                                </li>
+                                                <li>
+                                                    <strong>Member Management</strong>
+                                                    <span>Streamline membership processes</span>
+                                                </li>
+                                                <li>
+                                                    <strong>Pro Shop Management</strong>
+                                                    <span>Inventory and sales management</span>
+                                                </li>
+                                                <li>
+                                                    <strong>Tournament Management</strong>
+                                                    <span>Organize and manage events</span>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="product-header" data-bs-toggle="collapse"
+                                            data-bs-target="#hrSystemSubmenu" aria-expanded="false"
+                                            style="font-size: 1rem; font-weight: 400;">
+                                            HR System <i class="fas fa-chevron-right arrow-icon"></i>
+                                        </div>
+                                        <div id="hrSystemSubmenu" class="collapse product-submenu">
+                                            <p>Comprehensive human resource management solution for businesses of
+                                                all sizes.</p>
+                                            <a href="#" class <div id="container-header"
+                                                class="container py-5">discover-link">Discover HR System ›</a>
+                                            <h3 class="modules-heading">MODULES</h3>
+                                            <ul class="modules-list">
+                                                <li>
+                                                    <strong>Employee Management</strong>
+                                                    <span>Centralize employee data and records</span>
+                                                </li>
+                                                <li>
+                                                    <strong>Payroll Processing</strong>
+                                                    <span>Automate salary calculations and payments</span>
+                                                </li>
+                                                <li>
+                                                    <strong>Time and Attendance</strong>
+                                                    <span>Track employee work hours and absences</span>
+                                                </li>
+                                                <li>
+                                                    <strong>Performance Management</strong>
+                                                    <span>Set goals and conduct evaluations</span>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="product-header" data-bs-toggle="collapse"
+                                            data-bs-target="#propertyTenantSubmenu" aria-expanded="false"
+                                            style="font-size: 1rem; font-weight: 400;">
+                                            Property and Tenant System <i class="fas fa-chevron-right arrow-icon"></i>
+                                        </div>
+                                        <div id="propertyTenantSubmenu" class="collapse product-submenu">
+                                            <p>Efficient management solution for property owners and landlords.</p>
+                                            <a href="#" class="discover-link">Discover Property and Tenant System
+                                                ›</a>
+                                            <h3 class="modules-heading">MODULES</h3>
+                                            <ul class="modules-list">
+                                                <li>
+                                                    <strong>Property Management</strong>
+                                                    <span>Organize and track property details</span>
+                                                </li>
+                                                <li>
+                                                    <strong>Tenant Management</strong>
+                                                    <span>Manage tenant information and leases</span>
+                                                </li>
+                                                <li>
+                                                    <strong>Rent Collection</strong>
+                                                    <span>Automate rent payments and tracking</span>
+                                                </li>
+                                                <li>
+                                                    <strong>Maintenance Requests</strong>
+                                                    <span>Handle and track property maintenance</span>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="product-header" data-bs-toggle="collapse"
+                                            data-bs-target="#itsmSubmenu" aria-expanded="false"
+                                            style="font-size: 1rem; font-weight: 400;">
+                                            ITSM, ITAM & Unified Endpoint Management <i
+                                                class="fas fa-chevron-right arrow-icon"></i>
+                                        </div>
+                                        <div id="itsmSubmenu" class="collapse product-submenu">
+                                            <p>Comprehensive IT Service Management solution for streamlined IT
+                                                operations.</p>
+                                            <a href="#" class="discover-link">Discover ITSM, ITAM & Unified Endpoint
+                                                Management ›</a>
+                                            <h3 class="modules-heading">MODULES</h3>
+                                            <ul class="modules-list">
+                                                <li>
+                                                    <strong>Incident Management</strong>
+                                                    <span>Efficiently handle and resolve IT issues</span>
+                                                </li>
+                                                <li>
+                                                    <strong>Change Management</strong>
+                                                    <span>Control and implement IT changes</span>
+                                                </li>
+                                                <li>
+                                                    <strong>Asset Management</strong>
+                                                    <span>Track and manage IT assets</span>
+                                                </li>
+                                                <li>
+                                                    <strong>Service Catalog</strong>
+                                                    <span>Organize and offer IT services</span>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="product-header" data-bs-toggle="collapse"
+                                            data-bs-target="#erpSubmenu" aria-expanded="false"
+                                            style="font-size: 1rem; font-weight: 400;">
+                                            ERP & EAM <i class="fas fa-chevron-right arrow-icon"></i>
+                                        </div>
+                                        <div id="erpSubmenu" class="collapse product-submenu">
+                                            <p>Integrated Enterprise Resource Planning solution for business
+                                                management.</p>
+                                            <a href="#" class="discover-link">Discover ERP & EAM ›</a>
+                                            <h3 class="modules-heading">MODULES</h3>
+                                            <ul class="modules-list">
+                                                <li>
+                                                    <strong>Financial Management</strong>
+                                                    <span>Manage accounting and finances</span>
+                                                </li>
+                                                <li>
+                                                    <strong>Supply Chain Management</strong>
+                                                    <span>Optimize procurement and logistics</span>
+                                                </li>
+                                                <li>
+                                                    <strong>Manufacturing</strong>
+                                                    <span>Streamline production processes</span>
+                                                </li>
+                                                <li>
+                                                    <strong>Customer Relationship Management</strong>
+                                                    <span>Enhance customer interactions</span>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="sidebar-item">
+                            <h2 class="product-header" data-bs-toggle="collapse" data-bs-target="#resourcesSubmenu"
+                                aria-expanded="false style=" font-size: 1.1rem;"">
+                                Resources <i class="fas fa-chevron-right arrow-icon"></i>
+                            </h2>
+                            <div id="resourcesSubmenu" class="collapse">
+                                <ul class="submenu-list">
+                                    <li><a href="#">Blog</a></li>
+                                    <li><a href="#">Webinars</a></li>
+                                    <li><a href="#">White Papers</a></li>
+                                    <li><a href="#">Case Studies</a></li>
+                                    <li><a href="#">eBooks</a></li>
+                                    <li><a href="#">Product Videos</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="sidebar-item">
+                            <h2 class="product-header" data-bs-toggle="collapse" data-bs-target="#partnersSubmenu"
+                                aria-expanded="false">
+                                Partners <i class="fas fa-chevron-right arrow-icon"></i>
+                            </h2>
+                            <div id="partnersSubmenu" class="collapse">
+                                <!-- Add partners submenu content here -->
+                            </div>
+                        </div>
+                        <div class="sidebar-item">
+                            <h2 class="product-header" data-bs-toggle="collapse" data-bs-target="#companySubmenu"
+                                aria-expanded="false">
+                                Company <i class="fas fa-chevron-right arrow-icon"></i>
+                            </h2>
+                            <div id="companySubmenu" class="collapse">
+                                <ul class="submenu-list">
+                                    <li><a href="#">About Us</a></li>
+                                    <li><a href="#">Our Team</a></li>
+                                    <li><a href="#" onclick="navigateWithLoading('career.html'); return false;"
+                                            style="text-decoration: none; color: inherit;">Career</a></li>
+                                    <li><a href="#">News</a></li>
+                                    <li><a href="#">Contact</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="sidebar-item">
+                            <h2 class="product-header">
+                                <a href="#" onclick="navigateWithLoading('blog.html'); return false;"
+                                    style="text-decoration: none; color: inherit;">Blog</a>
+                            </h2>
+                        </div>
+                    </div>
+                    <div class="get-started-container">
+                        <a href="https://api.whatsapp.com/send?phone=628111221789&text=Hallo%20PT%20Realta..."
+                            target="_blank" rel="noopener noreferrer" class="btn btn-success btn-block"
+                            style="width: 100%;">
+                            <i class="fab fa-whatsapp"></i> Contact Us
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <style>
+                @media (min-width: 992px) {
+                    #sidebar {
+                        display: none !important;
+                        z-index: 2031;
+                    }
+
+                    .offcanvas-backdrop {
+                        display: none !important;
+                    }
+
+                    body {
+                        overflow: auto !important;
+                        padding-right: 0 !important;
+                    }
+                }
+            </style>
+
+
+            <style>
+                .custom-dropdown {
+                    position: relative;
+                    display: inline-block;
+                }
+
+                .custom-dropdown-menu {
+                    display: none;
+                    position: absolute;
+                    top: 69%;
+                    right: 5%;
+                    /* Changed from -10% to -5% to move slightly to the left */
+                    background: rgba(179, 179, 179, 0.137);
+                    backdrop-filter: blur(10px);
+                    border-radius: 10px;
+                    width: 80px;
+                    /* Further reduced width for an even smaller dropdown */
+                    z-index: 1000;
+                    list-style-type: none;
+                    padding: 0.25rem 0;
+                    /* Reduced padding for a smaller dropdown */
+                    margin: 0.5rem 0 0 0;
+                    border: 1px solid rgba(255, 255, 255, 0.18);
+                }
+
+                .custom-dropdown-menu li {
+                    padding: 0.2rem 0;
+                    /* Reduced padding for smaller items */
+                    text-align: center;
+                    /* Centered text */
+                }
+
+                .custom-dropdown-menu li a {
+                    color: #333;
+                    padding: 0.3rem 0.3rem;
+                    /* Adjusted padding for better alignment */
+                    text-decoration: none;
+                    display: block;
+                    font-size: 0.8rem;
+                    /* Reduced font size for smaller dropdown */
+                    transition: background-color 0.3s ease;
+                }
+
+                .custom-dropdown-menu li a:hover {
+                    background-color: rgba(126, 126, 126, 0.5);
+                    color: #fff;
+                    /* Change text color on hover */
+                    transform: scale(1.05);
+                    /* Slightly enlarge the item */
+                    border-radius: 10px;
+                    /* Added border radius for hover background */
+                    transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
+                    /* Smooth transition */
+                }
+
+                .custom-dropdown:hover .custom-dropdown-menu {
+                    display: block;
+
+                }
+            </style>
+            <div class="full-screen-sidebar">
                 <style>
-                    .custom-link {
-                        display: inline-flex;
-                        align-items: center;
-                        padding: 10px 20px;
-                        width: fit-content;
-                        color: #9054d0;
-                        font-size: 12px;
-                        text-decoration: none;
-                        font-weight: bold;
-                        transition: all 0.3s ease;
-                        border: 2px solid #9054d0;
-                        border-radius: 10px;
-                        overflow: hidden;
-                        position: relative;
-                    }
-
-                    .custom-link .arrow {
-                        margin-right: 10px;
-                        transition: transform 0.3s ease;
-                    }
-
-                    .custom-link .link-text {
-                        position: relative;
-                        z-index: 1;
-                    }
-
-                    .custom-link:hover {
-                        color: #ffffff;
-                        background-color: #9054d0;
-                    }
-
-                    .custom-link:hover .arrow {
-                        transform: translateX(-5px);
-                    }
-
-                    .custom-link::after {
-                        content: '';
-                        position: absolute;
-                        top: 0;
-                        left: -100%;
-                        width: 100%;
-                        height: 100%;
-                        background-color: #9054d0;
-                        transition: all 0.3s ease;
-                        z-index: 0;
-                    }
-
-                    .custom-link:hover::after {
-                        left: 0;
-                    }
-
                     @media (min-width: 992px) {
-                        .custom-link {
-                            display: none;
+                        .full-screen-sidebar {
+                            margin-right: -35px;
+                        }
+                    }
+
+                    @media (max-width: 768px) {
+                        .full-screen-sidebar {
+                            margin-right: 0;
                         }
                     }
                 </style>
+                <ul class="sidebar-nav justify-content-end align-items-center"
+                    style="padding: 0; margin: 0; list-style-type: none;">
+
+                    <li class="me-1"><a class="nav-link dropdown-toggle" href="#" id="solutionsDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            Solution <i class="fas fa-chevron-down ms-1 fa-xs"></i>
+                        </a></li>
+                    <li class="me-1"><a class="nav-link dropdown-toggle" href="#" id="industriDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            Industry <i class="fas fa-chevron-down ms-1 fa-xs"></i>
+                        </a></li>
+                    <li class="me-1"><a class="nav-link dropdown-toggle" href="#" id="partnerDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            Partner <i class="fas fa-chevron-down ms-1 fa-xs"></i>
+                        </a></li>
+                    <li class="me-1"><a class="nav-link dropdown-toggle" href="#" id="konsultasiDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            Consultation <i class="fas fa-chevron-down ms-1 fa-xs"></i>
+                        </a></li>
+                    <li><a class="nav-link dropdown-toggle" href="#" id="tentangRealtaDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            About Realta <i class="fas fa-chevron-down ms-1 fa-xs"></i>
+                        </a></li>
+                </ul>
+                <div class="sidebar-actions d-flex justify-content-end align-items-center" style="margin-bottom: 1rem;">
+                    <a class="btn-custom whatsapp-btn me-2"
+                        href="https://api.whatsapp.com/send?phone=628111221789&text=Hallo%20PT%20Realta..."
+                        target="_blank" rel="noopener noreferrer" style="font-size: 0.8em;">
+                        <i class="fab fa-whatsapp"></i>
+                        <span><strong>Whatsapp</strong></span>
+                    </a>
+                    <button id="darkModeToggleSidebar" class="btn-custom ms-2">
+                        <i class="fas fa-moon"></i>
+                    </button>
+                    <div class="custom-dropdown">
+                        <button id="languageSwitch" class="btn-custom download-btn ms-1" type="button"
+                            style="border: none; min-width: fit-content; margin-right: 1.4rem;">
+                            <i class="fas fa-globe"></i>
+                        </button>
+                        <ul class="custom-dropdown-menu">
+                            <li><a href="#" data-lang="en">EN</a></li>
+                            <li><a href="#" data-lang="id">ID</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="mega-dropdown" id="solutionsDropdownContent">
+            <div class="dropdown-content">
+                <div class="product-categories">
+                    <div class="product-category active" data-product="hms">Hotel Management System</div>
+                    <div class="product-category" data-product="gcs">Golf Course System</div>
+                    <div class="product-category" data-product="hrs">HR System</div>
+                    <div class="product-category" data-product="pts">Property & Tenancy System</div>
+                    <div class="product-category" data-product="itm">ITSM, ITAM & Unified Endpoint Management</div>
+                    <div class="product-category" data-product="erp">ERP & EAM</div>
+                    <div class="all-products">All products ›</div>
+                </div>
+                <div class="product-details" id="product-details">
+                    <!-- Content will be dynamically updated here -->
+                </div>
+            </div>
+        </div>
+        <div class="mega-dropdown" id="industriDropdownContent">
+            <div class="dropdown-content">
+                <div class="product-categories">
+                    <div class="product-category active" data-product="manufacturing">Manufacturing</div>
+                    <div class="product-category" data-product="healthcare">Healthcare</div>
+                    <div class="product-category" data-product="retail">Retail</div>
+                    <div class="all-products">All industries ›</div>
+                </div>
+                <div class="product-details" id="industri-details">
+                    <!-- Content will be dynamically updated here -->
+                </div>
+            </div>
+        </div>
+        <div class="mega-dropdown" id="partnerDropdownContent">
+            <div class="dropdown-content">
+                <div class="product-categories">
+                    <div class="product-category active" data-product="reseller">Reseller Program</div>
+                    <div class="product-category" data-product="technology">Technology Partners</div>
+                    <div class="all-products">All partners ›</div>
+                </div>
+                <div class="product-details" id="partner-details">
+                    <!-- Content will be dynamically updated here -->
+                </div>
+            </div>
+        </div>
+        <div class="mega-dropdown" id="konsultasiDropdownContent">
+            <div class="dropdown-content">
+                <div class="product-categories">
+                    <div class="product-category active" data-product="business">Business Consultation</div>
+                    <div class="product-category" data-product="technical">Technical Consultation</div>
+                    <div class="all-products">All consultations ›</div>
+                </div>
+                <div class="product-details" id="konsultasi-details">
+                    <!-- Content will be dynamically updated here -->
+                </div>
+            </div>
+        </div>
+        <div class="mega-dropdown" id="tentangRealtaDropdownContent">
+            <div class="dropdown-content">
+                <div class="product-categories">
+                    <div class="product-category active" data-product="about">About Us</div>
+                    <div class="product-category" data-product="careers">Careers</div>
+                    <div class="product-category" data-product="blog">Blog</div>
+                    <div class="all-products">Learn more ›</div>
+                </div>
+                <div class="product-details" id="tentangRealta-details">
+                    <!-- Content will be dynamically updated here -->
+                </div>
             </div>
         </div>
     </nav>
-   
+
+
     <!-- <div class="career-link">   
         Looking for a new career? <a href="#">Get in touch</a>
     </div> -->
@@ -766,7 +1267,7 @@
         .parallax-section {
             position: relative;
             overflow: hidden;
-            min-height: 600px;
+            min-height: 700px;
             border-bottom-left-radius: 10px;
             border-bottom-right-radius: 10px;
             display: flex;
@@ -965,6 +1466,7 @@
                     font-weight: 500;
                     transition: color 0.3s ease, background-color 0.3s ease;
                 }
+
                 .custom-btn:hover {
                     background-color: #7209d4;
                     color: white;
@@ -1216,125 +1718,132 @@
             width: 28.333333%;
         }
     </style>
-
     <style>
         .why-rhapsody-section {
             /* background-image: url('assets/img/hotel/bg-1.png'); */
             background-size: cover;
             background-position: center;
             position: relative;
-            padding: 80px 0;
+            padding: 120px 0; /* Increased padding to prevent top/bottom cutoff */
             border-radius: 40px;
-            overflow: hidden;
+            overflow: visible; /* Changed from hidden to visible */
             max-width: 1400px;
-            margin: 0 auto;
+            margin: 40px auto; /* Added vertical margin */
+            height: auto; /* Allow height to adjust based on content */
+            min-height: 700px; /* Provide a minimum height to ensure enough space */
         }
 
         .why-rhapsody-section::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: inherit;
-    filter: blur(10px);
-    z-index: -1;
-}
+            content: '';
+            position: absolute;
+            top: -20px; /* Extend beyond the section */
+            left: -20px;
+            right: -20px;
+            bottom: -20px;
+            background: inherit;
+            filter: blur(10px);
+            z-index: -1;
+        }
 
-.why-rhapsody-section::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: linear-gradient(
-        135deg,
-        rgba(219, 219, 219, 0.4) 0%,
-        rgba(215, 147, 247, 0.493) 100%
-    );
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    border-radius: 40px;
-    border: 1px solid rgba(255, 255, 255, 0.18);
-    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.15);
-    z-index: 1;
-}
+        .why-rhapsody-section::after {
+            content: '';
+            position: absolute;
+            top: -20px; /* Extend beyond the section */
+            left: -20px;
+            right: -20px;
+            bottom: -20px;
+            background: linear-gradient(135deg,
+                    rgba(219, 219, 219, 0.4) 0%,
+                    rgba(215, 147, 247, 0.493) 100%);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border-radius: 40px; /* Increased border radius */
+            border: 1px solid rgba(255, 255, 255, 0.18);
+            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.15);
+            z-index: 1;
+        }
 
-.why-rhapsody-section > * {
-    position: relative;
-    z-index: 2;
-}
-            @media (max-width: 991px) {
-                .why-rhapsody-section {
-                    padding: 60px 0;
-                    margin-left: auto;
-                    margin-right: auto;
-                    max-width: 90%;
-                }
-            
+        body.dark-mode .why-rhapsody-section::after {
+            background: linear-gradient(135deg,
+                    rgba(50, 50, 50, 0.4) 0%,
+                    rgba(100, 50, 150, 0.493) 100%);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+        }
 
-                .rhapsody-feature-card {
-                    width: 100%;
-                    margin-bottom: 20px;
-                    display: flex;
-                    justify-content: center;
-                }
+        .why-rhapsody-section>* {
+            position: relative;
+            z-index: 2;
+        }
 
-                .why-rhapsody-item {
-                    height: auto;
-                    max-width: 80%;
-                }
-
-                .why-rhapsody-item h3 {
-                    font-size: 1.5rem;
-                }
-
-                .why-rhapsody-item p {
-                    font-size: 0.9rem;
-                }
+        @media (max-width: 991px) {
+            .why-rhapsody-section {
+                padding: 60px 0;
+                margin-left: auto;
+                margin-right: auto;
+                max-width: 90%;
             }
 
-            @media (max-width: 767px) {
-                .why-rhapsody-section {
-                    padding: 40px 0;
-                    border-radius: 20px;
-                }
 
-                .why-rhapsody-section::after {
-                    border-radius: 20px;
-                }
-
-                h2.gradient-text {
-                    font-size: 1.8rem;
-                }
-
-                .rhapsody-feature-card {
-                    max-width: 90%;
-                    margin-left: auto;
-                    margin-right: auto;
-                }
+            .rhapsody-feature-card {
+                width: 100%;
+                margin-bottom: 20px;
+                display: flex;
+                justify-content: center;
             }
 
-            @media (max-width: 575px) {
-                .why-rhapsody-section {
-                    padding: 30px 0;
-                }
-
-                h2.gradient-text {
-                    font-size: 1.5rem;
-                }
-
-                .why-rhapsody-item h3 {
-                    font-size: 1.3rem;
-                }
-
-                .rhapsody-feature-card {
-                    max-width: 100%;
-                }
+            .why-rhapsody-item {
+                height: auto;
+                max-width: 80%;
             }
-        
+
+            .why-rhapsody-item h3 {
+                font-size: 1.5rem;
+            }
+
+            .why-rhapsody-item p {
+                font-size: 0.9rem;
+            }
+        }
+
+        @media (max-width: 767px) {
+            .why-rhapsody-section {
+                padding: 40px 0;
+                border-radius: 20px;
+            }
+
+            .why-rhapsody-section::after {
+                border-radius: 20px;
+            }
+
+            h2.gradient-text {
+                font-size: 1.8rem;
+            }
+
+            .rhapsody-feature-card {
+                max-width: 90%;
+                margin-left: auto;
+                margin-right: auto;
+            }
+        }
+
+        @media (max-width: 575px) {
+            .why-rhapsody-section {
+                padding: 30px 0;
+            }
+
+            h2.gradient-text {
+                font-size: 1.5rem;
+            }
+
+            .why-rhapsody-item h3 {
+                font-size: 1.3rem;
+            }
+
+            .rhapsody-feature-card {
+                max-width: 100%;
+            }
+        }
     </style>
     <section class="why-rhapsody-section">
         <div class="container">
@@ -1437,6 +1946,15 @@
         #cta .bg-light:hover {
             box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
         }
+
+        body.dark-mode #cta .bg-light {
+            background: linear-gradient(135deg,
+                    rgba(50, 50, 50, 0.4) 0%,
+                    rgba(100, 50, 150, 0.493) 100%) !important;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+        }
+
 
         #cta h2 {
             font-size: 2rem;
@@ -2252,6 +2770,7 @@
                             .dark-mode-image {
                                 content: url('assets/sticker.png');
                             }
+
                             body.dark-mode .dark-mode-image {
                                 content: url('assets/img/footer2.png');
                             }
@@ -2271,7 +2790,7 @@
         </div>
     </section>
 
-    
+
 
     <style>
         #newsletter-cta {
@@ -2376,7 +2895,7 @@
             parallax.style.transform = 'translateY(' + (scrolled * 0.4) + 'px)';
         });
     </script>
-
+    <script src="assets/js/navbar.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
 
 </body>
