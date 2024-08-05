@@ -496,7 +496,7 @@
     <div class="sub-nav mb-0 d-flex justify-content-between d-md-block sticky-top">
         <div class="container d-flex justify-content-between align-items-center">
             <div class="logo-container">
-                <a class="" href="#" onclick="navigateWithLoading('index.html')">
+                <a class="" href="#" onclick="navigateWithLoading('')">
                     <img src="assets/img/hotel/logo (1).png" alt="Realta Main Site"
                         style="max-width: 100px; height: auto; margin-left: 20px;">
                 </a>
@@ -1354,13 +1354,15 @@
             /* Increased negative margin for more overlap */
             z-index: 2;
         }
-
         .card-container {
             display: flex;
             justify-content: center;
             flex-wrap: wrap;
             align-items: center;
             gap: 30px;
+            margin: 0 auto;
+            max-width: 1200px; /* Adjust this value as needed */
+            padding: 0 15px;
         }
 
         .card {
