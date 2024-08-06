@@ -318,7 +318,7 @@ body.dark-mode li {
   padding: 0.5rem 0.25rem;
   border-radius: 15px; /* Add border-radius */
 }
-
+/* 
 .nav-link::after {
   content: '';
   position: absolute;
@@ -328,7 +328,7 @@ body.dark-mode li {
   left: 0;
   background-color: #9054d0;
   transition: width var(--transition-speed) ease;
-}
+} */
 
 .nav-link:hover::after,
 .nav-link.active::after {

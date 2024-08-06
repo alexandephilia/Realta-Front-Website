@@ -1074,7 +1074,28 @@
     <!-- LOADING -->
 
     <!-- About Us Section -->
-    <section id="about-us" class="py-5">
+    <section id="about-us" class="py-5 position-relative">
+        <style>
+            #about-us::before,
+            #about-us::after {
+                content: '';
+                position: absolute;
+                width: 350px;
+                height: 350px;
+                border-radius: 50%;
+                filter: blur(45px);
+            }
+            #about-us::before {
+                top: -120px;
+                left: -120px;
+                background-color: rgba(144, 84, 208, 0.2);
+            }
+            #about-us::after {
+                bottom: -120px;
+                right: -120px;
+                background-color: rgba(52, 152, 219, 0.2);
+            }
+        </style>
         <div class="container">
             <div class="d-flex flex-column">
                 <div class="mb-5 text-center">
