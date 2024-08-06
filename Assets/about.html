@@ -1478,7 +1478,7 @@
                                 margin-bottom: 2%;
                             }
                             .glassmorphic h3 {
-                                font-size: 1rem !important;
+                                font-size: 0.8rem !important;
                             }
                         }
                     </style>
@@ -1825,39 +1825,73 @@
 
         @media (max-width: 992px) {
             .values-container {
-                max-width: 500px;
+                max-width: 90%;
+                margin: 0 auto;
             }
 
             .value-item {
-                width: 100px;
-                height: 100px;
+                width: 90px;
+                height: 90px;
             }
 
             .value-icon {
-                font-size: 2.5rem;
+                font-size: 2.2rem;
+            }
+
+            .value-description {
+                width: 80%;
             }
         }
 
         @media (max-width: 768px) {
             .values-container {
-                max-width: 400px;
+                max-width: 95%;
             }
 
             .value-item {
-                width: 80px;
-                height: 80px;
+                width: 70px;
+                height: 70px;
             }
 
             .value-icon {
-                font-size: 2rem;
+                font-size: 1.8rem;
             }
 
             .selected-value {
-                font-size: 1.5rem;
+                font-size: 1.3rem;
+                margin-bottom: 0.5rem;
             }
 
             .value-text {
-                font-size: 1rem;
+                font-size: 0.9rem;
+                line-height: 1.4;
+            }
+
+            .value-description {
+                width: 60%;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .values-container {
+                max-width: 100%;
+            }
+
+            .value-item {
+                width: 60px;
+                height: 60px;
+            }
+
+            .value-icon {
+                font-size: 1.5rem;
+            }
+
+            .selected-value {
+                font-size: 1.1rem;
+            }
+
+            .value-text {
+                font-size: 0.8rem;
             }
         }
     </style>
