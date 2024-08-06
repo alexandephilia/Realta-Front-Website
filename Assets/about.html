@@ -1539,7 +1539,7 @@
     <!-- Vision, Mission, and Values Section -->
 
 
-    <section id="vision-mission-values" class="py-5">
+    <section id="vision-mission-values" class="py-5 mt-5">
         <div class="container">
             <h2 class="text-center mb-5 fw-bold gradient-text display-4 position-relative"
             style="left: 50%; transform: translateX(-50%);">Our Guiding Principle</h2>
@@ -1569,7 +1569,6 @@
     </section>
 
     <style>
-      
         .principles-container {
             display: flex;
             justify-content: center;
@@ -1611,10 +1610,24 @@
             color: #34495e;
         }
         .vision {
-            background: linear-gradient(45deg, #ffffff, #e8f0fe);
+            background: linear-gradient(45deg, #ffffff, #e0eafa);
         }
         .mission {
-            background: linear-gradient(45deg, #ffffff, #e8fef0);
+            background: linear-gradient(45deg, #ffffff, #e2dbf9);
+        }
+        body.dark-mode .vision,
+        body.dark-mode .mission {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+        }
+        body.dark-mode .vision {
+            background: linear-gradient(45deg, rgba(26, 26, 26, 0.3), rgba(28, 42, 74, 0.3));
+        }
+        body.dark-mode .mission {
+            background: linear-gradient(45deg, rgba(26, 26, 26, 0.3), rgba(32, 28, 58, 0.3));
         }
         @media (max-width: 768px) {
             .principles-container {
