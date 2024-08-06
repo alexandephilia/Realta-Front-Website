@@ -1541,33 +1541,92 @@
 
     <section id="vision-mission-values" class="py-5">
         <div class="container">
-            <div class="row g-4 justify-content-center">
-                <h2 class="text-center mb-5 fw-bold gradient-text display-4">Our Guiding Principles</h2>
-                <div class="col-md-5">
-                    <div class="card h-100 border-0 shadow-sm hover-card rounded-lg">
-                        <div class="card-body text-center p-5">
-                            <i class="fas fa-eye fa-3x mb-4 gradient-text"></i>
-                            <h3 class="card-title mb-3 fw-bold">Vision</h3>
-                            <p class="card-text text-muted" style="font-size: 1.1rem; max-width: 80%; margin: 0 auto;">
-                                To be the leading and most trusted ICT company in Indonesia, recognized globally for our
-                                excellence in innovation, quality, and service.</p>
-                        </div>
+            <h2 class="text-center mb-5 fw-bold gradient-text display-4 position-relative"
+            style="left: 50%; transform: translateX(-50%);">Our Guiding Principle</h2>
+            <div class="principles-container">
+                <div class="principle-card vision">
+                    <div class="principle-icon">
+                        <i class="fas fa-eye"></i>
                     </div>
+                    <h3 class="principle-title">Vision</h3>
+                    <p class="principle-text">
+                        To be the leading and most trusted ICT company in Indonesia, recognized globally for our
+                        excellence in innovation, quality, and service.
+                    </p>
                 </div>
-                <div class="col-md-5">
-                    <div class="card h-100 border-0 shadow-sm hover-card rounded-lg">
-                        <div class="card-body text-center p-5">
-                            <i class="fas fa-bullseye fa-3x mb-4 gradient-text"></i>
-                            <h3 class="card-title mb-3 fw-bold">Mission</h3>
-                            <p class="card-text text-muted" style="font-size: 1.1rem; max-width: 80%; margin: 0 auto;">
-                                To empower organizations to achieve their full potential by delivering innovative,
-                                comprehensive, and tailored ICT solutions that drive growth and success.</p>
-                        </div>
+                <div class="principle-card mission">
+                    <div class="principle-icon">
+                        <i class="fas fa-bullseye"></i>
                     </div>
+                    <h3 class="principle-title">Mission</h3>
+                    <p class="principle-text">
+                        To empower organizations to achieve their full potential by delivering innovative,
+                        comprehensive, and tailored ICT solutions that drive growth and success.
+                    </p>
                 </div>
             </div>
         </div>
     </section>
+
+    <style>
+      
+        .principles-container {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            perspective: 1000px;
+        }
+        .principle-card {
+            background: white;
+            border-radius: 20px;
+            padding: 2rem;
+            width: 300px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            transform-style: preserve-3d;
+        }
+        .principle-card:hover {
+            transform: translateY(-10px) rotateX(5deg) rotateY(5deg);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+        }
+        .principle-icon {
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+            color: #3498db;
+            transition: transform 0.3s ease;
+        }
+        .principle-card:hover .principle-icon {
+            transform: scale(1.1);
+        }
+        .principle-title {
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin-bottom: 1rem;
+            color: #2c3e50;
+        }
+        .principle-text {
+            font-size: 1rem;
+            line-height: 1.6;
+            color: #34495e;
+        }
+        .vision {
+            background: linear-gradient(45deg, #ffffff, #e8f0fe);
+        }
+        .mission {
+            background: linear-gradient(45deg, #ffffff, #e8fef0);
+        }
+        @media (max-width: 768px) {
+            .principles-container {
+                flex-direction: column;
+                align-items: center;
+            }
+            .principle-card {
+                width: 100%;
+                max-width: 300px;
+            }
+        }
+    </style>
 
     <style>
         .gradient-text {
