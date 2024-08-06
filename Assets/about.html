@@ -1680,7 +1680,38 @@
         }
 
         body.dark-mode #corporate-values .value-item {
-            background: linear-gradient(45deg, #2c3e50, #34495e);
+            background: rgba(44, 62, 80, 0.2);
+            backdrop-filter: blur(15px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 3px 6px 0 rgba(113, 114, 129, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        body.dark-mode #corporate-values .value-item:hover {
+            background: rgba(52, 73, 94, 0.4);
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: 0 12px 40px 0 rgba(31, 38, 135, 0.3);
+        }
+
+        body.dark-mode #corporate-values .value-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(
+                circle at 50% 50%,
+                rgba(255, 255, 255, 0.1),
+                transparent 70%
+            );
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            border-radius: 15px;
+        }
+
+        body.dark-mode #corporate-values .value-item:hover::before {
+            opacity: 1;
         }
     </style>
     <!-- Corporate Values Section -->
