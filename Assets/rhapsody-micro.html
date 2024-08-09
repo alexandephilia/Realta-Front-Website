@@ -28,7 +28,7 @@
     <link rel="stylesheet" href="assets/css/responsive.css">
     <link rel="stylesheet" href="assets/css/navbar-micro.css">
     <link rel="stylesheet" href="assets/css/navbar.css">
-
+    <link rel="stylesheet" href="assets/css/mobilenav.css">
 
 
     <!-- Fonts -->
@@ -807,6 +807,8 @@
                 <div class="offcanvas-body">
                     <div class="sidebar-menu">
                         <div class="sidebar-item">
+                            <h2 style="font-size: 2.1rem;">Main site</h2>
+                            <hr>
                             <h2 class="product-header" data-bs-toggle="collapse" data-bs-target="#productsSubmenu"
                                 aria-expanded="false">
                                 Products <i class="fas fa-chevron-right arrow-icon"></i>
@@ -1057,12 +1059,60 @@
                             </h2>
                         </div>
                     </div>
-                    <div class="get-started-container">
+                    <div class="get-started-container" style="margin-top: -10px !important;"> <!-- Adjusted margin-top to move slightly to the top -->
+                        <h2 class="product-header" style="font-size: 2.1rem;">Rhapsody</h2>
+                        <hr style="border-top: 2px solid purple;">
+                        <div class="sidebar-item">
+                            <h2 class="product-header">
+                                <a href="#" onclick="navigateWithLoading('solution.html'); return false;"
+                                    style="text-decoration: none; color: inherit;">Solution</a>
+                            </h2>
+                        </div>
+                        <div class="sidebar-item">
+                            <h2 class="product-header">
+                                <a href="#" onclick="navigateWithLoading('why-rhapsody.html'); return false;"
+                                    style="text-decoration: none; color: inherit;">Why Rhapsody</a>
+                            </h2>
+                        </div>
+                        <div class="sidebar-item">
+                            <h2 class="product-header" data-bs-toggle="collapse" data-bs-target="#productOverviewSubmenu"
+                                aria-expanded="false">
+                                Product Overview <i class="fas fa-chevron-right arrow-icon"></i>
+                            </h2>
+                            <div id="productOverviewSubmenu" class="collapse">
+                                <ul class="submenu-list">
+                                    <li><a href="#">Front Office</a></li>
+                                    <li><a href="#">Back Office</a></li>
+                                    <li><a href="#">Logistic System</a></li>
+                                    <li><a href="#">ICT One Solution</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="sidebar-item">
+                            <h2 class="product-header" data-bs-toggle="collapse" data-bs-target="#blogSubmenu"
+                                aria-expanded="false">
+                                Blog <i class="fas fa-chevron-right arrow-icon"></i>
+                            </h2>
+                            <div id="blogSubmenu" class="collapse">
+                                <ul class="submenu-list">
+                                    <li><a href="#">Article & News</a></li>
+                                </ul>
+                            </div>
+                        </div>
                         <a href="https://api.whatsapp.com/send?phone=628111221789&text=Hallo%20PT%20Realta..."
                             target="_blank" rel="noopener noreferrer" class="btn btn-success btn-block"
-                            style="width: 100%;">
+                            style="width: 100%; margin-top: 50px;">
                             <i class="fab fa-whatsapp"></i> Contact Us
                         </a>
+                        <div class="d-flex justify-content-between align-items-center" style="padding: 20px 0; margin-top: 20px;">
+                            <h2 class="text-left mb-0" style="margin-right: 20px;">Get in Touch</h2>
+                            <div class="social-icons" style="display: flex; justify-content: flex-end;">
+                                <a href="#" target="_blank" rel="noopener noreferrer" style="margin-right: 10px; display: inline-flex; justify-content: center; align-items: center; background-color: black; border-radius: 50%; width: 30px; height: 30px;"><i class="fab fa-facebook-f" style="color: white;"></i></a>
+                                <a href="#" target="_blank" rel="noopener noreferrer" style="margin-right: 10px; display: inline-flex; justify-content: center; align-items: center; background-color: black; border-radius: 50%; width: 30px; height: 30px;"><i class="fab fa-twitter" style="color: white;"></i></a>
+                                <a href="#" target="_blank" rel="noopener noreferrer" style="margin-right: 10px; display: inline-flex; justify-content: center; align-items: center; background-color: black; border-radius: 50%; width: 30px; height: 30px;"><i class="fab fa-instagram" style="color: white;"></i></a>
+                                <a href="#" target="_blank" rel="noopener noreferrer" style="display: inline-flex; justify-content: center; align-items: center; background-color: black; border-radius: 50%; width: 30px; height: 30px;"><i class="fab fa-linkedin-in" style="color: white;"></i></a>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -2995,6 +3045,7 @@
         });
     </script>
     <script src="assets/js/navbar.js"></script>
+    <script src="assets/js/mobilenav.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
 
 </body>
