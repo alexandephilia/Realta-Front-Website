@@ -1393,24 +1393,47 @@
 
         
 
-                    <!-- Include the archives section -->
-                    <div class="blog-archives container-md p-4 mb-3">
-                        <h4 class="blog-archives-title fw-bold">Archives</h4>
-                        <ul class="blog-archive-list">
-                            <li class="blog-archive-item">
-                                <a class="blog-archive-link" href="#">
-                                    <span class="blog-archive-text">March 2021</span>
-                                    <span class="blog-archive-count">5</span>
-                                </a>
-                            </li>
-                            <li class="blog-archive-item">
-                                <a class="blog-archive-link" href="#">
-                                    <span class="blog-archive-text">February 2021</span>
-                                    <span class="blog-archive-count">4</span>
-                                </a>
-                            </li>
-                            <!-- Add more archive items as needed -->
-                        </ul>
+                    <!-- Include the latest posts section -->
+                    <div class="latest-posts container-md p-4 mb-3">
+                        <h4 class="latest-posts-title fw-bold">Latest Posts</h4>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="card mb-3">
+                                    <div class="row g-0">
+                                        <div class="col-md-4">
+                                            <img src="assets/blog/agi.jpg" class="img-fluid rounded-start w-100 h-100" alt="..." style="object-fit: cover;">
+                                        </div>
+                                        <div class="col-md-8">
+                                            <div class="card-body">
+                                                <h5 class="card-title">Card title</h5>
+                                                <p class="card-text" style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                                                <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="card mb-3">
+                                    <div class="row g-0">
+                                        <div class="col-md-4">
+                                            <img src="assets/blog/nothing.jpg" class="img-fluid rounded-start w-100 h-100" alt="..." style="object-fit: cover;">
+                                        </div>
+                                        <div class="col-md-8">
+                                            <div class="card-body">
+                                                <h5 class="card-title">Card title</h5>
+                                                <p class="card-text" style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                                                <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                                <!-- Add more cards as needed -->
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -1419,60 +1442,124 @@
 
     <!-- Include your footer here -->
     
-    <footer id="footer-last" class="py-4">
+   
+    <section id="newsletter-cta" class="py-4 mb-0">
         <div class="container">
-          <div class="row align-items-center justify-content-between">
-            <!-- Left column: Logo images -->
-            <div class="col-md-auto d-flex align-items-center mb-3 mb-md-0">
-                <img src="assets/img/footer1.png" alt="Logo 1" class="footer-logo me-3"
-                style="max-height: 100px; width: auto;">
-              <img src="assets/img/footer2.png" alt="Logo 2" class="footer-logo" style="max-height: 100px; width: auto;">
+            <div class="row align-items-center">
+                <div class="col-md-7 text-start">
+                    <h2 class="mb-3 fw-bold gradient-text">Stay Informed, Stay Ahead</h2>
+                    <p class="mb-4">Join our newsletter for exclusive insights and expert tips.</p>
+                    <form class="mb-3">
+                        <div class="input-group input-group-lg" style="max-width: 500px;">
+                            <input type="email" class="form-control" placeholder="Email address" aria-label="Email address" required style="border-radius: 10px 0 0 10px;">
+                            <button class="btn btn-primary" type="submit" style="border-radius: 0 10px 10px 0;">Subscribe</button>
+                        </div>
+                    </form>
+                    <p class="text-muted small">By subscribing, you agree to our <a href="#" class="text-decoration-none">Privacy Policy</a> and <a href="#" class="text-decoration-none">Terms of Service</a>.</p>
+                </div>
+                <div class="col-md-5">
+                    <div class="d-flex justify-content-md-end align-items-center mb-3">
+                        <img src="assets/img/footer1.png" alt="Logo 1" class="footer-logo me-3"
+                            style="max-height: 90px; width: auto;">
+                        <img src="assets/sticker.png" alt="Logo 2" class="footer-logo dark-mode-image"
+                            style="max-height: 90px; width: auto;">
+                        <style>
+                            .dark-mode-image {
+                                content: url('assets/sticker.png');
+                            }
+                            body.dark-mode .dark-mode-image {
+                                content: url('assets/img/footer2.png');
+                            }
+                        </style>
+                    </div>
+                    <div class="text-md-end">
+                        <p class="mb-2 text-muted small" style="font-size: 0.9rem;">&copy; 2024 Realta. All rights reserved.</p>
+                        <a href="https://www.realta.co.id/site/privacy-policy.html" class="text-muted small me-3" style="font-size: 0.9rem;">Privacy Policy</a>
+                        <span class="text-muted small me-3" style="font-size: 0.9rem;">|</span>
+                        <a href="https://www.realta.co.id/site/privacy-policy.html" class="text-muted small" style="font-size: 0.9rem;">Terms</a>
+                    </div>
+                </div>
             </div>
-  
-            <!-- Right column: Copyright and Privacy -->
-            <div class="col-md-auto text-md-end">
-              <p class="mb-2 text-muted small">&copy; 2024 Realta. All rights reserved.</p>
-              <a href="https://www.realta.co.id/site/privacy-policy.html" class="text-muted small me-3"
-                style="color: gold !important;">Privacy Policy</a>
-              <span class="text-muted small me-3" style="color: gold !important;">|</span>
-              <a href="https://www.realta.co.id/site/privacy-policy.html" class="text-muted small"
-                style="color: gold !important;">Terms</a>
-            </div>
-          </div>
         </div>
-      </footer>
-      <style>
+    </section>
+
+    <style>
+        #newsletter-cta {
+          background: linear-gradient(135deg, #f5f7fa 0%, #a588bd 100%);
+          transition: background 0.3s ease;
+          border-radius: 10px 10px 0 0;
+
+        }
+        #newsletter-cta .gradient-text {
+            background: linear-gradient(to bottom, #9054d0, #7a4bd7);
+
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            font-size: 2rem;
+        }
+        #newsletter-cta .btn-primary {
+            background: linear-gradient(90deg, #7209d4, #2832d4);
+            border: none;
+            transition: all 0.3s ease;
+        }
+        #newsletter-cta .form-control {
+            border: 2px solid #e0e0e0;
+            transition: all 0.3s ease;
+        }
+        #newsletter-cta .form-control:focus {
+            border-color: #7209d4;
+            box-shadow: 0 0 0 0.2rem rgba(114,9,212,0.25);
+        }
+        body.dark-mode #newsletter-cta {
+            background: #282828;
+        }
+        body.dark-mode #newsletter-cta .gradient-text {
+            background: linear-gradient(90deg, #a742ff, #4b5eff 33%, #00d5e6);
+            -webkit-background-clip: text;
+            background-clip: text;
+        }
+        body.dark-mode #newsletter-cta .btn-primary {
+            background: linear-gradient(90deg, #a742ff, #4b5eff);
+        }
+        body.dark-mode #newsletter-cta .form-control {
+            border-color: #4a5568;
+            color: #fff;
+        }
+        body.dark-mode #newsletter-cta .form-control::placeholder {
+            color: #a0aec0;
+        }
+        body.dark-mode #newsletter-cta .text-muted {
+            color: #a0aec0 !important;
+        }
+        body.dark-mode #newsletter-cta a {
+            color: #00d5e6;
+        }
         @media (max-width: 767px) {
-          #footer-last .row {
-            text-align: center;
-          }
-  
-          #footer-last .col-md-auto {
-            justify-content: center;
-          }
+            #newsletter-cta .gradient-text {
+                font-size: 1.5rem;
+            }
+            #newsletter-cta .row {
+                text-align: center;
+            }
+            #newsletter-cta .col-md-7 {
+                text-align: center;
+            }
+            #newsletter-cta .col-md-5 {
+                margin-top: 2rem;
+            }
+            #newsletter-cta .d-flex {
+                justify-content: center !important;
+            }
+            #newsletter-cta .text-md-end {
+                text-align: center !important;
+            }
+            #newsletter-cta .form-control {
+                font-size: 0.8rem;
+            }
         }
-  
-        #footer-last {
-          background-color: #282828;
-          color: #fff;
-        }
-  
-        #footer-last h5,
-        #footer-last p,
-        #footer-last a,
-        #footer-last .text-muted {
-          color: #fff !important;
-        }
-  
-        #footer-last hr {
-          border-color: #333;
-        }
-  
-        #footer-last .social-icons a {
-          color: #fff;
-          margin-right: 15px;
-        }
-      </style>
+    </style>
+    
 
     <!-- Include your JavaScript files -->
     <script src="assets/js/blog.js"></script>
