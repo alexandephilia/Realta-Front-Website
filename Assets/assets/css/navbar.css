@@ -328,7 +328,7 @@ body.dark-mode .module {
 
 .dropdown-arrow {
     position: absolute;
-    bottom: -25px;
+    bottom: -15px !important;
     left: 50%;
     transform: translateX(-50%);
     width: 0px;
@@ -897,22 +897,6 @@ body.dark-mode .module {
     }
 }
 
-.dropdown-arrow {
-    position: absolute;
-    bottom: -25px; /* Adjusted to accommodate larger arrow */
-    left: 50%;
-    transform: translateX(-50%);
-    width: 0px;
-    height: 0px;
-    border-left: 12px solid transparent; /* Increased from 10px to 12px */
-    border-right: 12px solid transparent; /* Increased from 10px to 12px */
-    border-bottom: 12px solid rgb(245, 245, 245); /* Increased from 10px to 12px */
-    z-index: 5001;
-}
-
-body.dark-mode .dropdown-arrow {
-    border-bottom-color: #ffffff; /* Adjust for dark mode */
-}
 /* Ensure the dropdown parent has a relative position */
 .nav-item {
     position: relative;
