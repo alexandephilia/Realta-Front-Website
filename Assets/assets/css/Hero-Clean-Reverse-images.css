@@ -802,7 +802,7 @@ body.dark-mode .btn-custom.whatsapp-btn i {
   border-color: transparent !important;
   transition: 0.2s;
   box-shadow: rgba(0, 0, 0, 0.253) 0px 4px 8px !important;
-  background: linear-gradient(to left, rgba(240, 240, 240, 0.15), rgba(231, 231, 231, 0.226)) !important;
+  background: linear-gradient(to left, rgba(240, 240, 240, 0.301), rgba(231, 231, 231, 0.527)) !important;
 }
 
 /* .card:hover {
@@ -2120,9 +2120,9 @@ body.dark-mode #solutions .solution-card p {
 
 /* Dark mode styles for the tags container */
 body.dark-mode #industry .tags-container {
-  background: rgba(209, 209, 209, 0.075) !important;
+  background: rgba(209, 209, 209, 0) !important;
   border-color: rgba(255, 255, 255, 0.1) !important;
-  box-shadow: 0 3px 3px rgba(0, 0, 0, 0.3) !important;
+  /* box-shadow: 0 3px 3px rgba(0, 0, 0, 0.3) !important; */
 }
 
 body.dark-mode #industry .tags-wrapper {

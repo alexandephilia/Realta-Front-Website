@@ -147,7 +147,7 @@ handleCategories('#solutionsDropdownContent', 'product-details', {
                 <div class="bento-grid">
                     <div class="bento-item large">
                         <p class="feature-description" style="text-align: center; font-size: 1em;">
-                            <strong style="display: block; margin-bottom: 2px;">HR operations</strong> with our integrated solution.
+                            <strong style="display: block; margin-bottom: 2px;">HR operations</strong> <span style="display: block; width: 99%; margin: 0 auto;">with our integrated solution.</span>
                         </p>
                     </div>
                     <div class="bento-item">
@@ -257,10 +257,10 @@ handleCategories('#solutionsDropdownContent', 'product-details', {
                         <i class="fas fa-map-marker-alt"></i>
                         <span>Locations</span>
                     </div>
-                       <div class="bento-item large" style="display: flex; align-items: center; justify-content: center;">
-                        <p class="feature-description" style="text-align: center; font-size: 1em; line-height: 1.5; margin: 0;">
-                            <strong style="display: block; margin-bottom: 2px; width: 80%; margin-left: auto; margin-right: auto;">Employee Self Service</strong>
-                            <span style="width: 80%; display: block; margin: 0 auto; text-align: center;">empower HR with our ESS app.</span>
+                       <div class="bento-item large" style="display: flex; align-items: center; justify-content: center; width: 94%; margin: 0 auto;">
+                        <p class="feature-description" style="text-align: center; font-size: 0.9em; margin: 0;">
+                            <strong style="display: block; margin-bottom: 2px;">Employee Self <br> Service</strong>
+                            <span style="display: block; width: 80%; margin: 0 auto;">Empower HR with our ESS app.</span>
                         </p>
                     </div>
                     <div class="bento-item">
