@@ -360,55 +360,54 @@ handleCategories('#partnerDropdownContent', 'partner-details', {
     `
 });
 
-// Konsultasi dropdown
-handleDropdown('konsultasiDropdown', 'konsultasiDropdownContent');
-handleCategories('#konsultasiDropdownContent', 'konsultasi-details', {
+// Contact dropdown
+handleDropdown('contactDropdown', 'contactDropdownContent');
+handleCategories('#contactDropdownContent', 'contact-details', {
     business: `
         <div class="product-banner" style="background-image: url('assets/img/consult.png');">   
             <div class="glare"></div>
             <div class="product-banner-content">
                 <h2 class="product-title">Business Consultation</h2>
-                <p class="product-banner-description">Expert guidance to help your business thrive in the digital age.</p>
+                <p class="product-banner-description">Get in touch with our team for any inquiries or support.</p>
             </div>
         </div>
-        <div class="modules-title">OUR SERVICES</div>
+        <div class="modules-title">CONTACT OPTIONS</div>
         <div class="modules-grid">
             <div class="module">
-                <h4>Strategy Development</h4>
-                <p>Craft winning business strategies</p>
+                <h4>General Inquiries</h4>
+                <p>For general questions and information</p>
             </div>
             <div class="module">
-                <h4>Process Optimization</h4>
-                <p>Streamline your operations for maximum efficiency</p>
+                <h4>Technical Support</h4>
+                <p>Get help with our products and services</p>
             </div>
             <div class="module">
-                <h4>Digital Transformation</h4>
-                <p>Navigate the complexities of digital adoption</p>
+                <h4>Business Partnerships</h4>
+                <p>Explore collaboration opportunities</p>
             </div>
         </div>
     `,
     technical: `
-        <div class="product-banner" style="background-image: url('assets/img/technical-consultation.jpg');">   
-            <div class="product-banner" style="background-image: url('assets/img/technical-consultation.jpg');">   
+        <div class="product-banner" style="background-image: url('assets/img/technical-support.jpg');">   
             <div class="glare"></div>
             <div class="product-banner-content">
-                <h2 class="product-title">Technical Consultation</h2>
-                <p class="product-banner-description">In-depth technical expertise to solve your most complex challenges.</p>
+                <h2 class="product-title">Technical Support</h2>
+                <p class="product-banner-description">Expert assistance for all your technical inquiries and issues.</p>
             </div>
         </div>
-        <div class="modules-title">OUR SERVICES</div>
+        <div class="modules-title">CONTACT OPTIONS</div>
         <div class="modules-grid">
             <div class="module">
-                <h4>System Architecture</h4>
-                <p>Design scalable and robust system architectures</p>
+                <h4>Live Chat Support</h4>
+                <p>Instant help from our technical experts</p>
             </div>
             <div class="module">
-                <h4>Performance Optimization</h4>
-                <p>Enhance system performance and efficiency</p>
+                <h4>Email Support</h4>
+                <p>Detailed responses to complex technical queries</p>
             </div>
             <div class="module">
-                <h4>Security Assessment</h4>
-                <p>Identify and mitigate potential security risks</p>
+                <h4>Phone Support</h4>
+                <p>Direct line to our technical support team</p>
             </div>
         </div>
     `
@@ -441,8 +440,14 @@ handleCategories('#tentangRealtaDropdownContent', 'tentangRealta-details', {
             </div>
         </div>
     `,
-    careers: `
-        <div class="product-banner" style="background-image: url('assets/img/career.png');" onclick="navigateWithLoading('career.html');">       
+    
+});
+
+// Career dropdown
+handleDropdown('careerDropdown', 'careerDropdownContent');
+handleCategories('#careerDropdownContent', 'career-details', {
+    openings: `
+         <div class="product-banner" style="background-image: url('assets/img/career.png');" onclick="navigateWithLoading('career.html');">       
             <div class="glare"></div>
             <div class="product-banner-content">
                 <h2 class="product-title">Careers at Realta</h2>
@@ -465,28 +470,51 @@ handleCategories('#tentangRealtaDropdownContent', 'tentangRealta-details', {
             </div>
         </div>
     `,
-    blog: `
-    <div class="product-banner" style="background-image: url('assets/img/blog.jpeg');" onclick="navigateWithLoading('blog.html');">            
-    <div class="glare"></div>
+    internships: `
+        <div class="product-banner" style="background-image: url('assets/img/internships.jpg');" onclick="navigateWithLoading('internships.html');">   
+            <div class="glare"></div>
             <div class="product-banner-content">
-                <h2 class="product-title">Realta Blog</h2>
-                <p class="product-banner-description">Insights, trends, and thought leadership in technology.</p>
+                <h2 class="product-title">Internship Programs</h2>
+                <p class="product-banner-description">Kickstart your career with hands-on experience at Realta.</p>
             </div>
         </div>
-        </div>
-        <div class="modules-title">FEATURED CONTENT</div>
+        <div class="modules-title">PROGRAM HIGHLIGHTS</div>
         <div class="modules-grid">
             <div class="module">
-                <h4>Tech Trends</h4>
-                <p>Stay updated with the latest in technology</p>
+                <h4>Tech Internships</h4>
+                <p>Gain practical experience in software development</p>
             </div>
             <div class="module">
-                <h4>Case Studies</h4>
-                <p>Real-world applications of our solutions</p>
+                <h4>Business Internships</h4>
+                <p>Learn about tech business operations</p>
             </div>
             <div class="module">
-                <h4>Industry Insights</h4>
-                <p>Expert analysis on sector-specific challenges</p>
+                <h4>Design Internships</h4>
+                <p>Contribute to user experience and interface design</p>
+            </div>
+        </div>
+    `,
+    culture: `
+        <div class="product-banner" style="background-image: url('assets/img/company-culture.jpg');" onclick="navigateWithLoading('company-culture.html');">   
+            <div class="glare"></div>
+            <div class="product-banner-content">
+                <h2 class="product-title">Company Culture</h2>
+                <p class="product-banner-description">Discover what makes Realta a great place to work.</p>
+            </div>
+        </div>
+        <div class="modules-title">OUR VALUES</div>
+        <div class="modules-grid">
+            <div class="module">
+                <h4>Innovation</h4>
+                <p>We encourage creative thinking and new ideas</p>
+            </div>
+            <div class="module">
+                <h4>Collaboration</h4>
+                <p>Teamwork is at the heart of our success</p>
+            </div>
+            <div class="module">
+                <h4>Growth</h4>
+                <p>We invest in our employees' personal and professional development</p>
             </div>
         </div>
     `

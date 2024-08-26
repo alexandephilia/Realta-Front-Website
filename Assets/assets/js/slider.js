@@ -49,18 +49,17 @@ function injectStyles() {
             .card-body {
                 padding: 1rem;
             }
-    .video-industry iframe {
-        width: 100%;
-        height: 100%;
-        object-fit: cover; /* Ensure the video fills the container */
-    }
+            .video-industry iframe {
+                width: 100%;
+                height: 100%;
+                object-fit: cover; /* Ensure the video fills the container */
+          }
             
             .industry-image {
                 border-radius: 10px;
             }
         }
 
-        
         .card-text, .card-body ul {
             font-size: 1rem;
             line-height: 1.6;
@@ -71,7 +70,7 @@ function injectStyles() {
             font-size: 0.9rem;
         }
         .card-body li {
-            font-size: 0.9rem;
+            font-size: 1rem;
             margin-bottom: 0.5rem;
         }
         @media (max-width: 768px) {
@@ -622,20 +621,7 @@ function isElementInViewport(el) {
   );
 }
 
-// Handle scroll and animate numbers
-function handleScroll() {
-  const statNumbers = document.querySelectorAll(".stat-number");
-  statNumbers.forEach((statNumber) => {
-    if (
-      isElementInViewport(statNumber) &&
-      !statNumber.classList.contains("animated")
-    ) {
-      const finalValue = parseInt(statNumber.getAttribute("data-target"));
-      scrambleText(statNumber, finalValue);
-      statNumber.classList.add("animated");
-    }
-  });
-}
+
 
 // Initial check on page load
 document.addEventListener("DOMContentLoaded", handleScroll);

@@ -801,7 +801,7 @@ body.dark-mode .btn-custom.whatsapp-btn i {
   background: var(--bg);
   border-color: transparent !important;
   transition: 0.2s;
-  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 8px;
+  box-shadow: rgba(0, 0, 0, 0.253) 0px 4px 8px !important;
   background: linear-gradient(to left, rgba(240, 240, 240, 0.15), rgba(231, 231, 231, 0.226)) !important;
 }
 
@@ -1609,7 +1609,7 @@ section{
   border: none;
   border-radius: 10px;
   overflow: hidden;
-  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 8px;
+  box-shadow: rgba(0, 0, 0, 0.253) 0px 4px 8px;
   transition: all 0.3s ease;
 }
 
