@@ -254,10 +254,10 @@ body.dark-mode .modules-title {
     cursor: pointer;
 }
 
-.module:hover {
+/* .module:hover {
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
     transform: translateY(-5px);
-}
+} */
 
 body.dark-mode .module {
     background-color: rgba(98, 98, 98, 0.192);
@@ -817,10 +817,10 @@ body.dark-mode .modules-title {
     /* Add this line */
 }
 
-.module:hover {
+/* .module:hover {
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
     transform: translateY(-5px);
-}
+} */
 
 body.dark-mode .module {
     background-color: rgba(98, 98, 98, 0.192);

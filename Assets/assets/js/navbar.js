@@ -113,21 +113,21 @@ handleCategories('#solutionsDropdownContent', 'product-details', {
             <div class="glare"></div>
             <div class="product-banner-content">
                 <h2 class="product-title">Golf Course System</h2>
-                <p class="product-banner-description">Manage your golf course operations efficiently with our specialized system.</p>
+                <p class="product-banner-description">Supporting The Golfer’s Journey On and Off The Course.</p>
             </div>
         </div>
         <div class="modules-title">KEY FEATURES</div>
         <div class="modules-grid">
             <div class="module">
-                <h4>Tee Time Management</h4>
+                <h4>Membership </h4>
                 <p>Optimize tee time scheduling and bookings</p>
             </div>
             <div class="module">
-                <h4>Pro Shop Operations</h4>
+                <h4>Golf Operations</h4>
                 <p>Manage inventory and sales in your pro shop</p>
             </div>
             <div class="module">
-                <h4>Course Analytics</h4>
+                <h4>Tournament</h4>
                 <p>Track course usage and optimize operations</p>
             </div>
         </div>
@@ -137,22 +137,151 @@ handleCategories('#solutionsDropdownContent', 'product-details', {
             <div class="glare"></div>
             <div class="product-banner-content">
                 <h2 class="product-title">HR System</h2>
-                <p class="product-banner-description">Streamline your human resources processes with our comprehensive HR system.</p>
+                <p class="product-banner-description">To Effectively Manage Human Resource.</p>
             </div>
         </div>
         <div class="modules-title">KEY FEATURES</div>
         <div class="modules-grid">
             <div class="module">
-                <h4>Employee Management</h4>
-                <p>Efficiently manage employee data and records</p>
+                <h4>HR Core</h4>
+                <div class="bento-grid">
+                    <div class="bento-item large">
+                        <p class="feature-description" style="text-align: center; font-size: 1em;">
+                            <strong style="display: block; margin-bottom: 2px;">HR operations</strong> with our integrated solution.
+                        </p>
+                    </div>
+                    <div class="bento-item">
+                        <i class="fas fa-user-tie"></i>
+                        <span>Personnel</span>
+                    </div>
+                    <div class="bento-item">
+                        <i class="fas fa-clock"></i>
+                        <span>Attendance</span>
+                    </div>
+                    <div class="bento-item">
+                        <i class="fas fa-money-bill-wave"></i>
+                        <span>Payroll</span>
+                    </div>
+                    <div class="bento-item">
+                        <i class="fas fa-medkit"></i>
+                        <span>Medical</span>
+                    </div>
+                    <div class="bento-item">
+                        <i class="fas fa-hand-holding-usd"></i>
+                        <span>Loan</span>
+                    </div>
+                </div>
+                <style>
+                    .bento-grid {
+                        display: grid;
+                        grid-template-columns: repeat(3, 1fr);
+                        grid-template-rows: repeat(3, 1fr);
+                        gap: 8px;
+                        max-width: 300px;
+                        margin: 0 auto;
+                    }
+                    /* Initial fade-in transition for bento items */
+                    @keyframes fadeIn {
+                        from { opacity: 0; }
+                        to { opacity: 1; }
+                    }
+
+                    .bento-item {
+                        background-color: #fafafa;
+                        border: 1px solid #9054d081;
+                        padding: 10px;
+                        border-radius: 15px;
+                        font-size: 0.7em;
+                        text-align: center;
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+                        justify-content: center;
+                        transition: all 0.3s ease;
+                        animation: fadeIn 0.5s ease-out forwards;
+                        opacity: 0;
+                        /* Add a noticeable shadow box */
+                        box-shadow: 0 3px 1px rgba(0, 0, 0, 0.2);
+                    }
+                    .bento-item:hover {
+                        transform: translateY(2px);
+                        box-shadow: 0 1px 5px rgba(0,0,0,0.2);
+                    }
+                    .bento-item i {
+                        font-size: 1.3em;
+                        margin-bottom: 5px;
+                        color: rgb(99, 50, 155);
+                        animation: fadeIn 0.5s ease-out 0.2s forwards;
+                        opacity: 0;
+                    }
+                    .bento-item span {
+                        display: block;
+                        line-height: 1.1;
+                    }
+                    .large {
+                        grid-column: span 2;
+                        grid-row: span 2;
+                        font-size: 0.8em;
+                    }
+                </style>
             </div>
             <div class="module">
-                <h4>Payroll Processing</h4>
-                <p>Automate payroll calculations and disbursements</p>
+                <h4>HR Advance</h4>
+                <div class="bento-grid" style="grid-template-columns: repeat(2, 1fr); grid-template-rows: auto repeat(2, 1fr); max-width: 250px; margin: 0 auto;">
+                    <div class="bento-item large" style="grid-column: 1 / -1;">
+                        <p style="font-size: 1em;"><span style="font-weight: bold;">HR Advance</span>with our unified platform.</p>
+                    </div>
+                    <div class="bento-item">
+                        <i class="fas fa-user-plus"></i>
+                        <span>Recruitment</span>
+                    </div>
+                    <div class="bento-item">
+                        <i class="fas fa-briefcase"></i>
+                        <span>Job Competency</span>
+                    </div>
+                    <div class="bento-item">
+                        <i class="fas fa-graduation-cap"></i>
+                        <span>Training</span>
+                    </div>
+                    <div class="bento-item">
+                        <i class="fas fa-chart-line"></i>
+                        <span>Performance</span>
+                    </div>
+                </div>
             </div>
             <div class="module">
-                <h4>Performance Tracking</h4>
-                <p>Monitor and evaluate employee performance</p>
+                <h4>HR Mobile</h4>
+               <div class="bento-grid">
+                
+                    <div class="bento-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>Locations</span>
+                    </div>
+                       <div class="bento-item large" style="display: flex; align-items: center; justify-content: center;">
+                        <p class="feature-description" style="text-align: center; font-size: 1em; line-height: 1.5; margin: 0;">
+                            <strong style="display: block; margin-bottom: 2px; width: 80%; margin-left: auto; margin-right: auto;">Employee Self Service</strong>
+                            <span style="width: 80%; display: block; margin: 0 auto; text-align: center;">empower HR with our ESS app.</span>
+                        </p>
+                    </div>
+                    <div class="bento-item">
+                        <i class="fas fa-eye"></i>
+                        <span>Monitoring</span>
+                    </div>
+                    <div class="bento-item">
+                        <i class="fas fa-mobile-alt"></i>
+                        <span>Request</span>
+                    </div>
+                    
+                    <div class="bento-item">
+                        <i class="fas fa-calendar-check"></i>
+                        <span>Reminder</span>
+                    </div>
+                    
+                    <div class="bento-item">
+                        <i class="fas fa-bell"></i>
+                        <span>Notification</span>
+                    </div>
+                </div>
             </div>
         </div>
     `,
