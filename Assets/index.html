@@ -1370,7 +1370,7 @@
 
         /* Gradient text from black to blue */
         .gradient-text {
-            background: linear-gradient(90deg, #688bb3, #6d46c7);
+            background: linear-gradient(90deg, #192736, #6251fcdc);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
@@ -2865,32 +2865,39 @@
     </section>
 
     <style>
+        /* Modern and Minimalist Business Button Styles */
         .business-btn {
             display: inline-block;
-            padding: 0.375rem 0.75rem;
-            font-size: 0.875rem;
-            line-height: 1.5;
+            padding: 0.45rem 0.9rem;
+            font-size: 0.8rem;
+            font-weight: 500;
             text-align: center;
             text-decoration: none;
-            vertical-align: middle;
             cursor: pointer;
             user-select: none;
             border: none;
-            border-radius: 0.25rem;
+            border-radius: 10px;
             transition: all 0.3s ease;
-            color: #fff;
-            background: #9054d0;
+            color: #9054d0;
+            background: transparent;
+            border: 2px solid #9054d0ab;
+            font-weight: 600;
             width: auto;
-            max-width: 120px;
+            max-width: 130px;
             margin: 0 auto;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 2px 4px rgba(144, 84, 208, 0.2);
         }
 
         .business-btn:hover {
             color: #fff;
-            background: #3a5894;
-            transform: translateY(-2px);
-            box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+            background: linear-gradient(135deg, #7b4fc9, #6a3eb8);
+            transform: translateY(-1px);
+            box-shadow: 0 3px 12px rgba(144, 84, 208, 0.3);
+        }
+
+        .business-btn:active {
+            transform: translateY(1px);
+            box-shadow: 0 1px 4px rgba(144, 84, 208, 0.2);
         }
     </style>
 
