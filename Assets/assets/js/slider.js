@@ -203,7 +203,7 @@ const cardContents = {
                     </ul>
                 </div>
                 <div class="hospitality-item service-excellence">
-                    <h3><i class="fas fa-star" style="background: linear-gradient(to bottom, #9054d0, transparent); -webkit-background-clip: text; -webkit-text-fill-color: transparent;"></i> Service Excellence & Revenue</h3>
+                    <h3><i class="fas fa-gem" style="background: linear-gradient(to bottom, #9054d0, transparent); -webkit-background-clip: text; -webkit-text-fill-color: transparent;"></i> Service Excellence & Revenue</h3>
                     <ul>
                         <li>Pre-arrival to post-departure engagement</li>
                         <li>Enhanced service quality</li>
@@ -211,7 +211,7 @@ const cardContents = {
                     </ul>
                 </div>
                 <div class="hospitality-item one-stop-service">
-                    <h3><i class="fas fa-concierge-bell" style="background: linear-gradient(to bottom, #9054d0, transparent); -webkit-background-clip: text; -webkit-text-fill-color: transparent;"></i> One Stop Service</h3>
+                    <h3><i class="fas fa-hotel" style="background: linear-gradient(to bottom, #9054d0, transparent); -webkit-background-clip: text; -webkit-text-fill-color: transparent;"></i> One Stop Service</h3>
                     <ul>
                         <li>End-to-end ICT solutions</li>
                         <li>Tailored for hospitality industry</li>
@@ -219,7 +219,7 @@ const cardContents = {
                     </ul>
                 </div>
                 <div class="hospitality-item invoicing-system">
-                    <h3><i class="fas fa-file-invoice-dollar" style="background: linear-gradient(to bottom, #9054d0, transparent); -webkit-background-clip: text; -webkit-text-fill-color: transparent;"></i> Seamless Invoicing System</h3>
+                    <h3><i class="fas fa-file-invoice" style="background: linear-gradient(to bottom, #9054d0, transparent); -webkit-background-clip: text; -webkit-text-fill-color: transparent;"></i> Seamless Invoicing System</h3>
                     <ul>
                         <li>Unique fee schemes</li>
                         <li>Performance-based billing</li>
@@ -227,7 +227,7 @@ const cardContents = {
                     </ul>
                 </div>
                 <div class="hospitality-item cost-effectiveness">
-                    <h3><i class="fas fa-piggy-bank" style="background: linear-gradient(to bottom, #9054d0, transparent); -webkit-background-clip: text; -webkit-text-fill-color: transparent;"></i> Cost Price Effectiveness</h3>
+                    <h3><i class="fas fa-coins" style="background: linear-gradient(to bottom, #9054d0, transparent); -webkit-background-clip: text; -webkit-text-fill-color: transparent;"></i> Cost Price Effectiveness</h3>
                     <ul>
                         <li>Collective purchasing support</li>
                         <li>iLogistic module integration</li>
@@ -235,7 +235,7 @@ const cardContents = {
                     </ul>
                 </div>
                 <div class="hospitality-item management-system">
-                    <h3><i class="fas fa-tasks" style="background: linear-gradient(to bottom, #9054d0, transparent); -webkit-background-clip: text; -webkit-text-fill-color: transparent;"></i> Comprehensive Management</h3>
+                    <h3><i class="fas fa-cogs" style="background: linear-gradient(to bottom, #9054d0, transparent); -webkit-background-clip: text; -webkit-text-fill-color: transparent;"></i> Comprehensive Management</h3>
                     <ul>
                         <li>Integrated software for mixed-use properties</li>
                         <li>Hotel and resort management</li>
