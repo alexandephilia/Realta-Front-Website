@@ -143,7 +143,7 @@ handleCategories('#solutionsDropdownContent', 'product-details', {
         <div class="modules-title">KEY FEATURES</div>
         <div class="modules-grid">
             <div class="module">
-                <h4>HR Core</h4>
+                <h4 style="text-align: center;">HR Core</h4>
                 <div class="bento-grid">
                     <div class="bento-item large">
                         <p class="feature-description" style="text-align: center; font-size: 1em;">
@@ -151,24 +151,24 @@ handleCategories('#solutionsDropdownContent', 'product-details', {
                         </p>
                     </div>
                     <div class="bento-item">
-                        <i class="fas fa-user-tie"></i>
+                        <i class="fas fa-id-card-alt"></i>
                         <span>Personnel</span>
                     </div>
                     <div class="bento-item">
-                        <i class="fas fa-clock"></i>
+                        <i class="fas fa-calendar-check"></i>
                         <span>Attendance</span>
-                    </div>
-                    <div class="bento-item">
-                        <i class="fas fa-money-bill-wave"></i>
-                        <span>Payroll</span>
-                    </div>
-                    <div class="bento-item">
-                        <i class="fas fa-medkit"></i>
-                        <span>Medical</span>
                     </div>
                     <div class="bento-item">
                         <i class="fas fa-hand-holding-usd"></i>
                         <span>Loan</span>
+                    </div>
+                    <div class="bento-item">
+                        <i class="fas fa-heartbeat"></i>
+                        <span>Medical</span>
+                    </div>
+                    <div class="bento-item">
+                        <i class="fas fa-file-invoice-dollar"></i>
+                        <span>Payroll</span>
                     </div>
                 </div>
                 <style>
@@ -187,11 +187,10 @@ handleCategories('#solutionsDropdownContent', 'product-details', {
                     }
 
                     .bento-item {
-                        background-color: #fafafa;
-                        border: 1px solid #9054d081;
+                        background-color: #f7f4f482;
                         padding: 10px;
                         border-radius: 15px;
-                        font-size: 0.7em;
+                        font-size: 0.8em;
                         text-align: center;
                         display: flex;
                         flex-direction: column;
@@ -201,7 +200,6 @@ handleCategories('#solutionsDropdownContent', 'product-details', {
                         animation: fadeIn 0.5s ease-out forwards;
                         opacity: 0;
                         /* Add a noticeable shadow box */
-                        box-shadow: 0 3px 1px rgba(0, 0, 0, 0.2);
                     }
                     .bento-item:hover {
                         transform: translateY(2px);
@@ -225,8 +223,8 @@ handleCategories('#solutionsDropdownContent', 'product-details', {
                     }
                 </style>
             </div>
-            <div class="module">
-                <h4>HR Advance</h4>
+            <div class="module" style="border-left: 1px solid #e0e0e0; border-right: 1px solid #e0e0e0; border-radius: 0;">
+                   <h4 style="text-align: center;">HR Advance</h4>
                 <div class="bento-grid" style="grid-template-columns: repeat(2, 1fr); grid-template-rows: auto repeat(2, 1fr); max-width: 250px; margin: 0 auto;">
                     <div class="bento-item large" style="grid-column: 1 / -1;">
                         <p style="font-size: 1em;"><span style="font-weight: bold;">HR Advance</span>with our unified platform.</p>
@@ -250,7 +248,7 @@ handleCategories('#solutionsDropdownContent', 'product-details', {
                 </div>
             </div>
             <div class="module">
-                <h4>HR Mobile</h4>
+                 <h4 style="text-align: center;">HR Mobile</h4>
                <div class="bento-grid">
                 
                     <div class="bento-item">
