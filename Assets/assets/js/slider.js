@@ -88,34 +88,162 @@ function injectStyles() {
 injectStyles();
 
 const cardContents = {
-  hospitality: `
-    <div class="row g-0">
-    <div class="col-md-6">
-        <div class="card-body">
-            <h2 class="card-title fw-bold">Hospitality Solutions</h2>
-            <p class="card-text">End-to-end solutions for managing hotel operations, guest experiences, and property management with seamless integration and automation. Our comprehensive suite includes:</p>
-            <ul>
-                <li>Integrated property management systems</li>
-                <li>Guest experience enhancement tools</li>
-                <li>Automated operational workflows</li>
-                <li>Real-time analytics and reporting</li>
-            </ul>
-            <p class="card-text">Elevate your hospitality business with our cutting-edge technology and industry-specific expertise.</p>
+    hospitality: `
+        <style>
+            .hospitality-grid {
+                display: grid;
+                grid-template-areas: 
+                    "title"
+                    "description"
+                    "button"
+                    "properties";
+                gap: 15px;
+                padding: 20px;
+                border-radius: 15px;
+            }
+            .hospitality-item {
+                border-radius: 10px;
+                padding: 20px;
+                font-size: 16px;
+                transition: all 0.3s ease;
+                box-shadow: 0 4px 2px rgba(0, 0, 0, 0.15);
+                filter: blur(10);
+                -webkit-filter: blur(10);
+            }
+            .hospitality-item:hover {
+                transform: translateY(2px);
+                box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+            }
+            .hospitality-item h3 {
+                font-size: 1.3rem;
+                margin-bottom: 15px;
+                color: #333;
+                font-weight: 600;
+                position: relative;
+                padding-bottom: 8px;
+            }
+           .hospitality-item h3::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: linear-gradient(to right, transparent, #9054d0, transparent);
+    width: 100%;
+}
+            .hospitality-item ul {
+                padding-left: 0;
+                list-style-type: none;
+            }
+            .hospitality-item li {
+                font-size: 1rem;
+                margin-bottom: 0.5rem;
+                position: relative;
+                padding-left: 1.5em;
+            }
+            .hospitality-item li::before {
+                content: "•";
+                color: #9054d0;
+                position: absolute;
+                left: 0;
+                top: 0;
+            }
+            .title { grid-area: title; text-align: center; }
+            .description { 
+                grid-area: description; 
+                text-align: center; 
+                max-width: 70%;
+                margin: 0 auto;
+                margin-bottom: 15px;
+            }
+            .button-wrapper { 
+                grid-area: button; 
+                text-align: center;
+                margin-top: 10px;
+                margin-bottom: 20px;
+            }
+            .properties { 
+                grid-area: properties; 
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                gap: 20px;
+            }
+            @media (max-width: 768px) {
+                .hospitality-grid {
+                    padding: 10px;
+                }
+                .description {
+                    max-width: 100%;
+                }
+                .properties {
+                    grid-template-columns: 1fr;
+                }
+                .hospitality-item {
+                    padding: 15px;
+                }
+                .hospitality-item h3 {
+                    font-size: 1.1rem;
+                }
+            }
+        </style>
+        <div class="hospitality-grid">
+            <h2 class="card-title fw-bold mb-3 title">Hospitality Solutions</h2>
+            <p class="card-text mb-3 description">Comprehensive solutions for managing multi-brand properties, enhancing guest experiences, and optimizing hotel operations with seamless integration and automation.</p>
             <div class="button-wrapper">
-            <a href="#" class="business-btn btn-sm mt-3">Read More</a>
-        </div>
+                <a href="#" class="business-btn btn-sm">Learn More</a>
             </div>
-    </div>
-    <div class="col-md-6">
-    <div class="card-body d-flex align-items-center justify-content-center h-100">
-        <div class="video-industry position-relative overflow-hidden">
-            <div class="video-overlay"></div>
-            <iframe class="rounded-video" src="https://www.youtube.com/embed/sjL6Gl6ZIqs" allowfullscreen allow="fullscreen"></iframe>
- 
+            <div class="properties">
+                <div class="hospitality-item business-clarity">
+                    <h3><i class="fas fa-chart-line" style="background: linear-gradient(to bottom, #9054d0, transparent); -webkit-background-clip: text; -webkit-text-fill-color: transparent;"></i> Business Clarity & Synergy</h3>
+                    <ul>
+                        <li>Control and monitoring of multi-brand properties</li>
+                        <li>Synergy across hospitality portfolio</li>
+                        <li>Unified management platform</li>
+                    </ul>
+                </div>
+                <div class="hospitality-item service-excellence">
+                    <h3><i class="fas fa-star" style="background: linear-gradient(to bottom, #9054d0, transparent); -webkit-background-clip: text; -webkit-text-fill-color: transparent;"></i> Service Excellence & Revenue</h3>
+                    <ul>
+                        <li>Pre-arrival to post-departure engagement</li>
+                        <li>Enhanced service quality</li>
+                        <li>Repeat business encouragement</li>
+                    </ul>
+                </div>
+                <div class="hospitality-item one-stop-service">
+                    <h3><i class="fas fa-concierge-bell" style="background: linear-gradient(to bottom, #9054d0, transparent); -webkit-background-clip: text; -webkit-text-fill-color: transparent;"></i> One Stop Service</h3>
+                    <ul>
+                        <li>End-to-end ICT solutions</li>
+                        <li>Tailored for hospitality industry</li>
+                        <li>Integrated service offerings</li>
+                    </ul>
+                </div>
+                <div class="hospitality-item invoicing-system">
+                    <h3><i class="fas fa-file-invoice-dollar" style="background: linear-gradient(to bottom, #9054d0, transparent); -webkit-background-clip: text; -webkit-text-fill-color: transparent;"></i> Seamless Invoicing System</h3>
+                    <ul>
+                        <li>Unique fee schemes</li>
+                        <li>Performance-based billing</li>
+                        <li>Multi-hotel simultaneous invoicing</li>
+                    </ul>
+                </div>
+                <div class="hospitality-item cost-effectiveness">
+                    <h3><i class="fas fa-piggy-bank" style="background: linear-gradient(to bottom, #9054d0, transparent); -webkit-background-clip: text; -webkit-text-fill-color: transparent;"></i> Cost Price Effectiveness</h3>
+                    <ul>
+                        <li>Collective purchasing support</li>
+                        <li>iLogistic module integration</li>
+                        <li>Price efficiency achievement</li>
+                    </ul>
+                </div>
+                <div class="hospitality-item management-system">
+                    <h3><i class="fas fa-tasks" style="background: linear-gradient(to bottom, #9054d0, transparent); -webkit-background-clip: text; -webkit-text-fill-color: transparent;"></i> Comprehensive Management</h3>
+                    <ul>
+                        <li>Integrated software for mixed-use properties</li>
+                        <li>Hotel and resort management</li>
+                        <li>Golf course operations</li>
+                    </ul>
+                </div>
+            </div>
         </div>
-    </div>
-</div>
-</div>
     `,
   manufacturing: `
     <style>
@@ -370,7 +498,7 @@ const cardContents = {
                 left: 0;
                 right: 0;
                 height: 2px;
-                background: linear-gradient(to right, transparent, #9054d0, transparent);
+                background: linear-gradient(to right, transparent, #00008B, transparent);
                 width: 100%;
             }
             .property-item ul {
