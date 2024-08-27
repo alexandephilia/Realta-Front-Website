@@ -801,10 +801,10 @@ body.dark-mode .btn-custom.whatsapp-btn i {
   background: var(--bg);
   transition: 0.2s;
   box-shadow: rgba(0, 0, 0, 0.253) 0px 4px 8px !important;
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.7), rgba(240, 240, 240, 0.8)) !important;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.2), rgba(240, 240, 240, 0.9), rgba(255, 255, 255, 0)) !important;
   backdrop-filter: blur(10px) !important;
   -webkit-backdrop-filter: blur(10px) !important;
-  border: 2px solid rgba(255, 255, 255, 0.644) !important;
+  border: 2px solid rgba(255, 255, 255, 0.384) !important;
 }
 
 /* .card:hover {

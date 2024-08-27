@@ -88,7 +88,7 @@ function injectStyles() {
 injectStyles();
 
 const cardContents = {
-    hospitality: `
+  hospitality: `
         <style>
             .hospitality-grid {
                 display: grid;
