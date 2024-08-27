@@ -106,7 +106,7 @@ const cardContents = {
                 padding: 20px;
                 font-size: 16px;
                 transition: all 0.3s ease;
-                box-shadow: 0 4px 2px rgba(0, 0, 0, 0.15);
+                box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
                 filter: blur(10);
                 -webkit-filter: blur(10);
             }
@@ -263,7 +263,7 @@ const cardContents = {
             padding: 20px;
             font-size: 16px;
             transition: all 0.3s ease;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15)
         }
         .manufacturing-item:hover {
             transform: translateY(-5px);
@@ -475,7 +475,7 @@ const cardContents = {
                 padding: 20px;
                 font-size: 16px;
                 transition: all 0.3s ease;
-                box-shadow: 0 4px 2px rgba(0, 0, 0, 0.15);
+                box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
                 filter: blur(10);
                 -webkit-filter: blur(10);
             }
@@ -674,9 +674,9 @@ const cardContents = {
             padding: 20px;
             font-size: 16px;
             transition: all 0.3s ease;
-                box-shadow: 0 4px 2px rgba(0, 0, 0, 0.15);
-                filter: blur(10);
-                -webkit-filter: blur(10);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+            filter: blur(10);
+            -webkit-filter: blur(10);
         }
         .finance-item:hover {
             transform: translateY(2px);
@@ -783,6 +783,8 @@ const cardContents = {
         }
     }
 </style>
+    <div class="finance-grid">
+
         <h2 class="card-title fw-bold mb-3 title">Financial Services Solutions</h2>
         <p class="card-text mb-3 description">Tailored solutions for enhancing security, compliance, and operational efficiency in banking, insurance, and financial services. Our comprehensive approach addresses the unique challenges faced by the financial sector.</p>
         <div class="button-wrapper">
@@ -894,6 +896,7 @@ const cardContents = {
                 </ul>
             </div>
         </div>
+    </div>
     </div>
 `,
   hr: `<div class="card-body"><h2>Human Resource Solutions</h2><p>Content for Human Resource...</p></div>`,

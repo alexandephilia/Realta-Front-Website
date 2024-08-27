@@ -1577,6 +1577,14 @@ section{
   -webkit-backdrop-filter: blur(10px);
 }
 
+/* Dark mode styles */
+body.dark-mode .logo-container {
+  background: rgba(209, 209, 209, 0.034);
+  border-color: rgba(255, 255, 255, 0.034);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
 .logo-item {
   flex: 0 0 auto;
   margin: 1rem;
