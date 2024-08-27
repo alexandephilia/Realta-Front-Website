@@ -61,12 +61,11 @@ function injectStyles() {
         }
 
         .card-text, .card-body ul {
-            font-size: 1rem;
-            line-height: 1.6;
+            font-size: 16px;
             color: #555;
         }
         .card-body ul {
-            padding-left: 1.5rem;
+            padding-left: 3rem; /* Increased padding to move bullets more to the right */
             font-size: 0.9rem;
         }
         .card-body li {
@@ -90,22 +89,20 @@ injectStyles();
 
 const cardContents = {
   hospitality: `
-
-    
     <div class="row g-0">
     <div class="col-md-6">
         <div class="card-body">
             <h2 class="card-title fw-bold">Hospitality Solutions</h2>
-            <p class="card-text">Discover innovative solutions tailored for the hospitality industry. Our comprehensive suite of tools and services helps you enhance guest experiences, streamline operations, and boost your bottom line. Key features include:</p>
+            <p class="card-text">End-to-end solutions for managing hotel operations, guest experiences, and property management with seamless integration and automation. Our comprehensive suite includes:</p>
             <ul>
-                <li>Smart reservation systems</li>
-                <li>Contactless check-in and check-out</li>
-                <li>Integrated property management</li>
-                <li>Guest analytics and personalization</li>
+                <li>Integrated property management systems</li>
+                <li>Guest experience enhancement tools</li>
+                <li>Automated operational workflows</li>
+                <li>Real-time analytics and reporting</li>
             </ul>
-            <p class="card-text">Transform your hospitality business with our cutting-edge technology and industry-specific expertise.</p>
+            <p class="card-text">Elevate your hospitality business with our cutting-edge technology and industry-specific expertise.</p>
             <div class="button-wrapper">
-            <a href="#" class="btn-custom btn-sm mt-3">Read More</a>
+            <a href="#" class="business-btn btn-sm mt-3">Read More</a>
         </div>
             </div>
     </div>
@@ -121,34 +118,657 @@ const cardContents = {
 </div>
     `,
   manufacturing: `
-        <div class="row g-0">
-            <div class="col-md-6">
-                <div class="card-body ">
-                    <h2 class="card-title fw-bold">Manufacturing Excellence</h2>
-                    <p class="card-text">Elevate your manufacturing processes with our state-of-the-art solutions. Our integrated platform is designed to optimize production, increase efficiency, and drive innovation in your manufacturing operations. Key benefits include:</p>
-                    <ul>
-                        <li>Advanced production planning and scheduling</li>
-                        <li>Real-time inventory management</li>
-                        <li>Quality control and assurance systems</li>
-                        <li>Predictive maintenance for equipment</li>
-                    </ul>
-                    <p class="card-text">Empower your manufacturing business with data-driven insights and cutting-edge automation technologies.</p>
-                    <div class="button-wrapper">
-                        <a href="#" class="btn-custom btn-sm mt-3">Read More</a>
-                    </div>
-                    </div>
+    <style>
+        .manufacturing-grid {
+            display: grid;
+            grid-template-areas: 
+                "title"
+                "description"
+                "button"
+                "solutions";
+            gap: 15px;
+            padding: 20px;
+            border-radius: 15px;
+        }
+        .manufacturing-item {
+            border-radius: 10px;
+            padding: 20px;
+            font-size: 16px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .manufacturing-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+        }
+        .manufacturing-item h3 {
+            font-size: 1.2rem;
+            margin-bottom: 15px;
+            color: #333;
+            font-weight: 600;
+            position: relative;
+            padding-bottom: 10px;
+        }
+        .manufacturing-item h3::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: linear-gradient(to right, transparent, #0000FF, transparent);
+            width: 100%;
+        }
+        .manufacturing-item ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+        .manufacturing-item li {
+            margin-bottom: 8px;
+            font-size: 1rem;
+            line-height: 1.4;
+            position: relative;
+            padding-left: 20px;
+        }
+        .manufacturing-item li::before {
+            content: "•";
+            color: #0000FF;
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+        .title { grid-area: title; text-align: center; }
+        .description { 
+            grid-area: description; 
+            text-align: center; 
+            max-width: 70%;
+            margin: 0 auto;
+            margin-bottom: 15px;
+        }
+      
+        .button-wrapper { 
+            grid-area: button; 
+            text-align: center;
+            margin-top: 10px;
+            margin-bottom: 20px;
+        }
+
+        .solutions { 
+            grid-area: solutions; 
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+      /* Mobile Styles */
+    @media (max-width: 768px) {
+        .manufacturing-grid {
+            padding: 10px;
+        }
+        .description {
+            max-width: 100%;
+        }
+        .solutions {
+            grid-template-columns: 1fr;
+        }
+        .manufacturing-item {
+            padding: 15px;
+        }
+        .manufacturing-item h3 {
+            font-size: 1.1rem;
+        }
+        .manufacturing-item li {
+            font-size: 0.9rem;
+        }
+    }
+    </style>
+    <div class="manufacturing-grid">
+        <h2 class="card-title fw-bold mb-3 title">Manufacturing Excellence</h2>
+        <p class="card-text mb-3 description">Comprehensive solutions to optimize production, streamline supply chains, and ensure quality control across all manufacturing processes. Our integrated platform offers advanced tools for every aspect of manufacturing.</p>
+        <div class="button-wrapper">
+            <a href="#" class="business-btn btn-sm">Learn More</a>
+        </div>
+        <div class="solutions">
+            <div class="manufacturing-item production">
+                <h3><i class="fas fa-industry" style="background: linear-gradient(to right, #000080, transparent); -webkit-background-clip: text; -webkit-text-fill-color: transparent;"></i> Production Optimization</h3>
+                <ul>
+                    <li>Advanced scheduling algorithms</li>
+                    <li>Real-time production monitoring</li>
+                    <li>Predictive maintenance</li>
+                </ul>
             </div>
-            <div class="col-md-6">
-                <div class="card-body d-flex align-items-center justify-content-center h-100">
-                    <img src="https://d2csxpduxe849s.cloudfront.net/media/E32629C6-9347-4F84-81FEAEF7BFA342B3/700E4D82-4F55-4EE1-9B6CA0C194C84956/182DC208-2737-40B8-A720EEBF9FA9B88F/WebsiteJpg_XL-FMTEC_Main%20Visual_Red_Website.jpg" alt="Manufacturing Facility" class="img-fluid rounded industry-image">
+            <div class="manufacturing-item supply-chain">
+                <h3><i class="fas fa-link" style="background: linear-gradient(to right, #000080, transparent); -webkit-background-clip: text; -webkit-text-fill-color: transparent;"></i> Supply Chain Management</h3>
+                <ul>
+                    <li>End-to-end visibility</li>
+                    <li>Demand forecasting</li>
+                    <li>Inventory optimization</li>
+                </ul>
+            </div>
+            <div class="manufacturing-item quality-control">
+                <h3><i class="fas fa-check-circle" style="background: linear-gradient(to right, #000080, transparent); -webkit-background-clip: text; -webkit-text-fill-color: transparent;"></i> Quality Control Systems</h3>
+                <ul>
+                    <li>Automated inspection processes</li>
+                    <li>Statistical process control</li>
+                    <li>Defect tracking and analysis</li>
+                </ul>
+            </div>
+            <div class="manufacturing-item analytics">
+                <h3><i class="fas fa-chart-line" style="background: linear-gradient(to right, #000080, transparent); -webkit-background-clip: text; -webkit-text-fill-color: transparent;"></i> Process Analytics</h3>
+                <ul>
+                    <li>Real-time performance dashboards</li>
+                    <li>Predictive analytics</li>
+                    <li>Machine learning integration</li>
+                </ul>
+            </div>
+            <div class="manufacturing-item lean">
+                <h3><i class="fas fa-compress-arrows-alt" style="background: linear-gradient(to right, #000080, transparent); -webkit-background-clip: text; -webkit-text-fill-color: transparent;"></i> Lean Manufacturing</h3>
+                <ul>
+                    <li>Value stream mapping</li>
+                    <li>Continuous improvement tools</li>
+                    <li>Waste reduction strategies</li>
+                </ul>
+            </div>
+            <div class="manufacturing-item automation">
+                <h3><i class="fas fa-robot" style="background: linear-gradient(to right, #000080, transparent); -webkit-background-clip: text; -webkit-text-fill-color: transparent;"></i> Factory Automation</h3>
+                <ul>
+                    <li>Robotics integration</li>
+                    <li>IoT device management</li>
+                    <li>Automated material handling</li>
+                </ul>
+            </div>
+            <div class="manufacturing-item compliance">
+                <h3><i class="fas fa-clipboard-check" style="background: linear-gradient(to right, #000080, transparent); -webkit-background-clip: text; -webkit-text-fill-color: transparent;"></i> Regulatory Compliance</h3>
+                <ul>
+                    <li>Automated documentation</li>
+                    <li>Compliance tracking</li>
+                    <li>Audit trail management</li>
+                </ul>
+            </div>
+            <div class="manufacturing-item sustainability">
+                <h3><i class="fas fa-leaf" style="background: linear-gradient(to right, #000080, transparent); -webkit-background-clip: text; -webkit-text-fill-color: transparent;"></i> Sustainability Initiatives</h3>
+                <ul>
+                    <li>Energy consumption monitoring</li>
+                    <li>Waste reduction tracking</li>
+                    <li>Carbon footprint analysis</li>
+                </ul>
+            </div>
+            <div class="manufacturing-item workforce">
+                <h3><i class="fas fa-users" style="background: linear-gradient(to right, #000080, transparent); -webkit-background-clip: text; -webkit-text-fill-color: transparent;"></i> Workforce Management</h3>
+                <ul>
+                    <li>Skill-based scheduling</li>
+                    <li>Training and certification tracking</li>
+                    <li>Performance analytics</li>
+                </ul>
+            </div>
+            <div class="manufacturing-item customization">
+                <h3><i class="fas fa-cogs" style="background: linear-gradient(to right, #000080, transparent); -webkit-background-clip: text; -webkit-text-fill-color: transparent;"></i> Product Customization</h3>
+                <ul>
+                    <li>Configure-to-order systems</li>
+                    <li>Mass customization tools</li>
+                    <li>Product configurators</li>
+                </ul>
+            </div>
+            <div class="manufacturing-item traceability">
+                <h3><i class="fas fa-search-location" style="background: linear-gradient(to right, #000080, transparent); -webkit-background-clip: text; -webkit-text-fill-color: transparent;"></i> Product Traceability</h3>
+                <ul>
+                    <li>Serialization and tracking</li>
+                    <li>Blockchain integration</li>
+                    <li>Recall management</li>
+                </ul>
+            </div>
+            <div class="manufacturing-item integration">
+                <h3><i class="fas fa-network-wired" style="background: linear-gradient(to right, #000080, transparent); -webkit-background-clip: text; -webkit-text-fill-color: transparent;"></i> Systems Integration</h3>
+                <ul>
+                    <li>ERP integration</li>
+                    <li>MES and SCADA connectivity</li>
+                    <li>API-driven architecture</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+`,
+  // Add more content for other tabs here
+  property: `
+        <style>
+            .property-grid {
+                display: grid;
+                grid-template-areas: 
+                    "title"
+                    "description"
+                    "button"
+                    "properties"
+                    "features";
+                gap: 15px;
+                padding: 20px;
+                border-radius: 15px;
+            }
+            .property-item {
+                border-radius: 10px;
+                padding: 20px;
+                font-size: 16px;
+                transition: all 0.3s ease;
+                box-shadow: 0 4px 2px rgba(0, 0, 0, 0.15);
+                filter: blur(10);
+                -webkit-filter: blur(10);
+            }
+            .property-item:hover {
+                transform: translateY(2px);
+                box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+            }
+            .property-item h3 {
+                font-size: 1.3rem;
+                margin-bottom: 15px;
+                color: #333;
+                font-weight: 600;
+                position: relative;
+                padding-bottom: 8px;
+            }
+            .property-item h3::after {
+                content: '';
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                height: 2px;
+                background: linear-gradient(to right, transparent, #9054d0, transparent);
+                width: 100%;
+            }
+            .property-item ul {
+                list-style-type: none;
+                padding-left: 0;
+            }
+            .property-item li {
+                margin-bottom: 8px;
+                font-size: 1rem;
+                line-height: 1.4;
+                position: relative;
+                padding-left: 20px;
+            }
+            .property-item li::before {
+                content: "•";
+                color: #9054d0;
+                position: absolute;
+                left: 0;
+                top: 0;
+            }
+            .title { grid-area: title; text-align: center; }
+            .description { 
+                grid-area: description; 
+                text-align: center; 
+                max-width: 70%;
+                margin: 0 auto;
+            }
+            .button-wrapper { 
+                grid-area: button; 
+                text-align: center;
+                margin-top: -10px;
+            }
+            .properties { 
+                grid-area: properties; 
+                display: grid;
+                grid-template-columns: 1fr 1fr 1fr;
+                gap: 20px;
+            }
+            .features { 
+                grid-area: features; 
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: 20px;
+            }
+/* Mobile Styles */
+    @media (max-width: 768px) {
+        .property-grid {
+            padding: 10px;
+        }
+        .description {
+            max-width: 100%;
+            font-size: 1rem !important;
+        }
+        .properties, .features {
+            grid-template-columns: 1fr;
+        }
+        .property-item {
+            padding: 15px;
+        }
+        .property-item h3 {
+            font-size: 1.2rem;
+        }
+        .property-item li {
+            font-size: 0.9rem;
+        }
+        .title {
+            font-size: 1.5rem;
+        }
+        .button-wrapper {
+            margin-top: 10px;
+        }
+        svg {
+            width: 40px;
+            height: 40px;
+        }
+    }
+
+        </style>
+        <div class="property-grid">
+            <h2 class="card-title fw-bold mb-3 title">Property & High-Rise Building Solutions</h2>
+            <p class="card-text mb-3 description">Integrated solutions for efficient management of property portfolios, tenant services, and building operations with real-time monitoring and control.</p>
+            <div class="button-wrapper">
+                <a href="#" class="business-btn btn-sm">Learn More</a>
+            </div>
+            <div class="properties">
+                <div class="property-item commercial">
+                    <svg width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M10 40V10C10 7.79086 11.7909 6 14 6H36C38.2091 6 40 7.79086 40 10V40C40 42.2091 38.2091 44 36 44H14C11.7909 44 10 42.2091 10 40Z" stroke="url(#paint0_linear)" stroke-width="2"/>
+                        <path d="M18 16H32M18 24H32M18 32H32" stroke="url(#paint1_linear)" stroke-width="2" stroke-linecap="round"/>
+                        <defs>
+                            <linearGradient id="paint0_linear" x1="25" y1="6" x2="25" y2="44" gradientUnits="userSpaceOnUse">
+                                <stop stop-color="#00008B"/>
+                                <stop offset="1" stop-color="#00008B" stop-opacity="0"/>
+                            </linearGradient>
+                            <linearGradient id="paint1_linear" x1="25" y1="16" x2="25" y2="32" gradientUnits="userSpaceOnUse">
+                                <stop stop-color="#00008B"/>
+                                <stop offset="1" stop-color="#00008B" stop-opacity="0"/>
+                            </linearGradient>
+                        </defs>
+                    </svg>
+                    <h3>Commercial Properties</h3>
+                    <ul>
+                        <li>Shopping Center</li>
+                        <li>Office</li>
+                        <li>Industrial Estate</li>
+                        <li>Warehouse</li>
+                        <li>Datacenter</li>
+                    </ul>
+                </div>
+                <div class="property-item residential">
+                    <svg width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M25 10L40 25V40H10V25L25 10Z" stroke="url(#paint0_linear)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M20 40V30H30V40" stroke="url(#paint1_linear)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <defs>
+                            <linearGradient id="paint0_linear" x1="25" y1="10" x2="25" y2="40" gradientUnits="userSpaceOnUse">
+                                <stop stop-color="#00008B"/>
+                                <stop offset="1" stop-color="#00008B" stop-opacity="0"/>
+                            </linearGradient>
+                            <linearGradient id="paint1_linear" x1="25" y1="30" x2="25" y2="40" gradientUnits="userSpaceOnUse">
+                                <stop stop-color="#00008B"/>
+                                <stop offset="1" stop-color="#00008B" stop-opacity="0"/>
+                            </linearGradient>
+                        </defs>
+                    </svg>
+                    <h3>Residential</h3>
+                    <ul>
+                        <li>Apartment</li>
+                        <li>Landed House</li>
+                    </ul>
+                </div>
+                <div class="property-item mixed-use">
+                    <svg width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect x="10" y="10" width="30" height="30" rx="2" stroke="url(#paint0_linear)" stroke-width="2"/>
+                        <path d="M10 20H40M20 10V40M30 10V40" stroke="url(#paint1_linear)" stroke-width="2"/>
+                        <defs>
+                            <linearGradient id="paint0_linear" x1="25" y1="10" x2="25" y2="40" gradientUnits="userSpaceOnUse">
+                                <stop stop-color="#00008B"/>
+                                <stop offset="1" stop-color="#00008B" stop-opacity="0"/>
+                            </linearGradient>
+                            <linearGradient id="paint1_linear" x1="25" y1="10" x2="25" y2="40" gradientUnits="userSpaceOnUse">
+                                <stop stop-color="#00008B"/>
+                                <stop offset="1" stop-color="#00008B" stop-opacity="0"/>
+                            </linearGradient>
+                        </defs>
+                    </svg>
+                    <h3>Mixed-use Property</h3>
+                    <ul>
+                        <li>Shopping Center</li>
+                        <li>Hotel</li>
+                        <li>Apartment</li>
+                        <li>Office</li>
+                    </ul>
                 </div>
             </div>
         </div>
     `,
-  // Add more content for other tabs here
-  finance: `<div class="card-body"><h2>Bank & Finance Solutions</h2><p>Content for Bank & Finance...</p></div>`,
+  finance: `
+    <style>
+        .finance-grid {
+            display: grid;
+            grid-template-areas: 
+                "title"
+                "description"
+                "button"
+                "solutions"
+                "features";
+            gap: 15px;
+            padding: 20px;
+            border-radius: 15px;
+        }
+        .finance-item {
+            border-radius: 10px;
+            padding: 20px;
+            font-size: 16px;
+            transition: all 0.3s ease;
+                box-shadow: 0 4px 2px rgba(0, 0, 0, 0.15);
+                filter: blur(10);
+                -webkit-filter: blur(10);
+        }
+        .finance-item:hover {
+            transform: translateY(2px);
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        }
+        .finance-item h3 {
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+            color: #333;
+            font-weight: 600;
+            position: relative;
+            padding-bottom: 8px;
+        }
+        .finance-item h3::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: linear-gradient(to right, transparent, #FF0000, transparent);
+            width: 100%;
+        }
+        .finance-item ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+        .finance-item li {
+            margin-bottom: 8px;
+            font-size: 1rem;
+            line-height: 1.4;
+            position: relative;
+            padding-left: 20px;
+        }
+        .finance-item li::before {
+            content: "•";
+            color: #4CAF50;
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+        .title { grid-area: title; text-align: center; }
+        .description { 
+             grid-area: description; 
+        text-align: center; 
+        max-width: 70%;
+        margin: 0 auto;
+        margin-bottom: 15px;
+        }
+        .button-wrapper { 
+               grid-area: button; 
+        text-align: center;
+        margin-top: 10px;
+        margin-bottom: 20px;
+        }
+        .solutions { 
+            grid-area: solutions; 
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 20px;
+        }
+        .features { 
+            grid-area: features; 
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 20px;
+            max-width: 66.67%;
+            margin: 20px auto 0;
+        }
+             /* Mobile Styles */
+    @media (max-width: 768px) {
+        .finance-grid {
+            padding: 10px;
+        }
+        .description {
+            max-width: 100%;
+            font-size: 1rem !important;
+        }
+        .solutions, .features {
+            grid-template-columns: 1fr;
+        }
+        .finance-item {
+            padding: 15px;
+        }
+        .finance-item h3 {
+            font-size: 1.2rem;
+        }
+        .finance-item li {
+            font-size: 0.9rem;
+        }
+        .title {
+            font-size: 1.5rem;
+        }
+        .button-wrapper {
+            margin-top: 10px;
+        }
+        .features {
+            max-width: 100%;
+            margin: 20px 0 0;
+        }
+        svg {
+            width: 40px;
+            height: 40px;
+        }
+    }
+</style>
+        <h2 class="card-title fw-bold mb-3 title">Financial Services Solutions</h2>
+        <p class="card-text mb-3 description">Tailored solutions for enhancing security, compliance, and operational efficiency in banking, insurance, and financial services. Our comprehensive approach addresses the unique challenges faced by the financial sector.</p>
+        <div class="button-wrapper">
+            <a href="#" class="business-btn btn-sm">Learn More</a>
+        </div>
+        <div class="solutions">
+            <div class="finance-item banking">
+                <div class="icon-title-wrapper">
+                    <svg width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M25 5L5 15L25 25L45 15L25 5Z" fill="url(#paint0_linear_security)"/>
+                        <path d="M5 35L25 45L45 35M5 25L25 35L45 25" stroke="url(#paint1_linear_security)" stroke-width="2"/>
+                        <defs>
+                            <linearGradient id="paint0_linear_security" x1="5" y1="15" x2="45" y2="15" gradientUnits="userSpaceOnUse">
+                                <stop stop-color="#FF0000"/>
+                                <stop offset="1" stop-color="#FF0000" stop-opacity="0"/>
+                            </linearGradient>
+                            <linearGradient id="paint1_linear_security" x1="5" y1="25" x2="45" y2="25" gradientUnits="userSpaceOnUse">
+                                <stop stop-color="#FF0000"/>
+                                <stop offset="1" stop-color="#FF0000" stop-opacity="0"/>
+                            </linearGradient>
+                        </defs>
+                    </svg>
+                    <h3>IT SECURITY</h3>
+                </div>
+                <ul>
+                    <li>Tackle the complex cyber threats management</li>
+                    <li>Protect all data assets, devices, network and</li>
+                    <li>applications from cyber threats</li>
+                    <li>Prevent data breaches</li>
+                    <li>Prevent ransomware</li>
+                </ul>
+            </div>
+            <div class="finance-item compliance">
+                <div class="icon-title-wrapper">
+                    <svg width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M10 25C10 16.7157 16.7157 10 25 10C33.2843 10 40 16.7157 40 25C40 33.2843 33.2843 40 25 40" stroke="url(#paint0_linear_service)" stroke-width="2"/>
+                        <path d="M25 20V30M20 25H30" stroke="url(#paint1_linear_service)" stroke-width="2"/>
+                        <defs>
+                            <linearGradient id="paint0_linear_service" x1="10" y1="25" x2="40" y2="25" gradientUnits="userSpaceOnUse">
+                                <stop stop-color="#FF0000"/>
+                                <stop offset="1" stop-color="#FF0000" stop-opacity="0"/>
+                            </linearGradient>
+                            <linearGradient id="paint1_linear_service" x1="20" y1="25" x2="30" y2="25" gradientUnits="userSpaceOnUse">
+                                <stop stop-color="#FF0000"/>
+                                <stop offset="1" stop-color="#FF0000" stop-opacity="0"/>
+                            </linearGradient>
+                        </defs>
+                    </svg>
+                    <h3>IT SERVICE MANAGEMENT</h3>
+                </div>
+                <ul>
+                    <li>Resolve your organization's support IT</li>
+                    <li>incidents, help your users report</li>
+                    <li>Manage IT assets</li>
+                    <li>Automate IT processes</li>
+                    <li>Improve IT service delivery</li>
+                </ul>
+            </div>
+            <div class="finance-item operations">
+                <div class="icon-title-wrapper">
+                    <svg width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect x="10" y="10" width="30" height="30" rx="2" stroke="url(#paint0_linear_asset)" stroke-width="2"/>
+                        <path d="M17 25H33M25 17V33" stroke="url(#paint1_linear_asset)" stroke-width="2"/>
+                        <defs>
+                            <linearGradient id="paint0_linear_asset" x1="10" y1="25" x2="40" y2="25" gradientUnits="userSpaceOnUse">
+                                <stop stop-color="#FF0000"/>
+                                <stop offset="1" stop-color="#FF0000" stop-opacity="0"/>
+                            </linearGradient>
+                            <linearGradient id="paint1_linear_asset" x1="17" y1="25" x2="33" y2="25" gradientUnits="userSpaceOnUse">
+                                <stop stop-color="#FF0000"/>
+                                <stop offset="1" stop-color="#FF0000" stop-opacity="0"/>
+                            </linearGradient>
+                        </defs>
+                    </svg>
+                    <h3>IT ASSET MANAGEMENT</h3>
+                </div>
+                <ul>
+                    <li>Optimize IT and software asset, plan, deploy</li>
+                    <li>and manage software licenses</li>
+                    <li>Reduce IT costs</li>
+                    <li>Improve IT efficiency</li>
+                    <li>Enhance decision-making</li>
+                </ul>
+            </div>
+        </div>
+        <div class="features">
+            <div class="finance-item operations">
+                <div class="icon-title-wrapper">
+                    <svg width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="25" cy="25" r="20" stroke="url(#paint0_linear_endpoint)" stroke-width="2"/>
+                        <path d="M25 15V35M15 25H35" stroke="url(#paint1_linear_endpoint)" stroke-width="2"/>
+                        <defs>
+                            <linearGradient id="paint0_linear_endpoint" x1="5" y1="25" x2="45" y2="25" gradientUnits="userSpaceOnUse">
+                                <stop stop-color="#FF0000"/>
+                                <stop offset="1" stop-color="#FF0000" stop-opacity="0"/>
+                            </linearGradient>
+                            <linearGradient id="paint1_linear_endpoint" x1="15" y1="25" x2="35" y2="25" gradientUnits="userSpaceOnUse">
+                                <stop stop-color="#FF0000"/>
+                                <stop offset="1" stop-color="#FF0000" stop-opacity="0"/>
+                            </linearGradient>
+                        </defs>
+                    </svg>
+                    <h3>UNIFIED ENDPOINT MANAGEMENT</h3>
+                </div>
+                <ul>
+                    <li>Centrally manage, monitor, and secure to each endpoint across your organization</li>
+                    <li>Manage mobile devices, laptops, desktops, servers, and IoT devices</li>
+                    <li>Windows 11 Manage every endpoint</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+`,
   hr: `<div class="card-body"><h2>Human Resource Solutions</h2><p>Content for Human Resource...</p></div>`,
-  property: `<div class="card-body"><h2>Property Solutions</h2><p>Content for Property...</p></div>`,
   industry: `<div class="card-body"><h2>Industry Solutions</h2><p>Content for Industry...</p></div>`,
   hotel: `<div class="card-body"><h2>Hotel Solutions</h2><p>Content for Hotel...</p></div>`,
 };
@@ -620,8 +1240,6 @@ function isElementInViewport(el) {
     rect.right <= (window.innerWidth || document.documentElement.clientWidth)
   );
 }
-
-
 
 // Initial check on page load
 document.addEventListener("DOMContentLoaded", handleScroll);

@@ -2603,14 +2603,15 @@
                             <span class="tag-item" onclick="toggleCard(this, 'hospitality')">
                                 Hospitality
                             </span>
-                            <span class="tag-item" onclick="toggleCard(this, 'manufacturing')">
-                                </i> Manufacturing
-                            </span>
-                            <span class="tag-item" onclick="toggleCard(this, 'finance')">
-                                FSI (Finance)
-                            </span>
                             <span class="tag-item" onclick="toggleCard(this, 'property')">
-                                Property
+                                Property & High-Rise Building
+                            </span>
+                            
+                            <span class="tag-item" onclick="toggleCard(this, 'manufacturing')">
+                            </i> Manufacturing
+                        </span>
+                            <span class="tag-item" onclick="toggleCard(this, 'finance')">
+                                FSI
                             </span>
                             <span class="tag-item" onclick="toggleCard(this, 'industry')">
                                 Others
@@ -2863,7 +2864,6 @@
             </div>
         </div>
     </section>
-
     <style>
         /* Modern and Minimalist Business Button Styles */
         .business-btn {
@@ -2877,7 +2877,7 @@
             user-select: none;
             border: none;
             border-radius: 10px;
-            transition: all 0.3s ease;
+            transition: all 0.3s ease, opacity 0.3s ease; /* Added opacity transition */
             color: #9054d0;
             background: transparent;
             border: 2px solid #9054d0ab;
@@ -2886,6 +2886,8 @@
             max-width: 130px;
             margin: 0 auto;
             box-shadow: 0 2px 4px rgba(144, 84, 208, 0.2);
+            opacity: 0; /* Start with 0 opacity */
+            animation: fadeIn 0.5s ease-in-out forwards; /* Fade in animation */
         }
 
         .business-btn:hover {
@@ -2898,6 +2900,12 @@
         .business-btn:active {
             transform: translateY(1px);
             box-shadow: 0 1px 4px rgba(144, 84, 208, 0.2);
+        }
+
+        /* Keyframes for fade in animation */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
         }
     </style>
 
