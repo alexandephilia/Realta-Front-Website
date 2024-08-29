@@ -3704,23 +3704,8 @@
                         <style>
                             .address-wrapper {
                                 position: relative;
-                                padding-left: 15px;
+                                padding-left: 1px;
                                 margin-bottom: 20px;
-                            }
-                        
-                            .address-wrapper::before {
-                                content: '';
-                                position: absolute;
-                                left: 0;
-                                top: 0;
-                                bottom: 0;
-                                width: 1px; /* Slimmed down that thicc border for you */
-                                background: linear-gradient(to bottom, 
-                                            transparent, 
-                                            #1e1e1f 20%, 
-                                            #000000 50%, 
-                                            #1e1e1f 80%, 
-                                            transparent);
                             }
                         
                             .address-details {
@@ -3730,14 +3715,9 @@
                                 margin-bottom: 0;
                             }
                         
-                            .country {
-                                font-weight: bold;
-                                color: #7a4bd7;
-                            }
-                        
                             @media (max-width: 768px) {
                                 .address-details {
-                                    font-size: 14px;
+                                    font-size: 15px !important;
                                 }
                             }
                         </style>
