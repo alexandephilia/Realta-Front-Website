@@ -1,8 +1,6 @@
 document.addEventListener('DOMContentLoaded', function() {
     const words = [
         { text: "BUSINESS" },
-        { text: "INNOVATION" },
-        { text: "TECHNOLOGY" },
         { text: "GROWTH" },
         { text: "STRATEGY" },
         { text: "LEADERSHIP" }
