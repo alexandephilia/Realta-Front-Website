@@ -106,10 +106,21 @@ const cardContents = {
                 padding: 20px;
                 font-size: 16px;
                 transition: all 0.3s ease;
+<<<<<<< HEAD
                 filter: blur(10);
                 -webkit-filter: blur(10);
             }
          
+=======
+                box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+                filter: blur(10);
+                -webkit-filter: blur(10);
+            }
+            .hospitality-item:hover {
+                transform: translateY(2px);
+                box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+            }
+>>>>>>> origin/main
             .hospitality-item h3 {
                 font-size: 1.3rem;
                 margin-bottom: 15px;
@@ -259,8 +270,17 @@ const cardContents = {
             padding: 20px;
             font-size: 16px;
             transition: all 0.3s ease;
+<<<<<<< HEAD
         }
     
+=======
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15)
+        }
+        .manufacturing-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+        }
+>>>>>>> origin/main
         .manufacturing-item h3 {
             font-size: 1.2rem;
             margin-bottom: 15px;
@@ -467,10 +487,21 @@ const cardContents = {
                 padding: 20px;
                 font-size: 16px;
                 transition: all 0.3s ease;
+<<<<<<< HEAD
                 filter: blur(10);
                 -webkit-filter: blur(10);
             }
       
+=======
+                box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+                filter: blur(10);
+                -webkit-filter: blur(10);
+            }
+            .property-item:hover {
+                transform: translateY(2px);
+                box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+            }
+>>>>>>> origin/main
             .property-item h3 {
                 font-size: 1.3rem;
                 margin-bottom: 15px;
@@ -662,10 +693,21 @@ const cardContents = {
             padding: 20px;
             font-size: 16px;
             transition: all 0.3s ease;
+<<<<<<< HEAD
             filter: blur(10);
             -webkit-filter: blur(10);
         }
       
+=======
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+            filter: blur(10);
+            -webkit-filter: blur(10);
+        }
+        .finance-item:hover {
+            transform: translateY(2px);
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        }
+>>>>>>> origin/main
         .finance-item h3 {
             font-size: 1.3rem;
             margin-bottom: 15px;
