@@ -4833,18 +4833,14 @@
 <script>
     document.addEventListener('DOMContentLoaded', function() {
         const sections = document.querySelectorAll('section');
-        let lastScrollTop = 0;
         let isScrolling = false;
         let scrollTimeout;
 
         const fadeInOutObserver = new IntersectionObserver((entries) => {
-            const currentScrollTop = window.pageYOffset || document.documentElement.scrollTop;
-            const isScrollingDown = currentScrollTop > lastScrollTop;
             entries.forEach(entry => {
                 entry.target.classList.toggle('is-visible', entry.isIntersecting);
-                entry.target.classList.toggle('is-hidden', !entry.isIntersecting && isScrollingDown);
+                entry.target.classList.toggle('is-hidden', !entry.isIntersecting);
             });
-            lastScrollTop = currentScrollTop <= 0 ? 0 : currentScrollTop;
         }, { rootMargin: '-10% 0px', threshold: 0.1 });
 
         sections.forEach(section => fadeInOutObserver.observe(section));
@@ -4903,7 +4899,7 @@
             }
 
             if (targetSection) {
-                smoothScroll(targetSection, 1000);
+                targetSection.scrollIntoView({ behavior: 'smooth' });
             }
 
             setTimeout(() => {
@@ -4911,10 +4907,10 @@
             }, 1000);
         }, 50);
 
+        // Use passive event listeners for better performance
         window.addEventListener('wheel', function(e) {
-            e.preventDefault();
             smoothScrollToSection(e.deltaY);
-        }, { passive: false });
+        }, { passive: true });
 
         // Add touch support for mobile devices
         let touchStartY = 0;
@@ -4930,7 +4926,7 @@
             if (Math.abs(deltaY) > 50) { // Threshold to trigger scroll
                 smoothScrollToSection(deltaY);
             }
-        }, { passive: false });
+        }, { passive: true });
     });
 </script>
 <!-- ? FADE EFFECT SECTION -->
