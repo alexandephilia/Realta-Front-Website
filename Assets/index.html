@@ -1112,7 +1112,23 @@
                 <!-- Carousel Start -->
                 <style>
                       #businessCarousel {
-                        height: 600px; /* Adjust this value to your desired fixed height */
+                        height: 600px; /* Fixed height for desktop */
+                    }
+
+                    @media (max-width: 768px) {
+                        #businessCarousel {
+                            height: 1100px; /* Smaller fixed height for mobile */
+                        }
+                    }
+
+                    .carousel-item {
+                        height: 100%; /* Ensure carousel items fill the container */
+                    }
+
+                    .carousel-item img {
+                        object-fit: cover; /* Maintain aspect ratio while filling the container */
+                        width: 100%;
+                        height: 100%;
                     }
 
                     @keyframes fadeInRight {
@@ -1136,9 +1152,6 @@
                             opacity: 0;
                             transform: translate3d(-100%, 0, 0);
                         }
-                    }
-                    #businessCarousel {
-                        height: 600px; /* Adjust this value to your desired fixed height */
                     }
 
                     .carousel-item {
