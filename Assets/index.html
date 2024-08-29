@@ -4829,25 +4829,13 @@
     });
 </script>
 
-<!-- ? SCROLL SMOOTHER EFFECT SECTION -->
+<!-- ? SMOOTH SCROLL EFFECT SECTION -->
 <script>
     document.addEventListener('DOMContentLoaded', function() {
-        const sections = document.querySelectorAll('section');
-        let isScrolling = false;
-        let scrollTimeout;
-
-        const fadeInOutObserver = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                entry.target.classList.toggle('is-visible', entry.isIntersecting);
-                entry.target.classList.toggle('is-hidden', !entry.isIntersecting);
-            });
-        }, { rootMargin: '-10% 0px', threshold: 0.1 });
-
-        sections.forEach(section => fadeInOutObserver.observe(section));
-
+        
         function smoothScroll(target, duration) {
             const targetElement = document.querySelector(target);
-            const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset;
+            const targetPosition = targetElement.getBoundingClientRect().top;
             const startPosition = window.pageYOffset;
             const distance = targetPosition - startPosition;
             let startTime = null;
@@ -4877,59 +4865,30 @@
             });
         });
 
-        function debounce(func, wait) {
-            let timeout;
-            return function(...args) {
-                clearTimeout(timeout);
-                timeout = setTimeout(() => func.apply(this, args), wait);
-            };
-        }
+        let isScrolling = false;
+        let lastScrollTop = 0;
 
-        const smoothScrollToSection = debounce((delta) => {
-            if (isScrolling) return;
+        window.addEventListener('scroll', function() {
+            if (!isScrolling) {
+                window.requestAnimationFrame(function() {
+                    // (Do some fancy shit here)
+                    const currentScrollTop = window.pageYOffset || document.documentElement.scrollTop;
+                    
+                    // (Add your smooth scrolling magic here)
+                    // For example, you could add a subtle parallax effect:
+                    document.querySelectorAll('.parallax').forEach(elem => {
+                        const speed = elem.dataset.speed;
+                        elem.style.transform = `translateY(${currentScrollTop * speed}px)`;
+                    });
+
+                    lastScrollTop = currentScrollTop <= 0 ? 0 : currentScrollTop;
+                    isScrolling = false;
+                });
+            }
             isScrolling = true;
-
-            const currentSection = document.elementFromPoint(window.innerWidth / 2, window.innerHeight / 2).closest('section');
-            let targetSection;
-
-            if (delta > 0 && currentSection.nextElementSibling) {
-                targetSection = currentSection.nextElementSibling;
-            } else if (delta < 0 && currentSection.previousElementSibling) {
-                targetSection = currentSection.previousElementSibling;
-            }
-
-            if (targetSection) {
-                targetSection.scrollIntoView({ behavior: 'smooth' });
-            }
-
-            setTimeout(() => {
-                isScrolling = false;
-            }, 1000);
-        }, 50);
-
-        // Use passive event listeners for better performance
-        window.addEventListener('wheel', function(e) {
-            smoothScrollToSection(e.deltaY);
-        }, { passive: true });
-
-        // Add touch support for mobile devices
-        let touchStartY = 0;
-        let touchEndY = 0;
-
-        window.addEventListener('touchstart', function(e) {
-            touchStartY = e.changedTouches[0].screenY;
-        }, { passive: true });
-
-        window.addEventListener('touchend', function(e) {
-            touchEndY = e.changedTouches[0].screenY;
-            const deltaY = touchStartY - touchEndY;
-            if (Math.abs(deltaY) > 50) { // Threshold to trigger scroll
-                smoothScrollToSection(deltaY);
-            }
         }, { passive: true });
     });
 </script>
-<!-- ? FADE EFFECT SECTION -->
 <style>
     section {
        opacity: 0;
