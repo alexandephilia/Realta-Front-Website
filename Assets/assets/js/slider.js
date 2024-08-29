@@ -106,7 +106,6 @@ const cardContents = {
                 padding: 20px;
                 font-size: 16px;
                 transition: all 0.3s ease;
-                box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
                 filter: blur(10);
                 -webkit-filter: blur(10);
             }
@@ -263,7 +262,6 @@ const cardContents = {
             padding: 20px;
             font-size: 16px;
             transition: all 0.3s ease;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15)
         }
         .manufacturing-item:hover {
             transform: translateY(-5px);
@@ -475,7 +473,6 @@ const cardContents = {
                 padding: 20px;
                 font-size: 16px;
                 transition: all 0.3s ease;
-                box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
                 filter: blur(10);
                 -webkit-filter: blur(10);
             }
@@ -674,7 +671,6 @@ const cardContents = {
             padding: 20px;
             font-size: 16px;
             transition: all 0.3s ease;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
             filter: blur(10);
             -webkit-filter: blur(10);
         }
