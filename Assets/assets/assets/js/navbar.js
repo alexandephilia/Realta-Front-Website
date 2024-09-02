@@ -1,5 +1,5 @@
  // Function to handle dropdown display
-function handleDropdown(dropdownId, contentId) {
+ function handleDropdown(dropdownId, contentId) {
     const dropdown = document.getElementById(dropdownId);
     const megaDropdown = document.getElementById(contentId);
     let dropdownTimeout;
@@ -85,101 +85,600 @@ function handleCategories(containerSelector, detailsId, content) {
 handleDropdown('solutionsDropdown', 'solutionsDropdownContent');
 handleCategories('#solutionsDropdownContent', 'product-details', {
     hms: `
-        <div class="product-banner" style="background-image: url('assets/img/hotel.jpg');">   
-            <div class="glare"></div>
-            <div class="product-banner-content">
-                <h2 class="product-title">Hotel Management System</h2>
-                <p class="product-banner-description">Streamline your hotel operations with our comprehensive management system.</p>
+    <div class="product-banner" style="background-image: url('assets/img/hotel.jpg');" onclick="navigateWithLoading('rhapsody-micro.html');">   
+        <div class="glare"></div>
+        <div class="product-banner-content">
+            <h2 class="product-title">Hotel Management System</h2>
+            <p class="product-banner-description">To Orchestrate Your Entire Hotel Operation.</p>
+        </div>
+    </div>
+    <div class="modules-title">KEY FEATURES</div>
+    <div class="modules-grid">
+            <div class="module" style="background: none;">
+            <h4 style="text-align: center;">Front Office</h4>
+            <div class="bento-grid">
+                <div class="bento-item large">
+                    <p class="feature-description" style="text-align: center; font-size: 1em;">
+                        <strong style="display: block; margin-bottom: 2px;">Front Office operations</strong>
+                        <span style="display: block; width: 95%; margin: 0 auto;">simplify guest services and reception tasks.</span>
+                    </p>
+                </div>
+                <div class="bento-item">
+                    <i class="fas fa-glass-cheers"></i>
+                    <span>Sales & Banquet</span>
+                </div>
+                <div class="bento-item">
+                    <i class="fas fa-calendar-check"></i>
+                    <span>Reservation</span>
+                </div>
+                <div class="bento-item">
+                    <i class="fas fa-door-open"></i>
+                    <span>Check-in/Out</span>
+                </div>
+                <div class="bento-item">
+                    <i class="fas fa-tags"></i>
+                    <span>Dynamic Pricing</span>
+                </div>
+                <div class="bento-item">
+                <i class="fas fa-cash-register"></i>
+                    <span>Point Of Sales </span>
+
+                </div>
+                <div class="bento-item full-width">
+                  <i class="fas fa-broom"></i>
+                    <span>Housekeeping</span>
+
+                </div>
             </div>
         </div>
-        <div class="modules-title">KEY FEATURES</div>
-        <div class="modules-grid">
-            <div class="module">
-                <h4>Reservation Management</h4>
-                <p>Efficiently manage bookings and reservations</p>
+            <div class="module" style="border-left: 1px solid #e0e0e0; border-right: 1px solid #e0e0e0; border-radius: 0; background: none;">
+    <h4 style="text-align: center;">Logistic</h4>
+    <div style="max-width: 300px; margin: 0 auto;">
+        <div class="bento-item large" style="width: 100%; padding: 15px; border-radius: 10px; margin-bottom: 15px;">
+            <p style="font-size: 1em; margin: 0;"><span style="font-weight: bold;">Optimize inventory</span> and supply chain management.</p>
+        </div>
+        <div style="display: flex; justify-content: space-between; margin-bottom: 15px;">
+            <div class="bento-item" style="width: 30%; padding: 15px; border-radius: 10px; text-align: center;">
+                <i class="fas fa-shopping-cart" style="font-size: 1.5em; margin-bottom: 5px;"></i>
+                <span style="display: block; font-size: 0.9em;">Purchasing</span>
             </div>
-            <div class="module">
-                <h4>Front Desk Operations</h4>
-                <p>Streamline check-in and check-out processes</p>
+            <div class="bento-item" style="width: 30%; padding: 15px; border-radius: 10px; text-align: center;">
+                <i class="fas fa-box" style="font-size: 1.5em; margin-bottom: 5px;"></i>
+                <span style="display: block; font-size: 0.9em;">Receiving</span>
             </div>
-            <div class="module">
-                <h4>Housekeeping Management</h4>
-                <p>Optimize room cleaning and maintenance</p>
+            <div class="bento-item" style="width: 30%; padding: 15px; border-radius: 10px; text-align: center;">
+                <i class="fas fa-warehouse" style="font-size: 1.5em; margin-bottom: 5px;"></i>
+                <span style="display: block; font-size: 0.9em;">Inventory</span>
             </div>
         </div>
-    `,
+        <div style="display: flex; justify-content: center; gap: 15px;">
+            <div class="bento-item" style="width: 40%; padding: 15px; border-radius: 10px; text-align: center;">
+                <i class="fas fa-chart-line" style="font-size: 1.5em; margin-bottom: 5px;"></i>
+                <span style="display: block; font-size: 0.9em;">Cost Control</span>
+            </div>
+            <div class="bento-item" style="width: 40%; padding: 15px; border-radius: 10px; text-align: center;">
+                <i class="fas fa-utensils" style="font-size: 1.5em; margin-bottom: 5px;"></i>
+                <span style="display: block; font-size: 0.9em;">Recipe</span>
+            </div>
+        </div>
+    </div>
+</div>
+            <div class="module" style="background: none;">
+            <h4 style="text-align: center;">Back Office</h4>
+            <div class="bento-grid">
+                <div class="bento-item">
+                    <i class="fas fa-file-invoice-dollar"></i>
+                    <span>Accounts</span>
+                </div>
+                <div class="bento-item large" style="display: flex; align-items: center; justify-content: center; width: 94%; margin: 0 auto;">
+                    <p class="feature-description" style="text-align: center; font-size: 0.9em; margin: 0;">
+                        <strong style="display: block; margin-bottom: 3px;">Back Office operations</strong>
+                        <span style="display: block; width: 80%; margin: 0 auto;">improve operations and financial management.</span>
+                    </p>
+                </div>
+                <div class="bento-item">
+                    <i class="fas fa-money-check-alt"></i>
+                    <span>Receivable</span>
+                </div>
+                <div class="bento-item">
+                    <i class="fas fa-file-invoice"></i>
+                    <span>Accounts Payable</span>
+                </div>
+                <div class="bento-item">
+                    <i class="fas fa-landmark"></i>
+                    <span>Cash & Bank</span>
+                </div>
+                <div class="bento-item">
+                    <i class="fas fa-building"></i>
+                    <span>Fixed Asset</span>
+                </div>
+                <div class="bento-item full-width">
+                    <i class="fas fa-book"></i>
+                    <span>General Ledger</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <style>
+        .bento-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: repeat(3, 1fr);
+            gap: 8px;
+            max-width: 300px;
+            margin: 0 auto;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        .bento-item {
+            background-color: #e8e3e382;
+            padding: 10px;
+            border-radius: 15px;
+            font-size: 0.8em;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+            animation: fadeIn 0.5s ease-out forwards;
+            opacity: 0;
+        }
+        .bento-item:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        }
+        .bento-item i {
+            font-size: 1.3em;
+            margin-bottom: 5px;
+            color: rgb(99, 50, 155);
+            animation: fadeIn 0.5s ease-out 0.2s forwards;
+            opacity: 0;
+        }
+        .bento-item span {
+            display: block;
+            line-height: 1.1;
+        }
+        .large {
+            grid-column: span 2;
+            grid-row: span 2;
+            font-size: 0.85em;
+        }
+        .full-width {
+            grid-column: 1 / -1;
+        }
+    </style>
+`,
     gcs: `
-        <div class="product-banner" style="background-image: url('assets/img/gold.jpg');">                
-            <div class="glare"></div>
-            <div class="product-banner-content">
-                <h2 class="product-title">Golf Course System</h2>
-                <p class="product-banner-description">Manage your golf course operations efficiently with our specialized system.</p>
+    <div class="product-banner" style="background-image: url('assets/img/gold.jpg');">                
+        <div class="glare"></div>
+        <div class="product-banner-content">
+            <h2 class="product-title">Golf Course System</h2>
+            <p class="product-banner-description">Supporting The Golfer's Journey On and Off The Course.</p>
+        </div>
+    </div>
+    <div class="modules-title">KEY FEATURES</div>
+    <div class="modules-grid">
+            <div class="module" style="background: none;">
+            <h4 style="text-align: center;">Membership</h4>
+            <div class="bento-grid">
+                <div class="bento-item large">
+                    <p class="feature-description" style="text-align: center; font-size: 1em;">
+                        <strong style="display: block; margin-bottom: 2px;">Membership Management</strong>
+                        <span style="display: block; width: 95%; margin: 0 auto;">with our unified platform.</span>
+                    </p>
+                </div>
+                <div class="bento-item">
+                    <i class="fas fa-user-plus"></i>
+                    <span>Member Profile</span>
+                </div>
+                <div class="bento-item">
+                    <i class="fas fa-file-invoice-dollar"></i>
+                    <span>Invoicing</span>
+                </div>
+                <div class="bento-item">
+                    <i class="fas fa-chart-bar"></i>
+                    <span>Activity Tracking</span>
+                </div>
+                <div class="bento-item">
+                    <i class="fas fa-tags"></i>
+                    <span>Class & Category</span>
+                </div>
+                <div class="bento-item">
+                    <i class="fas fa-user-shield"></i>
+                    <span>Member Status</span>
+                </div>
             </div>
         </div>
-        <div class="modules-title">KEY FEATURES</div>
-        <div class="modules-grid">
-            <div class="module">
-                <h4>Tee Time Management</h4>
-                <p>Optimize tee time scheduling and bookings</p>
-            </div>
-            <div class="module">
-                <h4>Pro Shop Operations</h4>
-                <p>Manage inventory and sales in your pro shop</p>
-            </div>
-            <div class="module">
-                <h4>Course Analytics</h4>
-                <p>Track course usage and optimize operations</p>
+            <div class="module" style="border-left: 1px solid #e0e0e0; border-right: 1px solid #e0e0e0; border-radius: 0; background: none;">
+            <h4 style="text-align: center;">Golf Operation</h4>
+            <div class="bento-grid" style="grid-template-columns: repeat(3, 1fr); grid-template-rows: auto 1fr; max-width: 300px; margin: 0 auto; gap: 15px;">
+                <div class="bento-item large" style="grid-column: 1 / -1; padding: 15px; border-radius: 10px;">
+                    <p style="font-size: 1em; margin: 0;"><span style="font-weight: bold;">Streamline golf operations</span> with our integrated system.</p>
+                </div>
+                <div class="bento-item" style="padding: 15px; border-radius: 10px; text-align: center;">
+                    <i class="fas fa-concierge-bell" style="font-size: 1.5em; margin-bottom: 5px;"></i>
+                    <span style="display: block; font-size: 0.9em;">Front Office</span>
+                </div>
+                <div class="bento-item" style="padding: 15px; border-radius: 10px; text-align: center;">
+                    <i class="fas fa-leaf" style="font-size: 1.5em; margin-bottom: 5px;"></i>
+                    <span style="display: block; font-size: 0.9em;">Lawn Operations</span>
+                </div>
+                <div class="bento-item" style="padding: 15px; border-radius: 10px; text-align: center;">
+                    <i class="fas fa-chart-line" style="font-size: 1.5em; margin-bottom: 5px;"></i>
+                    <span style="display: block; font-size: 0.9em;">Back Office</span>
+                </div>
             </div>
         </div>
-    `,
+            <div class="module" style="background: none;">
+            <h4 style="text-align: center;">Tournament</h4>
+            <div class="bento-grid">
+                <div class="bento-item">
+                    <i class="fas fa-trophy"></i>
+                    <span>Leaderboard</span>
+                </div>
+                <div class="bento-item large" style="display: flex; align-items: center; justify-content: center; width: 94%; margin: 0 auto;">
+                    <p class="feature-description" style="text-align: center; font-size: 0.9em; margin: 0;">
+                        <strong style="display: block; margin-bottom: 3px;">Tournament <br> Management</strong>
+                        <span style="display: block; width: 80%; margin: 0 auto;">your all-in-one golf event solution.</span>
+                    </p>
+                </div>
+                <div class="bento-item">
+                    <i class="fas fa-users"></i>
+                    <span>Pairing</span>
+                </div>
+                <div class="bento-item">
+                    <i class="fas fa-golf-ball"></i>
+                    <span>Handicap</span>
+                </div>
+                <div class="bento-item">
+                    <i class="fas fa-clipboard-list"></i>
+                    <span>Scoring Method</span>
+                </div>
+                <div class="bento-item">
+                    <i class="fas fa-chart-bar"></i>
+                    <span>Analytics</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <style>
+        .bento-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: repeat(3, 1fr);
+            gap: 8px;
+            max-width: 300px;
+            margin: 0 auto;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        .bento-item {
+            background-color: #f7f4f482;
+            padding: 10px;
+            border-radius: 15px;
+            font-size: 0.8em;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+            animation: fadeIn 0.5s ease-out forwards;
+            opacity: 0;
+        }
+        .bento-item:hover {
+            transform: translateY(2px);
+            box-shadow: 0 1px 5px rgba(0,0,0,0.2);
+        }
+        .bento-item i {
+            font-size: 1.3em;
+            margin-bottom: 5px;
+            color: rgb(0, 128, 0);
+            animation: fadeIn 0.5s ease-out 0.2s forwards;
+            opacity: 0;
+        }
+        .bento-item span {
+            display: block;
+            line-height: 1.1;
+        }
+        .large {
+            grid-column: span 2;
+            grid-row: span 2;
+            font-size: 0.85em;
+        }
+    </style>
+`,
     hrs: `
         <div class="product-banner" style="background-image: url('assets/img/hr.jpg');">                
             <div class="glare"></div>
             <div class="product-banner-content">
                 <h2 class="product-title">HR System</h2>
-                <p class="product-banner-description">Streamline your human resources processes with our comprehensive HR system.</p>
+                <p class="product-banner-description">To Effectively Manage Human Resource.</p>
             </div>
         </div>
         <div class="modules-title">KEY FEATURES</div>
         <div class="modules-grid">
-            <div class="module">
-                <h4>Employee Management</h4>
-                <p>Efficiently manage employee data and records</p>
+            <div class="module" style="background: none;">
+                <h4 style="text-align: center;">HR Core</h4>
+                <div class="bento-grid">
+                    <div class="bento-item large">
+                        <p class="feature-description" style="text-align: center; font-size: 1em;">
+                            <strong style="display: block; margin-bottom: 2px;">HR operations</strong> <span style="display: block; width: 99%; margin: 0 auto;">with our integrated solution.</span>
+                        </p>
+                    </div>
+                    <div class="bento-item">
+                        <i class="fas fa-id-card-alt"></i>
+                        <span>Personnel</span>
+                    </div>
+                    <div class="bento-item">
+                        <i class="fas fa-calendar-check"></i>
+                        <span>Attendance</span>
+                    </div>
+                    <div class="bento-item">
+                        <i class="fas fa-hand-holding-usd"></i>
+                        <span>Loan</span>
+                    </div>
+                    <div class="bento-item">
+                        <i class="fas fa-heartbeat"></i>
+                        <span>Medical</span>
+                    </div>
+                    <div class="bento-item">
+                        <i class="fas fa-file-invoice-dollar"></i>
+                        <span>Payroll</span>
+                    </div>
+                </div>
+                <style>
+                    .bento-grid {
+                        display: grid;
+                        grid-template-columns: repeat(3, 1fr);
+                        grid-template-rows: repeat(3, 1fr);
+                        gap: 8px;
+                        max-width: 300px;
+                        margin: 0 auto;
+                    }
+                    /* Initial fade-in transition for bento items */
+                    @keyframes fadeIn {
+                        from { opacity: 0; }
+                        to { opacity: 1; }
+                    }
+
+                    .bento-item {
+                        background-color: #f7f4f482;
+                        padding: 10px;
+                        border-radius: 15px;
+                        font-size: 0.8em;
+                        text-align: center;
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+                        justify-content: center;
+                        transition: all 0.3s ease;
+                        animation: fadeIn 0.5s ease-out forwards;
+                        opacity: 0;
+                        /* Add a noticeable shadow box */
+                    }
+                    .bento-item:hover {
+                        transform: translateY(2px);
+                        box-shadow: 0 1px 5px rgba(0,0,0,0.2);
+                    }
+                    .bento-item i {
+                        font-size: 1.3em;
+                        margin-bottom: 5px;
+                        color: rgb(139, 0, 69);
+                        animation: fadeIn 0.5s ease-out 0.2s forwards;
+                        opacity: 0;
+                    }
+                    .bento-item span {
+                        display: block;
+                        line-height: 1.1;
+                    }
+                    .large {
+                        grid-column: span 2;
+                        grid-row: span 2;
+                        font-size: 0.85em;
+                    }
+                </style>
             </div>
-            <div class="module">
-                <h4>Payroll Processing</h4>
-                <p>Automate payroll calculations and disbursements</p>
+            <div class="module" style="border-left: 1px solid #e0e0e0; border-right: 1px solid #e0e0e0; border-radius: 0; background: none;">
+                   <h4 style="text-align: center;">HR Advance</h4>
+                <div class="bento-grid" style="grid-template-columns: repeat(2, 1fr); grid-template-rows: auto repeat(2, 1fr); max-width: 250px; margin: 0 auto;">
+                    <div class="bento-item large" style="grid-column: 1 / -1;">
+                        <p style="font-size: 1em;"><span style="font-weight: bold;">HR Advance</span>with our unified platform.</p>
+                    </div>
+                    <div class="bento-item">
+                        <i class="fas fa-user-plus"></i>
+                        <span>Recruitment</span>
+                    </div>
+                    <div class="bento-item">
+                        <i class="fas fa-briefcase"></i>
+                        <span>Job Competency</span>
+                    </div>
+                    <div class="bento-item">
+                        <i class="fas fa-graduation-cap"></i>
+                        <span>Training</span>
+                    </div>
+                    <div class="bento-item">
+                        <i class="fas fa-chart-line"></i>
+                        <span>Performance</span>
+                    </div>
+                </div>
             </div>
-            <div class="module">
-                <h4>Performance Tracking</h4>
-                <p>Monitor and evaluate employee performance</p>
+            <div class="module" style="background: none;">
+                 <h4 style="text-align: center;">HR Mobile</h4>
+               <div class="bento-grid">
+                
+                    <div class="bento-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>Locations</span>
+                    </div>
+                       <div class="bento-item large" style="display: flex; align-items: center; justify-content: center; width: 94%; margin: 0 auto;">
+                        <p class="feature-description" style="text-align: center; font-size: 0.9em; margin: 0;">
+                            <strong style="display: block; margin-bottom: 2px;">Employee Self <br> Service</strong>
+                            <span style="display: block; width: 80%; margin: 0 auto;">Empower HR with our ESS app.</span>
+                        </p>
+                    </div>
+                    <div class="bento-item">
+                        <i class="fas fa-eye"></i>
+                        <span>Monitoring</span>
+                    </div>
+                    <div class="bento-item">
+                        <i class="fas fa-mobile-alt"></i>
+                        <span>Request</span>
+                    </div>
+                    
+                    <div class="bento-item">
+                        <i class="fas fa-calendar-check"></i>
+                        <span>Reminder</span>
+                    </div>
+                    
+                    <div class="bento-item">
+                        <i class="fas fa-bell"></i>
+                        <span>Notification</span>
+                    </div>
+                </div>
             </div>
         </div>
     `,
     pts: `
-        <div class="product-banner" style="background-image: url('assets/img/property.jpg');">                
-            <div class="glare"></div>
-            <div class="product-banner-content">
-                <h2 class="product-title">Property & Tenancy System</h2>
-                <p class="product-banner-description">Efficiently manage your properties and tenants with our specialized system.</p>
+    <div class="product-banner" style="background-image: url('assets/img/property.jpg');">                
+        <div class="glare"></div>
+        <div class="product-banner-content">
+            <h2 class="product-title">Property & Tenancy System</h2>
+            <p class="product-banner-description">Design specifically to help today's Building Management work more efficiently and effectively.</p>
+        </div>
+    </div>
+    <div class="modules-title">KEY FEATURES</div>
+    <div class="modules-grid">
+        <div class="module" style="background: none;">
+            <h4 style="text-align: center;">Sales & Marketing</h4>
+            <div class="bento-grid" style="grid-template-columns: repeat(2, 1fr); grid-template-rows: auto repeat(2, 1fr); max-width: 250px; margin: 0 auto;">
+                <div class="bento-item large" style="grid-column: 1 / -1;">
+                    <p style="font-size: 1em; text-align: center;">
+                        <span style="font-weight: bold; display: block;">Boost Your Sales</span>
+                       with our comprehensive, integrated solution.
+                    </p>
+                </div>
+                <div class="bento-item">
+                    <i class="fas fa-handshake"></i>
+                    <span>Strata Release</span>
+                </div>
+                <div class="bento-item">
+                    <i class="fas fa-home"></i>
+                    <span>Handover</span>
+                </div>
+                <div class="bento-item">
+                    <i class="fas fa-thumbs-up"></i>
+                    <span>Fitting Out</span>
+                </div>
+                <div class="bento-item">
+                    <i class="fas fa-file-contract"></i>
+                    <span>Lease Renewal</span>
+                </div>
             </div>
         </div>
-        <div class="modules-title">KEY FEATURES</div>
-        <div class="modules-grid">
-            <div class="module">
-                <h4>Property Management</h4>
-                <p>Oversee multiple properties from a single dashboard</p>
-            </div>
-            <div class="module">
-                <h4>Tenant Management</h4>
-                <p>Streamline tenant applications, leases, and communications</p>
-            </div>
-            <div class="module">
-                <h4>Maintenance Tracking</h4>
-                <p>Efficiently handle maintenance requests and scheduling</p>
+        <div class="module" style="border-left: 1px solid #e0e0e0; border-right: 1px solid #e0e0e0; border-radius: 0; background: none;">
+            <h4 style="text-align: center;">Tenancy</h4>
+            <div class="bento-grid" style="grid-template-columns: repeat(2, 1fr); grid-template-rows: auto repeat(2, 1fr); max-width: 250px; margin: 0 auto;">
+                <div class="bento-item large" style="grid-column: 1 / -1;">
+                    <p style="font-size: 1em;"><span style="font-weight: bold;">Tenancy Management</span> with our comprehensive, user-friendly platform.</p>
+                </div>
+                <div class="bento-item">
+                    <i class="fas fa-database"></i>
+                    <span>Tenant Database</span>
+                </div>
+                <div class="bento-item">
+                    <i class="fas fa-dollar-sign"></i>
+                    <span>Service Charge</span>
+                </div>
+                <div class="bento-item">
+                    <i class="fas fa-coins"></i>
+                    <span>Sinking Fund</span>
+                </div>
+                <div class="bento-item">
+                    <i class="fas fa-bolt"></i>
+                    <span>Utilities</span>
+                </div>
             </div>
         </div>
-    `,
+        <div class="module" style="background: none;">
+            <h4 style="text-align: center;">Billing</h4>
+            <div class="bento-grid" style="grid-template-columns: repeat(2, 1fr); grid-template-rows: auto repeat(2, 1fr); max-width: 250px; margin: 0 auto;">
+                <div class="bento-item large" style="grid-column: 1 / -1;">
+                    <p style="font-size: 1em;"><span style="font-weight: bold;">Billing Management</span> with our efficient handling of billing and payments.</p>
+                </div>
+                <div class="bento-item">
+                    <i class="fas fa-money-bill-wave"></i>
+                    <span>Down Payment</span>
+                </div>
+                <div class="bento-item">
+                    <i class="fas fa-file-invoice-dollar"></i>
+                    <span>Installment</span>
+                </div>
+                <div class="bento-item">
+                    <i class="fas fa-bolt"></i>
+                    <span>Utilities</span>
+                </div>
+                <div class="bento-item">
+                    <i class="fas fa-cogs"></i>
+                    <span>Others</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <style>
+        .bento-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: repeat(3, 1fr);
+            gap: 8px;
+            max-width: 300px;
+            margin: 0 auto;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        .bento-item {
+            background-color: #f7f4f482;
+            padding: 10px;
+            border-radius: 15px;
+            font-size: 0.8em;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+            animation: fadeIn 0.5s ease-out forwards;
+            opacity: 0;
+        }
+        .bento-item:hover {
+            transform: translateY(2px);
+            box-shadow: 0 1px 5px rgba(0,0,0,0.2);
+        }
+        .bento-item i {
+            font-size: 1.3em;
+            margin-bottom: 5px;
+            color: rgb(0, 128, 128);
+            animation: fadeIn 0.5s ease-out 0.2s forwards;
+            opacity: 0;
+        }
+        .bento-item span {
+            display: block;
+            line-height: 1.1;
+        }
+        .large {
+            grid-column: span 2;
+            grid-row: span 2;
+            font-size: 0.85em;
+        }
+    </style>
+`,
     itm: `
         <div class="product-banner" style="background-image: url('assets/img/it-management.jpg');">                
             <div class="glare"></div>
@@ -191,14 +690,17 @@ handleCategories('#solutionsDropdownContent', 'product-details', {
         <div class="modules-title">KEY FEATURES</div>
         <div class="modules-grid">
             <div class="module">
+                <i class="fas fa-sitemap" style="margin-right: 10px; background: linear-gradient(45deg, #FF0000, #0000FF); -webkit-background-clip: text; -webkit-text-fill-color: transparent;"></i>
                 <h4>Service Management</h4>
                 <p>Streamline IT service delivery and support</p>
             </div>
             <div class="module">
+                <i class="fas fa-database" style="margin-right: 10px; background: linear-gradient(45deg, #FF3333, #3333FF); -webkit-background-clip: text; -webkit-text-fill-color: transparent;"></i>
                 <h4>Asset Management</h4>
                 <p>Track and manage IT assets throughout their lifecycle</p>
             </div>
             <div class="module">
+                <i class="fas fa-shield-alt" style="margin-right: 10px; background: linear-gradient(45deg, #FF6666, #6666FF); -webkit-background-clip: text; -webkit-text-fill-color: transparent;"></i>
                 <h4>Endpoint Management</h4>
                 <p>Centrally manage and secure all your endpoints</p>
             </div>
@@ -208,23 +710,26 @@ handleCategories('#solutionsDropdownContent', 'product-details', {
         <div class="product-banner" style="background-image: url('assets/img/erp.jpg');">                
             <div class="glare"></div>
             <div class="product-banner-content">
-                <h2 class="product-title">ERP & EAM</h2>
-                <p class="product-banner-description">Integrated Enterprise Resource Planning and Asset Management solutions.</p>
+                <h2 class="product-title">Network & System Integration</h2>
+                <p class="product-banner-description">One Solution concept, a strategic approach that skillfully blends various IT elements into a streamlined and efficient framework that is precisely tailored to each client's specific needs.</p>
             </div>
         </div>
         <div class="modules-title">KEY FEATURES</div>
         <div class="modules-grid">
             <div class="module">
-                <h4>Financial Management</h4>
-                <p>Comprehensive financial planning and reporting</p>
+                <i class="fas fa-microchip" style="margin-right: 10px; background: linear-gradient(45deg, #8A2BE2, #FFA500); -webkit-background-clip: text; -webkit-text-fill-color: transparent;"></i>
+                <h4>Hardware & Software</h4>
+                <p>Comprehensive solutions for selecting, deploying, and managing IT hardware and software tailored to your business needs</p>
             </div>
             <div class="module">
-                <h4>Supply Chain Management</h4>
-                <p>Optimize your entire supply chain process</p>
+                <i class="fas fa-network-wired" style="margin-right: 10px; background: linear-gradient(45deg, #8A2BE2, #FFA500); -webkit-background-clip: text; -webkit-text-fill-color: transparent;"></i>
+                <h4>Network</h4>
+                <p>Robust network solutions designed to ensure seamless connectivity, performance, and security across your entire business ecosystem</p>
             </div>
             <div class="module">
-                <h4>Asset Lifecycle Management</h4>
-                <p>Efficiently manage assets from acquisition to disposal</p>
+                <i class="fas fa-cloud-upload-alt" style="margin-right: 10px; background: linear-gradient(45deg, #8A2BE2, #FFA500); -webkit-background-clip: text; -webkit-text-fill-color: transparent;"></i>
+                <h4>Cloud Infrastructure</h4>
+                <p>Scalable cloud solutions that provide secure and flexible environments for hosting and managing your applications and data</p>
             </div>
         </div>
     `
@@ -360,55 +865,54 @@ handleCategories('#partnerDropdownContent', 'partner-details', {
     `
 });
 
-// Konsultasi dropdown
-handleDropdown('konsultasiDropdown', 'konsultasiDropdownContent');
-handleCategories('#konsultasiDropdownContent', 'konsultasi-details', {
+// Contact dropdown
+handleDropdown('contactDropdown', 'contactDropdownContent');
+handleCategories('#contactDropdownContent', 'contact-details', {
     business: `
         <div class="product-banner" style="background-image: url('assets/img/consult.png');">   
             <div class="glare"></div>
             <div class="product-banner-content">
                 <h2 class="product-title">Business Consultation</h2>
-                <p class="product-banner-description">Expert guidance to help your business thrive in the digital age.</p>
+                <p class="product-banner-description">Get in touch with our team for any inquiries or support.</p>
             </div>
         </div>
-        <div class="modules-title">OUR SERVICES</div>
+        <div class="modules-title">CONTACT OPTIONS</div>
         <div class="modules-grid">
             <div class="module">
-                <h4>Strategy Development</h4>
-                <p>Craft winning business strategies</p>
+                <h4>General Inquiries</h4>
+                <p>For general questions and information</p>
             </div>
             <div class="module">
-                <h4>Process Optimization</h4>
-                <p>Streamline your operations for maximum efficiency</p>
+                <h4>Technical Support</h4>
+                <p>Get help with our products and services</p>
             </div>
             <div class="module">
-                <h4>Digital Transformation</h4>
-                <p>Navigate the complexities of digital adoption</p>
+                <h4>Business Partnerships</h4>
+                <p>Explore collaboration opportunities</p>
             </div>
         </div>
     `,
     technical: `
-        <div class="product-banner" style="background-image: url('assets/img/technical-consultation.jpg');">   
-            <div class="product-banner" style="background-image: url('assets/img/technical-consultation.jpg');">   
+        <div class="product-banner" style="background-image: url('assets/img/technical-support.jpg');">   
             <div class="glare"></div>
             <div class="product-banner-content">
-                <h2 class="product-title">Technical Consultation</h2>
-                <p class="product-banner-description">In-depth technical expertise to solve your most complex challenges.</p>
+                <h2 class="product-title">Technical Support</h2>
+                <p class="product-banner-description">Expert assistance for all your technical inquiries and issues.</p>
             </div>
         </div>
-        <div class="modules-title">OUR SERVICES</div>
+        <div class="modules-title">CONTACT OPTIONS</div>
         <div class="modules-grid">
             <div class="module">
-                <h4>System Architecture</h4>
-                <p>Design scalable and robust system architectures</p>
+                <h4>Live Chat Support</h4>
+                <p>Instant help from our technical experts</p>
             </div>
             <div class="module">
-                <h4>Performance Optimization</h4>
-                <p>Enhance system performance and efficiency</p>
+                <h4>Email Support</h4>
+                <p>Detailed responses to complex technical queries</p>
             </div>
             <div class="module">
-                <h4>Security Assessment</h4>
-                <p>Identify and mitigate potential security risks</p>
+                <h4>Phone Support</h4>
+                <p>Direct line to our technical support team</p>
             </div>
         </div>
     `
@@ -418,7 +922,7 @@ handleCategories('#konsultasiDropdownContent', 'konsultasi-details', {
 handleDropdown('tentangRealtaDropdown', 'tentangRealtaDropdownContent');
 handleCategories('#tentangRealtaDropdownContent', 'tentangRealta-details', {
     about: `
-    <div class="product-banner" style="background-image: url('assets/img/tentang.jpg');">   
+    <div class="product-banner" style="background-image: url('assets/img/tentang.jpg');" onclick="navigateWithLoading('about.html');">   
             <div class="glare"></div>
             <div class="product-banner-content">
                 <h2 class="product-title">About Realta</h2>
@@ -441,8 +945,14 @@ handleCategories('#tentangRealtaDropdownContent', 'tentangRealta-details', {
             </div>
         </div>
     `,
-    careers: `
-        <div class="product-banner" style="background-image: url('assets/img/careers.jpg');">   
+    
+});
+
+// Career dropdown
+handleDropdown('careerDropdown', 'careerDropdownContent');
+handleCategories('#careerDropdownContent', 'career-details', {
+    openings: `
+         <div class="product-banner" style="background-image: url('assets/img/career.png');" onclick="navigateWithLoading('career.html');">       
             <div class="glare"></div>
             <div class="product-banner-content">
                 <h2 class="product-title">Careers at Realta</h2>
@@ -465,28 +975,51 @@ handleCategories('#tentangRealtaDropdownContent', 'tentangRealta-details', {
             </div>
         </div>
     `,
-    blog: `
-    <div class="product-banner" style="background-image: url('assets/img/blog.jpeg');" onclick="navigateWithLoading('blog.html');">            
-    <div class="glare"></div>
+    internships: `
+        <div class="product-banner" style="background-image: url('assets/img/internships.jpg');" onclick="navigateWithLoading('internships.html');">   
+            <div class="glare"></div>
             <div class="product-banner-content">
-                <h2 class="product-title">Realta Blog</h2>
-                <p class="product-banner-description">Insights, trends, and thought leadership in technology.</p>
+                <h2 class="product-title">Internship Programs</h2>
+                <p class="product-banner-description">Kickstart your career with hands-on experience at Realta.</p>
             </div>
         </div>
-        </div>
-        <div class="modules-title">FEATURED CONTENT</div>
+        <div class="modules-title">PROGRAM HIGHLIGHTS</div>
         <div class="modules-grid">
             <div class="module">
-                <h4>Tech Trends</h4>
-                <p>Stay updated with the latest in technology</p>
+                <h4>Tech Internships</h4>
+                <p>Gain practical experience in software development</p>
             </div>
             <div class="module">
-                <h4>Case Studies</h4>
-                <p>Real-world applications of our solutions</p>
+                <h4>Business Internships</h4>
+                <p>Learn about tech business operations</p>
             </div>
             <div class="module">
-                <h4>Industry Insights</h4>
-                <p>Expert analysis on sector-specific challenges</p>
+                <h4>Design Internships</h4>
+                <p>Contribute to user experience and interface design</p>
+            </div>
+        </div>
+    `,
+    culture: `
+        <div class="product-banner" style="background-image: url('assets/img/company-culture.jpg');" onclick="navigateWithLoading('company-culture.html');">   
+            <div class="glare"></div>
+            <div class="product-banner-content">
+                <h2 class="product-title">Company Culture</h2>
+                <p class="product-banner-description">Discover what makes Realta a great place to work.</p>
+            </div>
+        </div>
+        <div class="modules-title">OUR VALUES</div>
+        <div class="modules-grid">
+            <div class="module">
+                <h4>Innovation</h4>
+                <p>We encourage creative thinking and new ideas</p>
+            </div>
+            <div class="module">
+                <h4>Collaboration</h4>
+                <p>Teamwork is at the heart of our success</p>
+            </div>
+            <div class="module">
+                <h4>Growth</h4>
+                <p>We invest in our employees' personal and professional development</p>
             </div>
         </div>
     `
@@ -569,7 +1102,6 @@ document.querySelectorAll('.custom-dropdown-menu a').forEach(item => {
         document.querySelector('.custom-dropdown-menu').style.display = 'none';
     });
 });
-
 
 
 
