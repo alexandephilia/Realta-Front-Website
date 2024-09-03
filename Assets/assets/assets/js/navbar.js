@@ -252,7 +252,7 @@ handleCategories('#solutionsDropdownContent', 'product-details', {
     </style>
 `,
     gcs: `
-    <div class="product-banner" style="background-image: url('assets/img/gold.jpg');">                
+    <div class="product-banner" style="background-image: url('assets/img/gold.jpg');" onclick="navigateWithLoading('golf-micro.html');">                
         <div class="glare"></div>
         <div class="product-banner-content">
             <h2 class="product-title">Golf Course System</h2>
