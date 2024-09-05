@@ -1,5 +1,5 @@
  // Function to handle dropdown display
-function handleDropdown(dropdownId, contentId) {
+ function handleDropdown(dropdownId, contentId) {
     const dropdown = document.getElementById(dropdownId);
     const megaDropdown = document.getElementById(contentId);
     let dropdownTimeout;
@@ -213,7 +213,7 @@ handleCategories('#solutionsDropdownContent', 'product-details', {
             to { opacity: 1; }
         }
         .bento-item {
-            background-color: #f7f4f482;
+            background-color: #e8e3e382;
             padding: 10px;
             border-radius: 15px;
             font-size: 0.8em;
@@ -252,7 +252,7 @@ handleCategories('#solutionsDropdownContent', 'product-details', {
     </style>
 `,
     gcs: `
-    <div class="product-banner" style="background-image: url('assets/img/gold.jpg');">                
+    <div class="product-banner" style="background-image: url('assets/img/gold.jpg');" onclick="navigateWithLoading('golf-micro.html');">                
         <div class="glare"></div>
         <div class="product-banner-content">
             <h2 class="product-title">Golf Course System</h2>
@@ -1102,7 +1102,6 @@ document.querySelectorAll('.custom-dropdown-menu a').forEach(item => {
         document.querySelector('.custom-dropdown-menu').style.display = 'none';
     });
 });
-
 
 
 
