@@ -1,0 +1,1 @@
+var App_path_root = "https://realta.co.id/RCD_WEB_API/"
