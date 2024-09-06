@@ -680,7 +680,7 @@ handleCategories('#solutionsDropdownContent', 'product-details', {
     </style>
 `,
     itm: `
-        <div class="product-banner" style="background-image: url('assets/img/it-management.jpg');">                
+        <div class="product-banner" style="background-image: url('assets/img/it-management.jpg');" onclick="navigateWithLoading('itsm-micro.html')">                
             <div class="glare"></div>
             <div class="product-banner-content">
                 <h2 class="product-title">ITSM, ITAM & Unified Endpoint Management</h2>
@@ -707,7 +707,8 @@ handleCategories('#solutionsDropdownContent', 'product-details', {
         </div>
     `,
     erp: `
-        <div class="product-banner" style="background-image: url('assets/img/erp.jpg');">                
+            <div class="product-banner" style="background-image: url('assets/img/erp.jpg');" onclick="navigateWithLoading('realnet-micro.html')">
+              
             <div class="glare"></div>
             <div class="product-banner-content">
                 <h2 class="product-title">Network & System Integration</h2>
