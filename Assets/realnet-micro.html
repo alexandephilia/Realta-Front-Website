@@ -1689,8 +1689,8 @@
                         </p>
                     </div>
                     <!-- Schedule Meeting button with slightly larger size -->
-                    <a href="#" class="btn btn-outline-secondary btn-sm d-inline-block mx-auto"
-                        style="max-width: 220px; font-size: 1.1rem; padding: 0.4rem 0.8rem;">Contact Us</a>
+                    <!-- <a href="#" class="btn btn-outline-secondary btn-sm d-inline-block mx-auto"
+                        style="max-width: 220px; font-size: 1.1rem; padding: 0.4rem 0.8rem;">Contact Us</a> -->
                 </div>
             </div>
         </div>
@@ -1716,8 +1716,8 @@
                         </p>
                     </div>
                     <!-- Learn More button with slightly larger size -->
-                    <a href="#" class="btn btn-outline-secondary btn-sm d-inline-block mx-auto"
-                        style="max-width: 220px; font-size: 1.1rem; padding: 0.4rem 0.8rem;">Learn More</a>
+                    <!-- <a href="#" class="btn btn-outline-secondary btn-sm d-inline-block mx-auto"
+                        style="max-width: 220px; font-size: 1.1rem; padding: 0.4rem 0.8rem;">Learn More</a> -->
                 </div>
                 <div class="col-md-6 fade-in-right">
                     <img src="assets/img/realnet/whyrealnet---realta-chakradarma.png" alt="IT Infrastructure Solutions" class="img-fluid">
@@ -1756,10 +1756,7 @@
         }
 
         /* Dark mode styles */
-        body.dark-mode #ict-solution-reverse {
-            background-color: #2a2a2a;
-            color: #e0e0e0;
-        }
+        
 
         body.dark-mode #ict-solution-reverse .btn-outline-secondary {
             color: #e0e0e0;
@@ -1852,15 +1849,15 @@
         <article class="bimasakti-solution-item established">
             <h4>
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <!-- Established SVG: Building with Clock -->
-                    <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V5h14v14z" fill="url(#paint0_linear_established)"/>
-                    <path d="M12 11h1v3h-1v-3zm0-4h1v1h-1V7zm-1 7h3v1h-3v-1z" fill="url(#paint1_linear_established)"/>
+                    <!-- Established SVG: Building with Calendar -->
+                    <path d="M19 4h-1V2h-2v2H8V2H6v2H5c-1.11 0-1.99.9-1.99 2L3 20c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V9h14v11z" fill="url(#paint0_linear_established)"/>
+                    <path d="M7 11h5v5H7v-5z" fill="url(#paint1_linear_established)"/>
                     <defs>
-                        <linearGradient id="paint0_linear_established" x1="3" y1="3" x2="21" y2="21" gradientUnits="userSpaceOnUse">
+                        <linearGradient id="paint0_linear_established" x1="3" y1="2" x2="21" y2="22" gradientUnits="userSpaceOnUse">
                             <stop stop-color="#783ea8"/>
                             <stop offset="1" stop-color="#e4ac44"/>
                         </linearGradient>
-                        <linearGradient id="paint1_linear_established" x1="11" y1="7" x2="14" y2="15" gradientUnits="userSpaceOnUse">
+                        <linearGradient id="paint1_linear_established" x1="7" y1="11" x2="12" y2="16" gradientUnits="userSpaceOnUse">
                             <stop stop-color="#783ea8"/>
                             <stop offset="1" stop-color="#e4ac44"/>
                         </linearGradient>
@@ -1937,7 +1934,6 @@
         margin: 0 auto;
     }
 
-    /* BIMASAKTI Solution Item Styles */
     .bimasakti-solution-item {
         border-radius: 10px;
         padding: 15px;
@@ -1947,9 +1943,8 @@
         box-shadow: rgba(0, 0, 0, 0.253) 0px 4px 8px !important;
     }
 
-    /* BIMASAKTI Solution Item Header Styles */
     .bimasakti-solution-item h4 {
-        font-size: 1.1rem;
+        font-size: 1rem;
         margin-bottom: 10px;
         background: linear-gradient(90deg, #783ea8, #e4ac44);
         -webkit-background-clip: text;
@@ -1973,31 +1968,6 @@
         width: 100%;
     }
 
-    /* BIMASAKTI Solution Item List Styles */
-    .bimasakti-solution-item ul {
-        padding-left: 0;
-        list-style-type: none;
-    }
-
-    .bimasakti-solution-item li {
-        font-size: 0.9rem;
-        margin-bottom: 0.4rem;
-        position: relative;
-        padding-left: 1.2em;
-    }
-
-    .bimasakti-solution-item li::before {
-        content: "•";
-        background: linear-gradient(287deg, #504be6, #5e9cfa, #40777a);
-        -webkit-background-clip: text;
-        background-clip: text;
-        color: transparent;
-        position: absolute;
-        left: 0;
-        top: 0;
-    }
-
-    /* BIMASAKTI Title Styles */
     .bimasakti-title {
         grid-area: title;
         text-align: center;
@@ -2010,7 +1980,6 @@
         font-weight: bold;
     }
 
-    /* BIMASAKTI Description Styles */
     .bimasakti-description {
         grid-area: description;
         text-align: center;
@@ -2018,27 +1987,9 @@
         margin: 0 auto;
         margin-bottom: 15px;
         color: #666;
-        font-size: 0.9rem;
+        font-size: 1.2em !important;  
     }
 
-    /* BIMASAKTI Button Wrapper Styles */
-    .bimasakti-button-wrapper {
-        grid-area: button;
-        text-align: center;
-        margin-top: 10px;
-        margin-bottom: 20px;
-    }
-
-    /* BIMASAKTI Features Styles */
-    .bimasakti-features {
-        grid-area: features;
-        display: flex;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 15px;
-        justify-content: center;
-    }
-
-    /* BIMASAKTI Features Styles */
     .bimasakti-features {
         grid-area: features;
         display: flex;
@@ -2048,49 +1999,66 @@
     }
 
     .bimasakti-solution-item {
-        /* ... existing styles ... */
         flex-basis: calc(33.333% - 10px);
         max-width: calc(33.333% - 10px);
     }
 
-    /* BIMASAKTI Button Styles */
-    .bimasakti-btn {
-        background: #5554bda9;
-        color: #ffffff;
-        padding: 10px 20px;
-        border-radius: 10px;
-        font-weight: 600;
-        text-decoration: none;
-        transition: background 0.3s ease;
-    }
-
-    /* Responsive Styles */
-    @media (max-width: 768px) {
+    /* Mobile responsive styles */
+    @media (max-width: 1024px) {
         .bimasakti-solutions-grid {
-            padding: 10px;
-            max-width: 95%;
-        }
-
-        .bimasakti-description {
-            max-width: 100%;
-        }
-
-        .bimasakti-features {
-            grid-template-columns: 1fr;
+            max-width: 90%;
         }
 
         .bimasakti-solution-item {
-            padding: 10px;
+            flex-basis: calc(50% - 10px);
+            max-width: calc(50% - 10px);
+        }
+    }
+
+    @media (max-width: 768px) {
+        .bimasakti-solutions-grid {
+            max-width: 95%;
+            padding: 15px;
         }
 
-        .bimasakti-solution-item h4 {
-            font-size: 1rem;
+        .bimasakti-title {
+            font-size: 1.8rem;
+        }
+
+        .bimasakti-description {
+            font-size: 1em !important;
+            max-width: 90%;
+        }
+
+        .bimasakti-solution-item {
+            flex-basis: 100%;
+            max-width: 100%;
+        }
+    }
+
+    @media (max-width: 480px) {
+        .bimasakti-solutions-grid {
+            padding: 10px;
         }
 
         .bimasakti-title {
             font-size: 1.5rem;
         }
+
+        .bimasakti-description {
+            font-size: 0.9em !important;
+        }
+
+        .bimasakti-solution-item h4 {
+            font-size: 0.9rem;
+        }
+
+        .bimasakti-solution-item p {
+            font-size: 0.8rem;
+        }
     }
+
+  
 </style>
 
     
@@ -2101,7 +2069,7 @@
                     <div class="bg-light p-5 rounded-3 shadow-sm cta-card">
                         <div class="row align-items-center">
                             <div class="col-lg-8 mb-4 mb-lg-0">
-                                <h2 class="mb-3 fw-bold" style="background: linear-gradient(287deg, #625dfa, #4f67a7); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">Request for Pricing, Demo or Meeting Schedule</h2>
+                                <h2 class="mb-3 fw-bold" style="  background: linear-gradient(90deg, #783ea8, #e4ac44); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">Request for Pricing, Demo or Meeting Schedule</h2>
                                 <p class="mb-0 text-muted lead">Let's discuss how RealNet can elevate your operations.</p>
                             </div>
                             <div class="col-lg-4 text-lg-end text-center">
@@ -2116,7 +2084,7 @@
 
     <style>
         #cta .cta-card {
-            background-color: #f8f9fa;
+            background-color: #f5f4f4 !important;
             transition: all 0.3s ease;
             border: 1px solid rgba(0, 0, 0, 0.125);
         }
@@ -2148,7 +2116,7 @@
         }
 
         #cta .cta-button:hover {
-            background-color: #5a07a8;
+            background-color: #33537c;
             transform: translateY(-2px);
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
         }
@@ -2170,6 +2138,239 @@
             }
         }
     </style>
+
+<!-- Testimonial Section with Separate Video -->
+<section id="realnet-testimonial-showcase" class="py-5">
+    <div class="container position-relative">
+        <!-- Background Grid Pattern -->
+        <div class="realnet-bg-grid"></div>
+        
+        <!-- Advanced Floating Elements -->
+        <div class="floating-element left-element">
+            <div class="tech-icon-container">
+                <i class="fas fa-quote-left fa-3x text-primary"></i>
+                <div class="pulse-ring"></div>
+            </div>
+        </div>
+        <div class="floating-element right-element">
+            <div class="tech-icon-container">
+                <i class="fas fa-star fa-3x text-primary"></i>
+                <div class="pulse-ring"></div>
+            </div>
+        </div>
+        
+        <div class="row justify-content-center">
+            <div class="col-lg-10">
+                <!-- Testimonial Content -->
+                <div class="realnet-testimonial-container text-center p-5 mb-1 position-relative">
+                    <h2 class="mb-4 fw-bold bimasakti-title" style="font-size: 3rem; line-height: 1.2;">What They Say</h2>
+                    <div class="realnet-testimonial-carousel">
+                        <div class="realnet-testimonial-item">
+                            <h3 class="lead mb-4" style="font-size: 2rem; line-height: 1.2;">RealNet's solutions have transformed our IT infrastructure. Their expertise and customization capabilities are unmatched in the industry.</h3>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Video Section -->
+                <div class="realnet-video-container position-relative overflow-hidden mt-0 mb-4"   style="border-radius: 15px; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); max-width: 60%; margin: 0 auto;">
+                    <!-- YouTube Video Embed -->
+                    <iframe class="w-100" style="border-radius: 15px; aspect-ratio: 16 / 9;" src="https://www.youtube.com/embed/Q7kzoNEC4QU?enablejsapi=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    <div class="realnet-video-overlay position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center justify-content-center" style="pointer-events: none;">
+                        <!-- Overlay content -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<style>
+    /* Advanced Floating Elements Styles */
+    .floating-element {
+        position: absolute;
+        animation: floatAndRotate 6s ease-in-out infinite;
+    }
+    .left-element {
+        left: 15%;
+        top: 45%;
+    }
+    .right-element {
+        right: 15%;
+        bottom: 5%;
+    }
+    .tech-icon-container {
+        position: relative;
+        width: 80px;
+        height: 80px;
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 0 20px rgba(62, 103, 141, 0.3);
+    }
+    .tech-icon-container i {
+        background: linear-gradient(to right, #783ea8, #e4ac44);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+    .pulse-ring {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        border-radius: 50%;
+        animation: pulse 2s linear infinite;
+        border: 2px solid rgba(192, 168, 58, 0.5);
+    }
+    @keyframes floatAndRotate {
+        0%, 100% { transform: translateY(0) rotate(0deg); }
+        50% { transform: translateY(-20px) rotate(10deg); }
+    }
+    @keyframes pulse {
+        0% { transform: scale(0.95); opacity: 1; }
+        70% { transform: scale(1.1); opacity: 0; }
+        100% { transform: scale(0.95); opacity: 0; }
+    }
+
+    /* Background Grid */
+    .realnet-bg-grid {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-image: 
+            linear-gradient(to right, rgba(200, 200, 200, 0.1) 1px, transparent 1px),
+            linear-gradient(to bottom, rgba(200, 200, 200, 0.1) 1px, transparent 1px);
+        background-size: 20px 20px;
+        pointer-events: none;
+    }
+    /* Testimonial and Video Containers */
+    #realnet-testimonial-showcase {
+        position: relative;
+        overflow: hidden;
+    }
+    .realnet-testimonial-container, .realnet-video-container {
+        background-color: transparent;
+        transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    }
+     .realnet-video-container:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    }
+    .realnet-video-overlay {
+        background: rgba(0, 0, 0, 0.24);
+        transition: opacity 0.3s ease-in-out, background 0.3s ease-in-out;
+    }
+    .realnet-video-container:hover .realnet-video-overlay {
+        background: rgba(0, 0, 0, 0.4);
+    }
+    .realnet-play-btn {
+        background: none;
+        border: none;
+        opacity: 0.8;
+        transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out, color 0.3s ease-in-out;
+    }
+    .realnet-play-btn:hover {
+        opacity: 1;
+        transform: scale(1.1);
+        color: #fff; /* Assuming the button has an icon, change color on hover */
+    }
+    /* Enhanced accessibility */
+    .realnet-play-btn:focus {
+        outline: 2px solid #fff;
+        outline-offset: 2px;
+    }
+    /* Smooth transition for testimonial text */
+    .realnet-testimonial-container p {
+        transition: color 0.3s ease-in-out;
+    }
+    .realnet-testimonial-container:hover p {
+        color: #333; /* Darken text on hover for better contrast */
+    }
+
+    /* Responsive Styles */
+    @media (max-width: 1200px) {
+        .floating-element {
+            transform: scale(0.8);
+        }
+        .left-element {
+            left: 5%;
+        }
+        .right-element {
+            right: 5%;
+        }
+    }
+
+    @media (max-width: 992px) {
+        .realnet-testimonial-container {
+            padding: 4rem !important;
+        }
+        .realnet-video-container {
+            max-width: 70% !important;
+        }
+    }
+
+    @media (max-width: 768px) {
+        .floating-element {
+            display: none !important;
+        }
+        .realnet-testimonial-container {
+            padding: 3rem !important;
+        }
+        .realnet-video-container {
+            max-width: 80% !important;
+        }
+        h2.bimasakti-title {
+            font-size: 2.5rem !important;
+        }
+        h3.lead {
+            font-size: 1.5rem !important;
+        }
+    }
+
+    @media (max-width: 576px) {
+        .realnet-testimonial-container {
+            padding: 2rem !important;
+        }
+        .realnet-video-container {
+            max-width: 90% !important;
+        }
+        h2.bimasakti-title {
+            font-size: 2rem !important;
+        }
+        h3.lead {
+            font-size: 1.2rem !important;
+        }
+    }
+</style>
+
+<script>
+    // Initialize testimonial slider (assuming you're using a library like Slick)
+    $(document).ready(function(){
+        $('.realnet-testimonial-carousel').slick({
+            dots: true,
+            infinite: true,
+            speed: 500,
+            fade: true,
+            cssEase: 'linear',
+            autoplay: true,
+            autoplaySpeed: 5000
+        });
+    });
+
+    function playRealnetVideo(button) {
+        const videoContainer = button.closest('.realnet-video-container');
+        const video = videoContainer.querySelector('video');
+        const overlay = videoContainer.querySelector('.realnet-video-overlay');
+        
+        video.play();
+        overlay.style.opacity = '0';
+        setTimeout(() => {
+            overlay.style.display = 'none';
+        }, 300);
+    }
+</script>
+
 
 
 
@@ -2206,6 +2407,21 @@
                                             -webkit-text-fill-color: transparent;
                                             background-clip: text;
                                             color: transparent;
+                                        }
+                                        
+                                        /* Mobile-specific styles for wider container */
+                                        @media (max-width: 767px) {
+                                            .container-fluid {
+                                                padding-left: 0 !important;
+                                                padding-right: 0 !important;
+                                            }
+                                            .col-12 {
+                                                padding-left: 10px !important;
+                                                padding-right: 10px !important;
+                                            }
+                                            .glass-card {
+                                                border-radius: 0;
+                                            }
                                         }
                                     </style>
                                     <h3 class="mb-0 glass-subtext" style="max-width: 70%; margin: 0 auto; font-size: 20px !important;">
@@ -2407,6 +2623,131 @@
     </style>
 
 </section>
+<section id="integrations" class="py-5">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-6">
+                <h2 class="display-4 fw-bold mb-4 bimasakti-title" style="text-align: start;">Our Partners</h2>
+                <p class="lead mb-4" style="max-width: 90%; font-size: 1em;">RealNET's strategic partnerships empower us to deliver comprehensive ONE SOLUTION business implementations. By leveraging our partners' expertise, we provide seamless integration and unparalleled value to our customers across diverse technological needs.</p>
+            </div>
+            <div class="col-lg-6 mt-5 mt-lg-0">
+                <div class="integration-grid">
+                    <img src="assets/img/realnet/logo/commscope.png" alt="Commscope" class="integration-icon">
+                    <img src="assets/img/realnet/logo/dtc.png" alt="DTC" class="integration-icon">
+                    <img src="assets/img/realnet/logo/ls.png" alt="LS" class="integration-icon">
+                    <div class="centered-icons">
+                        <img src="assets/img/realnet/logo/netviel.png" alt="Netviel" class="integration-icon">
+                        <img src="assets/img/realnet/logo/nexans.png" alt="Nexans" class="integration-icon">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<style>
+    /* Integration section styles */
+    #integrations {
+        padding: 4rem 0;
+    }
+
+    .integration-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: auto auto;
+        gap: 2rem;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .integration-icon {
+        width: 100%;
+        max-width: 350px;
+        height: auto;
+        object-fit: contain;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        padding: 1.5rem;
+        background-color: #ffffff;
+        border-radius: 15px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.15);
+    }
+
+    .centered-icons {
+        grid-column: 1 / -1;
+        display: flex;
+        justify-content: center;
+        gap: 2rem;
+    }
+
+    .centered-icons .integration-icon {
+        max-width: 350px; /* Keeping the size consistent with other icons */
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 1200px) {
+        .integration-grid {
+            grid-template-columns: repeat(2, 1fr);
+        }
+        .integration-icon, .centered-icons .integration-icon {
+            max-width: 300px;
+        }
+    }
+
+    @media (max-width: 991px) {
+        .integration-grid {
+            grid-template-columns: repeat(2, 1fr);
+        }
+        .integration-icon, .centered-icons .integration-icon {
+            max-width: 280px;
+        }
+    }
+
+    @media (max-width: 767px) {
+        #integrations .row {
+            flex-direction: column;
+        }
+        #integrations .col-lg-6 {
+            width: 100%;
+            text-align: center;
+        }
+        .bimasakti-title {
+            font-size: 2rem;
+            text-align: center !important;
+        }
+        .lead {
+            font-size: 0.9em;
+            max-width: 100%;
+        }
+        .integration-grid {
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+        }
+        .integration-icon, .centered-icons .integration-icon {
+            max-width: 100%;
+            padding: 1rem;
+        }
+        .centered-icons {
+            flex-direction: row;
+            flex-wrap: wrap;
+        }
+    }
+
+    @media (max-width: 575px) {
+        .integration-grid {
+            grid-template-columns: 1fr;
+        }
+        .integration-icon, .centered-icons .integration-icon {
+            max-width: 200px;
+            margin: 0 auto;
+        }
+        .centered-icons {
+            flex-direction: column;
+            align-items: center;
+        }
+    }
+</style>
+
+
 
 
     <section id="contact" class="pb-5">
