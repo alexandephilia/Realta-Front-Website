@@ -3036,6 +3036,74 @@
             }
         }
     </style>
+    <style>
+        .overlapping-section {
+            position: relative;
+            padding: 35px 0 0px; /* Even more increased bottom padding */
+            overflow: hidden;
+        }
+        .centered-image {
+            max-width: 60%;
+            height: auto;
+            display: block;
+            margin: 0 auto 165px; /* Even more increased bottom margin */
+            border-radius: 15px;
+            z-index: 1;
+        }
+        .overlapping-content {
+            position: relative;
+            background-color: var(--background-color, #f8f9fa);
+            padding: 35px 0;
+            margin-top: -300px; /* Even more increased negative margin */
+            border-radius: 30px 30px 0 0;
+            z-index: 2;
+            box-shadow: 0 -4px 5px rgba(0, 0, 0, 0.083); /* Added box-shadow to top */
+        }
+        @media (max-width: 768px) {
+            .centered-image {
+                max-width: 95%;
+                margin-bottom: 120px; /* Adjusted for mobile */
+            }
+            .overlapping-content {
+                margin-top: -190px; /* Adjusted for mobile */
+                padding: 35px;
+            }
+        }
+    </style>
+
+    <section class="overlapping-section">
+        <div class="container">
+            <img src="assets/img/separator.jpg" alt="Centered Image" class="centered-image">
+        </div>
+        <div class="overlapping-content">
+            <div class="container">
+            <div style="text-align: center;">
+                <h1 style="font-size: 3.5rem; margin-bottom: 25px; position: relative; display: inline-block;">
+                    <span class="libraries-why_text-underline" style="display: inline-block; margin-right: -5rem; margin-bottom: -3rem; margin-left: -5rem; padding-right: 5rem; padding-bottom: 3rem; padding-left: 5rem; background-image: url('https://assets.website-files.com/62fdbdeb5472695f67359ce1/62fdbdeb5472699d59359cfb_why-underline.svg'); background-position: 50% 100%; background-size: 13.5rem; background-repeat: no-repeat;">
+                        Why Choose Us?
+                    </span>
+                </h1>
+                <style>
+                    @media (max-width: 768px) {
+                        h1 {
+                            font-size: 2.5rem !important;
+                        }
+                        .libraries-why_text-underline {
+                            margin-right: -3rem !important;
+                            margin-bottom: -2rem !important;
+                            margin-left: -3rem !important;
+                            padding-right: 3rem !important;
+                            padding-bottom: 2rem !important;
+                            padding-left: 3rem !important;
+                            background-size: 10rem !important;
+                        }
+                    }
+                </style>
+            </div>
+            </div>
+        </div>
+    </section>
+
 
 
 
@@ -4937,8 +5005,6 @@ document.addEventListener('DOMContentLoaded', function() {
    sections.forEach(section => fadeInOutObserver.observe(section));
 });
 </script> -->
-
-
 
 </body>
 
