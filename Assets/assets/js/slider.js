@@ -109,10 +109,6 @@ const cardContents = {
                 filter: blur(10);
                 -webkit-filter: blur(10);
             }
-            .hospitality-item:hover {
-                transform: translateY(2px);
-                box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-            }
             .hospitality-item h3 {
                 font-size: 1.3rem;
                 margin-bottom: 15px;
@@ -262,10 +258,6 @@ const cardContents = {
             padding: 20px;
             font-size: 16px;
             transition: all 0.3s ease;
-        }
-        .manufacturing-item:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
         }
         .manufacturing-item h3 {
             font-size: 1.2rem;
@@ -476,10 +468,6 @@ const cardContents = {
                 filter: blur(10);
                 -webkit-filter: blur(10);
             }
-            .property-item:hover {
-                transform: translateY(2px);
-                box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-            }
             .property-item h3 {
                 font-size: 1.3rem;
                 margin-bottom: 15px;
@@ -673,10 +661,6 @@ const cardContents = {
             transition: all 0.3s ease;
             filter: blur(10);
             -webkit-filter: blur(10);
-        }
-        .finance-item:hover {
-            transform: translateY(2px);
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
         }
         .finance-item h3 {
             font-size: 1.3rem;
