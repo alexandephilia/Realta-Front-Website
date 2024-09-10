@@ -2829,44 +2829,45 @@ body.dark-mode #technology-delivery {
   border-radius: 10px !important;
   border: 1px solid rgba(255, 255, 255, 0.18) !important;
   box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 8px !important;
-  padding: 30px;
-  position: relative;
-  overflow: hidden;
-  transition: all 0.3s ease;
+  padding: 30px !important;
+  position: relative !important;
+  overflow: hidden !important;
+  transition: all 0.3s ease !important;
 }
 
 .banner-content {
-  color: white;
-  max-width: 60%;
-  position: relative;
-  z-index: 2;
+  color: white !important;
+  max-width: 60% !important;
+  position: relative !important;
+  z-index: 2 !important;
 }
 
 .banner h2 {
-  font-family: 'Proxima Nova', sans-serif;
-  font-size: 28px;
-  font-weight: 700;
-  margin-bottom: 10px;
-  line-height: 1.2;
+  font-family: 'Proxima Nova', sans-serif !important;
+  font-size: 28px !important;
+  font-weight: 700 !important;
+  margin-bottom: 10px !important;
+  line-height: 1.2 !important;
   color: rgba(0, 0, 0, 0.8) !important;
 }
 
 .banner p {
-  font-family: 'Proxima Nova', sans-serif;
-  font-size: 16px;
-  margin-bottom: 20px;
-  opacity: 0.9;
-  line-height: 1.4;
-  color: #000000; /* Added this line to make the text black by default */
+  font-family: 'Proxima Nova', sans-serif !important;
+  font-size: 16px !important;
+  margin-bottom: 20px !important;
+  opacity: 0.9 !important;
+  line-height: 1.4 !important;
+  color: #000000 !important; /* Added this line to make the text black by default */
 }
+
 .banner-image {
-  position: absolute;
-  right: -60px;
-  top: 25%;
-  transform: translateY(-50%);
-  width: 66%;
-  max-width: 400px;
-  height: auto;
+  position: absolute !important;
+  right: -60px !important;
+  top: 25% !important;
+  transform: translateY(-50%) !important;
+  width: 66% !important;
+  max-width: 400px !important;
+  height: auto !important;
 }
 
 

@@ -125,8 +125,8 @@ body.dark-mode .product-details {
     background-position: center;
     margin-bottom: 20px;
     position: relative;
-    border-radius: 12px;
-    overflow: hidden;
+    border-radius: 20px; /* Changed from 12px to 20px */
+    overflow: hidden !important;
     transition: transform 0.3s ease;
 }
 
