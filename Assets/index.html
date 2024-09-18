@@ -5091,6 +5091,9 @@
             });
         });
     </script>
+
+
+
      <!-- Enhanced Smooth Scroll and Interactive Elements Section -->
      <script>
         document.addEventListener('DOMContentLoaded', function () {
@@ -5132,6 +5135,7 @@
                 }
             }
 
+            // Use passive: true for better scroll performance on mobile
             window.addEventListener('scroll', onScroll, { passive: true });
 
             function checkInitialVisibility() {
@@ -5169,7 +5173,7 @@
             window.addEventListener('scroll', () => {
                 const scrollPercentage = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100;
                 progressBar.style.width = `${scrollPercentage}%`;
-            });
+            }, { passive: true });
         });
     </script>
     <style>
@@ -5178,8 +5182,9 @@
         }
 
         body {
-            overflow-y: scroll;
+            overflow-y: auto;
             overflow-x: hidden;
+            -webkit-overflow-scrolling: touch;
         }
 
         section,
@@ -5196,23 +5201,6 @@
             }
         }
 
-        body::-webkit-scrollbar {
-            width: 8px;
-        }
-
-        body::-webkit-scrollbar-track {
-            background: #f1f1f1;
-        }
-
-        body::-webkit-scrollbar-thumb {
-            background: #888;
-            border-radius: 4px;
-        }
-
-        body::-webkit-scrollbar-thumb:hover {
-            background: #555;
-        }
-
         @keyframes fadeIn {
             from { opacity: 0; transform: translateY(20px); }
             to { opacity: 1; transform: translateY(0); }
@@ -5222,15 +5210,11 @@
             animation: fadeIn 0.6s ease-out forwards;
         }
 
-        /* Hide scrollbar for Chrome, Safari and Opera */
-        body::-webkit-scrollbar {
-            display: none;
-        }
-
-        /* Hide scrollbar for IE, Edge and Firefox */
-        body {
-            -ms-overflow-style: none;  /* IE and Edge */
-            scrollbar-width: none;  /* Firefox */
+        /* Ensure content is not hidden behind fixed elements on iOS */
+        @supports (-webkit-overflow-scrolling: touch) {
+            body {
+                padding-bottom: 50px;
+            }
         }
     </style>
 
