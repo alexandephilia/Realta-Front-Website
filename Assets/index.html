@@ -2972,20 +2972,30 @@
         </div>
     </section>
    
-   
    <style>
         .animate-card {
             opacity: 0;
-            transform: scale(1.1) translateY(-20px);
-            filter: blur(8px);
-            transition: opacity 0.6s ease, transform 0.6s ease, filter 0.6s ease;
-            will-change: transform, opacity, filter;
+            transform: translateY(-20px);
+            transition: opacity 0.3s ease, transform 0.3s ease;
+            will-change: transform, opacity;
         }
 
         .animate-card.visible {
             opacity: 1;
-            transform: scale(1) translateY(0);
-            filter: blur(0);
+            transform: translateY(0);
+        }
+
+        @media (min-width: 768px) {
+            .animate-card {
+                transform: scale(1.1) translateY(-20px);
+                filter: blur(8px);
+                transition: opacity 0.6s ease, transform 0.6s ease, filter 0.6s ease;
+            }
+
+            .animate-card.visible {
+                transform: scale(1) translateY(0);
+                filter: blur(0);
+            }
         }
     </style>
 
@@ -2995,26 +3005,31 @@
             let ticking = false;
 
             function updateCardVisibility() {
-                const isMobile = window.innerWidth <= 768;
-                cards.forEach((card) => {
+                const isMobile = window.innerWidth < 768;
+                const scrollPosition = window.innerHeight * (isMobile ? 0.9 : 0.8);
+
+                cards.forEach((card, index) => {
                     const rect = card.getBoundingClientRect();
-                    const scrollPosition = window.innerHeight * 0.8;
 
                     if (rect.top <= scrollPosition) {
                         if (isMobile) {
-                            card.style.opacity = 1;
-                            card.style.transform = 'scale(1) translateY(0)';
-                            card.style.filter = 'blur(0)';
+                            card.classList.add('visible');
                         } else {
                             const progress = Math.min(1, (scrollPosition - rect.top) / (window.innerHeight * 0.2));
-                            card.style.opacity = progress;
-                            card.style.transform = `scale(${1.1 - 0.1 * progress}) translateY(${-20 + 20 * progress}px)`;
-                            card.style.filter = `blur(${8 - 8 * progress}px)`;
+                            setTimeout(() => {
+                                card.style.opacity = progress;
+                                card.style.transform = `scale(${1.1 - 0.1 * progress}) translateY(${-20 + 20 * progress}px)`;
+                                card.style.filter = `blur(${8 - 8 * progress}px)`;
+                            }, index * 50); // Reduced delay for faster animation
                         }
                     } else {
-                        card.style.opacity = 0;
-                        card.style.transform = 'scale(1.1) translateY(-20px)';
-                        card.style.filter = 'blur(8px)';
+                        if (isMobile) {
+                            card.classList.remove('visible');
+                        } else {
+                            card.style.opacity = 0;
+                            card.style.transform = 'scale(1.1) translateY(-20px)';
+                            card.style.filter = 'blur(8px)';
+                        }
                     }
                 });
                 ticking = false;
