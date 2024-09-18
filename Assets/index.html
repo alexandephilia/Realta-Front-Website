@@ -2995,17 +2995,15 @@
             let ticking = false;
 
             function updateCardVisibility() {
-                cards.forEach((card, index) => {
+                cards.forEach((card) => {
                     const rect = card.getBoundingClientRect();
                     const scrollPosition = window.innerHeight * 0.8;
 
                     if (rect.top <= scrollPosition) {
                         const progress = Math.min(1, (scrollPosition - rect.top) / (window.innerHeight * 0.2));
-                        setTimeout(() => {
-                            card.style.opacity = progress;
-                            card.style.transform = `scale(${1.1 - 0.1 * progress}) translateY(${-20 + 20 * progress}px)`;
-                            card.style.filter = `blur(${8 - 8 * progress}px)`;
-                        }, index * 100); // Delay each card by 100ms * its index
+                        card.style.opacity = progress;
+                        card.style.transform = `scale(${1.1 - 0.1 * progress}) translateY(${-20 + 20 * progress}px)`;
+                        card.style.filter = `blur(${8 - 8 * progress}px)`;
                     } else {
                         card.style.opacity = 0;
                         card.style.transform = 'scale(1.1) translateY(-20px)';
