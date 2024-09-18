@@ -4954,7 +4954,6 @@
     <!-- ? SMOOTH SCROLL EFFECT SECTION -->
     <script>
         document.addEventListener('DOMContentLoaded', function () {
-
             function smoothScroll(target, duration) {
                 const targetElement = document.querySelector(target);
                 const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset;
@@ -4992,7 +4991,6 @@
                 if (!ticking) {
                     requestAnimationFrame(() => {
                         const currentScrollY = window.scrollY;
-                        const delta = lastScrollY - currentScrollY;
 
                         // Apply parallax effect
                         document.querySelectorAll('.parallax').forEach(elem => {
@@ -5000,13 +4998,16 @@
                             elem.style.transform = `translateY(${currentScrollY * speed}px)`;
                         });
 
-                        // Fade in/out sections
+                        // Zoom in and blur sections
                         const sections = document.querySelectorAll('section');
                         sections.forEach(section => {
                             const rect = section.getBoundingClientRect();
                             const isVisible = (rect.top <= window.innerHeight * 0.75 && rect.bottom >= 0);
+                            const scale = isVisible ? 1 : 1.1;
+                            const blur = isVisible ? 0 : 5;
                             section.style.opacity = isVisible ? 1 : 0;
-                            section.style.transform = isVisible ? 'translateY(0)' : `translateY(${delta > 0 ? 20 : -20}px)`;
+                            section.style.transform = `scale(${scale})`;
+                            section.style.filter = `blur(${blur}px)`;
                         });
 
                         // Smooth animation for footer
@@ -5014,8 +5015,11 @@
                         if (footer) {
                             const footerRect = footer.getBoundingClientRect();
                             const footerVisible = (footerRect.top <= window.innerHeight && footerRect.bottom >= 0);
+                            const footerScale = footerVisible ? 1 : 1.1;
+                            const footerBlur = footerVisible ? 0 : 5;
                             footer.style.opacity = footerVisible ? 1 : 0;
-                            footer.style.transform = footerVisible ? 'translateY(0)' : 'translateY(20px)';
+                            footer.style.transform = `scale(${footerScale})`;
+                            footer.style.filter = `blur(${footerBlur}px)`;
                         }
 
                         lastScrollY = currentScrollY;
@@ -5034,7 +5038,8 @@
                     const rect = section.getBoundingClientRect();
                     const isVisible = (rect.top <= window.innerHeight);
                     section.style.opacity = isVisible ? 1 : 0;
-                    section.style.transform = isVisible ? 'translateY(0)' : 'translateY(20px)';
+                    section.style.transform = isVisible ? 'scale(1)' : 'scale(1.1)';
+                    section.style.filter = isVisible ? 'blur(0)' : 'blur(5px)';
                 });
 
                 // Check initial visibility for footer
@@ -5043,7 +5048,8 @@
                     const footerRect = footer.getBoundingClientRect();
                     const footerVisible = (footerRect.top <= window.innerHeight);
                     footer.style.opacity = footerVisible ? 1 : 0;
-                    footer.style.transform = footerVisible ? 'translateY(0)' : 'translateY(20px)';
+                    footer.style.transform = footerVisible ? 'scale(1)' : 'scale(1.1)';
+                    footer.style.filter = footerVisible ? 'blur(0)' : 'blur(5px)';
                 }
             }
 
@@ -5066,8 +5072,9 @@
         section,
         #newsletter-cta {
             opacity: 0;
-            transform: translateY(20px);
-            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+            transform: scale(1.1);
+            filter: blur(5px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out, filter 0.6s ease-out;
         }
 
         /* Hide scrollbar for Chrome, Safari and Opera */
