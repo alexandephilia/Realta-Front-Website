@@ -2972,61 +2972,57 @@
         </div>
     </section>
    
+   
    <style>
         .animate-card {
             opacity: 0;
-            transform: translateY(-20px);
-            transition: opacity 0.3s ease, transform 0.3s ease;
-            will-change: transform, opacity;
+            transform: scale(1.1) translateY(-20px);
+            filter: blur(8px);
+            transition: opacity 0.6s ease, transform 0.6s ease, filter 0.6s ease;
+            will-change: transform, opacity, filter;
         }
 
         .animate-card.visible {
             opacity: 1;
-            transform: translateY(0);
-        }
-
-        @media (min-width: 768px) {
-            .animate-card {
-                transform: scale(1.1) translateY(-20px);
-                filter: blur(8px);
-                transition: opacity 0.6s ease, transform 0.6s ease, filter 0.6s ease;
-            }
-
-            .animate-card.visible {
-                transform: scale(1) translateY(0);
-                filter: blur(0);
-            }
+            transform: scale(1) translateY(0);
+            filter: blur(0);
         }
     </style>
-
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             const cards = document.querySelectorAll('.animate-card');
             let ticking = false;
 
-            function updateCardVisibility() {
-                const isMobile = window.innerWidth < 768;
-                const scrollPosition = window.innerHeight * (isMobile ? 0.9 : 0.8);
+            function isMobile() {
+                return window.innerWidth <= 768; // Adjust this breakpoint as needed
+            }
 
+            function updateCardVisibility() {
                 cards.forEach((card, index) => {
                     const rect = card.getBoundingClientRect();
+                    const windowHeight = window.innerHeight;
+                    const scrollPosition = isMobile() ? 
+                        windowHeight - (windowHeight * 0.2) : // Trigger when 80% of card is visible on mobile
+                        windowHeight * 0.8; // Desktop trigger point
 
-                    if (rect.top <= scrollPosition) {
-                        if (isMobile) {
-                            card.classList.add('visible');
-                        } else {
-                            const progress = Math.min(1, (scrollPosition - rect.top) / (window.innerHeight * 0.2));
-                            setTimeout(() => {
-                                card.style.opacity = progress;
+                    if (rect.top <= scrollPosition && rect.bottom >= 0) {
+                        const progress = Math.min(1, (scrollPosition - rect.top) / (windowHeight * 0.2));
+                        setTimeout(() => {
+                            card.style.opacity = progress;
+                            if (isMobile()) {
+                                card.style.transform = `translateY(${20 - 20 * progress}px)`;
+                                card.style.filter = `blur(${2 - 2 * progress}px)`;
+                            } else {
                                 card.style.transform = `scale(${1.1 - 0.1 * progress}) translateY(${-20 + 20 * progress}px)`;
                                 card.style.filter = `blur(${8 - 8 * progress}px)`;
-                            }, index * 50); // Reduced delay for faster animation
-                        }
+                            }
+                        }, isMobile() ? index * 50 : index * 100); // Faster animation on mobile
                     } else {
-                        if (isMobile) {
-                            card.classList.remove('visible');
+                        card.style.opacity = 0;
+                        if (isMobile()) {
+                            card.style.transform = 'translateY(20px)';
+                            card.style.filter = 'blur(2px)';
                         } else {
-                            card.style.opacity = 0;
                             card.style.transform = 'scale(1.1) translateY(-20px)';
                             card.style.filter = 'blur(8px)';
                         }
@@ -3043,6 +3039,7 @@
             }
 
             window.addEventListener('scroll', onScroll, { passive: true });
+            window.addEventListener('resize', updateCardVisibility, { passive: true });
             updateCardVisibility(); // Initial check
         });
     </script>
@@ -5137,44 +5134,26 @@
             }
 
             let ticking = false;
-            let lastScrollY = window.scrollY;
 
             function onScroll() {
                 if (!ticking) {
                     requestAnimationFrame(() => {
-                        const currentScrollY = window.scrollY;
-
-                        // Apply parallax effect only on desktop
-                        if (!isMobile()) {
-                            document.querySelectorAll('.parallax').forEach(elem => {
-                                const speed = parseFloat(elem.dataset.speed) || 0.5;
-                                elem.style.transform = `translateY(${currentScrollY * speed}px)`;
-                            });
-                        }
-
-                        // Fade in/out sections
+                        // Fade in sections
                         const sections = document.querySelectorAll('section');
                         sections.forEach(section => {
                             const rect = section.getBoundingClientRect();
                             const isVisible = (rect.top <= window.innerHeight * 0.75 && rect.bottom >= 0);
                             section.style.opacity = isVisible ? 1 : 0;
-                            if (!isMobile()) {
-                                section.style.transform = isVisible ? 'translateY(0)' : `translateY(${currentScrollY > lastScrollY ? 20 : -20}px)`;
-                            }
                         });
 
-                        // Smooth animation for footer
+                        // Fade in footer
                         const footer = document.getElementById('newsletter-cta');
                         if (footer) {
                             const footerRect = footer.getBoundingClientRect();
                             const footerVisible = (footerRect.top <= window.innerHeight && footerRect.bottom >= 0);
                             footer.style.opacity = footerVisible ? 1 : 0;
-                            if (!isMobile()) {
-                                footer.style.transform = footerVisible ? 'translateY(0)' : 'translateY(20px)';
-                            }
                         }
 
-                        lastScrollY = currentScrollY;
                         ticking = false;
                     });
                     ticking = true;
@@ -5190,9 +5169,6 @@
                     const rect = section.getBoundingClientRect();
                     const isVisible = (rect.top <= window.innerHeight);
                     section.style.opacity = isVisible ? 1 : 0;
-                    if (!isMobile()) {
-                        section.style.transform = isVisible ? 'translateY(0)' : 'translateY(20px)';
-                    }
                 });
 
                 // Check initial visibility for footer
@@ -5201,9 +5177,6 @@
                     const footerRect = footer.getBoundingClientRect();
                     const footerVisible = (footerRect.top <= window.innerHeight);
                     footer.style.opacity = footerVisible ? 1 : 0;
-                    if (!isMobile()) {
-                        footer.style.transform = footerVisible ? 'translateY(0)' : 'translateY(20px)';
-                    }
                 }
             }
 
@@ -5226,15 +5199,6 @@
             opacity: 0;
             transition: opacity 0.6s ease-out;
         }
-
-        @media (min-width: 768px) {
-            section,
-            #newsletter-cta {
-                transform: translateY(20px);
-                transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-            }
-        }
-    </style>
 
         /* Hide scrollbar for Chrome, Safari and Opera */
         body::-webkit-scrollbar {
