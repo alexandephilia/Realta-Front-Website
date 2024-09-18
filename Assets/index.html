@@ -4950,84 +4950,139 @@
             });
         });
     </script>
-<script>
-    document.addEventListener('DOMContentLoaded', function() {
-        // Alright, let's dive into this mess and see why it's fucking up mobile responsiveness (because who doesn't love a good mobile nightmare, right?)
 
-        // PROBLEM 1: Scaling and Blurring Everything
-        // This is probably the biggest culprit. We're scaling up and blurring ALL sections, containers, rows, and columns.
-        // On mobile, this can royally screw up layouts that are already tight on space.
-        const sections = document.querySelectorAll('section:not([id="Technology!"]), .container, .row, .col');
+    <!-- ? SMOOTH SCROLL EFFECT SECTION -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
 
-        sections.forEach(section => {
-            // Here's where we're messing things up
-            section.style.opacity = '0';
-            section.style.transform = 'scale(1.1)'; // This scale is likely causing overflow issues on mobile
-            section.style.filter = 'blur(10px)'; // Blurring can also affect text readability on smaller screens
-            // We're not considering different transition speeds for different device sizes
-            section.style.transition = 'opacity 0.5s ease-out, transform 0.5s ease-out, filter 0.5s ease-out';
-        });
+            function smoothScroll(target, duration) {
+                const targetElement = document.querySelector(target);
+                const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset;
+                const startPosition = window.pageYOffset;
+                const distance = targetPosition - startPosition;
+                let startTime = null;
 
-        // PROBLEM 2: Overflow Hidden
-        // This line is a real kicker for mobile:
-        document.body.style.overflow = 'hidden';
-        // It's preventing scrolling, which is CRUCIAL on mobile devices. What were we thinking?
+                function animation(currentTime) {
+                    if (startTime === null) startTime = currentTime;
+                    const timeElapsed = currentTime - startTime;
+                    const run = ease(timeElapsed, startPosition, distance, duration);
+                    window.scrollTo(0, run);
+                    if (timeElapsed < duration) requestAnimationFrame(animation);
+                }
 
-        // PROBLEM 3: Scroll Event Listener
-        // This whole scroll event listener is overkill and can cause performance issues, especially on mobile
-        window.addEventListener('scroll', () => {
-            // ... (scroll handling code)
-        });
+                function ease(t, b, c, d) {
+                    t /= d;
+                    return -c * t * (t - 2) + b;
+                }
 
-        // POTENTIAL FIX:
-        // 1. Remove or adjust the scaling and blurring effects for mobile
-        // 2. Remove the overflow: hidden on the body
-        // 3. Simplify the animation logic or use CSS animations instead
-        // 4. Consider using media queries to apply different styles for mobile devices
+                requestAnimationFrame(animation);
+            }
 
-        // Here's a quick and dirty fix (not perfect, but better than breaking everything):
-        const isMobile = window.innerWidth <= 768; // Arbitrary mobile breakpoint
-
-        if (isMobile) {
-            sections.forEach(section => {
-                section.style.opacity = '1';
-                section.style.transform = 'none';
-                section.style.filter = 'none';
-                section.style.transition = 'none';
-            });
-            document.body.style.overflow = 'auto';
-        } else {
-            // Keep the original animation logic for desktop
-            const observer = new IntersectionObserver((entries, observer) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('animate-in');
-                        observer.unobserve(entry.target);
-                    }
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    smoothScroll(this.getAttribute('href'), 1000);
                 });
-            }, { root: null, rootMargin: '0px', threshold: 0.1 });
+            });
 
-            sections.forEach(section => observer.observe(section));
-        }
+            let ticking = false;
+            let lastScrollY = window.scrollY;
 
-        // Keep the style for desktop animations
-        const style = document.createElement('style');
-        style.textContent = `
-            @media (min-width: 769px) {
-                .animate-in {
-                    opacity: 1 !important;
-                    transform: scale(1) !important;
-                    filter: blur(0) !important;
+            function onScroll() {
+                if (!ticking) {
+                    requestAnimationFrame(() => {
+                        const currentScrollY = window.scrollY;
+                        const delta = lastScrollY - currentScrollY;
+
+                        // Apply parallax effect
+                        document.querySelectorAll('.parallax').forEach(elem => {
+                            const speed = parseFloat(elem.dataset.speed) || 0.5;
+                            elem.style.transform = `translateY(${currentScrollY * speed}px)`;
+                        });
+
+                        // Fade in/out sections
+                        const sections = document.querySelectorAll('section');
+                        sections.forEach(section => {
+                            const rect = section.getBoundingClientRect();
+                            const isVisible = (rect.top <= window.innerHeight * 0.75 && rect.bottom >= 0);
+                            section.style.opacity = isVisible ? 1 : 0;
+                            section.style.transform = isVisible ? 'translateY(0)' : `translateY(${delta > 0 ? 20 : -20}px)`;
+                        });
+
+                        // Smooth animation for footer
+                        const footer = document.getElementById('newsletter-cta');
+                        if (footer) {
+                            const footerRect = footer.getBoundingClientRect();
+                            const footerVisible = (footerRect.top <= window.innerHeight && footerRect.bottom >= 0);
+                            footer.style.opacity = footerVisible ? 1 : 0;
+                            footer.style.transform = footerVisible ? 'translateY(0)' : 'translateY(20px)';
+                        }
+
+                        lastScrollY = currentScrollY;
+                        ticking = false;
+                    });
+                    ticking = true;
                 }
             }
-        `;
-        document.head.appendChild(style);
 
-        // Remove the problematic scroll event listener entirely
-    });
-</script>
+            window.addEventListener('scroll', onScroll, { passive: true });
 
+            // Trigger initial visibility check
+            function checkInitialVisibility() {
+                const sections = document.querySelectorAll('section');
+                sections.forEach(section => {
+                    const rect = section.getBoundingClientRect();
+                    const isVisible = (rect.top <= window.innerHeight);
+                    section.style.opacity = isVisible ? 1 : 0;
+                    section.style.transform = isVisible ? 'translateY(0)' : 'translateY(20px)';
+                });
 
+                // Check initial visibility for footer
+                const footer = document.getElementById('newsletter-cta');
+                if (footer) {
+                    const footerRect = footer.getBoundingClientRect();
+                    const footerVisible = (footerRect.top <= window.innerHeight);
+                    footer.style.opacity = footerVisible ? 1 : 0;
+                    footer.style.transform = footerVisible ? 'translateY(0)' : 'translateY(20px)';
+                }
+            }
+
+            // Run initial visibility check after a short delay to ensure proper rendering
+            setTimeout(checkInitialVisibility, 100);
+        });
+    </script>
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            overflow-y: scroll;
+            /* Ensure only one scrollbar */
+            overflow-x: hidden;
+            /* Prevent horizontal scrollbar */
+        }
+
+        section,
+        #newsletter-cta {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+
+        /* Hide scrollbar for Chrome, Safari and Opera */
+        body::-webkit-scrollbar {
+            display: none;
+        }
+
+        /* Hide scrollbar for IE, Edge and Firefox */
+        body {
+            -ms-overflow-style: none;
+            /* IE and Edge */
+            scrollbar-width: none;
+            /* Firefox */
+        }
+    </style>
 
 
 
