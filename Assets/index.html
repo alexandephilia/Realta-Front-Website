@@ -2104,7 +2104,7 @@
                     <div class="m-xl-5 position-relative">
                         <img class="rounded img-fluid img-animate w-100 fit-cover"
                             style="min-height: 250px; max-height: 400px;" src="assets/img/product-3.png"
-                            alt="Feature 1">
+                            alt="Feature 3">
                         <div class="img-backdrop"></div>
                     </div>
                 </div>
@@ -2971,7 +2971,9 @@
             </div>
         </div>
     </section>
-    <style>
+   
+   
+   <style>
         .animate-card {
             opacity: 0;
             transform: scale(1.1) translateY(-20px);
@@ -2993,15 +2995,17 @@
             let ticking = false;
 
             function updateCardVisibility() {
-                cards.forEach(card => {
+                cards.forEach((card, index) => {
                     const rect = card.getBoundingClientRect();
                     const scrollPosition = window.innerHeight * 0.8;
 
                     if (rect.top <= scrollPosition) {
                         const progress = Math.min(1, (scrollPosition - rect.top) / (window.innerHeight * 0.2));
-                        card.style.opacity = progress;
-                        card.style.transform = `scale(${1.1 - 0.1 * progress}) translateY(${-20 + 20 * progress}px)`;
-                        card.style.filter = `blur(${8 - 8 * progress}px)`;
+                        setTimeout(() => {
+                            card.style.opacity = progress;
+                            card.style.transform = `scale(${1.1 - 0.1 * progress}) translateY(${-20 + 20 * progress}px)`;
+                            card.style.filter = `blur(${8 - 8 * progress}px)`;
+                        }, index * 100); // Delay each card by 100ms * its index
                     } else {
                         card.style.opacity = 0;
                         card.style.transform = 'scale(1.1) translateY(-20px)';
