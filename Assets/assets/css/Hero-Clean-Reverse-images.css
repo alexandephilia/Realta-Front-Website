@@ -16,6 +16,7 @@ img, iframe, video, object {
   height: auto;
 }
 
+
 html, body {
   overflow-x: hidden;
   width: 100%;
@@ -67,6 +68,7 @@ html, body {
 
 body {
   overflow-x: hidden;
+  zoom: 90% !important;
   font-family: 'Proxima Nova' !important;
   /* Keeps Roboto for body text */
 
