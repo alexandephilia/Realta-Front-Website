@@ -4950,104 +4950,66 @@
             });
         });
     </script>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.1
+        };
 
-    <!-- Smooth Scroll and Animation Effects -->
-    <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            // Smooth scroll function
-            function smoothScroll(target, duration) {
-                const targetElement = document.querySelector(target);
-                const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset;
-                const startPosition = window.pageYOffset;
-                const distance = targetPosition - startPosition;
-                let startTime = null;
-
-                function animation(currentTime) {
-                    if (startTime === null) startTime = currentTime;
-                    const timeElapsed = currentTime - startTime;
-                    const run = easeInOutCubic(timeElapsed, startPosition, distance, duration);
-                    window.scrollTo(0, run);
-                    if (timeElapsed < duration) requestAnimationFrame(animation);
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate-in');
+                    observer.unobserve(entry.target);
                 }
-
-                // Improved easing function for smoother animation
-                function easeInOutCubic(t, b, c, d) {
-                    t /= d / 2;
-                    if (t < 1) return c / 2 * t * t * t + b;
-                    t -= 2;
-                    return c / 2 * (t * t * t + 2) + b;
-                }
-
-                requestAnimationFrame(animation);
-            }
-
-            // Attach smooth scroll to anchor links
-            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-                anchor.addEventListener('click', function (e) {
-                    e.preventDefault();
-                    smoothScroll(this.getAttribute('href'), 800); // Reduced duration for faster scrolling
-                });
             });
+        }, observerOptions);
 
-            // Scroll and animation handler
-            const scrollHandler = () => {
-                const currentScrollY = window.scrollY;
+        const sections = document.querySelectorAll('section:not([id="Technology!"]), .container, .row, .col');
 
-                // Apply parallax effect
-                document.querySelectorAll('.parallax').forEach(elem => {
-                    const speed = parseFloat(elem.dataset.speed) || 0.5;
-                    elem.style.transform = `translateY(${currentScrollY * speed}px)`;
-                });
+        sections.forEach(section => {
+            section.style.opacity = '0';
+            section.style.transform = 'scale(1.1)';
+            section.style.filter = 'blur(10px)';
+            section.style.transition = 'opacity 0.5s ease-out, transform 0.5s ease-out, filter 0.5s ease-out';
 
-                // Fade in/out sections and footer
-                const elements = [...document.querySelectorAll('section'), document.getElementById('newsletter-cta')].filter(Boolean);
-                elements.forEach(element => {
-                    const rect = element.getBoundingClientRect();
-                    const isVisible = (rect.top <= window.innerHeight * 0.75 && rect.bottom >= 0);
-                    element.style.opacity = isVisible ? 1 : 0;
-                    element.style.transform = isVisible ? 'translateY(0)' : 'translateY(20px)';
-                });
-            };
-
-            // Optimized scroll listener using requestAnimationFrame
-            let ticking = false;
-            window.addEventListener('scroll', () => {
-                if (!ticking) {
-                    requestAnimationFrame(() => {
-                        scrollHandler();
-                        ticking = false;
-                    });
-                    ticking = true;
-                }
-            }, { passive: true });
-
-            // Initial visibility check
-            setTimeout(scrollHandler, 100);
+            observer.observe(section);
         });
-    </script>
-    <style>
-        html {
-            scroll-behavior: smooth;
-        }
 
-        body {
-            overflow-y: scroll;
-            overflow-x: hidden;
-            -ms-overflow-style: none;
-            scrollbar-width: none;
-        }
+        const style = document.createElement('style');
+        style.textContent = `
+            .animate-in {
+                opacity: 1 !important;
+                transform: scale(1) !important;
+                filter: blur(0) !important;
+            }
+        `;
+        document.head.appendChild(style);
 
-        body::-webkit-scrollbar {
-            display: none;
-        }
+        document.body.style.overflow = 'hidden';
+        let ticking = false;
+        let lastScrollY = 0;
 
-        section,
-        #newsletter-cta {
-            opacity: 0;
-            transform: translateY(20px);
-            transition: opacity 0.4s ease-out, transform 0.4s ease-out;
-        }
-    </style>
+        window.addEventListener('scroll', () => {
+            if (!ticking) {
+                window.requestAnimationFrame(() => {
+                    const currentScrollY = window.scrollY;
+                    if (Math.abs(currentScrollY - lastScrollY) > 50) {
+                        lastScrollY = currentScrollY;
+                        sections.forEach(section => observer.unobserve(section));
+                        sections.forEach(section => observer.observe(section));
+                    }
+                    ticking = false;
+                });
+                ticking = true;
+            }
+        });
+    });
+</script>
+
+
 
 
 
