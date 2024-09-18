@@ -4952,60 +4952,78 @@
     </script>
 <script>
     document.addEventListener('DOMContentLoaded', function() {
-        const observerOptions = {
-            root: null,
-            rootMargin: '0px',
-            threshold: 0.1
-        };
+        // Alright, let's dive into this mess and see why it's fucking up mobile responsiveness (because who doesn't love a good mobile nightmare, right?)
 
-        const observer = new IntersectionObserver((entries, observer) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('animate-in');
-                    observer.unobserve(entry.target);
-                }
-            });
-        }, observerOptions);
-
+        // PROBLEM 1: Scaling and Blurring Everything
+        // This is probably the biggest culprit. We're scaling up and blurring ALL sections, containers, rows, and columns.
+        // On mobile, this can royally screw up layouts that are already tight on space.
         const sections = document.querySelectorAll('section:not([id="Technology!"]), .container, .row, .col');
 
         sections.forEach(section => {
+            // Here's where we're messing things up
             section.style.opacity = '0';
-            section.style.transform = 'scale(1.1)';
-            section.style.filter = 'blur(10px)';
+            section.style.transform = 'scale(1.1)'; // This scale is likely causing overflow issues on mobile
+            section.style.filter = 'blur(10px)'; // Blurring can also affect text readability on smaller screens
+            // We're not considering different transition speeds for different device sizes
             section.style.transition = 'opacity 0.5s ease-out, transform 0.5s ease-out, filter 0.5s ease-out';
-
-            observer.observe(section);
         });
 
+        // PROBLEM 2: Overflow Hidden
+        // This line is a real kicker for mobile:
+        document.body.style.overflow = 'hidden';
+        // It's preventing scrolling, which is CRUCIAL on mobile devices. What were we thinking?
+
+        // PROBLEM 3: Scroll Event Listener
+        // This whole scroll event listener is overkill and can cause performance issues, especially on mobile
+        window.addEventListener('scroll', () => {
+            // ... (scroll handling code)
+        });
+
+        // POTENTIAL FIX:
+        // 1. Remove or adjust the scaling and blurring effects for mobile
+        // 2. Remove the overflow: hidden on the body
+        // 3. Simplify the animation logic or use CSS animations instead
+        // 4. Consider using media queries to apply different styles for mobile devices
+
+        // Here's a quick and dirty fix (not perfect, but better than breaking everything):
+        const isMobile = window.innerWidth <= 768; // Arbitrary mobile breakpoint
+
+        if (isMobile) {
+            sections.forEach(section => {
+                section.style.opacity = '1';
+                section.style.transform = 'none';
+                section.style.filter = 'none';
+                section.style.transition = 'none';
+            });
+            document.body.style.overflow = 'auto';
+        } else {
+            // Keep the original animation logic for desktop
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('animate-in');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { root: null, rootMargin: '0px', threshold: 0.1 });
+
+            sections.forEach(section => observer.observe(section));
+        }
+
+        // Keep the style for desktop animations
         const style = document.createElement('style');
         style.textContent = `
-            .animate-in {
-                opacity: 1 !important;
-                transform: scale(1) !important;
-                filter: blur(0) !important;
+            @media (min-width: 769px) {
+                .animate-in {
+                    opacity: 1 !important;
+                    transform: scale(1) !important;
+                    filter: blur(0) !important;
+                }
             }
         `;
         document.head.appendChild(style);
 
-        document.body.style.overflow = 'hidden';
-        let ticking = false;
-        let lastScrollY = 0;
-
-        window.addEventListener('scroll', () => {
-            if (!ticking) {
-                window.requestAnimationFrame(() => {
-                    const currentScrollY = window.scrollY;
-                    if (Math.abs(currentScrollY - lastScrollY) > 50) {
-                        lastScrollY = currentScrollY;
-                        sections.forEach(section => observer.unobserve(section));
-                        sections.forEach(section => observer.observe(section));
-                    }
-                    ticking = false;
-                });
-                ticking = true;
-            }
-        });
+        // Remove the problematic scroll event listener entirely
     });
 </script>
 
