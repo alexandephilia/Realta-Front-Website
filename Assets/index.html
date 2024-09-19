@@ -2926,9 +2926,9 @@
                     let blurAmount, opacity, translateY;
 
                     if (window.innerWidth <= 768) { // Mobile screens
-                        blurAmount = 3 * (1 - visiblePercentage); // Reduced blur for better mobile performance
-                        opacity = 0.2 + (0.8 * visiblePercentage); // Start with slight visibility
-                        translateY = 10 * (1 - visiblePercentage); // Reduced movement for smoother mobile experience
+                        blurAmount = 2 * (1 - visiblePercentage); // Further reduced blur for quicker response
+                        opacity = 0.3 + (0.7 * visiblePercentage); // Increased initial visibility
+                        translateY = 5 * (1 - visiblePercentage); // Reduced movement for quicker response
                     } else {
                         blurAmount = 5 * (1 - visiblePercentage);
                         opacity = visiblePercentage;
@@ -2944,16 +2944,25 @@
             // Initial update
             updateBlur();
 
-            // Update on scroll
-            window.addEventListener('scroll', updateBlur);
+            // Debounce function to limit the rate of updates
+            function debounce(func, wait) {
+                let timeout;
+                return function() {
+                    clearTimeout(timeout);
+                    timeout = setTimeout(func, wait);
+                };
+            }
 
-            // Update on resize
-            window.addEventListener('resize', updateBlur);
+            // Update on scroll with debounce
+            window.addEventListener('scroll', debounce(updateBlur, 10)); // Reduced debounce time for quicker response
 
-            // Add touch events for mobile
+            // Update on resize with debounce
+            window.addEventListener('resize', debounce(updateBlur, 100));
+
+            // Add touch events for mobile with debounce
             if ('ontouchstart' in window) {
-                window.addEventListener('touchmove', updateBlur);
-                window.addEventListener('touchend', updateBlur);
+                window.addEventListener('touchmove', debounce(updateBlur, 10));
+                window.addEventListener('touchend', debounce(updateBlur, 10));
             }
         });
     </script>
