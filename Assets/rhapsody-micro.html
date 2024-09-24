@@ -1925,7 +1925,7 @@
     .bimasakti-title {
         grid-area: title;
         text-align: center;
-        font-size: 2rem;
+        font-size: 2rem !important;
         background: linear-gradient(287deg, #625dfa, #c85efa, #8ddee4);
         -webkit-background-clip: text;
         background-clip: text;
@@ -2949,111 +2949,6 @@
 
 
 
-<!-- CARDS section -->
-<style>
-    .swoopy-card-container {
-        display: flex;
-        justify-content: center;
-        flex-wrap: wrap;
-        gap: 20px;
-        padding: 20px;
-    }
-
-    .swoopy-card {
-        width: 200px;
-        height: 200px;
-        background-color: rgba(230, 220, 255, 0.2);
-        border-radius: 10px;
-        overflow: hidden;
-        position: relative;
-        transition: all 0.2s ease;
-        cursor: pointer;
-        box-shadow: 0 4px 8px rgba(114, 9, 212, 0.1);
-    }
-
-    .swoopy-card:hover {
-        transform: translateY(-10px);
-        box-shadow: 0 12px 24px rgba(114, 9, 212, 0.2);
-    }
-
-    .swoopy-card::before {
-        content: '';
-        position: absolute;
-        bottom: 0;
-        left: 50%;
-        width: 0;
-        height: 0;
-        background: rgba(230, 220, 255, 0.8);
-        border-radius: 50%;
-        transform: translate(-50%, 50%);
-        transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-        z-index: 1;
-    }
-
-    .swoopy-card:hover::before {
-        width: 300%;
-        height: 300%;
-    }
-
-    .swoopy-card-content {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        height: 100%;
-        padding: 20px;
-        position: relative;
-        z-index: 2;
-        transition: all 0.2s ease;
-    }
-
-    .swoopy-card:hover .swoopy-card-content {
-        color: #ac53a2;
-    }
-
-    .swoopy-card i {
-        font-size: 48px;
-        margin-bottom: 10px;
-        color: #ac53a2;
-        transition: all 0.2s ease;
-    }
-
-    .swoopy-card h3 {
-        margin: 10px 0;
-        color: #ac53a2;
-        transition: all 0.2s ease;
-    }
-
-    .swoopy-card p {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        width: 80%;
-        text-align: center;
-        color: #7209d4;
-        font-size: 14px;
-        opacity: 0;
-        transform: translate(-50%, 20px);
-        transition: all 0.2s ease;
-        display: none;
-    }
-
-    .swoopy-card:hover i,
-    .swoopy-card:hover h3 {
-        opacity: 0;
-        transform: translateY(-20px);
-        visibility: hidden;
-        transition: all 0.1s ease;
-    }
-
-    .swoopy-card:hover p {
-        opacity: 1;
-        transform: translate(-50%, -50%);
-        display: block;
-        transition: all 0.2s ease 0.1s;
-    }
-</style>
-
 <style>
     .ict-solution-title {
         text-align: center;
@@ -3122,29 +3017,26 @@
     }
 </style>
 
+
 <div class="ict-separator" data-aos="fade-in" data-aos-delay="300"></div>
 </div>
 
-<div class="swoopy-card-container">
-    <div class="swoopy-card" data-aos="zoom-in" data-aos-delay="400">
-        <div class="swoopy-card-content">
-            <i class="fas fa-hotel"></i>
-            <h3>Accommodation</h3>
-            <p>Experience luxury and comfort in our world-class accommodations, designed to make your stay unforgettable.</p>
+<div class="ict-grid-container-wrapper">
+    <div class="ict-grid-container">
+        <div class="ict-grid-item" data-aos="fade-up" data-aos-delay="400">
+            <img src="assets/img/hotel/1.1.jpg" alt="Accommodation" class="ict-grid-image">
         </div>
-    </div>
-    <div class="swoopy-card" data-aos="zoom-in" data-aos-delay="500">
-        <div class="swoopy-card-content">
-            <i class="fas fa-utensils"></i>
-            <h3>Dining</h3>
-            <p>Indulge in exquisite culinary experiences with our diverse range of restaurants and dining options.</p>
+        <div class="ict-grid-item" data-aos="fade-up" data-aos-delay="500">
+            <img src="assets/img/hotel/1.2.jpg" alt="Dining" class="ict-grid-image">
         </div>
-    </div>
-    <div class="swoopy-card" data-aos="zoom-in" data-aos-delay="600">
-        <div class="swoopy-card-content">
-            <i class="fas fa-spa"></i>
-            <h3>Wellness</h3>
-            <p>Rejuvenate your body and mind with our state-of-the-art spa and wellness facilities.</p>
+        <div class="ict-grid-item" data-aos="fade-up" data-aos-delay="600">
+            <img src="assets/img/hotel/1.3.png" alt="Wellness" class="ict-grid-image">
+        </div>
+        <div class="ict-grid-item" data-aos="fade-up" data-aos-delay="700">
+            <img src="assets/img/hotel/1.4.jpg" alt="Nightlife" class="ict-grid-image">
+        </div>
+        <div class="ict-grid-item" data-aos="fade-up" data-aos-delay="800">
+            <img src="assets/img/hotel/1.5.jpg" alt="Concierge" class="ict-grid-image">
         </div>
     </div>
 </div>
@@ -3187,246 +3079,224 @@
 
 <style>
     @import url('https://unpkg.com/aos@next/dist/aos.css');
+
+    .ict-grid-container-wrapper {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+    }
+
+    .ict-grid-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 2rem;
+        padding: 2rem 0;
+        justify-content: center;
+    }
+
+    .ict-grid-item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        transition: transform 0.3s ease;
+    }
+
+    .ict-grid-item:hover {
+        transform: translateY(-10px);
+    }
+
+    .ict-grid-image {
+        width: 100%;
+        height: 200px;
+        object-fit: contain;
+        border-radius: 10px;
+        margin-bottom: 1rem;
+    }
+
+    .ict-grid-text {
+        font-size: 1rem;
+        color: #333;
+        margin: 0;
+    }
+
+    @media (max-width: 768px) {
+        .ict-grid-container {
+            grid-template-columns: 1fr;
+        }
+    }
+
+    /* Ensure centering for all items */
+    .ict-grid-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .ict-grid-item {
+        flex: 0 0 calc(33.333% - 2rem);
+        margin: 1rem;
+    }
+
+    @media (max-width: 992px) {
+        .ict-grid-item {
+            flex: 0 0 calc(50% - 2rem);
+        }
+    }
+
+    @media (max-width: 576px) {
+        .ict-grid-item {
+            flex: 0 0 100%;
+        }
+    }
 </style>
 
-
-
-
-
-    <section id="logo-section" class="py-5 clipped-section" style="margin-top: 5%;">
-
-        <style>
-            #technology-delivery {
-                padding-top: 100px;
-            }
-
-            @media (max-width: 768px) {
-                .glass-text {
-                    font-size: 1.8rem !important;
-                }
-            }
-        </style>
-        <div class="container-fluid container-lg px-3 p-4">
-            <div class="row justify-content-center">
-                <div class="col-12 py-4 px-5">
-                    <div class="glass-card p-4">
-                        <div class="card-section">
-                            <div class="row gy-4">
-                                <!-- Top Column -->
-                                <div class="col-12">
-                                    <div class="text-center">
-                                        <h2 class="mb-2 mt-5 glass-text">
-                                            Delivering Technology for
-                                            <br>
-                                            <span class="gradient-text">Leading Organizations</span>
-                                        </h2>
-                                        <style>
-                                            .gradient-text {
-                                                background: linear-gradient(90deg, #7209d4, #2832d4 33%, #00a5b2);
-                                                -webkit-background-clip: text;
-                                                -webkit-text-fill-color: transparent;
-                                                background-clip: text;
-                                                color: transparent;
-                                            }
-                                        </style>
-                                        <h3 class="mb-0 glass-subtext">
-                                            Across South-East Asia & Japan
-                                        </h3>
-                                    </div>
-                                </div>
-                                <style>
-                                    .glass-text {
-                                        font-size: 42px;
-                                        font-weight: bolder;
-                                    }
-
-                                    @media (max-width: 768px) {
-                                        .glass-text {
-                                            font-size: 35px !important;
-                                            line-height: 1.3 !important;
-                                        }
-
-                                        #partners-logo {
-                                            padding-top: 15%;
-                                        }
-
-                                        .glass-subtext {
-                                            font-size: 18px !important;
-                                            line-height: 1.4 !important;
-                                        }
-                                    }
-
-                                    @media (max-width: 576px) {
-                                        .glass-text {
-                                            font-size: 35px !important;
-                                        }
-
-                                        .glass-subtext {
-                                            font-size: 18px !important;
-                                        }
-                                    }
-                                </style>
-                                <!-- Bottom Column -->
-
-                                <div id="partners-logo" class="col-12" style="cursor: default; pointer-events: none;">
-
-                                    <div class="row justify-content-around align-items-center pt-5 mb-0 g-5">
-                                        <div class="col-12 col-md-11 mb-4">
-                                            <div class="d-flex flex-row flex-wrap justify-content-center gap-5">
-                                                <div id="partner-logo-1" class="partner-logo mx-3 mb-4">
-                                                    <img src="assets/img/partners/Accor_logo_Gold-gradient_RVB_digital.png"
-                                                        alt="Partner 1" class="img-fluid" loading="lazy">
-                                                </div>
-                                                <div id="partner-logo-2" class="partner-logo mx-3 mb-4">
-                                                    <img src="assets/img/partners/Logo-Astra-Otoparts-PNG-–-IfoxSoft.Com_-950x500.png"
-                                                        alt="Partner 2" class="img-fluid" loading="lazy">
-                                                </div>
-                                                <div id="partner-logo-3" class="partner-logo mx-3 mb-4">
-                                                    <img src="assets/img/partners/bank-tabungan-negara-seeklogo.png"
-                                                        alt="Partner 3" class="img-fluid" loading="lazy">
-                                                </div>
-                                                <div id="partner-logo-4" class="partner-logo mx-3 mb-4">
-                                                    <img src="assets/img/partners/Logo-BCA-PNG.png" alt="Partner 4"
-                                                        class="img-fluid" loading="lazy">
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-12 col-md-11 mb-4">
-                                            <div class="d-flex flex-row flex-wrap justify-content-center gap-5">
-                                                <div id="partner-logo-5" class="partner-logo mx-3 mb-4">
-                                                    <img src="assets/img/partners/pngegg.png" alt="Partner 5"
-                                                        class="img-fluid" loading="lazy">
-                                                </div>
-                                                <div id="partner-logo-6" class="partner-logo mx-3 mb-4">
-                                                    <img src="assets/img/partners/Energizer.png" alt="Partner 6"
-                                                        class="img-fluid" loading="lazy">
-                                                </div>
-                                                <div id="partner-logo-7" class="partner-logo mx-3 mb-4">
-                                                    <img src="assets/img/partners/Hilton.png" alt="Partner 7"
-                                                        class="img-fluid" loading="lazy">
-                                                </div>
-                                                <div id="partner-logo-8" class="partner-logo mx-3 mb-4">
-                                                    <img src="assets/img/partners/Hyundai.png" alt="Partner 8"
-                                                        class="img-fluid" loading="lazy">
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-12 col-md-11 mb-4">
-                                            <div class="d-flex flex-row flex-wrap justify-content-center gap-5">
-                                                <div id="partner-logo-9" class="partner-logo mx-3 mb-4">
-                                                    <img src="assets/img/partners/indofood.png" alt="Partner 9"
-                                                        class="img-fluid" loading="lazy">
-                                                </div>
-                                                <div id="partner-logo-10" class="partner-logo mx-3 mb-4">
-                                                    <img src="assets/img/partners/kalbe.png" alt="Partner 10"
-                                                        class="img-fluid" loading="lazy">
-                                                </div>
-                                                <div id="partner-logo-11" class="partner-logo mx-3 mb-4">
-                                                    <img src="assets/img/partners/kao.png" alt="Partner 11"
-                                                        class="img-fluid" loading="lazy">
-                                                </div>
-                                                <div id="partner-logo-12" class="partner-logo mx-3 mb-4">
-                                                    <img src="assets/img/partners/Mercure Hotels.png" alt="Partner 12"
-                                                        class="img-fluid" loading="lazy">
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-12 pb-5 col-md-11 mb-4">
-                                            <div class="d-flex flex-row flex-wrap justify-content-center gap-5">
-                                                <div id="partner-logo-13" class="partner-logo mx-3 mb-4">
-                                                    <img src="assets/img/partners/novotel.png" alt="Partner 13"
-                                                        class="img-fluid" loading="lazy">
-                                                </div>
-                                                <div id="partner-logo-14" class="partner-logo mx-3 mb-4">
-                                                    <img src="assets/img/partners/prudential.png" alt="Partner 14"
-                                                        class="img-fluid" loading="lazy">
-                                                </div>
-                                                <div id="partner-logo-15" class="partner-logo mx-3 mb-4">
-                                                    <img src="assets/img/partners/sultan.png" alt="Partner 15"
-                                                        class="img-fluid" loading="lazy">
-                                                </div>
-                                                <div id="partner-logo-16" class="partner-logo mx-3 mb-4">
-                                                    <img src="assets/img/partners/yakult.png" alt="Partner 16"
-                                                        class="img-fluid" loading="lazy">
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <style>
-                                    .partner-logo {
-                                        width: 150px;
-                                        height: 100px;
-                                        display: flex;
-                                        align-items: center;
-                                        justify-content: center;
-                                        margin: 1rem;
-                                    }
-
-                                    .partner-logo img {
-                                        max-width: 100%;
-                                        max-height: 100%;
-                                        object-fit: contain;
-                                    }
-
-                                    @media (max-width: 992px) {
-                                        .partner-logo {
-                                            width: 120px;
-                                            height: 80px;
-                                            margin: 0.5rem;
-                                        }
-                                    }
-
-                                    @media (max-width: 768px) {
-                                        .row {
-                                            --bs-gutter-y: 0.15rem;
-                                        }
-
-                                        .partner-logo {
-                                            width: 80px;
-                                            height: 60px;
-                                            margin: 0.3rem;
-                                        }
-
-                                        .d-flex.flex-row.flex-wrap {
-                                            justify-content: space-between;
-                                        }
-
-                                        .col-12.col-md-11.mb-4 {
-                                            padding-left: 5px;
-                                            padding-right: 5px;
-                                        }
-                                    }
-                                </style>
-                                </style>
-                            </div>
-                        </div>
-                    </div>
-
+    <section id="infrastructure-section" class="py-5">
+        <div class="container">
+            <h3 class="text-center mb-3  bimasakti-title rhapsody-title-2023-new" data-aos="fade-up" data-aos-delay="200">Infrastructure</h3>
+            <div class="ict-separator" data-aos="fade-in" data-aos-delay="300"></div>
+            <div class="rhapsody-grid-container">
+                <div class="rhapsody-grid-item">
+                    <img src="assets/img/hotel/infrastructure-rhapsody-01.png" alt="Key Card" class="rhapsody-grid-image">
+                </div>
+                <div class="rhapsody-grid-item">
+                    <img src="assets/img/hotel/infrastructure-rhapsody-02.png" alt="Cloud Backup & Restore" class="rhapsody-grid-image">
+                </div>
+                <div class="rhapsody-grid-item">
+                    <img src="assets/img/hotel/infrastructure-rhapsody-03.png" alt="Distribution Channel" class="rhapsody-grid-image">
                 </div>
             </div>
         </div>
-        <style>
-            .glass-card {
-                /* Add a semi-transparent background to give the glass-like effect */
-                background-image: linear-gradient(90deg, rgba(0, 0, 0, .03), rgba(249, 249, 249, 0));
-                /* Increase the blur radius to create a more pronounced effect */
-                -webkit-backdrop-filter: blur(10px);
-                backdrop-filter: blur(10px);
-                /* Add a slight opacity to the border to enhance the glass-like effect */
-                /* Increase the box shadow to create more depth */
-                box-shadow: 0 3px 6px 0 rgba(31, 38, 135, 0.4);
-                /* Keep the border radius as it is to maintain the rounded corners */
-                border-radius: 10px;
-                margin-left: -15px;
-                margin-right: -15px;
-                border-radius: 0 !important;
-                padding: 1rem !important;
-                border-radius: 10px !important;
-            }
-        </style>
-
     </section>
+
+
+    <section id="infrastructure-section" class="py-5">
+        <div class="container">
+            <h3 class="text-center mb-3  bimasakti-title rhapsody-title-2023-new" data-aos="fade-up" data-aos-delay="200">Digital Transformation</h3>
+            <div class="ict-separator" data-aos="fade-in" data-aos-delay="300"></div>
+            <div class="rhapsody-grid-container">
+                <div class="rhapsody-grid-item">
+                    <img src="assets/img/hotel/d1.jpg" alt="Key Card" class="rhapsody-grid-image">
+                </div>
+                <div class="rhapsody-grid-item">
+                    <img src="assets/img/hotel/d2.png" alt="Cloud Backup & Restore" class="rhapsody-grid-image">
+                </div>
+                <div class="rhapsody-grid-item">
+                    <img src="assets/img/hotel/d3.png" alt="Distribution Channel" class="rhapsody-grid-image">
+                </div>
+                <div class="rhapsody-grid-item">
+                    <img src="assets/img/hotel/d4.png" alt="Distribution Channel" class="rhapsody-grid-image">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="infrastructure-section" class="py-5">
+        <div class="container">
+            <h3 class="text-center mb-3  bimasakti-title rhapsody-title-2023-new" data-aos="fade-up" data-aos-delay="200">Cyber Security</h3>
+            <div class="ict-separator" data-aos="fade-in" data-aos-delay="300"></div>
+            <div class="rhapsody-grid-container">
+                <div class="rhapsody-grid-item">
+                    <img src="assets/img/hotel/logo-ivanti.png" alt="Key Card" class="rhapsody-grid-image">
+                </div>
+                <div class="rhapsody-grid-item">
+                    <ul class="cyber-security-list">
+                        <li><span class="icon">🛡️</span> Patching</li>
+                        <li><span class="icon">🔒</span> Data Encryption</li>
+                        <li><span class="icon">🖥️</span> Application Control</li>
+                        <li><span class="icon">📱</span> Device Control</li>
+                    </ul>
+                </div>
+                <style>
+                    .cyber-security-list {
+                        list-style-type: none;
+                        padding: 0;
+                    }
+                    .cyber-security-list li {
+                        margin: 10px 0;
+                        padding: 5px 0;
+                        color: #333;
+                        font-size: 1.1em;
+                        display: flex;
+                        align-items: center;
+                    }
+                    .cyber-security-list .icon {
+                        margin-right: 10px;
+                        font-weight:  800;
+                        font-size: 1.3em !important;
+                    }             
+                </style>
+            
+            </div>
+        </div>
+    </section>
+    <style>
+    #infrastructure-section {
+        padding: 60px 0;
+        width: 80%;
+        margin: 0 auto;
+    }
+
+    body.dark-mode #infrastructure-section {
+        backdrop-filter: blur(10px);
+    }
+
+    #infrastructure-section .glass-text {
+        font-size: 2.2rem;
+        font-weight: bold;
+        margin-bottom: 1.5rem;
+        background: linear-gradient(90deg, #7209d4, #2832d4 33%, #00a5b2);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        color: transparent;
+    }
+
+    .rhapsody-grid-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+        flex-wrap: wrap;
+    }
+
+    .rhapsody-grid-item {
+        flex: 0 1 calc(30% - 20px);
+        max-width: calc(30% - 20px);
+        transition: transform 0.3s ease;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    /* .rhapsody-grid-item:hover {
+        transform: scale(1.05);
+    } */
+
+    .rhapsody-grid-image {
+        width: 80%;
+        height: auto;
+        object-fit: contain;
+        border-radius: 10px;
+    }
+
+    @media (max-width: 768px) {
+        .rhapsody-grid-item {
+            flex: 0 1 calc(45% - 20px);
+            max-width: calc(45% - 20px);
+        }
+    }
+
+    @media (max-width: 480px) {
+        .rhapsody-grid-item {
+            flex: 0 1 90%;
+            max-width: 90%;
+        }
+    }
+    </style>
+
+
+
 
     <section id="separator" class="py-0">
         <div class="container p-4">
