@@ -2097,6 +2097,13 @@
         <div class="row align-items-center">
             <div class="col-lg-4 mb-4 mb-lg-0">
                 <h2 class="section-title mb-3">Our Solutions</h2>
+                <style>
+                    @media (max-width: 767px) {
+                        .section-title {
+                            text-align: center;
+                        }
+                    }
+                </style>
                 <p class="section-description lead">Comprehensive software solutions for the hospitality industry.</p>
             </div>
             <div class="col-lg-8">
@@ -2159,7 +2166,7 @@
     #stats-feature-section {
         background-color: #f8f9fa;
         padding: 80px 20px;
-        max-width: 75%;
+        max-width: 70%;
         margin: 0 auto;
         border-radius: 20px;
     }
@@ -2227,10 +2234,961 @@
         }
 
         .stats-col {
-            width: 100%;
+            width: 105%; /* Increased width slightly */
+            margin-left: -2.5%; /* Adjust for centering */
         }
     }
 </style>
+
+
+
+
+    <div class="hotel-separator">
+        <div class="separator-line"></div>
+        <div class="separator-icon">
+            <i class="fas fa-hotel"></i>
+        </div>
+        <div class="separator-line"></div>
+    </div>
+
+    <style>
+        .hotel-separator {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 60px 0;
+            overflow: visible;
+            position: relative;
+        }
+
+        .separator-line {
+            flex-grow: 1;
+            height: 2px;
+            background: linear-gradient(90deg, 
+                rgba(255,255,255,0) 0%,
+                rgba(144,84,208,0.8) 50%,
+                rgba(255,255,255,0) 100%
+            );
+            position: relative;
+            overflow: hidden;
+        }
+
+        .separator-line::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, 
+                transparent,
+                rgba(255, 255, 255, 0.8),
+                transparent
+            );
+            animation: shimmer 2s infinite;
+        }
+
+        @keyframes shimmer {
+            100% {
+                left: 100%;
+            }
+        }
+
+        .separator-icon {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 80px;
+            height: 80px;
+            margin: 0 30px;
+            background-color: #9054d0;
+            border-radius: 50%;
+            box-shadow: 0 0 25px rgba(144,84,208,0.5), 
+                        0 0 15px rgba(144,84,208,0.3) inset;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .separator-icon:hover {
+            transform: scale(1.1) rotate(360deg);
+            box-shadow: 0 0 35px rgba(144,84,208,0.8), 
+                        0 0 25px rgba(144,84,208,0.5) inset;
+        }
+
+        .separator-icon::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: conic-gradient(
+                from 0deg,
+                rgba(124, 79, 201, 0.9),
+                rgba(144, 84, 208, 0.9),
+                rgba(177, 84, 208, 0.9),
+                rgba(144, 84, 208, 0.9),
+                rgba(124, 79, 201, 0.9)
+            );
+            animation: rotate 8s linear infinite;
+        }
+
+        .separator-icon i {
+            font-size: 32px;
+            color: #ffffff;
+            z-index: 1;
+            position: relative;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            animation: pulse 2s infinite alternate;
+        }
+
+        @keyframes rotate {
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+            }
+            100% {
+                transform: scale(1.2);
+            }
+        }
+
+        .hotel-separator::before,
+        .hotel-separator::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 24px;
+            color: #9054d0;
+            opacity: 0.6;
+            animation: twinkle 1.5s infinite alternate;
+        }
+
+        .hotel-separator::before {
+            left: 10px;
+        }
+
+        .hotel-separator::after {
+            right: 10px;
+        }
+
+        @keyframes twinkle {
+            0% {
+                opacity: 0.6;
+                transform: translateY(-50%) scale(1);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(-50%) scale(1.2);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .separator-icon {
+                width: 60px;
+                height: 60px;
+            }
+
+            .separator-icon i {
+                font-size: 24px;
+            }
+        }
+    </style>
+
+
+
+
+    <section id="rhapsody-features-2023" class="py-5 mt-5">
+        <div class="container">
+            <h2 class="text-center mb-5 bimasakti-title rhapsody-title-2023-new ">Rhapsody Features</h2>
+            
+            <div class="rhapsody-tabs-2023-new">
+                <button class="rhapsody-tab-2023-new active" data-tab="front-office">
+                    <i class="fas fa-concierge-bell"></i> Front Office
+                </button>
+                <button class="rhapsody-tab-2023-new" data-tab="back-office">
+                    <i class="fas fa-chart-line"></i> Back Office
+                </button>
+                <button class="rhapsody-tab-2023-new" data-tab="logistic-system">
+                    <i class="fas fa-truck"></i> Logistic System
+                </button>
+          
+                <div class="tab-indicator-new"></div>
+            </div>
+            
+            <div class="animated-separator"></div>
+            
+            <div class="rhapsody-content-2023-new">
+                <div class="rhapsody-tab-content-2023-new active" id="front-office">
+                    <h3 class="text-center mb-4">Front Office Solutions</h3>
+                    <div class="rhapsody-image-wrapper">
+                        <img src="assets/img/hotel/front_office_realta_rhapsody_hotel_management_system.jpg" alt="Front Office" class="rhapsody-image-2023-new rounded mb-5 zoomable-image">
+                    </div>
+                    <div class="rhapsody-description-wrapper">
+                        <p class="rhapsody-description-new mt-4">Rhapsody's Front Office solutions empower staff to deliver exceptional personal service. By automating administrative tasks, it allows front desk officers to focus on creating memorable guest experiences.</p>
+                        <p class="rhapsody-description-new">Our system provides powerful tools for building long-term customer relationships and identifying revenue opportunities. It analyzes guest behavior and preferences, enabling tailored services and targeted marketing campaigns.</p>
+                        <p class="rhapsody-description-new">Rhapsody offers real-time integration between Point of Sale and Front Office systems, enabling features like automatic charge restrictions for cash-basis guests and instant updates to sales analysis reports.</p>
+                        <p class="rhapsody-description-new">For banquet management, Rhapsody streamlines interdepartmental communication and event preparation. It generates Banquet Event Orders instantly and incorporates them into a Tracing System for efficient coordination and timely execution.</p>
+                    </div>
+                </div>
+                <div class="rhapsody-tab-content-2023-new" id="back-office">
+                    <h3 class="text-center mb-4">Back Office Management</h3>
+                    <div class="rhapsody-image-wrapper">
+                        <img src="assets/img/hotel/back_office_realta_rhapsody_hotel_management_system.jpg" alt="Back Office" class="rhapsody-image-2023-new rounded mb-5 zoomable-image">
+                    </div>
+                    <div class="rhapsody-description-wrapper">
+                        <p class="rhapsody-description-new mt-4">Rhapsody Back Office is a powerful tool that seamlessly transfers operational information into financial modules. It integrates analytical reports across Income Audit, Accounts Receivable, Accounts Payable, Cash & Bank, Fixed Assets, and General Ledger.</p>
+                        <p class="rhapsody-description-new">Our Multi Budget utility empowers management teams to compare initial budgets with revised budgets and forecasts. Rhapsody streamlines Income Audit by automating sales summary and journal preparation, generating Consolidated Daily Revenue Reports and Sales Analysis by Department.</p>
+                        <p class="rhapsody-description-new">For supplier management, Rhapsody offers AP Aging Analysis and Payment Schedules with approval hierarchies, directly linked to the Cash & Bank module for immediate payment processing. The system also provides Bank Reconciliation and Cash/Bank Daily Activity Reports for efficient cash flow management.</p>
+                    </div>
+                </div>
+                <div class="rhapsody-tab-content-2023-new" id="logistic-system">
+                    <h3 class="text-center mb-4">Logistic System</h3>
+                    <div class="rhapsody-image-wrapper">
+                        <img src="assets/img/hotel/logistic_realta_rhapsody_hotel_management_system.jpg" alt="Logistic System" class="rhapsody-image-2023-new rounded mb-5 zoomable-image">
+                    </div>
+                    <div class="rhapsody-description-wrapper">
+                        <p class="rhapsody-description-new mt-4">Rhapsody's purchasing system categorizes buying based on frequency. The Daily Market List handles perishables like vegetables and meats, instantly processing kitchen staff requests. Regular Order manages periodic purchases such as toiletries and stationery. Purchase History stores records, enabling analysis of purchase frequency and supplier price comparisons.</p>
+                        <p class="rhapsody-description-new">Rhapsody equips Receiving departments with tools for optimal handling of receipts, redistribution, and reporting. The Expected Delivery Report aids in storage planning and proactively notifies of delays. Receiving Record Forms are auto-generated and integrated into Daily Receiving Report Summaries. This module's integration with Accounts Payable ensures simultaneous database updates.</p>
+                        <p class="rhapsody-description-new">For efficient supply management, Rhapsody provides Department Usage Report and Daily Flash Report to department heads and Cost Control. These tools assist in forecasting and managing supply usage, helping to prevent departmental overspending.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <style>
+    #rhapsody-features-2023 {
+        overflow-x: hidden;
+    }
+
+    #rhapsody-features-2023 .rhapsody-title-2023-new {
+        margin-bottom: 2rem;
+        font-size: 2.8rem;
+        opacity: 0;
+        transform: translateY(50px);
+        transition: opacity 0.5s ease, transform 0.5s ease;
+    }
+
+    @media (max-width: 768px) {
+        #rhapsody-features-2023 .rhapsody-title-2023-new {
+            font-size: 2.2rem;
+        }
+    }
+
+    #rhapsody-features-2023 .rhapsody-title-2023-new.visible {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    #rhapsody-features-2023 .rhapsody-description-new {
+        max-width: 80%;
+        margin: 1.5rem auto;
+        text-align: left;
+        font-size: 1rem;
+        font-weight: 500;
+        opacity: 0;
+        transform: translateX(-50px);
+        transition: opacity 0.5s ease, transform 0.5s ease;
+    }
+
+    #rhapsody-features-2023 .rhapsody-description-new.visible {
+        opacity: 1;
+        transform: translateX(0);
+    }
+
+    #rhapsody-features-2023 .rhapsody-image-wrapper {
+        overflow: hidden;
+        border-radius: 10px;
+        cursor: pointer;
+    }
+
+    #rhapsody-features-2023 .rhapsody-image-2023-new {
+        max-width: 80%;
+        width: 80%;
+        height: auto;
+        display: block;
+        margin: 0 auto 2rem;
+        transition: transform 0.5s ease, box-shadow 0.5s ease;
+        opacity: 0;
+        transform: scale(0.9);
+    }
+
+    #rhapsody-features-2023 .rhapsody-image-2023-new.visible {
+        opacity: 1;
+        transform: scale(1);
+    }
+
+    #rhapsody-features-2023 .rhapsody-tabs-2023-new {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 2.5rem;
+        position: relative;
+        overflow: hidden;
+        border-radius: 50px;
+        padding: 10px;
+        opacity: 0;
+        transform: translateY(30px);
+        transition: opacity 0.5s ease, transform 0.5s ease;
+    }
+
+    #rhapsody-features-2023 .rhapsody-tabs-2023-new.visible {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    #rhapsody-features-2023 .rhapsody-tab-2023-new {
+        background: transparent;
+        border: none;
+        padding: 16px 26px;
+        margin: 0 5px;
+        border-radius: 25px;
+        font-size: 0.95rem;
+        font-weight: bolder;
+        color: #585858;
+        transition: all 0.3s ease;
+        cursor: pointer;
+        position: relative;
+        overflow: hidden;
+        z-index: 1;
+    }
+
+    #rhapsody-features-2023 .rhapsody-tab-2023-new::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background:  linear-gradient(45deg, #a1379559, #7209d494);
+        opacity: 0;
+        transition: opacity 0.3s ease;
+        z-index: -1;
+        border-radius: 25px;
+    }
+
+    #rhapsody-features-2023 .rhapsody-tab-2023-new:hover::before,
+    #rhapsody-features-2023 .rhapsody-tab-2023-new.active::before {
+        opacity: 1;
+    }
+
+    #rhapsody-features-2023 .rhapsody-tab-2023-new:hover,
+    #rhapsody-features-2023 .rhapsody-tab-2023-new.active {
+        color: white;
+        transform: translateY(-3px);
+        box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    }
+
+    #rhapsody-features-2023 .rhapsody-tab-2023-new i {
+        margin-right: 5px;
+        transition: transform 0.3s ease;
+    }
+
+    #rhapsody-features-2023 .rhapsody-tab-2023-new:hover i,
+    #rhapsody-features-2023 .rhapsody-tab-2023-new.active i {
+        transform: scale(1.2);
+    }
+
+    #rhapsody-features-2023 .tab-indicator-new {
+        position: absolute;
+        bottom: 5px;
+        height: 3px;
+        background: linear-gradient(45deg, #a137959d, #7209d486);
+        transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+        border-radius: 2px;
+    }
+
+    #rhapsody-features-2023 .rhapsody-content-2023-new {
+        border-radius: 10px;
+        padding: 2rem;
+        width: 95%;
+        margin: 0 auto;
+        transition: opacity 0.5s ease, transform 0.5s ease;
+        box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    }
+
+    #rhapsody-features-2023 .rhapsody-tab-content-2023-new {
+        display: none;
+        opacity: 0;
+        transform: translateY(20px);
+        transition: opacity 0.5s ease, transform 0.5s ease;
+    }
+
+    #rhapsody-features-2023 .rhapsody-tab-content-2023-new.active {
+        display: block;
+        opacity: 1;
+        transform: translateY(0);
+        animation: rhapsodyFadeIn 0.5s ease;
+    }
+
+    @keyframes rhapsodyFadeIn {
+        from { opacity: 0; transform: translateY(20px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+
+    #rhapsody-features-2023 .rhapsody-tab-content-2023-new h3 {
+        color: #a13795;
+        margin-bottom: 1rem;
+        position: relative;
+        display: block;
+        text-align: center;
+        padding-bottom: 10px;
+        width: 100%;
+        opacity: 0;
+        transform: translateY(30px);
+        transition: opacity 0.5s ease, transform 0.5s ease;
+    }
+
+    #rhapsody-features-2023 .rhapsody-tab-content-2023-new h3.visible {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    .modal {
+        display: none;
+        position: fixed;
+        z-index: 1000;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        overflow: auto;
+        background-color: rgba(0, 0, 0, 0.411);
+        backdrop-filter: blur(8px);
+        -webkit-backdrop-filter: blur(8px);
+    }
+
+    .modal::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: inherit;
+        filter: blur(10px);
+        z-index: -1;
+    }
+
+    .modal-content {
+        margin: auto;
+        display: block;
+        width: 80%;
+        max-width: 700px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    .close {
+        position: absolute;
+        top: 15px;
+        right: 35px;
+        color: #f1f1f1;
+        font-size: 40px;
+        font-weight: bold;
+        transition: 0.3s;
+    }
+
+    .close:hover,
+    .close:focus {
+        color: #bbb;
+        text-decoration: none;
+        cursor: pointer;
+    }
+    .animated-separator {
+        width: 100%;
+        height: 2px;
+        background: linear-gradient(90deg, transparent, #a1379586, #7209d479, transparent);
+        position: relative;
+        overflow: hidden;
+        margin: -30px 0 20px; /* Changed: Negative top margin to move it up */
+    }
+
+    .animated-separator::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(90deg, transparent, #ffffff, transparent);
+        animation: separatorAnimation 2s linear infinite;
+    }
+
+    @keyframes separatorAnimation {
+        0% {
+            left: -100%;
+        }
+        100% {
+            left: 100%;
+        }
+    }
+
+    @media (max-width: 768px) {
+        #rhapsody-features-2023 .rhapsody-tabs-2023-new {
+            flex-wrap: wrap;
+            border-radius: 25px;
+            overflow: hidden;
+        }
+
+        #rhapsody-features-2023 .tab-indicator-new {
+            display: none;
+        }
+
+        #rhapsody-features-2023 .rhapsody-tab-2023-new {
+            margin-bottom: 10px;
+            width: calc(50% - 10px);
+        }
+
+        #rhapsody-features-2023 .rhapsody-image-2023-new {
+            max-width: 100%;
+            width: 100%;
+        }
+
+        #rhapsody-features-2023 .rhapsody-description-new {
+            max-width: 100%;
+        }
+
+        .modal-content {
+            width: 95%;
+        }
+    }
+    </style>
+
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const tabs = document.querySelectorAll('.rhapsody-tab-2023-new');
+        const contents = document.querySelectorAll('.rhapsody-tab-content-2023-new');
+        const tabIndicator = document.querySelector('.tab-indicator-new');
+
+        function setIndicatorPosition(tab) {
+            tabIndicator.style.width = `${tab.offsetWidth}px`;
+            tabIndicator.style.left = `${tab.offsetLeft}px`;
+        }
+
+        function switchTab(tab) {
+            const target = tab.getAttribute('data-tab');
+
+            tabs.forEach(t => t.classList.remove('active'));
+            tab.classList.add('active');
+
+            contents.forEach(content => {
+                content.classList.remove('active');
+                if (content.id === target) {
+                    content.classList.add('active');
+                    animateContent(content);
+                }
+            });
+
+            setIndicatorPosition(tab);
+        }
+
+        function animateContent(content) {
+            const elements = content.querySelectorAll('h3, .rhapsody-image-2023-new, .rhapsody-description-new');
+            elements.forEach((el, index) => {
+                setTimeout(() => {
+                    el.classList.add('visible');
+                }, index * 200);
+            });
+        }
+
+        tabs.forEach(tab => {
+            tab.addEventListener('click', () => switchTab(tab));
+        });
+
+        // Set initial indicator position and retain current tab
+        const activeTab = document.querySelector('.rhapsody-tab-2023-new.active') || tabs[0];
+        switchTab(activeTab);
+
+        // Update indicator position on window resize
+        window.addEventListener('resize', () => {
+            const activeTab = document.querySelector('.rhapsody-tab-2023-new.active');
+            setIndicatorPosition(activeTab);
+        });
+
+        // Add hover effect for indicator
+        tabs.forEach(tab => {
+            tab.addEventListener('mouseover', () => {
+                setIndicatorPosition(tab);
+            });
+
+            tab.addEventListener('mouseout', () => {
+                const activeTab = document.querySelector('.rhapsody-tab-2023-new.active');
+                setIndicatorPosition(activeTab);
+            });
+        });
+
+        // Scroll-based animations
+        const rhapsodySection = document.getElementById('rhapsody-features-2023');
+        const title = rhapsodySection.querySelector('.rhapsody-title-2023-new');
+        const tabsContainer = rhapsodySection.querySelector('.rhapsody-tabs-2023-new');
+
+        function isElementInViewport(el) {
+            const rect = el.getBoundingClientRect();
+            return (
+                rect.top >= 0 &&
+                rect.left >= 0 &&
+                rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+                rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+            );
+        }
+
+        function animateOnScroll() {
+            if (isElementInViewport(title)) {
+                title.classList.add('visible');
+            }
+            if (isElementInViewport(tabsContainer)) {
+                tabsContainer.classList.add('visible');
+            }
+
+            const activeContent = rhapsodySection.querySelector('.rhapsody-tab-content-2023-new.active');
+            if (activeContent && isElementInViewport(activeContent)) {
+                animateContent(activeContent);
+            }
+        }
+
+        window.addEventListener('scroll', animateOnScroll);
+        animateOnScroll(); // Initial check on load
+
+        // Image zoom functionality
+        const modal = document.createElement('div');
+        modal.classList.add('modal');
+        modal.innerHTML = `
+            <span class="close">&times;</span>
+            <img class="modal-content" id="img01">
+        `;
+        document.body.appendChild(modal);
+
+        const modalImg = document.getElementById("img01");
+        const closeBtn = document.getElementsByClassName("close")[0];
+
+        const images = document.querySelectorAll('.zoomable-image');
+        images.forEach(img => {
+            img.addEventListener('click', function() {
+                modal.style.display = "block";
+                modalImg.src = this.src;
+            });
+        });
+
+        closeBtn.onclick = function() {
+            modal.style.display = "none";
+        }
+
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+    });
+    </script>
+
+<style>
+    .image-tabs-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 20px;
+        padding: 20px;
+    }
+
+    .image-tab {
+        width: 200px;
+        height: 200px;
+        position: relative;
+        cursor: pointer;
+        transition: all 0.5s cubic-bezier(0.25, 0.1, 0.25, 1);
+        overflow: hidden;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .image-tab img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: all 0.5s ease;
+    }
+
+    .image-tab.expanded {
+        width: 400px;
+        height: 400px;
+        z-index: 10;
+    }
+
+    .image-tab:not(.expanded):hover {
+        transform: scale(1.05);
+    }
+
+    .image-tab-content {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        background: rgba(255, 255, 255, 0.9);
+        padding: 10px;
+        box-sizing: border-box;
+        transform: translateY(100%);
+        transition: transform 0.5s ease;
+    }
+
+    .image-tab.expanded .image-tab-content {
+        transform: translateY(0);
+    }
+
+    .image-tab.expanded img {
+        transform: scale(1.2);
+    }
+</style>
+
+
+
+<!-- CARDS section -->
+<style>
+    .swoopy-card-container {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 20px;
+        padding: 20px;
+    }
+
+    .swoopy-card {
+        width: 200px;
+        height: 200px;
+        background-color: rgba(230, 220, 255, 0.2);
+        border-radius: 10px;
+        overflow: hidden;
+        position: relative;
+        transition: all 0.2s ease;
+        cursor: pointer;
+        box-shadow: 0 4px 8px rgba(114, 9, 212, 0.1);
+    }
+
+    .swoopy-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 12px 24px rgba(114, 9, 212, 0.2);
+    }
+
+    .swoopy-card::before {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        width: 0;
+        height: 0;
+        background: rgba(230, 220, 255, 0.8);
+        border-radius: 50%;
+        transform: translate(-50%, 50%);
+        transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        z-index: 1;
+    }
+
+    .swoopy-card:hover::before {
+        width: 300%;
+        height: 300%;
+    }
+
+    .swoopy-card-content {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+        padding: 20px;
+        position: relative;
+        z-index: 2;
+        transition: all 0.2s ease;
+    }
+
+    .swoopy-card:hover .swoopy-card-content {
+        color: #ac53a2;
+    }
+
+    .swoopy-card i {
+        font-size: 48px;
+        margin-bottom: 10px;
+        color: #ac53a2;
+        transition: all 0.2s ease;
+    }
+
+    .swoopy-card h3 {
+        margin: 10px 0;
+        color: #ac53a2;
+        transition: all 0.2s ease;
+    }
+
+    .swoopy-card p {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 80%;
+        text-align: center;
+        color: #7209d4;
+        font-size: 14px;
+        opacity: 0;
+        transform: translate(-50%, 20px);
+        transition: all 0.2s ease;
+        display: none;
+    }
+
+    .swoopy-card:hover i,
+    .swoopy-card:hover h3 {
+        opacity: 0;
+        transform: translateY(-20px);
+        visibility: hidden;
+        transition: all 0.1s ease;
+    }
+
+    .swoopy-card:hover p {
+        opacity: 1;
+        transform: translate(-50%, -50%);
+        display: block;
+        transition: all 0.2s ease 0.1s;
+    }
+</style>
+
+<style>
+    .ict-solution-title {
+        text-align: center;
+        margin-bottom: 2rem;
+    }
+    
+    .ict-solution-title h2 {
+        font-size: 2.5rem;
+        color: #ac53a2;
+        margin-bottom: 1rem;
+        font-weight: bold;
+        text-transform: uppercase;
+    }
+    
+    .scroll-animation-container h2 {
+        font-size: 2.5rem;
+    }
+    
+    .scroll-animation-container h3 {
+        max-width: 800px;
+        margin-left: auto;
+        margin-right: auto;
+        opacity: 0;
+        transform: translateY(20px);
+        transition: opacity 0.5s ease, transform 0.5s ease;
+    }
+    
+    .scroll-animation-container h3.bimasakti-title {
+        font-size: 2.2rem !important;
+    }
+    
+    @media (max-width: 768px) {
+        .ict-solution-title h2,
+        .scroll-animation-container h2 {
+            font-size: 2rem;
+        }
+        
+        .ict-solution-title h3,
+        .scroll-animation-container h3 {
+            font-size: 1rem !important;
+            max-width: 70%;
+        }
+        
+        .scroll-animation-container h3.bimasakti-title {
+            font-size: 1.5rem !important;
+        }
+    }
+</style>
+
+<div class="scroll-animation-container">
+    <h2 class="text-center mb-3 bimasakti-title rhapsody-title-2023-new" data-aos="fade-up">ICT ONE SOLUTION FOR HOSPITALITY</h2>
+    <h3 class="ict-solution-title mt-2" data-aos="fade-up" data-aos-delay="100">With Standardized and Proven Implementation method, ICT ONE Solution provides a Comprehensive Solution for Hospitality Business.</h3>
+    <h3 class="text-center mb-3 bimasakti-title rhapsody-title-2023-new" data-aos="fade-up" data-aos-delay="200">Business Operations</h3>
+
+<style>
+    .ict-separator {
+        width: 80%;
+        height: 1px;
+        background: linear-gradient(90deg, transparent, #ac53a2, transparent);
+        margin: 2rem auto 3rem;
+    }
+
+    .scroll-visible {
+        opacity: 1 !important;
+        transform: translateY(0) !important;
+    }
+</style>
+
+<div class="ict-separator" data-aos="fade-in" data-aos-delay="300"></div>
+</div>
+
+<div class="swoopy-card-container">
+    <div class="swoopy-card" data-aos="zoom-in" data-aos-delay="400">
+        <div class="swoopy-card-content">
+            <i class="fas fa-hotel"></i>
+            <h3>Accommodation</h3>
+            <p>Experience luxury and comfort in our world-class accommodations, designed to make your stay unforgettable.</p>
+        </div>
+    </div>
+    <div class="swoopy-card" data-aos="zoom-in" data-aos-delay="500">
+        <div class="swoopy-card-content">
+            <i class="fas fa-utensils"></i>
+            <h3>Dining</h3>
+            <p>Indulge in exquisite culinary experiences with our diverse range of restaurants and dining options.</p>
+        </div>
+    </div>
+    <div class="swoopy-card" data-aos="zoom-in" data-aos-delay="600">
+        <div class="swoopy-card-content">
+            <i class="fas fa-spa"></i>
+            <h3>Wellness</h3>
+            <p>Rejuvenate your body and mind with our state-of-the-art spa and wellness facilities.</p>
+        </div>
+    </div>
+</div>
+
+<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script>
+  AOS.init({
+    duration: 800,
+    once: true,
+    offset: 150
+  });
+
+  // Function to check if an element is in viewport
+  function isInViewport(element) {
+    const rect = element.getBoundingClientRect();
+    return (
+      rect.top >= 0 &&
+      rect.left >= 0 &&
+      rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+      rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+    );
+  }
+
+  // Function to handle scroll event
+  function handleScroll() {
+    const h3Elements = document.querySelectorAll('.ict-solution-title, .bimasakti-title');
+    h3Elements.forEach((h3) => {
+      if (isInViewport(h3)) {
+        h3.classList.add('scroll-visible');
+      }
+    });
+  }
+
+  // Add scroll event listener
+  window.addEventListener('scroll', handleScroll);
+
+  // Initial check on page load
+  handleScroll();
+</script>
+
+<style>
+    @import url('https://unpkg.com/aos@next/dist/aos.css');
+</style>
+
 
 
 
@@ -3011,3 +3969,71 @@
 </body>
 
 </html>
+
+
+
+<!-- Image Tabs Container -->
+<!--
+<div class="image-tabs-container">
+    <div class="image-tab expanded">
+        <img src="path/to/image1.jpg" alt="Image 1">
+        <div class="image-tab-content">
+            <h3>Image 1 Title</h3>
+            <p>Description for Image 1. This content will slide up when the tab is expanded.</p>
+        </div>
+    </div>
+    <div class="image-tab">
+        <img src="path/to/image2.jpg" alt="Image 2">
+        <div class="image-tab-content">
+            <h3>Image 2 Title</h3>
+            <p>Description for Image 2. This content will slide up when the tab is expanded.</p>
+        </div>
+    </div>
+</div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const imageTabs = document.querySelectorAll('.image-tab');
+        let currentExpandedIndex = 0;
+        const autoExpandInterval = 5000; // 5 seconds
+
+        function expandTab(index) {
+            imageTabs.forEach((tab, i) => {
+                if (i === index) {
+                    tab.classList.add('expanded');
+                } else {
+                    tab.classList.remove('expanded');
+                }
+            });
+        }
+
+        function autoExpand() {
+            currentExpandedIndex = (currentExpandedIndex + 1) % imageTabs.length;
+            expandTab(currentExpandedIndex);
+        }
+
+        let timer = setInterval(autoExpand, autoExpandInterval);
+
+        imageTabs.forEach((tab, index) => {
+            tab.addEventListener('click', function() {
+                clearInterval(timer); // Clear the auto-expand timer
+                currentExpandedIndex = index;
+                expandTab(currentExpandedIndex);
+                timer = setInterval(autoExpand, autoExpandInterval); // Restart the timer
+            });
+        });
+
+        function smoothReflow() {
+            const container = document.querySelector('.image-tabs-container');
+            container.style.height = container.offsetHeight + 'px';
+            setTimeout(() => {
+                container.style.height = '';
+            }, 500);
+        }
+
+        imageTabs.forEach(tab => {
+            tab.addEventListener('transitionend', smoothReflow);
+        });
+    });
+</script>
+-->
