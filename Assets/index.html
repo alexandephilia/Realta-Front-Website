@@ -1934,6 +1934,17 @@
                     margin-bottom: -20% !important;
                 }
             }
+
+            .fade-in-blur {
+                opacity: 0;
+                filter: blur(10px);
+                transition: opacity 1s ease-out, filter 1s ease-out;
+            }
+
+            .fade-in-blur.active {
+                opacity: 1;
+                filter: blur(0);
+            }
         </style>
         <!-- PRODUCT 1 -->
         <div class="container py-4 pb-2 py-xl-5 product-container">
@@ -1948,12 +1959,12 @@
                 </div>
                 <div class="col-md-6 position-relative">
                     <div class="text-start" style="max-width: 420px; margin: 0 auto; position: relative; z-index: 1;">
-                        <h2 class="text-uppercase fw-bold">Visibility</h2>
-                        <h3 class="fw-bold">Unlock Real-Time Visibility Across Your Business</h3>
-                        <p class="my-3">Gain integrated, real-time visibility across all areas of your business. This
+                        <h2 class="text-uppercase fw-bold fade-in-blur">Visibility</h2>
+                        <h3 class="fw-bold fade-in-blur">Unlock Real-Time Visibility Across Your Business</h3>
+                        <p class="my-3 fade-in-blur">Gain integrated, real-time visibility across all areas of your business. This
                             allows you to make informed decisions with clear insights and a full understanding of your
                             operations.</p>
-                        <a href="#" class="btn-custom img-animate me-2 d-inline-block">Learn More</a>
+                        <a href="#" class="btn-custom img-animate me-2 d-inline-block fade-in-blur">Learn More</a>
                     </div>
                 </div>
             </div>
@@ -1998,13 +2009,13 @@
                 <div class="col-md-6 order-md-1 position-relative">
                     <div class="text-center text-md-start"
                         style="max-width: 420px; margin: 0 auto; position: relative; z-index: 1;">
-                        <h2 class="text-uppercase fw-bold">Control</h2>
-                        <h3 class="fw-bold">Take Command of Your Business Processes</h3>
-                        <p class="my-3">Empower your business with precise control over processes and resources. You can
+                        <h2 class="text-uppercase fw-bold fade-in-blur">Control</h2>
+                        <h3 class="fw-bold fade-in-blur">Take Command of Your Business Processes</h3>
+                        <p class="my-3 fade-in-blur">Empower your business with precise control over processes and resources. You can
                             maintain consistent performance while quickly adapting to any changes in your business
                             environment.</p>
 
-                        <div class="card mx-auto mx-md-0"
+                        <div class="card mx-auto mx-md-0 fade-in-blur"
                             style="max-width: 300px; box-shadow: 0 3px 15px rgba(0, 0, 0, 0.1); margin-bottom: 20px;">
                             <div class="card-body" style="padding: 10px;">
                                 <div class="icon d-flex align-items-center mb-2">
@@ -2047,12 +2058,12 @@
                 </div>
                 <div class="col-md-6 position-relative">
                     <div class="text-start" style="max-width: 420px; margin: 0 auto; position: relative; z-index: 1;">
-                        <h2 class="text-uppercase fw-bold">Automation</h2>
-                        <h3 class="fw-bold">Automate Routine Tasks for Seamless Efficiency</h3>
-                        <p class="my-3">Automate routine tasks to run your business more efficiently with less manual
+                        <h2 class="text-uppercase fw-bold fade-in-blur">Automation</h2>
+                        <h3 class="fw-bold fade-in-blur">Automate Routine Tasks for Seamless Efficiency</h3>
+                        <p class="my-3 fade-in-blur">Automate routine tasks to run your business more efficiently with less manual
                             effort. This boosts accuracy, scalability, and frees up your team to focus on strategic
                             initiatives.</p>
-                        <a href="#" class="btn-custom img-animate me-2 d-inline-block">Learn More</a>
+                        <a href="#" class="btn-custom img-animate me-2 d-inline-block fade-in-blur">Learn More</a>
                     </div>
                 </div>
             </div>
@@ -2105,6 +2116,24 @@
 
         </style>
     </section>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const fadeElements = document.querySelectorAll('.fade-in-blur');
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('active');
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            fadeElements.forEach(element => {
+                observer.observe(element);
+            });
+        });
+    </script>
 
 
 
@@ -5026,8 +5055,95 @@
         });
     </script>
 
+<script>
+// Performance optimization script
 
+// Defer non-critical CSS
+const deferCSS = (href) => {
+    const link = document.createElement('link');
+    link.rel = 'stylesheet';
+    link.href = href;
+    link.type = 'text/css';
+    document.head.appendChild(link);
+};
 
+// Lazy load images
+const lazyLoadImages = () => {
+    const images = document.querySelectorAll('img[data-src]');
+    const imageObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const img = entry.target;
+                img.src = img.dataset.src;
+                img.removeAttribute('data-src');
+                imageObserver.unobserve(img);
+            }
+        });
+    });
+
+    images.forEach(img => imageObserver.observe(img));
+};
+
+// Preload critical resources
+const preloadResources = () => {
+    const criticalResources = [
+        '/assets/css/main.css',
+        '/assets/js/critical.js'
+    ];
+    criticalResources.forEach(resource => {
+        const link = document.createElement('link');
+        link.rel = 'preload';
+        link.as = resource.endsWith('.css') ? 'style' : 'script';
+        link.href = resource;
+        document.head.appendChild(link);
+    });
+};
+
+// Optimize third-party scripts
+const loadScriptAsync = (src) => {
+    const script = document.createElement('script');
+    script.src = src;
+    script.async = true;
+    document.body.appendChild(script);
+};
+
+// Main optimization function
+const optimizeWebsite = () => {
+    // Defer non-critical CSS
+    deferCSS('/assets/css/non-critical.css');
+
+    // Lazy load images
+    lazyLoadImages();
+
+    // Preload critical resources
+    preloadResources();
+
+    // Load third-party scripts asynchronously
+    loadScriptAsync('https://www.google-analytics.com/analytics.js');
+
+    // Use requestIdleCallback for non-essential tasks
+    requestIdleCallback(() => {
+        console.log('Performing non-essential tasks during idle time');
+        // Add any non-essential tasks here
+    });
+};
+
+// Run optimization when DOM is fully loaded
+document.addEventListener('DOMContentLoaded', optimizeWebsite);
+
+// Implement a service worker for caching and offline functionality
+if ('serviceWorker' in navigator) {
+    window.addEventListener('load', () => {
+        navigator.serviceWorker.register('/service-worker.js')
+            .then(registration => {
+                console.log('Service Worker registered successfully:', registration.scope);
+            })
+            .catch(error => {
+                console.log('Service Worker registration failed:', error);
+            });
+    });
+}
+</script>
 
 </body>
 
