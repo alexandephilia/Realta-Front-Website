@@ -802,11 +802,11 @@ body.dark-mode .btn-custom.whatsapp-btn i {
   font-family: 'Proxima Nova', sans-serif;
   background: var(--bg);
   transition: 0.2s;
-  box-shadow: rgba(0, 0, 0, 0.253) 0px 4px 8px !important;
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.2), rgba(240, 240, 240, 0.9), rgba(255, 255, 255, 0)) !important;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px !important;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.838), rgba(255, 255, 255, 0.838), rgba(255, 255, 255, 0.838)) !important;
   backdrop-filter: blur(10px) !important;
   -webkit-backdrop-filter: blur(10px) !important;
-  border: 2px solid rgba(255, 255, 255, 0.384) !important;
+  border: 3px solid rgba(241, 241, 241, 0.589) !important;
 }
 
 /* .card:hover {
@@ -912,6 +912,8 @@ body.dark-mode .btn-custom.whatsapp-btn i {
 .right-column {
   background-color: #fafafa;
   transition: background-color 0.3s ease;
+  border-radius: 10px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
 }
 
 
@@ -1572,8 +1574,7 @@ section{
   align-items: center;
   width: 85%;
   padding: 1rem;
-  background: radial-gradient(circle at top left, rgba(255, 255, 255, 0.05) 0%, rgba(245, 245, 245, 0.2) 50%, rgba(240, 240, 240, 0.3) 100%),
-               linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(250, 250, 250, 0.15) 50%, rgba(245, 245, 245, 0.2) 100%);
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.797), rgba(255, 255, 255, 0.797), rgba(255, 255, 255, 0.797)) !important;
   background-blend-mode: screen;
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
@@ -1627,7 +1628,7 @@ body.dark-mode .logo-container {
   border: none;
   border-radius: 10px;
   overflow: hidden;
-  box-shadow: rgba(0, 0, 0, 0.253) 0px 4px 8px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
   transition: all 0.3s ease;
 }
 
@@ -2473,14 +2474,7 @@ section {
   left: 0;
   right: 0;
   bottom: 0;
-  background: 
-    linear-gradient(
-      to bottom,
-      rgb(255, 255, 255) 0%,
-      rgba(255, 255, 255, 0) 10%,
-      rgba(255, 255, 255, 0) 90%,
-      rgba(255, 255, 255, 1) 100%
-    );
+
   z-index: -1;
 }
 
@@ -2644,16 +2638,10 @@ body.dark-mode .blur-orb.bottom-right {
 }
 
 .glass-card {
-  background-image: linear-gradient(90deg, rgba(0, 0, 0, .03), rgba(249, 249, 249, 0)) !important;
-  /* box-shadow: 0 3px 5px 0 rgba(0, 0, 0, 0.37) !important; */
-
+  backdrop-filter: blur(10px) !important;
+  -webkit-backdrop-filter: blur(10px) !important;
   border-radius: 10px !important;
-  /* border: 1px solid rgba(255, 255, 255, 0.18) !important; */
-  position: relative !important;
-  z-index: 3 !important;
-  padding: 2.5rem 1.25rem !important;
-  overflow: visible !important;
-  margin-top: -50px !important;
+  border: 1px solid rgba(255, 255, 255, 0.18) !important;
 }
 
 /* Add this media query for smaller screens */
@@ -2702,7 +2690,7 @@ body.dark-mode .glass-card,
 body.dark-mode .glass-card-bottom {
   border-color: 1px none var(--base-color-brand--white) !important;
   box-shadow: 0 3px 15px rgba(0, 0, 0, 0.1) !important;
-  background-image: linear-gradient(90deg, rgba(0, 0, 0, .03), rgba(249, 249, 249, 0)) !important;
+  background-image: linear-gradient(90deg, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.7)) !important;
 }
 
 body.dark-mode .glass-text,
@@ -2738,7 +2726,7 @@ body.dark-mode .clipped-section::before {
 
 @media (min-width: 1024px) {
   .glass-card {
-    background-image: linear-gradient(90deg, rgba(0, 0, 0, .03), rgba(249, 249, 249, 0)) !important;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.838), rgba(255, 255, 255, 0.838), rgba(255, 255, 255, 0.838)) !important;
   }
 }
 

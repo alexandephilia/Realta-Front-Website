@@ -84,6 +84,155 @@ function handleCategories(containerSelector, detailsId, content) {
 // Solusi dropdown
 handleDropdown('solutionsDropdown', 'solutionsDropdownContent');
 handleCategories('#solutionsDropdownContent', 'product-details', {
+    eam: `
+    <div class="product-banner" style="background-image: url('assets/img/eam.jpg');" onclick="navigateWithLoading('erp-micro.html');">                
+        <div class="glare"></div>
+        <div class="product-banner-content">
+            <h2 class="product-title">EAM & ERP</h2>
+            <p class="product-banner-description">Streamline Your Business Operations.</p>
+        </div>
+    </div>
+    <div class="modules-title">KEY FEATURES</div>
+    <div class="modules-grid">
+            <div class="module" style="background: none;">
+            <h4 style="text-align: center;">ERP</h4>
+            <div class="bento-grid">
+                <div class="bento-item large">
+                    <p class="feature-description" style="text-align: center; font-size: 1em;">
+                        <strong style="display: block; margin-bottom: 2px;">Enterprise Resource Planning</strong>
+                        <span style="display: block; width: 95%; margin: 0 auto;">Integrate core business processes.</span>
+                    </p>
+                </div>
+                <div class="bento-item">
+                    <i class="fas fa-chart-line"></i>
+                    <span>Finance</span>
+                </div>
+                <div class="bento-item">
+                    <i class="fas fa-users"></i>
+                    <span>HR</span>
+                </div>
+                <div class="bento-item">
+                    <i class="fas fa-truck"></i>
+                    <span>Supply Chain</span>
+                </div>
+                <div class="bento-item">
+                    <i class="fas fa-cogs"></i>
+                    <span>Manufacturing</span>
+                </div>
+                <div class="bento-item">
+                    <i class="fas fa-project-diagram"></i>
+                    <span>Project Management</span>
+                </div>
+            </div>
+        </div>
+            <div class="module" style="border-left: 1px solid #e0e0e0; border-right: 1px solid #e0e0e0; border-radius: 0; background: none;">
+            <h4 style="text-align: center;">EAM & WMS</h4>
+            <div class="bento-grid" style="grid-template-columns: repeat(3, 1fr); grid-template-rows: auto 1fr; max-width: 300px; margin: 0 auto; gap: 15px;">
+                <div class="bento-item large" style="grid-column: 1 / -1; padding: 15px; border-radius: 10px;">
+                    <p style="font-size: 1em; margin: 0;"><span style="font-weight: bold;">Asset & Warehouse Management</span> Optimize your resources and inventory.</p>
+                </div>
+                <div class="bento-item" style="padding: 15px; border-radius: 10px; text-align: center;">
+                    <i class="fas fa-tools" style="font-size: 1.5em; margin-bottom: 5px;"></i>
+                    <span style="display: block; font-size: 0.9em;">Maintenance</span>
+                </div>
+                <div class="bento-item" style="padding: 15px; border-radius: 10px; text-align: center;">
+                    <i class="fas fa-clipboard-check" style="font-size: 1.5em; margin-bottom: 5px;"></i>
+                    <span style="display: block; font-size: 0.9em;">Inventory</span>
+                </div>
+                <div class="bento-item" style="padding: 15px; border-radius: 10px; text-align: center;">
+                    <i class="fas fa-barcode" style="font-size: 1.5em; margin-bottom: 5px;"></i>
+                    <span style="display: block; font-size: 0.9em;">Fulfillment</span>
+                </div>
+                <div class="bento-item full-width" style="padding: 15px; border-radius: 10px; text-align: center; grid-column: 1 / -1;">
+                    <i class="fas fa-dolly" style="font-size: 1.5em; margin-bottom: 5px;"></i>
+                    <span style="display: block; font-size: 0.9em;">Warehouse Operations</span>
+                </div>
+            </div>
+        </div>
+            <div class="module" style="background: none;">
+            <h4 style="text-align: center;">Business Intelligence</h4>
+            <div class="bento-grid">
+                <div class="bento-item">
+                    <i class="fas fa-chart-pie"></i>
+                    <span>Data Visualization</span>
+                </div>
+                <div class="bento-item large" style="display: flex; align-items: center; justify-content: center; width: 94%; margin: 0 auto;">
+                    <p class="feature-description" style="text-align: center; font-size: 1em; margin: 0;">
+                        <strong style="display: block; margin-bottom: 3px;">Analytics & Reporting</strong>
+                        <span style="display: block; width: 80%; margin: 0 auto;">Make data-driven decisions.</span>
+                    </p>
+                </div>
+                <div class="bento-item">
+                    <i class="fas fa-database"></i>
+                    <span>Data Warehousing</span>
+                </div>
+                <div class="bento-item">
+                    <i class="fas fa-robot"></i>
+                    <span>Predictive Analytics</span>
+                </div>
+                <div class="bento-item">
+                    <i class="fas fa-tachometer-alt"></i>
+                    <span>KPI Dashboards</span>
+                </div>
+                <div class="bento-item">
+                    <i class="fas fa-file-alt"></i>
+                    <span>Custom Reports</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <style>
+        .bento-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: repeat(3, 1fr);
+            gap: 8px;
+            max-width: 300px;
+            margin: 0 auto;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        .bento-item {
+            background-color: #f7f4f482;
+            padding: 10px;
+            border-radius: 15px;
+            font-size: 0.8em;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+            animation: fadeIn 0.5s ease-out forwards;
+            opacity: 0;
+        }
+        .bento-item:hover {
+            transform: translateY(2px);
+            box-shadow: 0 1px 5px rgba(0,0,0,0.2);
+        }
+        .bento-item i {
+            font-size: 1.3em;
+            margin-bottom: 5px;
+            color: #3A6D8C;
+            animation: fadeIn 0.5s ease-out 0.2s forwards;
+            opacity: 0;
+        }
+        .bento-item span {
+            display: block;
+            line-height: 1.1;
+        }
+        .large {
+            grid-column: span 2;
+            grid-row: span 2;
+            font-size: 0.85em;
+        }
+        .full-width {
+            grid-column: 1 / -1;
+        }
+    </style>
+    `,
     hms: `
     <div class="product-banner" style="background-image: url('assets/img/hotel.jpg');" onclick="navigateWithLoading('rhapsody-micro.html');">   
         <div class="glare"></div>
@@ -171,7 +320,7 @@ handleCategories('#solutionsDropdownContent', 'product-details', {
                     <span>Accounts</span>
                 </div>
                 <div class="bento-item large" style="display: flex; align-items: center; justify-content: center; width: 94%; margin: 0 auto;">
-                    <p class="feature-description" style="text-align: center; font-size: 0.9em; margin: 0;">
+                    <p class="feature-description" style="text-align: center; font-size: 1em; margin: 0;">
                         <strong style="display: block; margin-bottom: 3px;">Back Office operations</strong>
                         <span style="display: block; width: 80%; margin: 0 auto;">improve operations and financial management.</span>
                     </p>
@@ -320,7 +469,7 @@ handleCategories('#solutionsDropdownContent', 'product-details', {
                     <span>Leaderboard</span>
                 </div>
                 <div class="bento-item large" style="display: flex; align-items: center; justify-content: center; width: 94%; margin: 0 auto;">
-                    <p class="feature-description" style="text-align: center; font-size: 0.9em; margin: 0;">
+                    <p class="feature-description" style="text-align: center; font-size: 1em; margin: 0;">
                         <strong style="display: block; margin-bottom: 3px;">Tournament <br> Management</strong>
                         <span style="display: block; width: 80%; margin: 0 auto;">your all-in-one golf event solution.</span>
                     </p>
@@ -517,7 +666,7 @@ handleCategories('#solutionsDropdownContent', 'product-details', {
                         <span>Locations</span>
                     </div>
                        <div class="bento-item large" style="display: flex; align-items: center; justify-content: center; width: 94%; margin: 0 auto;">
-                        <p class="feature-description" style="text-align: center; font-size: 0.9em; margin: 0;">
+                        <p class="feature-description" style="text-align: center; font-size: 1em; margin: 0;">
                             <strong style="display: block; margin-bottom: 2px;">Employee Self <br> Service</strong>
                             <span style="display: block; width: 80%; margin: 0 auto;">Empower HR with our ESS app.</span>
                         </p>
