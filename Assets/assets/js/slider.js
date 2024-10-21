@@ -132,7 +132,7 @@ const cardContents = {
                 list-style-type: none;
             }
             .hospitality-item li {
-                font-size: 1rem;
+                font-size: 20px;
                 margin-bottom: 0.5rem;
                 position: relative;
                 padding-left: 1.5em;
@@ -157,6 +157,7 @@ const cardContents = {
                 text-align: center;
                 margin-top: 10px;
                 margin-bottom: 20px;
+                
             }
             .properties { 
                 grid-area: properties; 
@@ -283,7 +284,7 @@ const cardContents = {
         }
         .manufacturing-item li {
             margin-bottom: 8px;
-            font-size: 1rem;
+            font-size: 20px;
             line-height: 1.4;
             position: relative;
             padding-left: 20px;
@@ -492,7 +493,7 @@ const cardContents = {
             }
             .property-item li {
                 margin-bottom: 8px;
-                font-size: 1rem;
+                 font-size: 20px;
                 line-height: 1.4;
                 position: relative;
                 padding-left: 20px;
@@ -686,7 +687,7 @@ const cardContents = {
         }
         .finance-item li {
             margin-bottom: 8px;
-            font-size: 1rem;
+            font-size: 20px;
             line-height: 1.4;
             position: relative;
             padding-left: 20px;

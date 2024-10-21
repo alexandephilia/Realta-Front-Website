@@ -122,6 +122,22 @@
     body {
         padding-top: 80px;
     }
+
+    /* Add this style block in the <head> section or in your CSS file */
+    .container-fluid {
+        /* width: 95%; */
+        max-width: 1700px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    @media (max-width: 768px) {
+        .container-fluid {
+            width: 100%;
+            padding-left: 15px;
+            padding-right: 15px;
+        }
+    }
 </style>
 
 <header>
@@ -220,7 +236,7 @@
                                                 <li>
                                                     <strong>Revenue Management</strong>
                                                     <span>Maximize profitability</span>
-                                                </li>
+                                                </li>p
                                                 <li>
                                                     <strong>Guest Experience Management</strong>
                                                     <span>Enhance customer satisfaction</span>
@@ -1137,11 +1153,11 @@
     <section id="home" style="margin-bottom: 0; position: relative; overflow: hidden;">
         <div class="circle-blur"></div>
         <div id="container-header" class="container-fluid">
-            <div id="container-headerin" class="container-fluid container-xl">
+            <div id="container-headerin" class="container-fluid">
                 <!-- Carousel Start -->
                 <style>
                     #businessCarousel {
-                        height: 600px;
+                        height: 700px;
                         /* Fixed height for desktop */
                     }
 
@@ -1485,7 +1501,7 @@
             }
 
             .lead {
-                font-size: 16px !important;
+                font-size: 20px !important;
             }
         }
 
@@ -1580,6 +1596,7 @@
         #technology-delivery {
             position: relative;
             overflow: visible;
+
         }
 
         .spline-container {
@@ -1598,309 +1615,261 @@
         }
     </style>
 
-
-
-    <section id="technology-delivery" class="clipped-section">
-
-        <style>
+<style>
             @media (max-width: 768px) {
                 .glass-text {
                     font-size: 1.8rem !important;
                 }
             }
         </style>
-        <div class="blur-orb top-left"></div>
-        <div class="blur-orb bottom-right"></div>
-        <div class="blur-overlay"></div>
-        <div class="container-fluid container-lg px-3 p-4">
+
+    <section id="technology-delivery" class="clipped-section">
+        <div class="container-fluid p-4">
             <div class="row justify-content-center">
                 <div class="col-12 py-4 px-5">
-                    <div class="card glass-card">
-                        <div class="card-body">
-                            <div class="row gy-4">
-                                <!-- Top Column -->
-                                <div class="col-12">
-                                    <div class="text-center">
-                                        <h2 class="mb-2 glass-text gradient-text">
-                                            Delivering Technology for
-                                            <br>
-                                            Leading Organizations
-                                        </h2>
-
-                                        <!-- <h3 class="mb-0 glass-subtext">
-                                            Across South-East Asia & Japan
-                                        </h3> -->
-                                    </div>
-                                </div>
-                                <style>
-                                    @media (max-width: 768px) {
-                                        .glass-text {
-                                            font-size: 35px !important;
-                                            line-height: 1.3 !important;
-                                        }
-
-                                        #partners-logo {
-                                            padding-top: 15%;
-                                        }
-
-
-                                        .glass-subtext {
-                                            font-size: 18px !important;
-                                            line-height: 1.4 !important;
-                                        }
-                                    }
-
-                                    @media (max-width: 576px) {
-                                        .glass-text {
-                                            font-size: 35px !important;
-                                        }
-
-                                        .glass-subtext {
-                                            font-size: 18px !important;
-                                        }
-                                    }
-                                </style>
-                                <!-- Bottom Column -->
-
-                                <div id="partners-logo" class="col-12" style="cursor: default; pointer-events: none;">
-
-                                    <div class="row justify-content-around align-items-center pt-5 mb-0 g-5">
-                                        <div class="col-12 col-md-11 mb-4">
-                                            <div class="d-flex flex-row flex-wrap justify-content-center gap-5">
-                                                <div id="partner-logo-1" class="partner-logo mx-3 mb-4">
-                                                    <img rel="preload"
-                                                        src="assets/img/partners/Accor_logo_Gold-gradient_RVB_digital.png"
-                                                        alt="Partner 1" class="img-fluid" loading="lazy">
-                                                </div>
-                                                <div rel="preload" id="partner-logo-2" class="partner-logo mx-3 mb-4">
-                                                    <img src="assets/img/partners/Logo-Astra-Otoparts-PNG-–-IfoxSoft.Com_-950x500.png"
-                                                        alt="Partner 2" class="img-fluid" loading="lazy">
-                                                </div>
-                                                <div rel="preload" id="partner-logo-3" class="partner-logo mx-3 mb-4">
-                                                    <img src="assets/img/partners/bank-tabungan-negara-seeklogo.png"
-                                                        alt="Partner 3" class="img-fluid" loading="lazy">
-                                                </div>
-                                                <div rel="preload" id="partner-logo-4" class="partner-logo mx-3 mb-4">
-                                                    <img src="assets/img/partners/Logo-BCA-PNG.png" alt="Partner 4"
-                                                        class="img-fluid" loading="lazy">
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-12 col-md-11 mb-4">
-                                            <div class="d-flex flex-row flex-wrap justify-content-center gap-5">
-                                                <div rel="preload" id="partner-logo-5" class="partner-logo mx-3 mb-4">
-                                                    <img src="assets/img/partners/pngegg.png" alt="Partner 5"
-                                                        class="img-fluid" loading="lazy">
-                                                </div>
-                                                <div rel="preload" id="partner-logo-6" class="partner-logo mx-3 mb-4">
-                                                    <img src="assets/img/partners/Energizer.png" alt="Partner 6"
-                                                        class="img-fluid" loading="lazy">
-                                                </div>
-                                                <div rel="preload" id="partner-logo-7" class="partner-logo mx-3 mb-4">
-                                                    <img src="assets/img/partners/Hilton.png" alt="Partner 7"
-                                                        class="img-fluid" loading="lazy">
-                                                </div>
-                                                <div rel="preload" id="partner-logo-8" class="partner-logo mx-3 mb-4">
-                                                    <img src="assets/img/partners/Hyundai.png" alt="Partner 8"
-                                                        class="img-fluid" loading="lazy">
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-12 col-md-11 mb-4">
-                                            <div class="d-flex flex-row flex-wrap justify-content-center gap-5">
-                                                <div rel="preload" id="partner-logo-9" class="partner-logo mx-3 mb-4">
-                                                    <img src="assets/img/partners/indofood.png" alt="Partner 9"
-                                                        class="img-fluid" loading="lazy">
-                                                </div>
-                                                <div rel="preload" id="partner-logo-10" class="partner-logo mx-3 mb-4">
-                                                    <img src="assets/img/partners/kalbe.png" alt="Partner 10"
-                                                        class="img-fluid" loading="lazy">
-                                                </div>
-                                                <div rel="preload" id="partner-logo-11" class="partner-logo mx-3 mb-4">
-                                                    <img src="assets/img/partners/kao.png" alt="Partner 11"
-                                                        class="img-fluid" loading="lazy">
-                                                </div>
-                                                <div rel="preload" id="partner-logo-12" class="partner-logo mx-3 mb-4">
-                                                    <img src="assets/img/partners/Mercure Hotels.png" alt="Partner 12"
-                                                        class="img-fluid" loading="lazy">
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-12 pb-5 col-md-11 mb-4">
-                                            <div class="d-flex flex-row flex-wrap justify-content-center gap-5">
-                                                <div rel="preload" id="partner-logo-13" class="partner-logo mx-3 mb-4">
-                                                    <img src="assets/img/partners/novotel.png" alt="Partner 13"
-                                                        class="img-fluid" loading="lazy">
-                                                </div>
-                                                <div rel="preload" id="partner-logo-14" class="partner-logo mx-3 mb-4">
-                                                    <img src="assets/img/partners/prudential.png" alt="Partner 14"
-                                                        class="img-fluid" loading="lazy">
-                                                </div>
-                                                <div rel="preload" id="partner-logo-15" class="partner-logo mx-3 mb-4">
-                                                    <img src="assets/img/partners/sultan.png" alt="Partner 15"
-                                                        class="img-fluid" loading="lazy">
-                                                </div>
-                                                <div rel="preload" id="partner-logo-16" class="partner-logo mx-3 mb-4">
-                                                    <img src="assets/img/partners/yakult.png" alt="Partner 16"
-                                                        class="img-fluid" loading="lazy">
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <style>
-                                    .partner-logo {
-                                        width: 150px;
-                                        height: 100px;
-                                        display: flex;
-                                        align-items: center;
-                                        justify-content: center;
-                                        margin: 1rem;
-                                    }
-
-                                    .partner-logo img {
-                                        max-width: 95%;
-                                        max-height: 95%;
-                                        object-fit: contain;
-                                    }
-
-
-                                    @media (max-width: 992px) {
-                                        .partner-logo {
-                                            width: 120px;
-                                            height: 80px;
-                                            margin: 0.5rem;
-                                        }
-                                    }
-
-                                    @media (max-width: 768px) {
-                                        .row {
-                                            --bs-gutter-y: 0.15rem;
-                                        }
-
-                                        .partner-logo {
-                                            width: 80px;
-                                            height: 60px;
-                                            margin: 0.3rem;
-                                        }
-
-                                        .d-flex.flex-row.flex-wrap {
-                                            justify-content: space-between;
-                                        }
-
-                                        .col-12.col-md-11.mb-4 {
-                                            padding-left: 5px;
-                                            padding-right: 5px;
-                                        }
-                                    }
-                                </style>
-                                </style>
-                            </div>
-                        </div>
+                    <div class="text-center">
+                        <h2 class="mb-2 glass-text gradient-text">
+                            Delivering Technology for
+                            <br>
+                            Leading Organizations
+                        </h2>
                     </div>
-                    <div class="card glass-card-bottom" style="cursor: default; pointer-events: none;">
-                        <div class="card-body">
-                            <div class="row">
-                                <!-- Statistics Section -->
-                                <div class="col-12">
-                                    <div class="row row-cols-1 row-cols-md-5 text-center">
-                                        <div class="col d-flex flex-column mb-3 mb-md-0">
-                                            <h2 class="stat-number" data-target="25">0</h2>
-                                            <h2 class="stat-description">Industries</h2>
-                                        </div>
-                                        <div class="col d-flex flex-column mb-3 mb-md-0">
-                                            <h2 class="stat-number" data-target="200">0</h2>
-                                            <h2 class="stat-description">LOB</h2>
-                                        </div>
-                                        <div class="col d-flex flex-column mb-3 mb-md-0">
-                                            <h2 class="stat-number" data-target="800">0</h2>
-                                            <h2 class="stat-description">Customers</h2>
-                                        </div>
-                                        <div class="col d-flex flex-column mb-3 mb-md-0">
-                                            <h2 class="stat-number" data-target="30">0</h2>
-                                            <h2 class="stat-description">Million End users</h2>
-                                        </div>
-                                        <div class="col d-flex flex-column">
-                                            <h2 class="stat-number" data-target="50000">0</h2>
-                                            <h2 class="stat-description">Tickets per day</h2>
-                                        </div>
+                    
+                    <div id="partners-logo" class="col-12" style="cursor: default; pointer-events: none; padding-left: 0; padding-right: 0;">
+                        <div class="row justify-content-between align-items-center pt-5 mb-0 g-5">
+                            <div class="col-12 col-md-12 mb-4">
+                                <div class="d-flex flex-row flex-wrap justify-content-between gap-5">
+                                    <div id="partner-logo-1" class="partner-logo">
+                                        <img rel="preload"
+                                            src="assets/img/partners/Accor_logo_Gold-gradient_RVB_digital.png"
+                                            alt="Partner 1" class="img-fluid" loading="lazy">
                                     </div>
-                                    <script>
-                                        // Function to animate a single number
-                                        function animateNumber(element, target) {
-                                            let current = 0;
-                                            const duration = 2000; // Animation duration in milliseconds
-                                            const step = target / (duration / 16); // 60 FPS
-
-                                            function update() {
-                                                current += step;
-                                                if (current < target) {
-                                                    if (target === 50000) {
-                                                        element.textContent = Math.round(current).toLocaleString() + "+";
-                                                    } else {
-                                                        element.textContent = Math.round(current) + "+";
-                                                    }
-                                                    requestAnimationFrame(update);
-                                                } else {
-                                                    if (target === 50000) {
-                                                        element.textContent = "50,000+";
-                                                    } else {
-                                                        element.textContent = target + "+";
-                                                    }
-                                                }
-                                            }
-
-                                            update();
-                                        }
-
-                                        // Function to check if an element is in viewport
-                                        function isInViewport(element) {
-                                            const rect = element.getBoundingClientRect();
-                                            return (
-                                                rect.top >= 0 &&
-                                                rect.left >= 0 &&
-                                                rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
-                                                rect.right <= (window.innerWidth || document.documentElement.clientWidth)
-                                            );
-                                        }
-
-                                        // Function to start animation when elements are in viewport
-                                        function startAnimationOnScroll() {
-                                            const statNumbers = document.querySelectorAll('.stat-number');
-                                            statNumbers.forEach(number => {
-                                                if (isInViewport(number) && !number.classList.contains('animated')) {
-                                                    const target = parseInt(number.getAttribute('data-target'));
-                                                    animateNumber(number, target);
-                                                    number.classList.add('animated');
-                                                }
-                                            });
-                                        }
-
-                                        // Listen for scroll events
-                                        window.addEventListener('scroll', startAnimationOnScroll);
-                                        // Initial check on page load
-                                        window.addEventListener('load', startAnimationOnScroll);
-                                        // Trigger animation check every 100ms for 5 seconds after page load
-                                        let checkCount = 0;
-                                        const checkInterval = setInterval(() => {
-                                            startAnimationOnScroll();
-                                            checkCount++;
-                                            if (checkCount >= 50) { // 5 seconds / 100ms = 50
-                                                clearInterval(checkInterval);
-                                            }
-                                        }, 100);
-                                    </script>
+                                    <div rel="preload" id="partner-logo-2" class="partner-logo">
+                                        <img src="assets/img/partners/Logo-Astra-Otoparts-PNG-–-IfoxSoft.Com_-950x500.png"
+                                            alt="Partner 2" class="img-fluid" loading="lazy">
+                                    </div>
+                                    <div rel="preload" id="partner-logo-3" class="partner-logo">
+                                        <img src="assets/img/partners/bank-tabungan-negara-seeklogo.png"
+                                            alt="Partner 3" class="img-fluid" loading="lazy">
+                                    </div>
+                                    <div rel="preload" id="partner-logo-4" class="partner-logo">
+                                        <img src="assets/img/partners/Logo-BCA-PNG.png" alt="Partner 4"
+                                            class="img-fluid" loading="lazy">
+                                    </div>
+                                    <div rel="preload" id="partner-logo-5" class="partner-logo">
+                                        <img src="assets/img/partners/pngegg.png" alt="Partner 5"
+                                            class="img-fluid" loading="lazy">
+                                    </div>
+                                    <div rel="preload" id="partner-logo-6" class="partner-logo">
+                                        <img src="assets/img/partners/Energizer.png" alt="Partner 6"
+                                            class="img-fluid" loading="lazy">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12 col-md-12 mb-4">
+                                <div class="d-flex flex-row flex-wrap justify-content-between gap-5">
+                                    <div rel="preload" id="partner-logo-7" class="partner-logo">
+                                        <img src="assets/img/partners/Hilton.png" alt="Partner 7"
+                                            class="img-fluid" loading="lazy">
+                                    </div>
+                                    <div rel="preload" id="partner-logo-8" class="partner-logo">
+                                        <img src="assets/img/partners/Hyundai.png" alt="Partner 8"
+                                            class="img-fluid" loading="lazy">
+                                    </div>
+                                    <div rel="preload" id="partner-logo-9" class="partner-logo">
+                                        <img src="assets/img/partners/indofood.png" alt="Partner 9"
+                                            class="img-fluid" loading="lazy">
+                                    </div>
+                                    <div rel="preload" id="partner-logo-10" class="partner-logo">
+                                        <img src="assets/img/partners/kalbe.png" alt="Partner 10"
+                                            class="img-fluid" loading="lazy">
+                                    </div>
+                                    <div rel="preload" id="partner-logo-11" class="partner-logo">
+                                        <img src="assets/img/partners/kao.png" alt="Partner 11"
+                                            class="img-fluid" loading="lazy">
+                                    </div>
+                                    <div rel="preload" id="partner-logo-12" class="partner-logo">
+                                        <img src="assets/img/partners/Mercure Hotels.png" alt="Partner 12"
+                                            class="img-fluid" loading="lazy">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12 pb-5 col-md-12 mb-4">
+                                <div class="d-flex flex-row flex-wrap justify-content-between gap-5">
+                                    <div rel="preload" id="partner-logo-13" class="partner-logo">
+                                        <img src="assets/img/partners/novotel.png" alt="Partner 13"
+                                            class="img-fluid" loading="lazy">
+                                    </div>
+                                    <div rel="preload" id="partner-logo-14" class="partner-logo">
+                                        <img src="assets/img/partners/prudential.png" alt="Partner 14"
+                                            class="img-fluid" loading="lazy">
+                                    </div>
+                                    <div rel="preload" id="partner-logo-15" class="partner-logo">
+                                        <img src="assets/img/partners/sultan.png" alt="Partner 15"
+                                            class="img-fluid" loading="lazy">
+                                    </div>
+                                    <div rel="preload" id="partner-logo-16" class="partner-logo">
+                                        <img src="assets/img/partners/yakult.png" alt="Partner 16"
+                                            class="img-fluid" loading="lazy">
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
+                    <style>
+                        .partner-logo {
+                            width: 180px;
+                            height: 120px;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            margin: 1.5rem;
+                        }
+
+                        .partner-logo img {
+                            max-width: 100%;
+                            max-height: 100%;
+                            object-fit: contain;
+                        }
+
+
+                        @media (max-width: 992px) {
+                            .partner-logo {
+                                width: 150px;
+                                height: 100px;
+                                margin: 1rem;
+                            }
+                        }
+
+                        @media (max-width: 768px) {
+                            .row {
+                                --bs-gutter-y: 0.5rem;
+                            }
+
+                            .partner-logo {
+                                width: 120px;
+                                height: 80px;
+                                margin: 0.75rem;
+                            }
+
+                            .d-flex.flex-row.flex-wrap {
+                                justify-content: space-around;
+                            }
+
+                            .col-12.col-md-12.mb-4 {
+                                padding-left: 15px;
+                                padding-right: 15px;
+                            }
+                        }
+                    </style>
                 </div>
             </div>
         </div>
         <!-- Add the circle-blur2 div here -->
         <div class="circle-blur2"></div>
     </section>
+    <section id="blog" class="py-5">
+        <div class="container-fluid p-4">
+            <div class="card-body">
+                <div class="row">
+                    <div class="text-center mt-0 mb-5" style="margin-top: -50px;">
+                        <h1 class="industry-title gradient-text mb-3">Tailored Solutions for Every Sector</h1>
+                        <h3 class="mb-5 industry-subtitle">Innovative technology customized for your industry's unique challenges</h3>
+                    </div>
+                    <!-- Statistics Section -->
+                    <div class="col-12">
+                        <div class="row row-cols-1 row-cols-md-5 text-center">
+                            <div class="col d-flex flex-column mb-3 mb-md-0">
+                                <h2 class="stat-number" data-target="25">0</h2>
+                                <h2 class="stat-description">Industries</h2>
+                            </div>
+                            <div class="col d-flex flex-column mb-3 mb-md-0">
+                                <h2 class="stat-number" data-target="200">0</h2>
+                                <h2 class="stat-description">LOB</h2>
+                            </div>
+                            <div class="col d-flex flex-column mb-3 mb-md-0">
+                                <h2 class="stat-number" data-target="800">0</h2>
+                                <h2 class="stat-description">Customers</h2>
+                            </div>
+                            <div class="col d-flex flex-column mb-3 mb-md-0">
+                                <h2 class="stat-number" data-target="30">0</h2>
+                                <h2 class="stat-description">Million End users</h2>
+                            </div>
+                            <div class="col d-flex flex-column">
+                                <h2 class="stat-number" data-target="50000">0</h2>
+                                <h2 class="stat-description">Tickets per day</h2>
+                            </div>
+                        </div>
+                        <script>
+                            // Function to animate a single number
+                            function animateNumber(element, target) {
+                                let current = 0;
+                                const duration = 2000; // Animation duration in milliseconds
+                                const step = target / (duration / 16); // 60 FPS
 
+                                function update() {
+                                    current += step;
+                                    if (current < target) {
+                                        if (target === 50000) {
+                                            element.textContent = Math.round(current).toLocaleString() + "+";
+                                        } else {
+                                            element.textContent = Math.round(current) + "+";
+                                        }
+                                        requestAnimationFrame(update);
+                                    } else {
+                                        if (target === 50000) {
+                                            element.textContent = "50,000+";
+                                        } else {
+                                            element.textContent = target + "+";
+                                        }
+                                    }
+                                }
+
+                                update();
+                            }
+
+                            // Function to check if an element is in viewport
+                            function isInViewport(element) {
+                                const rect = element.getBoundingClientRect();
+                                return (
+                                    rect.top >= 0 &&
+                                    rect.left >= 0 &&
+                                    rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+                                    rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+                                );
+                            }
+
+                            // Function to start animation when elements are in viewport
+                            function startAnimationOnScroll() {
+                                const statNumbers = document.querySelectorAll('.stat-number');
+                                statNumbers.forEach(number => {
+                                    if (isInViewport(number) && !number.classList.contains('animated')) {
+                                        const target = parseInt(number.getAttribute('data-target'));
+                                        animateNumber(number, target);
+                                        number.classList.add('animated');
+                                    }
+                                });
+                            }
+
+                            // Listen for scroll events
+                            window.addEventListener('scroll', startAnimationOnScroll);
+                            // Initial check on page load
+                            window.addEventListener('load', startAnimationOnScroll);
+                            // Trigger animation check every 100ms for 5 seconds after page load
+                            let checkCount = 0;
+                            const checkInterval = setInterval(() => {
+                                startAnimationOnScroll();
+                                checkCount++;
+                                if (checkCount >= 50) { // 5 seconds / 100ms = 50
+                                    clearInterval(checkInterval);
+                                }
+                            }, 100);
+                        </script>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
     <!-- Second Section
         <div class="container py-4">
             <div class="row gy-3 align-items-center">
@@ -1948,7 +1917,7 @@
             }
         </style>
         <!-- PRODUCT 1 -->
-        <div class="container py-4 pb-2 py-xl-5 product-container">
+        <div class="container-fluid py-4 pb-2 py-xl-5 product-container">
             <div class="row gy-4 align-items-center position-relative">
                 <div class="product-blur product-blur-1"></div>
                 <div class="col-md-6">
@@ -1959,7 +1928,7 @@
                     </div>
                 </div>
                 <div class="col-md-6 position-relative">
-                    <div class="text-start" style="max-width: 420px; margin: 0 auto; position: relative; z-index: 1;">
+                    <div class="text-start" style="max-width: 700px; margin: 0 auto 0 10%; position: relative; z-index: 1;">
                         <h2 class="text-uppercase fw-bold fade-in-blur">Visibility</h2>
                         <h3 class="fw-bold fade-in-blur">Unlock Real-Time Visibility Across Your Business</h3>
                         <p class="my-3 fade-in-blur">Gain integrated, real-time visibility across all areas of your business. This
@@ -1985,7 +1954,7 @@
                 background-image: linear-gradient(132deg, #8A2BE2 27%, #4169E1 50%, #5486a6 79%);
                 top: 50%;
                 opacity: 0.77;
-                right: 155px;
+                right: 983px;
                 transform: translateY(-50%);
             }
 
@@ -1996,7 +1965,7 @@
         </style>
 
         <!-- PRODUCT 2 -->
-        <div class="container py-4 py-xl-5 product-container">
+        <div class="container-fluid py-4 py-xl-5 product-container">
             <div class="row gy-4 align-items-center position-relative">
                 <div class="product-blur product-blur-2"></div>
                 <div class="col-md-6 order-md-2 position-relative">
@@ -2008,17 +1977,17 @@
                     </div>
                 </div>
                 <div class="col-md-6 order-md-1 position-relative">
-                    <div class="text-center text-md-start"
-                        style="max-width: 420px; margin: 0 auto; position: relative; z-index: 1;">
+                    <div class="text-start"
+                        style="max-width: 700px; margin: 0 auto 0 8%; position: relative; z-index: 1;">
                         <h2 class="text-uppercase fw-bold fade-in-blur">Control</h2>
                         <h3 class="fw-bold fade-in-blur">Take Command of Your Business Processes</h3>
                         <p class="my-3 fade-in-blur">Empower your business with precise control over processes and resources. You can
                             maintain consistent performance while quickly adapting to any changes in your business
                             environment.</p>
 
-                        <div class="card mx-auto mx-md-0 fade-in-blur"
-                            style="max-width: 300px; box-shadow: 0 3px 15px rgba(0, 0, 0, 0.1); margin-bottom: 20px;">
-                            <div class="card-body" style="padding: 10px;">
+                        <div class="mx-0 fade-in-blur"
+                            style="max-width: 300px; margin-bottom: 20px;">
+                            <div class="" style="padding: 10px;">
                                 <div class="icon d-flex align-items-center mb-2">
                                     <i class="fas fa-circle"
                                         style="font-size: 0.5em; color: #007bff; margin-right: 5px;"></i>
@@ -2041,12 +2010,12 @@
                 background-image: linear-gradient(132deg, #8A2BE2 27%, #4169E1 50%, #5486a6 79%);
                 top: 45%;
                 opacity: 0.77;
-                left: 135px;
+                left: 993px;
                 transform: translateY(-50%);
             }
         </style>
         <!-- PRODUCT 3 -->
-        <div class="container py-4 py-xl-5 product-container">
+        <div class="container-fluid py-4 py-xl-5 product-container">
             <div class="row gy-4 align-items-center position-relative">
                 <div class="product-blur product-blur-3"></div>
                 <div class="col-md-6 position-relative">
@@ -2058,7 +2027,8 @@
                     </div>
                 </div>
                 <div class="col-md-6 position-relative">
-                    <div class="text-start" style="max-width: 420px; margin: 0 auto; position: relative; z-index: 1;">
+                    <div class="text-start"
+                    style="max-width: 700px; margin: 0 auto 0 10%; position: relative; z-index: 1;">
                         <h2 class="text-uppercase fw-bold fade-in-blur">Automation</h2>
                         <h3 class="fw-bold fade-in-blur">Automate Routine Tasks for Seamless Efficiency</h3>
                         <p class="my-3 fade-in-blur">Automate routine tasks to run your business more efficiently with less manual
@@ -2075,7 +2045,7 @@
                 background-image: linear-gradient(132deg, #8A2BE2 27%, #4169E1 50%, #5486a6 79%);
                 top: 50%;
                 opacity: 0.77;
-                right: 155px;
+                right: 1139px;
                 transform: translateY(-50%);
             }
         </style>
@@ -2138,11 +2108,8 @@
 
 
 
-
-
-
-    <section id="industry" class="industry-section">
-        <div class="container p-4">
+    <section id="industry" class="industry-section" style="background-color: #fcfcfc;">
+        <div class="container-fluid p-4">
             <div class="text-center">
                 <div class="text-center">
                     <h1 class="industry-title gradient-text">A Solution Based on Your Industry</h1>
@@ -2671,7 +2638,7 @@
                             <polyline points="15 18 9 12 15 6"></polyline>
                         </svg>
                     </div>
-                    <div class="tags-container">
+                    <div class="tags-container" style="background: none;">
                         <div class="tags-wrapper">
                             <span class="tag-item" onclick="toggleCard(this, 'hospitality')">
                                 Hospitality
@@ -2710,7 +2677,7 @@
 
 
     <section id="partners" class="partners-section py-4">
-        <div class="container p-4 py-xl-5">
+        <div class="container-fluid p-4 py-xl-5">
             <h1 class="text-center partners-heading gradient-text">Together We Build Solutions for You</h1>
 
             <h3 class="text-center mb-5 partners-subheading">Real Partnership To Deliver A Reliable Solution</h3>
@@ -2811,7 +2778,7 @@
 
     <!-- Cards Section -->
     <section id="solutions" class="py-5">
-        <div class="container p-4">
+        <div class="container-fluid p-4">
             <h1 class="solution-title text-center mb-2 gradient-text">Solution for Each Business</h1>
             <h3 class="solution-subtitle text-center mb-5">Real Partnership To Deliver A Reliable Solution.</h3>
 
@@ -3017,7 +2984,7 @@
         .business-btn {
             display: inline-block;
             padding: 0.45rem 0.9rem;
-            font-size: 0.8rem;
+            font-size: 20px;
             font-weight: 500;
             text-align: center;
             text-decoration: none;
@@ -3032,9 +2999,8 @@
             border: 2px solid #9054d0ab;
             font-weight: 600;
             width: auto;
-            max-width: 130px;
+            max-width: 150px;
             margin: 0 auto;
-            box-shadow: 0 2px 4px rgba(144, 84, 208, 0.2);
             opacity: 0;
             /* Start with 0 opacity */
             animation: fadeIn 0.5s ease-in-out forwards;
@@ -3080,7 +3046,6 @@
         .solution-card {
             transition: all 0.3s ease;
             border: none;
-            box-shadow: rgba(0, 0, 0, 0.253) 0px 4px 8px !important;
             height: 100%;
             max-width: 95%;
             /* Slightly reduced card width */
@@ -3127,7 +3092,7 @@
         .card-text {
             font-family: var(--font-family-base, 'Proxima Nova', sans-serif);
             font-weight: 400;
-            font-size: 0.95rem;
+            font-size: 20px;
             /* Slightly reduced font size */
             line-height: 1.4;
             /* Slightly reduced line height */
@@ -3354,7 +3319,7 @@
 
 
     <section id="testi" class="py-5">
-        <div class="container py-4 ">
+        <div class="container-fluid py-4 ">
             <div class="floating-orbs"></div>
             <style>
                 .testimonial-heading {
@@ -3677,7 +3642,7 @@
 
     <!-- BLOG -->
     <section id="blog" class="py-5">
-        <div class="container p-4">
+        <div class="container-fluid p-4">
             <div class="blog-header text-center">
                 <h1 class="gradient-text" style="font-weight: bolder; font-size: 48px;">Blog</h1>
                 <p class="">Stay informed and inspired with our latest articles covering a wide range of topics from
@@ -3696,7 +3661,7 @@
 
 
     <section id="qa" class="py-5 position-relative">
-        <div class="container p-4">
+        <div class="container-fluid p-4">
             <div class="row">
                 <div class="col-lg-12 text-center mb-4">
                     <h1 class="faq-title gradient-text" style="font-weight: bolder; font-size: 48px;">Q&A</h1>
@@ -3890,7 +3855,7 @@
 
 
     <section id="separator" class="py-0">
-        <div class="container p-4">
+        <div class="container-fluid p-4">
             <div class="banner">
                 <div class="banner-content">
                     <h2>Unlock superior coverage for your team</h2>
@@ -3904,7 +3869,7 @@
     </section>
 
     <section id="contact" class="pb-5">
-        <div class="container p-4">
+        <div class="container-fluid p-4">
             <div class="row justify-content-between">
                 <div id="contact-info" class="col-lg-5 left-column >
                         <h1 class=" mb-3 contact-heading"
@@ -4296,7 +4261,7 @@
     </style>
 
     <section id="newsletter-cta" class="py-4 mb-0">
-        <div class="container">
+        <div class="container-fluid">
             <div class="row align-items-center">
                 <div class="col-md-7 text-start">
                     <h2 class="mb-3 fw-bold gradient-text">Stay Informed, Stay Ahead</h2>
@@ -4355,7 +4320,7 @@
             -webkit-background-clip: text;
             background-clip: text;
             color: transparent;
-            font-size: 2rem;
+            font-size: 2.2rem;
         }
 
         #newsletter-cta .btn-primary {
@@ -4510,7 +4475,7 @@
     <script src="assets/bootstrap/js/bootstrap.min.js" async defer></script>
     <script src="assets/js/bold-and-bright.js" async defer></script>
     <script src="assets/js/slider.js" async defer></script>
-    <script src="assets/js/blog.js" async defer></script>
+    <script src="assets/js/blog.js"></script>
     <script src="assets/js/mobilenav.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" async defer></script>
     <script src="assets/js/text.js" async defer></script>
