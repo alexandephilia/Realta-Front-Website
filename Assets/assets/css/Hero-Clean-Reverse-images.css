@@ -39,7 +39,7 @@ html, body {
 .circle-blur {
   position: absolute;
   top: 50%;
-  right: 24%;
+  right: 26%;
   transform: translate(50%, -50%);
   width: 560px;
   height: 520px;
