@@ -4591,22 +4591,22 @@
         </div>
     </footer> -->
 
-    <script src="assets/bootstrap/js/bootstrap.min.js" async defer></script>
-    <script src="assets/js/bold-and-bright.js" async defer></script>
-    <script src="assets/js/slider.js" async defer></script>
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="assets/js/bold-and-bright.js"></script>
+    <script src="assets/js/slider.js"></script>
     <script src="assets/js/blog.js"></script>
     <script src="assets/js/mobilenav.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" async defer></script>
-    <script src="assets/js/text.js" async defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/text.js"></script>
     <script src="assets/js/navbar.js"></script>
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" async defer></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" async defer></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js" async defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
     <!-- Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js" async defer></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" async defer></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.1.3/js/bootstrap.min.js" async defer></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.1.3/js/bootstrap.min.js"></script>
 
     <script>
         document.addEventListener('DOMContentLoaded', function () {
@@ -5148,17 +5148,6 @@
     </script>
 
 <script>
-// Performance optimization script
-
-// Defer non-critical CSS
-const deferCSS = (href) => {
-    const link = document.createElement('link');
-    link.rel = 'stylesheet';
-    link.href = href;
-    link.type = 'text/css';
-    document.head.appendChild(link);
-};
-
 // Lazy load images
 const lazyLoadImages = () => {
     const images = document.querySelectorAll('img[data-src]');
@@ -5176,20 +5165,6 @@ const lazyLoadImages = () => {
     images.forEach(img => imageObserver.observe(img));
 };
 
-// Preload critical resources
-const preloadResources = () => {
-    const criticalResources = [
-        '/assets/css/main.css',
-        '/assets/js/critical.js'
-    ];
-    criticalResources.forEach(resource => {
-        const link = document.createElement('link');
-        link.rel = 'preload';
-        link.as = resource.endsWith('.css') ? 'style' : 'script';
-        link.href = resource;
-        document.head.appendChild(link);
-    });
-};
 
 // Optimize third-party scripts
 const loadScriptAsync = (src) => {
@@ -5220,21 +5195,7 @@ const optimizeWebsite = () => {
     });
 };
 
-// Run optimization when DOM is fully loaded
-document.addEventListener('DOMContentLoaded', optimizeWebsite);
 
-// Implement a service worker for caching and offline functionality
-if ('serviceWorker' in navigator) {
-    window.addEventListener('load', () => {
-        navigator.serviceWorker.register('/service-worker.js')
-            .then(registration => {
-                console.log('Service Worker registered successfully:', registration.scope);
-            })
-            .catch(error => {
-                console.log('Service Worker registration failed:', error);
-            });
-    });
-}
 </script>
 
 </body>
