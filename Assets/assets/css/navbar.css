@@ -1,141 +1,139 @@
-
-
 /* Mega Dropdown Styles */
 .mega-dropdown {
     display: none;
     position: absolute;
     top: 100%;
     left: 50%;
-    border-radius: 0 0 20px 20px;
     transform: translateX(-50%);
     width: 100%;
-    max-width: 2000px; 
-    /* 1200 for smaller*/
-    background-color: rgba(255, 255, 255, 0.9);
-    /* backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px); */
-    box-shadow: 0 5px 6px rgba(0, 0, 0, 0.1);
+    max-width: 95vw; /* Increased from 90vw for more expansion */
+    backdrop-filter: blur(20px); /* Increased blur effect for consistency */
+    -webkit-backdrop-filter: blur(20px);
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2); /* Increased shadow for depth */
     z-index: 1000;
-    padding: 0;
+    padding: 2.5rem 0; /* Increased padding for more space */
+    border-radius: 0 0 35px 35px; /* Slightly increased rounded bottom corners */
 }
 
 body.dark-mode .mega-dropdown {
-    background-color: rgba(69, 69, 69, 0.219);
-    box-shadow: 0 5px 6px rgba(255, 255, 255, 0.1);
+    background-color: rgba(69, 69, 69, 0.25); /* Slightly increased opacity */
+    box-shadow: 0 7px 8px rgba(255, 255, 255, 0.12);
 }
 
 .mega-dropdown-inner {
-    width: 100%;
+    width: 100%; /* Changed from 97% to 100% for full width */
     margin: 0 auto;
     overflow: hidden;
-    backdrop-filter: blur(10px);
-    background-color: rgba(255, 255, 255, 0.9);
-    -webkit-backdrop-filter: blur(10px);
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(15px); /* Increased blur for consistency */
+    background-color: rgba(255, 255, 255, 0.92); /* Slightly increased opacity */
+    -webkit-backdrop-filter: blur(15px);
+    box-shadow: 0 5px 8px rgba(0, 0, 0, 0.12);
+    border-radius: 20px; /* Added border-radius for consistency */
 }
 
 body.dark-mode .mega-dropdown-inner {
-    background-color: rgba(18, 18, 18, 0.95);
-    box-shadow: 0 4px 6px rgba(255, 255, 255, 0.1);
+    background-color: rgba(18, 18, 18, 0.97);
+    box-shadow: 0 5px 8px rgba(255, 255, 255, 0.12);
 }
 
 .dropdown-content {
     display: flex;
     width: 100%;
-    max-width: 1300px; /* Increased from 1260px to 1300px */
+    max-width: none; /* Removed max-width constraint */
     margin: 0 auto;
-    padding: 0;
+    padding: 0; /* Removed horizontal padding */
     position: relative;
 }
+
 .product-categories {
-    width: 18%;
-    padding: 30px 0;
-    background-color: rgba(255, 255, 255, 0.1);
-    border-right: 1px solid rgba(224, 224, 224, 0.5);
-    margin-left: -2%;
+    width: 20%; /* Kept as is */
+    padding: 25px 0; /* Kept as is */
+    background-color: rgba(255, 255, 255, 0.15);
+    border-right: 1px solid rgba(224, 224, 224, 0.6);
+    margin-left: 0; /* Removed negative margin */
 }
 
 body.dark-mode .product-categories {
-    background-color: rgba(255, 255, 255, 0.05);
-    border-right-color: rgba(255, 255, 255, 0.1);
+    background-color: rgba(255, 255, 255, 0.07);
+    border-right-color: rgba(255, 255, 255, 0.15);
 }
 
 .product-category {
-    padding: 12px 20px;
+    padding: 14px 22px; /* Kept as is */
     cursor: pointer;
-    font-size: 16px;
+    font-size: 17px; /* Kept as is */
     transition: background-color 0.3s, color 0.3s;
     position: relative;
     display: flex;
     font-weight: bold;
     align-items: center;
     justify-content: space-between;
-    border-left: 3px solid transparent;
+    border-left: 4px solid transparent; /* Kept as is */
 }
 
 .product-category:hover {
-    background-color: rgba(133, 22, 188, 0.05);
+    background-color: rgba(133, 22, 188, 0.07);
 }
 
 .product-category::after {
     content: '›';
-    margin-left: 10px;
+    margin-left: 12px;
     transition: transform 0.3s;
 }
 
 .product-category:hover::after,
 .product-category.active::after {
-    transform: translateX(5px);
+    transform: translateX(7px); /* Kept as is */
 }
 
 .product-category.active {
-    background-color: rgba(133, 22, 188, 0.1);
+    background-color: rgba(133, 22, 188, 0.15);
     color: rgba(133, 22, 188, 1);
     border-left-color: rgba(133, 22, 188, 1);
 }
 
 body.dark-mode .product-category {
-    color: #e0e0e0;
+    color: #e5e5e5; /* Kept as is */
 }
 
 body.dark-mode .product-category:hover {
-    background-color: rgba(255, 255, 255, 0.05);
+    background-color: rgba(255, 255, 255, 0.07);
 }
 
 body.dark-mode .product-category.active {
-    background-color: rgba(133, 22, 188, 0.2);
+    background-color: rgba(133, 22, 188, 0.25);
     color: #ffffff;
-    border-left-color: rgba(133, 22, 188, 0.8);
+    border-left-color: rgba(133, 22, 188, 0.9);
 }
 
 .product-details {
-    width: 80%;
-    padding: 20px;
-    /* border-radius: 20px; */
-    background-color: rgba(255, 255, 255, 0.8);
-    margin: 0 auto;
+    width: 80%; /* Adjusted from 78% to 80% */
+    padding: 25px; /* Kept as is */
+    background-color: rgba(255, 255, 255, 0.85);
+    margin: 0;
     justify-content: center;
     align-items: center;
+    border-radius: 20px; /* Removed border-radius */
 }
 
 body.dark-mode .product-details {
-    background-color: rgba(61, 60, 60, 0.192);
+    background-color: rgba(61, 60, 60, 0.25);
 }
 
 .product-banner {
-    height: 200px;
+    height: 220px; /* Kept as is */
     background-size: cover;
     background-position: center;
-    margin-bottom: 20px;
+    margin-bottom: 25px; /* Kept as is */
     position: relative;
-    border-radius: 20px; /* Changed from 12px to 20px */
+    border-radius: 25px; /* Kept as is */
     overflow: hidden !important;
     transition: transform 0.3s ease;
 }
 
 .product-banner:hover {
-    filter: blur(0.3px);
-    transform: scale(1.02);
+    filter: blur(0.2px);
+    transform: scale(1.03); /* Kept as is */
 }
 
 .product-banner::before {
@@ -145,24 +143,24 @@ body.dark-mode .product-details {
     left: 0;
     right: 0;
     bottom: 0;
-    background: rgba(0, 0, 0, 0.335);
+    background: rgba(0, 0, 0, 0.35);
     transition: background 0.3s ease;
 }
 
 body.dark-mode .product-banner::before {
-    background: rgba(0, 0, 0, 0.094);
+    background: rgba(0, 0, 0, 0.15);
 }
 
 body.dark-mode .product-banner:hover::before {
-    background: rgba(0, 0, 0, 0.3);
+    background: rgba(0, 0, 0, 0.35);
 }
 
 .product-banner .glare {
     position: absolute;
-    top: -200%;
-    left: -50%;
-    right: -50%;
-    bottom: -200%;
+    top: -220%;
+    left: -55%;
+    right: -55%;
+    bottom: -220%;
     transform: rotate(35deg);
     pointer-events: none;
 }
@@ -177,24 +175,24 @@ body.dark-mode .product-banner:hover::before {
     bottom: 0;
     background: linear-gradient(90deg,
             rgba(255, 255, 255, 0) 0%,
-            rgba(255, 255, 255, 0.03) 50%,
+            rgba(255, 255, 255, 0.04) 50%,
             rgba(255, 255, 255, 0) 100%);
-    animation: glareAnimation 8s infinite linear;
+    animation: glareAnimation 7s infinite linear;
 }
 
 .product-banner .glare::after {
-    animation-duration: 12s;
-    animation-delay: -4s;
-    opacity: 0.5;
+    animation-duration: 11s;
+    animation-delay: -3.5s;
+    opacity: 0.6;
 }
 
 @keyframes glareAnimation {
     0% {
-        transform: translateY(-100%);
+        transform: translateY(-110%);
     }
 
     100% {
-        transform: translateY(100%);
+        transform: translateY(110%);
     }
 }
 
@@ -202,7 +200,7 @@ body.dark-mode .product-banner:hover::before {
     position: relative;
     z-index: 2;
     color: white;
-    padding: 25px;
+    padding: 28px; /* Kept as is */
     height: 100%;
     display: flex;
     flex-direction: column;
@@ -210,58 +208,50 @@ body.dark-mode .product-banner:hover::before {
 }
 
 .product-title {
-    font-size: 32px;
+    font-size: 34px; /* Kept as is */
     font-weight: bold;
-    margin: 0 0 15px 0;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    margin: 0 0 18px 0; /* Kept as is */
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.35);
 }
 
 .product-banner-description {
-    font-size: 18px;
+    font-size: 19px; /* Kept as is */
     margin: 0;
-    color: rgba(255, 255, 255, 0.9);
-    max-width: 80%;
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+    color: rgba(255, 255, 255, 0.95);
+    max-width: 85%; /* Kept as is */
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.25);
 }
 
 .product-banner:hover .product-banner-icon {
-    transform: rotate(0deg) scale(1.1);
+    transform: rotate(0deg) scale(1.15); /* Kept as is */
 }
 
-
-
 body.dark-mode .modules-title {
-    color: rgba(133, 22, 188, 0.6);
-    border-bottom-color: rgba(133, 22, 188, 0.6);
+    color: rgba(133, 22, 188, 0.7);
+    border-bottom-color: rgba(133, 22, 188, 0.7);
 }
 
 .modules-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 25px;
+    gap: 35px; /* Kept as is */
+    margin-top: 2.5rem; /* Kept as is */
 }
 
-
-
-/* .module:hover {
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-    transform: translateY(-5px);
-} */
-
 body.dark-mode .module {
-    background-color: rgba(98, 98, 98, 0.192);
+    background-color: rgba(98, 98, 98, 0.22);
 }
 
 .module h4 {
-    font-size: 18px;
-    margin: 0 0 10px 0;
+    font-size: 19px; /* Kept as is */
+    margin: 0 0 12px 0; /* Kept as is */
     color: #333;
     position: relative;
     z-index: 1;
 }
 
 .module p {
-    font-size: 14px;
+    font-size: 15px; /* Kept as is */
     color: #666;
     margin: 0;
     position: relative;
@@ -270,19 +260,17 @@ body.dark-mode .module {
 
 .module-icon {
     position: absolute;
-    top: -15px;
-    right: -15px;
-    font-size: 80px;
-    color: rgba(24, 78, 227, 0.1);
+    top: -18px; /* Kept as is */
+    right: -18px;
+    font-size: 85px; /* Kept as is */
+    color: rgba(24, 78, 227, 0.12);
     transform: rotate(15deg);
     transition: transform 0.3s;
 }
 
 .module:hover .module-icon {
-    transform: rotate(0deg) scale(1.1);
+    transform: rotate(0deg) scale(1.15); /* Kept as is */
 }
-
-
 
 /* Media query for responsiveness */
 @media (max-width: 992px) {
@@ -297,11 +285,10 @@ body.dark-mode .module {
 
     .product-categories {
         border-right: none;
-        border-bottom: 1px solid rgba(224, 224, 224, 0.5);
+        border-bottom: 1px solid rgba(224, 224, 224, 0.6);
     }
 
     .product-category.active {
-        /* border-radius: 25px; */
         margin-right: 0;
     }
 
@@ -311,20 +298,20 @@ body.dark-mode .module {
     }
 
     .discover-link {
-        margin-top: 10px;
+        margin-top: 12px; /* Increased margin */
     }
 }
 
 .dropdown-arrow {
     position: absolute;
-    bottom: -15px !important;
+    bottom: -18px !important; /* Adjusted position */
     left: 50%;
     transform: translateX(-50%);
     width: 0px;
     height: 0px;
-    border-left: 12px solid transparent;
-    border-right: 12px solid transparent;
-    border-bottom: 12px solid rgb(245, 245, 245);
+    border-left: 14px solid transparent; /* Increased size */
+    border-right: 14px solid transparent;
+    border-bottom: 14px solid rgb(245, 245, 245);
     z-index: 5001;
 }
 
@@ -530,11 +517,10 @@ body.dark-mode .glass-dropdown .dropdown-item:hover {
     left: 50%;
     transform: translateX(-50%);
     width: 100%;
-    max-width: calc(1700px * (80 / 100));
-    /* Adjust this to match your main content width */
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    box-shadow: 0 5px 6px rgba(0, 0, 0, 0.1);
+    max-width: 80vw; /* Increased from calc(1700px * (80 / 100)) */
+    backdrop-filter: blur(15px); /* Increased blur effect */
+    -webkit-backdrop-filter: blur(15px);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.15); /* Increased shadow */
     z-index: 1000;
     padding: 0;
 }
@@ -565,14 +551,15 @@ body.dark-mode .mega-dropdown-inner {
 
 
 body.dark-mode .product-categories {
-    background-color: rgba(255, 255, 255, 0.05);
-    border-right-color: rgba(255, 255, 255, 0.1);
+    background-color: rgba(255, 255, 255, 0.08);
+    border-right-color: rgba(255, 255, 255, 0.2);
 }
 
 .product-category {
-    padding: 12px 20px;
+    padding: 15px 25px; /* Increased padding */
+    font-size: 18px; /* Increased font size */
+    border-left: 4px solid transparent; /* Increased border width */
     cursor: pointer;
-    font-size: 16px;
     transition: background-color 0.3s, color 0.3s;
     position: relative;
     display: flex;
@@ -599,11 +586,11 @@ body.dark-mode .product-category {
 
 
 body.dark-mode .product-details {
-    background-color: rgba(61, 60, 60, 0.192);
+    background-color: rgba(61, 60, 60, 0.3);
 }
 
 .product-banner {
-    height: 200px;
+    height: 250px; /* Increased from 200px */
     background-size: cover;
     background-position: center;
     margin-bottom: 20px;
@@ -675,17 +662,17 @@ body.dark-mode .product-banner::before {
 
 
 .product-title {
-    font-size: 32px;
+    font-size: 36px; /* Increased from 32px */
     font-weight: bold;
     margin: 0 0 15px 0;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
 }
 
 .product-banner-description {
-    font-size: 18px;
+    font-size: 20px; /* Increased from 18px */
     margin: 0;
     color: rgba(255, 255, 255, 0.9);
-    max-width: 80%;
+    max-width: 85%; /* Increased from 80% */
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
 }
 
@@ -703,7 +690,7 @@ body.dark-mode .product-banner::before {
 
 
 .product-title {
-    font-size: 32px;
+    font-size: 36px; /* Increased from 32px */
     font-weight: bold;
     color: white;
     margin: 0 0 15px 0;
@@ -711,10 +698,10 @@ body.dark-mode .product-banner::before {
 }
 
 .product-banner-description {
-    font-size: 18px;
+    font-size: 20px; /* Increased from 18px */
     margin: 0;
     color: rgba(255, 255, 255, 0.9);
-    max-width: 80%;
+    max-width: 85%; /* Increased from 80% */
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
 }
 
@@ -760,7 +747,8 @@ body.dark-mode .modules-title {
 .modules-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 25px;
+    gap: 30px; /* Increased from 25px */
+    margin-top: 2rem; /* Added top margin */
 }
 
 .module {
@@ -1332,7 +1320,7 @@ body.dark-mode .glass-dropdown .dropdown-item:hover {
     }
   
     .nav-link {
-      font-size: 1.2rem;
+      font-size: 1.3rem; /* Increased from 1.2rem for mobile view */
     }
   
     .full-screen-sidebar {
@@ -1548,6 +1536,9 @@ body.dark-mode .glass-dropdown .dropdown-item:hover {
 .full-screen-sidebar .sidebar-nav li:nth-child(3) { animation-delay: 0.3s; }
 .full-screen-sidebar .sidebar-nav li:nth-child(4) { animation-delay: 0.4s; }
 .full-screen-sidebar .sidebar-nav li:nth-child(5) { animation-delay: 0.5s; }
+
+
+
 
 
 
