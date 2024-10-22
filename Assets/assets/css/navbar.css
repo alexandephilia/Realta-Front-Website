@@ -13,7 +13,7 @@
     z-index: 1000;
     padding: 2.5rem 0;
     border-radius: 0 0 35px 35px;
-    max-height: 80vh; /* Set a maximum height */
+    max-height: 90vh; /* Set a maximum height */
     overflow-y: auto; /* Enable vertical scrolling */
 }
 
@@ -522,7 +522,7 @@ body.dark-mode .glass-dropdown .dropdown-item:hover {
     left: 50%;
     transform: translateX(-50%);
     width: 100%;
-    max-width: 80vw; /* Increased from calc(1700px * (80 / 100)) */
+    max-width: 90vw; /* Increased from calc(1700px * (80 / 100)) */
     backdrop-filter: blur(15px); /* Increased blur effect */
     -webkit-backdrop-filter: blur(15px);
     box-shadow: 0 8px 12px rgba(0, 0, 0, 0.15); /* Increased shadow */
