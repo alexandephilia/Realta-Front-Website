@@ -95,10 +95,10 @@ handleCategories('#solutionsDropdownContent', 'product-details', {
     <div class="modules-title">KEY FEATURES</div>
     <div class="modules-grid">
             <div class="module" style="background: none;">
-            <h4 style="text-align: center;">ERP</h4>
+            <h4 style="text-align: center; font-size: 16px;">ERP</h4>
             <div class="bento-grid">
                 <div class="bento-item large">
-                    <p class="feature-description" style="text-align: center; font-size: 1em;">
+                    <p class="feature-description" style="text-align: center; font-size: 15px;">
                         <strong style="display: block; margin-bottom: 2px;">Enterprise Resource Planning</strong>
                         <span style="display: block; width: 95%; margin: 0 auto;">Integrate core business processes.</span>
                     </p>
@@ -126,38 +126,38 @@ handleCategories('#solutionsDropdownContent', 'product-details', {
             </div>
         </div>
             <div class="module" style="border-left: 1px solid #e0e0e0; border-right: 1px solid #e0e0e0; border-radius: 0; background: none;">
-            <h4 style="text-align: center;">EAM & WMS</h4>
+            <h4 style="text-align: center; font-size: 16px;">EAM & WMS</h4>
             <div class="bento-grid" style="grid-template-columns: repeat(3, 1fr); grid-template-rows: auto 1fr; max-width: 300px; margin: 0 auto; gap: 15px;">
                 <div class="bento-item large" style="grid-column: 1 / -1; padding: 15px; border-radius: 10px;">
-                    <p style="font-size: 1em; margin: 0;"><span style="font-weight: bold;">Asset & Warehouse Management</span> Optimize your resources and inventory.</p>
+                    <p style="font-size: 15px; margin: 0;"><span style="font-weight: bold;">Asset & Warehouse Management</span> Optimize your resources and inventory.</p>
                 </div>
                 <div class="bento-item" style="padding: 15px; border-radius: 10px; text-align: center;">
                     <i class="fas fa-tools" style="font-size: 1.5em; margin-bottom: 5px;"></i>
-                    <span style="display: block; font-size: 0.9em;">Maintenance</span>
+                    <span style="display: block; font-size: 15px;">Maintenance</span>
                 </div>
                 <div class="bento-item" style="padding: 15px; border-radius: 10px; text-align: center;">
                     <i class="fas fa-clipboard-check" style="font-size: 1.5em; margin-bottom: 5px;"></i>
-                    <span style="display: block; font-size: 0.9em;">Inventory</span>
+                    <span style="display: block; font-size: 15px;">Inventory</span>
                 </div>
                 <div class="bento-item" style="padding: 15px; border-radius: 10px; text-align: center;">
                     <i class="fas fa-barcode" style="font-size: 1.5em; margin-bottom: 5px;"></i>
-                    <span style="display: block; font-size: 0.9em;">Fulfillment</span>
+                    <span style="display: block; font-size: 15px;">Fulfillment</span>
                 </div>
                 <div class="bento-item full-width" style="padding: 15px; border-radius: 10px; text-align: center; grid-column: 1 / -1;">
                     <i class="fas fa-dolly" style="font-size: 1.5em; margin-bottom: 5px;"></i>
-                    <span style="display: block; font-size: 0.9em;">Warehouse Operations</span>
+                    <span style="display: block; font-size: 15px;">Warehouse Operations</span>
                 </div>
             </div>
         </div>
             <div class="module" style="background: none;">
-            <h4 style="text-align: center;">Business Intelligence</h4>
+            <h4 style="text-align: center; font-size: 16px;">Business Intelligence</h4>
             <div class="bento-grid">
                 <div class="bento-item">
                     <i class="fas fa-chart-pie"></i>
                     <span>Data Visualization</span>
                 </div>
                 <div class="bento-item large" style="display: flex; align-items: center; justify-content: center; width: 94%; margin: 0 auto;">
-                    <p class="feature-description" style="text-align: center; font-size: 1em; margin: 0;">
+                    <p class="feature-description" style="text-align: center; font-size: 15px; margin: 0;">
                         <strong style="display: block; margin-bottom: 3px;">Analytics & Reporting</strong>
                         <span style="display: block; width: 80%; margin: 0 auto;">Make data-driven decisions.</span>
                     </p>
@@ -198,7 +198,7 @@ handleCategories('#solutionsDropdownContent', 'product-details', {
             background-color: #f7f4f482;
             padding: 10px;
             border-radius: 15px;
-            font-size: 0.8em;
+            font-size: 15px;
             text-align: center;
             display: flex;
             flex-direction: column;
@@ -213,7 +213,7 @@ handleCategories('#solutionsDropdownContent', 'product-details', {
             box-shadow: 0 1px 5px rgba(0,0,0,0.2);
         }
         .bento-item i {
-            font-size: 1.3em;
+            font-size: 15px;
             margin-bottom: 5px;
             color: #3A6D8C;
             animation: fadeIn 0.5s ease-out 0.2s forwards;
@@ -226,7 +226,7 @@ handleCategories('#solutionsDropdownContent', 'product-details', {
         .large {
             grid-column: span 2;
             grid-row: span 2;
-            font-size: 0.85em;
+            font-size: 15px;
         }
         .full-width {
             grid-column: 1 / -1;
@@ -244,10 +244,10 @@ handleCategories('#solutionsDropdownContent', 'product-details', {
     <div class="modules-title">KEY FEATURES</div>
     <div class="modules-grid">
             <div class="module" style="background: none;">
-            <h4 style="text-align: center;">Front Office</h4>
+            <h4 style="text-align: center; font-size: 16px;">Front Office</h4>
             <div class="bento-grid">
                 <div class="bento-item large">
-                    <p class="feature-description" style="text-align: center; font-size: 1em;">
+                    <p class="feature-description" style="text-align: center; font-size: 15px;">
                         <strong style="display: block; margin-bottom: 2px;">Front Office operations</strong>
                         <span style="display: block; width: 95%; margin: 0 auto;">simplify guest services and reception tasks.</span>
                     </p>
@@ -281,46 +281,46 @@ handleCategories('#solutionsDropdownContent', 'product-details', {
             </div>
         </div>
             <div class="module" style="border-left: 1px solid #e0e0e0; border-right: 1px solid #e0e0e0; border-radius: 0; background: none;">
-    <h4 style="text-align: center;">Logistic</h4>
+    <h4 style="text-align: center; font-size: 16px;">Logistic</h4>
     <div style="max-width: 300px; margin: 0 auto;">
         <div class="bento-item large" style="width: 100%; padding: 15px; border-radius: 10px; margin-bottom: 15px;">
-            <p style="font-size: 1em; margin: 0;"><span style="font-weight: bold;">Optimize inventory</span> and supply chain management.</p>
+            <p style="font-size: 15px; margin: 0;"><span style="font-weight: bold;">Optimize inventory</span> and supply chain management.</p>
         </div>
         <div style="display: flex; justify-content: space-between; margin-bottom: 15px;">
             <div class="bento-item" style="width: 30%; padding: 15px; border-radius: 10px; text-align: center;">
                 <i class="fas fa-shopping-cart" style="font-size: 1.5em; margin-bottom: 5px;"></i>
-                <span style="display: block; font-size: 0.9em;">Purchasing</span>
+                <span style="display: block; font-size: 15px;">Purchasing</span>
             </div>
             <div class="bento-item" style="width: 30%; padding: 15px; border-radius: 10px; text-align: center;">
                 <i class="fas fa-box" style="font-size: 1.5em; margin-bottom: 5px;"></i>
-                <span style="display: block; font-size: 0.9em;">Receiving</span>
+                <span style="display: block; font-size: 15px;">Receiving</span>
             </div>
             <div class="bento-item" style="width: 30%; padding: 15px; border-radius: 10px; text-align: center;">
                 <i class="fas fa-warehouse" style="font-size: 1.5em; margin-bottom: 5px;"></i>
-                <span style="display: block; font-size: 0.9em;">Inventory</span>
+                <span style="display: block; font-size: 15px;">Inventory</span>
             </div>
         </div>
         <div style="display: flex; justify-content: center; gap: 15px;">
             <div class="bento-item" style="width: 40%; padding: 15px; border-radius: 10px; text-align: center;">
                 <i class="fas fa-chart-line" style="font-size: 1.5em; margin-bottom: 5px;"></i>
-                <span style="display: block; font-size: 0.9em;">Cost Control</span>
+                <span style="display: block; font-size: 15px;">Cost Control</span>
             </div>
             <div class="bento-item" style="width: 40%; padding: 15px; border-radius: 10px; text-align: center;">
                 <i class="fas fa-utensils" style="font-size: 1.5em; margin-bottom: 5px;"></i>
-                <span style="display: block; font-size: 0.9em;">Recipe</span>
+                <span style="display: block; font-size: 15px;">Recipe</span>
             </div>
         </div>
     </div>
 </div>
             <div class="module" style="background: none;">
-            <h4 style="text-align: center;">Back Office</h4>
+            <h4 style="text-align: center; font-size: 16px;">Back Office</h4>
             <div class="bento-grid">
                 <div class="bento-item">
                     <i class="fas fa-file-invoice-dollar"></i>
                     <span>Accounts</span>
                 </div>
                 <div class="bento-item large" style="display: flex; align-items: center; justify-content: center; width: 94%; margin: 0 auto;">
-                    <p class="feature-description" style="text-align: center; font-size: 1em; margin: 0;">
+                    <p class="feature-description" style="text-align: center; font-size: 15px; margin: 0;">
                         <strong style="display: block; margin-bottom: 3px;">Back Office operations</strong>
                         <span style="display: block; width: 80%; margin: 0 auto;">improve operations and financial management.</span>
                     </p>
@@ -365,7 +365,7 @@ handleCategories('#solutionsDropdownContent', 'product-details', {
             background-color: #e8e3e382;
             padding: 10px;
             border-radius: 15px;
-            font-size: 0.8em;
+            font-size: 15px;
             text-align: center;
             display: flex;
             flex-direction: column;
@@ -393,7 +393,7 @@ handleCategories('#solutionsDropdownContent', 'product-details', {
         .large {
             grid-column: span 2;
             grid-row: span 2;
-            font-size: 0.85em;
+            font-size: 15px;
         }
         .full-width {
             grid-column: 1 / -1;
@@ -411,10 +411,10 @@ handleCategories('#solutionsDropdownContent', 'product-details', {
     <div class="modules-title">KEY FEATURES</div>
     <div class="modules-grid">
             <div class="module" style="background: none;">
-            <h4 style="text-align: center;">Membership</h4>
+            <h4 style="text-align: center; font-size: 16px;">Membership</h4>
             <div class="bento-grid">
                 <div class="bento-item large">
-                    <p class="feature-description" style="text-align: center; font-size: 1em;">
+                    <p class="feature-description" style="text-align: center; font-size: 15px;">
                         <strong style="display: block; margin-bottom: 2px;">Membership Management</strong>
                         <span style="display: block; width: 95%; margin: 0 auto;">with our unified platform.</span>
                     </p>
@@ -442,34 +442,34 @@ handleCategories('#solutionsDropdownContent', 'product-details', {
             </div>
         </div>
             <div class="module" style="border-left: 1px solid #e0e0e0; border-right: 1px solid #e0e0e0; border-radius: 0; background: none;">
-            <h4 style="text-align: center;">Golf Operation</h4>
+            <h4 style="text-align: center; font-size: 16px;">Golf Operation</h4>
             <div class="bento-grid" style="grid-template-columns: repeat(3, 1fr); grid-template-rows: auto 1fr; max-width: 300px; margin: 0 auto; gap: 15px;">
                 <div class="bento-item large" style="grid-column: 1 / -1; padding: 15px; border-radius: 10px;">
-                    <p style="font-size: 1em; margin: 0;"><span style="font-weight: bold;">Streamline golf operations</span> with our integrated system.</p>
+                    <p style="font-size: 15px; margin: 0;"><span style="font-weight: bold;">Streamline golf operations</span> with our integrated system.</p>
                 </div>
                 <div class="bento-item" style="padding: 15px; border-radius: 10px; text-align: center;">
                     <i class="fas fa-concierge-bell" style="font-size: 1.5em; margin-bottom: 5px;"></i>
-                    <span style="display: block; font-size: 0.9em;">Front Office</span>
+                    <span style="display: block; font-size: 15px;">Front Office</span>
                 </div>
                 <div class="bento-item" style="padding: 15px; border-radius: 10px; text-align: center;">
                     <i class="fas fa-leaf" style="font-size: 1.5em; margin-bottom: 5px;"></i>
-                    <span style="display: block; font-size: 0.9em;">Lawn Operations</span>
+                    <span style="display: block; font-size: 15px;">Lawn Operations</span>
                 </div>
                 <div class="bento-item" style="padding: 15px; border-radius: 10px; text-align: center;">
                     <i class="fas fa-chart-line" style="font-size: 1.5em; margin-bottom: 5px;"></i>
-                    <span style="display: block; font-size: 0.9em;">Back Office</span>
+                    <span style="display: block; font-size: 15px;">Back Office</span>
                 </div>
             </div>
         </div>
             <div class="module" style="background: none;">
-            <h4 style="text-align: center;">Tournament</h4>
+            <h4 style="text-align: center; font-size: 16px;">Tournament</h4>
             <div class="bento-grid">
                 <div class="bento-item">
                     <i class="fas fa-trophy"></i>
                     <span>Leaderboard</span>
                 </div>
                 <div class="bento-item large" style="display: flex; align-items: center; justify-content: center; width: 94%; margin: 0 auto;">
-                    <p class="feature-description" style="text-align: center; font-size: 1em; margin: 0;">
+                    <p class="feature-description" style="text-align: center; font-size: 15px; margin: 0;">
                         <strong style="display: block; margin-bottom: 3px;">Tournament <br> Management</strong>
                         <span style="display: block; width: 80%; margin: 0 auto;">your all-in-one golf event solution.</span>
                     </p>
@@ -510,7 +510,7 @@ handleCategories('#solutionsDropdownContent', 'product-details', {
             background-color: #f7f4f482;
             padding: 10px;
             border-radius: 15px;
-            font-size: 0.8em;
+            font-size: 15px;
             text-align: center;
             display: flex;
             flex-direction: column;
@@ -538,7 +538,7 @@ handleCategories('#solutionsDropdownContent', 'product-details', {
         .large {
             grid-column: span 2;
             grid-row: span 2;
-            font-size: 0.85em;
+            font-size: 15px;
         }
     </style>
 `,
@@ -553,10 +553,10 @@ handleCategories('#solutionsDropdownContent', 'product-details', {
         <div class="modules-title">KEY FEATURES</div>
         <div class="modules-grid">
             <div class="module" style="background: none;">
-                <h4 style="text-align: center;">HR Core</h4>
+                <h4 style="text-align: center; font-size: 16px;">HR Core</h4>
                 <div class="bento-grid">
                     <div class="bento-item large">
-                        <p class="feature-description" style="text-align: center; font-size: 1em;">
+                        <p class="feature-description" style="text-align: center; font-size: 15px;">
                             <strong style="display: block; margin-bottom: 2px;">HR operations</strong> <span style="display: block; width: 99%; margin: 0 auto;">with our integrated solution.</span>
                         </p>
                     </div>
@@ -600,7 +600,7 @@ handleCategories('#solutionsDropdownContent', 'product-details', {
                         background-color: #f7f4f482;
                         padding: 10px;
                         border-radius: 15px;
-                        font-size: 0.8em;
+                        font-size: 15px;
                         text-align: center;
                         display: flex;
                         flex-direction: column;
@@ -629,15 +629,15 @@ handleCategories('#solutionsDropdownContent', 'product-details', {
                     .large {
                         grid-column: span 2;
                         grid-row: span 2;
-                        font-size: 0.85em;
+                        font-size: 15px;
                     }
                 </style>
             </div>
             <div class="module" style="border-left: 1px solid #e0e0e0; border-right: 1px solid #e0e0e0; border-radius: 0; background: none;">
-                   <h4 style="text-align: center;">HR Advance</h4>
+                   <h4 style="text-align: center; font-size: 16px;">HR Advance</h4>
                 <div class="bento-grid" style="grid-template-columns: repeat(2, 1fr); grid-template-rows: auto repeat(2, 1fr); max-width: 250px; margin: 0 auto;">
                     <div class="bento-item large" style="grid-column: 1 / -1;">
-                        <p style="font-size: 1em;"><span style="font-weight: bold;">HR Advance</span>with our unified platform.</p>
+                        <p style="font-size: 15px;"><span style="font-weight: bold;">HR Advance</span>with our unified platform.</p>
                     </div>
                     <div class="bento-item">
                         <i class="fas fa-user-plus"></i>
@@ -658,7 +658,7 @@ handleCategories('#solutionsDropdownContent', 'product-details', {
                 </div>
             </div>
             <div class="module" style="background: none;">
-                 <h4 style="text-align: center;">HR Mobile</h4>
+                 <h4 style="text-align: center; font-size: 16px;">HR Mobile</h4>
                <div class="bento-grid">
                 
                     <div class="bento-item">
@@ -666,7 +666,7 @@ handleCategories('#solutionsDropdownContent', 'product-details', {
                         <span>Locations</span>
                     </div>
                        <div class="bento-item large" style="display: flex; align-items: center; justify-content: center; width: 94%; margin: 0 auto;">
-                        <p class="feature-description" style="text-align: center; font-size: 1em; margin: 0;">
+                        <p class="feature-description" style="text-align: center; font-size: 15px; margin: 0;">
                             <strong style="display: block; margin-bottom: 2px;">Employee Self <br> Service</strong>
                             <span style="display: block; width: 80%; margin: 0 auto;">Empower HR with our ESS app.</span>
                         </p>
@@ -707,7 +707,7 @@ handleCategories('#solutionsDropdownContent', 'product-details', {
             <h4 style="text-align: center;">Sales & Marketing</h4>
             <div class="bento-grid" style="grid-template-columns: repeat(2, 1fr); grid-template-rows: auto repeat(2, 1fr); max-width: 250px; margin: 0 auto;">
                 <div class="bento-item large" style="grid-column: 1 / -1;">
-                    <p style="font-size: 1em; text-align: center;">
+                    <p style="font-size: 15px; text-align: center;">
                         <span style="font-weight: bold; display: block;">Boost Your Sales</span>
                        with our comprehensive, integrated solution.
                     </p>
@@ -734,7 +734,7 @@ handleCategories('#solutionsDropdownContent', 'product-details', {
             <h4 style="text-align: center;">Tenancy</h4>
             <div class="bento-grid" style="grid-template-columns: repeat(2, 1fr); grid-template-rows: auto repeat(2, 1fr); max-width: 250px; margin: 0 auto;">
                 <div class="bento-item large" style="grid-column: 1 / -1;">
-                    <p style="font-size: 1em;"><span style="font-weight: bold;">Tenancy Management</span> with our comprehensive, user-friendly platform.</p>
+                    <p style="font-size: 15px;"><span style="font-weight: bold;">Tenancy Management</span> with our comprehensive, user-friendly platform.</p>
                 </div>
                 <div class="bento-item">
                     <i class="fas fa-database"></i>
@@ -758,7 +758,7 @@ handleCategories('#solutionsDropdownContent', 'product-details', {
             <h4 style="text-align: center;">Billing</h4>
             <div class="bento-grid" style="grid-template-columns: repeat(2, 1fr); grid-template-rows: auto repeat(2, 1fr); max-width: 250px; margin: 0 auto;">
                 <div class="bento-item large" style="grid-column: 1 / -1;">
-                    <p style="font-size: 1em;"><span style="font-weight: bold;">Billing Management</span> with our efficient handling of billing and payments.</p>
+                    <p style="font-size: 15px;"><span style="font-weight: bold;">Billing Management</span> with our efficient handling of billing and payments.</p>
                 </div>
                 <div class="bento-item">
                     <i class="fas fa-money-bill-wave"></i>
@@ -796,7 +796,7 @@ handleCategories('#solutionsDropdownContent', 'product-details', {
             background-color: #f7f4f482;
             padding: 10px;
             border-radius: 15px;
-            font-size: 0.8em;
+            font-size: 15px;
             text-align: center;
             display: flex;
             flex-direction: column;
@@ -806,6 +806,11 @@ handleCategories('#solutionsDropdownContent', 'product-details', {
             animation: fadeIn 0.5s ease-out forwards;
             opacity: 0;
         }
+        .bento-item h4 {
+            font-size: 16px;
+            margin-bottom: 5px;
+        }
+
         .bento-item:hover {
             transform: translateY(2px);
             box-shadow: 0 1px 5px rgba(0,0,0,0.2);

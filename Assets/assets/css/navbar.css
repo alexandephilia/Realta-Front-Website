@@ -6,7 +6,7 @@
     left: 50%;
     transform: translateX(-50%);
     width: 100%;
-    max-width: 95vw; /* Increased from 90vw for more expansion */
+    max-width: 90vw; /* Increased from 90vw for more expansion */
     backdrop-filter: blur(20px); /* Increased blur effect for consistency */
     -webkit-backdrop-filter: blur(20px);
     box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2); /* Increased shadow for depth */
