@@ -2933,7 +2933,7 @@
                                 Ensure on-time hotel opening and improve guest satisfaction through synergy between
                                 technology and services in the hotel.
                             </p>
-                            <a href="#" class="business-btn">Learn More</a>
+                            <a href="rhapsody-micro.html" class="business-btn" onclick="navigateWithLoading('rhapsody-micro.html')">Learn More</a>
                         </div>
                     </div>
                 </div>
@@ -2951,7 +2951,7 @@
                                 Provide seamless and high quality experience for club members and guest players through
                                 technology driven operation: from bag-drop to check-out.
                             </p>
-                            <a href="#" class="business-btn">Learn More</a>
+                            <a href="golf-micro.html" class="business-btn" onclick="navigateWithLoading('golf-micro.html')">Learn More</a>
                         </div>
                     </div>
                 </div>
@@ -2968,7 +2968,7 @@
                                 Empower your HR to accurately manage processes from recruitment to retirement and
                                 maintain compliance with tax and labor regulations.
                             </p>
-                            <a href="#" class="business-btn">Learn More</a>
+                            <a href="hr-micro.html" class="business-btn" onclick="navigateWithLoading('hr-micro.html')">Learn More</a>
                         </div>
                     </div>
                 </div>
@@ -2985,7 +2985,7 @@
                                 Deliver superior service to your tenants by proper management of contracts and services.
                                 Deliver invoices, information, and service report through Tenant Mobile Application.
                             </p>
-                            <a href="#" class="business-btn">Learn More</a>
+                            <a href="bimasakti-micro.html" class="business-btn" onclick="navigateWithLoading('bimasakti-micro.html')">Learn More</a>
                         </div>
                     </div>
                 </div>
@@ -3002,7 +3002,7 @@
                             <p class="card-text text-muted text-center small flex-grow-1">Optimize IT management to
                                 safeguard the core of your business and turn potential hurdles into triumphs.
                             </p>
-                            <a href="#" class="business-btn">Learn More</a>
+                            <a href="itsm-micro.html" class="business-btn" onclick="navigateWithLoading('itsm-micro.html')">Learn More</a>
                         </div>
                     </div>
                 </div>
@@ -3020,7 +3020,7 @@
                                 expectations.Increase your Return by lengthening the service life of your capital
                                 investment.
                             </p>
-                            <a href="#" class="business-btn">Learn More</a>
+                            <a href="erp-micro.html" class="business-btn" onclick="navigateWithLoading('erp-micro.html')">Learn More</a>
                         </div>
                     </div>
                 </div>
@@ -3035,7 +3035,7 @@
                             <p class="card-text text-muted text-center small flex-grow-1">Ensure IT environment operates
                                 in synergy with every business process
                             </p>
-                            <a href="#" class="business-btn">Learn More</a>
+                            <a href="realnet-micro.html" class="business-btn" onclick="navigateWithLoading('realnet-micro.html')">Learn More</a>
                         </div>
                     </div>
                 </div>
@@ -3065,12 +3065,10 @@
                             card.style.filter = 'blur(0px)';
                             card.style.opacity = '1';
                             card.style.transform = 'translateY(0px)';
-                            card.style.boxShadow = '0 0 0 0 rgba(0, 0, 0, 0.0)';
                         } else {
                             card.style.filter = 'blur(5px)';
                             card.style.opacity = '0';
                             card.style.transform = 'translateY(20px)';
-                            card.style.boxShadow = '0 0 0 0 rgba(0, 0, 0, 0.0)';
                         }
                     } else {
                         // On desktop, apply gradual effects
@@ -3081,7 +3079,8 @@
                         card.style.filter = `blur(${blurAmount}px)`;
                         card.style.opacity = opacity;
                         card.style.transform = `translateY(${translateY}px)`;
-                        card.style.boxShadow = '0 0 0 0 rgba(0, 0, 0, 0.0)';
+                        // Remove the box-shadow style
+                        // card.style.boxShadow = '0 0 0 0 rgba(0, 0, 0, 0.0)';
                     }
                 });
             }
@@ -4732,11 +4731,11 @@
 
             cards.forEach(card => {
                 card.addEventListener('mouseenter', function () {
-                    this.style.boxShadow = '0 8px 16px rgba(0,0,0,0.2)';
+                    this.style.boxShadow = '0 0px 0px rgba(0,0,0,0.2)';
                 });
 
                 card.addEventListener('mouseleave', function () {
-                    this.style.boxShadow = '0 4px 8px rgba(0,0,0,0.1)';
+                    this.style.boxShadow = '0 0px 0px rgba(0,0,0,0.1)';
                 });
             });
         });
