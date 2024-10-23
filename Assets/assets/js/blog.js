@@ -71,19 +71,24 @@ document.addEventListener('DOMContentLoaded', function () {
     const container = document.getElementById('blog-posts-container');
     container.innerHTML = '';
 
-    // Add left arrow
-    const leftArrow = document.createElement('button');
-    leftArrow.className = 'carousel-control-prev';
-    leftArrow.type = 'button';
-    leftArrow.setAttribute('data-bs-target', '#blogCarousel');
-    leftArrow.setAttribute('data-bs-slide', 'prev');
-    leftArrow.innerHTML = `
-      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Previous</span>
-    `;
-    leftArrow.addEventListener('click', () => changePage(currentPage - 1));
+    // Calculate total pages
+    const totalPages = Math.ceil(blogPosts.length / postsPerPage);
+
+    // Add left arrow with disabled state
+    const leftArrow = document.createElement('div');
+    leftArrow.className = `blog-arrow left-arrow ${page === 0 ? 'disabled' : ''}`;
+    leftArrow.innerHTML = '<i class="fas fa-chevron-left"></i>';
+    leftArrow.addEventListener('click', () => {
+        if (page !== 0) changePage(currentPage - 1);
+    });
     container.appendChild(leftArrow);
 
+    // Add posts wrapper
+    const postsWrapper = document.createElement('div');
+    postsWrapper.className = 'blog-posts-wrapper';
+    container.appendChild(postsWrapper);
+
+    // Add blog posts
     const start = page * postsPerPage;
     const end = start + postsPerPage;
     const postsToShow = blogPosts.slice(start, end);
@@ -112,18 +117,27 @@ document.addEventListener('DOMContentLoaded', function () {
       container.appendChild(postElement);
     });
 
-    // Add right arrow
-    const rightArrow = document.createElement('button');
-    rightArrow.className = 'carousel-control-next';
-    rightArrow.type = 'button';
-    rightArrow.setAttribute('data-bs-target', '#blogCarousel');
-    rightArrow.setAttribute('data-bs-slide', 'next');
-    rightArrow.innerHTML = `
-      <span class="carousel-control-next-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Next</span>
-    `;
-    rightArrow.addEventListener('click', () => changePage(currentPage + 1));
+    // Add right arrow with disabled state
+    const rightArrow = document.createElement('div');
+    rightArrow.className = `blog-arrow right-arrow ${page === totalPages - 1 ? 'disabled' : ''}`;
+    rightArrow.innerHTML = '<i class="fas fa-chevron-right"></i>';
+    rightArrow.addEventListener('click', () => {
+        if (page !== totalPages - 1) changePage(currentPage + 1);
+    });
     container.appendChild(rightArrow);
+
+    // Add pagination dots container
+    const paginationContainer = document.createElement('div');
+    paginationContainer.className = 'blog-pagination';
+    container.appendChild(paginationContainer);
+
+    // Add pagination dots
+    for (let i = 0; i < totalPages; i++) {
+        const dot = document.createElement('span');
+        dot.className = `pagination-dot ${i === currentPage ? 'active' : ''}`;
+        dot.addEventListener('click', () => changePage(i));
+        paginationContainer.appendChild(dot);
+    }
 
     updatePagination();
     addCardClickListeners();
@@ -515,6 +529,8 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   });
 });
+
+
 
 
 
