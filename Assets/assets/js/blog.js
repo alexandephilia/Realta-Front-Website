@@ -71,6 +71,19 @@ document.addEventListener('DOMContentLoaded', function () {
     const container = document.getElementById('blog-posts-container');
     container.innerHTML = '';
 
+    // Add left arrow
+    const leftArrow = document.createElement('button');
+    leftArrow.className = 'carousel-control-prev';
+    leftArrow.type = 'button';
+    leftArrow.setAttribute('data-bs-target', '#blogCarousel');
+    leftArrow.setAttribute('data-bs-slide', 'prev');
+    leftArrow.innerHTML = `
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    `;
+    leftArrow.addEventListener('click', () => changePage(currentPage - 1));
+    container.appendChild(leftArrow);
+
     const start = page * postsPerPage;
     const end = start + postsPerPage;
     const postsToShow = blogPosts.slice(start, end);
@@ -98,8 +111,20 @@ document.addEventListener('DOMContentLoaded', function () {
       `;
       container.appendChild(postElement);
     });
-    
-    
+
+    // Add right arrow
+    const rightArrow = document.createElement('button');
+    rightArrow.className = 'carousel-control-next';
+    rightArrow.type = 'button';
+    rightArrow.setAttribute('data-bs-target', '#blogCarousel');
+    rightArrow.setAttribute('data-bs-slide', 'next');
+    rightArrow.innerHTML = `
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    `;
+    rightArrow.addEventListener('click', () => changePage(currentPage + 1));
+    container.appendChild(rightArrow);
+
     updatePagination();
     addCardClickListeners();
   }
@@ -123,7 +148,8 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 
   function changePage(pageIndex) {
-    if (!isMobile) {
+    const totalPages = Math.ceil(blogPosts.length / postsPerPage);
+    if (pageIndex >= 0 && pageIndex < totalPages) {
       currentPage = pageIndex;
       renderBlogPosts(currentPage);
     }
@@ -489,5 +515,6 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   });
 });
+
 
 

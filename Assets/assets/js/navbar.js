@@ -889,10 +889,57 @@ handleCategories('#solutionsDropdownContent', 'product-details', {
         </div>
     `
 });
-
-// Industri dropdown
+// Industry dropdown
 handleDropdown('industriDropdown', 'industriDropdownContent');
 handleCategories('#industriDropdownContent', 'industri-details', {
+    hospitality: `
+        <div class="product-banner" style="background-image: url('assets/img/hospitality.jpg');">   
+            <div class="glare"></div>
+            <div class="product-banner-content">
+                <h2 class="product-title">Hospitality Solutions</h2>
+                <p class="product-banner-description">Elevate guest experiences with our comprehensive hospitality management systems.</p>
+            </div>
+        </div>
+        <div class="modules-title">KEY FEATURES</div>
+        <div class="modules-grid">
+            <div class="module">
+                <h4>Reservation Management</h4>
+                <p>Streamline bookings and optimize occupancy rates</p>
+            </div>
+            <div class="module">
+                <h4>Guest Services</h4>
+                <p>Enhance guest satisfaction with personalized services</p>
+            </div>
+            <div class="module">
+                <h4>Revenue Management</h4>
+                <p>Maximize revenue with dynamic pricing strategies</p>
+            </div>
+        </div>
+    `,
+    property: `
+        <div class="product-banner" style="background-image: url('assets/img/property.jpg');">   
+            <div class="glare"></div>
+            <div class="product-banner-content">
+                <h2 class="product-title">Property Management Solutions</h2>
+                <p class="product-banner-description">Optimize property operations and tenant satisfaction with our advanced systems.</p>
+            </div>
+        </div>
+        <div class="modules-title">KEY FEATURES</div>
+        <div class="modules-grid">
+            <div class="module">
+                <h4>Lease Management</h4>
+                <p>Efficiently manage contracts and renewals</p>
+            </div>
+            <div class="module">
+                <h4>Maintenance Tracking</h4>
+                <p>Streamline property maintenance and repairs</p>
+            </div>
+            <div class="module">
+                <h4>Tenant Portal</h4>
+                <p>Enhance communication and service delivery</p>
+            </div>
+        </div>
+    `,
     manufacturing: `
         <div class="product-banner" style="background-image: url('assets/img/manu.jpg');">   
             <div class="glare"></div>
@@ -917,51 +964,27 @@ handleCategories('#industriDropdownContent', 'industri-details', {
             </div>
         </div>
     `,
-    healthcare: `
-        <div class="product-banner" style="background-image: url('assets/img/health.jpg');">   
+    fsi: `
+        <div class="product-banner" style="background-image: url('assets/img/fsi.jpg');">   
             <div class="glare"></div>
             <div class="product-banner-content">
-                <h2 class="product-title">Healthcare Solutions</h2>
-                <p class="product-banner-description">Enhance patient care and streamline operations with our healthcare systems.</p>
+                <h2 class="product-title">Financial Services Solutions</h2>
+                <p class="product-banner-description">Enhance financial operations and security with our advanced systems.</p>
             </div>
         </div>
         <div class="modules-title">KEY FEATURES</div>
         <div class="modules-grid">
             <div class="module">
-                <h4>Electronic Health Records</h4>
-                <p>Secure and efficient patient data management</p>
+                <h4>Risk Management</h4>
+                <p>Advanced tools for identifying and mitigating financial risks</p>
             </div>
             <div class="module">
-                <h4>Appointment Scheduling</h4>
-                <p>Optimize patient appointments and resource allocation</p>
+                <h4>Compliance Monitoring</h4>
+                <p>Ensure adherence to regulatory requirements</p>
             </div>
             <div class="module">
-                <h4>Billing and Claims Management</h4>
-                <p>Streamline healthcare billing processes</p>
-            </div>
-        </div>
-    `,
-    retail: `
-        <div class="product-banner" style="background-image: url('assets/img/retail.png');">   
-            <div class="glare"></div>
-            <div class="product-banner-content">
-                <h2 class="product-title">Retail Solutions</h2>
-                <p class="product-banner-description">Elevate your retail business with our comprehensive management systems.</p>
-            </div>
-        </div>
-        <div class="modules-title">KEY FEATURES</div>
-        <div class="modules-grid">
-            <div class="module">
-                <h4>Inventory Management</h4>
-                <p>Real-time tracking and optimization of stock levels</p>
-            </div>
-            <div class="module">
-                <h4>Point of Sale (POS)</h4>
-                <p>Efficient and user-friendly checkout systems</p>
-            </div>
-            <div class="module">
-                <h4>Customer Relationship Management</h4>
-                <p>Enhance customer engagement and loyalty</p>
+                <h4>Transaction Processing</h4>
+                <p>Efficient and secure handling of financial transactions</p>
             </div>
         </div>
     `

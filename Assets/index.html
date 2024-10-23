@@ -661,9 +661,10 @@
         <div class="mega-dropdown" id="industriDropdownContent">
             <div class="dropdown-content">
                 <div class="product-categories">
-                    <div class="product-category active" data-product="manufacturing">Manufacturing</div>
-                    <div class="product-category" data-product="healthcare">Healthcare</div>
-                    <div class="product-category" data-product="retail">Retail</div>
+                    <div class="product-category active" data-product="hospitality">Hospitality</div>
+                    <div class="product-category" data-product="property">Property</div>
+                    <div class="product-category" data-product="manufacturing">Manufacturing</div>
+                    <div class="product-category" data-product="fsi">FSI</div>
                     <div class="all-products">All industries ›</div>
                 </div>
                 <div class="product-details" id="industri-details">
@@ -1883,7 +1884,9 @@
                             .row {
                                 --bs-gutter-y: 0.5rem;
                             }
-
+                            .glass-text {
+                                margin-bottom: 3.3rem !important;
+                            }
                             .partner-logo {
                                 width: 120px;
                                 height: 80px;
@@ -1891,12 +1894,20 @@
                             }
 
                             .d-flex.flex-row.flex-wrap {
-                                justify-content: space-around;
+                                justify-content: center !important;
+                                gap: 1.9rem !important;
                             }
 
                             .col-12.col-md-12.mb-4 {
-                                padding-left: 15px;
-                                padding-right: 15px;
+                                padding-left: 10px;
+                                padding-right: 10px;
+                                margin-bottom: 1px !important;
+                                margin-top: 0px !important;
+                            }
+
+                            #partners-logo .row > div {
+                                display: flex;
+                                justify-content: center;
                             }
                         }
                     </style>
@@ -3782,23 +3793,90 @@
 
 
 
-    <!-- BLOG -->
-    <section id="blog" class="">
-        <div class="container-fluid p-4">
-            <div class="blog-header text-center">
-                <h1 class="gradient-text" style="font-weight: bolder; font-size: 48px;">Blog</h1>
-                <p class="">Stay informed and inspired with our latest articles covering a wide range of topics from
-                    career advice to latest our insights.</p>
+<!-- BLOG -->
+<section id="blog" class="">
+    <div class="container-fluid p-4">
+        <div class="blog-header text-center">
+            <h1 class="gradient-text" style="font-weight: bolder; font-size: 48px;">Blog</h1>
+            <p class="">Stay informed and inspired with our latest articles covering a wide range of topics from
+                career advice to latest our insights.</p>
+        </div>
+        <div id="blog-posts-container" class="blog-posts">
+            <div class="blog-arrow left-arrow">
+                <i class="fas fa-chevron-left"></i>
             </div>
-            <div id="blog-posts-container" class="blog-posts">
+            <div class="blog-posts-wrapper">
                 <!-- Blog posts will be dynamically inserted here -->
             </div>
-            <div class="pagination">
-                <span class="active"></span>
-                <span></span>
+            <div class="blog-arrow right-arrow">
+                <i class="fas fa-chevron-right"></i>
             </div>
         </div>
-    </section>
+    </div>
+</section>
+<style>
+    #blog-posts-container {
+        position: relative;
+        display: flex;
+        align-items: center;
+        width: 100%; /* Ensure the container takes full width */
+        padding: 0 65px; /* Add padding to make space for arrows */
+    }
+
+    .blog-posts-wrapper {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        overflow: hidden;
+    }
+
+    .blog-arrow {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        font-size: 17px;
+        color: #000000;
+        cursor: pointer;
+        user-select: none;
+        background-color: rgba(255, 255, 255, 0.363);
+        width: 40px;
+        height: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        border: 1px solid #000000;
+        z-index: 10;
+        padding: 0;
+        aspect-ratio: 1;
+        transition: all 0.3s ease;
+    }
+
+    .blog-arrow:hover {
+        background-color: rgba(0, 0, 0, 0.8);
+        color: #ffffff;
+    }
+
+    .blog-arrow.left-arrow {
+        left: 0;
+    }
+
+    .blog-arrow.right-arrow {
+        right: 0;
+    }
+
+    .blog-arrow.disabled {
+        color: #ccc;
+        cursor: not-allowed;
+    }
+
+ 
+    @media (max-width: 768px) {
+        .blog-arrow {
+            display: none;
+        }
+    }
+</style>
 
 
 
@@ -3996,7 +4074,7 @@
 
 
 
-    <section id="separator" class="py-0" style="background-color: #efecff;">
+    <section id="separator" class="" style="background-color: #efecff;">
         <div class="container-fluid p-4">
             <div class="banner">
                 <div class="banner-content">
@@ -4377,7 +4455,7 @@
         }
     </style>
 
-    <section id="newsletter-cta" class="py-4 mb-0">
+    <section id="newsletter-cta" class="mb-0">
         <div class="container-fluid">
             <div class="row align-items-center">
                 <div class="col-md-7 text-start">
@@ -4429,7 +4507,7 @@
         #newsletter-cta {
             background: linear-gradient(135deg, #f5f7fa 0%, #a588bd 100%);
             transition: background 0.3s ease;
-            border-radius: 10px 10px 0 0;
+            /* border-radius: 10px 10px 0 0; */
         }
 
         #newsletter-cta .gradient-text {
