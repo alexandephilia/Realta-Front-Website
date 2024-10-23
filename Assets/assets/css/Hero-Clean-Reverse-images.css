@@ -1543,10 +1543,8 @@ video {
 
 
 section{
-
     padding-top: 5px; /* Ensure space for fixed navigation */
     scroll-margin-top: 80px; /* Ensure space for fixed navigation in modern browsers */
-    padding: 25px;
     margin-bottom: 40px;
   }
 
