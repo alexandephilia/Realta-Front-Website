@@ -73,6 +73,8 @@
             font-family: 'proxima-nova', sans-serif;
         }
 
+        
+
         section {
             position: relative;
             padding-top: 0px !important;
@@ -83,7 +85,36 @@
 
         .navbar {
             box-shadow: 0 3px 3px rgba(0, 0, 0, 0.068);
+            width: 100%;
+            padding: 0.5rem 0;
+        }
 
+        .container-fluid {
+            width: 95%;
+            max-width: 1700px;
+            margin-left: auto;
+            margin-right: auto;
+            padding-left: 15px;
+            padding-right: 15px;
+        }
+
+        @media (min-width: 992px) {
+            .container-fluid {
+                padding-left: 30px;
+                padding-right: 30px;
+            }
+            
+            .full-screen-sidebar {
+                margin-right: -35px; /* Matches the index.html sidebar positioning */
+            }
+        }
+
+        @media (max-width: 991px) {
+            .container-fluid {
+                width: 100%;
+                padding-left: 15px;
+                padding-right: 15px;
+            }
         }
 
         .navbar-brand {
@@ -367,6 +398,14 @@
                 margin-bottom: 10px;
             }
 
+                /* Add this style block in the <head> section or in your CSS file */
+    .container-fluid {
+        /* width: 95%; */
+        max-width: 1700px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
             .sub-nav small {
                 display: block;
                 margin-top: 5px;
@@ -514,11 +553,11 @@
 
 
     <div class="sub-nav mb-0 d-flex justify-content-between d-md-block sticky-top">
-        <div class="container d-flex justify-content-between align-items-center">
+        <div class="container">
             <div class="logo-container">
                 <a class="" href="#" onclick="navigateWithLoading('')">
                     <img src="assets//img/probes6.png" alt=""
-                        style="max-width: 80px; height: auto; margin-left: 20px; margin-bottom: 10px; margin-top: -13px;">
+                        style="max-width: 80px; height: auto; margin-left: 20px; margin-bottom: 10px; margin-top: 6px;">
                 </a>
             </div>
 
@@ -603,42 +642,57 @@
             right: 0;
             z-index: 1030;
             background-color: #f8f9fa;
-            height: 45px;
+            height: 50px;
             display: flex;
             align-items: center;
             padding-top: 5px;
-            height: 50px;
         }
 
         .sub-nav .container {
+            width: 95%;
+            max-width: 1700px;
+            margin-left: auto;
+            margin-right: auto;
+            padding-left: 15px;
+            padding-right: 15px;
             display: flex;
             justify-content: space-between;
             align-items: center;
             height: 100%;
         }
 
+        @media (min-width: 992px) {
+            .sub-nav .container {
+                padding-left: 30px;
+                padding-right: 30px;
+            }
+        }
+
+        @media (max-width: 991px) {
+            .sub-nav .container {
+                width: 100%;
+                padding-left: 15px;
+                padding-right: 15px;
+            }
+        }
+
         .nav-container {
             display: flex;
             justify-content: center;
-            align-items: center;
-            height: 100%;
+            width: 100%;
         }
 
         .horizontal-nav {
             display: flex;
             justify-content: center;
-            align-items: center;
             list-style-type: none;
             padding: 0;
             margin: 0;
-            height: 100%;
+            width: 100%;
         }
 
         .nav-master-item {
             margin: 0 5px;
-            display: flex;
-            align-items: center;
-            height: 100%;
         }
 
         .nav-link {
@@ -646,19 +700,11 @@
             text-decoration: none;
             white-space: nowrap;
             font-size: 14px;
-            padding: 10px 15px;
         }
 
-        .logo-container {
-            display: flex;
-            align-items: center;
-            height: 100%;
-        }
-
-        .icons-container {
-            display: flex;
-            align-items: center;
-            height: 100%;
+        .icon {
+            font-size: 10px;
+            margin-left: 3px;
         }
 
         /* Styles for the main nav */
@@ -747,7 +793,7 @@
         }
     </style>
     <nav class="navbar navbar-expand-lg sticky-top navbar-shrink navbar-light" id="mainNav">
-        <div class="container-fluid container-lg px-2">
+        <div class="container-fluid">
             <a class="navbar-logo d-flex align-items-center" href="/">
                 <img src="assets/img/realta.png" alt="Realta Logo" class="realta-logo">
             </a>
@@ -1661,28 +1707,27 @@ Business Intelligence Solution</H1>
         // Trigger the handleScroll function immediately after page load
         setTimeout(handleScroll, 100);
     </script>
-
 <section id="ict-one-solution" class="ict-one-solution py-5" style="margin-top: 5%; background-image: url('assets/img/erp/hero-bg-ptbsi.png'); background-size: cover; background-position: center; background-repeat: no-repeat; border-radius: 25px;">
-    <div class="container">
+    <div class="container-fluid container-lg px-2">
         <div class="row align-items-center">
-            <div class="col-md-6 fade-in-left mb-3">
-                <img src="assets/img/erp/ptbsi-product-portfolio.png" alt="ICT One Solution" class="img-fluid product-image">
+            <div class="col-md-6 mb-3">
+                <img src="assets/img/erp/ptbsi-product-portfolio.png" alt="ICT One Solution" class="img-fluid w-75 mx-auto d-block">
             </div>
-            <div class="col-md-6 text-center fade-in-right">
-                <h2 class="mb-4 gradient-text fw-bold">
+            <div class="col-md-6">
+                <h2 class="mb-4 fw-bold" style="background: linear-gradient(287deg, #625dfa, #5ebcfa, #40777a); -webkit-background-clip: text; -webkit-text-fill-color: transparent; font-size: 2rem;">
                     ERP, EAM, WMS*& <br>
                     Business Intelligence Solution
                 </h2>
-                <div class="mb-4 content-wrapper">
-                    <p>
+                <div class="mb-4">
+                    <p class="fs-5 mb-3">
                         Our team is highly skilled in ensuring that all important aspects are mapped into the system. The result is an integrated system that overcomes departmental barriers and focuses on excellent execution of business functions.
                     </p>
 
-                    <p>
+                    <p class="fs-5 mb-3">
                         By partnering with PTBSI, you will be leveraging our decades of experience in successful ERP, EAM, WMS & Business Intelligence implementations. Our reputation is built right here in Indonesia, where it matters most for you. So give us a call and let's start a discussion on how your organization can enjoy the fruits of a successful system.
                     </p>
                 </div>
-                <a href="#" class="btn btn-outline-secondary btn-sm d-inline-block mx-auto schedule-btn">Schedule Meeting</a>
+                <a href="#" class="btn btn-outline-secondary">Schedule Meeting</a>
             </div>
         </div>
     </div>
@@ -1694,35 +1739,15 @@ Business Intelligence Solution</H1>
         overflow: hidden;
     }
 
-    .gradient-text {
-        background: linear-gradient(287deg, #625dfa, #5ebcfa, #40777a);
-        -webkit-background-clip: text;
-        background-clip: text;
-        -webkit-text-fill-color: transparent;
-        font-size: 2rem;
-    }
-
-    .content-wrapper {
-        max-width: 80%;
-        margin: 0 auto;
-    }
-
-    .content-wrapper p {
-        line-height: 1.6;
-        font-size: 1.1rem;
-        margin-bottom: 1rem;
-        text-align: left;
-    }
-
-    .schedule-btn {
-        max-width: 220px;
-        font-size: 1.1rem;
-        padding: 0.4rem 0.8rem;
-    }
-
-    .product-image {
-        max-width: 80%;
-        height: auto;
+    @media (max-width: 768px) {
+        .ict-one-solution {
+            padding: 2rem 1rem;
+        }
+        
+        .fs-5 {
+            font-size: 1rem !important;
+            text-align: center;
+        }
     }
 
     @media (max-width: 768px) {
@@ -1755,7 +1780,7 @@ Business Intelligence Solution</H1>
         }
 
         .product-image {
-            max-width: 80%;
+            max-width: 60%;  /* Changed from 80% to 60% */
             margin: 0 auto;
             display: block;
         }
@@ -2232,9 +2257,9 @@ Business Intelligence Solution</H1>
 
 
     <section id="infor-cloudsuite" class="infor-cloudsuite-section py-5" style="background-image: url('assets/img/erp/background-infor-erp.png'); background-size: cover; background-position: center; background-attachment: fixed;">
-        <div class="container">
+        <div class="container-fluid container-lg px-2">
             <div class="row align-items-center">
-                <div class="col-lg-6 fade-in-left">
+                <div class="col-lg-6 fade-in-left infor-cloudsuite-content">
                 
                     <h2 class="mb-4" style="background: linear-gradient(287deg, #ff0000, #de2b2b, #ff9999); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">Infor CloudSuite</h2>
                     <h3 class="mb-3">ERP for Discrete Manufacture</h3>
@@ -2253,6 +2278,10 @@ Business Intelligence Solution</H1>
         .infor-cloudsuite-section {
             background-color: #f8f9fa;
             border-radius:  25px;
+        }
+
+        .infor-cloudsuite-content {
+            padding-left: 5rem;
         }
 
         .infor-cloudsuite-section h2 {
@@ -2400,6 +2429,7 @@ Business Intelligence Solution</H1>
         <span class="dot"></span><span class="serves-industries">Features</span>
     </span>
 </h3>
+
     <section id="why-rhapsody" class="bimasakti-solutions-grid" style="margin-top: 50px;">
         <h2 class="bimasakti-title">How Infor Cloudsuite Helps You</h2>
         <h3 class="bimasakti-description">Empowering your business with innovative cloud solutions.</h3>
@@ -2470,7 +2500,7 @@ Business Intelligence Solution</H1>
                 <h4>
                     <svg class="feature-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M21 3H3c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h18c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H3V5h18v14z" fill="url(#paint0_linear_service)" />
-                        <path d="M5 14h3v3H5v-3zm5-3h3v6h-3v-6zm5 5h3v1h-3v-1zm0-2h3v1h-3v-1z" fill="url(#paint1_linear_service)" />
+                        <path d="M5 14h3v3H5v-3zm5-3h3v6h-3v-6zm5 5h3v1h-3v-1z" fill="url(#paint1_linear_service)" />
                         <defs>
                             <linearGradient id="paint0_linear_service" x1="1" y1="3" x2="23" y2="21" gradientUnits="userSpaceOnUse">
                                 <stop stop-color="#c8d4de" />
@@ -2580,6 +2610,8 @@ Business Intelligence Solution</H1>
     </section>
 
     <style>
+            /* Add this style block in the <head> section or in your CSS file */
+
         /* BIMASAKTI Solutions Grid Styles */
         .bimasakti-solutions-grid {
             display: grid;
@@ -3508,8 +3540,8 @@ Business Intelligence Solution</H1>
 </style>
 
 <section class="a-section-large benefits-impact">
-  <div class="container">
-    <div class="a-feature-title text-center mb-5">
+  <div class="container-fluid">
+    <div class="a-feature-title text-center mb-5 px-4" >
       <div class="a-margin-bottom-16">
         <div class="a-detail-regular">BENEFITS AND IMPACT</div>
       </div>
@@ -3621,20 +3653,19 @@ Business Intelligence Solution</H1>
     }
   }
 </style>
-
 <section class="reversed-benefits-impact py-5">
-  <div class="container">
+  <div class="container-fluid">
     <div class="row align-items-start"> 
       <div class="col-lg-7 order-lg-1 order-2" data-aos="fade-right" data-aos-delay="100">
-        <div class="benefits-image-container">
-          <img src="assets/img/erp/gartner-evaluates-product-centric-cloud-erps.png" alt="ERP Benefits and Impact" class="img-fluid rounded shadow-lg">
+        <div class="benefits-image-container text-center">
+          <img src="assets/img/erp/gartner-evaluates-product-centric-cloud-erps.png" alt="ERP Benefits and Impact" class="img-fluid rounded" style="max-width: 80%;">
         </div>
       </div>
       <div class="col-lg-5 order-lg-2 order-1" data-aos="fade-left" data-aos-delay="200">
         <div class="text-content"> 
           <div class="a-detail-regular text-end mb-2">TRANSFORMING YOUR BUSINESS</div>
           <h2 class="uui-heading-medium text-end mb-3">Why Infor CloudSuite?</h2>
-          <p class="section-description mb-0 text-center"  style="font-weight: bold;"><span class="gartner-highlight">Gartner</span>  evaluates product-centric cloud ERPs,  scoring vendors on seven distinct Use Cases.</p>
+          <p class="section-description mb-0 text-center" style="font-weight: bold; max-width: 80%; margin: 0 auto;"><span class="gartner-highlight">Gartner</span>  evaluates product-centric cloud ERPs, scoring vendors on seven distinct use cases.</p>
           <br>
           <p class="section-description mb-0 text-center">Infor proud to announce that Infor scored the highest in 4 out of 7 Use Cases in the October 2023 Critical Capabilities for Cloud ERP for Product-Centric Enterprises report including for Discrete Manufacturing, Process Manufacturing, Project/Asset-Intensive Manufacturing, and ERP for Upper Midsize Enterprises <br><span class="highlight-text">$250 million - $1 billion</span>. Additionally, we scored second in the ERP for Lower Midsize Enterprises <span class="highlight-text">$50 million - $250 million</span></p>
         </div>
@@ -3856,7 +3887,6 @@ Business Intelligence Solution</H1>
     .image-wrapper {
         overflow: hidden;
         border-radius: 10px;
-        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
         transition: transform 0.3s ease-in-out;
     }
 
@@ -3891,12 +3921,10 @@ Business Intelligence Solution</H1>
     }
 </style>
 
-
-
 <section id="infor-cloudsuite" class="infor-cloudsuite-section py-5" style="background-image: url('assets/img/erp/background-hxgn-eam.png'); background-size: cover; background-position: center; background-attachment: fixed;">
-    <div class="container">
+    <div class="container-fluid container-lg px-2">
         <div class="row align-items-center">
-            <div class="col-lg-6 fade-in-left">
+            <div class="col-lg-6 fade-in-left infor-cloudsuite-content">
                 <h2 class="mb-4" style="background: linear-gradient(287deg, #ff0000, #de2b2b, #ff9999); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">HxGN EAM</h2>
                 <h3 class="mb-3">Enterprise Asset Management</h3>
                 <p class="lead mb-4">Comprehensive tools from HxGN EAM equip you with everything necessary to tackle your asset management needs. From managing asset structures and work orders to leveraging mobile, barcoding, GIS, and BIM capabilities.</p>
@@ -3908,6 +3936,7 @@ Business Intelligence Solution</H1>
         </div>
     </div>
 </section>
+
 
 
 <section class="erp-efficiency-stats py-5">
@@ -4048,8 +4077,7 @@ Business Intelligence Solution</H1>
     }
   </style>
 
-
-<section class="video-section py-5">
+<section class="video-section py-5" style="margin-bottom: -50px;">
     <div class="container">
       <div class="row justify-content-center">
         <div class="col-lg-8 text-center">
@@ -4060,10 +4088,12 @@ Business Intelligence Solution</H1>
       </div>
     </div>
   </section>
-  
   <style>
     .video-section {
       border-radius: 10px;
+      position: relative;
+      z-index: 1;
+      margin-bottom: -150px; /* Create overlap with next section */
     }
   
     .video-wrapper {
@@ -4093,16 +4123,15 @@ Business Intelligence Solution</H1>
 
 
 
-
-
 <section id="infor-cloudsuite" class="infor-cloudsuite-section py-5" style="background-image: url('assets/img/erp/background-infor-wms.png'); background-size: cover; background-position: center; background-attachment: fixed;">
-    <div class="container">
+    <div class="container-fluid container-lg px-2">
         <div class="row align-items-center">
-            <div class="col-lg-6 fade-in-left">
+            <div class="col-lg-6 fade-in-left infor-cloudsuite-content">
                 <h2 class="mb-4" style="background: linear-gradient(287deg, #ff0000, #de2b2b, #ff9999); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">Infor WMS</h2>
                 <h3 class="mb-3">Warehouse Management System</h3>
                 <p class="lead mb-4">In today's fast-paced business environment, where customer satisfaction hinges on speed and accuracy, warehouses are crucial for maintaining a seamless supply chain. Infor WMS offers a comprehensive solution that integrates warehouse fulfillment, embedded labor management, and 3D visual analysis.</p>
                 <p class="mb-4">By leveraging this powerful combination, businesses gain unparalleled visibility into inventory levels, order statuses, equipment utilization, and workforce performance. With Infor WMS, you can optimize operations, enhance efficiency, and ensure a superior customer experience at every stage of the supply chain.</p>
+            </div>
             <div class="col-lg-6 fade-in-right">
                 <!-- <img src="assets/img/erp/infor-cloudsuite.png" alt="Infor CloudSuite Dashboard" class="img-fluid rounded shadow-lg"> -->
             </div>
@@ -4316,8 +4345,9 @@ Business Intelligence Solution</H1>
 
 
 <section class="a-section-large benefits-impact mt-5 pt-5">
-    <div class="container">
-      <div class="a-feature-title text-center mb-5">
+    <div class="container-fluid">
+
+      <div class="a-feature-title text-center mb-5 px-4">
         <div class="a-margin-bottom-16">
           <div class="a-detail-regular">CAPABILITIES AND IMPACT</div>
         </div>
@@ -4354,7 +4384,7 @@ Business Intelligence Solution</H1>
           <div class="a-feature-card h-100">
             <div class="a-feature-icon">
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="a-feature-icon-svg">
-                <path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z" fill="currentColor"/>
+                <path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5z" fill="currentColor"/>
               </svg>
             </div>
             <div class="a-margin-bottom-08">
@@ -4380,7 +4410,7 @@ Business Intelligence Solution</H1>
           <div class="a-feature-card h-100">
             <div class="a-feature-icon">
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="a-feature-icon-svg">
-                <path d="M20 6h-4V4c0-1.11-.89-2-2-2h-4c-1.11 0-2 .89-2 2v2H4c-1.11 0-1.99.89-1.99 2L2 19c0 1.11.89 2 2 2h16c1.11 0 2-.89 2-2V8c0-1.11-.89-2-2-2zm-6 0h-4V4h4v2z" fill="currentColor"/>
+                <path d="M20 6h-4V4c0-1.11-.89-2-2-2h-4c-1.11 0-2 .89-2 2v2H4c-1.11 0-1.99.89-1.99 2L2 19c0 1.11.89 2 2 2h16c1.11 0 2-.89 2-2V8c0-1.11-.89-2-2-2zm-5 0h-4V4h4v2z" fill="currentColor"/>
               </svg>
             </div>
             <div class="a-margin-bottom-08">
@@ -4393,7 +4423,7 @@ Business Intelligence Solution</H1>
           <div class="a-feature-card h-100">
             <div class="a-feature-icon">
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="a-feature-icon-svg">
-                <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-5 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z" fill="currentColor"/>
+                <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H3V5h18v14zM5 10h9v2H5zm0-3h9v2H5z" fill="currentColor"/>
               </svg>
             </div>
             <div class="a-margin-bottom-08">
@@ -4419,7 +4449,7 @@ Business Intelligence Solution</H1>
           <div class="a-feature-card h-100">
             <div class="a-feature-icon">
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="a-feature-icon-svg">
-                <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-5 14h-2V9h-2V7h4v10z" fill="currentColor"/>
+                <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-5 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z" fill="currentColor"/>
               </svg>
             </div>
             <div class="a-margin-bottom-08">
@@ -4454,21 +4484,24 @@ Business Intelligence Solution</H1>
 
 
 
+
 <section id="infor-cloudsuite" class="infor-cloudsuite-section py-5" style="background-image: url('assets/img/erp/background-infor-birst.png'); background-size: cover; background-position: center; background-attachment: fixed;">
-    <div class="container">
+    <div class="container-fluid container-lg px-2">
         <div class="row align-items-center">
-            <div class="col-lg-6 fade-in-left">
+            <div class="col-lg-6 fade-in-left infor-cloudsuite-content">
                 <h2 class="mb-4" style="background: linear-gradient(287deg, #ff0000, #de2b2b, #ff9999); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">Infor Birst</h2>
                 <h3 class="mb-3">Business Intelligence / Analytics.</h3>
                 <p class="lead mb-4">Infor Birst, the cloud-based business intelligence and analytics platform, simplifies data-driven decision-making for everyone, from the boardroom to the shop floor. Infor industry analytics deliver relevant and meaningful insights tailored to specific industries, transforming raw data into valuable insights.</p>
                 <p class="mb-4">From data integration and preparation to advanced analytics and interactive visualizations, experience a comprehensive toolset for effortless exploration, analysis, and sharing of data. Infor Birst offers the flexibility and scalability needed to uncover actionable insights and stay ahead in today's competitive landscape.</p>
                 <p class="mb-4">Enhance decision-making across the organization with pre-built industry and role-specific content using Infor Birst. This powerful platform empowers users to make informed decisions and drive business success.</p>
+            </div>
             <div class="col-lg-6 fade-in-right">
                 <!-- <img src="assets/img/erp/infor-cloudsuite.png" alt="Infor CloudSuite Dashboard" class="img-fluid rounded shadow-lg"> -->
             </div>
         </div>
     </div>
 </section>
+
 
 
 <h3 class="text-center mb-4">
@@ -4577,8 +4610,8 @@ Business Intelligence Solution</H1>
 
 
 <section class="a-section-large benefits-impact mt-5 pt-5">
-    <div class="container">
-      <div class="a-feature-title text-center mb-5">
+    <div class="container-fluid">
+      <div class="a-feature-title text-center mb-5 px-4">
         <div class="a-margin-bottom-16">
           <div class="a-detail-regular">CAPABILITIES AND IMPACT</div>
         </div>
@@ -4669,13 +4702,15 @@ Business Intelligence Solution</H1>
 
 
 
-<section id="infor-cloudsuite" class="infor-cloudsuite-section py-5" style="background-image: url('assets/img/erp/background-infor-mes.png'); background-size: cover; background-position: center; background-attachment: fixed;">
-    <div class="container">
+  <section id="infor-cloudsuite" class="infor-cloudsuite-section py-5" style="background-image: url('assets/img/erp/background-infor-mes.png'); background-size: cover; background-position: center; background-attachment: fixed;">
+    <div class="container-fluid container-lg px-2">
         <div class="row align-items-center">
-            <div class="col-lg-6 fade-in-left">
+            <div class="col-lg-6 fade-in-left infor-cloudsuite-content">
                 <h2 class="mb-4" style="background: linear-gradient(287deg, #ff0000, #de2b2b, #ff9999); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">Infor MES</h2>
                 <h3 class="mb-3">Manufacturing Execution System.</h3>
                 <p class="lead mb-4">Infor Manufacturing Execution System (MES), formerly known as Lighthouse Systems (Shopfloor-Online), is a powerful solution that delivers the right information at the right time to everyone on the shop floor, by driving greater efficiency and quality in manufacturing execution and output.</p>
+            </div>
+            <div class="col-lg-6 fade-in-right">
                 <!-- <img src="assets/img/erp/infor-cloudsuite.png" alt="Infor CloudSuite Dashboard" class="img-fluid rounded shadow-lg"> -->
             </div>
         </div>
@@ -4830,7 +4865,7 @@ Business Intelligence Solution</H1>
           <div class="a-feature-card h-100">
             <div class="a-feature-icon">
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="a-feature-icon-svg">
-                <path d="M19 3h-4.18C14.4 1.84 13.3 1 12 1c-1.3 0-2.4.84-2.82 2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-7 0c.55 0 1 .45 1 1s-.45 1-1 1-1-.45-1-1 .45-1 1-1zm-2 14l-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z" fill="currentColor"/>
+                <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-5 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z" fill="currentColor"/>
               </svg>
             </div>
             <div class="a-margin-bottom-08">
@@ -4857,20 +4892,24 @@ Business Intelligence Solution</H1>
   </section>
 
 
-<section id="infor-mes" class="infor-mes-section py-5" style="background-image: url('assets/img/erp/background-infor-coleman-ai.png'); background-size: cover; background-position: center; background-attachment: fixed;">
-    <div class="container">
+
+
+<section id="infor-cloudsuite" class="infor-cloudsuite-section py-5" style="background-image: url('assets/img/erp/background-infor-coleman-ai.png'); background-size: cover; background-position: center; background-attachment: fixed;">
+    <div class="container-fluid container-lg px-2">
         <div class="row align-items-center">
-            <div class="col-lg-6 fade-in-left">
+            <div class="col-lg-6 fade-in-left infor-cloudsuite-content">
                 <h2 class="mb-4" style="background: linear-gradient(287deg, #ff0000, #de2b2b, #ff9999); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">Infor AI</h2>
                 <p class="mb-4">Infor AI is a cutting-edge artificial intelligence solution designed to enable intuitive and intelligent interactions across your business operations. By harnessing the power of advanced algorithms and machine learning, it provides accurate predictions, actionable recommendations, and streamlined processes to unlock the full potential of your data.</p>
                 <p class="mb-4">This powerful AI integrates seamlessly with your existing systems, bridging the gap between raw data and meaningful insights. It offers advanced capabilities such as natural language processing, predictive analytics, and contextual understanding to drive informed decision-making and optimize operations.</p>
                 <p>By implementing Infor AI, businesses can enhance productivity, minimize inefficiencies, improve strategic planning, and make data-driven decisions with unprecedented accuracy. It empowers your workforce with intelligent tools and insights needed to drive continuous improvement and maintain a competitive edge in today's rapidly evolving digital landscape.</p>
+         </div>
             <div class="col-lg-6 fade-in-right">
-                <!-- <img src="assets/img/erp/infor-mes.png" alt="Infor MES Dashboard" class="img-fluid rounded shadow-lg"> -->
+                <!-- <img src="assets/img/erp/infor-cloudsuite.png" alt="Infor CloudSuite Dashboard" class="img-fluid rounded shadow-lg"> -->
             </div>
         </div>
     </div>
 </section>
+
 
 
 <h3 class="text-center mb-4">
@@ -4934,8 +4973,8 @@ Business Intelligence Solution</H1>
 
 
 <section class="a-section-large benefits-impact mt-5 pt-5">
-    <div class="container">
-      <div class="a-feature-title text-center mb-5">
+    <div class="container-fluid">
+      <div class="a-feature-title text-center mb-5 px-4">
         <div class="a-margin-bottom-16">
           <div class="a-detail-regular">CAPABILITIES AND IMPACT</div>
         </div>
@@ -4946,8 +4985,9 @@ Business Intelligence Solution</H1>
           <div class="a-feature-card h-100">
             <div class="a-feature-icon">
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="a-feature-icon-svg">
-                <path d="M12 15c1.66 0 3-1.34 3-3V6c0-1.66-1.34-3-3-3S9 4.34 9 6v6c0 1.66 1.34 3 3 3zm-1-9c0-.55.45-1 1-1s1 .45 1 1v6c0 .55-.45 1-1 1s-1-.45-1-1V6zm6 6c0 2.76-2.24 5-5 5s-5-2.24-5-5H5c0 3.53 2.61 6.43 6 6.92V21h2v-2.08c3.39-.49 6-3.39 6-6.92h-2z" fill="currentColor"/>
+                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z" fill="currentColor"/>
               </svg>
+            </div>
             </div>
             <div class="a-margin-bottom-08">
               <div class="a-subheading-regular">Understand Human Language</div>
@@ -4972,7 +5012,7 @@ Business Intelligence Solution</H1>
           <div class="a-feature-card h-100">
             <div class="a-feature-icon">
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="a-feature-icon-svg">
-                <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zM9 17H7v-7h2v7zm4 0h-2V7h2v10zm4 0h-2v-4h2v4z" fill="currentColor"/>
+                <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-5 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z" fill="currentColor"/>
               </svg>
             </div>
             <div class="a-margin-bottom-08">
