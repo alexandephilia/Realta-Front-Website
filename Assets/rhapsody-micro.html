@@ -59,7 +59,17 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
     <style>
-        /* Custom CSS */
+         /* Custom CSS */
+      
+        .container-fluid {
+            width: 95%;
+            max-width: 1700px;
+            margin-left: auto;
+            margin-right: auto;
+            padding-left: 15px;
+            padding-right: 15px;
+        }
+        
         :root {
             --primary-color: #007bff;
             --secondary-color: #6c757d;
@@ -1260,13 +1270,14 @@
         <div class="mega-dropdown" id="solutionsDropdownContent">
             <div class="dropdown-content">
                 <div class="product-categories">
-                    <div class="product-category active" data-product="hms">Hotel Management System</div>
+                    <div class="product-category active" data-product="eam">ERP & EAM</div>
                     <div class="product-category" data-product="gcs">Golf Course System</div>
                     <div class="product-category" data-product="hrs">HR System</div>
-                    <div class="product-category" data-product="pts">Property & Tenancy System</div>
+                    <div class="product-category " data-product="hms">Hotel Management System</div>
                     <div class="product-category" data-product="itm">ITSM, ITAM & Unified Endpoint Management</div>
-                    <div class="product-category" data-product="erp">ERP & EAM</div>
-                    <div class="all-products">All products ›</div>
+                    <div class="product-category" data-product="pts">Property & Tenancy System</div>
+                    <div class="product-category" data-product="erp">Network & System Integration</div>
+                    <div class="all-products"><a href="#solutions">All products ›</a></div>
                 </div>
                 <div class="product-details" id="product-details">
                     <!-- Content will be dynamically updated here -->
@@ -1276,9 +1287,10 @@
         <div class="mega-dropdown" id="industriDropdownContent">
             <div class="dropdown-content">
                 <div class="product-categories">
-                    <div class="product-category active" data-product="manufacturing">Manufacturing</div>
-                    <div class="product-category" data-product="healthcare">Healthcare</div>
-                    <div class="product-category" data-product="retail">Retail</div>
+                    <div class="product-category active" data-product="hospitality">Hospitality</div>
+                    <div class="product-category" data-product="property">Property</div>
+                    <div class="product-category" data-product="manufacturing">Manufacturing</div>
+                    <div class="product-category" data-product="fsi">FSI</div>
                     <div class="all-products">All industries ›</div>
                 </div>
                 <div class="product-details" id="industri-details">
@@ -1298,14 +1310,28 @@
                 </div>
             </div>
         </div>
-        <div class="mega-dropdown" id="konsultasiDropdownContent">
+        <div class="mega-dropdown" id="contactDropdownContent">
             <div class="dropdown-content">
                 <div class="product-categories">
                     <div class="product-category active" data-product="business">Business Consultation</div>
                     <div class="product-category" data-product="technical">Technical Consultation</div>
                     <div class="all-products">All consultations ›</div>
                 </div>
-                <div class="product-details" id="konsultasi-details">
+                <div class="product-details" id="contact-details">
+                    <!-- Content will be dynamically updated here -->
+                </div>
+            </div>
+        </div>
+        <div class="mega-dropdown" id="careerDropdownContent">
+            <!-- * Career megamenu -->
+            <div class="dropdown-content">
+                <div class="product-categories">
+                    <div class="product-category active" data-product="openings">Job Openings</div>
+                    <div class="product-category" data-product="internships">Internship Programs</div>
+                    <div class="product-category" data-product="culture">Company Culture</div>
+                    <div class="all-products">View All Career Opportunities ›</div>
+                </div>
+                <div class="product-details" id="career-details">
                     <!-- Content will be dynamically updated here -->
                 </div>
             </div>
@@ -1313,9 +1339,7 @@
         <div class="mega-dropdown" id="tentangRealtaDropdownContent">
             <div class="dropdown-content">
                 <div class="product-categories">
-                    <div class="product-category active" data-product="about">About Us</div>
-                    <div class="product-category" data-product="careers">Careers</div>
-                    <div class="product-category" data-product="blog">Blog</div>
+                    <div class="product-category active" data-product="about">About Realta</div>
                     <div class="all-products">Learn more ›</div>
                 </div>
                 <div class="product-details" id="tentangRealta-details">
@@ -1324,7 +1348,6 @@
             </div>
         </div>
     </nav>
-
 
     <!-- <div class="career-link">   
         Looking for a new career? <a href="#">Get in touch</a>
@@ -1637,27 +1660,27 @@
 
 
     <section id="ict-one-solution" class="ict-one-solution py-5" style="margin-top: 5%;">
-        <div class="container">
+        <div class="container-fluid container-lg px-2">
             <div class="row align-items-center">
                 <div class="col-md-6 fade-in-left">
-                    <img src="assets/img/hotel/feature-ict.png" alt="ICT One Solution" class="img-fluid">
+                    <img src="assets/img/hotel/feature-ict.png" alt="ICT One Solution" class="img-fluid" style="width: 80%; height: auto; margin-left: 10%;">
                 </div>
                 <div class="col-md-6 text-center fade-in-right">
                     <h2 class="mb-4 gradient-text fw-bold" style="background: linear-gradient(287deg, #625dfa, #c85efa, #8ddee4); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">ICT ONE
                         SOLUTION</h2>
                     <h3 class="mb-3">Hotel System</h3>
-                    <div class="mb-4" style="max-width: 80%; margin: 0 auto;">
-                        <p style="line-height: 1.6; font-size: 1rem; margin-bottom: 1rem;">
+                    <div class="mb-4 text-center" style="max-width: 90%; margin: 0 auto;">
+                        <p style="line-height: 1.6; font-size: 20px; margin-bottom: 1rem;">
                             Rhapsody is designed to meet modern hospitality trends, including:
                         </p>
-                        <ul style="text-align: left; padding-left: 90px; margin-bottom: 1rem;">
+                        <ul style="list-style-type: none; padding: 0; margin-bottom: 1rem; font-size: 20px;">
                             <li>Service apartments integration</li>
                             <li>Seamless golf course system and administration</li>
                             <li>Comprehensive Point of Sales reporting</li>
                             <li>Advanced catering and banquet management</li>
                             <li>Menu analysis and cost calculation tools</li>
                         </ul>
-                        <p style="line-height: 1.6; font-size: 1rem;">
+                        <p style="line-height: 1.6; font-size: 20px;">
                             Our solution empowers management with detailed insights and efficient operations, driving your hotel's success.
                         </p>
                     </div>
@@ -1669,37 +1692,37 @@
     </section>
 
     <section class="features py-5">
-        <div class="container">
+        <div class="container-fluid container-lg px-2">
             <div class="row text-center justify-content-center">
                 <div class="col-md-2 col-sm-4 mb-4 feature-item">
                     <img src="assets/img/hotel/icon-1.png" alt="Feature 1" class="img-fluid mb-3"
                         style="max-width: 80px;">
-                    <p>Property Management System</p>
+                    <p style="font-size: 20px;">Property Management System</p>
                 </div>
                 <div class="col-md-2 col-sm-4 mb-4 feature-item">
                     <img src="assets/img/hotel/icon-2.png" alt="Feature 2" class="img-fluid mb-3"
                         style="max-width: 80px;">
-                    <p>Point of Sale System</p>
+                    <p style="font-size: 20px;">Point of Sale System</p>
                 </div>
                 <div class="col-md-2 col-sm-4 mb-4 feature-item">
                     <img src="assets/img/hotel/icon-3.png" alt="Feature 3" class="img-fluid mb-3"
                         style="max-width: 80px;">
-                    <p>Spa & Wellness Management</p>
+                    <p style="font-size: 20px;">Spa & Wellness Management</p>
                 </div>
                 <div class="col-md-2 col-sm-4 mb-4 feature-item">
                     <img src="assets/img/hotel/icon-4.png" alt="Feature 4" class="img-fluid mb-3"
                         style="max-width: 80px;">
-                    <p>Sales & Catering</p>
+                    <p style="font-size: 20px;">Sales & Catering</p>
                 </div>
                 <div class="col-md-2 col-sm-4 mb-4 feature-item">
                     <img src="assets/img/hotel/icon-5.png" alt="Feature 5" class="img-fluid mb-3"
                         style="max-width: 80px;">
-                    <p>Business Intelligence</p>
+                    <p style="font-size: 20px;">Business Intelligence</p>
                 </div>
                 <div class="col-md-2 col-sm-4 mb-4 feature-item">
                     <img src="assets/img/hotel/icon-6.png" alt="Feature 6" class="img-fluid mb-3"
                         style="max-width: 80px;">
-                    <p>Central Reservation</p>
+                    <p style="font-size: 20px;">Central Reservation</p>
                 </div>
             </div>
         </div>
@@ -2039,7 +2062,7 @@
         #cta .cta-card {
             background-color: #f8f9fa;
             transition: all 0.3s ease;
-            border: 1px solid rgba(0, 0, 0, 0.125);
+            border: 1px solid rgba(185, 185, 185, 0.74);
         }
 
 
@@ -2093,7 +2116,7 @@
     </style>
 
 <section id="stats-feature-section" class="py-5 mt-4">
-    <div class="container">
+    <div class="container-fluid container-lg px-2">
         <div class="row align-items-center">
             <div class="col-lg-4 mb-4 mb-lg-0">
                 <h2 class="section-title mb-3">Our Solutions</h2>
@@ -2174,8 +2197,7 @@
     body.dark-mode #stats-feature-section {
         background-color: rgba(33, 23, 52, 0.7);
         backdrop-filter: blur(10px);
-        box-shadow: 0 3px 6px 0 rgba(31, 38, 135, 0.37);
-        border: 1px solid rgba(255, 255, 255, 0.18);
+        border: 1px solid rgba(185, 185, 185, 0.74);
     }
 
     .stats-row {
@@ -2486,18 +2508,17 @@
         opacity: 1;
         transform: translateY(0);
     }
-
     #rhapsody-features-2023 .rhapsody-description-new {
         max-width: 80%;
         margin: 1.5rem auto;
         text-align: left;
-        font-size: 1rem;
+        font-size: 20px;
         font-weight: 500;
         opacity: 0;
         transform: translateX(-50px);
         transition: opacity 0.5s ease, transform 0.5s ease;
     }
-
+    
     #rhapsody-features-2023 .rhapsody-description-new.visible {
         opacity: 1;
         transform: translateX(0);
@@ -2610,7 +2631,7 @@
         width: 95%;
         margin: 0 auto;
         transition: opacity 0.5s ease, transform 0.5s ease;
-        box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        border: 1px solid rgba(225, 228, 231, 0.644);
     }
 
     #rhapsody-features-2023 .rhapsody-tab-content-2023-new {
@@ -3357,7 +3378,7 @@
 
 
     <section id="contact" class="pb-5">
-        <div class="container p-4">
+        <div class="container-fluid px-5">
             <div class="row justify-content-between">
                 <div id="contact-info" class="col-lg-5 left-column >
                     <h1 class=" mb-3 contact-heading" style="font-size: 33px;">What Are You Waiting For?<br> <span
@@ -3721,7 +3742,7 @@
     </style>
 
     <section id="newsletter-cta" class="py-4 mb-0">
-        <div class="container">
+        <div class="container-fluid px-5">
             <div class="row align-items-center">
                 <div class="col-md-7 text-start">
                     <h2 class="mb-3 fw-bold gradient-text">Stay Informed, Stay Ahead</h2>

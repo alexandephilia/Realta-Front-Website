@@ -60,6 +60,15 @@
 
     <style>
         /* Custom CSS */
+       
+         .container-fluid {
+            width: 95%;
+            max-width: 1700px;
+            margin-left: auto;
+            margin-right: auto;
+            padding-left: 15px;
+            padding-right: 15px;
+        }
         :root {
             --primary-color: #007bff;
             --secondary-color: #6c757d;
@@ -1263,13 +1272,14 @@
         <div class="mega-dropdown" id="solutionsDropdownContent">
             <div class="dropdown-content">
                 <div class="product-categories">
-                    <div class="product-category active" data-product="hms">Hotel Management System</div>
+                    <div class="product-category active" data-product="eam">ERP & EAM</div>
                     <div class="product-category" data-product="gcs">Golf Course System</div>
                     <div class="product-category" data-product="hrs">HR System</div>
-                    <div class="product-category" data-product="pts">Property & Tenancy System</div>
+                    <div class="product-category " data-product="hms">Hotel Management System</div>
                     <div class="product-category" data-product="itm">ITSM, ITAM & Unified Endpoint Management</div>
-                    <div class="product-category" data-product="erp">ERP & EAM</div>
-                    <div class="all-products">All products ›</div>
+                    <div class="product-category" data-product="pts">Property & Tenancy System</div>
+                    <div class="product-category" data-product="erp">Network & System Integration</div>
+                    <div class="all-products"><a href="#solutions">All products ›</a></div>
                 </div>
                 <div class="product-details" id="product-details">
                     <!-- Content will be dynamically updated here -->
@@ -1279,9 +1289,10 @@
         <div class="mega-dropdown" id="industriDropdownContent">
             <div class="dropdown-content">
                 <div class="product-categories">
-                    <div class="product-category active" data-product="manufacturing">Manufacturing</div>
-                    <div class="product-category" data-product="healthcare">Healthcare</div>
-                    <div class="product-category" data-product="retail">Retail</div>
+                    <div class="product-category active" data-product="hospitality">Hospitality</div>
+                    <div class="product-category" data-product="property">Property</div>
+                    <div class="product-category" data-product="manufacturing">Manufacturing</div>
+                    <div class="product-category" data-product="fsi">FSI</div>
                     <div class="all-products">All industries ›</div>
                 </div>
                 <div class="product-details" id="industri-details">
@@ -1301,14 +1312,28 @@
                 </div>
             </div>
         </div>
-        <div class="mega-dropdown" id="konsultasiDropdownContent">
+        <div class="mega-dropdown" id="contactDropdownContent">
             <div class="dropdown-content">
                 <div class="product-categories">
                     <div class="product-category active" data-product="business">Business Consultation</div>
                     <div class="product-category" data-product="technical">Technical Consultation</div>
                     <div class="all-products">All consultations ›</div>
                 </div>
-                <div class="product-details" id="konsultasi-details">
+                <div class="product-details" id="contact-details">
+                    <!-- Content will be dynamically updated here -->
+                </div>
+            </div>
+        </div>
+        <div class="mega-dropdown" id="careerDropdownContent">
+            <!-- * Career megamenu -->
+            <div class="dropdown-content">
+                <div class="product-categories">
+                    <div class="product-category active" data-product="openings">Job Openings</div>
+                    <div class="product-category" data-product="internships">Internship Programs</div>
+                    <div class="product-category" data-product="culture">Company Culture</div>
+                    <div class="all-products">View All Career Opportunities ›</div>
+                </div>
+                <div class="product-details" id="career-details">
                     <!-- Content will be dynamically updated here -->
                 </div>
             </div>
@@ -1316,9 +1341,7 @@
         <div class="mega-dropdown" id="tentangRealtaDropdownContent">
             <div class="dropdown-content">
                 <div class="product-categories">
-                    <div class="product-category active" data-product="about">About Us</div>
-                    <div class="product-category" data-product="careers">Careers</div>
-                    <div class="product-category" data-product="blog">Blog</div>
+                    <div class="product-category active" data-product="about">About Realta</div>
                     <div class="all-products">Learn more ›</div>
                 </div>
                 <div class="product-details" id="tentangRealta-details">
@@ -1641,20 +1664,18 @@
 
 
     <section id="ict-one-solution" class="ict-one-solution py-5" style="margin-top: 5%;">
-        <div class="container">
+        <div class="container-fluid container-lg px-2">
             <div class="row align-items-center">
                 <div class="col-md-6 fade-in-left">
-                    <img src="assets/img/bimasakti/bimasakti_01.png" alt="ICT One Solution" class="img-fluid">
+                    <img src="assets/img/bimasakti/bimasakti_01.png" alt="ICT One Solution"  class="img-fluid" style="width: 80%; height: auto; margin-left: 10%;">
                 </div>
                 <div class="col-md-6 text-center fade-in-right">
                     <h2 class="mb-4 gradient-text fw-bold" style="background: linear-gradient(287deg, #625dfa, #5ebcfa, #40777a); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">
                         Property and Building Management System with ICT One Solution
                     </h2>
-                    <div class="mb-4" style="max-width: 80%; margin: 0 auto;">
-                        <p style="line-height: 1.6; font-size: 1rem; margin-bottom: 1rem; text-align: left;">
+                    <div class="mb-4" style="max-width: 90%; margin: 0 auto;">
+                        <p style="line-height: 1.6; font-size: 20px; margin-bottom: 1rem; text-align: left;">
                             BIMASAKTI enables you to keep track and monitor every financial aspect of your business. With all financial information at your fingertips, you can make the forecasting with less risk. Processing and printing monthly invoices with Value-Added Tax (VAT) forms can be automatically added using BIMASAKTI and for tax reporting purposes, BIMASAKTI can be linked to e-Faktur PPN.                        </p>
-                       
-                    <!-- Key Features Section -->
                     <div class="key-features">
                         <!-- Feature 1 -->
                         <div class="feature">
@@ -1780,7 +1801,7 @@
 
     <!-- Features Section -->
     <section class="features py-5">
-        <div class="container">
+        <div class="container-fluid container-lg px-2">
             <!-- Section Title -->
             <h2 class="text-center mb-5" style="background: linear-gradient(287deg, #625dfa, #5ebcfa, #40777a); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">BIMASAKTI is the ideal application for:</h2>
             <!-- Added H3 for COMMERCIAL PROPERTIES -->
@@ -1790,31 +1811,31 @@
                 <div class="col-md-2 col-sm-4 mb-4 feature-item">
                     <img src="assets/img/bimasakti/system-for-shopping-center---bimasakti.gif" alt="Shopping Center" class="img-fluid mb-3"
                         style="max-width: 80px;">
-                    <p>Shopping Center</p>
+                    <p style="font-size: 20px;">Shopping Center</p>
                 </div>
                 <!-- Feature Item 2: Office -->
                 <div class="col-md-2 col-sm-4 mb-4 feature-item">
                     <img src="assets/img/bimasakti/system-for-office---bimasakti1.gif" alt="Office" class="img-fluid mb-3"
                         style="max-width: 80px;">
-                    <p>Office</p>
+                    <p style="font-size: 20px;">Office</p>
                 </div>
                 <!-- Feature Item 3: Industrial Estate -->
                 <div class="col-md-2 col-sm-4 mb-4 feature-item">
                     <img src="assets/img/bimasakti/system-for-industrial-estate---bimasakti.gif" alt="Industrial Estate" class="img-fluid mb-3"
                         style="max-width: 80px;">
-                    <p>Industrial Estate</p>
+                    <p style="font-size: 20px;">Industrial Estate</p>
                 </div>
                 <!-- Feature Item 4: Warehouse -->
                 <div class="col-md-2 col-sm-4 mb-4 feature-item">
                     <img src="assets/img/bimasakti/system-for-warehouse---bimasakti.gif" alt="Warehouse" class="img-fluid mb-3"
                         style="max-width: 80px;">
-                    <p>Warehouse</p>
+                    <p style="font-size: 20px;">Warehouse</p>
                 </div>
                 <!-- Feature Item 5: Data Center -->
                 <div class="col-md-2 col-sm-4 mb-4 feature-item">
                     <img src="assets/img/bimasakti/system-for-data-center---bimasakti.gif" alt="Data Center" class="img-fluid mb-3"
                         style="max-width: 80px;">
-                    <p>Data Center</p>
+                    <p style="font-size: 20px;">Data Center</p>
                 </div>
             </div>
             <!-- Added H3 for RESIDENTIAL PROPERTIES -->
@@ -1824,13 +1845,13 @@
                 <div class="col-md-2 col-sm-4 mb-4 feature-item">
                     <img src="assets/img/bimasakti/system-for-apartment---bimasakti.gif" alt="Apartment" class="img-fluid mb-3"
                         style="max-width: 80px;">
-                    <p>Apartment</p>
+                    <p style="font-size: 20px;">Apartment</p>
                 </div>
                 <!-- Feature Item 7: Landed House -->
                 <div class="col-md-2 col-sm-4 mb-4 feature-item">
                     <img src="assets/img/bimasakti/system-for-landed-house---bimasakti.gif" alt="Landed House" class="img-fluid mb-3"
                         style="max-width: 80px;">
-                    <p>Landed House</p>
+                    <p style="font-size: 20px;">Landed House</p>
                 </div>
                 
             </div>
@@ -2262,7 +2283,7 @@
         margin: 0 auto;
         margin-bottom: 15px;
         color: #666;
-        font-size: 1rem;
+        font-size: 20px;
     }
 
     /* BIMASAKTI Button Wrapper Styles */
@@ -2652,7 +2673,7 @@
 
 
     <section id="contact" class="pb-5">
-        <div class="container p-4">
+        <div class="container-fluid px-5">
             <div class="row justify-content-between">
                 <div id="contact-info" class="col-lg-5 left-column >
                     <h1 class=" mb-3 contact-heading" style="font-size: 33px;">What Are You Waiting For?<br> <span
@@ -3016,7 +3037,7 @@
     </style>
 
     <section id="newsletter-cta" class="py-4 mb-0">
-        <div class="container">
+        <div class="container-fluid px-5">
             <div class="row align-items-center">
                 <div class="col-md-7 text-start">
                     <h2 class="mb-3 fw-bold gradient-text">Stay Informed, Stay Ahead</h2>
@@ -3157,6 +3178,7 @@
             }
         }
     </style>
+
 
 
     <!-- END -->

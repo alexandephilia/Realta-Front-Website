@@ -60,6 +60,7 @@
 
     <style>
         /* Custom CSS */
+       
         :root {
             --primary-color: #007bff;
             --secondary-color: #6c757d;
@@ -593,6 +594,15 @@
                     font-size: 10px;
                     margin-left: 3px;
                 }
+
+                .container-fluid {
+            width: 95%;
+            max-width: 1700px;
+            margin-left: auto;
+            margin-right: auto;
+            padding-left: 15px;
+            padding-right: 15px;
+        }
             </style>
             <!-- <div class="icons-container horizontal-nav">
                
@@ -798,6 +808,7 @@
                     <i class="fas fa-bars" style="font-size: 1.7rem;"></i>
                 </div>
             </div>
+            <!-- Mobile responsive navigation menu -->
             <!-- Mobile responsive navigation menu -->
             <div class="offcanvas offcanvas-end" tabindex="-1" id="sidebar" aria-labelledby="sidebarLabel">
                 <div class="offcanvas-header">
@@ -1063,7 +1074,8 @@
                             </h2>
                         </div>
                     </div>
-                    <div class="get-started-container" style="margin-top: -10px !important;"> <!-- Adjusted margin-top to move slightly to the top -->
+                    <div class="get-started-container" style="margin-top: -10px !important;">
+                        <!-- Adjusted margin-top to move slightly to the top -->
                         <h2 style="font-size: 2.1rem;">Rhapsody</h2>
                         <hr style="border-top: 2px solid purple;">
                         <div class="sidebar-item">
@@ -1079,8 +1091,8 @@
                             </h2>
                         </div>
                         <div class="sidebar-item">
-                            <h2 class="product-header" data-bs-toggle="collapse" data-bs-target="#productOverviewSubmenu"
-                                aria-expanded="false">
+                            <h2 class="product-header" data-bs-toggle="collapse"
+                                data-bs-target="#productOverviewSubmenu" aria-expanded="false">
                                 Product Overview <i class="fas fa-chevron-right arrow-icon"></i>
                             </h2>
                             <div id="productOverviewSubmenu" class="collapse">
@@ -1108,18 +1120,28 @@
                             style="width: 100%; margin-top: 50px;">
                             <i class="fab fa-whatsapp"></i> Contact Us
                         </a>
-                        <div class="d-flex justify-content-between align-items-center" style="padding: 20px 0; margin-top: 20px;">
+                        <div class="d-flex justify-content-between align-items-center"
+                            style="padding: 20px 0; margin-top: 20px;">
                             <h2 class="text-left mb-0" style="margin-right: 20px; font-size: 1.5rem;">Get in Touch</h2>
                             <div class="social-icons" style="display: flex; justify-content: flex-end;">
-                                <a href="#" target="_blank" rel="noopener noreferrer" style="margin-right: 10px; display: inline-flex; justify-content: center; align-items: center; background-color: black; border-radius: 50%; width: 30px; height: 30px;"><i class="fab fa-facebook-f" style="color: white;"></i></a>
-                                <a href="#" target="_blank" rel="noopener noreferrer" style="margin-right: 10px; display: inline-flex; justify-content: center; align-items: center; background-color: black; border-radius: 50%; width: 30px; height: 30px;"><i class="fab fa-twitter" style="color: white;"></i></a>
-                                <a href="#" target="_blank" rel="noopener noreferrer" style="margin-right: 10px; display: inline-flex; justify-content: center; align-items: center; background-color: black; border-radius: 50%; width: 30px; height: 30px;"><i class="fab fa-instagram" style="color: white;"></i></a>
-                                <a href="#" target="_blank" rel="noopener noreferrer" style="display: inline-flex; justify-content: center; align-items: center; background-color: black; border-radius: 50%; width: 30px; height: 30px;"><i class="fab fa-linkedin-in" style="color: white;"></i></a>
+                                <a href="#" target="_blank" rel="noopener noreferrer"
+                                    style="margin-right: 10px; display: inline-flex; justify-content: center; align-items: center; background-color: black; border-radius: 50%; width: 30px; height: 30px;"><i
+                                        class="fab fa-facebook-f" style="color: white;"></i></a>
+                                <a href="#" target="_blank" rel="noopener noreferrer"
+                                    style="margin-right: 10px; display: inline-flex; justify-content: center; align-items: center; background-color: black; border-radius: 50%; width: 30px; height: 30px;"><i
+                                        class="fab fa-twitter" style="color: white;"></i></a>
+                                <a href="#" target="_blank" rel="noopener noreferrer"
+                                    style="margin-right: 10px; display: inline-flex; justify-content: center; align-items: center; background-color: black; border-radius: 50%; width: 30px; height: 30px;"><i
+                                        class="fab fa-instagram" style="color: white;"></i></a>
+                                <a href="#" target="_blank" rel="noopener noreferrer"
+                                    style="display: inline-flex; justify-content: center; align-items: center; background-color: black; border-radius: 50%; width: 30px; height: 30px;"><i
+                                        class="fab fa-linkedin-in" style="color: white;"></i></a>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
+
 
             <style>
                 @media (min-width: 992px) {
@@ -1282,13 +1304,14 @@
     <div class="mega-dropdown" id="solutionsDropdownContent">
         <div class="dropdown-content">
             <div class="product-categories">
-                <div class="product-category active" data-product="gcs">Golf Course System</div>
+                <div class="product-category active" data-product="eam">ERP & EAM</div>
+                <div class="product-category" data-product="gcs">Golf Course System</div>
                 <div class="product-category" data-product="hrs">HR System</div>
                 <div class="product-category " data-product="hms">Hotel Management System</div>
                 <div class="product-category" data-product="itm">ITSM, ITAM & Unified Endpoint Management</div>
                 <div class="product-category" data-product="pts">Property & Tenancy System</div>
                 <div class="product-category" data-product="erp">Network & System Integration</div>
-                <div class="all-products">All products ›</div>
+                <div class="all-products"><a href="#solutions">All products ›</a></div>
             </div>
             <div class="product-details" id="product-details">
                 <!-- Content will be dynamically updated here -->
@@ -1298,9 +1321,10 @@
     <div class="mega-dropdown" id="industriDropdownContent">
         <div class="dropdown-content">
             <div class="product-categories">
-                <div class="product-category active" data-product="manufacturing">Manufacturing</div>
-                <div class="product-category" data-product="healthcare">Healthcare</div>
-                <div class="product-category" data-product="retail">Retail</div>
+                <div class="product-category active" data-product="hospitality">Hospitality</div>
+                <div class="product-category" data-product="property">Property</div>
+                <div class="product-category" data-product="manufacturing">Manufacturing</div>
+                <div class="product-category" data-product="fsi">FSI</div>
                 <div class="all-products">All industries ›</div>
             </div>
             <div class="product-details" id="industri-details">
@@ -1799,30 +1823,30 @@
     </script>
 
 
-    <section id="ict-one-solution" class="ict-one-solution py-5" style="margin-top: 5%;">
-        <div class="container">
+    <section id="ict-one-solution" class="ict-one-solution container-fluid container-lg px-2" style="margin-top: 5%;">
+        <div class="container-fluid">
             <div class="row align-items-center">
                 <div class="col-md-6 fade-in-left">
-                    <img src="assets/img/golf/gambar_grams.jpg" alt="ICT One Solution" class="img-fluid">
+                    <img src="assets/img/golf/gambar_grams.jpg" alt="ICT One Solution" class="img-fluid" style="max-width: 80%; height: auto;">
                 </div>
                 <div class="col-md-6 text-center fade-in-right">
                     <h2 class="mb-4 gradient-text fw-bold" style="background: linear-gradient(287deg, #2ecc71, #27ae60, #106617); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">Orchestrate Your Entire Golf Club Operation
                         </h2>
                     <h3 class="mb-3">Rhapsody Golf</h3>
-                    <div class="mb-4" style="max-width: 80%; margin: 0 auto; text-align: left;">
-                        <p style="line-height: 1.6; font-size: 1rem; margin-bottom: 1rem;">
+                    <div class="mb-4" style="max-width: 90%; margin: 0 auto; text-align: left;">
+                        <p style="line-height: 1.6; font-size: 20px; margin-bottom: 1rem;">
                             Rhapsody Golf is a proven, feature-rich set of golf course system that raises the level of professionalism and service to your members and guests.
                         </p>
-                        <p style="line-height: 1.6; font-size: 1rem; margin-bottom: 1rem;">
+                        <p style="line-height: 1.6; font-size: 20px; margin-bottom: 1rem;">
                             Rhapsody Golf has helped many prestigious reputable golf clubs streamline their business processes, drive revenues and increase member satisfaction. By fully integrating all key aspects of golf course operation, Rhapsody Golf sets the standard for golf course system in Indonesia.
                         </p>
-                        <p style="line-height: 1.6; font-size: 1rem; margin-bottom: 1rem;">
+                        <p style="line-height: 1.6; font-size: 20px; margin-bottom: 1rem;">
                             Indonesian golf courses appeal to every caliber of player from beginner/recreational, amateur, to professional players because of the quality of the courses and the spectacular settings of the location.
                         </p>
-                        <p style="line-height: 1.6; font-size: 1rem; margin-bottom: 1rem;">
+                        <p style="line-height: 1.6; font-size: 20px; margin-bottom: 1rem;">
                             Of Course, with many VIP executives as club members, the golf course alone is not enough to attract members. Golf course owners and operators have to link a bit more outside the box than ever. They need to have the right tools to administer the entire operation of the golf course.
                         </p>
-                        <p style="line-height: 1.6; font-size: 1rem;">
+                        <p style="line-height: 1.6; font-size: 20px;">
                             As a result of accumulated experience and knowledge since 1983, we have gained a profound understanding and insight of what the golf courses really need. With our experience, knowledge and technology, we have been able to deliver a solution, rich with features that are unique to the golf industry, and this is Golf Course System Indonesia.
                         </p>
                     </div>
@@ -2140,13 +2164,15 @@
         }
     </style>
     
-    <section class="hr-solutions-grid">
+    <section class="hr-solutions-grid container-fluid container-lg px-2">
+        
         <h2 class="hr-title">Why Rhapsody Golf</h2>
-        <p class="hr-description">Streamline your golf operations with our comprehensive solutions designed to enhance player experience, course management, and organizational efficiency.</p>
+        <p class="hr-description" style="font-size: 20px;">Streamline your golf operations with our comprehensive solutions designed to enhance player experience, course management, and organizational efficiency.</p>
         <div class="hr-button-wrapper">
             <a href="#" class="btn btn-outline-secondary">Explore Rhapsody Golf Solutions</a>
         </div>
         <div class="hr-features">
+            
             <article class="hr-solution-item attendance">
                 <h4>
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -2371,23 +2397,37 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="row">
-                            <div class="col-md-4 mb-4">
+                        <style>
+                            .golf-module-img {
+                                max-width: 80%;
+                                height: auto;
+                                display: block;
+                                margin: 0 auto;
+                                transition: transform 0.3s ease-in-out;
+                            }
+                            .golf-module-img:hover {
+                                transform: scale(1.05);
+                            }
+                        </style>
+                        <div class="row gx-2">
+                            <div class="col-md-4 mb-3">
                                 <div class="module-card front-office">
                                     <!-- Front Office Module Image -->
-                                    <img src="assets/img/golf/front.png" alt="Front Office Module" class="img-fluid rounded">
+                                    <img src="assets/img/golf/front.png" alt="Front Office Module" class="img-fluid rounded golf-module-img">
                                 </div>
                             </div>
-                            <div class="col-md-4 mb-4">
+                            <div class="col-md-4 mb-3">
                                 <div class="module-card back-office">
-                                    <img src="assets/img/golf/back.png" alt="Front Office Module" class="img-fluid rounded">
+                                    <img src="assets/img/golf/back.png" alt="Back Office Module" class="img-fluid rounded golf-module-img">
                                 </div>
                             </div>
-                            <div class="col-md-4 mb-4">
+                            <div class="col-md-4 mb-3">
                                 <div class="module-card logistic">
-                                    <img src="assets/img/golf/logistic.png" alt="Front Office Module" class="img-fluid rounded">
+                                    <img src="assets/img/golf/logistic.png" alt="Logistic Module" class="img-fluid rounded golf-module-img">
                                 </div>
                             </div>
+                        </div>
+                        </div>
                         </div>
                     </div>
                 </div>
@@ -2398,11 +2438,9 @@
 
 <style>
     .module-card {
-        background: linear-gradient(135deg, rgba(255, 255, 255, 0.2), rgba(240, 240, 240, 0.9), rgba(255, 255, 255, 0)) !important;
+        padding: 0px;
         border-radius: 10px;
-        padding: 20px;
         height: 100%;
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     }
 
     .module-card h3 {
@@ -2536,7 +2574,7 @@
             </style>
             <div class="col-lg-6 partners-section">
                 <h2 class="mb-2 mt-4 glass-text" style="background: linear-gradient(287deg, #2ecc71, #27ae60, #106617); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">Our Partners</h2>
-                <p class="lead mb-3" style="max-width: 90%; font-size: 1em;">Rhapsody Golf is deeply committed to marketing excellence and innovation that will drive our customers' success. To enhance our solutions and provide real value for our customers, Rhapsody Golf has sought like-minded partners who deliver nothing but the best of the technology.</p>
+                <p class="lead mb-3" style="max-width: 90%; font-size: 20px;">Rhapsody Golf is deeply committed to marketing excellence and innovation that will drive our customers' success. To enhance our solutions and provide real value for our customers, Rhapsody Golf has sought like-minded partners who deliver nothing but the best of the technology.</p>
             </div>
             <div class="col-lg-6  mt-lg-0">
 
@@ -2793,7 +2831,7 @@
 
 
     <section id="contact" class="pb-5">
-        <div class="container p-4">
+        <div class="container-fluid px-5">
             <div class="row justify-content-between">
                 <div id="contact-info" class="col-lg-5 left-column >
                     <h1 class=" mb-3 contact-heading" style="font-size: 33px;">What Are You Waiting For?<br> <span
@@ -3157,7 +3195,7 @@
     </style>
 
     <section id="newsletter-cta" class="py-4 mb-0">
-        <div class="container">
+        <div class="container-fluid px-5">
             <div class="row align-items-center">
                 <div class="col-md-7 text-start">
                     <h2 class="mb-3 fw-bold gradient-text">Stay Informed, Stay Ahead</h2>

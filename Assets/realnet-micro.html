@@ -59,7 +59,8 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
     <style>
-        /* Custom CSS */
+         /* Custom CSS */
+       
         :root {
             --primary-color: #007bff;
             --secondary-color: #6c757d;
@@ -1283,13 +1284,14 @@
         <div class="mega-dropdown" id="solutionsDropdownContent">
             <div class="dropdown-content">
                 <div class="product-categories">
-                    <div class="product-category active" data-product="hms">Hotel Management System</div>
+                    <div class="product-category active" data-product="eam">ERP & EAM</div>
                     <div class="product-category" data-product="gcs">Golf Course System</div>
                     <div class="product-category" data-product="hrs">HR System</div>
-                    <div class="product-category" data-product="pts">Property & Tenancy System</div>
+                    <div class="product-category " data-product="hms">Hotel Management System</div>
                     <div class="product-category" data-product="itm">ITSM, ITAM & Unified Endpoint Management</div>
-                    <div class="product-category" data-product="erp">ERP & EAM</div>
-                    <div class="all-products">All products ›</div>
+                    <div class="product-category" data-product="pts">Property & Tenancy System</div>
+                    <div class="product-category" data-product="erp">Network & System Integration</div>
+                    <div class="all-products"><a href="#solutions">All products ›</a></div>
                 </div>
                 <div class="product-details" id="product-details">
                     <!-- Content will be dynamically updated here -->
@@ -1299,9 +1301,10 @@
         <div class="mega-dropdown" id="industriDropdownContent">
             <div class="dropdown-content">
                 <div class="product-categories">
-                    <div class="product-category active" data-product="manufacturing">Manufacturing</div>
-                    <div class="product-category" data-product="healthcare">Healthcare</div>
-                    <div class="product-category" data-product="retail">Retail</div>
+                    <div class="product-category active" data-product="hospitality">Hospitality</div>
+                    <div class="product-category" data-product="property">Property</div>
+                    <div class="product-category" data-product="manufacturing">Manufacturing</div>
+                    <div class="product-category" data-product="fsi">FSI</div>
                     <div class="all-products">All industries ›</div>
                 </div>
                 <div class="product-details" id="industri-details">
@@ -1321,14 +1324,28 @@
                 </div>
             </div>
         </div>
-        <div class="mega-dropdown" id="konsultasiDropdownContent">
+        <div class="mega-dropdown" id="contactDropdownContent">
             <div class="dropdown-content">
                 <div class="product-categories">
                     <div class="product-category active" data-product="business">Business Consultation</div>
                     <div class="product-category" data-product="technical">Technical Consultation</div>
                     <div class="all-products">All consultations ›</div>
                 </div>
-                <div class="product-details" id="konsultasi-details">
+                <div class="product-details" id="contact-details">
+                    <!-- Content will be dynamically updated here -->
+                </div>
+            </div>
+        </div>
+        <div class="mega-dropdown" id="careerDropdownContent">
+            <!-- * Career megamenu -->
+            <div class="dropdown-content">
+                <div class="product-categories">
+                    <div class="product-category active" data-product="openings">Job Openings</div>
+                    <div class="product-category" data-product="internships">Internship Programs</div>
+                    <div class="product-category" data-product="culture">Company Culture</div>
+                    <div class="all-products">View All Career Opportunities ›</div>
+                </div>
+                <div class="product-details" id="career-details">
                     <!-- Content will be dynamically updated here -->
                 </div>
             </div>
@@ -1336,9 +1353,7 @@
         <div class="mega-dropdown" id="tentangRealtaDropdownContent">
             <div class="dropdown-content">
                 <div class="product-categories">
-                    <div class="product-category active" data-product="about">About Us</div>
-                    <div class="product-category" data-product="careers">Careers</div>
-                    <div class="product-category" data-product="blog">Blog</div>
+                    <div class="product-category active" data-product="about">About Realta</div>
                     <div class="all-products">Learn more ›</div>
                 </div>
                 <div class="product-details" id="tentangRealta-details">
@@ -1347,7 +1362,6 @@
             </div>
         </div>
     </nav>
-
 
     <!-- <div class="career-link">   
         Looking for a new career? <a href="#">Get in touch</a>
@@ -1677,10 +1691,10 @@
 
 
     <section id="ict-one-solution" class="ict-one-solution py-5" style="margin-top: 5%;">
-        <div class="container">
+        <div class="container-fluid container-lg px-2">
             <div class="row align-items-center">
                 <div class="col-md-6 fade-in-left">
-                    <img src="assets/img/realnet/realnet-onesol-realta.png" alt="ICT One Solution" class="img-fluid">
+                    <img src="assets/img/realnet/realnet-onesol-realta.png" alt="ICT One Solution" class="img-fluid" style="width: 90%; height: auto; margin-left: 10%;">
                 </div>
                 <div class="col-md-6  text-center fade-in-right">
                     <div class="medusa-btn mb-4">
@@ -1748,9 +1762,9 @@
                         style="background: linear-gradient(287deg, #e49e44, #6d488b); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">
                         UNIFIED IT MANAGEMENT SOFTWARE SOLUTIONS
                     </h2>
-                    <div class="mb-4" style="max-width: 80%; margin: 0 auto;">
+                    <div class="mb-4" style="max-width: 90%; margin: 0 auto;">
                         <!-- Paragraph 1: The Problem -->
-                        <p style="line-height: 1.6; font-size: 1rem; margin-bottom: 1rem; text-align: left;">
+                        <p style="line-height: 1.6; font-size: 20px; margin-bottom: 1rem; text-align: left;">
                             RealNET, a division of REALTA, excels at providing expert network, hardware, software and
                             cloud infrastructure solutions that meet the unique needs of a various of industries,
                             including real estate, hospitality and manufacturing. We pride ourselves on our innovative
@@ -1760,7 +1774,7 @@
                         </p>
 
                         <!-- Paragraph 2: Ivanti's Solution -->
-                        <p style="line-height: 1.6; font-size: 1rem; margin-bottom: 1rem; text-align: left;">
+                        <p style="line-height: 1.6; font-size: 20px; margin-bottom: 1rem; text-align: left;">
                             With over 40 years of technical experience and expertise in IT, consulting, and systems
                             integration, RealNET is at the forefront of technology, offering versatile IT solutions that
                             can be adapted to the diverse needs of various industries. Our commitment is firmly rooted
@@ -1769,7 +1783,7 @@
                         </p>
 
                         <!-- Paragraph 3: The Result -->
-                        <p style="line-height: 1.6; font-size: 1rem; margin-bottom: 1rem; text-align: left;">
+                        <p style="line-height: 1.6; font-size: 20px; margin-bottom: 1rem; text-align: left;">
                             Specializing in both on-premises and cloud infrastructure solutions, we focus on delivering
                             flexible and scalable IT solutions that optimize operational efficiency and technological
                             capabilities. Our solutions are designed to deliver maximum uptime, the best network,
@@ -1778,7 +1792,6 @@
                             range of industries effectively navigate the complexities of the digital landscape, ensuring
                             that their technology infrastructure is a powerful driver of business success.
                         </p>
-                    </div>
                     <!-- Schedule Meeting button with slightly larger size -->
                     <!-- <a href="#" class="btn btn-outline-secondary btn-sm d-inline-block mx-auto"
                         style="max-width: 220px; font-size: 1.1rem; padding: 0.4rem 0.8rem;">Contact Us</a> -->
@@ -1788,16 +1801,16 @@
     </section>
 
     <section id="ict-solution-reverse" class="ict-solution-reverse py-5" style="margin-top: 5%;">
-        <div class="container">
+        <div class="container-fluid container-lg px-2">
             <div class="row align-items-center">
                 <div class="col-md-6 text-center fade-in-left">
                     <h2 class="mb-4 gradient-text fw-bold"
                         style="background: linear-gradient(287deg, #6d488b, #e49e44); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">
                         WHY REALNET
                     </h2>
-                    <div class="mb-4" style="max-width: 80%; margin: 0 auto;">
+                    <div class="mb-4" style="max-width: 90%; margin: 0 auto;">
                         <!-- Paragraph 1: The Challenge and Problem -->
-                        <p style="line-height: 1.6; font-size: 1rem; margin-bottom: 1rem; text-align: left;">
+                        <p style="line-height: 1.6; font-size: 20px; margin-bottom: 1rem; text-align: left;">
                             In the dynamic world of business, the approach to IT implementation is often oversimplified.
                             Many companies mistakenly believe that the path to an effective IT infrastructure is simply
                             to invest in high-end computers and premium software. However, the true key to a successful
@@ -1809,21 +1822,20 @@
                         </p>
 
                         <!-- Paragraph 2: RealNET's Solution -->
-                        <p style="line-height: 1.6; font-size: 1rem; margin-bottom: 1rem; text-align: left;">
+                        <p style="line-height: 1.6; font-size: 20px; margin-bottom: 1rem; text-align: left;">
                             RealNET stands out as a solution to these challenges. Our expertise is in creating network
                             and system installations that not only enhance software performance, but are also
                             custom-built to harmonize with your unique business landscape. At RealNET, we understand
                             that a one-size-fits-all approach doesn't work in the nuanced world of IT. That is why we
                             focus on creating customized solutions that are:
                         </p>
-                    </div>
                     <!-- Learn More button with slightly larger size -->
                     <!-- <a href="#" class="btn btn-outline-secondary btn-sm d-inline-block mx-auto"
                         style="max-width: 220px; font-size: 1.1rem; padding: 0.4rem 0.8rem;">Learn More</a> -->
                 </div>
-                <div class="col-md-6 fade-in-right">
+                <div class="col-md-6 fade-in-right d-flex justify-content-center align-items-center">
                     <img src="assets/img/realnet/whyrealnet---realta-chakradarma.png" alt="IT Infrastructure Solutions"
-                        class="img-fluid">
+                    class="img-fluid" style="width: 90%; height: auto;">
                 </div>
             </div>
         </div>
@@ -2566,265 +2578,237 @@
     </script>
 
 
+<style>
+    #technology-delivery {
+        position: relative;
+        overflow: visible;
 
+    }
 
+    .spline-container {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 160%;
+        height: 100%;
+        z-index: -1;
+        display: none;
+    }
 
-    <section id="logo-section" class="py-5 clipped-section" style="margin-top: 5%;">
+    spline-viewer {
+        width: 100%;
+        height: 100%;
+    }
+</style>
 
-        <style>
-            #technology-delivery {
-                padding-top: 100px;
+<style>
+        @media (max-width: 768px) {
+            .glass-text {
+                font-size: 1.8rem !important;
             }
+        }
+    </style>
 
-            @media (max-width: 768px) {
-                .glass-text {
-                    font-size: 1.8rem !important;
-                }
-            }
-        </style>
-        <div class="container-fluid container-lg px-3 p-4">
-            <div class="row justify-content-center">
-                <div class="col-12 py-4 px-5">
-                    <div class="glass-card p-4">
-                        <div class="card-section">
-                            <div class="row gy-4">
-                                <!-- Top Column -->
-                                <div class="col-12">
-                                    <div class="text-center">
-                                        <h2 class="mb-2 mt-5 bimasakti-title"
-                                            style="font-size: 3rem; line-height: 1.2;">
-                                            Our Clients
-                                        </h2>
-                                        <style>
-                                            .gradient-text {
-                                                background: linear-gradient(90deg, #7209d4, #2832d4 33%, #00a5b2);
-                                                -webkit-background-clip: text;
-                                                -webkit-text-fill-color: transparent;
-                                                background-clip: text;
-                                                color: transparent;
-                                            }
-
-                                            /* Mobile-specific styles for wider container */
-                                            @media (max-width: 767px) {
-                                                .container-fluid {
-                                                    padding-left: 0 !important;
-                                                    padding-right: 0 !important;
-                                                }
-
-                                                .col-12 {
-                                                    padding-left: 10px !important;
-                                                    padding-right: 10px !important;
-                                                }
-
-                                                .glass-card {
-                                                    border-radius: 0;
-                                                }
-                                            }
-                                        </style>
-                                        <h3 class="mb-0 glass-subtext"
-                                            style="max-width: 70%; margin: 0 auto; font-size: 20px !important;">
-                                            RealNet solution completes our end-to-end solution for customers and ensures
-                                            optimum ICT performance.
-                                            We continuously learn and stay updated about new technology to bring the
-                                            best value to businesses.
-                                        </h3>
-                                    </div>
+<section id="technology-delivery" class="clipped-section">
+    <div class="container-fluid ">
+        <div class="row justify-content-center">
+            <div class="col-12 ">
+                <div class="text-center mb-5">
+                    <h2 class="mb-2 glass-text gradient-text">
+                        Delivering Technology for
+                        <br>
+                        Leading Organizations
+                    </h2>
+                </div>
+                
+                <div id="partners-logo" class="col-12" style="cursor: default; pointer-events: none;">
+                    <div class="container-fluid px-2">
+                        <!-- First Row -->
+                        <div class="row row-cols-3 row-cols-sm-4 row-cols-md-6 g-2 mb-2 justify-content-center align-items-center">
+                            <div class="col">
+                                <div class="partner-logo">
+                                    <img src="assets/img/partners/Accor_logo_Gold-gradient_RVB_digital.png" alt="Partner 1" class="img-fluid" loading="lazy">
                                 </div>
-                                <style>
-                                    .glass-text {
-                                        font-size: 42px;
-                                        font-weight: bolder;
-                                    }
-
-                                    @media (max-width: 768px) {
-                                        .glass-text {
-                                            font-size: 35px !important;
-                                            line-height: 1.3 !important;
-                                        }
-
-                                        #partners-logo {
-                                            padding-top: 15%;
-                                        }
-
-                                        .glass-subtext {
-                                            font-size: 18px !important;
-                                            line-height: 1.4 !important;
-                                        }
-                                    }
-
-                                    @media (max-width: 576px) {
-                                        .glass-text {
-                                            font-size: 35px !important;
-                                        }
-
-                                        .glass-subtext {
-                                            font-size: 18px !important;
-                                        }
-                                    }
-                                </style>
-                                <!-- Bottom Column -->
-
-                                <div id="partners-logo" class="col-12" style="cursor: default; pointer-events: none;">
-
-                                    <div class="row justify-content-around align-items-center pt-5 mb-0 g-5">
-                                        <div class="col-12 col-md-11 mb-4">
-                                            <div class="d-flex flex-row flex-wrap justify-content-center gap-5">
-                                                <div id="partner-logo-1" class="partner-logo mx-3 mb-4">
-                                                    <img src="assets/img/partners/Accor_logo_Gold-gradient_RVB_digital.png"
-                                                        alt="Partner 1" class="img-fluid" loading="lazy">
-                                                </div>
-                                                <div id="partner-logo-2" class="partner-logo mx-3 mb-4">
-                                                    <img src="assets/img/partners/Logo-Astra-Otoparts-PNG-–-IfoxSoft.Com_-950x500.png"
-                                                        alt="Partner 2" class="img-fluid" loading="lazy">
-                                                </div>
-                                                <div id="partner-logo-3" class="partner-logo mx-3 mb-4">
-                                                    <img src="assets/img/partners/bank-tabungan-negara-seeklogo.png"
-                                                        alt="Partner 3" class="img-fluid" loading="lazy">
-                                                </div>
-                                                <div id="partner-logo-4" class="partner-logo mx-3 mb-4">
-                                                    <img src="assets/img/partners/Logo-BCA-PNG.png" alt="Partner 4"
-                                                        class="img-fluid" loading="lazy">
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-12 col-md-11 mb-4">
-                                            <div class="d-flex flex-row flex-wrap justify-content-center gap-5">
-                                                <div id="partner-logo-5" class="partner-logo mx-3 mb-4">
-                                                    <img src="assets/img/partners/pngegg.png" alt="Partner 5"
-                                                        class="img-fluid" loading="lazy">
-                                                </div>
-                                                <div id="partner-logo-6" class="partner-logo mx-3 mb-4">
-                                                    <img src="assets/img/partners/Energizer.png" alt="Partner 6"
-                                                        class="img-fluid" loading="lazy">
-                                                </div>
-                                                <div id="partner-logo-7" class="partner-logo mx-3 mb-4">
-                                                    <img src="assets/img/partners/Hilton.png" alt="Partner 7"
-                                                        class="img-fluid" loading="lazy">
-                                                </div>
-                                                <div id="partner-logo-8" class="partner-logo mx-3 mb-4">
-                                                    <img src="assets/img/partners/Hyundai.png" alt="Partner 8"
-                                                        class="img-fluid" loading="lazy">
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-12 col-md-11 mb-4">
-                                            <div class="d-flex flex-row flex-wrap justify-content-center gap-5">
-                                                <div id="partner-logo-9" class="partner-logo mx-3 mb-4">
-                                                    <img src="assets/img/partners/indofood.png" alt="Partner 9"
-                                                        class="img-fluid" loading="lazy">
-                                                </div>
-                                                <div id="partner-logo-10" class="partner-logo mx-3 mb-4">
-                                                    <img src="assets/img/partners/kalbe.png" alt="Partner 10"
-                                                        class="img-fluid" loading="lazy">
-                                                </div>
-                                                <div id="partner-logo-11" class="partner-logo mx-3 mb-4">
-                                                    <img src="assets/img/partners/kao.png" alt="Partner 11"
-                                                        class="img-fluid" loading="lazy">
-                                                </div>
-                                                <div id="partner-logo-12" class="partner-logo mx-3 mb-4">
-                                                    <img src="assets/img/partners/Mercure Hotels.png" alt="Partner 12"
-                                                        class="img-fluid" loading="lazy">
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-12 pb-5 col-md-11 mb-4">
-                                            <div class="d-flex flex-row flex-wrap justify-content-center gap-5">
-                                                <div id="partner-logo-13" class="partner-logo mx-3 mb-4">
-                                                    <img src="assets/img/partners/novotel.png" alt="Partner 13"
-                                                        class="img-fluid" loading="lazy">
-                                                </div>
-                                                <div id="partner-logo-14" class="partner-logo mx-3 mb-4">
-                                                    <img src="assets/img/partners/prudential.png" alt="Partner 14"
-                                                        class="img-fluid" loading="lazy">
-                                                </div>
-                                                <div id="partner-logo-15" class="partner-logo mx-3 mb-4">
-                                                    <img src="assets/img/partners/sultan.png" alt="Partner 15"
-                                                        class="img-fluid" loading="lazy">
-                                                </div>
-                                                <div id="partner-logo-16" class="partner-logo mx-3 mb-4">
-                                                    <img src="assets/img/partners/yakult.png" alt="Partner 16"
-                                                        class="img-fluid" loading="lazy">
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
+                            </div>
+                            <div class="col">
+                                <div class="partner-logo">
+                                    <img src="assets/img/partners/Logo-Astra-Otoparts-PNG-–-IfoxSoft.Com_-950x500.png" alt="Partner 2" class="img-fluid" loading="lazy">
                                 </div>
-                                <style>
-                                    .partner-logo {
-                                        width: 150px;
-                                        height: 100px;
-                                        display: flex;
-                                        align-items: center;
-                                        justify-content: center;
-                                        margin: 1rem;
-                                    }
+                            </div>
+                            <div class="col">
+                                <div class="partner-logo">
+                                    <img src="assets/img/partners/bank-tabungan-negara-seeklogo.png" alt="Partner 3" class="img-fluid" loading="lazy">
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="partner-logo">
+                                    <img src="assets/img/partners/Logo-BCA-PNG.png" alt="Partner 4" class="img-fluid" loading="lazy">
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="partner-logo">
+                                    <img src="assets/img/partners/pngegg.png" alt="Partner 5" class="img-fluid" loading="lazy">
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="partner-logo">
+                                    <img src="assets/img/partners/Energizer.png" alt="Partner 6" class="img-fluid" loading="lazy">
+                                </div>
+                            </div>
+                        </div>
 
-                                    .partner-logo img {
-                                        max-width: 100%;
-                                        max-height: 100%;
-                                        object-fit: contain;
-                                    }
+                        <!-- Second Row -->
+                        <div class="row row-cols-3 row-cols-sm-4 row-cols-md-6 g-2 mb-2 justify-content-center align-items-center">
+                            <div class="col">
+                                <div class="partner-logo">
+                                    <img src="assets/img/partners/Hilton.png" alt="Partner 7" class="img-fluid" loading="lazy">
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="partner-logo">
+                                    <img src="assets/img/partners/Hyundai.png" alt="Partner 8" class="img-fluid" loading="lazy">
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="partner-logo">
+                                    <img src="assets/img/partners/indofood.png" alt="Partner 9" class="img-fluid" loading="lazy">
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="partner-logo">
+                                    <img src="assets/img/partners/kalbe.png" alt="Partner 10" class="img-fluid" loading="lazy">
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="partner-logo">
+                                    <img src="assets/img/partners/kao.png" alt="Partner 11" class="img-fluid" loading="lazy">
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="partner-logo">
+                                    <img src="assets/img/partners/Mercure Hotels.png" alt="Partner 12" class="img-fluid" loading="lazy">
+                                </div>
+                            </div>
+                        </div>
 
-                                    @media (max-width: 992px) {
-                                        .partner-logo {
-                                            width: 120px;
-                                            height: 80px;
-                                            margin: 0.5rem;
-                                        }
-                                    }
-
-                                    @media (max-width: 768px) {
-                                        .row {
-                                            --bs-gutter-y: 0.15rem;
-                                        }
-
-                                        .partner-logo {
-                                            width: 80px;
-                                            height: 60px;
-                                            margin: 0.3rem;
-                                        }
-
-                                        .d-flex.flex-row.flex-wrap {
-                                            justify-content: space-between;
-                                        }
-
-                                        .col-12.col-md-11.mb-4 {
-                                            padding-left: 5px;
-                                            padding-right: 5px;
-                                        }
-                                    }
-                                </style>
-                                </style>
+                        <!-- Third Row -->
+                        <div class="row row-cols-3 row-cols-sm-4 row-cols-md-6 g-2 justify-content-center align-items-center">
+                            <div class="col">
+                                <div class="partner-logo">
+                                    <img src="assets/img/partners/novotel.png" alt="Partner 13" class="img-fluid" loading="lazy">
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="partner-logo">
+                                    <img src="assets/img/partners/prudential.png" alt="Partner 14" class="img-fluid" loading="lazy">
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="partner-logo">
+                                    <img src="assets/img/partners/sultan.png" alt="Partner 15" class="img-fluid" loading="lazy">
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="partner-logo">
+                                    <img src="assets/img/partners/yakult.png" alt="Partner 16" class="img-fluid" loading="lazy">
+                                </div>
                             </div>
                         </div>
                     </div>
-
                 </div>
+
+                <style>
+                    .partner-logo {
+                        height: 100px;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        padding: 0.75rem;
+                        margin: 0.25rem;
+                        transition: all 0.3s ease;
+                        background: rgba(255, 255, 255, 0.05);
+                        border-radius: 8px;
+                    }
+
+                    .partner-logo img {
+                        max-width: 120%;
+                        max-height: 120%;
+                        object-fit: contain;
+                        transition: all 0.3s ease;
+                    }
+
+                    /* Extra small devices (phones) */
+                    @media (max-width: 575.98px) {
+                        .partner-logo {
+                            height: 70px;
+                            padding: 0.5rem;
+                            margin: 0.15rem;
+                        }
+                        .glass-text {
+                            margin-bottom: 1.5rem !important;
+                        }
+                        .container-fluid {
+                            padding: 0 0.5rem;
+                        }
+                    }
+
+                    /* Small devices (tablets) */
+                    @media (min-width: 576px) and (max-width: 767.98px) {
+                        .partner-logo {
+                            height: 80px;
+                            padding: 0.75rem;
+                            margin: 0.2rem;
+                        }
+                        .container-fluid {
+                            padding: 0 0.75rem;
+                        }
+                    }
+
+                    /* Medium devices (small laptops) */
+                    @media (min-width: 768px) and (max-width: 991.98px) {
+                        .partner-logo {
+                            height: 90px;
+                            padding: 0.85rem;
+                            margin: 0.25rem;
+                        }
+                        .container-fluid {
+                            padding: 0 1rem;
+                        }
+                    }
+
+                    /* Large devices (desktops) */
+                    @media (min-width: 992px) {
+                        .partner-logo {
+                            height: 100px;
+                            padding: 1rem;
+                            margin: 0.25rem;
+                        }
+                        .container-fluid {
+                            padding: 0 1.5rem;
+                        }
+                    }
+
+                    #partners-logo .row {
+                        margin-right: 0;
+                        margin-left: 0;
+                    }
+
+                    /* Add gap between rows */
+                    #partners-logo .row + .row {
+                        margin-top: 1rem;
+                    }
+                </style>
             </div>
         </div>
-        <style>
-            .glass-card {
-                /* Add a semi-transparent background to give the glass-like effect */
-                background-image: linear-gradient(90deg, rgba(0, 0, 0, .03), rgba(249, 249, 249, 0));
-                /* Increase the blur radius to create a more pronounced effect */
-                -webkit-backdrop-filter: blur(10px);
-                backdrop-filter: blur(10px);
-                /* Add a slight opacity to the border to enhance the glass-like effect */
-                /* Increase the box shadow to create more depth */
-                box-shadow: 0 3px 6px 0 rgba(31, 38, 135, 0.4);
-                /* Keep the border radius as it is to maintain the rounded corners */
-                border-radius: 10px;
-                margin-left: -15px;
-                margin-right: -15px;
-                border-radius: 0 !important;
-                padding: 1rem !important;
-                border-radius: 10px !important;
-            }
-        </style>
+    </div>
+    <!-- Add the circle-blur2 div here -->
+    <div class="circle-blur2"></div>
+</section>
 
-    </section>
-    <section id="integrations" class="py-4 p-3">
-        <div class="container">
+
+
+    <section id="integrations" class="py-5 p-3">
+        <div class="container-fluid container-lg px-5">
             <div class="row align-items-center">
                 <style>
                     /* Online indicator styles */
@@ -2876,8 +2860,8 @@
                     }
                 </style>
                 <div class="col-lg-6 partners-section">
-                    <h2 class="display-4 fw-bold mb-4 bimasakti-title" style="text-align: start;">Our Partners</h2>
-                    <p class="lead mb-3" style="max-width: 90%; font-size: 1em;">RealNET's strategic partnerships
+                    <h2 class="display-4 fw-bold mb-4 bimasakti-title" style="text-align: center;">Our Partners</h2>
+                    <p class="lead mb-3" style="max-width: 90%; font-size: 20px; text-align: left; margin-left: auto; margin-right: auto;">RealNET's strategic partnerships
                         empower us to deliver comprehensive ONE SOLUTION business implementations. By leveraging our
                         partners' expertise, we provide seamless integration and unparalleled value to our customers
                         across diverse technological needs.</p>
@@ -2989,7 +2973,7 @@
             }
 
             .bimasakti-title {
-                font-size: 2rem;
+                font-size: 30px !important;
                 text-align: center !important;
             }
 
@@ -3119,12 +3103,12 @@
         }
     </style>
     <section id="wireless-networking">
-        <div class="container">
+        <div class="container-fluid container-lg px-5">
             <div class="row justify-content-center align-items-center">
                 <div class="col-lg-6 order-lg-2">
                     <div class="row justify-content-center align-items-center">
-                        <h3 class="mb-4 mt-5 bimasakti-title" style="text-align: end;">Hardware & Network Solutions</h3>
-                        <p style="text-align: end;">At RealNET,  our comprehensive hardware and network solutions cater to businesses
+                        <h3 class="mb-4 mt-5 bimasakti-title" style="text-align: center;">Hardware & Network Solutions</h3>
+                        <p style="text-align: end; width: 90%; font-size: 20px">At RealNET, our comprehensive hardware and network solutions cater to businesses
                             of all sizes, providing robust infrastructure for modern digital environments. We offer a
                             wide range of products and services
                             Partnering with industry-leading brands.</p>
@@ -3182,11 +3166,11 @@
 
     <!-- Section: Network Security Solutions -->
     <section id="network-security" class="py-4 p-3">
-        <div class="container">
+        <div class="container-fluid container-lg px-5">
             <div class="row align-items-center">
                 <div class="col-lg-6 description-section">
-                    <h3 class="mb-4 mt-5 bimasakti-title" style="text-align: start">Data Center Solutions</h3>
-                    <p class="lead mb-3" style="max-width: 90%; font-size: 1em;">
+                    <h3 class="mb-4 mt-5 bimasakti-title" style="text-align: center">Data Center Solutions</h3>
+                    <p class="lead mb-3" style="max-width: 90%; font-size: 20px;">
                         At RealNET, we specialize in cutting-edge data center solutions. Our comprehensive services encompass design, implementation, and management of state-of-the-art data centers. We offer scalable infrastructure, efficient cooling systems, and advanced power management to ensure optimal performance and reliability for your mission-critical operations.
                     </p>
                 </div>
@@ -3266,12 +3250,12 @@
 
 
     <section id="wireless-networking">
-        <div class="container">
+        <div class="container-fluid container-lg px-5">
             <div class="row justify-content-center align-items-center">
                 <div class="col-lg-6 order-lg-2">
                     <div class="row justify-content-center align-items-center">
-                        <h3 class="mb-4 mt-5 bimasakti-title" style="text-align: end;">License Solutions</h3>
-                        <p style="text-align: end;">At RealNET, we offer comprehensive licensing solutions to meet the software needs of businesses of all sizes. Our partnerships with industry-leading brands ensure you have access to the latest and most efficient software licenses, optimizing your digital infrastructure and ensuring compliance.</p>
+                        <h3 class="mb-4 mt-5 bimasakti-title" style="text-align: center;">License Solutions</h3>
+                        <p style="text-align: right; width: 90%; font-size: 20px">At RealNET, we offer comprehensive licensing solutions to meet the software needs of businesses of all sizes. Our partnerships with industry-leading brands ensure you have access to the latest and most efficient software licenses, optimizing your digital infrastructure and ensuring compliance.</p>
                     </div>
                 </div>
                 <div class="col-lg-6 order-lg-1">
@@ -3305,12 +3289,12 @@
         </div>
     </section>
     <section id="network-security" class="py-5">
-        <div class="container">
+        <div class="container-fluid container-lg px-5">
             <!-- Section Title and Description -->
             <div class="row justify-content-center text-center mb-5">
                 <div class="col-lg-8">
                     <h3 class="mb-4 bimasakti-title">Cloud Infrastructure Solutions</h3>
-                    <p>At RealNET, we offer cutting-edge cloud infrastructure solutions to power your business. Our scalable and flexible cloud services enable you to optimize operations, enhance collaboration, and drive innovation while reducing IT costs and complexity.</p>
+                    <p style="font-size: 20px">At RealNET, we offer cutting-edge cloud infrastructure solutions to power your business. Our scalable and flexible cloud services enable you to optimize operations, enhance collaboration, and drive innovation while reducing IT costs and complexity.</p>
                 </div>
             </div>
 
@@ -3377,9 +3361,9 @@
     </style>
 
 
-    <section id="contact" class="pb-5">
 
-        <div class="container p-4">
+    <section id="contact" class="pb-5">
+        <div class="container-fluid px-5">
             <div class="row justify-content-between">
                 <div id="contact-info" class="col-lg-5 left-column >
                     <h1 class=" mb-3 contact-heading" style="font-size: 33px;">What Are You Waiting For?<br> <span
@@ -3411,7 +3395,11 @@
                             /* Consistent font size for address details */
                         }
                     </style>
-
+                    <div class="d-flex gap-3 mb-4">
+                        <div class="award">2019</div>
+                        <div class="award">2020</div>
+                        <div class="award">2021</div>
+                    </div>
                     <div class="company-info">
                         <h3 class="h5 fw-bold mb-2 company-name">PT. REALTA CHAKRADARMA</h3>
                         <h3 class="headquarter-title">Headquarter Address:</h3>
@@ -3739,7 +3727,7 @@
     </style>
 
     <section id="newsletter-cta" class="py-4 mb-0">
-        <div class="container">
+        <div class="container-fluid px-5">
             <div class="row align-items-center">
                 <div class="col-md-7 text-start">
                     <h2 class="mb-3 fw-bold gradient-text">Stay Informed, Stay Ahead</h2>
@@ -3880,7 +3868,6 @@
             }
         }
     </style>
-
 
     <!-- END -->
 

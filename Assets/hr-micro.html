@@ -59,7 +59,16 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
     <style>
-        /* Custom CSS */
+     /* Custom CSS */
+    
+        .container-fluid {
+            width: 95%;
+            max-width: 1700px;
+            margin-left: auto;
+            margin-right: auto;
+            padding-left: 15px;
+            padding-right: 15px;
+        }
         :root {
             --primary-color: #007bff;
             --secondary-color: #6c757d;
@@ -119,6 +128,8 @@
             animation: slideInUp 0.5s cubic-bezier(0.68, -0.55, 0.27, 1.55) forwards;
             animation-delay: calc(var(--nav-item-index, 0) * 0.1s);
         }
+
+        
 
         .nav-link::after {
             content: '';
@@ -469,6 +480,7 @@
             animation-delay: 0.5s;
             /* Add a delay to the fade-in animation */
         }
+        
 
         .spinner {
             width: 80px;
@@ -1270,13 +1282,14 @@
         <div class="mega-dropdown" id="solutionsDropdownContent">
             <div class="dropdown-content">
                 <div class="product-categories">
-                    <div class="product-category active" data-product="hms">Hotel Management System</div>
+                    <div class="product-category active" data-product="eam">ERP & EAM</div>
                     <div class="product-category" data-product="gcs">Golf Course System</div>
                     <div class="product-category" data-product="hrs">HR System</div>
-                    <div class="product-category" data-product="pts">Property & Tenancy System</div>
+                    <div class="product-category " data-product="hms">Hotel Management System</div>
                     <div class="product-category" data-product="itm">ITSM, ITAM & Unified Endpoint Management</div>
+                    <div class="product-category" data-product="pts">Property & Tenancy System</div>
                     <div class="product-category" data-product="erp">Network & System Integration</div>
-                    <div class="all-products">All products ›</div>
+                    <div class="all-products"><a href="#solutions">All products ›</a></div>
                 </div>
                 <div class="product-details" id="product-details">
                     <!-- Content will be dynamically updated here -->
@@ -1286,9 +1299,10 @@
         <div class="mega-dropdown" id="industriDropdownContent">
             <div class="dropdown-content">
                 <div class="product-categories">
-                    <div class="product-category active" data-product="manufacturing">Manufacturing</div>
-                    <div class="product-category" data-product="healthcare">Healthcare</div>
-                    <div class="product-category" data-product="retail">Retail</div>
+                    <div class="product-category active" data-product="hospitality">Hospitality</div>
+                    <div class="product-category" data-product="property">Property</div>
+                    <div class="product-category" data-product="manufacturing">Manufacturing</div>
+                    <div class="product-category" data-product="fsi">FSI</div>
                     <div class="all-products">All industries ›</div>
                 </div>
                 <div class="product-details" id="industri-details">
@@ -1308,14 +1322,28 @@
                 </div>
             </div>
         </div>
-        <div class="mega-dropdown" id="konsultasiDropdownContent">
+        <div class="mega-dropdown" id="contactDropdownContent">
             <div class="dropdown-content">
                 <div class="product-categories">
                     <div class="product-category active" data-product="business">Business Consultation</div>
                     <div class="product-category" data-product="technical">Technical Consultation</div>
                     <div class="all-products">All consultations ›</div>
                 </div>
-                <div class="product-details" id="konsultasi-details">
+                <div class="product-details" id="contact-details">
+                    <!-- Content will be dynamically updated here -->
+                </div>
+            </div>
+        </div>
+        <div class="mega-dropdown" id="careerDropdownContent">
+            <!-- * Career megamenu -->
+            <div class="dropdown-content">
+                <div class="product-categories">
+                    <div class="product-category active" data-product="openings">Job Openings</div>
+                    <div class="product-category" data-product="internships">Internship Programs</div>
+                    <div class="product-category" data-product="culture">Company Culture</div>
+                    <div class="all-products">View All Career Opportunities ›</div>
+                </div>
+                <div class="product-details" id="career-details">
                     <!-- Content will be dynamically updated here -->
                 </div>
             </div>
@@ -1323,9 +1351,7 @@
         <div class="mega-dropdown" id="tentangRealtaDropdownContent">
             <div class="dropdown-content">
                 <div class="product-categories">
-                    <div class="product-category active" data-product="about">About Us</div>
-                    <div class="product-category" data-product="careers">Careers</div>
-                    <div class="product-category" data-product="blog">Blog</div>
+                    <div class="product-category active" data-product="about">About Realta</div>
                     <div class="all-products">Learn more ›</div>
                 </div>
                 <div class="product-details" id="tentangRealta-details">
@@ -1334,8 +1360,6 @@
             </div>
         </div>
     </nav>
-
-
     <!-- <div class="career-link">   
         Looking for a new career? <a href="#">Get in touch</a>
     </div> -->
@@ -1648,20 +1672,20 @@
 
 
     <section id="ict-one-solution" class="ict-one-solution py-5" style="margin-top: 5%;">
-        <div class="container">
+        <div class="container-fluid container-lg px-2">
             <div class="row align-items-center">
                 <div class="col-md-6 fade-in-left">
-                    <img src="assets/img/siap/product-overview-newest.png" alt="ICT One Solution" class="img-fluid">
+                    <img src="assets/img/siap/product-overview-newest.png" alt="ICT One Solution" class="img-fluid" style="width: 80%; height: auto; margin-left: 10%;">
                 </div>
                 <div class="col-md-6 text-center fade-in-right">
                     <h2 class="mb-4 gradient-text fw-bold"
                         style="background: linear-gradient(287deg, #fa5df2, #fa5df2, #4446464f); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">
                         Human Resource Information System Melalui ICT One Solution</h2>
                     <div class="mb-4" style="max-width: 80%; margin: 0 auto;">
-                        <p style="line-height: 1.6; font-size: 1rem; margin-bottom: 1rem; text-align: left;">
+                        <p style="line-height: 1.6; font-size: 20px; margin-bottom: 1rem; text-align: left;">
                             SIAP+P is a comprehensive HR solution designed to streamline every HR transaction, from employee data and attendance to payroll and performance management.
                         </p>
-                        <p style="line-height: 1.6; font-size: 1rem; margin-bottom: 1rem; text-align: left;">
+                        <p style="line-height: 1.6; font-size: 20px; margin-bottom: 1rem; text-align: left;">
                             By leveraging automation processes, SIAP+P empowers HR departments to effectively manage people productivity and reduce company costs.
                         </p>
                        <!-- Key Features Section -->
@@ -1792,29 +1816,28 @@
     </section>
 
     <section class="features py-5">
-        <div class="container">
+        <div class="container-fluid container-lg px-2">
             <!-- Title position added above the feature items -->
             <h2 class="text-center mb-5" style="background: linear-gradient(287deg, #fa5df2, #c74b93, #4446464f); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">SIAP+P Simplifies PPh21 Calculation, <br> Payroll, and Online Attendance</h2>
             <div class="row text-center justify-content-center">
                 <div class="col-md-3 col-sm-6 mb-4 feature-item">
                     <img src="assets/img/siap/adaptif-untuk-peraturan1.png" alt="Feature 1" class="img-fluid mb-3"
                         style="max-width: 90px;">
-                    <p><span style="font-weight: bold;">ADAPTIF TERHADAP PERATURAN</span></p>
-                    <p>SIAP+P ensures your system follows the latest Government regulations with free updates</p>
+                    <p style="font-size: 20px;"><span style="font-weight: bold;">ADAPTIF TERHADAP PERATURAN</span></p>
+                    <p style="font-size: 20px;">SIAP+P ensures your system follows the latest Government regulations with free updates</p>
                 </div>
                 <div class="col-md-3 col-sm-6 mb-4 feature-item">
                     <img src="assets/img/siap/integrasi-informasi-sdm1.png" alt="Feature 2" class="img-fluid mb-3"
                         style="max-width: 90px;">
-                    <p><span style="font-weight: bold;">KURANGI BIAYA PERUSAHAAN</span></p>
-                    <p>SIAP+P can validate your employee's overtime index according to the actual working hours</p>
+                    <p style="font-size: 20px;"><span style="font-weight: bold;">KURANGI BIAYA PERUSAHAAN</span></p>
+                    <p style="font-size: 20px;">SIAP+P can validate your employee's overtime index according to the actual working hours</p>
                 </div>
                 <div class="col-md-3 col-sm-6 mb-4 feature-item">
                     <img src="assets/img/siap/kurangi-biaya-tenaga-kerja1.png" alt="Feature 3" class="img-fluid mb-3"
                         style="max-width: 90px;">
-                    <p><span style="font-weight: bold;"></span>OPERASIONAL YANG EFEKTIF</span></p>
-                    <p>Hand over your work to the System, SIAP+P increases employee productivity using mobile applications</p>
+                    <p style="font-size: 20px;"><span style="font-weight: bold;">OPERASIONAL YANG EFEKTIF</span></p>
+                    <p style="font-size: 20px;">Hand over your work to the System, SIAP+P increases employee productivity using mobile applications</p>
                 </div>
-                
             </div>
         </div>
         </div>
@@ -1981,7 +2004,7 @@
             margin: 0 auto;
             margin-bottom: 15px;
             color: #666;
-            font-size: 1rem;
+            font-size: 20px;
         }
 
         /* HR Button Wrapper Styles */
@@ -2574,7 +2597,7 @@
     }
 
     .stats-number {
-        font-size: 3.5rem;
+        font-size: 20px;
         font-weight: bold;
         margin-bottom: 10px;
     }
@@ -2680,7 +2703,7 @@
 
 
     <section id="contact" class="pb-5">
-        <div class="container p-4">
+        <div class="container-fluid px-5">
             <div class="row justify-content-between">
                 <div id="contact-info" class="col-lg-5 left-column >
                     <h1 class=" mb-3 contact-heading" style="font-size: 33px;">What Are You Waiting For?<br> <span
@@ -3044,7 +3067,7 @@
     </style>
 
     <section id="newsletter-cta" class="py-4 mb-0">
-        <div class="container">
+        <div class="container-fluid px-5">
             <div class="row align-items-center">
                 <div class="col-md-7 text-start">
                     <h2 class="mb-3 fw-bold gradient-text">Stay Informed, Stay Ahead</h2>
@@ -3185,7 +3208,6 @@
             }
         }
     </style>
-
 
     <!-- END -->
 
