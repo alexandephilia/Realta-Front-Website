@@ -1192,6 +1192,12 @@ body.dark-mode .btn-custom.whatsapp-btn i {
   /* Moves indicators below the carousel content */
 }
 
+@media (max-width: 768px) {
+  .custom-carousel .carousel-indicators {
+    bottom: 35px;
+  }
+}
+
 .custom-carousel .carousel-indicators [data-bs-target] {
   width: 8px;
   height: 8px;
