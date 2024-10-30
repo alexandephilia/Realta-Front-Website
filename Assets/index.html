@@ -1239,97 +1239,22 @@
                         animation: fadeInRight 0.6s reverse;
                     }
 
-                    .carousel-item-next,
-                    .carousel-item-prev {
-                        position: absolute;
-                        top: 0;
-                        left: 0;
-                        right: 0;
-                        bottom: 0;
-                        width: 100%;
-                        height: 100%;
-                        animation: fadeOutLeft 0.6s;
-                    }
-                    /* Styles for carousel controls */
-                    .carousel-control-prev,
-                    .carousel-control-next {
-                        margin: 0;
-                        width: 40px;
-                        height: 40px;
-                        border-radius: 50%;
-                        border: 1px solid #000000;
-                        display: flex;
-                        justify-content: center;
-                        align-items: center;
-                        position: absolute;
-                        top: 50%;
-                        transform: translateY(-50%);
-                        cursor: pointer;
-                        z-index: 1000; /* Increased z-index to ensure visibility */
-                        transition: background-color 0.3s ease; /* Smooth transition for hover effect */
-                    }
-
-                    .carousel-control-prev:hover,
-                    .carousel-control-next:hover {
-                        background-color: rgba(0, 0, 0, 0.699); /* Slightly black background with opacity */
-                    }
-
-                    .carousel-control-prev:hover .carousel-control-prev-icon::before,
-                    .carousel-control-next:hover .carousel-control-next-icon::before {
-                        background-color: #ffffff; /* White icon on hover */
-                    }
-
-                    .carousel-control-prev {
-                        left: -20px;
-                    }
-
-                    .carousel-control-next {
-                        right: -20px;
-                    }
-
                     /* Ensure the carousel container doesn't clip the controls */
                     #businessCarousel {
                         overflow: visible;
                         padding: 0 25px; /* Added padding to make room for controls */
                     }
 
-                    .carousel-control-prev,
-                    .carousel-control-next {
-                        margin: 0;
-                        width: 40px;
-                        height: 40px;
-                        border-radius: 50%;
-                        border: 3px solid #000000;
-                        display: flex;
-                        justify-content: center;
-                        align-items: center;
-                        position: absolute;
-                        top: 50%;
-                        transform: translateY(-50%);
-                        cursor: pointer;
-                        z-index: 1000;
-                        transition: background-color 0.3s ease;
-                    }
-
-                    .carousel-control-prev:hover,
-                    .carousel-control-next:hover {
-                        background-color: rgba(0, 0, 0, 0.699);
-                    }
-
-                    .carousel-control-prev:hover .carousel-control-prev-icon::before,
-                    .carousel-control-next:hover .carousel-control-next-icon::before {
-                        background-color: #ffffff;
-                    }
-
-                    .carousel-control-prev {
+                    .business-carousel-control-prev {
                         left: -20px;
                     }
 
-                    .carousel-control-next {
+                    .business-carousel-control-next {
                         right: -20px;
                     }
-                    .carousel-control-prev-icon,
-                    .carousel-control-next-icon {
+
+                    .business-carousel-control-prev-icon,
+                    .business-carousel-control-next-icon {
                         background-image: none;
                         display: flex;
                         justify-content: center;
@@ -1337,24 +1262,57 @@
                         width: 20px;
                         height: 20px;
                         position: absolute;
-                        top: 50%;
+                        top: 32%;
                         transform: translateY(-50%);
                     }
-
-                    .carousel-control-prev-icon {
-                        left: 6px;
+                    .business-carousel-control-prev-icon {
+                        left: 376px !important;
+                        background: #ffffff;
+                        border-radius: 50%;
+                        width: 30px;
+                        height: 30px;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        border: 1px solid #000000;
+                        transition: all 0.3s ease;
                     }
 
-                    .carousel-control-next-icon {
-                        right: 6px;
+                    .business-carousel-control-prev-icon:hover {
+                        background-color: #474747;
                     }
 
-                    .carousel-control-prev-icon::before,
-                    .carousel-control-next-icon::before {
+                    .business-carousel-control-prev-icon:hover::before {
+                        background-color: #ffffff;
+                    }
+
+                    .business-carousel-control-next-icon {
+                        right: 376px !important;
+                        background: #ffffff;
+                        border-radius: 50%;
+                        width: 30px; 
+                        height: 30px;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        border: 1px solid #000000;
+                        transition: all 0.3s ease;
+                    }
+
+                    .business-carousel-control-next-icon:hover {
+                        background-color: #474747;
+                    }
+
+                    .business-carousel-control-next-icon:hover::before {
+                        background-color: #ffffff;
+                    }
+
+                    .business-carousel-control-prev-icon::before,
+                    .business-carousel-control-next-icon::before {
                         content: "";
                         display: block;
-                        width: 100%;
-                        height: 100%;
+                        width: 20px;
+                        height: 20px;
                         background-color: #000000;
                         mask-size: 100%;
                         -webkit-mask-size: 100%;
@@ -1364,12 +1322,12 @@
                         -webkit-mask-position: center;
                     }
 
-                    .carousel-control-prev-icon::before {
+                    .business-carousel-control-prev-icon::before {
                         mask-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23000'%3e%3cpath d='M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z' stroke='black' stroke-width='1'/%3e%3c/svg%3e");
                         -webkit-mask-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23000'%3e%3cpath d='M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z' stroke='black' stroke-width='1'/%3e%3c/svg%3e");
                     }
 
-                    .carousel-control-next-icon::before {
+                    .business-carousel-control-next-icon::before {
                         mask-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23000'%3e%3cpath d='M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z' stroke='black' stroke-width='1'/%3e%3c/svg%3e");
                         -webkit-mask-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23000'%3e%3cpath d='M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z' stroke='black' stroke-width='1'/%3e%3c/svg%3e");
                     }
@@ -1379,21 +1337,16 @@
                 <div id="businessCarousel" class="carousel slide custom-carousel" data-bs-ride="carousel">
                     <!-- Indicators -->
                     <div class="carousel-indicators">
-                        <button type="button" data-bs-target="#businessCarousel" data-bs-slide-to="0" class="active"
-                            aria-current="true" aria-label="Slide 1"></button>
-                        <button type="button" data-bs-target="#businessCarousel" data-bs-slide-to="1"
-                            aria-label="Slide 2"></button>
+                        <button type="button" data-bs-target="#businessCarousel" data-bs-slide-to="0" class="active business-carousel-control-prev" aria-current="true" aria-label="Slide 1" data-bs-slide="prev">
+                            <span class="business-carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Previous</span>
+                        </button>
+                       
+                        <button type="button" data-bs-target="#businessCarousel" data-bs-slide-to="1" class="business-carousel-control-next" aria-label="Slide 2" data-bs-slide="next">
+                            <span class="business-carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Next</span>
+                        </button>
                     </div>
-
-                    <!-- Carousel controls -->
-                    <button class="carousel-control-prev" type="button" data-bs-target="#businessCarousel" data-bs-slide="prev">
-                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                        <span class="visually-hidden">Previous</span>
-                    </button>
-                    <button class="carousel-control-next" type="button" data-bs-target="#businessCarousel" data-bs-slide="next">
-                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                        <span class="visually-hidden">Next</span>
-                    </button>
 
                     <div class="carousel-inner">
                         <!-- Slide 1 -->
@@ -2253,7 +2206,7 @@
                 background-image: linear-gradient(132deg, #8A2BE2 27%, #4169E1 50%, #5486a6 79%);
                 top: 50%;
                 opacity: 0.77;
-                right: 1139px;
+                right: 1129px;
                 transform: translateY(-50%);
             }
         </style>
@@ -3528,6 +3481,8 @@
 
     </div>
 
+
+    
 
 
     <section id="testi" class="py-5">
