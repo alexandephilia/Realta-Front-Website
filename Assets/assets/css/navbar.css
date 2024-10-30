@@ -13,25 +13,8 @@
     z-index: 1000;
     padding: 2.5rem 0;
     border-radius: 0 0 35px 35px;
-    max-height: 90vh; /* Set a maximum height */
-    overflow-y: auto; /* Enable vertical scrolling */
-    /* Customize scrollbar */
-    scrollbar-width: thin;
-    scrollbar-color: rgba(133, 22, 188, 0.6) transparent;
-
-    /* For Webkit browsers like Chrome/Safari */
-    &::-webkit-scrollbar {
-        width: 8px;
-    }
-
-    &::-webkit-scrollbar-track {
-        background: transparent;
-    }
-
-    &::-webkit-scrollbar-thumb {
-        background-color: rgba(133, 22, 188, 0.6);
-        border-radius: 4px;
-    }
+    max-height: 90vh;
+    overflow: hidden; /* Changed from overflow-y: auto to prevent mega dropdown scrollbar */
 }
 
 body.dark-mode .mega-dropdown {
@@ -42,11 +25,9 @@ body.dark-mode .mega-dropdown {
 .mega-dropdown-inner {
     width: 100%;
     margin: 0 auto;
-    overflow-y: auto; /* Enable vertical scrolling */
-    max-height: calc(80vh - 5rem); /* Adjust for padding */
-    /* backdrop-filter: blur(15px); */
+    overflow: hidden; /* Changed to prevent scrollbar */
+    max-height: calc(80vh - 5rem);
     background-color: rgb(255, 255, 255);
-    /* -webkit-backdrop-filter: blur(15px); */
     box-shadow: 0 5px 8px rgba(0, 0, 0, 0.12);
     border-radius: 20px;
 }
@@ -67,7 +48,7 @@ body.dark-mode .mega-dropdown-inner {
 
 .product-categories {
     width: 20%;
-    padding: 10px 0;
+    padding: 7px 0;
     background-color: rgb(255, 255, 255);
     border-right: 1px solid rgba(224, 224, 224, 0.6);
     margin-left: 0;
@@ -79,9 +60,9 @@ body.dark-mode .product-categories {
 }
 
 .product-category {
-    padding: 14px 22px;
+    padding: 17px 22px;
     cursor: pointer;
-    font-size: 17px;
+    font-size: 16px;
     transition: background-color 0.3s, color 0.3s;
     position: relative;
     display: flex;
@@ -125,6 +106,7 @@ body.dark-mode .product-category.active {
     color: #ffffff;
     border-left-color: rgba(133, 22, 188, 0.9);
 }
+
 .product-details {
     width: 95%;
     padding: 25px;
@@ -134,8 +116,26 @@ body.dark-mode .product-category.active {
     align-items: center;
     overflow-y: auto;
     min-height: 100%;
-    height: auto;
+    height: 100%; /* Changed from auto to 100% */
+    max-height: calc(100vh - 4rem);
     box-sizing: border-box;
+    scrollbar-width: thin;
+    scrollbar-color: rgba(133, 22, 188, 0.6) transparent;
+    position: relative; /* Added position relative */
+    overflow: hidden; /* Added overflow hidden */
+}
+
+.product-details::-webkit-scrollbar {
+    width: 8px;
+}
+
+.product-details::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.product-details::-webkit-scrollbar-thumb {
+    background-color: rgba(133, 22, 188, 0.6);
+    border-radius: 4px;
 }
 
 @media screen and (max-width: 768px) {
