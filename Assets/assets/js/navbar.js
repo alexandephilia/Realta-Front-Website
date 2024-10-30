@@ -96,125 +96,106 @@ handleCategories('#solutionsDropdownContent', 'product-details', {
     <div class="modules-grid">
         <div class="module" style="background: none;">
             <h4 style="text-align: center; font-size: 16px;">ERP</h4>
-            <div class="bento-wrapper">
-                <div class="bento-grid">
-                    <div class="bento-item large">
-                        <p class="feature-description" style="text-align: center; font-size: 15px;">
-                            <strong style="display: block; margin-bottom: 2px;">Enterprise Resource Planning</strong>
-                            <span style="display: block; width: 95%; margin: 0 auto;">Integrate core business processes.</span>
-                        </p>
-                    </div>
-                    <div class="bento-item">
-                        <i class="fas fa-chart-line"></i>
-                        <span>Finance</span>
-                    </div>
-                    <div class="bento-item">
-                        <i class="fas fa-users"></i>
-                        <span>HR</span>
-                    </div>
-                    <div class="bento-item">
-                        <i class="fas fa-truck"></i>
-                        <span>Supply Chain</span>
-                    </div>
-                    <div class="bento-item">
-                        <i class="fas fa-cogs"></i>
-                        <span>Manufacturing</span>
-                    </div>
-                    <div class="bento-item">
-                        <i class="fas fa-project-diagram"></i>
-                        <span>Project Management</span>
-                    </div>
+            <div class="bento-grid">
+                <div class="bento-item large">
+                    <p class="feature-description" style="text-align: center; font-size: 15px;">
+                        <strong style="display: block; margin-bottom: 2px;">Enterprise Planning</strong>
+                        <span style="display: block; width: 99%; margin: 0 auto;">Integrate core business processes.</span>
+                    </p>
+                </div>
+                <div class="bento-item">
+                    <i class="fas fa-chart-line"></i>
+                    <span>Finance</span>
+                </div>
+                <div class="bento-item">
+                    <i class="fas fa-users"></i>
+                    <span>HR</span>
+                </div>
+                <div class="bento-item">
+                    <i class="fas fa-truck"></i>
+                    <span>Supply Chain</span>
+                </div>
+                <div class="bento-item">
+                    <i class="fas fa-cogs"></i>
+                    <span>Manufacturing</span>
+                </div>
+                <div class="bento-item">
+                    <i class="fas fa-project-diagram"></i>
+                    <span>Project Management</span>
                 </div>
             </div>
         </div>
         <div class="module" style="border-left: 1px solid #e0e0e0; border-right: 1px solid #e0e0e0; border-radius: 0; background: none;">
             <h4 style="text-align: center; font-size: 16px;">EAM & WMS</h4>
-            <div class="bento-wrapper">
-                <div class="bento-grid">
-                    <div class="bento-item large" style="grid-column: 1 / -1;">
-                        <p style="font-size: 15px; margin: 0;"><span style="font-weight: bold;">Asset & Warehouse Management</span> Optimize your resources and inventory.</p>
-                    </div>
-                    <div class="bento-item">
-                        <i class="fas fa-tools"></i>
-                        <span>Maintenance</span>
-                    </div>
-                    <div class="bento-item">
-                        <i class="fas fa-clipboard-check"></i>
-                        <span>Inventory</span>
-                    </div>
-                    <div class="bento-item">
-                        <i class="fas fa-barcode"></i>
-                        <span>Fulfillment</span>
-                    </div>
-                    <div class="bento-item full-width">
-                        <i class="fas fa-dolly"></i>
-                        <span>Warehouse Operations</span>
-                    </div>
+            <div class="bento-grid" style="grid-template-columns: repeat(2, 1fr); grid-template-rows: auto repeat(2, 1fr); max-width: 300px; margin: 0 auto;">
+                <div class="bento-item large" style="grid-column: 1 / -1; width: 100%;">
+                    <p style="font-size: 15px; text-align: center;"><span style="font-weight: bold;">Asset & Warehouse Management</span> Optimize your resources and inventory.</p>
+                </div>
+                <div class="bento-item">
+                    <i class="fas fa-tools"></i>
+                    <span>Maintenance</span>
+                </div>
+                <div class="bento-item">
+                    <i class="fas fa-clipboard-check"></i>
+                    <span>Inventory</span>
+                </div>
+                <div class="bento-item">
+                    <i class="fas fa-barcode"></i>
+                    <span>Fulfillment</span>
+                </div>
+                <div class="bento-item">
+                    <i class="fas fa-dolly"></i>
+                    <span>Warehouse</span>
                 </div>
             </div>
         </div>
         <div class="module" style="background: none;">
             <h4 style="text-align: center; font-size: 16px;">Business Intelligence</h4>
-            <div class="bento-wrapper">
-                <div class="bento-grid">
-                    <div class="bento-item">
-                        <i class="fas fa-chart-pie"></i>
-                        <span>Data Visualization</span>
-                    </div>
-                    <div class="bento-item large">
-                        <p class="feature-description" style="text-align: center; font-size: 15px; margin: 0;">
-                            <strong style="display: block; margin-bottom: 3px;">Analytics & Reporting</strong>
-                            <span style="display: block; width: 80%; margin: 0 auto;">Make data-driven decisions.</span>
-                        </p>
-                    </div>
-                    <div class="bento-item">
-                        <i class="fas fa-database"></i>
-                        <span>Data Warehousing</span>
-                    </div>
-                    <div class="bento-item">
-                        <i class="fas fa-robot"></i>
-                        <span>Predictive Analytics</span>
-                    </div>
-                    <div class="bento-item">
-                        <i class="fas fa-tachometer-alt"></i>
-                        <span>KPI Dashboards</span>
-                    </div>
-                    <div class="bento-item">
-                        <i class="fas fa-file-alt"></i>
-                        <span>Custom Reports</span>
-                    </div>
+            <div class="bento-grid">
+                <div class="bento-item">
+                    <i class="fas fa-chart-pie"></i>
+                    <span>Data Visualization</span>
+                </div>
+                <div class="bento-item large">
+                    <p class="feature-description" style="text-align: center; font-size: 15px;">
+                        <strong style="display: block; margin-bottom: 2px;">Analytics & Reporting</strong>
+                        <span style="display: block; width: 99%; margin: 0 auto;">Make data-driven decisions.</span>
+                    </p>
+                </div>
+                <div class="bento-item">
+                    <i class="fas fa-database"></i>
+                    <span>Data Warehousing</span>
+                </div>
+                <div class="bento-item">
+                    <i class="fas fa-robot"></i>
+                    <span>Predictive Analytics</span>
+                </div>
+                <div class="bento-item">
+                    <i class="fas fa-tachometer-alt"></i>
+                    <span>KPI Dashboards</span>
+                </div>
+                <div class="bento-item">
+                    <i class="fas fa-file-alt"></i>
+                    <span>Custom Reports</span>
                 </div>
             </div>
         </div>
     </div>
     <style>
-        .bento-wrapper {
-            padding: 10px;
-            border-radius: 15px;
-            transition: all 0.3s ease;
-        }
-
         .bento-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
             grid-template-rows: repeat(3, 1fr);
-            gap: 8px;
+            gap: 4px;
             max-width: 300px;
             margin: 0 auto;
-            background-color: #f7f4f482;
-            border-radius: 15px;
-            padding: 15px;
-            transition: all 0.3s ease;
         }
-
-        .bento-grid:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-            background-color: #fff;
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
         }
-
         .bento-item {
-            background: none;
+            background-color: #f7f4f482;
             padding: 10px;
             border-radius: 15px;
             font-size: 15px;
@@ -226,85 +207,24 @@ handleCategories('#solutionsDropdownContent', 'product-details', {
             transition: all 0.3s ease;
             animation: fadeIn 0.5s ease-out forwards;
             opacity: 0;
-            box-shadow: none;
+            cursor: default;
         }
-
-        .bento-item:hover {
-            transform: none;
-            box-shadow: none;
-        }
-
+     
         .bento-item i {
-            font-size: 15px;
+            font-size: 1.3em;
             margin-bottom: 5px;
             color: #3A6D8C;
             animation: fadeIn 0.5s ease-out 0.2s forwards;
             opacity: 0;
         }
-
         .bento-item span {
             display: block;
             line-height: 1.1;
-            font-size: 0.9rem; /* Base font size */
         }
-
         .large {
             grid-column: span 2;
             grid-row: span 2;
             font-size: 15px;
-        }
-
-        .full-width {
-            grid-column: 1 / -1;
-        }
-
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
-
-        /* Responsive styles */
-        @media (max-width: 768px) {
-            .bento-grid {
-                gap: 6px;
-                padding: 10px;
-            }
-
-            .bento-item {
-                padding: 8px;
-            }
-
-            .bento-item span {
-                font-size: 0.8rem;
-            }
-
-            .bento-item i {
-                font-size: 13px;
-            }
-
-            .feature-description {
-                font-size: 13px !important;
-            }
-
-            .feature-description strong {
-                font-size: 14px;
-            }
-        }
-
-        @media (min-width: 769px) and (max-width: 1024px) {
-            .bento-item span {
-                font-size: 0.85rem;
-            }
-        }
-
-        @media (min-width: 1025px) {
-            .bento-item span {
-                font-size: 0.75rem;
-            }
-
-            .feature-description {
-                font-size: 13px !important;
-            }
         }
     </style>
     `,
@@ -437,7 +357,7 @@ handleCategories('#solutionsDropdownContent', 'product-details', {
             to { opacity: 1; }
         }
         .bento-item {
-            background-color: #e8e3e382;
+            background-color: #f7f4f482;
             padding: 10px;
             border-radius: 15px;
             font-size: 15px;
@@ -449,11 +369,9 @@ handleCategories('#solutionsDropdownContent', 'product-details', {
             transition: all 0.3s ease;
             animation: fadeIn 0.5s ease-out forwards;
             opacity: 0;
+      cursor: default;
         }
-        .bento-item:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-        }
+
         .bento-item i {
             font-size: 1.3em;
             margin-bottom: 5px;
@@ -485,13 +403,13 @@ handleCategories('#solutionsDropdownContent', 'product-details', {
     </div>
     <div class="modules-title">KEY FEATURES</div>
     <div class="modules-grid">
-            <div class="module" style="background: none;">
+        <div class="module" style="background: none;">
             <h4 style="text-align: center; font-size: 16px;">Membership</h4>
             <div class="bento-grid">
                 <div class="bento-item large">
                     <p class="feature-description" style="text-align: center; font-size: 15px;">
                         <strong style="display: block; margin-bottom: 2px;">Membership Management</strong>
-                        <span style="display: block; width: 95%; margin: 0 auto;">with our unified platform.</span>
+                        <span style="display: block; width: 99%; margin: 0 auto;">with our unified platform.</span>
                     </p>
                 </div>
                 <div class="bento-item">
@@ -516,27 +434,27 @@ handleCategories('#solutionsDropdownContent', 'product-details', {
                 </div>
             </div>
         </div>
-            <div class="module" style="border-left: 1px solid #e0e0e0; border-right: 1px solid #e0e0e0; border-radius: 0; background: none;">
+        <div class="module" style="border-left: 1px solid #e0e0e0; border-right: 1px solid #e0e0e0; border-radius: 0; background: none;">
             <h4 style="text-align: center; font-size: 16px;">Golf Operation</h4>
-            <div class="bento-grid" style="grid-template-columns: repeat(3, 1fr); grid-template-rows: auto 1fr; max-width: 300px; margin: 0 auto; gap: 15px;">
-                <div class="bento-item large" style="grid-column: 1 / -1; padding: 15px; border-radius: 10px;">
-                    <p style="font-size: 15px; margin: 0;"><span style="font-weight: bold;">Streamline golf operations</span> with our integrated system.</p>
+            <div class="bento-grid" style="grid-template-columns: repeat(2, 1fr); grid-template-rows: auto repeat(2, 1fr); max-width: 300px; margin: 0 auto;">
+                <div class="bento-item large" style="grid-column: 1 / -1; width: 100%;">
+                    <p style="font-size: 15px; text-align: center;"><span style="font-weight: bold;">Streamline golf operations</span> with our integrated system.</p>
                 </div>
-                <div class="bento-item" style="padding: 15px; border-radius: 10px; text-align: center;">
-                    <i class="fas fa-concierge-bell" style="font-size: 1.5em; margin-bottom: 5px;"></i>
-                    <span style="display: block; font-size: 15px;">Front Office</span>
+                <div class="bento-item">
+                    <i class="fas fa-concierge-bell"></i>
+                    <span>Front Office</span>
                 </div>
-                <div class="bento-item" style="padding: 15px; border-radius: 10px; text-align: center;">
-                    <i class="fas fa-leaf" style="font-size: 1.5em; margin-bottom: 5px;"></i>
-                    <span style="display: block; font-size: 15px;">Lawn Operations</span>
+                <div class="bento-item">
+                    <i class="fas fa-leaf"></i>
+                    <span>Lawn Operations</span>
                 </div>
-                <div class="bento-item" style="padding: 15px; border-radius: 10px; text-align: center;">
-                    <i class="fas fa-chart-line" style="font-size: 1.5em; margin-bottom: 5px;"></i>
-                    <span style="display: block; font-size: 15px;">Back Office</span>
+                <div class="bento-item" style="grid-column: 1 / -1;">
+                    <i class="fas fa-chart-line"></i>
+                    <span>Back Office</span>
                 </div>
             </div>
         </div>
-            <div class="module" style="background: none;">
+        <div class="module" style="background: none;">
             <h4 style="text-align: center; font-size: 16px;">Tournament</h4>
             <div class="bento-grid">
                 <div class="bento-item">
@@ -545,7 +463,7 @@ handleCategories('#solutionsDropdownContent', 'product-details', {
                 </div>
                 <div class="bento-item large" style="display: flex; align-items: center; justify-content: center; width: 94%; margin: 0 auto;">
                     <p class="feature-description" style="text-align: center; font-size: 15px; margin: 0;">
-                        <strong style="display: block; margin-bottom: 3px;">Tournament <br> Management</strong>
+                        <strong style="display: block; margin-bottom: 2px;">Tournament <br> Management</strong>
                         <span style="display: block; width: 80%; margin: 0 auto;">your all-in-one golf event solution.</span>
                     </p>
                 </div>
@@ -594,15 +512,13 @@ handleCategories('#solutionsDropdownContent', 'product-details', {
             transition: all 0.3s ease;
             animation: fadeIn 0.5s ease-out forwards;
             opacity: 0;
+            cursor: default;
         }
-        .bento-item:hover {
-            transform: translateY(2px);
-            box-shadow: 0 1px 5px rgba(0,0,0,0.2);
-        }
+
         .bento-item i {
             font-size: 1.3em;
             margin-bottom: 5px;
-            color: rgb(0, 128, 0);
+            color: rgb(0, 139, 0);
             animation: fadeIn 0.5s ease-out 0.2s forwards;
             opacity: 0;
         }
@@ -684,12 +600,9 @@ handleCategories('#solutionsDropdownContent', 'product-details', {
                         transition: all 0.3s ease;
                         animation: fadeIn 0.5s ease-out forwards;
                         opacity: 0;
-                        /* Add a noticeable shadow box */
+                        cursor: default;
                     }
-                    .bento-item:hover {
-                        transform: translateY(2px);
-                        box-shadow: 0 1px 5px rgba(0,0,0,0.2);
-                    }
+                  
                     .bento-item i {
                         font-size: 1.3em;
                         margin-bottom: 5px;
@@ -879,17 +792,15 @@ handleCategories('#solutionsDropdownContent', 'product-details', {
             justify-content: center;
             transition: all 0.3s ease;
             animation: fadeIn 0.5s ease-out forwards;
-            opacity: 0;
+            opacity: 0;  
+            cursor: default;
         }
         .bento-item h4 {
             font-size: 16px;
             margin-bottom: 5px;
         }
 
-        .bento-item:hover {
-            transform: translateY(2px);
-            box-shadow: 0 1px 5px rgba(0,0,0,0.2);
-        }
+        
         .bento-item i {
             font-size: 1.3em;
             margin-bottom: 5px;

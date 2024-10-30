@@ -742,7 +742,7 @@
             background-color: #f0f0f0;
             padding: 12px 0;
             font-size: 16px;
-            transition: all 0.5s cubic-bezier(0.25, 0.1, 0.25, 1);
+            transition: all 0.3s cubic-bezier(0.4, 0.0, 0.2, 1);
             position: relative;
             z-index: 1;
             overflow: hidden;
@@ -753,10 +753,10 @@
             top: 0;
             left: 0;
             right: 0;
-            z-index: 102;
+            z-index: 152;
             /* Above the navbar */
             transform: translateY(-100%);
-            transition: transform 0.5s cubic-bezier(0.25, 0.1, 0.25, 1);
+            transition: transform 0.3s cubic-bezier(0.4, 0.0, 0.2, 1);
         }
 
         .navbar-banner--scrolled.show {
@@ -772,7 +772,7 @@
 
         /* Navbar transition */
         .navbar {
-            transition: all 0.5s cubic-bezier(0.25, 0.1, 0.25, 1);
+            transition: all 0.3s cubic-bezier(0.4, 0.0, 0.2, 1);
         }
 
         /* Ensure the banner transition is smooth */
@@ -949,60 +949,79 @@
         /* Banner position when scrolled */
     </style>
     <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            var navbar = document.querySelector('.navbar');
-            var navbarBanner = document.querySelector('.navbar-banner');
-            var lastScrollTop = 0;
-            var scrollThreshold = 10;
+      document.addEventListener('DOMContentLoaded', function () {
+    var navbar = document.querySelector('.navbar');
+    var navbarBanner = document.querySelector('.navbar-banner');
+    var lastScrollTop = 0;
+    var scrollThreshold = 30; // Increased threshold
+    var ticking = false; // For requestAnimationFrame
 
-            function handleScroll() {
-                var bannerHeight = navbarBanner.offsetHeight;
-                var scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+    function handleScroll() {
+        var bannerHeight = navbarBanner.offsetHeight;
+        var scrollTop = window.pageYOffset || document.documentElement.scrollTop;
 
+        // Only process scroll events when animation frame is ready
+        if (!ticking) {
+            requestAnimationFrame(function() {
                 if (Math.abs(scrollTop - lastScrollTop) > scrollThreshold) {
                     if (scrollTop > lastScrollTop && scrollTop > bannerHeight) {
-                        // Scrolling down
+                        // Scrolling down - hide banner
                         navbar.classList.add('navbar-shrink');
                         navbarBanner.classList.add('navbar-banner--scrolled');
                         navbarBanner.classList.remove('show');
                         navbar.style.transform = 'translateY(0)';
                     } else if (scrollTop <= lastScrollTop && scrollTop > bannerHeight) {
-                        // Scrolling up
+                        // Scrolling up - show banner
                         navbar.classList.add('navbar-shrink', 'navbar--banner-scrolled');
                         navbarBanner.classList.add('navbar-banner--scrolled', 'show');
-                        navbar.style.transform = 'translateY(' + bannerHeight + 'px)';
+                        navbar.style.transform = `translateY(${bannerHeight}px)`;
                     } else {
-                        // At the top
+                        // At the top - reset everything
                         navbar.classList.remove('navbar-shrink', 'navbar--banner-scrolled');
                         navbarBanner.classList.remove('navbar-banner--scrolled', 'show');
                         navbar.style.transform = 'translateY(0)';
                     }
-
+                    
                     lastScrollTop = scrollTop;
                 }
-            }
-
-            // Only add scroll event listener if not on mobile
-            if (window.innerWidth > 991.98) {
-                window.addEventListener('scroll', handleScroll);
-                // Initial call to set correct state on page load
-                handleScroll();
-            }
-
-            // Update on window resize
-            window.addEventListener('resize', function () {
-                if (window.innerWidth > 991.98) {
-                    window.addEventListener('scroll', handleScroll);
-                    handleScroll();
-                } else {
-                    window.removeEventListener('scroll', handleScroll);
-                    // Reset styles for mobile
-                    navbar.classList.remove('navbar-shrink', 'navbar--banner-scrolled');
-                    navbarBanner.classList.remove('navbar-banner--scrolled', 'show');
-                    navbar.style.transform = '';
-                }
+                ticking = false;
             });
-        });
+            
+            ticking = true;
+        }
+    }
+
+    // Debounced scroll handler
+    let scrollTimeout;
+    function debouncedScroll() {
+        clearTimeout(scrollTimeout);
+        scrollTimeout = setTimeout(handleScroll, 10);
+    }
+
+    // Only add scroll event listener if not on mobile
+    if (window.innerWidth > 991.98) {
+        window.addEventListener('scroll', debouncedScroll, { passive: true });
+        handleScroll(); // Initial call
+    }
+
+    // Update on window resize with debounce
+    let resizeTimeout;
+    window.addEventListener('resize', function() {
+        clearTimeout(resizeTimeout);
+        resizeTimeout = setTimeout(function() {
+            if (window.innerWidth > 991.98) {
+                window.addEventListener('scroll', debouncedScroll, { passive: true });
+                handleScroll();
+            } else {
+                window.removeEventListener('scroll', debouncedScroll);
+                // Reset styles for mobile
+                navbar.classList.remove('navbar-shrink', 'navbar--banner-scrolled');
+                navbarBanner.classList.remove('navbar-banner--scrolled', 'show');
+                navbar.style.transform = '';
+            }
+        }, 100);
+    });
+});
     </script>
 </header>
 
