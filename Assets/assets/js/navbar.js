@@ -852,7 +852,7 @@ handleCategories('#solutionsDropdownContent', 'product-details', {
             <div class="glare"></div>
             <div class="product-banner-content">
                 <h2 class="product-title">Network & System Integration</h2>
-                <p class="product-banner-description">One Solution concept, a strategic approach that skillfully blends various IT elements into a streamlined and efficient framework that is precisely tailored to each client's specific needs.</p>
+                <p class="product-banner-description">A strategic approach integrating IT elements into an efficient framework customized for your needs.</p>
             </div>
         </div>
         <div class="modules-title">KEY FEATURES</div>

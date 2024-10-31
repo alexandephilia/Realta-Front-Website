@@ -11,9 +11,10 @@
   -webkit-backdrop-filter: blur(20px);
   box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2);
   z-index: 1000;
-  padding: 2.5rem 0;
+  padding: 2rem 0;
   border-radius: 0 0 35px 35px;
-  /* Removed fixed max-height and overflow */
+  max-height: 80vh;
+  overflow: hidden;
 }
 
 body.dark-mode .mega-dropdown {
@@ -24,7 +25,8 @@ body.dark-mode .mega-dropdown {
 .mega-dropdown-inner {
   width: 100%;
   margin: 0 auto;
-  /* Removed fixed max-height */
+  overflow: hidden;
+  max-height: calc(75vh - 4rem);
   background-color: rgb(255, 255, 255);
   box-shadow: 0 5px 8px rgba(0, 0, 0, 0.12);
   border-radius: 20px;
@@ -38,7 +40,7 @@ body.dark-mode .mega-dropdown-inner {
 .dropdown-content {
   display: flex;
   width: 100%;
-  height: auto; /* Changed to auto */
+  height: 100%;
   max-width: none;
   margin: 0 auto;
   padding: 0;
@@ -51,7 +53,6 @@ body.dark-mode .mega-dropdown-inner {
   background-color: rgb(255, 255, 255);
   border-right: 1px solid rgba(224, 224, 224, 0.6);
   margin-left: 0;
-  border-radius: 0 0 0 20px;
 }
 
 body.dark-mode .product-categories {
@@ -60,7 +61,7 @@ body.dark-mode .product-categories {
 }
 
 .product-category {
-  padding: 17px 22px;
+  padding: 15px 20px;
   cursor: pointer;
   font-size: 16px;
   transition: background-color 0.3s, color 0.3s;
@@ -108,20 +109,19 @@ body.dark-mode .product-category.active {
 }
 .product-details {
   width: 95%;
-  height: auto; /* Changed from fixed height */
-  padding: 25px;
+  height: 666px;
+  padding: 20px;
   background-color: rgb(255, 255, 255);
   margin: 0 auto;
   justify-content: center;
   align-items: center;
   overflow-y: auto;
   min-height: 100%;
-  /* Removed max-height constraint */
+  max-height: calc(90vh - 4rem);
   box-sizing: border-box;
   scrollbar-width: thin;
   scrollbar-color: rgb(159, 59, 209) transparent;
   position: relative;
-  border-bottom-right-radius: 20px;
 }
 
 .product-details::-webkit-scrollbar {
@@ -160,7 +160,7 @@ body.dark-mode .product-details {
   height: 135px;
   background-size: cover;
   background-position: center;
-  margin-bottom: 25px;
+  margin-bottom: 20px;
   position: relative;
   border-radius: 25px;
   overflow: hidden !important;
