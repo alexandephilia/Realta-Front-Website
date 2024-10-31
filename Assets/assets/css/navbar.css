@@ -13,8 +13,7 @@
   z-index: 1000;
   padding: 2.5rem 0;
   border-radius: 0 0 35px 35px;
-  max-height: 90vh;
-  overflow: hidden;
+  /* Removed fixed max-height and overflow */
 }
 
 body.dark-mode .mega-dropdown {
@@ -25,8 +24,7 @@ body.dark-mode .mega-dropdown {
 .mega-dropdown-inner {
   width: 100%;
   margin: 0 auto;
-  overflow: hidden;
-  max-height: calc(80vh - 5rem);
+  /* Removed fixed max-height */
   background-color: rgb(255, 255, 255);
   box-shadow: 0 5px 8px rgba(0, 0, 0, 0.12);
   border-radius: 20px;
@@ -40,7 +38,7 @@ body.dark-mode .mega-dropdown-inner {
 .dropdown-content {
   display: flex;
   width: 100%;
-  height: min(80vh, 560px); /* Smaller height that's responsive */
+  height: auto; /* Changed to auto */
   max-width: none;
   margin: 0 auto;
   padding: 0;
@@ -49,10 +47,11 @@ body.dark-mode .mega-dropdown-inner {
 
 .product-categories {
   width: 20%;
-  padding: 7px 0;
+  padding: 3px 0;
   background-color: rgb(255, 255, 255);
   border-right: 1px solid rgba(224, 224, 224, 0.6);
   margin-left: 0;
+  border-radius: 0 0 0 20px;
 }
 
 body.dark-mode .product-categories {
@@ -109,7 +108,7 @@ body.dark-mode .product-category.active {
 }
 .product-details {
   width: 95%;
-  height: 708px;
+  height: auto; /* Changed from fixed height */
   padding: 25px;
   background-color: rgb(255, 255, 255);
   margin: 0 auto;
@@ -117,11 +116,12 @@ body.dark-mode .product-category.active {
   align-items: center;
   overflow-y: auto;
   min-height: 100%;
-  max-height: calc(100vh - 4rem);
+  /* Removed max-height constraint */
   box-sizing: border-box;
   scrollbar-width: thin;
   scrollbar-color: rgb(159, 59, 209) transparent;
   position: relative;
+  border-bottom-right-radius: 20px;
 }
 
 .product-details::-webkit-scrollbar {
