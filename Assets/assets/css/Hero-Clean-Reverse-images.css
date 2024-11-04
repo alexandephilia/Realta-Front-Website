@@ -281,43 +281,27 @@ body.dark-mode .nav-toggle span {
 /* General fade-in effect for ul and li elements */
 ul, ol {
   opacity: 0;
-  transform: translateY(20px);
-  animation: fadeInUp 0.5s ease forwards;
-  animation-delay: 0.2s;
+  animation: fadeIn 0.5s ease-in forwards;
 }
 
 li {
   opacity: 0;
-  transform: translateY(10px);
-  animation: fadeInUp 0.5s ease forwards;
+  animation: fadeIn 0.5s ease-in forwards;
+  animation-delay: 0.2s; /* Small delay after parent list */
 }
 
-/* Staggered delay for list items */
-li:nth-child(1) { animation-delay: 0.3s; }
-li:nth-child(2) { animation-delay: 0.4s; }
-li:nth-child(3) { animation-delay: 0.5s; }
-li:nth-child(4) { animation-delay: 0.6s; }
-li:nth-child(5) { animation-delay: 0.7s; }
-/* Add more if you have longer lists */
-
-@keyframes fadeInUp {
+/* Keep the simple fadeIn animation */
+@keyframes fadeIn {
   to {
     opacity: 1;
-    transform: translateY(0);
   }
 }
 
-/* Ensure the animation only plays when the element enters the viewport */
+/* Remove the complex viewport checking */
 @media (prefers-reduced-motion: no-preference) {
   ul, ol, li {
     opacity: 0;
-    transform: translateY(20px);
-    transition: opacity 0.5s ease, transform 0.5s ease;
-  }
-
-  ul.animate, ol.animate, li.animate {
-    opacity: 1;
-    transform: translateY(0);
+    animation: fadeIn 0.5s ease-in forwards;
   }
 }
 
@@ -1905,7 +1889,6 @@ body.dark-mode .fade-right {
   transform: translate(0);
   box-shadow: none;
 }
-
 
 
 

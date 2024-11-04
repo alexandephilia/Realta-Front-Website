@@ -108,7 +108,7 @@ body.dark-mode .product-category.active {
   border-left-color: rgba(133, 22, 188, 0.9);
 }
 .product-details {
-  width: 95%;
+  width: 85%;
   height: 666px;
   padding: 20px;
   background-color: rgb(255, 255, 255);
@@ -116,7 +116,7 @@ body.dark-mode .product-category.active {
   justify-content: center;
   align-items: center;
   overflow-y: auto;
-  min-height: 100%;
+  /* min-height: 100%; */
   max-height: calc(90vh - 4rem);
   box-sizing: border-box;
   scrollbar-width: thin;
@@ -157,7 +157,7 @@ body.dark-mode .product-details {
 }
 
 .product-banner {
-  height: 135px;
+  height: 166px;
   background-size: cover;
   background-position: center;
   margin-bottom: 20px;
@@ -270,8 +270,9 @@ body.dark-mode .modules-title {
 .modules-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 10px;
-  margin-top: 1.5rem;
+  gap: 20px;
+  width: 90%;
+  margin: 0 auto;
 }
 
 body.dark-mode .module {
@@ -281,7 +282,7 @@ body.dark-mode .module {
 .module h4 {
   font-size: 19px;
   margin: 0 0 12px 0;
-  color: #333;
+  /* color: #333; */
   position: relative;
   z-index: 1;
 }
@@ -723,9 +724,7 @@ body.dark-mode .product-banner:hover::before {
 }
 
 .module{
-  background-color: #f7f4f482;
   padding: 10px;
-  background-color: #f7f4f482;
 }
 
 .modules-title {

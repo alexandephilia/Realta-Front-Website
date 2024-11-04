@@ -1,5 +1,5 @@
- // Function to handle dropdown display
- function handleDropdown(dropdownId, contentId) {
+// Function to handle dropdown display
+function handleDropdown(dropdownId, contentId) {
     const dropdown = document.getElementById(dropdownId);
     const megaDropdown = document.getElementById(contentId);
     let dropdownTimeout;
@@ -84,741 +84,625 @@ function handleCategories(containerSelector, detailsId, content) {
 // Solusi dropdown
 handleDropdown('solutionsDropdown', 'solutionsDropdownContent');
 handleCategories('#solutionsDropdownContent', 'product-details', {
-    eam: `
-    <div class="product-banner" style="background-image: url('assets/img/eam.jpg');" onclick="navigateWithLoading('erp-micro.html');">                
-        <div class="glare"></div>
-        <div class="product-banner-content">
-            <h2 class="product-title">EAM & ERP</h2>
-            <p class="product-banner-description">Streamline Your Business Operations.</p>
-        </div>
-    </div>
-    <div class="modules-title">KEY FEATURES</div>
-    <div class="modules-grid">
-        <div class="module" style="background: none;">
-            <h4 style="text-align: center; font-size: 16px;">ERP</h4>
-            <div class="bento-grid">
-                <div class="bento-item large">
-                    <p class="feature-description" style="text-align: center; font-size: 15px;">
-                        <strong style="display: block; margin-bottom: 2px;">Enterprise Planning</strong>
-                        <span style="display: block; width: 99%; margin: 0 auto;">Integrate core business processes.</span>
-                    </p>
-                </div>
-                <div class="bento-item">
-                    <i class="fas fa-chart-line"></i>
-                    <span>Finance</span>
-                </div>
-                <div class="bento-item">
-                    <i class="fas fa-users"></i>
-                    <span>HR</span>
-                </div>
-                <div class="bento-item">
-                    <i class="fas fa-truck"></i>
-                    <span>Supply Chain</span>
-                </div>
-                <div class="bento-item">
-                    <i class="fas fa-cogs"></i>
-                    <span>Manufacturing</span>
-                </div>
-                <div class="bento-item">
-                    <i class="fas fa-project-diagram"></i>
-                    <span>Project Management</span>
-                </div>
-            </div>
-        </div>
-        <div class="module" style="border-left: 1px solid #e0e0e0; border-right: 1px solid #e0e0e0; border-radius: 0; background: none;">
-            <h4 style="text-align: center; font-size: 16px;">EAM & WMS</h4>
-            <div class="bento-grid" style="grid-template-columns: repeat(2, 1fr); grid-template-rows: auto repeat(2, 1fr); max-width: 300px; margin: 0 auto;">
-                <div class="bento-item large" style="grid-column: 1 / -1; width: 100%;">
-                    <p style="font-size: 15px; text-align: center;"><span style="font-weight: bold;">Asset & Warehouse Management</span> Optimize your resources and inventory.</p>
-                </div>
-                <div class="bento-item">
-                    <i class="fas fa-tools"></i>
-                    <span>Maintenance</span>
-                </div>
-                <div class="bento-item">
-                    <i class="fas fa-clipboard-check"></i>
-                    <span>Inventory</span>
-                </div>
-                <div class="bento-item">
-                    <i class="fas fa-barcode"></i>
-                    <span>Fulfillment</span>
-                </div>
-                <div class="bento-item">
-                    <i class="fas fa-dolly"></i>
-                    <span>Warehouse</span>
-                </div>
-            </div>
-        </div>
-        <div class="module" style="background: none;">
-            <h4 style="text-align: center; font-size: 16px;">Business Intelligence</h4>
-            <div class="bento-grid">
-                <div class="bento-item">
-                    <i class="fas fa-chart-pie"></i>
-                    <span>Data Visualization</span>
-                </div>
-                <div class="bento-item large">
-                    <p class="feature-description" style="text-align: center; font-size: 15px;">
-                        <strong style="display: block; margin-bottom: 2px;">Analytics & Reporting</strong>
-                        <span style="display: block; width: 99%; margin: 0 auto;">Make data-driven decisions.</span>
-                    </p>
-                </div>
-                <div class="bento-item">
-                    <i class="fas fa-database"></i>
-                    <span>Data Warehousing</span>
-                </div>
-                <div class="bento-item">
-                    <i class="fas fa-robot"></i>
-                    <span>Predictive Analytics</span>
-                </div>
-                <div class="bento-item">
-                    <i class="fas fa-tachometer-alt"></i>
-                    <span>KPI Dashboards</span>
-                </div>
-                <div class="bento-item">
-                    <i class="fas fa-file-alt"></i>
-                    <span>Custom Reports</span>
-                </div>
-            </div>
-        </div>
-    </div>
-    <style>
-        .bento-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            grid-template-rows: repeat(3, 1fr);
-            gap: 4px;
-            max-width: 300px;
-            margin: 0 auto;
-        }
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
-        .bento-item {
-            background-color: #f7f4f482;
-            padding: 10px;
-            border-radius: 15px;
-            font-size: 15px;
-            text-align: center;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            transition: all 0.3s ease;
-            animation: fadeIn 0.5s ease-out forwards;
-            opacity: 0;
-            cursor: default;
-        }
-     
-        .bento-item i {
-            font-size: 1.3em;
-            margin-bottom: 5px;
-            color: #3A6D8C;
-            animation: fadeIn 0.5s ease-out 0.2s forwards;
-            opacity: 0;
-        }
-        .bento-item span {
-            display: block;
-            line-height: 1.1;
-        }
-        .large {
-            grid-column: span 2;
-            grid-row: span 2;
-            font-size: 15px;
-        }
-    </style>
-    `,
-    hms: `
-    <div class="product-banner" style="background-image: url('assets/img/hotel.jpg');" onclick="navigateWithLoading('rhapsody-micro.html');">   
-        <div class="glare"></div>
-        <div class="product-banner-content">
-            <h2 class="product-title">Hotel Management System</h2>
-            <p class="product-banner-description">To Orchestrate Your Entire Hotel Operation.</p>
-        </div>
-    </div>
-    <div class="modules-title">KEY FEATURES</div>
-    <div class="modules-grid">
-            <div class="module" style="background: none;">
-            <h4 style="text-align: center; font-size: 16px;">Front Office</h4>
-            <div class="bento-grid">
-                <div class="bento-item large">
-                    <p class="feature-description" style="text-align: center; font-size: 15px;">
-                        <strong style="display: block; margin-bottom: 2px;">Front Office operations</strong>
-                        <span style="display: block; width: 95%; margin: 0 auto;">simplify guest services and reception tasks.</span>
-                    </p>
-                </div>
-                <div class="bento-item">
-                    <i class="fas fa-glass-cheers"></i>
-                    <span>Sales & Banquet</span>
-                </div>
-                <div class="bento-item">
-                    <i class="fas fa-calendar-check"></i>
-                    <span>Reservation</span>
-                </div>
-                <div class="bento-item">
-                    <i class="fas fa-door-open"></i>
-                    <span>Check-in/Out</span>
-                </div>
-                <div class="bento-item">
-                    <i class="fas fa-tags"></i>
-                    <span>Dynamic Pricing</span>
-                </div>
-                <div class="bento-item">
-                <i class="fas fa-cash-register"></i>
-                    <span>Point Of Sales </span>
-
-                </div>
-                <div class="bento-item full-width">
-                  <i class="fas fa-broom"></i>
-                    <span>Housekeeping</span>
-
-                </div>
-            </div>
-        </div>
-            <div class="module" style="border-left: 1px solid #e0e0e0; border-right: 1px solid #e0e0e0; border-radius: 0; background: none;">
-    <h4 style="text-align: center; font-size: 16px;">Logistic</h4>
-    <div style="max-width: 300px; margin: 0 auto;">
-        <div class="bento-item large" style="width: 100%; padding: 15px; border-radius: 10px; margin-bottom: 15px;">
-            <p style="font-size: 15px; margin: 0;"><span style="font-weight: bold;">Optimize inventory</span> and supply chain management.</p>
-        </div>
-        <div style="display: flex; justify-content: space-between; margin-bottom: 15px;">
-            <div class="bento-item" style="width: 30%; padding: 15px; border-radius: 10px; text-align: center;">
-                <i class="fas fa-shopping-cart" style="font-size: 1.5em; margin-bottom: 5px;"></i>
-                <span style="display: block; font-size: 15px;">Purchasing</span>
-            </div>
-            <div class="bento-item" style="width: 30%; padding: 15px; border-radius: 10px; text-align: center;">
-                <i class="fas fa-box" style="font-size: 1.5em; margin-bottom: 5px;"></i>
-                <span style="display: block; font-size: 15px;">Receiving</span>
-            </div>
-            <div class="bento-item" style="width: 30%; padding: 15px; border-radius: 10px; text-align: center;">
-                <i class="fas fa-warehouse" style="font-size: 1.5em; margin-bottom: 5px;"></i>
-                <span style="display: block; font-size: 15px;">Inventory</span>
-            </div>
-        </div>
-        <div style="display: flex; justify-content: center; gap: 15px;">
-            <div class="bento-item" style="width: 40%; padding: 15px; border-radius: 10px; text-align: center;">
-                <i class="fas fa-chart-line" style="font-size: 1.5em; margin-bottom: 5px;"></i>
-                <span style="display: block; font-size: 15px;">Cost Control</span>
-            </div>
-            <div class="bento-item" style="width: 40%; padding: 15px; border-radius: 10px; text-align: center;">
-                <i class="fas fa-utensils" style="font-size: 1.5em; margin-bottom: 5px;"></i>
-                <span style="display: block; font-size: 15px;">Recipe</span>
-            </div>
-        </div>
-    </div>
-</div>
-            <div class="module" style="background: none;">
-            <h4 style="text-align: center; font-size: 16px;">Back Office</h4>
-            <div class="bento-grid">
-                <div class="bento-item">
-                    <i class="fas fa-file-invoice-dollar"></i>
-                    <span>Accounts</span>
-                </div>
-                <div class="bento-item large" style="display: flex; align-items: center; justify-content: center; width: 94%; margin: 0 auto;">
-                    <p class="feature-description" style="text-align: center; font-size: 15px; margin: 0;">
-                        <strong style="display: block; margin-bottom: 3px;">Back Office operations</strong>
-                        <span style="display: block; width: 80%; margin: 0 auto;">improve operations and financial management.</span>
-                    </p>
-                </div>
-                <div class="bento-item">
-                    <i class="fas fa-money-check-alt"></i>
-                    <span>Receivable</span>
-                </div>
-                <div class="bento-item">
-                    <i class="fas fa-file-invoice"></i>
-                    <span>Accounts Payable</span>
-                </div>
-                <div class="bento-item">
-                    <i class="fas fa-landmark"></i>
-                    <span>Cash & Bank</span>
-                </div>
-                <div class="bento-item">
-                    <i class="fas fa-building"></i>
-                    <span>Fixed Asset</span>
-                </div>
-                <div class="bento-item full-width">
-                    <i class="fas fa-book"></i>
-                    <span>General Ledger</span>
-                </div>
-            </div>
-        </div>
-    </div>
-    <style>
-        .bento-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            grid-template-rows: repeat(3, 1fr);
-            gap: 8px;
-            max-width: 300px;
-            margin: 0 auto;
-        }
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
-        .bento-item {
-            background-color: #f7f4f482;
-            padding: 10px;
-            border-radius: 15px;
-            font-size: 15px;
-            text-align: center;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            transition: all 0.3s ease;
-            animation: fadeIn 0.5s ease-out forwards;
-            opacity: 0;
-      cursor: default;
-        }
-
-        .bento-item i {
-            font-size: 1.3em;
-            margin-bottom: 5px;
-            color: rgb(99, 50, 155);
-            animation: fadeIn 0.5s ease-out 0.2s forwards;
-            opacity: 0;
-        }
-        .bento-item span {
-            display: block;
-            line-height: 1.1;
-        }
-        .large {
-            grid-column: span 2;
-            grid-row: span 2;
-            font-size: 15px;
-        }
-        .full-width {
-            grid-column: 1 / -1;
-        }
-    </style>
-`,
-    gcs: `
-    <div class="product-banner" style="background-image: url('assets/img/gold.jpg');" onclick="navigateWithLoading('golf-micro.html');">                
-        <div class="glare"></div>
-        <div class="product-banner-content">
-            <h2 class="product-title">Golf Course System</h2>
-            <p class="product-banner-description">Supporting The Golfer's Journey On and Off The Course.</p>
-        </div>
-    </div>
-    <div class="modules-title">KEY FEATURES</div>
-    <div class="modules-grid">
-        <div class="module" style="background: none;">
-            <h4 style="text-align: center; font-size: 16px;">Membership</h4>
-            <div class="bento-grid">
-                <div class="bento-item large">
-                    <p class="feature-description" style="text-align: center; font-size: 15px;">
-                        <strong style="display: block; margin-bottom: 2px;">Membership Management</strong>
-                        <span style="display: block; width: 99%; margin: 0 auto;">with our unified platform.</span>
-                    </p>
-                </div>
-                <div class="bento-item">
-                    <i class="fas fa-user-plus"></i>
-                    <span>Member Profile</span>
-                </div>
-                <div class="bento-item">
-                    <i class="fas fa-file-invoice-dollar"></i>
-                    <span>Invoicing</span>
-                </div>
-                <div class="bento-item">
-                    <i class="fas fa-chart-bar"></i>
-                    <span>Activity Tracking</span>
-                </div>
-                <div class="bento-item">
-                    <i class="fas fa-tags"></i>
-                    <span>Class & Category</span>
-                </div>
-                <div class="bento-item">
-                    <i class="fas fa-user-shield"></i>
-                    <span>Member Status</span>
-                </div>
-            </div>
-        </div>
-        <div class="module" style="border-left: 1px solid #e0e0e0; border-right: 1px solid #e0e0e0; border-radius: 0; background: none;">
-            <h4 style="text-align: center; font-size: 16px;">Golf Operation</h4>
-            <div class="bento-grid" style="grid-template-columns: repeat(2, 1fr); grid-template-rows: auto repeat(2, 1fr); max-width: 300px; margin: 0 auto;">
-                <div class="bento-item large" style="grid-column: 1 / -1; width: 100%;">
-                    <p style="font-size: 15px; text-align: center;"><span style="font-weight: bold;">Streamline golf operations</span> with our integrated system.</p>
-                </div>
-                <div class="bento-item">
-                    <i class="fas fa-concierge-bell"></i>
-                    <span>Front Office</span>
-                </div>
-                <div class="bento-item">
-                    <i class="fas fa-leaf"></i>
-                    <span>Lawn Operations</span>
-                </div>
-                <div class="bento-item" style="grid-column: 1 / -1;">
-                    <i class="fas fa-chart-line"></i>
-                    <span>Back Office</span>
-                </div>
-            </div>
-        </div>
-        <div class="module" style="background: none;">
-            <h4 style="text-align: center; font-size: 16px;">Tournament</h4>
-            <div class="bento-grid">
-                <div class="bento-item">
-                    <i class="fas fa-trophy"></i>
-                    <span>Leaderboard</span>
-                </div>
-                <div class="bento-item large" style="display: flex; align-items: center; justify-content: center; width: 94%; margin: 0 auto;">
-                    <p class="feature-description" style="text-align: center; font-size: 15px; margin: 0;">
-                        <strong style="display: block; margin-bottom: 2px;">Tournament <br> Management</strong>
-                        <span style="display: block; width: 80%; margin: 0 auto;">your all-in-one golf event solution.</span>
-                    </p>
-                </div>
-                <div class="bento-item">
-                    <i class="fas fa-users"></i>
-                    <span>Pairing</span>
-                </div>
-                <div class="bento-item">
-                    <i class="fas fa-golf-ball"></i>
-                    <span>Handicap</span>
-                </div>
-                <div class="bento-item">
-                    <i class="fas fa-clipboard-list"></i>
-                    <span>Scoring Method</span>
-                </div>
-                <div class="bento-item">
-                    <i class="fas fa-chart-bar"></i>
-                    <span>Analytics</span>
-                </div>
-            </div>
-        </div>
-    </div>
-    <style>
-        .bento-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            grid-template-rows: repeat(3, 1fr);
-            gap: 8px;
-            max-width: 300px;
-            margin: 0 auto;
-        }
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
-        .bento-item {
-            background-color: #f7f4f482;
-            padding: 10px;
-            border-radius: 15px;
-            font-size: 15px;
-            text-align: center;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            transition: all 0.3s ease;
-            animation: fadeIn 0.5s ease-out forwards;
-            opacity: 0;
-            cursor: default;
-        }
-
-        .bento-item i {
-            font-size: 1.3em;
-            margin-bottom: 5px;
-            color: rgb(0, 139, 0);
-            animation: fadeIn 0.5s ease-out 0.2s forwards;
-            opacity: 0;
-        }
-        .bento-item span {
-            display: block;
-            line-height: 1.1;
-        }
-        .large {
-            grid-column: span 2;
-            grid-row: span 2;
-            font-size: 15px;
-        }
-    </style>
-`,
-    hrs: `
-        <div class="product-banner" style="background-image: url('assets/img/hr.jpg');" onclick="navigateWithLoading('hr-micro.html')">                
+      eam: `
+        <div class="product-banner" style="background-image: url('assets/img/eam.jpg');" onclick="navigateWithLoading('erp-micro.html');">                
             <div class="glare"></div>
             <div class="product-banner-content">
-                <h2 class="product-title">HR System</h2>
-                <p class="product-banner-description">To Effectively Manage Human Resource.</p>
+                <h2 class="product-title">EAM & ERP</h2>
+                <p class="product-banner-description">Streamline Your Business Operations.</p>
             </div>
         </div>
+
+            <style>
+            .feature-list li i {
+                margin-right: 10px;
+                background: linear-gradient(45deg, #8B0000, #FF6666);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+            }
+
+            .feature-list li {
+                display: flex;
+                align-items: center;
+                margin-bottom: 8px;
+                padding: 8px;
+                border-radius: 6px;
+                background: rgba(255,255,255,0.05);
+                transition: all 0.3s ease;
+            }
+
+            .feature-list li span {
+                font-size: 0.9em;
+            }
+            </style>
+
         <div class="modules-title">KEY FEATURES</div>
         <div class="modules-grid">
-            <div class="module" style="background: none;">
-                <h4 style="text-align: center; font-size: 16px;">HR Core</h4>
-                <div class="bento-grid">
-                    <div class="bento-item large">
-                        <p class="feature-description" style="text-align: center; font-size: 15px;">
-                            <strong style="display: block; margin-bottom: 2px;">HR operations</strong> <span style="display: block; width: 99%; margin: 0 auto;">with our integrated solution.</span>
-                        </p>
-                    </div>
-                    <div class="bento-item">
-                        <i class="fas fa-id-card-alt"></i>
-                        <span>Personnel</span>
-                    </div>
-                    <div class="bento-item">
-                        <i class="fas fa-calendar-check"></i>
-                        <span>Attendance</span>
-                    </div>
-                    <div class="bento-item">
-                        <i class="fas fa-hand-holding-usd"></i>
-                        <span>Loan</span>
-                    </div>
-                    <div class="bento-item">
-                        <i class="fas fa-heartbeat"></i>
-                        <span>Medical</span>
-                    </div>
-                    <div class="bento-item">
-                        <i class="fas fa-file-invoice-dollar"></i>
-                        <span>Payroll</span>
-                    </div>
-                </div>
-                <style>
-                    .bento-grid {
-                        display: grid;
-                        grid-template-columns: repeat(3, 1fr);
-                        grid-template-rows: repeat(3, 1fr);
-                        gap: 8px;
-                        max-width: 300px;
-                        margin: 0 auto;
-                    }
-                    /* Initial fade-in transition for bento items */
-                    @keyframes fadeIn {
-                        from { opacity: 0; }
-                        to { opacity: 1; }
-                    }
-
-                    .bento-item {
-                        background-color: #f7f4f482;
-                        padding: 10px;
-                        border-radius: 15px;
-                        font-size: 15px;
-                        text-align: center;
-                        display: flex;
-                        flex-direction: column;
-                        align-items: center;
-                        justify-content: center;
-                        transition: all 0.3s ease;
-                        animation: fadeIn 0.5s ease-out forwards;
-                        opacity: 0;
-                        cursor: default;
-                    }
-                  
-                    .bento-item i {
-                        font-size: 1.3em;
-                        margin-bottom: 5px;
-                        color: rgb(139, 0, 69);
-                        animation: fadeIn 0.5s ease-out 0.2s forwards;
-                        opacity: 0;
-                    }
-                    .bento-item span {
-                        display: block;
-                        line-height: 1.1;
-                    }
-                    .large {
-                        grid-column: span 2;
-                        grid-row: span 2;
-                        font-size: 15px;
-                    }
-                </style>
+            <div class="module">
+                <i class="fas fa-chart-line" style="margin-right: 10px; background: linear-gradient(45deg, #8B0000, #FF6666); -webkit-background-clip: text; -webkit-text-fill-color: transparent;"></i>
+                <h4>Enterprise Planning</h4>
+                <p>Integrate and optimize core business processes</p>
+                <ul class="feature-list" style="list-style: none; padding: 0; margin-top: 15px;">
+                    <li>
+                        <i class="fas fa-money-bill-wave"></i>
+                        <span>Finance</span>
+                    </li>
+                    <li>
+                        <i class="fas fa-cogs"></i>
+                        <span>Manufacturing</span>
+                    </li>
+                    <li>
+                        <i class="fas fa-project-diagram"></i>
+                        <span>Project Management</span>
+                    </li>
+                    <li>
+                        <i class="fas fa-truck"></i>
+                        <span>Supply Chain</span>
+                    </li>
+                </ul>
             </div>
-            <div class="module" style="border-left: 1px solid #e0e0e0; border-right: 1px solid #e0e0e0; border-radius: 0; background: none;">
-                   <h4 style="text-align: center; font-size: 16px;">HR Advance</h4>
-                <div class="bento-grid" style="grid-template-columns: repeat(2, 1fr); grid-template-rows: auto repeat(2, 1fr); max-width: 250px; margin: 0 auto;">
-                    <div class="bento-item large" style="grid-column: 1 / -1;">
-                        <p style="font-size: 15px;"><span style="font-weight: bold;">HR Advance</span>with our unified platform.</p>
-                    </div>
-                    <div class="bento-item">
-                        <i class="fas fa-user-plus"></i>
-                        <span>Recruitment</span>
-                    </div>
-                    <div class="bento-item">
-                        <i class="fas fa-briefcase"></i>
-                        <span>Job Competency</span>
-                    </div>
-                    <div class="bento-item">
-                        <i class="fas fa-graduation-cap"></i>
-                        <span>Training</span>
-                    </div>
-                    <div class="bento-item">
-                        <i class="fas fa-chart-line"></i>
-                        <span>Performance</span>
-                    </div>
-                </div>
+            <div class="module">
+                <i class="fas fa-tools" style="margin-right: 10px; background: linear-gradient(45deg, #8B0000, #FF6666); -webkit-background-clip: text; -webkit-text-fill-color: transparent;"></i>
+                <h4>Asset & Warehouse Management</h4>
+                <p>Optimize your resources and inventory</p>
+                <ul class="feature-list" style="list-style: none; padding: 0; margin-top: 15px;">
+                    <li>
+                        <i class="fas fa-wrench"></i>
+                        <span>Maintenance</span>
+                    </li>
+                    <li>
+                        <i class="fas fa-box"></i>
+                        <span>Inventory</span>
+                    </li>
+                    <li>
+                        <i class="fas fa-warehouse"></i>
+                        <span>Warehouse</span>
+                    </li>
+                    <li>
+                        <i class="fas fa-clipboard-list"></i>
+                        <span>Procurement</span>
+                    </li>
+                </ul>
             </div>
-            <div class="module" style="background: none;">
-                 <h4 style="text-align: center; font-size: 16px;">HR Mobile</h4>
-               <div class="bento-grid">
-                
-                    <div class="bento-item">
-                        <i class="fas fa-map-marker-alt"></i>
-                        <span>Locations</span>
-                    </div>
-                       <div class="bento-item large" style="display: flex; align-items: center; justify-content: center; width: 94%; margin: 0 auto;">
-                        <p class="feature-description" style="text-align: center; font-size: 15px; margin: 0;">
-                            <strong style="display: block; margin-bottom: 2px;">Employee Self <br> Service</strong>
-                            <span style="display: block; width: 80%; margin: 0 auto;">Empower HR with our ESS app.</span>
-                        </p>
-                    </div>
-                    <div class="bento-item">
-                        <i class="fas fa-eye"></i>
-                        <span>Monitoring</span>
-                    </div>
-                    <div class="bento-item">
-                        <i class="fas fa-mobile-alt"></i>
-                        <span>Request</span>
-                    </div>
-                    
-                    <div class="bento-item">
-                        <i class="fas fa-calendar-check"></i>
-                        <span>Reminder</span>
-                    </div>
-                    
-                    <div class="bento-item">
-                        <i class="fas fa-bell"></i>
-                        <span>Notification</span>
-                    </div>
-                </div>
+            <div class="module">
+                <i class="fas fa-chart-bar" style="margin-right: 10px; background: linear-gradient(45deg, #8B0000, #FF6666); -webkit-background-clip: text; -webkit-text-fill-color: transparent;"></i>
+                <h4>Business Intelligence</h4>
+                <p>Make data-driven decisions</p>
+                <ul class="feature-list" style="list-style: none; padding: 0; margin-top: 15px;">
+                    <li>
+                        <i class="fas fa-chart-pie"></i>
+                        <span>Data Visualization</span>
+                    </li>
+                    <li>
+                        <i class="fas fa-database"></i>
+                        <span>Data Warehousing</span>
+                    </li>
+                    <li>
+                        <i class="fas fa-brain"></i>
+                        <span>Predictive Analytics</span>
+                    </li>
+                    <li>
+                        <i class="fas fa-tachometer-alt"></i>
+                        <span>KPI Dashboards</span>
+                    </li>
+                    <li>
+                        <i class="fas fa-file-alt"></i>
+                        <span>Custom Reports</span>
+                    </li>
+                </ul>
             </div>
         </div>
     `,
-    pts: `
-    <div class="product-banner" style="background-image: url('assets/img/property.jpg');" onclick="navigateWithLoading('bimasakti-micro.html');">                
+    hrs: `
+    <div class="product-banner" style="background-image: url('assets/img/hr.jpg');" onclick="navigateWithLoading('hr-micro.html')">                
         <div class="glare"></div>
         <div class="product-banner-content">
-            <h2 class="product-title">Property & Tenancy System</h2>
-            <p class="product-banner-description">Design specifically to help today's Building Management work more efficiently and effectively.</p>
+            <h2 class="product-title">HR System</h2>
+            <p class="product-banner-description">Effectively Manage Human Resources</p>
         </div>
     </div>
-    <div class="modules-title">KEY FEATURES</div>
-    <div class="modules-grid">
-        <div class="module" style="background: none;">
-            <h4 style="text-align: center;">Sales & Marketing</h4>
-            <div class="bento-grid" style="grid-template-columns: repeat(2, 1fr); grid-template-rows: auto repeat(2, 1fr); max-width: 250px; margin: 0 auto;">
-                <div class="bento-item large" style="grid-column: 1 / -1;">
-                    <p style="font-size: 15px; text-align: center;">
-                        <span style="font-weight: bold; display: block;">Boost Your Sales</span>
-                       with our comprehensive, integrated solution.
-                    </p>
-                </div>
-                <div class="bento-item">
-                    <i class="fas fa-handshake"></i>
-                    <span>Strata Release</span>
-                </div>
-                <div class="bento-item">
-                    <i class="fas fa-home"></i>
-                    <span>Handover</span>
-                </div>
-                <div class="bento-item">
-                    <i class="fas fa-thumbs-up"></i>
-                    <span>Fitting Out</span>
-                </div>
-                <div class="bento-item">
-                    <i class="fas fa-file-contract"></i>
-                    <span>Lease Renewal</span>
-                </div>
-            </div>
-        </div>
-        <div class="module" style="border-left: 1px solid #e0e0e0; border-right: 1px solid #e0e0e0; border-radius: 0; background: none;">
-            <h4 style="text-align: center;">Tenancy</h4>
-            <div class="bento-grid" style="grid-template-columns: repeat(2, 1fr); grid-template-rows: auto repeat(2, 1fr); max-width: 250px; margin: 0 auto;">
-                <div class="bento-item large" style="grid-column: 1 / -1;">
-                    <p style="font-size: 15px;"><span style="font-weight: bold;">Tenancy Management</span> with our comprehensive, user-friendly platform.</p>
-                </div>
-                <div class="bento-item">
-                    <i class="fas fa-database"></i>
-                    <span>Tenant Database</span>
-                </div>
-                <div class="bento-item">
-                    <i class="fas fa-dollar-sign"></i>
-                    <span>Service Charge</span>
-                </div>
-                <div class="bento-item">
-                    <i class="fas fa-coins"></i>
-                    <span>Sinking Fund</span>
-                </div>
-                <div class="bento-item">
-                    <i class="fas fa-bolt"></i>
-                    <span>Utilities</span>
-                </div>
-            </div>
-        </div>
-        <div class="module" style="background: none;">
-            <h4 style="text-align: center;">Billing</h4>
-            <div class="bento-grid" style="grid-template-columns: repeat(2, 1fr); grid-template-rows: auto repeat(2, 1fr); max-width: 250px; margin: 0 auto;">
-                <div class="bento-item large" style="grid-column: 1 / -1;">
-                    <p style="font-size: 15px;"><span style="font-weight: bold;">Billing Management</span> with our efficient handling of billing and payments.</p>
-                </div>
-                <div class="bento-item">
-                    <i class="fas fa-money-bill-wave"></i>
-                    <span>Down Payment</span>
-                </div>
-                <div class="bento-item">
-                    <i class="fas fa-file-invoice-dollar"></i>
-                    <span>Installment</span>
-                </div>
-                <div class="bento-item">
-                    <i class="fas fa-bolt"></i>
-                    <span>Utilities</span>
-                </div>
-                <div class="bento-item">
-                    <i class="fas fa-cogs"></i>
-                    <span>Others</span>
-                </div>
-            </div>
-        </div>
-    </div>
+
     <style>
-        .bento-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            grid-template-rows: repeat(3, 1fr);
-            gap: 8px;
-            max-width: 300px;
-            margin: 0 auto;
-        }
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
-        .bento-item {
-            background-color: #f7f4f482;
-            padding: 10px;
-            border-radius: 15px;
-            font-size: 15px;
-            text-align: center;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            transition: all 0.3s ease;
-            animation: fadeIn 0.5s ease-out forwards;
-            opacity: 0;  
-            cursor: default;
-        }
-        .bento-item h4 {
-            font-size: 16px;
-            margin-bottom: 5px;
+        .hr-core-module i {
+            margin-right: 10px;
+            background: linear-gradient(45deg, #FF0066, #FF9933);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
 
-        
-        .bento-item i {
-            font-size: 1.3em;
-            margin-bottom: 5px;
-            color: rgb(0, 128, 128);
-            animation: fadeIn 0.5s ease-out 0.2s forwards;
-            opacity: 0;
+        .hr-advance-module i {
+            margin-right: 10px;
+            background: linear-gradient(45deg, #FF0066, #FF9933);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
-        .bento-item span {
-            display: block;
-            line-height: 1.1;
+
+        .hr-mobile-module i {
+            margin-right: 10px;
+            background: linear-gradient(45deg, #FF0066, #FF9933);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
-        .large {
-            grid-column: span 2;
-            grid-row: span 2;
-            font-size: 0.85em;
+
+        .feature-list li {
+            display: flex;
+            align-items: center;
+            margin-bottom: 8px;
+            padding: 8px;
+            border-radius: 6px;
+            background: rgba(255,255,255,0.05);
+            transition: all 0.3s ease;
+        }
+
+        .feature-list li span {
+            font-size: 0.9em;
         }
     </style>
+
+    <div class="modules-title">KEY FEATURES</div>
+    <div class="modules-grid">
+        <div class="module hr-core-module">
+            <i class="fas fa-users"></i>
+            <h4>HR Core</h4>
+            <p>HR operations with our integrated solution.</p>
+            <ul class="feature-list" style="list-style: none; padding: 0; margin-top: 15px;">
+                <li>
+                    <i class="fas fa-user"></i>
+                    <span>Personnel</span>
+                </li>
+                <li>
+                    <i class="fas fa-clock"></i>
+                    <span>Attendance</span>
+                </li>
+                <li>
+                    <i class="fas fa-hand-holding-usd"></i>
+                    <span>Loan</span>
+                </li>
+                <li>
+                    <i class="fas fa-heartbeat"></i>
+                    <span>Medical</span>
+                </li>
+                <li>
+                    <i class="fas fa-file-invoice-dollar"></i>
+                    <span>Payroll</span>
+                </li>
+            </ul>
+        </div>
+        <div class="module hr-advance-module">
+            <i class="fas fa-user-tie"></i>
+            <h4>HR Advance</h4>
+            <p>with our unified platform.</p>
+            <ul class="feature-list" style="list-style: none; padding: 0; margin-top: 15px;">
+                <li>
+                    <i class="fas fa-user-plus"></i>
+                    <span>Recruitment</span>
+                </li>
+                <li>
+                    <i class="fas fa-briefcase"></i>
+                    <span>Job Competency</span>
+                </li>
+                <li>
+                    <i class="fas fa-graduation-cap"></i>
+                    <span>Training</span>
+                </li>
+                <li>
+                    <i class="fas fa-chart-line"></i>
+                    <span>Performance</span>
+                </li>
+            </ul>
+        </div>
+        <div class="module hr-mobile-module">
+            <i class="fas fa-mobile-alt"></i>
+            <h4>HR Mobile</h4>
+            <p>Empower HR with our ESS app.</p>
+            <ul class="feature-list" style="list-style: none; padding: 0; margin-top: 15px;">
+                <li>
+                    <i class="fas fa-map-marker-alt"></i>
+                    <span>Locations</span>
+                </li>
+                <li>
+                    <i class="fas fa-eye"></i>
+                    <span>Monitoring</span>
+                </li>
+                <li>
+                    <i class="fas fa-file-alt"></i>
+                    <span>Request</span>
+                </li>
+                <li>
+                    <i class="fas fa-bell"></i>
+                    <span>Reminder</span>
+                </li>
+                <li>
+                    <i class="fas fa-exclamation-circle"></i>
+                    <span>Notification</span>
+                </li>
+            </ul>
+        </div>
+    </div>
 `,
+pts: `
+<div class="product-banner" style="background-image: url('assets/img/property.jpg');" onclick="navigateWithLoading('property-micro.html');">                
+    <div class="glare"></div>
+    <div class="product-banner-content">
+        <h2 class="product-title">Property & Tenancy System</h2>
+        <p class="product-banner-description">Efficient Building Management Solutions</p>
+    </div>
+</div>
+
+<style>
+    .sales-marketing-module i {
+        margin-right: 10px;
+        background: linear-gradient(45deg, #0000FF, #87CEEB);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+
+    .tenancy-module i {
+        margin-right: 10px;
+        background: linear-gradient(45deg, #0000FF, #87CEEB);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+
+    .billing-module i {
+        margin-right: 10px;
+        background: linear-gradient(45deg, #0000FF, #87CEEB);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+
+    .feature-list li {
+        display: flex;
+        align-items: center;
+        margin-bottom: 8px;
+        padding: 8px;
+        border-radius: 6px;
+        background: rgba(255,255,255,0.05);
+        transition: all 0.3s ease;
+    }
+
+    .feature-list li span {
+        font-size: 0.9em;
+    }
+</style>
+
+<div class="modules-title">KEY FEATURES</div>
+<div class="modules-grid">
+    <div class="module sales-marketing-module">
+        <i class="fas fa-chart-line"></i>
+        <h4>Sales & Marketing</h4>
+        <p>Boost Your Sales with our comprehensive, integrated solution.</p>
+        <ul class="feature-list" style="list-style: none; padding: 0; margin-top: 15px;">
+            <li>
+                <i class="fas fa-video"></i>
+                <span>Strata Release</span>
+            </li>
+            <li>
+                <i class="fas fa-key"></i>
+                <span>Handover</span>
+            </li>
+            <li>
+                <i class="fas fa-check-circle"></i>
+                <span>Fitting Out</span>
+            </li>
+            <li>
+                <i class="fas fa-file-contract"></i>
+                <span>Lease Renewal</span>
+            </li>
+        </ul>
+    </div>
+    <div class="module tenancy-module">
+        <i class="fas fa-building"></i>
+        <h4>Tenancy Management</h4>
+        <p>with our comprehensive, user-friendly platform.</p>
+        <ul class="feature-list" style="list-style: none; padding: 0; margin-top: 15px;">
+            <li>
+                <i class="fas fa-database"></i>
+                <span>Tenant Database</span>
+            </li>
+            <li>
+                <i class="fas fa-dollar-sign"></i>
+                <span>Service Charge</span>
+            </li>
+            <li>
+                <i class="fas fa-piggy-bank"></i>
+                <span>Sinking Fund</span>
+            </li>
+            <li>
+                <i class="fas fa-bolt"></i>
+                <span>Utilities</span>
+            </li>
+        </ul>
+    </div>
+    <div class="module billing-module">
+        <i class="fas fa-file-invoice-dollar"></i>
+        <h4>Billing Management</h4>
+        <p>with our efficient handling of billing and payments.</p>
+        <ul class="feature-list" style="list-style: none; padding: 0; margin-top: 15px;">
+            <li>
+                <i class="fas fa-money-bill-wave"></i>
+                <span>Down Payment</span>
+            </li>
+            <li>
+                <i class="fas fa-clock"></i>
+                <span>Installment</span>
+            </li>
+            <li>
+                <i class="fas fa-bolt"></i>
+                <span>Utilities</span>
+            </li>
+            <li>
+                <i class="fas fa-cogs"></i>
+                <span>Others</span>
+            </li>
+        </ul>
+    </div>
+</div>
+`,
+    gcs: `
+        <div class="product-banner" style="background-image: url('assets/img/gold.jpg');" onclick="navigateWithLoading('golf-micro.html');">                
+            <div class="glare"></div>
+            <div class="product-banner-content">
+                <h2 class="product-title">Golf Course System</h2>
+                <p class="product-banner-description">Complete Golf Operations Management</p>
+            </div>
+        </div>
+
+        <style>
+            .membership-module i {
+                margin-right: 10px;
+                 background:  linear-gradient(45deg, #33CC33, #99FF33);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+            }
+
+            .operations-module i {
+                margin-right: 10px;
+                 background:  linear-gradient(45deg, #33CC33, #99FF33);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+            }
+
+            .tournament-module i {
+                margin-right: 10px;
+                background:  linear-gradient(45deg, #33CC33, #99FF33);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+            }
+
+            .feature-list li {
+                display: flex;
+                align-items: center;
+                margin-bottom: 8px;
+                padding: 8px;
+                border-radius: 6px;
+                background: rgba(255,255,255,0.05);
+                transition: all 0.3s ease;
+            }
+
+            .feature-list li span {
+                font-size: 0.9em;
+            }
+        </style>
+
+        <div class="modules-title">KEY FEATURES</div>
+        <div class="modules-grid">
+            <div class="module membership-module">
+                <i class="fas fa-users"></i>
+                <h4>Membership Management</h4>
+                <p>with our unified platform.</p>
+                <ul class="feature-list" style="list-style: none; padding: 0; margin-top: 15px;">
+                    <li>
+                        <i class="fas fa-id-card"></i>
+                        <span>Member Profile</span>
+                    </li>
+                    <li>
+                        <i class="fas fa-file-invoice-dollar"></i>
+                        <span>Invoicing</span>
+                    </li>
+                    <li>
+                        <i class="fas fa-chart-line"></i>
+                        <span>Activity Tracking</span>
+                    </li>
+                    <li>
+                        <i class="fas fa-tag"></i>
+                        <span>Class & Category</span>
+                    </li>
+                    <li>
+                        <i class="fas fa-user-check"></i>
+                        <span>Member Status</span>
+                    </li>
+                </ul>
+            </div>
+            <div class="module operations-module">
+                <i class="fas fa-golf-ball"></i>
+                <h4>Golf Operation</h4>
+                <p>Streamline golf operations with our integrated system.</p>
+                <ul class="feature-list" style="list-style: none; padding: 0; margin-top: 15px;">
+                    <li>
+                        <i class="fas fa-door-open"></i>
+                        <span>Front Office</span>
+                    </li>
+                    <li>
+                        <i class="fas fa-leaf"></i>
+                        <span>Lawn Operations</span>
+                    </li>
+                    <li>
+                        <i class="fas fa-chart-bar"></i>
+                        <span>Back Office</span>
+                    </li>
+                </ul>
+            </div>
+            <div class="module tournament-module">
+                <i class="fas fa-trophy"></i>
+                <h4>Tournament Management</h4>
+                <p>your all-in-one golf event solution.</p>
+                <ul class="feature-list" style="list-style: none; padding: 0; margin-top: 15px;">
+                    <li>
+                        <i class="fas fa-trophy"></i>
+                        <span>Leaderboard</span>
+                    </li>
+                    <li>
+                        <i class="fas fa-users"></i>
+                        <span>Pairing</span>
+                    </li>
+                    <li>
+                        <i class="fas fa-golf-ball"></i>
+                        <span>Handicap</span>
+                    </li>
+                    <li>
+                        <i class="fas fa-clipboard"></i>
+                        <span>Scoring Method</span>
+                    </li>
+                    <li>
+                        <i class="fas fa-chart-line"></i>
+                        <span>Analytics</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    `,
+
+    hms: `
+        <div class="product-banner" style="background-image: url('assets/img/hotel.jpg');" onclick="navigateWithLoading('hotel-micro.html');">                
+            <div class="glare"></div>
+            <div class="product-banner-content">
+                <h2 class="product-title">Hotel Management System</h2>
+                <p class="product-banner-description">Complete Hotel Operations Management</p>
+            </div>
+        </div>
+
+        <style>
+            .front-office-module i {
+                margin-right: 10px;
+                background: linear-gradient(45deg, #9933FF, #CC99FF);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+            }
+
+            .logistic-module i {
+                margin-right: 10px;
+                background: linear-gradient(45deg, #9933FF, #CC99FF);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+            }
+
+            .back-office-module i {
+                margin-right: 10px;
+                background: linear-gradient(45deg, #9933FF, #CC99FF);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+            }
+
+            .feature-list li {
+                display: flex;
+                align-items: center;
+                margin-bottom: 8px;
+                padding: 8px;
+                border-radius: 6px;
+                background: rgba(255,255,255,0.05);
+                transition: all 0.3s ease;
+            }
+
+            .feature-list li span {
+                font-size: 0.9em;
+            }
+        </style>
+
+        <div class="modules-title">KEY FEATURES</div>
+        <div class="modules-grid">
+            <div class="module front-office-module">
+                <i class="fas fa-concierge-bell"></i>
+                <h4>Front Office</h4>
+                <p>simplify guest services and reception tasks.</p>
+                <ul class="feature-list" style="list-style: none; padding: 0; margin-top: 15px;">
+                    <li>
+                        <i class="fas fa-glass-cheers"></i>
+                        <span>Sales & Banquet</span>
+                    </li>
+                    <li>
+                        <i class="fas fa-calendar-check"></i>
+                        <span>Reservation</span>
+                    </li>
+                    <li>
+                        <i class="fas fa-door-open"></i>
+                        <span>Check-in/Out</span>
+                    </li>
+                    <li>
+                        <i class="fas fa-tags"></i>
+                        <span>Dynamic Pricing</span>
+                    </li>
+                    <li>
+                        <i class="fas fa-cash-register"></i>
+                        <span>Point Of Sales</span>
+                    </li>
+                    <li>
+                        <i class="fas fa-broom"></i>
+                        <span>Housekeeping</span>
+                    </li>
+                </ul>
+            </div>
+            <div class="module logistic-module">
+                <i class="fas fa-boxes"></i>
+                <h4>Logistic</h4>
+                <p>Optimize inventory and supply chain management.</p>
+                <ul class="feature-list" style="list-style: none; padding: 0; margin-top: 15px;">
+                    <li>
+                        <i class="fas fa-shopping-cart"></i>
+                        <span>Purchasing</span>
+                    </li>
+                    <li>
+                        <i class="fas fa-box"></i>
+                        <span>Receiving</span>
+                    </li>
+                    <li>
+                        <i class="fas fa-warehouse"></i>
+                        <span>Inventory</span>
+                    </li>
+                    <li>
+                        <i class="fas fa-chart-line"></i>
+                        <span>Cost Control</span>
+                    </li>
+                    <li>
+                        <i class="fas fa-utensils"></i>
+                        <span>Recipe</span>
+                    </li>
+                </ul>
+            </div>
+            <div class="module back-office-module">
+                <i class="fas fa-chart-bar"></i>
+                <h4>Back Office</h4>
+                <p>improve operations and financial management.</p>
+                <ul class="feature-list" style="list-style: none; padding: 0; margin-top: 15px;">
+                    <li>
+                        <i class="fas fa-file-invoice-dollar"></i>
+                        <span>Accounts</span>
+                    </li>
+                    <li>
+                        <i class="fas fa-file-alt"></i>
+                        <span>Receivable</span>
+                    </li>
+                    <li>
+                        <i class="fas fa-file-invoice"></i>
+                        <span>Accounts Payable</span>
+                    </li>
+                    <li>
+                        <i class="fas fa-university"></i>
+                        <span>Cash & Bank</span>
+                    </li>
+                    <li>
+                        <i class="fas fa-calculator"></i>
+                        <span>Fixed Asset</span>
+                    </li>
+                    <li>
+                        <i class="fas fa-book"></i>
+                        <span>General Ledger</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    `,
+   
     itm: `
         <div class="product-banner" style="background-image: url('assets/img/it-management.jpg');" onclick="navigateWithLoading('itsm-micro.html')">                
             <div class="glare"></div>
@@ -847,8 +731,7 @@ handleCategories('#solutionsDropdownContent', 'product-details', {
         </div>
     `,
     erp: `
-            <div class="product-banner" style="background-image: url('assets/img/erp.jpg');" onclick="navigateWithLoading('realnet-micro.html')">
-              
+        <div class="product-banner" style="background-image: url('assets/img/erp.jpg');" onclick="navigateWithLoading('realnet-micro.html')">
             <div class="glare"></div>
             <div class="product-banner-content">
                 <h2 class="product-title">Network & System Integration</h2>
