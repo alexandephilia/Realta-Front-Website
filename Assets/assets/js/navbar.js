@@ -386,7 +386,7 @@ pts: `
     </div>
     <div class="module tenancy-module">
         <h4>Tenancy Management</h4>
-        <p>with our comprehensive, user-friendly platform.</p>
+        <p>With our comprehensive, user-friendly platform.</p>
         <ul class="feature-list" style="list-style: none; padding: 0; margin-top: 15px;">
             <li>
                 <i class="fas fa-database"></i>
@@ -408,7 +408,7 @@ pts: `
     </div>
     <div class="module billing-module">
         <h4>Billing Management</h4>
-        <p>with our efficient handling of billing and payments.</p>
+        <p>With our efficient handling of billing and payments.</p>
         <ul class="feature-list" style="list-style: none; padding: 0; margin-top: 15px;">
             <li>
                 <i class="fas fa-money-bill-wave"></i>
@@ -480,7 +480,7 @@ pts: `
         <div class="modules-grid">
             <div class="module membership-module">
                 <h4>Membership Management</h4>
-                <p>with our unified platform.</p>
+                <p>With our unified platform.</p>
                 <ul class="feature-list" style="list-style: none; padding: 0; margin-top: 15px;">
                     <li>
                         <i class="fas fa-id-card"></i>
@@ -524,7 +524,7 @@ pts: `
             </div>
             <div class="module tournament-module">
                 <h4>Tournament Management</h4>
-                <p>your all-in-one golf event solution.</p>
+                <p>Your all-in-one golf event solution.</p>
                 <ul class="feature-list" style="list-style: none; padding: 0; margin-top: 15px;">
                     <li>
                         <i class="fas fa-trophy"></i>
@@ -601,7 +601,7 @@ pts: `
         <div class="modules-grid">
             <div class="module front-office-module">
                 <h4>Front Office</h4>
-                <p>simplify guest services and reception tasks.</p>
+                <p>Simplify guest services and reception tasks.</p>
                 <ul class="feature-list" style="list-style: none; padding: 0; margin-top: 15px;">
                     <li>
                         <i class="fas fa-glass-cheers"></i>
@@ -657,7 +657,7 @@ pts: `
             </div>
             <div class="module back-office-module">
                 <h4>Back Office</h4>
-                <p>improve operations and financial management.</p>
+                <p>Improve operations and financial management.</p>
                 <ul class="feature-list" style="list-style: none; padding: 0; margin-top: 15px;">
                     <li>
                         <i class="fas fa-file-invoice-dollar"></i>
