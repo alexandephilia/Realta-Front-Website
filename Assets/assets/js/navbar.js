@@ -105,7 +105,7 @@ handleCategories('#solutionsDropdownContent', 'product-details', {
                 display: flex;
                 align-items: center;
                 margin-bottom: 8px;
-                padding: 8px;
+                padding: 1px;
                 border-radius: 6px;
                 background: rgba(255,255,255,0.05);
                 transition: all 0.3s ease;
@@ -119,7 +119,6 @@ handleCategories('#solutionsDropdownContent', 'product-details', {
         <div class="modules-title">KEY FEATURES</div>
         <div class="modules-grid">
             <div class="module">
-                <i class="fas fa-chart-line" style="margin-right: 10px; background: linear-gradient(45deg, #8B0000, #FF6666); -webkit-background-clip: text; -webkit-text-fill-color: transparent;"></i>
                 <h4>Enterprise Planning</h4>
                 <p>Integrate and optimize core business processes</p>
                 <ul class="feature-list" style="list-style: none; padding: 0; margin-top: 15px;">
@@ -142,7 +141,6 @@ handleCategories('#solutionsDropdownContent', 'product-details', {
                 </ul>
             </div>
             <div class="module">
-                <i class="fas fa-tools" style="margin-right: 10px; background: linear-gradient(45deg, #8B0000, #FF6666); -webkit-background-clip: text; -webkit-text-fill-color: transparent;"></i>
                 <h4>Asset & Warehouse Management</h4>
                 <p>Optimize your resources and inventory</p>
                 <ul class="feature-list" style="list-style: none; padding: 0; margin-top: 15px;">
@@ -165,7 +163,6 @@ handleCategories('#solutionsDropdownContent', 'product-details', {
                 </ul>
             </div>
             <div class="module">
-                <i class="fas fa-chart-bar" style="margin-right: 10px; background: linear-gradient(45deg, #8B0000, #FF6666); -webkit-background-clip: text; -webkit-text-fill-color: transparent;"></i>
                 <h4>Business Intelligence</h4>
                 <p>Make data-driven decisions</p>
                 <ul class="feature-list" style="list-style: none; padding: 0; margin-top: 15px;">
@@ -228,7 +225,7 @@ handleCategories('#solutionsDropdownContent', 'product-details', {
             display: flex;
             align-items: center;
             margin-bottom: 8px;
-            padding: 8px;
+            padding: 1px;
             border-radius: 6px;
             background: rgba(255,255,255,0.05);
             transition: all 0.3s ease;
@@ -242,7 +239,6 @@ handleCategories('#solutionsDropdownContent', 'product-details', {
     <div class="modules-title">KEY FEATURES</div>
     <div class="modules-grid">
         <div class="module hr-core-module">
-            <i class="fas fa-users"></i>
             <h4>HR Core</h4>
             <p>HR operations with our integrated solution.</p>
             <ul class="feature-list" style="list-style: none; padding: 0; margin-top: 15px;">
@@ -269,7 +265,6 @@ handleCategories('#solutionsDropdownContent', 'product-details', {
             </ul>
         </div>
         <div class="module hr-advance-module">
-            <i class="fas fa-user-tie"></i>
             <h4>HR Advance</h4>
             <p>with our unified platform.</p>
             <ul class="feature-list" style="list-style: none; padding: 0; margin-top: 15px;">
@@ -292,7 +287,6 @@ handleCategories('#solutionsDropdownContent', 'product-details', {
             </ul>
         </div>
         <div class="module hr-mobile-module">
-            <i class="fas fa-mobile-alt"></i>
             <h4>HR Mobile</h4>
             <p>Empower HR with our ESS app.</p>
             <ul class="feature-list" style="list-style: none; padding: 0; margin-top: 15px;">
@@ -355,7 +349,7 @@ pts: `
         display: flex;
         align-items: center;
         margin-bottom: 8px;
-        padding: 8px;
+        padding: 1px;
         border-radius: 6px;
         background: rgba(255,255,255,0.05);
         transition: all 0.3s ease;
@@ -369,7 +363,6 @@ pts: `
 <div class="modules-title">KEY FEATURES</div>
 <div class="modules-grid">
     <div class="module sales-marketing-module">
-        <i class="fas fa-chart-line"></i>
         <h4>Sales & Marketing</h4>
         <p>Boost Your Sales with our comprehensive, integrated solution.</p>
         <ul class="feature-list" style="list-style: none; padding: 0; margin-top: 15px;">
@@ -392,7 +385,6 @@ pts: `
         </ul>
     </div>
     <div class="module tenancy-module">
-        <i class="fas fa-building"></i>
         <h4>Tenancy Management</h4>
         <p>with our comprehensive, user-friendly platform.</p>
         <ul class="feature-list" style="list-style: none; padding: 0; margin-top: 15px;">
@@ -415,7 +407,6 @@ pts: `
         </ul>
     </div>
     <div class="module billing-module">
-        <i class="fas fa-file-invoice-dollar"></i>
         <h4>Billing Management</h4>
         <p>with our efficient handling of billing and payments.</p>
         <ul class="feature-list" style="list-style: none; padding: 0; margin-top: 15px;">
@@ -474,7 +465,7 @@ pts: `
                 display: flex;
                 align-items: center;
                 margin-bottom: 8px;
-                padding: 8px;
+                padding: 1px;
                 border-radius: 6px;
                 background: rgba(255,255,255,0.05);
                 transition: all 0.3s ease;
@@ -488,7 +479,6 @@ pts: `
         <div class="modules-title">KEY FEATURES</div>
         <div class="modules-grid">
             <div class="module membership-module">
-                <i class="fas fa-users"></i>
                 <h4>Membership Management</h4>
                 <p>with our unified platform.</p>
                 <ul class="feature-list" style="list-style: none; padding: 0; margin-top: 15px;">
@@ -515,7 +505,6 @@ pts: `
                 </ul>
             </div>
             <div class="module operations-module">
-                <i class="fas fa-golf-ball"></i>
                 <h4>Golf Operation</h4>
                 <p>Streamline golf operations with our integrated system.</p>
                 <ul class="feature-list" style="list-style: none; padding: 0; margin-top: 15px;">
@@ -534,7 +523,6 @@ pts: `
                 </ul>
             </div>
             <div class="module tournament-module">
-                <i class="fas fa-trophy"></i>
                 <h4>Tournament Management</h4>
                 <p>your all-in-one golf event solution.</p>
                 <ul class="feature-list" style="list-style: none; padding: 0; margin-top: 15px;">
@@ -598,7 +586,7 @@ pts: `
                 display: flex;
                 align-items: center;
                 margin-bottom: 8px;
-                padding: 8px;
+                padding: 1px;
                 border-radius: 6px;
                 background: rgba(255,255,255,0.05);
                 transition: all 0.3s ease;
@@ -612,7 +600,6 @@ pts: `
         <div class="modules-title">KEY FEATURES</div>
         <div class="modules-grid">
             <div class="module front-office-module">
-                <i class="fas fa-concierge-bell"></i>
                 <h4>Front Office</h4>
                 <p>simplify guest services and reception tasks.</p>
                 <ul class="feature-list" style="list-style: none; padding: 0; margin-top: 15px;">
@@ -643,7 +630,6 @@ pts: `
                 </ul>
             </div>
             <div class="module logistic-module">
-                <i class="fas fa-boxes"></i>
                 <h4>Logistic</h4>
                 <p>Optimize inventory and supply chain management.</p>
                 <ul class="feature-list" style="list-style: none; padding: 0; margin-top: 15px;">
@@ -670,7 +656,6 @@ pts: `
                 </ul>
             </div>
             <div class="module back-office-module">
-                <i class="fas fa-chart-bar"></i>
                 <h4>Back Office</h4>
                 <p>improve operations and financial management.</p>
                 <ul class="feature-list" style="list-style: none; padding: 0; margin-top: 15px;">
@@ -714,17 +699,14 @@ pts: `
         <div class="modules-title">KEY FEATURES</div>
         <div class="modules-grid">
             <div class="module">
-                <i class="fas fa-sitemap" style="margin-right: 10px; background: linear-gradient(45deg, #FF0000, #0000FF); -webkit-background-clip: text; -webkit-text-fill-color: transparent;"></i>
                 <h4>Service Management</h4>
                 <p>Streamline IT service delivery and support</p>
             </div>
             <div class="module">
-                <i class="fas fa-database" style="margin-right: 10px; background: linear-gradient(45deg, #FF3333, #3333FF); -webkit-background-clip: text; -webkit-text-fill-color: transparent;"></i>
                 <h4>Asset Management</h4>
                 <p>Track and manage IT assets throughout their lifecycle</p>
             </div>
             <div class="module">
-                <i class="fas fa-shield-alt" style="margin-right: 10px; background: linear-gradient(45deg, #FF6666, #6666FF); -webkit-background-clip: text; -webkit-text-fill-color: transparent;"></i>
                 <h4>Endpoint Management</h4>
                 <p>Centrally manage and secure all your endpoints</p>
             </div>
@@ -741,17 +723,14 @@ pts: `
         <div class="modules-title">KEY FEATURES</div>
         <div class="modules-grid">
             <div class="module">
-                <i class="fas fa-microchip" style="margin-right: 10px; background: linear-gradient(45deg, #8A2BE2, #FFA500); -webkit-background-clip: text; -webkit-text-fill-color: transparent;"></i>
                 <h4>Hardware & Software</h4>
                 <p>Comprehensive solutions for selecting, deploying, and managing IT hardware and software tailored to your business needs</p>
             </div>
             <div class="module">
-                <i class="fas fa-network-wired" style="margin-right: 10px; background: linear-gradient(45deg, #8A2BE2, #FFA500); -webkit-background-clip: text; -webkit-text-fill-color: transparent;"></i>
                 <h4>Network</h4>
                 <p>Robust network solutions designed to ensure seamless connectivity, performance, and security across your entire business ecosystem</p>
             </div>
             <div class="module">
-                <i class="fas fa-cloud-upload-alt" style="margin-right: 10px; background: linear-gradient(45deg, #8A2BE2, #FFA500); -webkit-background-clip: text; -webkit-text-fill-color: transparent;"></i>
                 <h4>Cloud Infrastructure</h4>
                 <p>Scalable cloud solutions that provide secure and flexible environments for hosting and managing your applications and data</p>
             </div>
