@@ -1,8 +1,9 @@
-// Function to handle dropdown display
 function handleDropdown(dropdownId, contentId) {
     const dropdown = document.getElementById(dropdownId);
     const megaDropdown = document.getElementById(contentId);
     let dropdownTimeout;
+    let hoverDelay;
+    let isAnimating = false;
 
     function addArrowSpan() {
         if (!dropdown.querySelector('.dropdown-arrow')) {
@@ -20,41 +21,99 @@ function handleDropdown(dropdownId, contentId) {
     }
 
     function closeOtherDropdowns() {
-        document.querySelectorAll('.mega-dropdown').forEach(el => {
-            if (el.id !== contentId) {
-                el.style.display = 'none';
-                const otherDropdown = el.previousElementSibling;
-                if (otherDropdown) {
-                    const otherArrowSpan = otherDropdown.querySelector('.dropdown-arrow');
-                    if (otherArrowSpan) otherArrowSpan.remove();
-                }
+        return new Promise(resolve => {
+            const activeDropdowns = Array.from(document.querySelectorAll('.mega-dropdown.show')).filter(el => el.id !== contentId);
+            
+            if (activeDropdowns.length === 0) {
+                resolve();
+                return;
             }
+
+            const animationPromises = activeDropdowns.map(el => {
+                return new Promise(resolveDropdown => {
+                    el.classList.remove('show');
+                    el.classList.add('hide');
+                    const otherDropdown = el.previousElementSibling;
+                    if (otherDropdown) {
+                        const otherArrowSpan = otherDropdown.querySelector('.dropdown-arrow');
+                        if (otherArrowSpan) otherArrowSpan.remove();
+                    }
+                    
+                    // Wait for hide animation to complete
+                    setTimeout(resolveDropdown, 400);
+                });
+            });
+
+            Promise.all(animationPromises).then(resolve);
         });
     }
 
-    dropdown.addEventListener('mouseenter', () => {
+    dropdown.addEventListener('mouseenter', async () => {
+        if (isAnimating) return;
+        
         clearTimeout(dropdownTimeout);
-        closeOtherDropdowns();
-        megaDropdown.style.display = 'block';
-        addArrowSpan();
+        clearTimeout(hoverDelay);
+
+        hoverDelay = setTimeout(async () => {
+            isAnimating = true;
+            await closeOtherDropdowns();
+            
+            // Small delay before showing new dropdown
+            setTimeout(() => {
+                megaDropdown.classList.remove('hide');
+                megaDropdown.classList.add('show');
+                addArrowSpan();
+                isAnimating = false;
+            }, 50);
+        }, 100);
     });
 
     dropdown.addEventListener('mouseleave', () => {
+        clearTimeout(hoverDelay);
+        if (isAnimating) return;
+
         dropdownTimeout = setTimeout(() => {
-            megaDropdown.style.display = 'none';
+            isAnimating = true;
+            megaDropdown.classList.remove('show');
+            megaDropdown.classList.add('hide');
             removeArrowSpan();
-        }, 100); // Reduced delay
+            
+            // Reset animation flag after hide animation completes
+            setTimeout(() => {
+                isAnimating = false;
+            }, 400);
+        }, 150);
     });
 
     megaDropdown.addEventListener('mouseenter', () => {
         clearTimeout(dropdownTimeout);
+        clearTimeout(hoverDelay);
+        if (!megaDropdown.classList.contains('show')) {
+            megaDropdown.classList.remove('hide');
+            megaDropdown.classList.add('show');
+        }
     });
 
     megaDropdown.addEventListener('mouseleave', () => {
+        if (isAnimating) return;
+        
         dropdownTimeout = setTimeout(() => {
-            megaDropdown.style.display = 'none';
+            isAnimating = true;
+            megaDropdown.classList.remove('show');
+            megaDropdown.classList.add('hide');
             removeArrowSpan();
-        }, 100); // Reduced delay
+            
+            setTimeout(() => {
+                isAnimating = false;
+            }, 400);
+        }, 150);
+    });
+
+    // Handle animation end
+    megaDropdown.addEventListener('transitionend', () => {
+        if (megaDropdown.classList.contains('hide')) {
+            isAnimating = false;
+        }
     });
 }
 
