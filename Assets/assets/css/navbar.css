@@ -290,7 +290,7 @@ body.dark-mode .modules-title {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 20px;
-  width: 100%;
+  width: 95%;
   margin: 0 auto;
 }
 
@@ -1695,7 +1695,7 @@ padding-right: 15px;
 
   .product-details {
     max-height: calc(100vh - 100px);
-    padding: 12px 20px;
+    padding: 12px 0px;
   }
 
   .product-banner {
@@ -1713,7 +1713,8 @@ padding-right: 15px;
   }
 
   .modules-grid {
-    gap: 15px;
+    gap: 15px !important;
+    width: 95% !important;
   }
 
   .module h4 {
@@ -1742,37 +1743,62 @@ padding-right: 15px;
 
 /* Update the module styles */
 .module {
-    padding: 10px;
+    padding: 20px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    text-align: center;
+    text-align: left;
     height: 100%;
     width: 100%;
+    position: relative;
 }
 
 .module h4 {
     font-size: 19px;
     margin: 0 0 12px 0;
-    text-align: center;
+    text-align: left !important;
     width: 100%;
+    position: relative;
+    z-index: 2;
 }
 
 .module p {
     font-size: 13px !important;
     color: #666;
     margin: 0;
-    text-align: center;
+    text-align: left !important;
     width: 100%;
+    position: relative;
+    z-index: 2;
+}
+
+/* Media queries for responsive h4 */
+@media (max-width: 1368px) and (max-height: 768px) {
+    .module h4 {
+        font-size: 16px !important;
+        margin-bottom: 8px !important;
+        line-height: 1.2 !important;
+        text-align: left !important;
+    }
+}
+
+@media (max-width: 1336px) and (max-height: 768px) {
+    .module h4 {
+        font-size: 16px !important;
+        margin-bottom: 8px !important;
+        line-height: 1.2 !important;
+        text-align: left !important;
+    }
 }
 
 /* Update the feature list styles */
 .feature-list {
     padding: 0;
-    margin: 15px auto 0;
+    margin: 15px auto 0; /* Changed back to auto for horizontal centering */
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: center; /* Center the list items container */
+    width: 90%; /* Slightly reduced width to create visual balance */
 }
 
 .feature-list li {
@@ -1784,6 +1810,7 @@ padding-right: 15px;
     background: rgba(255,255,255,0.05);
     transition: all 0.3s ease;
     width: 100%;
+    text-align: left; /* Keep text left-aligned */
 }
 
 .feature-list li i {
@@ -1801,38 +1828,19 @@ padding-right: 15px;
     min-width: 0;
 }
 
-/* Grid container */
-.modules-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
-    width: 100%;
-    margin: 0 auto;
-    padding: 0 15px;
+/* Ensure consistent styling in dark mode */
+body.dark-mode .feature-list li {
+    background: rgba(255,255,255,0.03);
 }
 
-/* Update the base module h4 styles */
-.module h4 {
-    font-size: 19px;
-    margin: 0 0 12px 0;
-    text-align: center;
-    width: 100%;
-}
-
-/* Update the media query to include 1336px */
+/* Responsive adjustments */
 @media (max-width: 1368px) and (max-height: 768px) {
-  .module h4 {
-    font-size: 16px !important;
-    margin-bottom: 8px !important;
-    line-height: 1.2 !important;
-  }
-}
-
-/* Add a more specific media query for 1336px */
-@media (max-width: 1336px) and (max-height: 768px) {
-  .module h4 {
-    font-size: 16px !important;
-    margin-bottom: 8px !important;
-    line-height: 1.2 !important;
-  }
+    .feature-list {
+        width: 95%; /* Slightly wider on smaller screens */
+        margin-top: 10px; /* Reduced top margin */
+    }
+    
+    .feature-list li {
+        padding: 6px 12px; /* Slightly reduced padding */
+    }
 }
