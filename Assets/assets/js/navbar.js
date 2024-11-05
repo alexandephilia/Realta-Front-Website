@@ -374,7 +374,7 @@ handleCategories('#solutionsDropdownContent', 'product-details', {
     </div>
 `,
 pts: `
-<div class="product-banner" style="background-image: url('assets/img/property.jpg');" onclick="navigateWithLoading('property-micro.html');">                
+<div class="product-banner" style="background-image: url('assets/img/property.jpg');" onclick="navigateWithLoading('bimasakti-micro.html');">                
     <div class="glare"></div>
     <div class="product-banner-content">
         <h2 class="product-title">Property & Tenancy System</h2>
