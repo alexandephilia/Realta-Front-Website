@@ -651,7 +651,7 @@
                     <div class="product-category" data-product="itm">ITSM, ITAM & Unified Endpoint Management</div>
                     <div class="product-category" data-product="pts">Property & Tenancy System</div>
                     <div class="product-category" data-product="erp">Network & System Integration</div>
-                    <div class="all-products"><a href="#solutions">All products ›</a></div>
+                    <!-- Removed: <div class="all-products"><a href="#solutions">All products ›</a></div> -->
                 </div>
                 <div class="product-details" id="product-details">
                     <!-- Content will be dynamically updated here -->
@@ -665,7 +665,7 @@
                     <div class="product-category" data-product="property">Property</div>
                     <div class="product-category" data-product="manufacturing">Manufacturing</div>
                     <div class="product-category" data-product="fsi">FSI</div>
-                    <div class="all-products">All industries ›</div>
+                    <!-- Removed: <div class="all-products">All industries ›</div> -->
                 </div>
                 <div class="product-details" id="industri-details">
                     <!-- Content will be dynamically updated here -->
@@ -677,7 +677,7 @@
                 <div class="product-categories">
                     <div class="product-category active" data-product="reseller">Reseller Program</div>
                     <div class="product-category" data-product="technology">Technology Partners</div>
-                    <div class="all-products">All partners ›</div>
+                    <!-- Removed: <div class="all-products">All partners ›</div> -->
                 </div>
                 <div class="product-details" id="partner-details">
                     <!-- Content will be dynamically updated here -->
@@ -689,7 +689,7 @@
                 <div class="product-categories">
                     <div class="product-category active" data-product="business">Business Consultation</div>
                     <div class="product-category" data-product="technical">Technical Consultation</div>
-                    <div class="all-products">All consultations ›</div>
+                    <!-- Removed: <div class="all-products">All consultations ›</div> -->
                 </div>
                 <div class="product-details" id="contact-details">
                     <!-- Content will be dynamically updated here -->
@@ -697,13 +697,12 @@
             </div>
         </div>
         <div class="mega-dropdown" id="careerDropdownContent">
-            <!-- * Career megamenu -->
             <div class="dropdown-content">
                 <div class="product-categories">
                     <div class="product-category active" data-product="openings">Job Openings</div>
                     <div class="product-category" data-product="internships">Internship Programs</div>
                     <div class="product-category" data-product="culture">Company Culture</div>
-                    <div class="all-products">View All Career Opportunities ›</div>
+                    <!-- Removed: <div class="all-products">View All Career Opportunities ›</div> -->
                 </div>
                 <div class="product-details" id="career-details">
                     <!-- Content will be dynamically updated here -->
@@ -714,7 +713,7 @@
             <div class="dropdown-content">
                 <div class="product-categories">
                     <div class="product-category active" data-product="about">About Realta</div>
-                    <div class="all-products">Learn more ›</div>
+                    <!-- Removed: <div class="all-products">Learn more ›</div> -->
                 </div>
                 <div class="product-details" id="tentangRealta-details">
                     <!-- Content will be dynamically updated here -->
@@ -742,10 +741,13 @@
             background-color: #f0f0f0;
             padding: 12px 0;
             font-size: 16px;
-            transition: all 0.3s cubic-bezier(0.4, 0.0, 0.2, 1);
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
             position: relative;
             z-index: 1;
             overflow: hidden;
+            backdrop-filter: blur(0px);
+            opacity: 1;
+            background-color: rgba(240, 240, 240, 0.8); /* More transparent background */
         }
 
         .navbar-banner--scrolled {
@@ -754,13 +756,19 @@
             left: 0;
             right: 0;
             z-index: 152;
-            /* Above the navbar */
             transform: translateY(-100%);
-            transition: transform 0.3s cubic-bezier(0.4, 0.0, 0.2, 1);
+            backdrop-filter: blur(0px); /* Start with no blur */
+            opacity: 0;
+            transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+                        backdrop-filter 0.5s ease,
+                        opacity 0.5s ease;
         }
 
         .navbar-banner--scrolled.show {
             transform: translateY(0);
+            backdrop-filter: blur(6px); /* Add blur when shown */
+            opacity: 1;
+            background-color: rgba(240, 240, 240, 0.6); /* More transparent when blurred */
         }
 
         /* Adjust navbar position when banner is scrolled */
@@ -773,11 +781,6 @@
         /* Navbar transition */
         .navbar {
             transition: all 0.3s cubic-bezier(0.4, 0.0, 0.2, 1);
-        }
-
-        /* Ensure the banner transition is smooth */
-        .navbar-banner {
-            transition: all 0.5s cubic-bezier(0.25, 0.1, 0.25, 1);
         }
 
         .navbar-banner__container {
@@ -841,9 +844,16 @@
             position: absolute;
             border-radius: 50%;
             filter: blur(40px);
-            opacity: 0.6;
+            opacity: 0;
             z-index: 1;
-            transition: all 0.5s ease;
+            transition: opacity 0.5s ease,
+                        filter 0.5s ease,
+                        transform 0.5s ease;
+        }
+
+        .navbar-banner--scrolled.show .navbar-banner__blur {
+            opacity: 0.6;
+            transform: scale(1.1);
         }
 
         .navbar-banner__blur--1 {
@@ -890,8 +900,7 @@
 
         /* Dark mode styles */
         .dark-mode .navbar-banner {
-            background-color: #2c2c2c;
-            color: #ffffff;
+            background-color: rgba(44, 44, 44, 0.8);
         }
 
         .dark-mode .navbar-banner__highlight {
@@ -952,75 +961,72 @@
       document.addEventListener('DOMContentLoaded', function () {
     var navbar = document.querySelector('.navbar');
     var navbarBanner = document.querySelector('.navbar-banner');
-    var lastScrollTop = 0;
-    var scrollThreshold = 30; // Increased threshold
-    var ticking = false; // For requestAnimationFrame
-
+    let lastScrollTop = 0;
+    let scrollTimeout;
+    let isTransitioning = false;
+    
+    // Debounced scroll handler with RAF
     function handleScroll() {
-        var bannerHeight = navbarBanner.offsetHeight;
-        var scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+        if (scrollTimeout) {
+            cancelAnimationFrame(scrollTimeout);
+        }
 
-        // Only process scroll events when animation frame is ready
-        if (!ticking) {
-            requestAnimationFrame(function() {
-                if (Math.abs(scrollTop - lastScrollTop) > scrollThreshold) {
-                    if (scrollTop > lastScrollTop && scrollTop > bannerHeight) {
-                        // Scrolling down - hide banner
-                        navbar.classList.add('navbar-shrink');
-                        navbarBanner.classList.add('navbar-banner--scrolled');
-                        navbarBanner.classList.remove('show');
-                        navbar.style.transform = 'translateY(0)';
-                    } else if (scrollTop <= lastScrollTop && scrollTop > bannerHeight) {
-                        // Scrolling up - show banner
-                        navbar.classList.add('navbar-shrink', 'navbar--banner-scrolled');
-                        navbarBanner.classList.add('navbar-banner--scrolled', 'show');
-                        navbar.style.transform = `translateY(${bannerHeight}px)`;
-                    } else {
-                        // At the top - reset everything
-                        navbar.classList.remove('navbar-shrink', 'navbar--banner-scrolled');
-                        navbarBanner.classList.remove('navbar-banner--scrolled', 'show');
-                        navbar.style.transform = 'translateY(0)';
-                    }
-                    
-                    lastScrollTop = scrollTop;
-                }
-                ticking = false;
-            });
+        scrollTimeout = requestAnimationFrame(() => {
+            const scrollTop = window.pageYOffset;
+            const bannerHeight = navbarBanner.offsetHeight;
             
+            if (isTransitioning) return;
+            
+            isTransitioning = true;
+            
+            if (scrollTop > lastScrollTop && scrollTop > bannerHeight) {
+                // Scrolling down - hide banner
+                navbarBanner.classList.add('navbar-banner--scrolled');
+                navbarBanner.classList.remove('show');
+                navbar.style.transform = 'translateY(0)';
+                
+                // Remove blur immediately when hiding
+                navbarBanner.style.backdropFilter = 'blur(0px)';
+            } else if (scrollTop <= lastScrollTop && scrollTop > bannerHeight) {
+                // Scrolling up - show banner
+                navbarBanner.classList.add('navbar-banner--scrolled');
+                
+                // Add slight delay before showing for smooth transition
+                setTimeout(() => {
+                    navbarBanner.classList.add('show');
+                    // Add blur gradually
+                    navbarBanner.style.backdropFilter = 'blur(6px)';
+                }, 50);
+                
+                navbar.style.transform = `translateY(${bannerHeight}px)`;
+            } else {
+                // At top
+                navbarBanner.classList.remove('navbar-banner--scrolled', 'show');
+                navbar.style.transform = 'translateY(0)';
+                
+                // Reset blur
+                navbarBanner.style.backdropFilter = 'blur(0px)';
+            }
+            
+            lastScrollTop = scrollTop;
+            
+            setTimeout(() => {
+                isTransitioning = false;
+            }, 500);
+        });
+    }
+
+    // Throttled scroll listener
+    let ticking = false;
+    window.addEventListener('scroll', () => {
+        if (!ticking) {
+            requestAnimationFrame(() => {
+                handleScroll();
+                ticking = false; 
+            });
             ticking = true;
         }
-    }
-
-    // Debounced scroll handler
-    let scrollTimeout;
-    function debouncedScroll() {
-        clearTimeout(scrollTimeout);
-        scrollTimeout = setTimeout(handleScroll, 10);
-    }
-
-    // Only add scroll event listener if not on mobile
-    if (window.innerWidth > 991.98) {
-        window.addEventListener('scroll', debouncedScroll, { passive: true });
-        handleScroll(); // Initial call
-    }
-
-    // Update on window resize with debounce
-    let resizeTimeout;
-    window.addEventListener('resize', function() {
-        clearTimeout(resizeTimeout);
-        resizeTimeout = setTimeout(function() {
-            if (window.innerWidth > 991.98) {
-                window.addEventListener('scroll', debouncedScroll, { passive: true });
-                handleScroll();
-            } else {
-                window.removeEventListener('scroll', debouncedScroll);
-                // Reset styles for mobile
-                navbar.classList.remove('navbar-shrink', 'navbar--banner-scrolled');
-                navbarBanner.classList.remove('navbar-banner--scrolled', 'show');
-                navbar.style.transform = '';
-            }
-        }, 100);
-    });
+    }, { passive: true });
 });
     </script>
 </header>
@@ -1531,6 +1537,7 @@
                 opacity: 0.5;
             }
         }
+        
 
 
         /* Dark mode styles */
