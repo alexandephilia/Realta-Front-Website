@@ -2,7 +2,7 @@
 .mega-dropdown {
   display: none;
   position: absolute;
-  top: 100%;
+  top: 60px;
   left: 50%;
   transform: translateX(-50%);
   width: 100%;
@@ -11,10 +11,10 @@
   -webkit-backdrop-filter: blur(20px);
   box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2);
   z-index: 1000;
-  padding: 2rem 0;
+  padding: 1rem 0;
   border-radius: 0 0 20px 20px;
-  max-height: none;
-  overflow: hidden !important;
+  overflow: visible !important;
+  height: auto;
 }
 
 body.dark-mode .mega-dropdown {
@@ -25,15 +25,13 @@ body.dark-mode .mega-dropdown {
 .mega-dropdown-inner {
   width: 100%;
   margin: 0 auto;
-  overflow: hidden;
-  max-height: none;
   overflow: visible;
-  background-color: rgb(255, 255, 255);
-  box-shadow: 0 5px 8px rgba(0, 0, 0, 0.12);
+  background-color: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   border-radius: 0 0 20px 20px;
   position: relative;
-  overflow: hidden !important;
   z-index: 1001;
+  height: auto;
 }
 
 body.dark-mode .mega-dropdown-inner {
@@ -44,24 +42,25 @@ body.dark-mode .mega-dropdown-inner {
 .dropdown-content {
   display: flex;
   width: 100%;
-  height: auto;
-  max-width: none;
-  margin: 0 auto;
+  margin: 0;
   padding: 0;
   position: relative;
   overflow: visible;
   z-index: 1002;
+  align-items: stretch;
 }
 
 .product-categories {
-  width: 20%;
+  width: calc(20% - 1px);
   padding: 3px 0;
   background-color: rgb(255, 255, 255);
   border-right: 1px solid rgba(224, 224, 224, 0.6);
   margin-left: 0;
-  height: auto;
   border-bottom-left-radius: 20px;
   border-top-left-radius: 0;
+  display: flex;
+  flex-direction: column;
+  height: auto;
 }
 
 body.dark-mode .product-categories {
@@ -118,19 +117,18 @@ body.dark-mode .product-category.active {
 }
 .product-details {
   width: calc(100% - 10px);
-  height: auto;
   padding: 15px 25px 15px 15px;
   background-color: rgb(255, 255, 255);
   margin: 0 auto;
   justify-content: center;
   align-items: center;
-  overflow-y: auto;
-  max-height: calc(90vh - 4rem);
+  overflow: visible;
   box-sizing: border-box;
   position: relative;
   z-index: 1003;
   border-bottom-right-radius: 20px;
   border-top-right-radius: 0;
+  height: auto;
 }
 
 .product-details::-webkit-scrollbar {
@@ -573,16 +571,19 @@ body.dark-mode .glass-dropdown .dropdown-item:hover {
 .mega-dropdown {
   display: none;
   position: absolute;
-  top: 100%;
+  top: 60px;
   left: 50%;
   transform: translateX(-50%);
   width: 100%;
-  max-width: 90vw; /* Increased from calc(1700px * (80 / 100)) */
-  backdrop-filter: blur(15px); /* Increased blur effect */
-  -webkit-backdrop-filter: blur(15px);
-  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.15); /* Increased shadow */
+  max-width: 90vw;
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2);
   z-index: 1000;
-  padding: 0;
+  padding: 1rem 0;
+  border-radius: 0 0 20px 20px;
+  overflow: visible !important;
+  height: auto;
 }
 
 
@@ -595,11 +596,12 @@ body.dark-mode .mega-dropdown {
 .mega-dropdown-inner {
   width: 100%;
   margin: 0 auto;
-  overflow: hidden;
+  overflow: visible;
   backdrop-filter: blur(10px);
   background-color: rgba(255, 255, 255, 0.9);
   -webkit-backdrop-filter: blur(10px);
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  height: auto;
 }
 
 body.dark-mode .mega-dropdown-inner {
@@ -1667,4 +1669,76 @@ padding-right: 15px;
   scrollbar-width: thin;
   scrollbar-color: rgb(133, 22, 188) transparent;
   -ms-overflow-style: -ms-autohiding-scrollbar; /* IE/Edge support */
+}
+
+/* Add these media query styles for 1368x768 resolution */
+@media (max-width: 1368px) and (max-height: 768px) {
+  .mega-dropdown {
+    top: 78px;
+    padding: 0;  /* Removed padding to ensure perfect alignment */
+    height: auto; /* Remove fixed height */
+  }
+
+  .mega-dropdown-inner {
+    height: auto; /* Remove fixed height */
+  }
+
+  .dropdown-content {
+    height: auto; /* Remove fixed height */
+  }
+
+  .product-categories,
+  .product-details {
+    height: auto; /* Remove fixed height */
+    min-height: auto;
+  }
+
+  .product-details {
+    max-height: calc(100vh - 100px);
+    padding: 12px 20px;
+  }
+
+  .product-banner {
+    height: 130px;
+  }
+
+  .product-title {
+    font-size: 28px;
+    margin-bottom: 10px;
+  }
+
+  .product-banner-description {
+    font-size: 16px;
+    max-width: 90%;
+  }
+
+  .modules-grid {
+    gap: 15px;
+  }
+
+  .module h4 {
+    font-size: 16px;
+    margin-bottom: 8px;
+  }
+
+  .module p {
+    font-size: 13px;
+  }
+
+  .module-icon {
+    font-size: 65px;
+    top: -15px;
+    right: -15px;
+  }
+
+  .product-category {
+    padding: 5px 15px;
+    font-size: 14px;
+  }
+
+  .modules-title {
+    font-size: 16px;
+    margin-bottom: 15px;
+    padding-bottom: 8px;
+  }
 }
