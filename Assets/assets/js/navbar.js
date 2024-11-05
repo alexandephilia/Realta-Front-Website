@@ -611,7 +611,7 @@ pts: `
     `,
 
     hms: `
-        <div class="product-banner" style="background-image: url('assets/img/hotel.jpg');" onclick="navigateWithLoading('hotel-micro.html');">                
+        <div class="product-banner" style="background-image: url('assets/img/hotel.jpg');" onclick="navigateWithLoading('rhapsody-micro.html');">                
             <div class="glare"></div>
             <div class="product-banner-content">
                 <h2 class="product-title">Hotel Management System</h2>
