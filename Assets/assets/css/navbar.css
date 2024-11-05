@@ -2,7 +2,7 @@
 .mega-dropdown {
   display: none;
   position: absolute;
-  top: 60px;
+  top: 75px;
   left: 50%;
   transform: translateX(-50%);
   width: 100%;
@@ -11,7 +11,7 @@
   -webkit-backdrop-filter: blur(20px);
   box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2);
   z-index: 1000;
-  padding: 1rem 0;
+  padding: 0rem 0 !important;
   border-radius: 0 0 20px 20px;
   overflow: visible !important;
   height: auto;
@@ -566,25 +566,6 @@ body.dark-mode .glass-dropdown .dropdown-item:hover {
 
 .nav-toggle.open span:nth-child(1) { top: 10px; width: 0%; left: 50%; }
 
-
-/* Mega Dropdown Styles */
-.mega-dropdown {
-  display: none;
-  position: absolute;
-  top: 60px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 100%;
-  max-width: 90vw;
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2);
-  z-index: 1000;
-  padding: 1rem 0;
-  border-radius: 0 0 20px 20px;
-  overflow: visible !important;
-  height: auto;
-}
 
 
 
@@ -1674,9 +1655,9 @@ padding-right: 15px;
 /* Add these media query styles for 1368x768 resolution */
 @media (max-width: 1368px) and (max-height: 768px) {
   .mega-dropdown {
-    top: 78px;
-    padding: 0;  /* Removed padding to ensure perfect alignment */
-    height: auto; /* Remove fixed height */
+    top: 75px !important;
+    height: auto !important; /* Remove fixed height */
+    padding: 0rem 0 !important;
   }
 
   .mega-dropdown-inner {
@@ -1879,13 +1860,4 @@ body.dark-mode .menu-logo {
     filter: brightness(1.2);
 }
 
-/* Mobile responsiveness */
-@media (max-width: 768px) {
-    .menu-logo {
-        width: 100px;
-    }
-    
-    .logo-container {
-        margin-top: 15px;
-    }
-}
+/* ... existing code ... */
