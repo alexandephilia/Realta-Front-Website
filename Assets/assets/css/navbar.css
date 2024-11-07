@@ -1592,8 +1592,8 @@ margin-right: auto;
 
 @media (min-width: 992px) {
 .container-fluid {
-  padding-left: 3.5%; /* Add consistent padding */
-  padding-right: 3.5%; /* Add consistent padding */
+  padding-left: 4.3%; /* Add consistent padding */
+  padding-right: 4.3%; /* Add consistent padding */
 }
 
 .full-screen-sidebar {
