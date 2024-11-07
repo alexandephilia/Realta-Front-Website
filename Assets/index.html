@@ -59,8 +59,13 @@
 </head>
 
 <style>
-    
 
+    /* Fix section spacing */
+    section {
+        overflow: hidden !important;
+        width: 100% !important;
+        position: relative !important;
+    }
 .dynamic-text-container {
         font-size: 45px;
         font-weight: 700;
@@ -112,7 +117,6 @@
         right: 0;
         z-index: 1030;
         transition: all 0.3s ease-in-out;
-        padding-right: 30px !important;
     }
 
     #mainNav.navbar-scrolled {
@@ -1513,6 +1517,12 @@
                                     </div>
                                 </div>
                                 <div class="col-lg-5 d-flex justify-content-center align-items-center">
+                                    <style>
+                                        .tilt-container {
+                                            margin-right: -40%; /* Negative margin to push content outside */
+                                        }
+                                       
+                                        </style
                                     <div class="tilt-container" style="margin-left: 5%;">
                                         <img class="header img-fluid img-animate tilt-image"
                                             src="assets/img/heading.png" alt="Business Image" loading="lazy"
@@ -4199,8 +4209,8 @@
 
     <section id="contact" class="pb-5">
         <div class="container-fluid">
-            <div class="row justify-content-between">
-                <div id="contact-info" class="col-lg-5 left-column >
+            <div class="row justify-content-between p-5">
+                <div id="contact-info" class="col-lg-4 left-column >
                         <h1 class=" mb-3 contact-heading"
                     style="font-size: 36px; text-align: left; line-height: 1.2; letter-spacing: -0.5px;">
                     What Are You Waiting For?<br>
@@ -4267,6 +4277,7 @@
 
                     <div class="contact-info mb-4">
                         <style>
+                            
                             .contact-item {
                                 display: flex;
                                 align-items: flex-start;

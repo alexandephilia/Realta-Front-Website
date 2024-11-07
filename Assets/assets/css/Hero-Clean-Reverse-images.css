@@ -895,8 +895,6 @@ body.dark-mode .btn-custom.whatsapp-btn i {
 .right-column {
   background-color: #fafafa;
   transition: background-color 0.3s ease;
-  border-radius: 20px;
-  border: 1px solid rgb(230, 230, 230) !important;
   /* box-shadow: rgba(255, 255, 255, 0.1) 0px 4px 12px; */
 }
 
