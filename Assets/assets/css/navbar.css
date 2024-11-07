@@ -567,12 +567,6 @@ body.dark-mode .glass-dropdown .dropdown-item:hover {
   flex: 0 0 auto;
 }
 
-.navbar-logo img {
-  width: 150px;
-  height: auto;
-  padding: 5px;
-}
-
 .navbar-nav {
   display: flex;
   justify-content: center;
@@ -1590,18 +1584,16 @@ padding: 0.5rem 0;
 }
 
 .container-fluid {
-width: 95%;
+width: 100%;
 max-width: 1700px;
 margin-left: auto;
 margin-right: auto;
-padding-left: 15px;
-padding-right: 15px;
 }
 
 @media (min-width: 992px) {
 .container-fluid {
-  padding-left: 30px;
-  padding-right: 30px;
+  padding-left: 3.5%; /* Add consistent padding */
+  padding-right: 3.5%; /* Add consistent padding */
 }
 
 .full-screen-sidebar {
@@ -1612,8 +1604,8 @@ padding-right: 15px;
 @media (max-width: 991px) {
 .container-fluid {
   width: 100%;
-  padding-left: 15px;
-  padding-right: 15px;
+  padding-left: 3.5%; /* Add consistent padding */
+  padding-right: 3.5%; /* Add consistent padding */
 }
 }
 
@@ -1924,3 +1916,44 @@ body.dark-mode .menu-logo {
 }
 
 /* ... existing code ... */
+
+/* Update the container-fluid styles */
+.container-fluid {
+    width: 100%;
+    padding-left: 3.5%; /* Add consistent padding */
+    padding-right: 3.5%; /* Add consistent padding */
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Update navbar specific styles */
+#mainNav .container-fluid {
+    width: 100%;
+    padding-left: 3.5%; /* Match the section padding */
+    padding-right: 3.5%; /* Match the section padding */
+}
+
+/* Media queries for responsive behavior */
+@media (max-width: 991px) {
+    .container-fluid {
+        padding-left: 3.5%;
+        padding-right: 3.5%;
+    }
+    
+    #mainNav .container-fluid {
+        padding-left: 3.5%;
+        padding-right: 3.5%; 
+    }
+}
+
+@media (max-width: 768px) {
+    .container-fluid {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+    
+    #mainNav .container-fluid {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+}
