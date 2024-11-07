@@ -1423,7 +1423,7 @@ body.dark-mode .dropdown-toggle::after {
 .navbar-logo img {
   max-width: 150px; /* Prevents it from becoming too large */
   height: auto;
-  padding: 0.3rem;
+  padding: 0.1rem;
 }
 
 /* Navbar toggle button */
