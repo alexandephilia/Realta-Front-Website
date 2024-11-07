@@ -137,8 +137,8 @@
     @media (max-width: 768px) {
         .container-fluid {
             width: 100%;
-            padding-left: 15px;
-            padding-right: 15px;
+            padding-left: 0.5%; /* Add consistent padding */
+            padding-right: 0.5%; /* Add consistent padding */
         }
     }
 </style>
@@ -746,7 +746,7 @@
             overflow: hidden;
             backdrop-filter: blur(0px);
             opacity: 1;
-            background-color: rgba(240, 240, 240, 0.8); /* More transparent background */
+            background-color: rgba(240, 240, 240, 0.845); /* More transparent background */
         }
 
         .navbar-banner--scrolled {
@@ -931,6 +931,10 @@
             .navbar-banner {
                 font-size: 14px;
                 padding: 15px 0;
+                position: static;
+                top: auto;
+                transform: none !important;
+                z-index: 9998; /* Below mobile nav z-index */
             }
 
             .navbar-banner__content {
@@ -952,6 +956,17 @@
                 margin-left: 0;
                 margin-top: 15px;
             }
+
+            /* Disable scroll behavior on mobile */
+            .navbar-banner--scrolled {
+                position: static;
+                transform: none !important;
+            }
+
+            /* Ensure navbar banner stays below navbar */
+            #mainNav + .navbar-banner {
+                margin-top: 0px;
+            }
         }
 
         /* Banner position when scrolled */
@@ -964,68 +979,67 @@
     let scrollTimeout;
     let isTransitioning = false;
     
-    // Debounced scroll handler with RAF
-    function handleScroll() {
-        if (scrollTimeout) {
-            cancelAnimationFrame(scrollTimeout);
-        }
-
-        scrollTimeout = requestAnimationFrame(() => {
-            const scrollTop = window.pageYOffset;
-            const bannerHeight = navbarBanner.offsetHeight;
-            
-            if (isTransitioning) return;
-            
-            isTransitioning = true;
-            
-            if (scrollTop > lastScrollTop && scrollTop > bannerHeight) {
-                // Scrolling down - hide banner
-                navbarBanner.classList.add('navbar-banner--scrolled');
-                navbarBanner.classList.remove('show');
-                navbar.style.transform = 'translateY(0)';
-                
-                // Remove blur immediately when hiding
-                navbarBanner.style.backdropFilter = 'blur(0px)';
-            } else if (scrollTop <= lastScrollTop && scrollTop > bannerHeight) {
-                // Scrolling up - show banner
-                navbarBanner.classList.add('navbar-banner--scrolled');
-                
-                // Add slight delay before showing for smooth transition
-                setTimeout(() => {
-                    navbarBanner.classList.add('show');
-                    // Add blur gradually
-                    navbarBanner.style.backdropFilter = 'blur(6px)';
-                }, 50);
-                
-                navbar.style.transform = `translateY(${bannerHeight}px)`;
-            } else {
-                // At top
-                navbarBanner.classList.remove('navbar-banner--scrolled', 'show');
-                navbar.style.transform = 'translateY(0)';
-                
-                // Reset blur
-                navbarBanner.style.backdropFilter = 'blur(0px)';
+    // Only apply scroll behavior on desktop
+    if (window.innerWidth > 768) {
+        // Debounced scroll handler with RAF
+        function handleScroll() {
+            if (scrollTimeout) {
+                cancelAnimationFrame(scrollTimeout);
             }
-            
-            lastScrollTop = scrollTop;
-            
-            setTimeout(() => {
-                isTransitioning = false;
-            }, 500);
-        });
-    }
 
-    // Throttled scroll listener
-    let ticking = false;
-    window.addEventListener('scroll', () => {
-        if (!ticking) {
-            requestAnimationFrame(() => {
-                handleScroll();
-                ticking = false; 
+            scrollTimeout = requestAnimationFrame(() => {
+                const scrollTop = window.pageYOffset;
+                const bannerHeight = navbarBanner.offsetHeight;
+                
+                if (isTransitioning) return;
+                
+                isTransitioning = true;
+                
+                if (scrollTop > lastScrollTop && scrollTop > bannerHeight) {
+                    // Scrolling down - hide banner
+                    navbarBanner.classList.add('navbar-banner--scrolled');
+                    navbarBanner.classList.remove('show');
+                    navbar.style.transform = 'translateY(0)';
+                    
+                    navbarBanner.style.backdropFilter = 'blur(0px)';
+                } else if (scrollTop <= lastScrollTop && scrollTop > bannerHeight) {
+                    // Scrolling up - show banner
+                    navbarBanner.classList.add('navbar-banner--scrolled');
+                    
+                    setTimeout(() => {
+                        navbarBanner.classList.add('show');
+                        navbarBanner.style.backdropFilter = 'blur(6px)';
+                    }, 50);
+                    
+                    navbar.style.transform = `translateY(${bannerHeight}px)`;
+                } else {
+                    // At top
+                    navbarBanner.classList.remove('navbar-banner--scrolled', 'show');
+                    navbar.style.transform = 'translateY(0)';
+                    
+                    navbarBanner.style.backdropFilter = 'blur(0px)';
+                }
+                
+                lastScrollTop = scrollTop;
+                
+                setTimeout(() => {
+                    isTransitioning = false;
+                }, 500);
             });
-            ticking = true;
         }
-    }, { passive: true });
+
+        // Throttled scroll listener
+        let ticking = false;
+        window.addEventListener('scroll', () => {
+            if (!ticking) {
+                requestAnimationFrame(() => {
+                    handleScroll();
+                    ticking = false; 
+                });
+                ticking = true;
+            }
+        }, { passive: true });
+    }
 });
     </script>
 </header>
@@ -1310,6 +1324,8 @@
                     }
 
                     @media (max-width: 768px) {
+
+                    
                         .business-carousel-control-next-icon {
                             right: 80px !important;
                         }
@@ -1371,6 +1387,15 @@
                                 <!-- Left Column -->
                                 <div
                                     class="col-lg-7 d-flex flex-column justify-content-center align-items-start text-lg-start">
+                                    <style>
+                                        @media (max-width: 768px) {
+                                            .col-lg-7 {
+                                                width: 90% !important;
+                                                margin: 0 auto !important;
+                                                padding: 0 15px !important;
+                                            }
+                                        }
+                                    </style>
                                     <div class="mb-4">
                                         <!-- <div class="logo-text">
                                                 <p>
@@ -1390,10 +1415,12 @@
                                             the tools you need to <span class="fw-bold">streamline processes, make
                                                 informed decisions, and drive sustainable growth</span> in a rapidly
                                             evolving market.</h3>
+
+                                            <a class="btn-custom img-animate mobile-responsive" role="button" href="#contact">
+                                                Contact Us
+                                            </a>
                                     </div>
-                                    <a class="btn-custom img-animate mobile-responsive" role="button" href="#contact">
-                                        Contact Us
-                                    </a>
+                                  
                                     <!-- stacked -->
 
                                 </div>
@@ -1432,7 +1459,16 @@
                                     }
                                 </style>
                                 <!-- Right Column -->
-                                <div class="col-lg-5 d-flex justify-content-center align-items-center">
+                                <div class="col-lg-5 d-flex justify-content-center align-items-center mobile-center">
+                                    <style>
+                                        @media (max-width: 768px) {
+                                            .mobile-center {
+                                                justify-content: center !important;
+                                                text-align: center !important;
+                                                margin: 0 auto !important;
+                                            }
+                                        }
+                                    </style>
                                     <div class="tilt-container" style="margin-left: 5%;">
                                         <img class="header img-fluid img-animate tilt-image"
                                             src="assets/img/heading.png" alt="Business Image" loading="lazy"
