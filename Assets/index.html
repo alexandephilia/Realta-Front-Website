@@ -238,7 +238,7 @@
                                                 <li>
                                                     <strong>Revenue Management</strong>
                                                     <span>Maximize profitability</span>
-                                                </li>p
+                                                </li>
                                                 <li>
                                                     <strong>Guest Experience Management</strong>
                                                     <span>Enhance customer satisfaction</span>
@@ -1994,7 +1994,7 @@
         <div class="container-fluid">
             <div class="card-body">
                 <div class="row">
-                    <div class="text-center mt-0 mb-5" style="margin-top: -50px;">
+                    <div class="text-center mt-0 mb-3" style="margin-top: -50px;">
                         <h1 class="industry-title gradient-text mb-3">Tailored Solutions for Every Sector</h1>
                         <h3 class="mb-5 industry-subtitle">Innovative technology customized for your industry's unique challenges</h3>
                     </div>
@@ -3879,18 +3879,33 @@
                 career advice to latest our insights.</p>
         </div>
         <div id="blog-posts-container" class="blog-posts">
-            <div class="blog-arrow left-arrow">
+            <!-- Desktop arrows -->
+            <div class="blog-arrow left-arrow desktop-control">
                 <i class="fas fa-chevron-left"></i>
             </div>
             <div class="blog-posts-wrapper">
                 <!-- Blog posts will be dynamically inserted here -->
             </div>
-            <div class="blog-arrow right-arrow">
+            <div class="blog-arrow right-arrow desktop-control">
                 <i class="fas fa-chevron-right"></i>
+            </div>
+            
+            <!-- Mobile controls -->
+            <div class="mobile-controls">
+                <div class="blog-arrow left-arrow mobile-control">
+                    <i class="fas fa-chevron-left"></i>
+                </div>
+                <div class="blog-dots">
+                    <!-- Dots will be dynamically inserted here -->
+                </div>
+                <div class="blog-arrow right-arrow mobile-control">
+                    <i class="fas fa-chevron-right"></i>
+                </div>
             </div>
         </div>
     </div>
 </section>
+
 <style>
 .blog-pagination {
         display: flex;
@@ -3992,7 +4007,23 @@
  
     @media (max-width: 768px) {
         .blog-arrow {
-            display: none;
+            display: flex;
+            position: absolute;
+            top: 100%;
+            transform: none;
+            margin-top: 1ch;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            padding: 0;
+            line-height: 0;
+        }
+        .blog-arrow.left-arrow {
+            left: 145px;
+        }
+        .blog-arrow.right-arrow {
+            right: 145px;
         }
     }
 </style>
