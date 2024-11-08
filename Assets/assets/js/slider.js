@@ -1384,3 +1384,33 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 });
+
+
+function toggleCard(element, contentKey) {
+    const contentCards = document.getElementById("contentCards");
+    const tags = document.getElementsByClassName("tag-item");
+
+    // Remove 'active' class from all tags
+    for (let tag of tags) {
+        tag.classList.remove("active");
+    }
+
+    // Add 'active' class to clicked tag
+    element.classList.add("active");
+
+    // Show appropriate content based on clicked tag with updated card styles
+    contentCards.innerHTML = `
+        <div class="card content-card mt-5" style="
+            width: 99% !important;
+            margin: 0 auto !important;
+            border-radius: 25px;
+        ">
+            ${cardContents[contentKey]}
+        </div>
+    `;
+
+    // Apply dark mode styles if necessary
+    if (document.body.classList.contains("dark-mode")) {
+        applyDarkModeToIndustryContent();
+    }
+}

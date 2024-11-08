@@ -60,6 +60,7 @@
 
     <style>
         /* Custom CSS */
+    
         :root {
             --primary-color: #007bff;
             --secondary-color: #6c757d;
@@ -91,7 +92,7 @@
 
         .container-fluid {
             width: 95%;
-            max-width: 1700px;
+            max-width: 1780px;
             margin-left: auto;
             margin-right: auto;
             padding-left: 15px;
@@ -108,6 +109,7 @@
                 margin-right: -35px; /* Matches the index.html sidebar positioning */
             }
         }
+        
 
         @media (max-width: 991px) {
             .container-fluid {
@@ -1314,13 +1316,14 @@
         <div class="mega-dropdown" id="solutionsDropdownContent">
             <div class="dropdown-content">
                 <div class="product-categories">
-                    <div class="product-category active" data-product="hms">Hotel Management System</div>
+                    <div class="product-category active" data-product="eam">ERP & EAM</div>
                     <div class="product-category" data-product="gcs">Golf Course System</div>
                     <div class="product-category" data-product="hrs">HR System</div>
-                    <div class="product-category" data-product="pts">Property & Tenancy System</div>
+                    <div class="product-category " data-product="hms">Hotel Management System</div>
                     <div class="product-category" data-product="itm">ITSM, ITAM & Unified Endpoint Management</div>
+                    <div class="product-category" data-product="pts">Property & Tenancy System</div>
                     <div class="product-category" data-product="erp">Network & System Integration</div>
-                    <div class="all-products">All products ›</div>
+                    <div class="all-products"><a href="#solutions">All products ›</a></div>
                 </div>
                 <div class="product-details" id="product-details">
                     <!-- Content will be dynamically updated here -->
@@ -1330,9 +1333,10 @@
         <div class="mega-dropdown" id="industriDropdownContent">
             <div class="dropdown-content">
                 <div class="product-categories">
-                    <div class="product-category active" data-product="manufacturing">Manufacturing</div>
-                    <div class="product-category" data-product="healthcare">Healthcare</div>
-                    <div class="product-category" data-product="retail">Retail</div>
+                    <div class="product-category active" data-product="hospitality">Hospitality</div>
+                    <div class="product-category" data-product="property">Property</div>
+                    <div class="product-category" data-product="manufacturing">Manufacturing</div>
+                    <div class="product-category" data-product="fsi">FSI</div>
                     <div class="all-products">All industries ›</div>
                 </div>
                 <div class="product-details" id="industri-details">
@@ -1352,14 +1356,28 @@
                 </div>
             </div>
         </div>
-        <div class="mega-dropdown" id="konsultasiDropdownContent">
+        <div class="mega-dropdown" id="contactDropdownContent">
             <div class="dropdown-content">
                 <div class="product-categories">
                     <div class="product-category active" data-product="business">Business Consultation</div>
                     <div class="product-category" data-product="technical">Technical Consultation</div>
                     <div class="all-products">All consultations ›</div>
                 </div>
-                <div class="product-details" id="konsultasi-details">
+                <div class="product-details" id="contact-details">
+                    <!-- Content will be dynamically updated here -->
+                </div>
+            </div>
+        </div>
+        <div class="mega-dropdown" id="careerDropdownContent">
+            <!-- * Career megamenu -->
+            <div class="dropdown-content">
+                <div class="product-categories">
+                    <div class="product-category active" data-product="openings">Job Openings</div>
+                    <div class="product-category" data-product="internships">Internship Programs</div>
+                    <div class="product-category" data-product="culture">Company Culture</div>
+                    <div class="all-products">View All Career Opportunities ›</div>
+                </div>
+                <div class="product-details" id="career-details">
                     <!-- Content will be dynamically updated here -->
                 </div>
             </div>
@@ -1367,9 +1385,7 @@
         <div class="mega-dropdown" id="tentangRealtaDropdownContent">
             <div class="dropdown-content">
                 <div class="product-categories">
-                    <div class="product-category active" data-product="about">About Us</div>
-                    <div class="product-category" data-product="careers">Careers</div>
-                    <div class="product-category" data-product="blog">Blog</div>
+                    <div class="product-category active" data-product="about">About Realta</div>
                     <div class="all-products">Learn more ›</div>
                 </div>
                 <div class="product-details" id="tentangRealta-details">
@@ -1378,7 +1394,6 @@
             </div>
         </div>
     </nav>
-
 
     <!-- <div class="career-link">   
         Looking for a new career? <a href="#">Get in touch</a>
@@ -1408,7 +1423,7 @@ Business Intelligence Solution</H1>
                         </div>
                     </div>
 
-                    <p class="lead text-center text-light mb-5 slide-in" style="font-family: 'Unbounded', sans-serif; max-width: 950px; margin-left: auto; margin-right: auto;">
+                    <p class="lead text-center text-light mb-5 slide-in" style="font-family: 'Unbounded', sans-serif; margin-left: auto; margin-right: auto;">
                         PT Bisnis Sistem Indonesia was founded to be your partner for successful ERP, EAM, WMS & 
                         Business Intelligence implementation. At the heart of any ERP, EAM, WMS & Business 
                         Intelligence implementation is the need to sustain growth and increase market share. 
@@ -1457,8 +1472,6 @@ Business Intelligence Solution</H1>
             position: relative;
             overflow: hidden;
             min-height: 800px;
-            border-bottom-left-radius: 10px;
-            border-bottom-right-radius: 10px;
             display: flex;
             font-family: 'proxima-nova', sans-serif;
             align-items: center;
@@ -1707,7 +1720,7 @@ Business Intelligence Solution</H1>
         // Trigger the handleScroll function immediately after page load
         setTimeout(handleScroll, 100);
     </script>
-<section id="ict-one-solution" class="ict-one-solution py-5" style="margin-top: 5%; background-image: url('assets/img/erp/hero-bg-ptbsi.png'); background-size: cover; background-position: center; background-repeat: no-repeat; border-radius: 25px;">
+<section id="ict-one-solution" class="ict-one-solution py-5" style="margin-top: 5%; background-image: url('assets/img/erp/hero-bg-ptbsi.png'); background-size: cover; background-position: center; background-repeat: no-repeat;">
     <div class="container-fluid container-lg px-2">
         <div class="row align-items-center">
             <div class="col-md-6 mb-3">
@@ -1735,7 +1748,6 @@ Business Intelligence Solution</H1>
 
 <style>
     .ict-one-solution {
-        border-radius: 25px;
         overflow: hidden;
     }
 
@@ -1914,350 +1926,50 @@ Business Intelligence Solution</H1>
             </div>
         </div>
     </section>
-
-        <!-- Custom YouTube Video Player Section -->
-        <div class="container mt-5">
+    
+        <!-- Simple Video Embed -->
+        <div class="container mt-2 mb-5 pt-2 pb-5">
             <div class="row justify-content-center">
                 <div class="col-lg-8">
-                    <div class="custom-video-player">
-                        <div id="youtube-player"></div>
-                        <div class="video-controls">
-                            <button id="play-pause-btn" class="control-btn">
-                                <i class="fas fa-play"></i>
-                            </button>
-                            <div class="progress-bar-container">
-                                <div id="progress-bar"></div>
-                            </div>
-                            <button id="mute-btn" class="control-btn">
-                                <i class="fas fa-volume-up"></i>
-                            </button>
-                            <button id="fullscreen-btn" class="control-btn">
-                                <i class="fas fa-expand"></i>
-                            </button>
-                        </div>
+                    <div class="video-container" style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 25px; border: 1px solid rgba(221,221,221,0.555);">
+                        <iframe 
+                            style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"
+                            src="https://www.youtube.com/embed/-Dqm6c2Ib1I?rel=0&modestbranding=1&playsinline=1" 
+                            title="YouTube video player" 
+                            frameborder="0" 
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                            allowfullscreen>
+                        </iframe>
                     </div>
                 </div>
             </div>
         </div>
 
-        <style>
-            .custom-video-player {
-                position: relative;
-                width: 100%;
-                padding-top: 56.25%; /* 16:9 Aspect Ratio */
-                background-color: #000;
-                box-shadow: 0 10px 30px rgba(0, 0, 0, 0.341);
-                border-radius: 8px 8px 0 0; /* Top corners rounded, bottom corners square */
-                overflow: hidden;
-            }
-
-            #youtube-player {
-                position: absolute;
-                top: 0;
-                left: 0;
-                width: 100%;
-                height: 100%;
-            }
-
-            .video-controls {
-                position: absolute;
-                bottom: 0;
-                left: 0;
-                right: 0;
-                background: linear-gradient(to top, rgba(0,0,0,0.7), transparent);
-                padding: 10px;
-                display: flex;
-                align-items: center;
-                opacity: 0;
-                transition: opacity 0.3s ease;
-            }
-
-            .custom-video-player:hover .video-controls {
-                opacity: 1;
-            }
-
-            .control-btn {
-                background: none;
-                border: none;
-                color: #fff;
-                font-size: 1.2rem;
-                cursor: pointer;
-                transition: transform 0.2s ease;
-            }
-
-            .control-btn:hover {
-                transform: scale(1.1);
-            }
-
-            .progress-bar-container {
-                flex-grow: 1;
-                height: 5px;
-                background-color: rgba(255, 255, 255, 0.3);
-                margin: 0 10px;
-                border-radius: 5px;
-                cursor: pointer;
-            }
-
-            #progress-bar {
-                width: 0;
-                height: 100%;
-                background-color: #ff0000;
-                border-radius: 5px;
-                transition: width 0.1s linear;
-            }
-        </style>
-
-        <script src="https://www.youtube.com/iframe_api"></script>
         <script>
-            let player;
-            let progressBar;
-            let playPauseBtn;
-            let muteBtn;
-            let fullscreenBtn;
-            let progressBarContainer;
-            let isDragging = false;
-
-            function onYouTubeIframeAPIReady() {
-                player = new YT.Player('youtube-player', {
-                    height: '100%',
-                    width: '100%',
-                    videoId: '-Dqm6c2Ib1I', // Thales chooses Infor LN for ERP consolidation
-                    playerVars: {
-                        'autoplay': 0,
-                        'controls': 0,
-                        'rel': 0,
-                        'showinfo': 0,
-                        'modestbranding': 1,
-                        'playsinline': 1
-                    },
-                    events: {
-                        'onReady': onPlayerReady,
-                        'onStateChange': onPlayerStateChange
-                    }
-                });
-            }
-
-            function onPlayerReady(event) {
-                progressBar = document.getElementById('progress-bar');
-                playPauseBtn = document.getElementById('play-pause-btn');
-                muteBtn = document.getElementById('mute-btn');
-                fullscreenBtn = document.getElementById('fullscreen-btn');
-                progressBarContainer = document.querySelector('.progress-bar-container');
-
-                playPauseBtn.addEventListener('click', togglePlayPause);
-                muteBtn.addEventListener('click', toggleMute);
-                fullscreenBtn.addEventListener('click', toggleFullscreen);
-                
-                // Improved progress bar interaction
-                progressBarContainer.addEventListener('mousedown', startDrag);
-                document.addEventListener('mousemove', drag);
-                document.addEventListener('mouseup', endDrag);
-                progressBarContainer.addEventListener('click', seekVideo);
-
-                // Use requestAnimationFrame for smoother progress bar updates
-                function updateProgressBarLoop() {
-                    if (!isDragging) {
-                        updateProgressBar();
-                    }
-                    requestAnimationFrame(updateProgressBarLoop);
-                }
-                updateProgressBarLoop();
-            }
-
-            function onPlayerStateChange(event) {
-                if (event.data == YT.PlayerState.PLAYING) {
-                    playPauseBtn.innerHTML = '<i class="fas fa-pause"></i>';
-                } else {
-                    playPauseBtn.innerHTML = '<i class="fas fa-play"></i>';
-                }
-            }
-
-            function togglePlayPause() {
-                if (player.getPlayerState() == YT.PlayerState.PLAYING) {
-                    player.pauseVideo();
-                } else {
-                    player.playVideo();
-                }
-            }
-
-            function toggleMute() {
-                if (player.isMuted()) {
-                    player.unMute();
-                    muteBtn.innerHTML = '<i class="fas fa-volume-up"></i>';
-                } else {
-                    player.mute();
-                    muteBtn.innerHTML = '<i class="fas fa-volume-mute"></i>';
-                }
-            }
-
-            function toggleFullscreen() {
-                const videoPlayer = document.querySelector('.custom-video-player');
-                if (!document.fullscreenElement) {
-                    if (videoPlayer.requestFullscreen) {
-                        videoPlayer.requestFullscreen();
-                    } else if (videoPlayer.mozRequestFullScreen) {
-                        videoPlayer.mozRequestFullScreen();
-                    } else if (videoPlayer.webkitRequestFullscreen) {
-                        videoPlayer.webkitRequestFullscreen();
-                    } else if (videoPlayer.msRequestFullscreen) {
-                        videoPlayer.msRequestFullscreen();
-                    }
-                } else {
-                    if (document.exitFullscreen) {
-                        document.exitFullscreen();
-                    } else if (document.mozCancelFullScreen) {
-                        document.mozCancelFullScreen();
-                    } else if (document.webkitExitFullscreen) {
-                        document.webkitExitFullscreen();
-                    } else if (document.msExitFullscreen) {
-                        document.msExitFullscreen();
-                    }
-                }
-            }
-
-            function updateProgressBar() {
-                if (player && player.getCurrentTime) {
-                    const currentTime = player.getCurrentTime();
-                    const duration = player.getDuration();
-                    const percentage = (currentTime / duration) * 100;
-                    progressBar.style.width = `${percentage}%`;
-                }
-            }
-
-            function startDrag(e) {
-                isDragging = true;
-                drag(e);
-            }
-
-            function drag(e) {
-                if (isDragging) {
-                    const rect = progressBarContainer.getBoundingClientRect();
-                    const position = (e.clientX - rect.left) / rect.width;
-                    progressBar.style.width = `${position * 100}%`;
-                }
-            }
-
-            function endDrag(e) {
-                if (isDragging) {
-                    isDragging = false;
-                    seekVideo(e);
-                }
-            }
-
-            function seekVideo(e) {
-                const rect = progressBarContainer.getBoundingClientRect();
-                const position = (e.clientX - rect.left) / rect.width;
-                player.seekTo(position * player.getDuration());
-            }
-
-            // Add smooth fade-in animation for the video player
-            document.addEventListener('DOMContentLoaded', () => {
-                const videoPlayer = document.querySelector('.custom-video-player');
-                gsap.from(videoPlayer, {
-                    opacity: 0,
-                    y: 50,
-                    duration: 1,
-                    ease: "power3.out",
-                    scrollTrigger: {
-                        trigger: videoPlayer,
-                        start: "top 80%",
-                    }
-                });
-
-                // Add a subtle pulse animation to the play button
-                gsap.to(playPauseBtn, {
-                    scale: 1.1,
-                    repeat: -1,
-                    yoyo: true,
-                    duration: 1,
-                    ease: "power1.inOut"
-                });
-            });
-
-            // Implement lazy loading for the YouTube player
+        document.addEventListener('DOMContentLoaded', () => {
+            const videoContainer = document.querySelector('.video-container');
+            
             const observer = new IntersectionObserver((entries) => {
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
-                        onYouTubeIframeAPIReady();
-                        observer.unobserve(entry.target);
+                        videoContainer.style.opacity = 1;
+                        videoContainer.style.transform = 'translateY(0)';
                     }
                 });
-            }, { threshold: 0.1 });
-
-            document.addEventListener('DOMContentLoaded', () => {
-                const videoContainer = document.querySelector('.custom-video-player');
-                observer.observe(videoContainer);
             });
-        </script>
+
+            videoContainer.style.opacity = 0;
+            videoContainer.style.transform = 'translateY(50px)';
+            videoContainer.style.transition = 'all 1s ease-out';
             
-        </div>
-    </section>
-
-    <style>
-        .fade-in-left,
-        .fade-in-right {
-            opacity: 0;
-            transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
-        }
-
-        .fade-in-left {
-            transform: translateX(-50px);
-        }
-
-        .fade-in-right {
-            transform: translateX(50px);
-        }
-
-        .fade-in-left.visible,
-        .fade-in-right.visible {
-            opacity: 1;
-            transform: translateX(0);
-        }
-
-        .feature-item {
-            opacity: 0;
-            transform: translateY(20px);
-            transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
-        }
-
-        .feature-item.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-    </style>
-
-    <script>
-        function isElementInViewport(el) {
-            var rect = el.getBoundingClientRect();
-            return (
-                rect.top <= (window.innerHeight || document.documentElement.clientHeight) &&
-                rect.bottom >= 0 &&
-                rect.left <= (window.innerWidth || document.documentElement.clientWidth) &&
-                rect.right >= 0
-            );
-        }
-
-        function handleScroll() {
-            var fadeElements = document.querySelectorAll('.fade-in-left, .fade-in-right, .feature-item');
-            fadeElements.forEach((el, index) => {
-                if (isElementInViewport(el)) {
-                    setTimeout(() => {
-                        el.classList.add('visible');
-                    }, index * 100);
-                }
-            });
-        }
-
-        window.addEventListener('scroll', handleScroll);
-        window.addEventListener('load', handleScroll);
-        // Trigger the handleScroll function immediately after page load
-        setTimeout(handleScroll, 100);
-    </script>
+            observer.observe(videoContainer);
+        });
+        </script>
 
 
 
     <section id="infor-cloudsuite" class="infor-cloudsuite-section py-5" style="background-image: url('assets/img/erp/background-infor-erp.png'); background-size: cover; background-position: center; background-attachment: fixed;">
-        <div class="container-fluid container-lg px-2">
+        <div class="container-fluid container-lg px-4">
             <div class="row align-items-center">
                 <div class="col-lg-6 fade-in-left infor-cloudsuite-content">
                 
@@ -2277,11 +1989,10 @@ Business Intelligence Solution</H1>
     <style>
         .infor-cloudsuite-section {
             background-color: #f8f9fa;
-            border-radius:  25px;
         }
 
         .infor-cloudsuite-content {
-            padding-left: 5rem;
+            padding-left: 3.5rem;
         }
 
         .infor-cloudsuite-section h2 {
@@ -2431,6 +2142,7 @@ Business Intelligence Solution</H1>
 </h3>
 
     <section id="why-rhapsody" class="bimasakti-solutions-grid" style="margin-top: 50px;">
+        <div class="container-fluid container-lg px-2">
         <h2 class="bimasakti-title">How Infor Cloudsuite Helps You</h2>
         <h3 class="bimasakti-description">Empowering your business with innovative cloud solutions.</h3>
         <div class="bimasakti-button-wrapper">
@@ -2607,6 +2319,7 @@ Business Intelligence Solution</H1>
                 <p>Improving visibility and control across your global operations</p>
             </article>
         </div>
+        </div>
     </section>
 
     <style>
@@ -2621,9 +2334,9 @@ Business Intelligence Solution</H1>
                 "button"
                 "features";
             gap: 15px;
-            padding: 20px;
+            /* padding: 20px; */
             border-radius: 15px;
-            max-width: 75%;
+            max-width: 85%;
             margin: 0 auto;
         }
 
@@ -2634,7 +2347,7 @@ Business Intelligence Solution</H1>
             font-size: 14px;
             transition: all 0.3s ease;
             background: #fff !important;
-            box-shadow: rgba(0, 0, 0, 0.253) 0px 4px 8px !important;
+            border: 2px solid rgba(221, 221, 221, 0.753);
         }
 
         /* BIMASAKTI Solution Item Header Styles */
@@ -2814,8 +2527,8 @@ Business Intelligence Solution</H1>
 
 <section class="uui-section_layout74">
     <div class="uui-page-padding">
-      <div class="uui-container-large">
-        <div class="uui-padding-vertical-xhuge">
+        <div class="container-fluid px-5">
+            <div class="uui-padding-vertical-xhuge">
           <div class="uui-layout74_component">
             <div class="uui-text-align-center">
               <div class="uui-max-width-large">
@@ -2975,7 +2688,7 @@ Business Intelligence Solution</H1>
 
 .uui-text-size-medium {
   letter-spacing: normal;
-  font-size: 1rem;
+  font-size: 20px;
   line-height: 1.5;
 }
 
@@ -3239,14 +2952,14 @@ Business Intelligence Solution</H1>
 .a-paragraph-small {
   letter-spacing: -.02em;
   margin-bottom: 0;
-  font-size: 14px;
+  font-size: 20px;
   line-height: 1.8;
 }
 
 .a-subheading-regular {
   margin-top: 0;
   margin-bottom: 0;
-  font-size: 16px;
+  font-size: 25px;
   font-weight: 600;
   line-height: 1.8;
 }
@@ -3794,14 +3507,14 @@ Business Intelligence Solution</H1>
 
 
 <section class="dual-benefits py-5 mt-5">
-    <div class="container">
+    <div class="container-fluid px-5">
         <h2 class="text-center mb-5 bimasakti-title rhapsody-title-2023-new" data-aos="fade-up" data-aos-delay="100">
             Dual Benefits
         </h2>
         <div class="row">
             <div class="col-md-6 mb-4 mb-md-0" data-aos="fade-right" data-aos-delay="300">
                 <div class="benefit-image-container">
-                    <h3 class="benefit-title" data-aos="fade-up" data-aos-delay="200" style="max-width: 70%; margin: 0 auto 20px;">
+                    <h3 class="benefit-title" data-aos="fade-up" data-aos-delay="200" style="max-width: 60%; margin: 0 auto 20px;">
                         Infor Scored the Highest in the ERP for Upper Midsize Enterprises Use Case
                     </h3>
                     <div class="image-wrapper">
@@ -3811,7 +3524,7 @@ Business Intelligence Solution</H1>
             </div>
             <div class="col-md-6" data-aos="fade-left" data-aos-delay="400">
                 <div class="benefit-image-container">
-                    <h3 class="benefit-title" data-aos="fade-up" data-aos-delay="200" style="max-width: 70%; margin: 0 auto 20px;">
+                    <h3 class="benefit-title" data-aos="fade-up" data-aos-delay="200" style="max-width: 60%; margin: 0 auto 20px;">
                         Infor Also Scored Highest in the Discrete Manufacturing Use Case
                     </h3>
                     <div class="image-wrapper">
@@ -3841,11 +3554,11 @@ Business Intelligence Solution</H1>
         </div>
     </div>
 </section>
-
 <style>
     .extra-small-text {
         font-size: 0.8rem;
         line-height: 1.2;
+        text-align: center;
     }
     
     .extra-small-text a {
@@ -3854,6 +3567,7 @@ Business Intelligence Solution</H1>
         transition: color 0.3s ease;
         position: relative;
         z-index: 1;
+        text-align: center;
     }
     
     .extra-small-text a:hover {
@@ -3868,6 +3582,7 @@ Business Intelligence Solution</H1>
         background-clip: text;
         -webkit-text-fill-color: transparent;
         color: transparent;
+        text-align: center;
     }
 
     .dual-benefits .benefit-title {
@@ -3882,12 +3597,14 @@ Business Intelligence Solution</H1>
         display: flex;
         flex-direction: column;
         align-items: center;
+        text-align: center;
     }
 
     .image-wrapper {
         overflow: hidden;
         border-radius: 10px;
         transition: transform 0.3s ease-in-out;
+        text-align: center;
     }
 
     .image-wrapper:hover {
@@ -3895,9 +3612,11 @@ Business Intelligence Solution</H1>
     }
 
     .benefit-image-container img {
-        width: 100%;
+        width: 80%;
         height: auto;
         transition: transform 0.3s ease-in-out;
+        margin: 0 auto;
+        display: block;
     }
 
     .benefit-image-container::after {
@@ -3922,7 +3641,7 @@ Business Intelligence Solution</H1>
 </style>
 
 <section id="infor-cloudsuite" class="infor-cloudsuite-section py-5" style="background-image: url('assets/img/erp/background-hxgn-eam.png'); background-size: cover; background-position: center; background-attachment: fixed;">
-    <div class="container-fluid container-lg px-2">
+    <div class="container-fluid container-lg px-4">
         <div class="row align-items-center">
             <div class="col-lg-6 fade-in-left infor-cloudsuite-content">
                 <h2 class="mb-4" style="background: linear-gradient(287deg, #ff0000, #de2b2b, #ff9999); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">HxGN EAM</h2>
@@ -3940,7 +3659,7 @@ Business Intelligence Solution</H1>
 
 
 <section class="erp-efficiency-stats py-5">
-    <div class="container">
+    <div class="container-fluid container-lg px-5">
       <h2 class="erp-efficiency-title text-center mb-5" style="background: linear-gradient(287deg, #ff0000, #de2b2b, #ff9999); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">Efficiency by The Numbers</h2>
       <div class="erp-stat-grid">
         <article class="erp-stat-card">
@@ -4003,21 +3722,39 @@ Business Intelligence Solution</H1>
       flex-direction: column;
       justify-content: center;
       min-height: 160px;
-      border: 1px solid #9c98987e;
+      border: 2px solid rgba(221, 221, 221, 0.753);
       position: relative;
       overflow: hidden;
     }
   
+    @keyframes shimmer {
+      0% {
+        background-position: -200% 0;
+      }
+      100% {
+        background-position: 200% 0;
+      }
+    }
+
     .erp-stat-card::before {
       content: '';
       position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      height: 3px;
-      background: linear-gradient(90deg, #e25c4aab, #ed6363);
+      inset: 0;
+      background: linear-gradient(90deg, 
+        transparent 0%,
+        #e25c4aab 25%,
+        #ed6363 50%,
+        #e25c4aab 75%,
+        transparent 100%
+      );
+      background-size: 400% 100%;
       opacity: 0;
       transition: opacity 0.3s ease-in-out;
+      mask: 
+        linear-gradient(#fff 0 0) content-box,
+        linear-gradient(#fff 0 0);
+      mask-composite: exclude;
+      padding: 4px;
     }
   
     .erp-stat-card:hover {
@@ -4027,6 +3764,16 @@ Business Intelligence Solution</H1>
   
     .erp-stat-card:hover::before {
       opacity: 1;
+      animation: border-move 5s linear infinite;
+    }
+
+    @keyframes border-move {
+      from {
+        background-position: -200% 0;
+      }
+      to {
+        background-position: 200% 0;
+      }
     }
   
     .erp-stat-number {
@@ -4039,7 +3786,7 @@ Business Intelligence Solution</H1>
   
     .erp-stat-description {
       color: #555;
-      font-size: 0.85rem;
+      font-size: 18px !important;
       line-height: 1.3;
       margin-bottom: 0;
     }
@@ -4076,56 +3823,50 @@ Business Intelligence Solution</H1>
       }
     }
   </style>
-
-<section class="video-section py-5" style="margin-bottom: -50px;">
-    <div class="container">
-      <div class="row justify-content-center">
-        <div class="col-lg-8 text-center">
-          <div class="video-wrapper">
-            <iframe width="100%" height="450" src="https://www.youtube.com/embed/nlm3T_AY4aA" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-          </div>
+<!-- Second Video Section - Simple Embed -->
+<div class="container mt-2 mb-5 pt-2 pb-5">
+    <div class="row justify-content-center">
+        <div class="col-lg-8">
+            <div class="video-container" style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 25px; border: 1px solid rgba(221,221,221,0.555);">
+                <iframe 
+                    style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"
+                    src="https://www.youtube.com/embed/nlm3T_AY4aA?rel=0&modestbranding=1&playsinline=1" 
+                    title="YouTube video player" 
+                    frameborder="0" 
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                    allowfullscreen>
+                </iframe>
+            </div>
         </div>
-      </div>
     </div>
-  </section>
-  <style>
-    .video-section {
-      border-radius: 10px;
-      position: relative;
-      z-index: 1;
-      margin-bottom: -150px; /* Create overlap with next section */
-    }
-  
-    .video-wrapper {
-      position: relative;
-      padding-bottom: 56.25%; /* 16:9 aspect ratio */
-      height: 0;
-      overflow: hidden;
-      border-radius: 10px;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-    }
-  
-    .video-wrapper iframe {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      border-radius: 10px;
-    }
-  
-    @media (max-width: 768px) {
-      .video-wrapper {
-        margin-top: 2rem;
-      }
-    }
-  </style>
+</div>
 
+<script>
+// Simple fade-in animation on scroll
+document.addEventListener('DOMContentLoaded', () => {
+    const videoContainer = document.querySelector('.video-container');
+    
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                videoContainer.style.opacity = 1;
+                videoContainer.style.transform = 'translateY(0)';
+            }
+        });
+    });
+
+    videoContainer.style.opacity = 0;
+    videoContainer.style.transform = 'translateY(50px)';
+    videoContainer.style.transition = 'all 1s ease-out';
+    
+    observer.observe(videoContainer);
+});
+</script>
 
 
 <section id="infor-cloudsuite" class="infor-cloudsuite-section py-5" style="background-image: url('assets/img/erp/background-infor-wms.png'); background-size: cover; background-position: center; background-attachment: fixed;">
     <div class="container-fluid container-lg px-2">
-        <div class="row align-items-center">
+        <div class="row align-items-center px-4">
             <div class="col-lg-6 fade-in-left infor-cloudsuite-content">
                 <h2 class="mb-4" style="background: linear-gradient(287deg, #ff0000, #de2b2b, #ff9999); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">Infor WMS</h2>
                 <h3 class="mb-3">Warehouse Management System</h3>
@@ -4145,6 +3886,7 @@ Business Intelligence Solution</H1>
     </span>
 </h3>
     <section id="why-rhapsody" class="bimasakti-solutions-grid" style="margin-top: 50px;">
+        <div class="container-fluid container-lg px-2">
         <h2 class="bimasakti-title">How Infor WMS Helps You</h2>
         <h3 class="bimasakti-description">Empowering your business with innovative cloud solutions.</h3>
         <div class="bimasakti-button-wrapper">
@@ -4341,6 +4083,7 @@ Business Intelligence Solution</H1>
                 <p>Make better decisions by identifying bottlenecks, improving warehouse layout, optimizing labor allocation, and adjusting inventory strategies using valid reports and analytics</p>
             </article>
         </div>
+    </div>
     </section>
 
 
@@ -4461,23 +4204,26 @@ Business Intelligence Solution</H1>
       </div>
     </div>
   </section>
-
   <section class="erp-efficiency-stats py-5">
-    <div class="container">
-      <h2 class="erp-efficiency-title text-center mb-5" style="background: linear-gradient(287deg, #ff0000, #de2b2b, #ff9999); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">Proven Infor WMS Helps You</h2>
-      <div class="erp-stat-grid d-flex justify-content-center align-items-center flex-wrap">
-        <article class="erp-stat-card text-center mx-3 mb-3">
-          <h3 class="erp-stat-number">99.9%</h3>
-          <p class="erp-stat-description">Inventory accuracy at bin level for a leading wholesale distributor</p>
-        </article>
-        <article class="erp-stat-card text-center mx-3 mb-3">
-          <h3 class="erp-stat-number">30%</h3>
-          <p class="erp-stat-description">Increase in productivity at a large packaging manufacturer</p>
-        </article>
-        <article class="erp-stat-card text-center mx-3 mb-3">
-          <h3 class="erp-stat-number">200K+</h3>
-          <p class="erp-stat-description">Orders processed daily at an enterprise company</p>
-        </article>
+    <div class="container-fluid">
+      <div class="row justify-content-center">
+        <div class="col-12 col-lg-10">
+          <h2 class="erp-efficiency-title text-center mb-5" style="background: linear-gradient(287deg, #ff0000, #de2b2b, #ff9999); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">Proven Infor WMS Helps You</h2>
+          <div class="erp-stat-grid d-flex justify-content-center align-items-center flex-wrap">
+            <article class="erp-stat-card text-center mx-3 mb-3">
+              <h3 class="erp-stat-number">99.9%</h3>
+              <p class="erp-stat-description">Inventory accuracy at bin level for a leading wholesale distributor</p>
+            </article>
+            <article class="erp-stat-card text-center mx-3 mb-3">
+              <h3 class="erp-stat-number">30%</h3>
+              <p class="erp-stat-description">Increase in productivity at a large packaging manufacturer</p>
+            </article>
+            <article class="erp-stat-card text-center mx-3 mb-3">
+              <h3 class="erp-stat-number">200K+</h3>
+              <p class="erp-stat-description">Orders processed daily at an enterprise company</p>
+            </article>
+          </div>
+        </div>
       </div>
     </div>
   </section>
@@ -4486,11 +4232,11 @@ Business Intelligence Solution</H1>
 
 
 <section id="infor-cloudsuite" class="infor-cloudsuite-section py-5" style="background-image: url('assets/img/erp/background-infor-birst.png'); background-size: cover; background-position: center; background-attachment: fixed;">
-    <div class="container-fluid container-lg px-2">
+    <div class="container-fluid container-lg px-4">
         <div class="row align-items-center">
             <div class="col-lg-6 fade-in-left infor-cloudsuite-content">
                 <h2 class="mb-4" style="background: linear-gradient(287deg, #ff0000, #de2b2b, #ff9999); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">Infor Birst</h2>
-                <h3 class="mb-3">Business Intelligence / Analytics.</h3>
+                <h3 class="mb-3">Business Intelligence / Analytics</h3>
                 <p class="lead mb-4">Infor Birst, the cloud-based business intelligence and analytics platform, simplifies data-driven decision-making for everyone, from the boardroom to the shop floor. Infor industry analytics deliver relevant and meaningful insights tailored to specific industries, transforming raw data into valuable insights.</p>
                 <p class="mb-4">From data integration and preparation to advanced analytics and interactive visualizations, experience a comprehensive toolset for effortless exploration, analysis, and sharing of data. Infor Birst offers the flexibility and scalability needed to uncover actionable insights and stay ahead in today's competitive landscape.</p>
                 <p class="mb-4">Enhance decision-making across the organization with pre-built industry and role-specific content using Infor Birst. This powerful platform empowers users to make informed decisions and drive business success.</p>
@@ -4510,6 +4256,7 @@ Business Intelligence Solution</H1>
     </span>
 </h3>
     <section id="why-rhapsody" class="bimasakti-solutions-grid" style="margin-top: 50px;">
+        <div class="container-fluid container-lg px-2">
         <h2 class="bimasakti-title">How Infor Birst Helps You</h2>
         <h3 class="bimasakti-description">Infor Birst empowers you with data intelligence and analytics capabilities to unlock the full potential of your data, drive better decision-making, improve performance, and stay ahead in today's data-driven business landscape.</h3>
         <div class="bimasakti-button-wrapper">
@@ -4606,6 +4353,7 @@ Business Intelligence Solution</H1>
                 <p>Implement robust control systems to manage and optimize all aspects of the manufacturing process</p>
             </article>
         </div>
+    </div>
     </section>
 
 
@@ -4703,7 +4451,7 @@ Business Intelligence Solution</H1>
 
 
   <section id="infor-cloudsuite" class="infor-cloudsuite-section py-5" style="background-image: url('assets/img/erp/background-infor-mes.png'); background-size: cover; background-position: center; background-attachment: fixed;">
-    <div class="container-fluid container-lg px-2">
+    <div class="container-fluid container-lg px-4">
         <div class="row align-items-center">
             <div class="col-lg-6 fade-in-left infor-cloudsuite-content">
                 <h2 class="mb-4" style="background: linear-gradient(287deg, #ff0000, #de2b2b, #ff9999); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">Infor MES</h2>
@@ -4724,6 +4472,7 @@ Business Intelligence Solution</H1>
     </span>
 </h3>
     <section id="why-rhapsody" class="bimasakti-solutions-grid" style="margin-top: 50px;">
+        <div class="container-fluid container-lg px-2">
         <h2 class="bimasakti-title">Proven Infor MES Helps You</h2>
         <h3 class="bimasakti-description">Infor MES enables manufacturers to streamline operations, make informed decisions, and drive operational excellence throughout the enterprise.</h3>
         <div class="bimasakti-button-wrapper">
@@ -4810,13 +4559,14 @@ Business Intelligence Solution</H1>
                 <p>Leverage pre-built industry-specific content and metrics to improve competitive edge</p>
             </article>
         </div>
+    </div>
     </section>
 
 
 <section class="a-section-large benefits-impact mt-5 pt-5">
-    <div class="container">
-      <div class="a-feature-title text-center mb-5">
-        <div class="a-margin-bottom-16">
+    <div class="container-fluid ">
+        <div class="a-feature-title text-center mb-5 px-4">
+            <div class="a-margin-bottom-16">
           <div class="a-detail-regular">CAPABILITIES AND IMPACT</div>
         </div>
         <h2 class="uui-heading-medium text-start"> <span class="text-highlight">Infor MES</span> Key Capabilities</h2>
@@ -4895,7 +4645,7 @@ Business Intelligence Solution</H1>
 
 
 <section id="infor-cloudsuite" class="infor-cloudsuite-section py-5" style="background-image: url('assets/img/erp/background-infor-coleman-ai.png'); background-size: cover; background-position: center; background-attachment: fixed;">
-    <div class="container-fluid container-lg px-2">
+    <div class="container-fluid container-lg px-4">
         <div class="row align-items-center">
             <div class="col-lg-6 fade-in-left infor-cloudsuite-content">
                 <h2 class="mb-4" style="background: linear-gradient(287deg, #ff0000, #de2b2b, #ff9999); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">Infor AI</h2>
@@ -4918,6 +4668,7 @@ Business Intelligence Solution</H1>
     </span>
 </h3>
     <section id="why-rhapsody" class="bimasakti-solutions-grid" style="margin-top: 50px;">
+        <div class="container-fluid container-lg px-2">
         <h2 class="bimasakti-title">What does Infor AI Helps You</h2>
         <div class="bimasakti-button-wrapper">
         </div>
@@ -4967,106 +4718,103 @@ Business Intelligence Solution</H1>
                 </h4>
                 <p>Gain deeper understanding of operations, customers, and market trends for informed decision-making</p>
             </article>
-    
+        </div>
         </div>
     </section>
 
 
-<section class="a-section-large benefits-impact mt-5 pt-5">
-    <div class="container-fluid">
-      <div class="a-feature-title text-center mb-5 px-4">
-        <div class="a-margin-bottom-16">
-          <div class="a-detail-regular">CAPABILITIES AND IMPACT</div>
-        </div>
-        <h2 class="uui-heading-medium text-start"> <span class="text-highlight">Infor AI</span> Key Capabilities</h2>
-      </div>
-      <div class="row g-4">
-        <div class="col-md-6 col-lg-4">
-          <div class="a-feature-card h-100">
-            <div class="a-feature-icon">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="a-feature-icon-svg">
-                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z" fill="currentColor"/>
-              </svg>
-            </div>
-            </div>
-            <div class="a-margin-bottom-08">
-              <div class="a-subheading-regular">Understand Human Language</div>
-            </div>
-            <p class="a-paragraph-small">Interpret human language such voice or text-based conversations</p>
-          </div>
-        </div>
-        <div class="col-md-6 col-lg-4">
-          <div class="a-feature-card h-100">
-            <div class="a-feature-icon">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="a-feature-icon-svg">
-                <path d="M19 8l-4 4h3c0 3.31-2.69 6-6 6-1.01 0-1.97-.25-2.8-.7l-1.46 1.46C8.97 19.54 10.43 20 12 20c4.42 0 8-3.58 8-8h3l-4-4zM6 12c0-3.31 2.69-6 6-6 1.01 0 1.97.25 2.8.7l1.46-1.46C15.03 4.46 13.57 4 12 4c-4.42 0-8 3.58-8 8H1l4 4 4-4H6z" fill="currentColor"/>
-              </svg>
-            </div>
-            <div class="a-margin-bottom-08">
-              <div class="a-subheading-regular">Intelligent Automation</div>
-            </div>
-            <p class="a-paragraph-small">Generate automated process based on specified conditions</p>
-          </div>
-        </div>
-        <div class="col-md-6 col-lg-4">
-          <div class="a-feature-card h-100">
-            <div class="a-feature-icon">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="a-feature-icon-svg">
-                <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-5 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z" fill="currentColor"/>
-              </svg>
-            </div>
-            <div class="a-margin-bottom-08">
-              <div class="a-subheading-regular">Predictive The Future</div>
-            </div>
-            <p class="a-paragraph-small">Give forecast accuracy leading to inventory cost reduction, revenue increase and maximize life of assets</p>
-          </div>
-        </div>
-        <div class="col-md-6 col-lg-4">
-          <div class="a-feature-card h-100">
-            <div class="a-feature-icon">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="a-feature-icon-svg">
-                <path d="M3 13h2v-2H3v2zm0 4h2v-2H3v2zm0-8h2V7H3v2zm4 4h14v-2H7v2zm0 4h14v-2H7v2zM7 7v2h14V7H7z" fill="currentColor"/>
-              </svg>
-            </div>
-            <div class="a-margin-bottom-08">
-              <div class="a-subheading-regular">Analyze The Market</div>
-            </div>
-            <p class="a-paragraph-small">Predict future demand based on history and market trend</p>
-          </div>
-        </div>
-        <div class="col-md-6 col-lg-4">
-          <div class="a-feature-card h-100">
-            <div class="a-feature-icon">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="a-feature-icon-svg">
-                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z" fill="currentColor"/>
-              </svg>
-            </div>
-            <div class="a-margin-bottom-08">
-              <div class="a-subheading-regular">Relevant Insight Ecosystem</div>
-            </div>
-            <p class="a-paragraph-small">Provide relevant specific insights to user roles, industry, and business context</p>
-          </div>
-        </div>
-        <div class="col-md-6 col-lg-4">
-          <div class="a-feature-card h-100">
-            <div class="a-feature-icon">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="a-feature-icon-svg">
-                <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z" fill="currentColor"/>
-              </svg>
-            </div>
-            <div class="a-margin-bottom-08">
-              <div class="a-subheading-regular">Personalized Business Approach</div>
-            </div>
-            <p class="a-paragraph-small">Prebuilt solution templates based on business practice standardization</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
 
-
-  
-
+    <section class="a-section-large benefits-impact mt-5 pt-5">
+        <div class="container-fluid ">
+            <div class="a-feature-title text-center mb-5 px-4">
+            <div class="a-margin-bottom-16">
+              <div class="a-detail-regular">CAPABILITIES AND IMPACT</div>
+            </div>
+            <h2 class="uui-heading-medium text-start"> <span class="text-highlight">Infor AI</span> Key Capabilities</h2>
+          </div>
+          <div class="row g-4">
+            <div class="col-md-6 col-lg-4">
+              <div class="a-feature-card h-100">
+                <div class="a-feature-icon">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="a-feature-icon-svg">
+                    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z" fill="currentColor"/>
+                  </svg>
+                </div>
+                <div class="a-margin-bottom-08">
+                  <div class="a-subheading-regular">Understand Human Language</div>
+                </div>
+                <p class="a-paragraph-small">Interpret human language such voice or text-based conversations</p>
+              </div>
+            </div>
+            <div class="col-md-6 col-lg-4">
+              <div class="a-feature-card h-100">
+                <div class="a-feature-icon">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="a-feature-icon-svg">
+                    <path d="M19 8l-4 4h3c0 3.31-2.69 6-6 6-1.01 0-1.97-.25-2.8-.7l-1.46 1.46C8.97 19.54 10.43 20 12 20c4.42 0 8-3.58 8-8h3l-4-4zM6 12c0-3.31 2.69-6 6-6 1.01 0 1.97.25 2.8.7l1.46-1.46C15.03 4.46 13.57 4 12 4c-4.42 0-8 3.58-8 8H1l4 4 4-4H6z" fill="currentColor"/>
+                  </svg>
+                </div>
+                <div class="a-margin-bottom-08">
+                  <div class="a-subheading-regular">Intelligent Automation</div>
+                </div>
+                <p class="a-paragraph-small">Generate automated process based on specified conditions</p>
+              </div>
+            </div>
+            <div class="col-md-6 col-lg-4">
+              <div class="a-feature-card h-100">
+                <div class="a-feature-icon">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="a-feature-icon-svg">
+                    <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-5 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z" fill="currentColor"/>
+                  </svg>
+                </div>
+                <div class="a-margin-bottom-08">
+                  <div class="a-subheading-regular">Predictive The Future</div>
+                </div>
+                <p class="a-paragraph-small">Give forecast accuracy leading to inventory cost reduction, revenue increase and maximize life of assets</p>
+              </div>
+            </div>
+            <div class="col-md-6 col-lg-4">
+              <div class="a-feature-card h-100">
+                <div class="a-feature-icon">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="a-feature-icon-svg">
+                    <path d="M3 13h2v-2H3v2zm0 4h2v-2H3v2zm0-8h2V7H3v2zm4 4h14v-2H7v2zm0 4h14v-2H7v2zM7 7v2h14V7H7z" fill="currentColor"/>
+                  </svg>
+                </div>
+                <div class="a-margin-bottom-08">
+                  <div class="a-subheading-regular">Analyze The Market</div>
+                </div>
+                <p class="a-paragraph-small">Predict future demand based on history and market trend</p>
+              </div>
+            </div>
+            <div class="col-md-6 col-lg-4">
+              <div class="a-feature-card h-100">
+                <div class="a-feature-icon">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="a-feature-icon-svg">
+                    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z" fill="currentColor"/>
+                  </svg>
+                </div>
+                <div class="a-margin-bottom-08">
+                  <div class="a-subheading-regular">Relevant Insight Ecosystem</div>
+                </div>
+                <p class="a-paragraph-small">Provide relevant specific insights to user roles, industry, and business context</p>
+              </div>
+            </div>
+            <div class="col-md-6 col-lg-4">
+              <div class="a-feature-card h-100">
+                <div class="a-feature-icon">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="a-feature-icon-svg">
+                    <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z" fill="currentColor"/>
+                  </svg>
+                </div>
+                <div class="a-margin-bottom-08">
+                  <div class="a-subheading-regular">Personalized Business Approach</div>
+                </div>
+                <p class="a-paragraph-small">Prebuilt solution templates based on business practice standardization</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    
 <section class="hospitality-companies py-5 mt-5">
     <div class="container">
         <h2 class="text-center mb-3 bimasakti-title rhapsody-title-2023-new" data-aos="fade-up" data-aos-delay="100">
@@ -5090,7 +4838,7 @@ Business Intelligence Solution</H1>
         max-width: 100%;
         overflow: hidden;
         border-radius: 10px;
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        border: 2px solid rgba(221, 221, 221, 0.753);
     }
 
     .full-image-container img {
@@ -5105,7 +4853,7 @@ Business Intelligence Solution</H1>
         }
     }
 </style>
-
+<!-- 
     <section id="cta" class="py-5 mt-5">
         <div class="container">
             <div class="row justify-content-center">
@@ -5187,19 +4935,17 @@ Business Intelligence Solution</H1>
                 margin-top: 1rem;
             }
         }
-    </style>
+    </style> -->
     
 
-
-    <section id="separator" class="py-0">
-        <div class="container p-4">
+    <section id="separator" class="" style="background-color: #efecff;">
+        <div class="container-fluid p-4">
             <div class="banner">
                 <div class="banner-content">
-                    <h2>Ready to Achieve Outstanding Performance?</h2>
-                    <p>Experience the power of the Rhapsody system and transform your team's performance today!</p>
+                    <h2>Unlock superior coverage for your team</h2>
+                    <p>Build a culture of employee delight by taking the first step towards Benefits</p>
                     <button class="btn-custom" onclick="scheduleCall()"
-                        style="background: linear-gradient(to bottom, #9054d0, #7a4bd7); padding: 12px 24px; font-size: 1.1rem;">Schedule
-                        a call</button>
+                        style="background: linear-gradient(to bottom, #9054d0, #7a4bd7);">Schedule a call</button>
                 </div>
                 <img src="assets/img/handshake.png" alt="Business Handshake" class="banner-image">
             </div>
@@ -5207,8 +4953,10 @@ Business Intelligence Solution</H1>
     </section>
 
 
+
+
     <section id="contact" class="pb-5">
-        <div class="container p-4">
+        <div class="container-fluid px-5">
             <div class="row justify-content-between">
                 <div id="contact-info" class="col-lg-5 left-column >
                     <h1 class=" mb-3 contact-heading" style="font-size: 33px;">What Are You Waiting For?<br> <span
@@ -5518,7 +5266,7 @@ Business Intelligence Solution</H1>
                             }
 
                             .submit-btn:hover .text {
-                                transform: translateX(320px);
+                                transform: translateX(333px);
                                 color: #ffffff;
                             }
 
@@ -5568,7 +5316,7 @@ Business Intelligence Solution</H1>
     </style>
 
     <section id="newsletter-cta" class="py-4 mb-0">
-        <div class="container">
+        <div class="container-fluid px-5">
             <div class="row align-items-center">
                 <div class="col-md-7 text-start">
                     <h2 class="mb-3 fw-bold gradient-text">Stay Informed, Stay Ahead</h2>
@@ -5621,7 +5369,6 @@ Business Intelligence Solution</H1>
         #newsletter-cta {
             background: linear-gradient(135deg, #f5f7fa 0%, #a588bd 100%);
             transition: background 0.3s ease;
-            border-radius: 10px 10px 0 0;
         }
 
         #newsletter-cta .gradient-text {

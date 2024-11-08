@@ -2733,12 +2733,11 @@ body.dark-mode #technology-delivery {
 
 /* BANNER */
 .banner {
-  background: linear-gradient(to left, #f1f1f14d, rgba(245, 245, 245, 0.341)) !important;
+  background: #fff !important;
   backdrop-filter: blur(10px) !important;
   -webkit-backdrop-filter: blur(10px) !important;
   border-radius: 10px !important;
   border: 1px solid rgba(255, 255, 255, 0.18) !important;
-  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 8px !important;
   padding: 30px;
   position: relative;
   overflow: hidden;

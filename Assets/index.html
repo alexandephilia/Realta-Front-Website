@@ -59,8 +59,13 @@
 </head>
 
 <style>
-    
 
+    /* Fix section spacing */
+    section {
+        overflow: hidden !important;
+        width: 100% !important;
+        position: relative !important;
+    }
 .dynamic-text-container {
         font-size: 45px;
         font-weight: 700;
@@ -103,14 +108,16 @@
         /* This will keep the header content hidden if it overflows */
     }
 
+
+        
     #mainNav {
         position: fixed;
-        top: -1px;
+        top: 0px;
         left: 0;
         right: 0;
         z-index: 1030;
         transition: all 0.3s ease-in-out;
-        padding-right: 30px !important;
+        height: 8.3%;
     }
 
     #mainNav.navbar-scrolled {
@@ -124,18 +131,19 @@
     }
 
     /* Add this style block in the <head> section or in your CSS file */
-    .container-fluid {
-        /* width: 95%; */
-        max-width: 1700px;
-        margin-left: auto;
-        margin-right: auto;
-    }
+        .container-fluid {
+    width: 100%; /* Change from 95% to 100% */
+    padding-left: 3.1%; /* Add consistent padding */
+    padding-right: 3.1%; /* Add consistent padding */
+    margin-left: auto;
+    margin-right: auto;
+}
 
     @media (max-width: 768px) {
         .container-fluid {
             width: 100%;
-            padding-left: 15px;
-            padding-right: 15px;
+            padding-left: 0.5%; /* Add consistent padding */
+            padding-right: 0.5%; /* Add consistent padding */
         }
     }
 </style>
@@ -143,7 +151,7 @@
 <header>
 
     <nav class="navbar navbar-expand-lg sticky-top navbar-shrink navbar-light" id="mainNav">
-        <div class="container-fluid container-lg px-2">
+        <div class="container-fluid ">
             <a class="navbar-logo d-flex align-items-center" href="/">
                 <img src="assets/img/realta.png" alt="Realta Logo" class="realta-logo">
             </a>
@@ -153,12 +161,7 @@
                     height: 50%;
                 }
 
-                @media (min-width: 992px) {
-                    .realta-logo {
-                        margin-left: 15px;
-                    }
-                }
-
+           
                 @media (max-width: 767px) {
                     .realta-logo {
                         width: 120px;
@@ -236,7 +239,7 @@
                                                 <li>
                                                     <strong>Revenue Management</strong>
                                                     <span>Maximize profitability</span>
-                                                </li>p
+                                                </li>
                                                 <li>
                                                     <strong>Guest Experience Management</strong>
                                                     <span>Enhance customer satisfaction</span>
@@ -566,7 +569,7 @@
                 <style>
                     @media (min-width: 992px) {
                         .full-screen-sidebar {
-                            margin-right: -35px;
+                            margin-right: -45px;
                         }
                     }
 
@@ -651,7 +654,8 @@
                     <div class="product-category" data-product="itm">ITSM, ITAM & Unified Endpoint Management</div>
                     <div class="product-category" data-product="pts">Property & Tenancy System</div>
                     <div class="product-category" data-product="erp">Network & System Integration</div>
-                    <div class="all-products"><a href="#solutions">All products ›</a></div>
+                    <div style="background: linear-gradient(90deg, transparent 0%, rgba(133, 22, 188, 0.582) 50%, transparent 100%); height: 1px; margin: 10px 0; pointer-events: none;"></div>
+                    <!-- Removed: <div class="all-products"><a href="#solutions">All products ›</a></div> -->
                 </div>
                 <div class="product-details" id="product-details">
                     <!-- Content will be dynamically updated here -->
@@ -665,7 +669,7 @@
                     <div class="product-category" data-product="property">Property</div>
                     <div class="product-category" data-product="manufacturing">Manufacturing</div>
                     <div class="product-category" data-product="fsi">FSI</div>
-                    <div class="all-products">All industries ›</div>
+                    <!-- Removed: <div class="all-products">All industries ›</div> -->
                 </div>
                 <div class="product-details" id="industri-details">
                     <!-- Content will be dynamically updated here -->
@@ -677,7 +681,7 @@
                 <div class="product-categories">
                     <div class="product-category active" data-product="reseller">Reseller Program</div>
                     <div class="product-category" data-product="technology">Technology Partners</div>
-                    <div class="all-products">All partners ›</div>
+                    <!-- Removed: <div class="all-products">All partners ›</div> -->
                 </div>
                 <div class="product-details" id="partner-details">
                     <!-- Content will be dynamically updated here -->
@@ -689,7 +693,7 @@
                 <div class="product-categories">
                     <div class="product-category active" data-product="business">Business Consultation</div>
                     <div class="product-category" data-product="technical">Technical Consultation</div>
-                    <div class="all-products">All consultations ›</div>
+                    <!-- Removed: <div class="all-products">All consultations ›</div> -->
                 </div>
                 <div class="product-details" id="contact-details">
                     <!-- Content will be dynamically updated here -->
@@ -697,13 +701,12 @@
             </div>
         </div>
         <div class="mega-dropdown" id="careerDropdownContent">
-            <!-- * Career megamenu -->
             <div class="dropdown-content">
                 <div class="product-categories">
                     <div class="product-category active" data-product="openings">Job Openings</div>
                     <div class="product-category" data-product="internships">Internship Programs</div>
                     <div class="product-category" data-product="culture">Company Culture</div>
-                    <div class="all-products">View All Career Opportunities ›</div>
+                    <!-- Removed: <div class="all-products">View All Career Opportunities ›</div> -->
                 </div>
                 <div class="product-details" id="career-details">
                     <!-- Content will be dynamically updated here -->
@@ -714,7 +717,7 @@
             <div class="dropdown-content">
                 <div class="product-categories">
                     <div class="product-category active" data-product="about">About Realta</div>
-                    <div class="all-products">Learn more ›</div>
+                    <!-- Removed: <div class="all-products">Learn more ›</div> -->
                 </div>
                 <div class="product-details" id="tentangRealta-details">
                     <!-- Content will be dynamically updated here -->
@@ -742,10 +745,13 @@
             background-color: #f0f0f0;
             padding: 12px 0;
             font-size: 16px;
-            transition: all 0.3s cubic-bezier(0.4, 0.0, 0.2, 1);
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
             position: relative;
             z-index: 1;
             overflow: hidden;
+            backdrop-filter: blur(0px);
+            opacity: 1;
+            background-color: rgba(240, 240, 240, 0.845); /* More transparent background */
         }
 
         .navbar-banner--scrolled {
@@ -754,13 +760,19 @@
             left: 0;
             right: 0;
             z-index: 152;
-            /* Above the navbar */
             transform: translateY(-100%);
-            transition: transform 0.3s cubic-bezier(0.4, 0.0, 0.2, 1);
+            backdrop-filter: blur(0px); /* Start with no blur */
+            opacity: 0;
+            transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+                        backdrop-filter 0.5s ease,
+                        opacity 0.5s ease;
         }
 
         .navbar-banner--scrolled.show {
             transform: translateY(0);
+            backdrop-filter: blur(6px); /* Add blur when shown */
+            opacity: 1;
+            background-color: rgba(240, 240, 240, 0.6); /* More transparent when blurred */
         }
 
         /* Adjust navbar position when banner is scrolled */
@@ -773,11 +785,6 @@
         /* Navbar transition */
         .navbar {
             transition: all 0.3s cubic-bezier(0.4, 0.0, 0.2, 1);
-        }
-
-        /* Ensure the banner transition is smooth */
-        .navbar-banner {
-            transition: all 0.5s cubic-bezier(0.25, 0.1, 0.25, 1);
         }
 
         .navbar-banner__container {
@@ -841,9 +848,16 @@
             position: absolute;
             border-radius: 50%;
             filter: blur(40px);
-            opacity: 0.6;
+            opacity: 0;
             z-index: 1;
-            transition: all 0.5s ease;
+            transition: opacity 0.5s ease,
+                        filter 0.5s ease,
+                        transform 0.5s ease;
+        }
+
+        .navbar-banner--scrolled.show .navbar-banner__blur {
+            opacity: 0.6;
+            transform: scale(1.1);
         }
 
         .navbar-banner__blur--1 {
@@ -890,8 +904,7 @@
 
         /* Dark mode styles */
         .dark-mode .navbar-banner {
-            background-color: #2c2c2c;
-            color: #ffffff;
+            background-color: rgba(44, 44, 44, 0.8);
         }
 
         .dark-mode .navbar-banner__highlight {
@@ -923,6 +936,10 @@
             .navbar-banner {
                 font-size: 14px;
                 padding: 15px 0;
+                position: static;
+                top: auto;
+                transform: none !important;
+                z-index: 9998; /* Below mobile nav z-index */
             }
 
             .navbar-banner__content {
@@ -944,6 +961,17 @@
                 margin-left: 0;
                 margin-top: 15px;
             }
+
+            /* Disable scroll behavior on mobile */
+            .navbar-banner--scrolled {
+                position: static;
+                transform: none !important;
+            }
+
+            /* Ensure navbar banner stays below navbar */
+            #mainNav + .navbar-banner {
+                margin-top: 0px;
+            }
         }
 
         /* Banner position when scrolled */
@@ -952,75 +980,71 @@
       document.addEventListener('DOMContentLoaded', function () {
     var navbar = document.querySelector('.navbar');
     var navbarBanner = document.querySelector('.navbar-banner');
-    var lastScrollTop = 0;
-    var scrollThreshold = 30; // Increased threshold
-    var ticking = false; // For requestAnimationFrame
-
-    function handleScroll() {
-        var bannerHeight = navbarBanner.offsetHeight;
-        var scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-
-        // Only process scroll events when animation frame is ready
-        if (!ticking) {
-            requestAnimationFrame(function() {
-                if (Math.abs(scrollTop - lastScrollTop) > scrollThreshold) {
-                    if (scrollTop > lastScrollTop && scrollTop > bannerHeight) {
-                        // Scrolling down - hide banner
-                        navbar.classList.add('navbar-shrink');
-                        navbarBanner.classList.add('navbar-banner--scrolled');
-                        navbarBanner.classList.remove('show');
-                        navbar.style.transform = 'translateY(0)';
-                    } else if (scrollTop <= lastScrollTop && scrollTop > bannerHeight) {
-                        // Scrolling up - show banner
-                        navbar.classList.add('navbar-shrink', 'navbar--banner-scrolled');
-                        navbarBanner.classList.add('navbar-banner--scrolled', 'show');
-                        navbar.style.transform = `translateY(${bannerHeight}px)`;
-                    } else {
-                        // At the top - reset everything
-                        navbar.classList.remove('navbar-shrink', 'navbar--banner-scrolled');
-                        navbarBanner.classList.remove('navbar-banner--scrolled', 'show');
-                        navbar.style.transform = 'translateY(0)';
-                    }
-                    
-                    lastScrollTop = scrollTop;
-                }
-                ticking = false;
-            });
-            
-            ticking = true;
-        }
-    }
-
-    // Debounced scroll handler
+    let lastScrollTop = 0;
     let scrollTimeout;
-    function debouncedScroll() {
-        clearTimeout(scrollTimeout);
-        scrollTimeout = setTimeout(handleScroll, 10);
-    }
-
-    // Only add scroll event listener if not on mobile
-    if (window.innerWidth > 991.98) {
-        window.addEventListener('scroll', debouncedScroll, { passive: true });
-        handleScroll(); // Initial call
-    }
-
-    // Update on window resize with debounce
-    let resizeTimeout;
-    window.addEventListener('resize', function() {
-        clearTimeout(resizeTimeout);
-        resizeTimeout = setTimeout(function() {
-            if (window.innerWidth > 991.98) {
-                window.addEventListener('scroll', debouncedScroll, { passive: true });
-                handleScroll();
-            } else {
-                window.removeEventListener('scroll', debouncedScroll);
-                // Reset styles for mobile
-                navbar.classList.remove('navbar-shrink', 'navbar--banner-scrolled');
-                navbarBanner.classList.remove('navbar-banner--scrolled', 'show');
-                navbar.style.transform = '';
+    let isTransitioning = false;
+    
+    // Only apply scroll behavior on desktop
+    if (window.innerWidth > 768) {
+        // Debounced scroll handler with RAF
+        function handleScroll() {
+            if (scrollTimeout) {
+                cancelAnimationFrame(scrollTimeout);
             }
-        }, 100);
-    });
+
+            scrollTimeout = requestAnimationFrame(() => {
+                const scrollTop = window.pageYOffset;
+                const bannerHeight = navbarBanner.offsetHeight;
+                
+                if (isTransitioning) return;
+                
+                isTransitioning = true;
+                
+                if (scrollTop > lastScrollTop && scrollTop > bannerHeight) {
+                    // Scrolling down - hide banner
+                    navbarBanner.classList.add('navbar-banner--scrolled');
+                    navbarBanner.classList.remove('show');
+                    navbar.style.transform = 'translateY(0)';
+                    
+                    navbarBanner.style.backdropFilter = 'blur(0px)';
+                } else if (scrollTop <= lastScrollTop && scrollTop > bannerHeight) {
+                    // Scrolling up - show banner
+                    navbarBanner.classList.add('navbar-banner--scrolled');
+                    
+                    setTimeout(() => {
+                        navbarBanner.classList.add('show');
+                        navbarBanner.style.backdropFilter = 'blur(6px)';
+                    }, 50);
+                    
+                    navbar.style.transform = `translateY(${bannerHeight}px)`;
+                } else {
+                    // At top
+                    navbarBanner.classList.remove('navbar-banner--scrolled', 'show');
+                    navbar.style.transform = 'translateY(0)';
+                    
+                    navbarBanner.style.backdropFilter = 'blur(0px)';
+                }
+                
+                lastScrollTop = scrollTop;
+                
+                setTimeout(() => {
+                    isTransitioning = false;
+                }, 500);
+            });
+        }
+
+        // Throttled scroll listener
+        let ticking = false;
+        window.addEventListener('scroll', () => {
+            if (!ticking) {
+                requestAnimationFrame(() => {
+                    handleScroll();
+                    ticking = false; 
+                });
+                ticking = true;
+            }
+        }, { passive: true });
+    }
 });
     </script>
 </header>
@@ -1173,7 +1197,6 @@
     <section id="home" style="margin-bottom: 0; position: relative; overflow: visible;">
         <div class="circle-blur"></div>
         <div id="container-header" class="container-fluid">
-            <div id="container-headerin" class="container-fluid">
                 <!-- Carousel Start -->
                 <style>
                     #businessCarousel {
@@ -1242,7 +1265,7 @@
                     /* Ensure the carousel container doesn't clip the controls */
                     #businessCarousel {
                         overflow: visible;
-                        padding: 0 25px; /* Added padding to make room for controls */
+                        padding: 0 0px; /* Added padding to make room for controls */
                     }
 
                     .business-carousel-control-prev {
@@ -1306,6 +1329,8 @@
                     }
 
                     @media (max-width: 768px) {
+
+                    
                         .business-carousel-control-next-icon {
                             right: 80px !important;
                         }
@@ -1366,7 +1391,16 @@
                             <div class="row gy-5 align-items-center">
                                 <!-- Left Column -->
                                 <div
-                                    class="col-lg-7 d-flex flex-column justify-content-center align-items-start text-lg-start p-4 p-lg-5">
+                                    class="col-lg-7 d-flex flex-column justify-content-center align-items-start text-lg-start">
+                                    <style>
+                                        @media (max-width: 768px) {
+                                            .col-lg-7 {
+                                                width: 90% !important;
+                                                margin: 0 auto !important;
+                                                padding: 0 15px !important;
+                                            }
+                                        }
+                                    </style>
                                     <div class="mb-4">
                                         <!-- <div class="logo-text">
                                                 <p>
@@ -1386,10 +1420,12 @@
                                             the tools you need to <span class="fw-bold">streamline processes, make
                                                 informed decisions, and drive sustainable growth</span> in a rapidly
                                             evolving market.</h3>
+
+                                            <a class="btn-custom img-animate mobile-responsive" role="button" href="#contact">
+                                                Contact Us
+                                            </a>
                                     </div>
-                                    <a class="btn-custom img-animate mobile-responsive" role="button" href="#contact">
-                                        Contact Us
-                                    </a>
+                                  
                                     <!-- stacked -->
 
                                 </div>
@@ -1428,11 +1464,20 @@
                                     }
                                 </style>
                                 <!-- Right Column -->
-                                <div class="col-lg-5 d-flex justify-content-center align-items-center">
-                                    <div class="tilt-container" style="margin-left: 5%;">
+                                <div class="col-lg-5 d-flex justify-content-center align-items-center mobile-center">
+                                    <style>
+                                        @media (max-width: 768px) {
+                                            .mobile-center {
+                                                justify-content: center !important;
+                                                text-align: center !important;
+                                                margin: 0 auto !important;
+                                            }
+                                        }
+                                    </style>
+                                    <div class="tilt-container" >
                                         <img class="header img-fluid img-animate tilt-image"
                                             src="assets/img/heading.png" alt="Business Image" loading="lazy"
-                                            style="max-width: 90%; height: auto;">
+                                              style="width: 100%; height: auto;">   
                                     </div>
                                 </div>
                             </div>
@@ -1442,7 +1487,7 @@
                         <div class="carousel-item">
                             <div class="row gy-5 align-items-center">
                                 <div
-                                    class="col-lg-7 d-flex flex-column justify-content-center align-items-start text-lg-start p-4 p-lg-5">
+                                    class="col-lg-7 d-flex flex-column justify-content-center align-items-start text-lg-start">
                                     <div class="mb-4">
                                         <!-- <div class="logo-text">
                                                 <p>
@@ -1473,15 +1518,21 @@
                                     </div>
                                 </div>
                                 <div class="col-lg-5 d-flex justify-content-center align-items-center">
-                                    <div class="tilt-container" style="margin-left: 5%;">
+                                    <style>
+                                        .tilt-container {
+                                            margin-right: -5%; /* Negative margin to push content outside */
+                                            width: 80% !important; /* Reduce width */
+                                            height: 80% !important; /* Reduce height */
+                                        }
+                                    </style>
+                                    <div class="tilt-container">
                                         <img class="header img-fluid img-animate tilt-image"
                                             src="assets/img/heading.png" alt="Business Image" loading="lazy"
-                                            style="max-width: 90%; height: auto;">
+                                            style="width: 100%; height: auto;">
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
                 </div>
                 <!-- Carousel End -->
             </div>
@@ -1531,6 +1582,7 @@
                 opacity: 0.5;
             }
         }
+        
 
 
         /* Dark mode styles */
@@ -1749,8 +1801,8 @@
     <section id="technology-delivery " class="clipped-section">
         <div class="container-fluid ">
             <div class="row justify-content-center">
-                <div class="col-12 ">
-                    <div class="text-center mb-5">
+               
+                    <div class="text-center">
                         <h2 class="mb-2 glass-text gradient-text">
                             Delivering Technology for
                             <br>
@@ -1920,9 +1972,7 @@
                                 padding: 1rem;
                                 margin: 0.25rem;
                             }
-                            .container-fluid {
-                                padding: 0 1.5rem;
-                            }
+                          
                         }
 
                         #partners-logo .row {
@@ -1936,16 +1986,16 @@
                         }
                     </style>
                 </div>
-            </div>
+        
         </div>
         <!-- Add the circle-blur2 div here -->
         <div class="circle-blur2"></div>
     </section>
     <section id="blog" class="py-5">
-        <div class="container-fluid p-4">
+        <div class="container-fluid">
             <div class="card-body">
                 <div class="row">
-                    <div class="text-center mt-0 mb-5" style="margin-top: -50px;">
+                    <div class="text-center mt-0 mb-3" style="margin-top: -50px;">
                         <h1 class="industry-title gradient-text mb-3">Tailored Solutions for Every Sector</h1>
                         <h3 class="mb-5 industry-subtitle">Innovative technology customized for your industry's unique challenges</h3>
                     </div>
@@ -2073,7 +2123,7 @@
                 #products {
                     padding-left: 0 !important;
                     padding-right: 0 !important;
-                    margin-top: 35% !important;
+                    margin-top: 5% !important;
                     margin-bottom: -20% !important;
                 }
             }
@@ -2214,11 +2264,14 @@
         </div>
 
         <style>
+            .my-3 {
+                width: 90% !important;
+            }
             .product-blur-3 {
                 background-image: linear-gradient(132deg, #8A2BE2 27%, #4169E1 50%, #5486a6 79%);
                 top: 50%;
                 opacity: 0.77;
-                right: 1070px;
+                right: 980px;
                 transform: translateY(-50%);
             }
         </style>
@@ -2804,7 +2857,7 @@
 
 
 
-                <div class="tags-container-wrapper">
+                <div class="tags-container-wrapper mb-4"">
                     <div class="scroll-indicator scroll-left">
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
                             stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -2839,7 +2892,7 @@
                     </div>
                 </div>
             </div>
-            <div id="contentCards" class="row justify-content-center p-4">
+            <div id="contentCards" class="row justify-content-center ">
             </div>
 
 
@@ -2849,8 +2902,8 @@
 
 
 
-    <section id="partners" class="partners-section py-4">
-        <div class="container-fluid p-4 py-xl-5">
+    <section id="partners" class="partners-section py-5">
+        <div class="container-fluid">
             <h1 class="text-center partners-heading gradient-text">Together We Build Solutions for You</h1>
 
             <h3 class="text-center mb-5 partners-subheading">Real Partnership To Deliver A Reliable Solution</h3>
@@ -2927,13 +2980,13 @@
                     }
 
                     .solution-card {
-                        width: 90%;
+                        width: 100%;
                         margin-left: auto;
                         margin-right: auto;
                     }
 
                     .solution-card img {
-                        width: 50%;
+                        width: 100%;
                         max-height: 100px;
                     }
 
@@ -2951,7 +3004,7 @@
 
     <!-- Cards Section -->
     <section id="solutions" class="py-5" style="background-color: #efecff;">
-        <div class="container-fluid p-4">
+        <div class="container-fluid">
             <h1 class="solution-title text-center mb-2 gradient-text">Solution for Each Business</h1>
             <h3 class="solution-subtitle text-center mb-5">Real Partnership To Deliver A Reliable Solution.</h3>
 
@@ -3222,8 +3275,7 @@
         .solution-card {
             transition: all 0.3s ease;
             border: none;
-            height: 100%;
-            max-width: 95%;
+            max-width: 100%;
             /* Slightly reduced card width */
             margin: 0 auto;
             /* Center the card */
@@ -3498,7 +3550,7 @@
 
 
     <section id="testi" class="py-5">
-        <div class="container-fluid py-4 ">
+        <div class="container-fluid">
             <div class="floating-orbs"></div>
             <style>
                 .testimonial-heading {
@@ -3821,25 +3873,40 @@
 
 <!-- BLOG -->
 <section id="blog" class="">
-    <div class="container-fluid p-4">
+    <div class="container-fluid">
         <div class="blog-header text-center">
             <h1 class="gradient-text" style="font-weight: bolder; font-size: 48px;">Blog</h1>
             <p class="">Stay informed and inspired with our latest articles covering a wide range of topics from
                 career advice to latest our insights.</p>
         </div>
         <div id="blog-posts-container" class="blog-posts">
-            <div class="blog-arrow left-arrow">
+            <!-- Desktop arrows -->
+            <div class="blog-arrow left-arrow desktop-control">
                 <i class="fas fa-chevron-left"></i>
             </div>
             <div class="blog-posts-wrapper">
                 <!-- Blog posts will be dynamically inserted here -->
             </div>
-            <div class="blog-arrow right-arrow">
+            <div class="blog-arrow right-arrow desktop-control">
                 <i class="fas fa-chevron-right"></i>
+            </div>
+            
+            <!-- Mobile controls -->
+            <div class="mobile-controls">
+                <div class="blog-arrow left-arrow mobile-control">
+                    <i class="fas fa-chevron-left"></i>
+                </div>
+                <div class="blog-dots">
+                    <!-- Dots will be dynamically inserted here -->
+                </div>
+                <div class="blog-arrow right-arrow mobile-control">
+                    <i class="fas fa-chevron-right"></i>
+                </div>
             </div>
         </div>
     </div>
 </section>
+
 <style>
 .blog-pagination {
         display: flex;
@@ -3941,7 +4008,23 @@
  
     @media (max-width: 768px) {
         .blog-arrow {
-            display: none;
+            display: flex;
+            position: absolute;
+            top: 100%;
+            transform: none;
+            margin-top: 1ch;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            padding: 0;
+            line-height: 0;
+        }
+        .blog-arrow.left-arrow {
+            left: 145px;
+        }
+        .blog-arrow.right-arrow {
+            right: 145px;
         }
     }
 </style>
@@ -3949,7 +4032,7 @@
 
 
     <section id="qa" class="py-5 position-relative">
-        <div class="container-fluid p-4">
+        <div class="container-fluid">
             <div class="row">
                 <div class="col-lg-12 text-center mb-4">
                     <h1 class="faq-title gradient-text" style="font-weight: bolder; font-size: 48px;">Q&A</h1>
@@ -4143,7 +4226,7 @@
 
 
     <section id="separator" class="" style="background-color: #efecff;">
-        <div class="container-fluid p-4">
+        <div class="container-fluid">
             <div class="banner">
                 <div class="banner-content">
                     <h2>Unlock superior coverage for your team</h2>
@@ -4157,9 +4240,9 @@
     </section>
 
     <section id="contact" class="pb-5">
-        <div class="container-fluid p-4">
-            <div class="row justify-content-between">
-                <div id="contact-info" class="col-lg-5 left-column >
+        <div class="container-fluid">
+            <div class="row justify-content-between p-5">
+                <div id="contact-info" class="col-lg-4 left-column >
                         <h1 class=" mb-3 contact-heading"
                     style="font-size: 36px; text-align: left; line-height: 1.2; letter-spacing: -0.5px;">
                     What Are You Waiting For?<br>
@@ -4226,6 +4309,7 @@
 
                     <div class="contact-info mb-4">
                         <style>
+                            
                             .contact-item {
                                 display: flex;
                                 align-items: flex-start;
