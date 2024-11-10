@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PT BSI | Software ERP & EAM </title>
+    <title>Software HRIS | Payroll, Attendance, Employee Management</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
 
@@ -58,1248 +58,124 @@
     <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
+
     <style>
-        /* Custom CSS */
-    
-        :root {
-            --primary-color: #007bff;
-            --secondary-color: #6c757d;
-            --accent-color: #ffc107;
-            --text-color: #333;
-            --bg-color: #f8f9fa;
-            --white: #ffffff;
-        }
 
-        body {
-            font-family: 'proxima-nova', sans-serif;
-        }
-
-        
-
+        /* Fix section spacing */
         section {
-            position: relative;
-            padding-top: 0px !important;
-            padding-bottom: 0px !important;
+            overflow: hidden !important;
+            width: 100% !important;
+            position: relative !important;
         }
-
-        /* Force Proxima Nova for all elements */
-
-        .navbar {
-            box-shadow: 0 3px 3px rgba(0, 0, 0, 0.068);
-            width: 100%;
-            padding: 0.5rem 0;
+    .dynamic-text-container {
+            font-size: 45px;
+            font-weight: 700;
+            height: 1em;
+            overflow: hidden;
         }
-
-        .container-fluid {
-            width: 95%;
-            max-width: 1780px;
-            margin-left: auto;
-            margin-right: auto;
-            padding-left: 15px;
-            padding-right: 15px;
-        }
-
-        @media (min-width: 992px) {
-            .container-fluid {
-                padding-left: 30px;
-                padding-right: 30px;
-            }
-            
-            .full-screen-sidebar {
-                margin-right: -35px; /* Matches the index.html sidebar positioning */
-            }
-        }
-        
-
-        @media (max-width: 991px) {
-            .container-fluid {
-                width: 100%;
-                padding-left: 15px;
-                padding-right: 15px;
-            }
-        }
-
-        .navbar-brand {
-            font-weight: bold;
-            font-size: 1.8rem;
-            color: black;
-            transition: color 0.3s ease;
-        }
-
-        .navbar-brand img {
-            height: 50px !important;
-            /* Increased from 40px to 50px for larger size */
-            width: auto !important;
-            /* Maintain aspect ratio */
-            max-width: 100%;
-            /* Ensure it doesn't overflow its container */
-            object-fit: contain;
-            /* Maintain aspect ratio while fitting within dimensions */
-        }
-
-        .navbar-brand:hover {
-            color: #333;
-        }
-
-        .nav-link {
-            color: var(--text-color);
-            font-weight: 500 !important;
-            transition: color 0.3s ease, transform 0.5s cubic-bezier(0.68, -0.55, 0.27, 1.55), opacity 0.5s ease;
-            font-weight: bold !important;
+    
+        .letter {
+            display: inline-block;
             opacity: 0;
-            font-size: 0.9rem !important;
             transform: translateY(20px);
-            animation: slideInUp 0.5s cubic-bezier(0.68, -0.55, 0.27, 1.55) forwards;
-            animation-delay: calc(var(--nav-item-index, 0) * 0.1s);
-        }
-
-        .nav-link::after {
-            content: '';
-            position: absolute;
-            width: 0;
-            height: 2px;
-            bottom: -5px;
-            left: 0;
-            background-color: #9054d000;
-            transition: width var(--transition-speed) ease;
-        }
-
-        @keyframes slideInUp {
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-
-        body.dark-mode .nav-link {
-            color: white !important;
-        }
-
-        .btn-outline-secondary {
-            text-shadow: none;
-            background-color: rgba(64, 98, 150, 0.911);
-            border-radius: 10px;
-            border-color: #4644b4;
-            color: white;
-            transition: all 0.3s ease;
-            padding: 0.375rem 0.75rem;
-            /* Reduced padding */
-            backdrop-filter: blur(5px);
-            -webkit-backdrop-filter: blur(5px);
-        }
-
-        .gradient-text {
-            background: linear-gradient(90deg, #7209d4, #9d28d4 33%, #8ddee4);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            color: transparent;
-        }
-
-        .btn-outline-secondary:hover {
-            background-color: rgb(50, 88, 146);
-            border-color: #312f88;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            color: var(--white);
-            text-shadow: none;
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
-        }
-
-        .btn-dark {
-            background-color: var(--text-color);
-            border: none;
+            filter: blur(5px);
             transition: all 0.3s ease;
         }
-
-        .btn-dark:hover {
-            background-color: var(--primary-color);
+    
+        .letter.active {
+            opacity: 1;
+            transform: translateY(0);
+            filter: blur(0);
         }
-
-        .sub-nav {
-            background-color: var(--bg-color);
-            padding: 3px 0;
-            border-bottom: 1px solid #f2e9f6;
-            text-align: center;
+    
+        .letter.fade-out {
+            opacity: 0;
+            transform: translateY(-20px);
+            filter: blur(5px);
         }
-
-        body.dark-mode .sub-nav {
-            background-color: #30214d;
-            border-bottom-color: #1c1c1c;
-        }
-
-        .sub-nav .nav {
-            display: inline-flex;
-            justify-content: center;
-        }
-
-        .sub-nav .nav-item {
-            margin: 0 15px;
-            transition: transform 0.3s ease;
-        }
-
-        .sub-nav .nav-item:hover {
-            transform: translateY(-3px);
-        }
-
-
-        .sub-nav .nav-link {
-            color: var(--text-color);
-            text-decoration: none;
-            font-size: 1rem;
-            display: flex;
-            align-items: center;
-        }
-
-        body.dark-mode .sub-nav .nav-link {
-            color: var(--dark-text-color);
-        }
-
-        body.dark-mode .sub-nav .logo-container img {
-            filter: grayscale(100%) brightness(1000%);
-            transition: filter 0.3s ease;
-        }
-
-        .sub-nav .icon {
-            margin-right: 10px;
-            font-size: 1.2rem;
-        }
-
-        body.dark-mode .sub-nav .icon {
-            color: var(--dark-text-color);
-        }
-
-        .career-link {
-            background-color: var(--accent-color);
-            padding: 10px 0;
-            text-align: center;
-            font-size: 1rem;
-            font-weight: 500;
-        }
-
-        .career-link a {
-            color: var(--text-color);
-            text-decoration: none;
-            transition: color 0.3s ease;
-        }
-
-        .career-link a:hover {
-            color: var(--primary-color);
-        }
-
-        /* New styles for mobile responsiveness */
-        @media (max-width: 991px) {
-            .navbar-collapse {
-                padding: 20px;
-                border-radius: 10px;
-                margin-top: 15px;
-                display: flex;
-                flex-direction: column;
-                align-items: stretch;
-                transition: all 0.1s ease-in-out;
-                opacity: 0;
-                transform: translateY(-20px);
-                max-height: 0;
+    
+        @media (max-width: 768px) {
+            .dynamic-text-container {
+                font-size: 2.5rem;
+                font-weight: 700;
+                height: 1em;
                 overflow: hidden;
             }
-
-            .navbar-collapse.show {
-                opacity: 1;
-                transform: translateY(0);
-                max-height: 1000px;
-                /* Adjust this value based on your content */
-            }
-
-            .navbar-nav {
-                margin-bottom: 15px;
-                width: 100%;
-                border-bottom: 1px solid #e0e0e0;
-                padding-bottom: 15px;
-            }
-
-            .nav-item {
-                margin-bottom: 10px;
-                width: 100%;
-            }
-
-            .nav-link {
-                display: block;
-                font-size: 1rem;
-                padding: 8px 0;
-                transition: all 0.3s ease;
-                width: 100%;
-                text-align: left;
-            }
-
-            .nav-link:hover {
-                color: var(--primary-color);
-                transform: translateX(5px);
-            }
-
-            .d-flex.ms-3 {
-                flex-direction: column;
-                align-items: stretch;
-                margin-top: auto;
-                width: 100%;
-                padding-top: 15px;
-            }
-
-            .btn-group {
-                display: flex;
-                flex-direction: column;
-                width: 100%;
-            }
-
-            .btn {
-                width: 100%;
-                padding: 10px;
-                font-size: 1rem;
-                transition: all 0.3s ease;
-                border-radius: 10px;
-            }
-
-            .btn:last-child {
-                margin-bottom: 0;
-            }
-
-            .btn:hover {
-                transform: translateY(-2px);
-                box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
-            }
-
-            .sub-nav .nav {
-                flex-wrap: wrap;
-                justify-content: space-between;
-            }
-
-            .sub-nav .nav-item {
-                flex-basis: calc(50% - 10px);
-                margin-bottom: 15px;
-                background-color: var(--white);
-                border-radius: 8px;
-                padding: 15px;
-                box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-                transition: all 0.3s ease;
-            }
-
-            .sub-nav .nav-item:hover {
-                transform: translateY(-3px);
-                box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-            }
-
-            .sub-nav .nav-link {
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-                text-align: center;
-            }
-
-            .sub-nav .icon {
-                font-size: 1.5rem;
-                margin-bottom: 10px;
-            }
-
-                /* Add this style block in the <head> section or in your CSS file */
-    .container-fluid {
-        /* width: 95%; */
-        max-width: 1700px;
-        margin-left: auto;
-        margin-right: auto;
-    }
-
-            .sub-nav small {
-                display: block;
-                margin-top: 5px;
-                font-size: 0.8rem;
-            }
+    
         }
-
-        @media (max-width: 575px) {
-            .sub-nav .nav-item {
-                flex-basis: 100%;
-            }
+    
+        header {
+            overflow: hidden !important;
+            /* This will keep the header content hidden if it overflows */
         }
-
-        .dropdown-menu {
-            margin-top: 0;
-            /* Remove any default margin */
-            top: 100%;
-            /* Position the dropdown right below the nav-link */
-            left: 0;
-            border-top: none;
-            /* Remove top border if present */
-            border-top-left-radius: 0;
-            border-top-right-radius: 0;
-        }
-
-        /* Adjust the glassmorphism effect for dropdowns if needed */
-        .dropdown-menu.glassmorphism {
-            background: rgba(255, 255, 255, 0.962);
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 0 0 10px 10px;
-            /* Rounded bottom corners */
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            /* Add a subtle shadow */
-        }
-
-        /* Ensure dropdown items are properly spaced */
-        .dropdown-menu .dropdown-item {
-            padding: 0.5rem 1rem;
-        }
-    </style>
-</head>
-
-<body>
-    <!-- LOADING -->
-    <div id="loading-overlay" class="loading-overlay">
-        <div class="loading-container">
-            <div class="loading-text">Loading...</div>
-            <div class="spinner">
-                <div class="spinner-inner"></div>
-            </div>
-        </div>
-    </div>
-    <script>
-        function navigateWithLoading(url) {
-            const loadingOverlay = document.getElementById('loading-overlay');
-            loadingOverlay.style.display = 'flex'; // Show the loading overlay
-            document.body.style.overflow = 'hidden'; // Prevent scrolling
-
-            // Wait for the animation to complete before navigating
-            setTimeout(function () {
-                window.location.href = url;
-            }, 2000); // Adjust the delay as needed (in milliseconds)
-        }
-
-        document.addEventListener('DOMContentLoaded', function () {
-            // This script block can contain other page initialization code
-        });
-    </script>
-    <style>
-        .loading-overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(255, 255, 255, 0.8);
-            backdrop-filter: blur(5px);
-            display: none;
-            /* Initially hidden */
-            justify-content: center;
-            align-items: center;
-            z-index: 9999;
-        }
-
-        .loading-container {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-
-        .loading-text {
-            font-size: 24px;
-            font-weight: bold;
-            margin-bottom: 20px;
-            color: #9054d0;
-            opacity: 0;
-            animation: fade-in 0.5s ease-in-out forwards;
-            animation-delay: 0.5s;
-            /* Add a delay to the fade-in animation */
-        }
-
-        .spinner {
-            width: 80px;
-            height: 80px;
-            border-radius: 50%;
-            border: 4px solid rgba(52, 152, 219, 0.2);
-            border-top-color: #9054d0;
-            animation: spin 1s ease-in-out infinite;
-        }
-
-        @keyframes spin {
-            0% {
-                transform: rotate(0deg);
-            }
-
-            100% {
-                transform: rotate(360deg);
-            }
-        }
-
-        @keyframes fade-in {
-            0% {
-                opacity: 0;
-                transform: translateY(-20px);
-            }
-
-            100% {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        .product-banner {
-            cursor: pointer;
-        }
-
-        .nav-link {
-            color: #000000 !important;
-        }
-    </style>
-    <!-- LOADING -->
-
-
-
-    <div class="sub-nav mb-0 d-flex justify-content-between d-md-block sticky-top">
-        <div class="container">
-            <div class="logo-container">
-                <a class="" href="#" onclick="navigateWithLoading('')">
-                    <img src="assets//img/probes6.png" alt=""
-                        style="max-width: 80px; height: auto; margin-left: 20px; margin-bottom: 10px; margin-top: 6px;">
-                </a>
-            </div>
-
-            <nav class="nav-container">
-                <ul class="horizontal-nav" style="margin-top: 3px;">
-                    <li class="nav-master-item">
-                        <a class="nav-link" href="#ict-one-solution">
-                            Home
-                        </a>
-                    </li>
-                    <li class="nav-master-item">
-                        <a class="nav-link" href="#why-rhapsody">
-                        Solution
-                        </a>
-                    </li>
-                    <li class="nav-master-item">
-                        <a class="nav-link" href="#why-rhapsody">
-                            Product Overview
-                        </a>
-                    </li>
-                    <li class="nav-master-item">
-                        <a class="nav-link" href="#why-rhapsody">
-                            Contact
-                        </a>
-                    </li>
-                    <li class="nav-master-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="consultationDropdown" role="button"
-                            data-bs-toggle="dropdown" aria-expanded="false">
-                            About Realta <i class="fas fa-chevron-down icon"></i>
-                        </a>
-                        <ul class="dropdown-menu glassmorphism" aria-labelledby="consultationDropdown">
-                            <li><a class="dropdown-item" href="#">Article & News</a></li>
-                        </ul>
-                    </li>
-                    <!-- add more here items comments -->
-                </ul>
-            </nav>
-            <style>
-                .nav-container {
-                    display: flex;
-                    justify-content: center;
-                    width: 100%;
-                }
-
-                .horizontal-nav {
-                    display: flex;
-                    justify-content: center;
-                    list-style-type: none;
-                    padding: 0;
-                    margin: 0;
-                    width: 100%;
-                }
-
-                .nav-master-item {
-                    margin: 0 5px;
-                }
-
-                .nav-link {
-                    color: #777777;
-                    text-decoration: none;
-                    white-space: nowrap;
-                    font-size: 14px;
-                }
-
-                .icon {
-                    font-size: 10px;
-                    margin-left: 3px;
-                }
-            </style>
-            <!-- <div class="icons-container horizontal-nav">
-               
-            </div> -->
-        </div>
-    </div>
-
-    <style>
-        /* Styles for the sub-nav */
-        .sub-nav {
-            position: fixed;
-            top: 80px;
-            left: 0;
-            right: 0;
-            z-index: 1030;
-            background-color: #f8f9fa;
-            height: 50px;
-            display: flex;
-            align-items: center;
-            padding-top: 5px;
-        }
-
-        .sub-nav .container {
-            width: 95%;
-            max-width: 1700px;
-            margin-left: auto;
-            margin-right: auto;
-            padding-left: 15px;
-            padding-right: 15px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            height: 100%;
-        }
-
-        @media (min-width: 992px) {
-            .sub-nav .container {
-                padding-left: 30px;
-                padding-right: 30px;
-            }
-        }
-
-        @media (max-width: 991px) {
-            .sub-nav .container {
-                width: 100%;
-                padding-left: 15px;
-                padding-right: 15px;
-            }
-        }
-
-        .nav-container {
-            display: flex;
-            justify-content: center;
-            width: 100%;
-        }
-
-        .horizontal-nav {
-            display: flex;
-            justify-content: center;
-            list-style-type: none;
-            padding: 0;
-            margin: 0;
-            width: 100%;
-        }
-
-        .nav-master-item {
-            margin: 0 5px;
-        }
-
-        .nav-link {
-            color: #777777;
-            text-decoration: none;
-            white-space: nowrap;
-            font-size: 14px;
-        }
-
-        .icon {
-            font-size: 10px;
-            margin-left: 3px;
-        }
-
-        /* Styles for the main nav */
+    
+    
+            
         #mainNav {
             position: fixed;
             top: 0;
             left: 0;
             right: 0;
             z-index: 1030;
-            /* Higher z-index to stay on top */
-            background-color: #fff;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, .1);
+            height: 66px; /* PRECISE HEIGHT instead of 8.3% */
+            transition: all 0.3s ease-in-out;
         }
-
-        .sub-nav .nav-link {
-            font-weight: 500 !important;
-            padding: 12px 18px;
-            color: #333;
-            text-decoration: none;
-            transition: all 0.3s ease;
-            border-radius: 4px;
-
+    
+        #mainNav.navbar-scrolled {
+            height: 60px;
         }
-
-        .sub-nav .nav-link:hover {
-            background-color: #f0f0f0;
-            color: #007bff;
-            transform: translateY(-2px);
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    
+        body {
+            padding-top: 110px; /* navbar (66px) + announcement (44px) */
         }
-
-        .navbar {
-            top: 40px;
-            z-index: 5;
-        }
-
-        .navbar-brand {
-            font-size: 18px;
-            color: #777777;
-            font-weight: 600;
-        }
-
-        .icon {
-            font-size: 10px !important;
-        }
-
-        .navbar-toggler {
-            border: none;
-            background-color: transparent;
-            padding: 0.25rem 0.75rem;
-            font-size: 1.25rem;
-            transition: all 0.3s ease;
-        }
-
-        .navbar-toggler:focus,
-        .navbar-toggler:active,
-        .navbar-toggler-icon:focus {
-            outline: none;
-            box-shadow: none;
-            border: none;
-        }
-
-        .navbar-toggler:hover {
-            background-color: rgba(0, 0, 0, 0.05);
-        }
-
-        .navbar-toggler-icon {
-            background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%280, 0, 0, 0.55%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
-        }
-
-        @media (max-width: 991px) {
-            .navbar {
-                z-index: 5;
-                top: 0px !important;
-            }
-
-            .sub-nav {
-                display: none !important;
-            }
-        }
-
+    
+        /* Add this style block in the <head> section or in your CSS file */
+            .container-fluid {
+        width: 100%; /* Change from 95% to 100% */
+        padding-left: 3.1%; /* Add consistent padding */
+        padding-right: 3.1%; /* Add consistent padding */
+        margin-left: auto;
+        margin-right: auto;
+    }
+    
         @media (max-width: 768px) {
-            .sub-nav {
-                display: none !important;
+            .container-fluid {
+                width: 100%;
+                padding-left: 0.5%; /* Add consistent padding */
+                padding-right: 0.5%; /* Add consistent padding */
             }
         }
     </style>
-    <nav class="navbar navbar-expand-lg sticky-top navbar-shrink navbar-light" id="mainNav">
-        <div class="container-fluid">
-            <a class="navbar-logo d-flex align-items-center" href="/">
-                <img src="assets/img/realta.png" alt="Realta Logo" class="realta-logo">
-            </a>
-            <style>
-                .realta-logo {
-                    width: 140px;
-                    height: 50%;
-                }
-
-                @media (min-width: 992px) {
-                    .realta-logo {
-                        margin-left: 15px;
-                    }
-                }
-
-                @media (max-width: 767px) {
-                    .realta-logo {
-                        width: 120px;
-                        height: auto;
-                        margin-left: -10px;
-                    }
-                }
-            </style>
-            <div class="navbar-mobile-actions">
-                <button id="darkModeToggleNav" class="btn-custom download-btn ms-1"
-                    style="border: none; min-width: fit-content; margin-right: 0.4rem;">
-                    <i class="fas fa-moon"></i>
-                </button>
-                <!-- Language switch button -->
-                <!-- Language switch dropdown -->
-                <div class="custom-dropdown">
-                    <button id="languageSwitch" class="btn-custom download-btn ms-1" type="button"
-                        style="border: none; min-width: fit-content; margin-right: 1.4rem;">
-                        <i class="fas fa-globe"></i>
-                    </button>
-                    <ul class="custom-dropdown-menu">
-                        <li><a href="#" data-lang="en">EN</a></li>
-                        <li><a href="#" data-lang="id">ID</a></li>
-                    </ul>
-                </div>
-                <div class="nav-drawer" data-bs-toggle="offcanvas" data-bs-target="#sidebar" aria-controls="sidebar">
-                    <i class="fas fa-bars" style="font-size: 1.7rem;"></i>
-                </div>
-            </div>
-            <!-- Mobile responsive navigation menu -->
-            <div class="offcanvas offcanvas-end" tabindex="-1" id="sidebar" aria-labelledby="sidebarLabel">
-                <div class="offcanvas-header">
-                    <div>
-                        <h5 class="offcanvas-title" id="sidebarLabel"
-                            style="margin-left: 33px; margin-bottom: 20px; font-size: 30px;">Menu</h5>
-                    </div>
-                    <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas"
-                        aria-label="Close"></button>
-                </div>
-                <div class="offcanvas-body">
-                    <div class="sidebar-menu">
-                        <div class="sidebar-item">
-                            <h2 style="font-size: 2.1rem;">Main site</h2>
-                            <hr>
-                            <h2 class="product-header" data-bs-toggle="collapse" data-bs-target="#productsSubmenu"
-                                aria-expanded="false">
-                                Products <i class="fas fa-chevron-right arrow-icon"></i>
-                            </h2>
-                            <div id="productsSubmenu" class="collapse">
-                                <ul class="product-list">
-                                    <li>
-                                        <div class="product-header" data-bs-toggle="collapse"
-                                            data-bs-target="#hmsSubmenu" aria-expanded="false"
-                                            style="font-size: 1rem; font-weight: 400;">
-                                            Hotel Management System <i class="fas fa-chevron-right arrow-icon"></i>
-                                        </div>
-                                        <div id="hmsSubmenu" class="collapse product-submenu">
-                                            <p>Comprehensive solution for efficient hotel operations and guest
-                                                management.</p>
-                                            <a href="#" class="discover-link">Discover HMS ›</a>
-                                            <h3 class="modules-heading">MODULES</h3>
-                                            <ul class="modules-list">
-                                                <li>
-                                                    <strong>Reservation Management</strong>
-                                                    <span>Streamline booking processes</span>
-                                                </li>
-                                                <li>
-                                                    <strong>Front Desk Operations</strong>
-                                                    <span>Efficient check-in and check-out</span>
-                                                </li>
-                                                <li>
-                                                    <strong>Housekeeping Management</strong>
-                                                    <span>Optimize room maintenance</span>
-                                                </li>
-                                                <li>
-                                                    <strong>Revenue Management</strong>
-                                                    <span>Maximize profitability</span>
-                                                </li>
-                                                <li>
-                                                    <strong>Guest Experience Management</strong>
-                                                    <span>Enhance customer satisfaction</span>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="product-header" data-bs-toggle="collapse"
-                                            data-bs-target="#gcsSubmenu" aria-expanded="false"
-                                            style="font-size: 1rem; font-weight: 400;">
-                                            Golf Course System <i class="fas fa-chevron-right arrow-icon"></i>
-                                        </div>
-                                        <div id="gcsSubmenu" class="collapse product-submenu">
-                                            <p>Integrated system for efficient golf course management and
-                                                operations.</p>
-                                            <a href="#" class="discover-link">Discover GCS ›</a>
-                                            <h3 class="modules-heading">MODULES</h3>
-                                            <ul class="modules-list">
-                                                <li>
-                                                    <strong>Tee Time Management</strong>
-                                                    <span>Optimize scheduling and bookings</span>
-                                                </li>
-                                                <li>
-                                                    <strong>Member Management</strong>
-                                                    <span>Streamline membership processes</span>
-                                                </li>
-                                                <li>
-                                                    <strong>Pro Shop Management</strong>
-                                                    <span>Inventory and sales management</span>
-                                                </li>
-                                                <li>
-                                                    <strong>Tournament Management</strong>
-                                                    <span>Organize and manage events</span>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="product-header" data-bs-toggle="collapse"
-                                            data-bs-target="#hrSystemSubmenu" aria-expanded="false"
-                                            style="font-size: 1rem; font-weight: 400;">
-                                            HR System <i class="fas fa-chevron-right arrow-icon"></i>
-                                        </div>
-                                        <div id="hrSystemSubmenu" class="collapse product-submenu">
-                                            <p>Comprehensive human resource management solution for businesses of
-                                                all sizes.</p>
-                                            <a href="#" class <div id="container-header"
-                                                class="container py-5">discover-link">Discover HR System ›</a>
-                                            <h3 class="modules-heading">MODULES</h3>
-                                            <ul class="modules-list">
-                                                <li>
-                                                    <strong>Employee Management</strong>
-                                                    <span>Centralize employee data and records</span>
-                                                </li>
-                                                <li>
-                                                    <strong>Payroll Processing</strong>
-                                                    <span>Automate salary calculations and payments</span>
-                                                </li>
-                                                <li>
-                                                    <strong>Time and Attendance</strong>
-                                                    <span>Track employee work hours and absences</span>
-                                                </li>
-                                                <li>
-                                                    <strong>Performance Management</strong>
-                                                    <span>Set goals and conduct evaluations</span>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="product-header" data-bs-toggle="collapse"
-                                            data-bs-target="#propertyTenantSubmenu" aria-expanded="false"
-                                            style="font-size: 1rem; font-weight: 400;">
-                                            Property and Tenant System <i class="fas fa-chevron-right arrow-icon"></i>
-                                        </div>
-                                        <div id="propertyTenantSubmenu" class="collapse product-submenu">
-                                            <p>Efficient management solution for property owners and landlords.</p>
-                                            <a href="#" class="discover-link">Discover Property and Tenant System
-                                                ›</a>
-                                            <h3 class="modules-heading">MODULES</h3>
-                                            <ul class="modules-list">
-                                                <li>
-                                                    <strong>Property Management</strong>
-                                                    <span>Organize and track property details</span>
-                                                </li>
-                                                <li>
-                                                    <strong>Tenant Management</strong>
-                                                    <span>Manage tenant information and leases</span>
-                                                </li>
-                                                <li>
-                                                    <strong>Rent Collection</strong>
-                                                    <span>Automate rent payments and tracking</span>
-                                                </li>
-                                                <li>
-                                                    <strong>Maintenance Requests</strong>
-                                                    <span>Handle and track property maintenance</span>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="product-header" data-bs-toggle="collapse"
-                                            data-bs-target="#itsmSubmenu" aria-expanded="false"
-                                            style="font-size: 1rem; font-weight: 400;">
-                                            ITSM, ITAM & Unified Endpoint Management <i
-                                                class="fas fa-chevron-right arrow-icon"></i>
-                                        </div>
-                                        <div id="itsmSubmenu" class="collapse product-submenu">
-                                            <p>Comprehensive IT Service Management solution for streamlined IT
-                                                operations.</p>
-                                            <a href="#" class="discover-link">Discover ITSM, ITAM & Unified Endpoint
-                                                Management ›</a>
-                                            <h3 class="modules-heading">MODULES</h3>
-                                            <ul class="modules-list">
-                                                <li>
-                                                    <strong>Incident Management</strong>
-                                                    <span>Efficiently handle and resolve IT issues</span>
-                                                </li>
-                                                <li>
-                                                    <strong>Change Management</strong>
-                                                    <span>Control and implement IT changes</span>
-                                                </li>
-                                                <li>
-                                                    <strong>Asset Management</strong>
-                                                    <span>Track and manage IT assets</span>
-                                                </li>
-                                                <li>
-                                                    <strong>Service Catalog</strong>
-                                                    <span>Organize and offer IT services</span>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="product-header" data-bs-toggle="collapse"
-                                            data-bs-target="#erpSubmenu" aria-expanded="false"
-                                            style="font-size: 1rem; font-weight: 400;">
-                                            ERP & EAM <i class="fas fa-chevron-right arrow-icon"></i>
-                                        </div>
-                                        <div id="erpSubmenu" class="collapse product-submenu">
-                                            <p>Integrated Enterprise Resource Planning solution for business
-                                                management.</p>
-                                            <a href="#" class="discover-link">Discover ERP & EAM ›</a>
-                                            <h3 class="modules-heading">MODULES</h3>
-                                            <ul class="modules-list">
-                                                <li>
-                                                    <strong>Financial Management</strong>
-                                                    <span>Manage accounting and finances</span>
-                                                </li>
-                                                <li>
-                                                    <strong>Supply Chain Management</strong>
-                                                    <span>Optimize procurement and logistics</span>
-                                                </li>
-                                                <li>
-                                                    <strong>Manufacturing</strong>
-                                                    <span>Streamline production processes</span>
-                                                </li>
-                                                <li>
-                                                    <strong>Customer Relationship Management</strong>
-                                                    <span>Enhance customer interactions</span>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="sidebar-item">
-                            <h2 class="product-header" data-bs-toggle="collapse" data-bs-target="#resourcesSubmenu"
-                                aria-expanded="false style=" font-size: 1.1rem;"">
-                                Resources <i class="fas fa-chevron-right arrow-icon"></i>
-                            </h2>
-                            <div id="resourcesSubmenu" class="collapse">
-                                <ul class="submenu-list">
-                                    <li><a href="#">Blog</a></li>
-                                    <li><a href="#">Webinars</a></li>
-                                    <li><a href="#">White Papers</a></li>
-                                    <li><a href="#">Case Studies</a></li>
-                                    <li><a href="#">eBooks</a></li>
-                                    <li><a href="#">Product Videos</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="sidebar-item">
-                            <h2 class="product-header" data-bs-toggle="collapse" data-bs-target="#partnersSubmenu"
-                                aria-expanded="false">
-                                Partners <i class="fas fa-chevron-right arrow-icon"></i>
-                            </h2>
-                            <div id="partnersSubmenu" class="collapse">
-                                <!-- Add partners submenu content here -->
-                            </div>
-                        </div>
-                        <div class="sidebar-item">
-                            <h2 class="product-header" data-bs-toggle="collapse" data-bs-target="#companySubmenu"
-                                aria-expanded="false">
-                                Company <i class="fas fa-chevron-right arrow-icon"></i>
-                            </h2>
-                            <div id="companySubmenu" class="collapse">
-                                <ul class="submenu-list">
-                                    <li><a href="#">About Us</a></li>
-                                    <li><a href="#">Our Team</a></li>
-                                    <li><a href="#" onclick="navigateWithLoading('career.html'); return false;"
-                                            style="text-decoration: none; color: inherit;">Career</a></li>
-                                    <li><a href="#">News</a></li>
-                                    <li><a href="#">Contact</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="sidebar-item">
-                            <h2 class="product-header">
-                                <a href="#" onclick="navigateWithLoading('blog.html'); return false;"
-                                    style="text-decoration: none; color: inherit;">Blog</a>
-                            </h2>
-                        </div>
-                    </div>
-                    <div class="get-started-container" style="margin-top: -10px !important;">
-                        <!-- Adjusted margin-top to move slightly to the top -->
-                        <h2 style="font-size: 2.1rem;">Rhapsody</h2>
-                        <hr style="border-top: 2px solid purple;">
-                        <div class="sidebar-item">
-                            <h2 class="product-header">
-                                <a href="#" onclick="navigateWithLoading('solution.html'); return false;"
-                                    style="text-decoration: none; color: inherit;">Solution</a>
-                            </h2>
-                        </div>
-                        <div class="sidebar-item">
-                            <h2 class="product-header">
-                                <a href="#" onclick="navigateWithLoading('why-rhapsody.html'); return false;"
-                                    style="text-decoration: none; color: inherit;">Why Rhapsody</a>
-                            </h2>
-                        </div>
-                        <div class="sidebar-item">
-                            <h2 class="product-header" data-bs-toggle="collapse"
-                                data-bs-target="#productOverviewSubmenu" aria-expanded="false">
-                                Product Overview <i class="fas fa-chevron-right arrow-icon"></i>
-                            </h2>
-                            <div id="productOverviewSubmenu" class="collapse">
-                                <ul class="submenu-list">
-                                    <li><a href="#">Front Office</a></li>
-                                    <li><a href="#">Back Office</a></li>
-                                    <li><a href="#">Logistic System</a></li>
-                                    <li><a href="#">ICT One Solution</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="sidebar-item">
-                            <h2 class="product-header" data-bs-toggle="collapse" data-bs-target="#blogSubmenu"
-                                aria-expanded="false">
-                                Blog <i class="fas fa-chevron-right arrow-icon"></i>
-                            </h2>
-                            <div id="blogSubmenu" class="collapse">
-                                <ul class="submenu-list">
-                                    <li><a href="#">Article & News</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                        <a href="https://api.whatsapp.com/send?phone=628111221789&text=Hallo%20PT%20Realta..."
-                            target="_blank" rel="noopener noreferrer" class="btn btn-success btn-block"
-                            style="width: 100%; margin-top: 50px;">
-                            <i class="fab fa-whatsapp"></i> Contact Us
-                        </a>
-                        <div class="d-flex justify-content-between align-items-center"
-                            style="padding: 20px 0; margin-top: 20px;">
-                            <h2 class="text-left mb-0" style="margin-right: 20px; font-size: 1.5rem;">Get in Touch</h2>
-                            <div class="social-icons" style="display: flex; justify-content: flex-end;">
-                                <a href="#" target="_blank" rel="noopener noreferrer"
-                                    style="margin-right: 10px; display: inline-flex; justify-content: center; align-items: center; background-color: black; border-radius: 50%; width: 30px; height: 30px;"><i
-                                        class="fab fa-facebook-f" style="color: white;"></i></a>
-                                <a href="#" target="_blank" rel="noopener noreferrer"
-                                    style="margin-right: 10px; display: inline-flex; justify-content: center; align-items: center; background-color: black; border-radius: 50%; width: 30px; height: 30px;"><i
-                                        class="fab fa-twitter" style="color: white;"></i></a>
-                                <a href="#" target="_blank" rel="noopener noreferrer"
-                                    style="margin-right: 10px; display: inline-flex; justify-content: center; align-items: center; background-color: black; border-radius: 50%; width: 30px; height: 30px;"><i
-                                        class="fab fa-instagram" style="color: white;"></i></a>
-                                <a href="#" target="_blank" rel="noopener noreferrer"
-                                    style="display: inline-flex; justify-content: center; align-items: center; background-color: black; border-radius: 50%; width: 30px; height: 30px;"><i
-                                        class="fab fa-linkedin-in" style="color: white;"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <style>
-                @media (min-width: 992px) {
-                    #sidebar {
-                        display: none !important;
-                        z-index: 2031;
-                    }
-
-                    .offcanvas-backdrop {
-                        display: none !important;
-                    }
-
-                    body {
-                        overflow: auto !important;
-                        padding-right: 0 !important;
-                    }
-                }
-            </style>
-
-
-            <style>
-                .custom-dropdown {
-                    position: relative;
-                    display: inline-block;
-                }
-
-                .custom-dropdown-menu {
-                    display: none;
-                    position: absolute;
-                    top: 69%;
-                    right: 5%;
-                    /* Changed from -10% to -5% to move slightly to the left */
-                    background: rgba(179, 179, 179, 0.137);
-                    backdrop-filter: blur(10px);
-                    border-radius: 10px;
-                    width: 80px;
-                    /* Further reduced width for an even smaller dropdown */
-                    z-index: 1000;
-                    list-style-type: none;
-                    padding: 0.25rem 0;
-                    /* Reduced padding for a smaller dropdown */
-                    margin: 0.5rem 0 0 0;
-                    border: 1px solid rgba(255, 255, 255, 0.18);
-                }
-
-                .custom-dropdown-menu li {
-                    padding: 0.2rem 0;
-                    /* Reduced padding for smaller items */
-                    text-align: center;
-                    /* Centered text */
-                }
-
-                .custom-dropdown-menu li a {
-                    color: #333;
-                    padding: 0.3rem 0.3rem;
-                    /* Adjusted padding for better alignment */
-                    text-decoration: none;
-                    display: block;
-                    font-size: 0.8rem;
-                    /* Reduced font size for smaller dropdown */
-                    transition: background-color 0.3s ease;
-                }
-
-                .custom-dropdown-menu li a:hover {
-                    background-color: rgba(126, 126, 126, 0.5);
-                    color: #fff;
-                    /* Change text color on hover */
-                    transform: scale(1.05);
-                    /* Slightly enlarge the item */
-                    border-radius: 10px;
-                    /* Added border radius for hover background */
-                    transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
-                    /* Smooth transition */
-                }
-
-                .custom-dropdown:hover .custom-dropdown-menu {
-                    display: block;
-
-                }
-            </style>
-            <div class="full-screen-sidebar">
+    
+    <header>
+    
+        <nav class="navbar navbar-expand-lg sticky-top navbar-shrink navbar-light" id="mainNav">
+            <div class="container-fluid ">
+                <a class="navbar-logo d-flex align-items-center" href="/">
+                    <img src="assets/img/realta.png" alt="Realta Logo" class="realta-logo">
+                </a>
                 <style>
-                    @media (min-width: 992px) {
-                        .full-screen-sidebar {
-                            margin-right: -35px;
-                        }
+                    .realta-logo {
+                        width: 140px;
+                        height: 50%;
                     }
-
-                    @media (max-width: 768px) {
-                        .full-screen-sidebar {
-                            margin-right: 0;
+    
+               
+                    @media (max-width: 767px) {
+                        .realta-logo {
+                            width: 120px;
+                            height: auto;
+                            margin-left: -10px;
                         }
                     }
                 </style>
-                <ul class="sidebar-nav justify-content-end align-items-center"
-                    style="padding: 0; margin: 0; list-style-type: none;">
-
-                    <li class="me-1"><a class="nav-link dropdown-toggle" href="#" id="solutionsDropdown" role="button"
-                            data-bs-toggle="dropdown" aria-expanded="false">
-                            Solution <i class="fas fa-chevron-down ms-1 fa-xs"></i>
-                        </a></li>
-                    <li class="me-1"><a class="nav-link dropdown-toggle" href="#" id="industriDropdown" role="button"
-                            data-bs-toggle="dropdown" aria-expanded="false">
-                            Industry <i class="fas fa-chevron-down ms-1 fa-xs"></i>
-                        </a></li>
-                    <li class="me-1"><a class="nav-link dropdown-toggle" href="#" id="partnerDropdown" role="button"
-                            data-bs-toggle="dropdown" aria-expanded="false">
-                            Partner <i class="fas fa-chevron-down ms-1 fa-xs"></i>
-                        </a></li>
-                    <li class="me-1"><a class="nav-link dropdown-toggle" href="#" id="konsultasiDropdown" role="button"
-                            data-bs-toggle="dropdown" aria-expanded="false">
-                            Consultation <i class="fas fa-chevron-down ms-1 fa-xs"></i>
-                        </a></li>
-                    <li><a class="nav-link dropdown-toggle" href="#" id="tentangRealtaDropdown" role="button"
-                            data-bs-toggle="dropdown" aria-expanded="false">
-                            About Realta <i class="fas fa-chevron-down ms-1 fa-xs"></i>
-                        </a></li>
-                </ul>
-                <div class="sidebar-actions d-flex justify-content-end align-items-center" style="margin-bottom: 1rem;">
-                    <a class="btn-custom whatsapp-btn me-2"
-                        href="https://api.whatsapp.com/send?phone=628111221789&text=Hallo%20PT%20Realta..."
-                        target="_blank" rel="noopener noreferrer" style="font-size: 0.8em;">
-                        <i class="fab fa-whatsapp"></i>
-                        <span><strong>Whatsapp</strong></span>
-                    </a>
-                    <button id="darkModeToggleSidebar" class="btn-custom ms-2">
+                <div class="navbar-mobile-actions">
+                    <button id="darkModeToggleNav" class="btn-custom download-btn ms-1"
+                        style="border: none; min-width: fit-content; margin-right: 0.4rem;">
                         <i class="fas fa-moon"></i>
                     </button>
+                    <!-- Language switch button -->
+                    <!-- Language switch dropdown -->
                     <div class="custom-dropdown">
                         <button id="languageSwitch" class="btn-custom download-btn ms-1" type="button"
                             style="border: none; min-width: fit-content; margin-right: 1.4rem;">
@@ -1310,133 +186,937 @@
                             <li><a href="#" data-lang="id">ID</a></li>
                         </ul>
                     </div>
+                    <div class="nav-drawer" data-bs-toggle="offcanvas" data-bs-target="#sidebar" aria-controls="sidebar">
+                        <i class="fas fa-bars" style="font-size: 1.7rem;"></i>
+                    </div>
                 </div>
-            </div>
-        </div>
-        <div class="mega-dropdown" id="solutionsDropdownContent">
-            <div class="dropdown-content">
-                <div class="product-categories">
-                    <div class="product-category active" data-product="eam">ERP & EAM</div>
-                    <div class="product-category" data-product="gcs">Golf Course System</div>
-                    <div class="product-category" data-product="hrs">HR System</div>
-                    <div class="product-category " data-product="hms">Hotel Management System</div>
-                    <div class="product-category" data-product="itm">ITSM, ITAM & Unified Endpoint Management</div>
-                    <div class="product-category" data-product="pts">Property & Tenancy System</div>
-                    <div class="product-category" data-product="erp">Network & System Integration</div>
-                    <div class="all-products"><a href="#solutions">All products ›</a></div>
+                <!-- Mobile responsive navigation menu -->
+                <div class="offcanvas offcanvas-end" tabindex="-1" id="sidebar" aria-labelledby="sidebarLabel">
+                    <div class="offcanvas-header">
+                        <div>
+                            <h5 class="offcanvas-title" id="sidebarLabel"
+                                style="margin-left: 33px; margin-bottom: 20px; font-size: 30px;">Menu</h5>
+                        </div>
+                        <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas"
+                            aria-label="Close"></button>
+                    </div>
+                    <div class="offcanvas-body">
+                        <div class="sidebar-menu">
+                            <div class="sidebar-item">
+                                <h2 style="font-size: 2.1rem;">Realta Chakradarma</h2>
+                                <hr>
+                                <h2 class="product-header" data-bs-toggle="collapse" data-bs-target="#productsSubmenu"
+                                    aria-expanded="false">
+                                    Products <i class="fas fa-chevron-right arrow-icon"></i>
+                                </h2>
+                                <div id="productsSubmenu" class="collapse">
+                                    <ul class="product-list">
+                                        <li>
+                                            <div class="product-header" data-bs-toggle="collapse"
+                                                data-bs-target="#hmsSubmenu" aria-expanded="false"
+                                                style="font-size: 1rem; font-weight: 400;">
+                                                Hotel Management System <i class="fas fa-chevron-right arrow-icon"></i>
+                                            </div>
+                                            <div id="hmsSubmenu" class="collapse product-submenu">
+                                                <p>Comprehensive solution for efficient hotel operations and guest
+                                                    management.</p>
+                                                <a href="#" class="discover-link">Discover HMS ›</a>
+                                                <h3 class="modules-heading">MODULES</h3>
+                                                <ul class="modules-list">
+                                                    <li>
+                                                        <strong>Reservation Management</strong>
+                                                        <span>Streamline booking processes</span>
+                                                    </li>
+                                                    <li>
+                                                        <strong>Front Desk Operations</strong>
+                                                        <span>Efficient check-in and check-out</span>
+                                                    </li>
+                                                    <li>
+                                                        <strong>Housekeeping Management</strong>
+                                                        <span>Optimize room maintenance</span>
+                                                    </li>
+                                                    <li>
+                                                        <strong>Revenue Management</strong>
+                                                        <span>Maximize profitability</span>
+                                                    </li>
+                                                    <li>
+                                                        <strong>Guest Experience Management</strong>
+                                                        <span>Enhance customer satisfaction</span>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="product-header" data-bs-toggle="collapse"
+                                                data-bs-target="#gcsSubmenu" aria-expanded="false"
+                                                style="font-size: 1rem; font-weight: 400;">
+                                                Golf Course System <i class="fas fa-chevron-right arrow-icon"></i>
+                                            </div>
+                                            <div id="gcsSubmenu" class="collapse product-submenu">
+                                                <p>Integrated system for efficient golf course management and
+                                                    operations.</p>
+                                                <a href="#" class="discover-link">Discover GCS ›</a>
+                                                <h3 class="modules-heading">MODULES</h3>
+                                                <ul class="modules-list">
+                                                    <li>
+                                                        <strong>Tee Time Management</strong>
+                                                        <span>Optimize scheduling and bookings</span>
+                                                    </li>
+                                                    <li>
+                                                        <strong>Member Management</strong>
+                                                        <span>Streamline membership processes</span>
+                                                    </li>
+                                                    <li>
+                                                        <strong>Pro Shop Management</strong>
+                                                        <span>Inventory and sales management</span>
+                                                    </li>
+                                                    <li>
+                                                        <strong>Tournament Management</strong>
+                                                        <span>Organize and manage events</span>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="product-header" data-bs-toggle="collapse"
+                                                data-bs-target="#hrSystemSubmenu" aria-expanded="false"
+                                                style="font-size: 1rem; font-weight: 400;">
+                                                HR System <i class="fas fa-chevron-right arrow-icon"></i>
+                                            </div>
+                                            <div id="hrSystemSubmenu" class="collapse product-submenu">
+                                                <p>Comprehensive human resource management solution for businesses of
+                                                    all sizes.</p>
+                                                <a href="#" class <div id="container-header"
+                                                    class="container py-5">discover-link">Discover HR System ›</a>
+                                                <h3 class="modules-heading">MODULES</h3>
+                                                <ul class="modules-list">
+                                                    <li>
+                                                        <strong>Employee Management</strong>
+                                                        <span>Centralize employee data and records</span>
+                                                    </li>
+                                                    <li>
+                                                        <strong>Payroll Processing</strong>
+                                                        <span>Automate salary calculations and payments</span>
+                                                    </li>
+                                                    <li>
+                                                        <strong>Time and Attendance</strong>
+                                                        <span>Track employee work hours and absences</span>
+                                                    </li>
+                                                    <li>
+                                                        <strong>Performance Management</strong>
+                                                        <span>Set goals and conduct evaluations</span>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="product-header" data-bs-toggle="collapse"
+                                                data-bs-target="#propertyTenantSubmenu" aria-expanded="false"
+                                                style="font-size: 1rem; font-weight: 400;">
+                                                Property and Tenant System <i class="fas fa-chevron-right arrow-icon"></i>
+                                            </div>
+                                            <div id="propertyTenantSubmenu" class="collapse product-submenu">
+                                                <p>Efficient management solution for property owners and landlords.</p>
+                                                <a href="#" class="discover-link">Discover Property and Tenant System
+                                                    ›</a>
+                                                <h3 class="modules-heading">MODULES</h3>
+                                                <ul class="modules-list">
+                                                    <li>
+                                                        <strong>Property Management</strong>
+                                                        <span>Organize and track property details</span>
+                                                    </li>
+                                                    <li>
+                                                        <strong>Tenant Management</strong>
+                                                        <span>Manage tenant information and leases</span>
+                                                    </li>
+                                                    <li>
+                                                        <strong>Rent Collection</strong>
+                                                        <span>Automate rent payments and tracking</span>
+                                                    </li>
+                                                    <li>
+                                                        <strong>Maintenance Requests</strong>
+                                                        <span>Handle and track property maintenance</span>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="product-header" data-bs-toggle="collapse"
+                                                data-bs-target="#itsmSubmenu" aria-expanded="false"
+                                                style="font-size: 1rem; font-weight: 400;">
+                                                ITSM, ITAM & Unified Endpoint Management <i
+                                                    class="fas fa-chevron-right arrow-icon"></i>
+                                            </div>
+                                            <div id="itsmSubmenu" class="collapse product-submenu">
+                                                <p>Comprehensive IT Service Management solution for streamlined IT
+                                                    operations.</p>
+                                                <a href="#" class="discover-link">Discover ITSM, ITAM & Unified Endpoint
+                                                    Management ›</a>
+                                                <h3 class="modules-heading">MODULES</h3>
+                                                <ul class="modules-list">
+                                                    <li>
+                                                        <strong>Incident Management</strong>
+                                                        <span>Efficiently handle and resolve IT issues</span>
+                                                    </li>
+                                                    <li>
+                                                        <strong>Change Management</strong>
+                                                        <span>Control and implement IT changes</span>
+                                                    </li>
+                                                    <li>
+                                                        <strong>Asset Management</strong>
+                                                        <span>Track and manage IT assets</span>
+                                                    </li>
+                                                    <li>
+                                                        <strong>Service Catalog</strong>
+                                                        <span>Organize and offer IT services</span>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="product-header" data-bs-toggle="collapse"
+                                                data-bs-target="#erpSubmenu" aria-expanded="false"
+                                                style="font-size: 1rem; font-weight: 400;">
+                                                ERP & EAM <i class="fas fa-chevron-right arrow-icon"></i>
+                                            </div>
+                                            <div id="erpSubmenu" class="collapse product-submenu">
+                                                <p>Integrated Enterprise Resource Planning solution for business
+                                                    management.</p>
+                                                <a href="#" class="discover-link">Discover ERP & EAM ›</a>
+                                                <h3 class="modules-heading">MODULES</h3>
+                                                <ul class="modules-list">
+                                                    <li>
+                                                        <strong>Financial Management</strong>
+                                                        <span>Manage accounting and finances</span>
+                                                    </li>
+                                                    <li>
+                                                        <strong>Supply Chain Management</strong>
+                                                        <span>Optimize procurement and logistics</span>
+                                                    </li>
+                                                    <li>
+                                                        <strong>Manufacturing</strong>
+                                                        <span>Streamline production processes</span>
+                                                    </li>
+                                                    <li>
+                                                        <strong>Customer Relationship Management</strong>
+                                                        <span>Enhance customer interactions</span>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="sidebar-item">
+                                <h2 class="product-header" data-bs-toggle="collapse" data-bs-target="#resourcesSubmenu"
+                                    aria-expanded="false style=" font-size: 1.1rem;"">
+                                    Resources <i class="fas fa-chevron-right arrow-icon"></i>
+                                </h2>
+                                <div id="resourcesSubmenu" class="collapse">
+                                    <ul class="submenu-list">
+                                        <li><a href="#">Blog</a></li>
+                                        <li><a href="#">Webinars</a></li>
+                                        <li><a href="#">White Papers</a></li>
+                                        <li><a href="#">Case Studies</a></li>
+                                        <li><a href="#">eBooks</a></li>
+                                        <li><a href="#">Product Videos</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="sidebar-item">
+                                <h2 class="product-header" data-bs-toggle="collapse" data-bs-target="#partnersSubmenu"
+                                    aria-expanded="false">
+                                    Partners <i class="fas fa-chevron-right arrow-icon"></i>
+                                </h2>
+                                <div id="partnersSubmenu" class="collapse">
+                                    <!-- Add partners submenu content here -->
+                                </div>
+                            </div>
+                            <div class="sidebar-item">
+                                <h2 class="product-header" data-bs-toggle="collapse" data-bs-target="#companySubmenu"
+                                    aria-expanded="false">
+                                    Company <i class="fas fa-chevron-right arrow-icon"></i>
+                                </h2>
+                                <div id="companySubmenu" class="collapse">
+                                    <ul class="submenu-list">
+                                        <li><a href="#">About Us</a></li>
+                                        <li><a href="#">Our Team</a></li>
+                                        <li><a href="#" onclick="navigateWithLoading('career.html'); return false;"
+                                                style="text-decoration: none; color: inherit;">Career</a></li>
+                                        <li><a href="#">News</a></li>
+                                        <li><a href="#">Contact</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="sidebar-item">
+                                <h2 class="product-header">
+                                    <a href="#" onclick="navigateWithLoading('blog.html'); return false;"
+                                        style="text-decoration: none; color: inherit;">Blog</a>
+                                </h2>
+                            </div>
+                        </div>
+                        <div class="get-started-container" style="margin-top: -10px !important;">
+                            <!-- Adjusted margin-top to move slightly to the top -->
+    
+                            <a href="https://api.whatsapp.com/send?phone=628111221789&text=Hallo%20PT%20Realta..."
+                                target="_blank" rel="noopener noreferrer" class="btn btn-success btn-block"
+                                style="width: 100%; margin-top: 50px;">
+                                <i class="fab fa-whatsapp"></i> Contact Us
+                            </a>
+                            <div class="d-flex justify-content-between align-items-center"
+                                style="padding: 20px 0; margin-top: 20px;">
+                                <h2 class="text-left mb-0" style="margin-right: 20px; font-size: 1.5rem;">Get in Touch</h2>
+                                <div class="social-icons" style="display: flex; justify-content: flex-end;">
+                                    <a href="#" target="_blank" rel="noopener noreferrer"
+                                        style="margin-right: 10px; display: inline-flex; justify-content: center; align-items: center; background-color: black; border-radius: 50%; width: 30px; height: 30px;"><i
+                                            class="fab fa-facebook-f" style="color: white;"></i></a>
+                                    <a href="#" target="_blank" rel="noopener noreferrer"
+                                        style="margin-right: 10px; display: inline-flex; justify-content: center; align-items: center; background-color: black; border-radius: 50%; width: 30px; height: 30px;"><i
+                                            class="fab fa-twitter" style="color: white;"></i></a>
+                                    <a href="#" target="_blank" rel="noopener noreferrer"
+                                        style="margin-right: 10px; display: inline-flex; justify-content: center; align-items: center; background-color: black; border-radius: 50%; width: 30px; height: 30px;"><i
+                                            class="fab fa-instagram" style="color: white;"></i></a>
+                                    <a href="#" target="_blank" rel="noopener noreferrer"
+                                        style="display: inline-flex; justify-content: center; align-items: center; background-color: black; border-radius: 50%; width: 30px; height: 30px;"><i
+                                            class="fab fa-linkedin-in" style="color: white;"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="product-details" id="product-details">
-                    <!-- Content will be dynamically updated here -->
-                </div>
-            </div>
-        </div>
-        <div class="mega-dropdown" id="industriDropdownContent">
-            <div class="dropdown-content">
-                <div class="product-categories">
-                    <div class="product-category active" data-product="hospitality">Hospitality</div>
-                    <div class="product-category" data-product="property">Property</div>
-                    <div class="product-category" data-product="manufacturing">Manufacturing</div>
-                    <div class="product-category" data-product="fsi">FSI</div>
-                    <div class="all-products">All industries ›</div>
-                </div>
-                <div class="product-details" id="industri-details">
-                    <!-- Content will be dynamically updated here -->
-                </div>
-            </div>
-        </div>
-        <div class="mega-dropdown" id="partnerDropdownContent">
-            <div class="dropdown-content">
-                <div class="product-categories">
-                    <div class="product-category active" data-product="reseller">Reseller Program</div>
-                    <div class="product-category" data-product="technology">Technology Partners</div>
-                    <div class="all-products">All partners ›</div>
-                </div>
-                <div class="product-details" id="partner-details">
-                    <!-- Content will be dynamically updated here -->
-                </div>
-            </div>
-        </div>
-        <div class="mega-dropdown" id="contactDropdownContent">
-            <div class="dropdown-content">
-                <div class="product-categories">
-                    <div class="product-category active" data-product="business">Business Consultation</div>
-                    <div class="product-category" data-product="technical">Technical Consultation</div>
-                    <div class="all-products">All consultations ›</div>
-                </div>
-                <div class="product-details" id="contact-details">
-                    <!-- Content will be dynamically updated here -->
-                </div>
-            </div>
-        </div>
-        <div class="mega-dropdown" id="careerDropdownContent">
-            <!-- * Career megamenu -->
-            <div class="dropdown-content">
-                <div class="product-categories">
-                    <div class="product-category active" data-product="openings">Job Openings</div>
-                    <div class="product-category" data-product="internships">Internship Programs</div>
-                    <div class="product-category" data-product="culture">Company Culture</div>
-                    <div class="all-products">View All Career Opportunities ›</div>
-                </div>
-                <div class="product-details" id="career-details">
-                    <!-- Content will be dynamically updated here -->
-                </div>
-            </div>
-        </div>
-        <div class="mega-dropdown" id="tentangRealtaDropdownContent">
-            <div class="dropdown-content">
-                <div class="product-categories">
-                    <div class="product-category active" data-product="about">About Realta</div>
-                    <div class="all-products">Learn more ›</div>
-                </div>
-                <div class="product-details" id="tentangRealta-details">
-                    <!-- Content will be dynamically updated here -->
-                </div>
-            </div>
-        </div>
-    </nav>
-
-    <!-- <div class="career-link">   
-        Looking for a new career? <a href="#">Get in touch</a>
-    </div> -->
-    <section class="rhapsody-header parallax-section py-4">
-        <div class="parallax-background"
-            style="background-image: url('assets/img/erp/banne.webp')"></div>
-        <div class="container">
-            <div class="row">
-                <div class="col-12">
-                    <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@300;400;700&display=swap"
-                        rel="stylesheet">
-                    <H1 class="display-3 text-center mb-4 text-white slide-in"
-                        style="font-family: 'Unbounded', sans-serif; font-size: 40px;">
-                        ERP, EAM, WMS* & <br>
-Business Intelligence Solution</H1>
+    
+                <style>
+                    @media (min-width: 992px) {
+                        #sidebar {
+                            display: none !important;
+                            z-index: 2031;
+                        }
+    
+                        .offcanvas-backdrop {
+                            display: none !important;
+                        }
+    
+                        body {
+                            overflow: auto !important;
+                            padding-right: 0 !important;
+                        }
+                    }
+                </style>
+    
+    
+                <style>
+                    .custom-dropdown {
+                        position: relative;
+                        display: inline-block;
+                    }
+    
+                    .custom-dropdown-menu {
+                        display: none;
+                        position: absolute;
+                        top: 69%;
+                        right: 5%;
+                        /* Changed from -10% to -5% to move slightly to the left */
+                        background: rgba(179, 179, 179, 0.137);
+                        backdrop-filter: blur(10px);
+                        border-radius: 10px;
+                        width: 80px;
+                        /* Further reduced width for an even smaller dropdown */
+                        z-index: 1000;
+                        list-style-type: none;
+                        padding: 0.25rem 0;
+                        /* Reduced padding for a smaller dropdown */
+                        margin: 0.5rem 0 0 0;
+                        border: 1px solid rgba(255, 255, 255, 0.18);
+                    }
+    
+                    .custom-dropdown-menu li {
+                        padding: 0.2rem 0;
+                        /* Reduced padding for smaller items */
+                        text-align: center;
+                        /* Centered text */
+                    }
+    
+                    .custom-dropdown-menu li a {
+                        color: #333;
+                        padding: 0.3rem 0.3rem;
+                        /* Adjusted padding for better alignment */
+                        text-decoration: none;
+                        display: block;
+                        font-size: 0.8rem;
+                        /* Reduced font size for smaller dropdown */
+                        transition: background-color 0.3s ease;
+                    }
+    
+                    .custom-dropdown-menu li a:hover {
+                        background-color: rgba(126, 126, 126, 0.5);
+                        color: #fff;
+                        /* Change text color on hover */
+                        transform: scale(1.05);
+                        /* Slightly enlarge the item */
+                        border-radius: 10px;
+                        /* Added border radius for hover background */
+                        transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
+                        /* Smooth transition */
+                    }
+    
+                    .custom-dropdown:hover .custom-dropdown-menu {
+                        display: block;
+    
+                    }
+                </style>
+                <div class="full-screen-sidebar">
                     <style>
-                        @media (max-width: 767px) {
-                            .display-3 {
-                                font-size: 30px !important;
+                        @media (min-width: 992px) {
+                            .full-screen-sidebar {
+                                margin-right: -45px;
+                            }
+                        }
+    
+                        @media (max-width: 768px) {
+                            .full-screen-sidebar {
+                                margin-right: 0;
                             }
                         }
                     </style>
-                    <div class="d-flex justify-content-center mb-3">
-                        <div class="badge slide-in" style="font-family: 'Unbounded', sans-serif; font-size: 12px; background-color: rgba(255, 255, 255, 0.2); color: white; padding: 10px 20px; border-radius: 25px; display: inline-block;">
-                            for Medium and Large Enterprise
+                    <ul class="sidebar-nav justify-content-end align-items-center"
+                        style="padding: 0; margin: 0; list-style-type: none;">
+                        <!-- Solutions dropdown -->
+                        <li class="me-1"><a class="nav-link dropdown-toggle" href="#" id="solutionsDropdown" role="button"
+                                data-bs-toggle="dropdown" aria-expanded="false">
+                                Solution <i class="fas fa-chevron-down ms-1 fa-xs"></i>
+                            </a></li>
+    
+                        <!-- Industry dropdown -->
+                        <li class="me-1"><a class="nav-link dropdown-toggle" href="#" id="industriDropdown" role="button"
+                                data-bs-toggle="dropdown" aria-expanded="false">
+                                Industry <i class="fas fa-chevron-down ms-1 fa-xs"></i>
+                            </a></li>
+    
+                        <!-- Partner dropdown -->
+                        <li class="me-1"><a class="nav-link dropdown-toggle" href="#" id="partnerDropdown" role="button"
+                                data-bs-toggle="dropdown" aria-expanded="false">
+                                Partners <i class="fas fa-chevron-down ms-1 fa-xs"></i>
+                            </a></li>
+    
+                        <!-- Contact dropdown -->
+                        <li class="me-1"><a class="nav-link dropdown-toggle" href="#" id="contactDropdown" role="button"
+                                data-bs-toggle="dropdown" aria-expanded="false">
+                                Contact <i class="fas fa-chevron-down ms-1 fa-xs"></i>
+                            </a></li>
+    
+                        <!-- Career dropdown -->
+                        <li class="me-1"><a class="nav-link dropdown-toggle" href="#" id="careerDropdown" role="button"
+                                data-bs-toggle="dropdown" aria-expanded="false">
+                                Career <i class="fas fa-chevron-down ms-1 fa-xs"></i>
+                            </a></li>
+                        <!-- Blog link -->
+                        <li class="me-1">
+                            <a href="blog.html" class="nav-link" onclick="navigateWithLoading('blog.html')">Blog</a>
+                        </li>
+                        <!-- About Realta dropdown -->
+                        <li><a class="nav-link dropdown-toggle" href="#" id="tentangRealtaDropdown" role="button"
+                                data-bs-toggle="dropdown" aria-expanded="false">
+                                About Us <i class="fas fa-chevron-down ms-1 fa-xs"></i>
+                            </a></li>
+    
+                    </ul>
+                    <div class="sidebar-actions d-flex justify-content-end align-items-center" style="margin-bottom: 1rem;">
+                        <a class="btn-custom whatsapp-btn me-2"
+                            href="https://api.whatsapp.com/send?phone=628111221789&text=Hallo%20PT%20Realta..."
+                            target="_blank" rel="noopener noreferrer" style="font-size: 0.8em;">
+                            <i class="fab fa-whatsapp"></i>
+                            <span><strong>Whatsapp</strong></span>
+                        </a>
+                        <button id="darkModeToggleSidebar" class="btn-custom ms-2">
+                            <i class="fas fa-moon"></i>
+                        </button>
+                        <div class="custom-dropdown">
+                            <button id="languageSwitch" class="btn-custom download-btn ms-1" type="button"
+                                style="border: none; min-width: fit-content; margin-right: 1.4rem;">
+                                <i class="fas fa-globe"></i>
+                            </button>
+                            <ul class="custom-dropdown-menu">
+                                <li><a href="#" data-lang="en">EN</a></li>
+                                <li><a href="#" data-lang="id">ID</a></li>
+                            </ul>
                         </div>
-                    </div>
-
-                    <p class="lead text-center text-light mb-5 slide-in" style="font-family: 'Unbounded', sans-serif; margin-left: auto; margin-right: auto;">
-                        PT Bisnis Sistem Indonesia was founded to be your partner for successful ERP, EAM, WMS & 
-                        Business Intelligence implementation. At the heart of any ERP, EAM, WMS & Business 
-                        Intelligence implementation is the need to sustain growth and increase market share. 
-                        Those 4 systems when properly implemented gives Visibility and Control over day to day 
-                        activities such that analysis and improvements can be performed. To this end, PTBSI has 
-                        helped countless clients to fully align their business processes since 1998.</p>
-                    <div class="text-center mt-5 slide-in">
-                        <a href="#" class="btn btn-outline-secondary btn-lg">See Our Client List</a>
                     </div>
                 </div>
             </div>
+            <div class="mega-dropdown" id="solutionsDropdownContent">
+                <div class="dropdown-content">
+                    <div class="product-categories">
+                        <div class="product-category active" data-product="eam">ERP & EAM</div>
+                        <div class="product-category" data-product="gcs">Golf Course System</div>
+                        <div class="product-category" data-product="hrs">HR System</div>
+                        <div class="product-category " data-product="hms">Hotel Management System</div>
+                        <div class="product-category" data-product="itm">ITSM, ITAM & Unified Endpoint Management</div>
+                        <div class="product-category" data-product="pts">Property & Tenancy System</div>
+                        <div class="product-category" data-product="erp">Network & System Integration</div>
+                        <div style="background: linear-gradient(90deg, transparent 0%, rgba(133, 22, 188, 0.582) 50%, transparent 100%); height: 1px; margin: 10px 0; pointer-events: none;"></div>
+                        <!-- Removed: <div class="all-products"><a href="#solutions">All products ›</a></div> -->
+                    </div>
+                    <div class="product-details" id="product-details">
+                        <!-- Content will be dynamically updated here -->
+                    </div>
+                </div>
+            </div>
+            <div class="mega-dropdown" id="industriDropdownContent">
+                <div class="dropdown-content">
+                    <div class="product-categories">
+                        <div class="product-category active" data-product="hospitality">Hospitality</div>
+                        <div class="product-category" data-product="property">Property</div>
+                        <div class="product-category" data-product="manufacturing">Manufacturing</div>
+                        <div class="product-category" data-product="fsi">FSI</div>
+                        <!-- Removed: <div class="all-products">All industries ›</div> -->
+                    </div>
+                    <div class="product-details" id="industri-details">
+                        <!-- Content will be dynamically updated here -->
+                    </div>
+                </div>
+            </div>
+            <div class="mega-dropdown" id="partnerDropdownContent">
+                <div class="dropdown-content">
+                    <div class="product-categories">
+                        <div class="product-category active" data-product="reseller">Reseller Program</div>
+                        <div class="product-category" data-product="technology">Technology Partners</div>
+                        <!-- Removed: <div class="all-products">All partners ›</div> -->
+                    </div>
+                    <div class="product-details" id="partner-details">
+                        <!-- Content will be dynamically updated here -->
+                    </div>
+                </div>
+            </div>
+            <div class="mega-dropdown" id="contactDropdownContent">
+                <div class="dropdown-content">
+                    <div class="product-categories">
+                        <div class="product-category active" data-product="business">Business Consultation</div>
+                        <div class="product-category" data-product="technical">Technical Consultation</div>
+                        <!-- Removed: <div class="all-products">All consultations ›</div> -->
+                    </div>
+                    <div class="product-details" id="contact-details">
+                        <!-- Content will be dynamically updated here -->
+                    </div>
+                </div>
+            </div>
+            <div class="mega-dropdown" id="careerDropdownContent">
+                <div class="dropdown-content">
+                    <div class="product-categories">
+                        <div class="product-category active" data-product="openings">Job Openings</div>
+                        <div class="product-category" data-product="internships">Internship Programs</div>
+                        <div class="product-category" data-product="culture">Company Culture</div>
+                        <!-- Removed: <div class="all-products">View All Career Opportunities ›</div> -->
+                    </div>
+                    <div class="product-details" id="career-details">
+                        <!-- Content will be dynamically updated here -->
+                    </div>
+                </div>
+            </div>
+            <div class="mega-dropdown" id="tentangRealtaDropdownContent">
+                <div class="dropdown-content">
+                    <div class="product-categories">
+                        <div class="product-category active" data-product="about">About Realta</div>
+                        <!-- Removed: <div class="all-products">Learn more ›</div> -->
+                    </div>
+                    <div class="product-details" id="tentangRealta-details">
+                        <!-- Content will be dynamically updated here -->
+                    </div>
+                </div>
+            </div>
+        </nav>
+    
+        <!-- Update the announcement bar HTML -->
+        <div class="top-announcement-bar">
+            <div class="announcement-content">
+                <!-- Logo on the left -->
+                <div class="announcement-logo">
+                    <img src="assets/img/realta.png" alt="Realta Logo" class="announcement-logo-img">
+                </div>
+                
+                <!-- Navigation links on the right -->
+                <nav class="announcement-nav">
+                    <a href="#" class="announcement-nav-item">Home</a>
+                    <a href="#" class="announcement-nav-item">Products</a>
+                    <a href="#" class="announcement-nav-item">Solutions</a>
+                    <a href="#" class="announcement-nav-item">Services</a>
+                    <div class="announcement-dropdown">
+                        <a href="#" class="announcement-nav-item has-dropdown">Company <i class="fas fa-chevron-down"></i></a>
+                        <div class="announcement-dropdown-content">
+                            <a href="#" class="announcement-dropdown-item">About Us</a>
+                            <a href="#" class="announcement-dropdown-item">Our Team</a>
+                            <a href="#" class="announcement-dropdown-item">Careers</a>
+                            <a href="#" class="announcement-dropdown-item">Contact</a>
+                        </div>
+                    </div>
+                </nav>
+            </div>
         </div>
-    </section>
+    
+        <style>
+        /* Base announcement bar */
+        .top-announcement-bar {
+            background-color: rgb(240, 240, 240);
+            position: fixed;
+            top: 66px;
+            left: 0;
+            right: 0;
+            z-index: 1029;
+            height: 44px;
+            border-bottom: 1px solid rgba(0,0,0,0.1);
+            box-shadow: 0 2px px rgba(0, 0, 0, 0.1);
+        }
+    
+        /* Content container */
+        .announcement-content {
+            display: flex;
+            justify-content: space-between; /* Push items to edges */
+            align-items: center;
+            width: 100%;
+            height: 100%;
+            padding: 0 6.1%; /* Match container-fluid padding */
+        }
+    
+        /* Logo styling */
+        .announcement-logo {
+            flex: 0 0 auto;
+        }
+    
+        .announcement-logo-img {
+            height: 24px;
+            width: auto;
+        }
+    
+        /* Navigation styling */
+        .announcement-nav {
+            display: flex;
+            align-items: center;
+            gap: 30px;
+        }
+    
+        .announcement-nav-item {
+            color: #464646c0;
+            text-decoration: none;
+            font-size: 13px;
+            font-weight: bold;
+            transition: color 0.3s ease;
+            display: flex;
+            align-items: center;
+            transition: all 0.3s ease;
+            gap: 5px;
+        }
+    
+        .announcement-nav-item:hover {
+            color: #9054d0;
+            transform: scale(1.05);
+        }
+    
+        /* Dropdown styling */
+        .announcement-dropdown {
+            position: relative;
+        }
+    
+        .announcement-dropdown-content {
+            position: absolute;
+            top: calc(100% + 10px);
+            right: 0;
+            background: #ffffff;
+            min-width: 200px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            border-radius: 8px;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(-10px);
+            transition: all 0.3s ease;
+        }
+    
+        .announcement-dropdown:hover .announcement-dropdown-content {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+    
+        .announcement-dropdown-item {
+            display: block;
+            padding: 12px 20px;
+            color: #333;
+            text-decoration: none;
+            font-size: 13px;
+            transition: all 0.2s ease;
+        }
+    
+        .announcement-dropdown-item:hover {
+            background-color: #f5f5f5;
+            color: #9054d0;
+        }
+    
+        /* Dark mode */
+        body.dark-mode .top-announcement-bar {
+            background-color: rgba(30, 30, 30, 0.95);
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+    
+        body.dark-mode .announcement-nav-item,
+        body.dark-mode .announcement-dropdown-item {
+            color: #fff;
+        }
+    
+        body.dark-mode .announcement-dropdown-content {
+            background: #1a1a1a;
+        }
+    
+        body.dark-mode .announcement-dropdown-item:hover {
+            background-color: #2d2d2d;
+            color: #bb86fc;
+        }
+    
+        /* Mobile hide */
+        @media (max-width: 768px) {
+            .top-announcement-bar {
+                display: none;
+            }
+            
+            body {
+                padding-top: 66px; /* Only navbar height on mobile */
+            }
+        }
+        </style>
+    
+        <div class="navbar-banner__blur navbar-banner__blur--1"></div>
+        <div class="navbar-banner__blur navbar-banner__blur--2"></div>
+       
+       
+    </header>
+    
+    <body>
+        <!-- LOADING -->
+        <div id="loading-overlay" class="loading-overlay">
+            <div class="loading-container">
+                <div class="loading-text">Loading...</div>
+                <div class="spinner">
+                    <div class="spinner-inner"></div>
+                </div>
+            </div>
+        </div>
+        <script>
+            function navigateWithLoading(url) {
+                const loadingOverlay = document.getElementById('loading-overlay');
+                loadingOverlay.style.display = 'flex'; // Show the loading overlay
+                document.body.style.overflow = 'hidden'; // Prevent scrolling
+    
+                // Wait for the animation to complete before navigating
+                setTimeout(function () {
+                    window.location.href = url;
+                }, 2000); // Adjust the delay as needed (in milliseconds)
+            }
+    
+            document.addEventListener('DOMContentLoaded', function () {
+                // This script block can contain other page initialization code
+            });
+        </script>
+        <style>
+            .loading-overlay {
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background-color: rgba(255, 255, 255, 0.8);
+                backdrop-filter: blur(5px);
+                display: none;
+                /* Initially hidden */
+                justify-content: center;
+                align-items: center;
+                z-index: 9999;
+            }
+    
+            .loading-container {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+    
+            .loading-text {
+                font-size: 24px;
+                font-weight: bold;
+                margin-bottom: 20px;
+                color: #9054d0;
+                opacity: 0;
+                animation: fade-in 0.5s ease-in-out forwards;
+                animation-delay: 0.5s;
+                /* Add a delay to the fade-in animation */
+            }
+    
+            .spinner {
+                width: 80px;
+                height: 80px;
+                border-radius: 50%;
+                border: 4px solid rgba(52, 152, 219, 0.2);
+                border-top-color: #9054d0;
+                animation: spin 1s ease-in-out infinite;
+            }
+    
+            @keyframes spin {
+                0% {
+                    transform: rotate(0deg);
+                }
+    
+                100% {
+                    transform: rotate(360deg);
+                }
+            }
+    
+            @keyframes fade-in {
+                0% {
+                    opacity: 0;
+                    transform: translateY(-20px);
+                }
+    
+                100% {
+                    opacity: 1;
+                    transform: translateY(0);
+                }
+            }
+    
+            .product-banner {
+                cursor: pointer;
+            }
+        </style>
+        <!-- LOADING -->
+    
+    
+        <section class="parallax-header">
+            <div class="parallax-content">
+                <h1>ERP, EAM, WMS* &<br>Business Intelligence Solution</h1>
+                <div class="badge">Medium and Large Enterprise</div>
+                <p>PT Bisnis Sistem Indonesia was founded to be your partner for successful ERP, EAM, WMS & Business Intelligence implementation. At the heart of any ERP, EAM, WMS & Business Intelligence implementation is the need to sustain growth and increase market share. Those 4 systems when properly implemented gives Visibility and Control over day to day activities such that analysis and improvements can be performed. To this end, PTBSI has helped countless clients to fully align their business processes since 1998.</p>
+                <button class="erp-learn-btn">Learn More</button>
+                <style>
+                    .erp-learn-btn {
+                        /* Mobile first base styles */
+                        width: 100%;
+                        max-width: 280px;
+                        font-size: 1rem;
+                        padding: 10px 20px;
+                        background: linear-gradient(135deg, #9054d0 0%, #7a4bd7 100%);
+                        color: #fff;
+                        border: none;
+                        border-radius: 6px;
+                        cursor: pointer;
+                        transition: all 0.3s ease;
+                        font-weight: 600;
+                        letter-spacing: 0.5px;
+                        box-shadow: 0 4px 15px rgba(144, 84, 208, 0.3);
+                        margin: 0 auto;
+                        display: block;
+                    }
+    
+                    .erp-learn-btn:hover {
+                        transform: translateY(-2px);
+                        box-shadow: 0 6px 20px rgba(144, 84, 208, 0.4);
+                        background: linear-gradient(135deg, #7a4bd7 0%, #9054d0 100%);
+                    }
+    
+                    .erp-learn-btn:active {
+                        transform: translateY(1px);
+                    }
+    
+                    /* Tablet breakpoint */
+                    @media (min-width: 768px) {
+                        .erp-learn-btn {
+                            font-size: 1.1rem;
+                            padding: 11px 25px;
+                            max-width: 300px;
+                        }
+                    }
+    
+                    /* Desktop breakpoint */
+                    @media (min-width: 1024px) {
+                        .erp-learn-btn {
+                            font-size: 1.2rem;
+                            padding: 12px 30px;
+                            max-width: 320px;
+                        }
+                    }
+                </style>
+            </div>
+        </section>
+    
+        <style>
+            .parallax-header {
+                position: relative;
+                height: 100vh;
+                width: 100%;
+                overflow: hidden;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                background-image: url('assets/img/erp/banne.webp');
+                background-attachment: fixed;
+                background-position: center;
+                background-repeat: no-repeat;
+                background-size: cover;
+            }
+    
+            .parallax-content {
+                text-align: center;
+                color: #fff;
+                padding: 20px;
+                max-width: 1000px;
+                z-index: 2;
+                animation: fadeIn 1s ease-in;
+            }
+    
+            .parallax-content h1 {
+                font-size: 3.5rem;
+                font-weight: 700;
+                margin-bottom: 1rem;
+                text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+                line-height: 1.2;
+            }
+    
+            .parallax-content .badge {
+                display: inline-block;
+                background: rgba(144, 84, 208, 0.432);
+                padding: 8px 16px;
+                border-radius: 50px;
+                font-size: 1.1rem;
+                font-weight: 500;
+                margin: 1rem 0;
+                text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+            }
+    
+            .parallax-content p {
+                font-size: 20px !important;
+                margin-bottom: 2rem;
+                text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+                line-height: 1.6;
+            }
+    
+            .parallax-header::before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                background: rgba(0,0,0,0.4);
+                z-index: 1;
+            }
+    
+            @media (max-width: 768px) {
+                .parallax-content h1 {
+                    font-size: 2.5rem;
+                }
+                
+                .parallax-content p {
+                    font-size: 1rem !important;
+                }
+    
+                .parallax-content .badge {
+                    font-size: 0.9rem;
+                }
+            }
+        </style>
     <style>
         @keyframes slideIn {
             from {
@@ -1471,7 +1151,7 @@ Business Intelligence Solution</H1>
         .parallax-section {
             position: relative;
             overflow: hidden;
-            min-height: 800px;
+            min-height: 700px;
             display: flex;
             font-family: 'proxima-nova', sans-serif;
             align-items: center;
@@ -1500,7 +1180,7 @@ Business Intelligence Solution</H1>
             left: 0;
             width: 100%;
             height: 100%;
-            background-color: rgba(23, 0, 128, 0.2);
+            background-color: rgba(128, 0, 128, 0.2);
             /* Slight purple opacity */
             z-index: 1;
         }
@@ -1508,7 +1188,7 @@ Business Intelligence Solution</H1>
         /* Mobile responsive styles */
         @media (max-width: 768px) {
             .parallax-section {
-                min-height: 500px;
+                min-height: 400px;
 
             }
 
@@ -1534,7 +1214,7 @@ Business Intelligence Solution</H1>
 
         @media (max-width: 576px) {
             .parallax-section {
-                min-height: 603px;
+                min-height: 500px;
             }
 
             h1.display-3 {
@@ -1666,13 +1346,11 @@ Business Intelligence Solution</H1>
             </div> -->
             <style>
                 .custom-btn {
-                    background-color: #9e44b4;
+                    background: linear-gradient(135deg, #9054d0 0%, #7a4bd7 100%);
                     color: white;
-                    border: 2px solid #9e44b4;
                     padding: 12px 24px;
                     font-weight: 600;
                     font-size: 1.1rem;
-                    text-transform: uppercase;
                     letter-spacing: 0.5px;
                     border-radius: 10px;
                     transition: all 0.3s ease;
@@ -1680,14 +1358,14 @@ Business Intelligence Solution</H1>
                 }
 
                 .custom-btn:hover {
-                    background-color: #9e44b4b5;
-                    color: #ffffff;
-                    box-shadow: 0 6px 10px rgba(114, 9, 212, 0.3);
+                    transform: translateY(-2px);
+                        box-shadow: 0 6px 20px rgba(144, 84, 208, 0.4);
+                        background: linear-gradient(135deg, #7a4bd7 0%, #9054d0 100%);
                 }
 
                 .custom-btn:active {
-                    transform: translateY(0);
-                    box-shadow: 0 2px 4px rgba(114, 9, 212, 0.2);
+                    transform: translateY(1px);
+
                 }
             </style>
         </div>
@@ -1720,13 +1398,16 @@ Business Intelligence Solution</H1>
         // Trigger the handleScroll function immediately after page load
         setTimeout(handleScroll, 100);
     </script>
+
+
+
 <section id="ict-one-solution" class="ict-one-solution py-5" style="margin-top: 5%; background-image: url('assets/img/erp/hero-bg-ptbsi.png'); background-size: cover; background-position: center; background-repeat: no-repeat;">
-    <div class="container-fluid container-lg px-2">
+    <div class="container-fluid">
         <div class="row align-items-center">
-            <div class="col-md-6 mb-3">
+            <div class="col-md-6">
                 <img src="assets/img/erp/ptbsi-product-portfolio.png" alt="ICT One Solution" class="img-fluid w-75 mx-auto d-block">
             </div>
-            <div class="col-md-6">
+            <div class="col-md-6 mt-4">
                 <h2 class="mb-4 fw-bold" style="background: linear-gradient(287deg, #625dfa, #5ebcfa, #40777a); -webkit-background-clip: text; -webkit-text-fill-color: transparent; font-size: 2rem;">
                     ERP, EAM, WMS*& <br>
                     Business Intelligence Solution
@@ -1740,7 +1421,7 @@ Business Intelligence Solution</H1>
                         By partnering with PTBSI, you will be leveraging our decades of experience in successful ERP, EAM, WMS & Business Intelligence implementations. Our reputation is built right here in Indonesia, where it matters most for you. So give us a call and let's start a discussion on how your organization can enjoy the fruits of a successful system.
                     </p>
                 </div>
-                <a href="#" class="btn btn-outline-secondary">Schedule Meeting</a>
+                <a href="#" class="custom-btn">Schedule Meeting</a>
             </div>
         </div>
     </div>
@@ -1759,6 +1440,15 @@ Business Intelligence Solution</H1>
         .fs-5 {
             font-size: 1rem !important;
             text-align: center;
+        }
+
+        .custom-btn {
+            display: block;
+            margin: 0 auto;
+            width: fit-content;
+            font-size: 0.9rem;
+            padding: 8px 16px;
+            transform: scale(0.95);
         }
     }
 
@@ -1780,11 +1470,6 @@ Business Intelligence Solution</H1>
             text-align: center;
         }
 
-        .schedule-btn {
-            max-width: 100%;
-            font-size: 1rem;
-            padding: 0.3rem 0.6rem;
-        }
 
         .fade-in-left, .fade-in-right {
             opacity: 1;
@@ -1801,7 +1486,7 @@ Business Intelligence Solution</H1>
 
     <!-- Features Section -->
     <section class="features py-5">
-        <div class="container">
+        <div class="container-fluid">
             <!-- Section Title -->
             <h2 class="text-center mb-5 gradient-text"
                 style="background: linear-gradient(287deg, #625dfa, #5ebcfa, #40777a); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">
@@ -1969,7 +1654,7 @@ Business Intelligence Solution</H1>
 
 
     <section id="infor-cloudsuite" class="infor-cloudsuite-section py-5" style="background-image: url('assets/img/erp/background-infor-erp.png'); background-size: cover; background-position: center; background-attachment: fixed;">
-        <div class="container-fluid container-lg px-4">
+        <div class="container-fluid">
             <div class="row align-items-center">
                 <div class="col-lg-6 fade-in-left infor-cloudsuite-content">
                 
@@ -1992,7 +1677,7 @@ Business Intelligence Solution</H1>
         }
 
         .infor-cloudsuite-content {
-            padding-left: 3.5rem;
+            padding-left: 2.5rem;
         }
 
         .infor-cloudsuite-section h2 {
@@ -2056,7 +1741,7 @@ Business Intelligence Solution</H1>
             position: absolute;
             bottom: -15px;
             left: 0;
-            width: 100%;
+            width: 100% !important;
             height: 2px;
             background: linear-gradient(90deg, transparent, #93bada, #93bada, #93bada, transparent);
         }
@@ -2142,183 +1827,183 @@ Business Intelligence Solution</H1>
 </h3>
 
     <section id="why-rhapsody" class="bimasakti-solutions-grid" style="margin-top: 50px;">
-        <div class="container-fluid container-lg px-2">
-        <h2 class="bimasakti-title">How Infor Cloudsuite Helps You</h2>
-        <h3 class="bimasakti-description">Empowering your business with innovative cloud solutions.</h3>
-        <div class="bimasakti-button-wrapper">
-        </div>
-        <div class="bimasakti-features">
-            <article class="bimasakti-solution-item responsiveness">
-                <h4>
-                    <svg class="feature-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M7 2v11h3v9l7-12h-4l4-8H7z" fill="url(#paint0_linear_responsiveness)" />
-                        <defs>
-                            <linearGradient id="paint0_linear_responsiveness" x1="7" y1="2" x2="17" y2="22" gradientUnits="userSpaceOnUse">
-                                <stop stop-color="#c8d4de" />
-                                <stop offset="1" stop-color="#d40909" />
-                            </linearGradient>
-                        </defs>
-                    </svg>
-                    <span>INCREASE RESPONSIVENESS</span>
-                </h4>
-                <p>Increase responsiveness and reduce costs</p>
-            </article>
-            <article class="bimasakti-solution-item project-management">
-                <h4>
-                    <svg class="feature-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M4 10h3v7H4v-7zm6-3h3v10h-3V7zm6 6h3v4h-3v-4z" fill="url(#paint0_linear_project)" />
-                        <path d="M3 3v17h18V3H3zm16 15H5V5h14v13z" fill="url(#paint1_linear_project)" />
-                        <defs>
-                            <linearGradient id="paint0_linear_project" x1="4" y1="7" x2="19" y2="17" gradientUnits="userSpaceOnUse">
-                                <stop stop-color="#c8d4de" />
-                                <stop offset="1" stop-color="#d40909" />
-                            </linearGradient>
-                            <linearGradient id="paint1_linear_project" x1="3" y1="3" x2="21" y2="20" gradientUnits="userSpaceOnUse">
-                                <stop stop-color="#c8d4de" />
-                                <stop offset="1" stop-color="#d40909" />
-                            </linearGradient>
-                        </defs>
-                    </svg>
-                    <span>INTEGRATE PROJECT MANAGEMENT</span>
-                </h4>
-                <p>Integrate project management across your enterprise</p>
-            </article>
-            <article class="bimasakti-solution-item financial-prediction">
-                <h4>
-                    <svg class="feature-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M3 3v18h18V3H3zm16 16H5V5h14v14z" fill="url(#paint0_linear_financial)" />
-                        <path d="M7 17l3-4 3 2 4-5v7H7z" fill="url(#paint1_linear_financial)" />
-                        <circle cx="18" cy="17" r="3" stroke="url(#paint2_linear_financial)" stroke-width="2" />
-                        <defs>
-                            <linearGradient id="paint0_linear_financial" x1="3" y1="3" x2="21" y2="21" gradientUnits="userSpaceOnUse">
-                                <stop stop-color="#c8d4de" />
-                                <stop offset="1" stop-color="#d40909" />
-                            </linearGradient>
-                            <linearGradient id="paint1_linear_financial" x1="7" y1="10" x2="17" y2="17" gradientUnits="userSpaceOnUse">
-                                <stop stop-color="#c8d4de" />
-                                <stop offset="1" stop-color="#d40909" />
-                            </linearGradient>
-                            <linearGradient id="paint2_linear_financial" x1="15" y1="14" x2="21" y2="20" gradientUnits="userSpaceOnUse">
-                                <stop stop-color="#c8d4de" />
-                                <stop offset="1" stop-color="#d40909" />
-                            </linearGradient>
-                        </defs>
-                    </svg>
-                    <span>PREDICT FINANCIAL RESULTS</span>
-                </h4>
-                <p>Predict financial results with confidence</p>
-            </article>
-            <article class="bimasakti-solution-item service-management">
-                <h4>
-                    <svg class="feature-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M21 3H3c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h18c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H3V5h18v14z" fill="url(#paint0_linear_service)" />
-                        <path d="M5 14h3v3H5v-3zm5-3h3v6h-3v-6zm5 5h3v1h-3v-1z" fill="url(#paint1_linear_service)" />
-                        <defs>
-                            <linearGradient id="paint0_linear_service" x1="1" y1="3" x2="23" y2="21" gradientUnits="userSpaceOnUse">
-                                <stop stop-color="#c8d4de" />
-                                <stop offset="1" stop-color="#d40909" />
-                            </linearGradient>
-                            <linearGradient id="paint1_linear_service" x1="5" y1="11" x2="18" y2="17" gradientUnits="userSpaceOnUse">
-                                <stop stop-color="#c8d4de" />
-                                <stop offset="1" stop-color="#d40909" />
-                            </linearGradient>
-                        </defs>
-                    </svg>
-                    <span>EXPAND SERVICE MANAGEMENT</span>
-                </h4>
-                <p>Expand your service management capabilities</p>
-            </article>
-            <article class="bimasakti-solution-item product-configuration">
-                <h4>
-                    <svg class="feature-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M21 6H3c-1.1 0-2 .9-2 2v8c0 1.1.9 2 2 2h18c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2zm0 10H3V8h18v8z" fill="url(#paint0_linear_config)" />
-                        <path d="M6 14h12v2H6v-2zm0-3h12v2H6v-2zm0-3h12v2H6V8z" fill="url(#paint1_linear_config)" />
-                        <defs>
-                            <linearGradient id="paint0_linear_config" x1="1" y1="6" x2="23" y2="18" gradientUnits="userSpaceOnUse">
-                                <stop stop-color="#c8d4de" />
-                                <stop offset="1" stop-color="#d40909" />
-                            </linearGradient>
-                            <linearGradient id="paint1_linear_config" x1="6" y1="8" x2="18" y2="16" gradientUnits="userSpaceOnUse">
-                                <stop stop-color="#c8d4de" />
-                                <stop offset="1" stop-color="#d40909" />
-                            </linearGradient>
-                        </defs>
-                    </svg>
-                    <span>CREATE UNIQUE CONFIGURATIONS</span>
-                </h4>
-                <p>Create unique product configurations visually (2D, 3D, and Photo renditions) without creating new item masters</p>
-            </article>
-            <article class="bimasakti-solution-item streamline-processes">
-                <h4>
-                    <svg class="feature-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M3 3v18h18V3H3zm16 16H5V5h14v14z" fill="url(#paint0_linear_streamline)" />
-                        <path d="M7 7h2v10H7V7zm4 3h2v7h-2v-7zm4 3h2v4h-2v-4z" fill="url(#paint1_linear_streamline)" />
-                        <defs>
-                            <linearGradient id="paint0_linear_streamline" x1="3" y1="3" x2="21" y2="21" gradientUnits="userSpaceOnUse">
-                                <stop stop-color="#c8d4de" />
-                                <stop offset="1" stop-color="#d40909" />
-                            </linearGradient>
-                            <linearGradient id="paint1_linear_streamline" x1="7" y1="7" x2="15" y2="17" gradientUnits="userSpaceOnUse">
-                                <stop stop-color="#c8d4de" />
-                                <stop offset="1" stop-color="#d40909" />
-                            </linearGradient>
-                        </defs>
-                    </svg>
-                    <span>STREAMLINE PROCESSES</span>
-                </h4>
-                <p>Streamlining processes</p>
-            </article>
-            <article class="bimasakti-solution-item data-insights">
-                <h4>
-                    <svg class="feature-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z" fill="url(#paint0_linear_insights)" />
-                        <defs>
-                            <linearGradient id="paint0_linear_insights" x1="2" y1="2" x2="22" y2="22" gradientUnits="userSpaceOnUse">
-                                <stop stop-color="#c8d4de" />
-                                <stop offset="1" stop-color="#d40909" />
-                            </linearGradient>
-                        </defs>
-                    </svg>
-                    <span>LEVERAGE DATA INSIGHTS</span>
-                </h4>
-                <p>Leveraging data insights for strategic analysis of risks and opportunities</p>
-            </article>
-            <article class="bimasakti-solution-item drive-efficiency">
-                <h4>
-                    <svg class="feature-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V5h14v14z" fill="url(#paint0_linear_efficiency)" />
-                        <path d="M7 12h2v5H7v-5zm4-2h2v7h-2v-7zm4-3h2v10h-2V7z" fill="url(#paint1_linear_efficiency)" />
-                        <defs>
-                            <linearGradient id="paint0_linear_efficiency" x1="3" y1="3" x2="21" y2="21" gradientUnits="userSpaceOnUse">
-                                <stop stop-color="#c8d4de" />
-                                <stop offset="1" stop-color="#d40909" />
-                            </linearGradient>
-                            <linearGradient id="paint1_linear_efficiency" x1="7" y1="7" x2="17" y2="17" gradientUnits="userSpaceOnUse">
-                                <stop stop-color="#c8d4de" />
-                                <stop offset="1" stop-color="#d40909" />
-                            </linearGradient>
-                        </defs>
-                    </svg>
-                    <span>DRIVE EFFICIENCY</span>
-                </h4>
-                <p>Drive efficiency and innovation processes and operations</p>
-            </article>
-            <article class="bimasakti-solution-item global-visibility">
-                <h4>
-                    <svg class="feature-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z" fill="url(#paint0_linear_global)" />
-                        <defs>
-                            <linearGradient id="paint0_linear_global" x1="2" y1="2" x2="22" y2="22" gradientUnits="userSpaceOnUse">
-                                <stop stop-color="#c8d4de" />
-                                <stop offset="1" stop-color="#d40909" />
-                            </linearGradient>
-                        </defs>
-                    </svg>
-                    <span>IMPROVE GLOBAL VISIBILITY</span>
-                </h4>
-                <p>Improving visibility and control across your global operations</p>
-            </article>
-        </div>
+        <div class="container-fluid">
+            <h2 class="bimasakti-title">How Infor Cloudsuite Helps You</h2>
+            <h3 class="bimasakti-description">Empowering your business with innovative cloud solutions.</h3>
+            <div class="bimasakti-button-wrapper">
+            </div>
+            <div class="bimasakti-features">
+                <article class="bimasakti-solution-item responsiveness">
+                    <h4>
+                        <svg class="feature-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M7 2v11h3v9l7-12h-4l4-8H7z" fill="url(#paint0_linear_responsiveness)" />
+                            <defs>
+                                <linearGradient id="paint0_linear_responsiveness" x1="7" y1="2" x2="17" y2="22" gradientUnits="userSpaceOnUse">
+                                    <stop stop-color="#c8d4de" />
+                                    <stop offset="1" stop-color="#d40909" />
+                                </linearGradient>
+                            </defs>
+                        </svg>
+                        <span>INCREASE RESPONSIVENESS</span>
+                    </h4>
+                    <p>Increase responsiveness and reduce costs</p>
+                </article>
+                <article class="bimasakti-solution-item project-management">
+                    <h4>
+                        <svg class="feature-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M4 10h3v7H4v-7zm6-3h3v10h-3V7zm6 6h3v4h-3v-4z" fill="url(#paint0_linear_project)" />
+                            <path d="M3 3v17h18V3H3zm16 15H5V5h14v13z" fill="url(#paint1_linear_project)" />
+                            <defs>
+                                <linearGradient id="paint0_linear_project" x1="4" y1="7" x2="19" y2="17" gradientUnits="userSpaceOnUse">
+                                    <stop stop-color="#c8d4de" />
+                                    <stop offset="1" stop-color="#d40909" />
+                                </linearGradient>
+                                <linearGradient id="paint1_linear_project" x1="3" y1="3" x2="21" y2="20" gradientUnits="userSpaceOnUse">
+                                    <stop stop-color="#c8d4de" />
+                                    <stop offset="1" stop-color="#d40909" />
+                                </linearGradient>
+                            </defs>
+                        </svg>
+                        <span>INTEGRATE PROJECT MANAGEMENT</span>
+                    </h4>
+                    <p>Integrate project management across your enterprise</p>
+                </article>
+                <article class="bimasakti-solution-item financial-prediction">
+                    <h4>
+                        <svg class="feature-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M3 3v18h18V3H3zm16 16H5V5h14v14z" fill="url(#paint0_linear_financial)" />
+                            <path d="M7 17l3-4 3 2 4-5v7H7z" fill="url(#paint1_linear_financial)" />
+                            <circle cx="18" cy="17" r="3" stroke="url(#paint2_linear_financial)" stroke-width="2" />
+                            <defs>
+                                <linearGradient id="paint0_linear_financial" x1="3" y1="3" x2="21" y2="21" gradientUnits="userSpaceOnUse">
+                                    <stop stop-color="#c8d4de" />
+                                    <stop offset="1" stop-color="#d40909" />
+                                </linearGradient>
+                                <linearGradient id="paint1_linear_financial" x1="7" y1="10" x2="17" y2="17" gradientUnits="userSpaceOnUse">
+                                    <stop stop-color="#c8d4de" />
+                                    <stop offset="1" stop-color="#d40909" />
+                                </linearGradient>
+                                <linearGradient id="paint2_linear_financial" x1="15" y1="14" x2="21" y2="20" gradientUnits="userSpaceOnUse">
+                                    <stop stop-color="#c8d4de" />
+                                    <stop offset="1" stop-color="#d40909" />
+                                </linearGradient>
+                            </defs>
+                        </svg>
+                        <span>PREDICT FINANCIAL RESULTS</span>
+                    </h4>
+                    <p>Predict financial results with confidence</p>
+                </article>
+                <article class="bimasakti-solution-item service-management">
+                    <h4>
+                        <svg class="feature-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M21 3H3c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h18c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H3V5h18v14z" fill="url(#paint0_linear_service)" />
+                            <path d="M5 14h3v3H5v-3zm5-3h3v6h-3v-6zm5 5h3v1h-3v-1z" fill="url(#paint1_linear_service)" />
+                            <defs>
+                                <linearGradient id="paint0_linear_service" x1="1" y1="3" x2="23" y2="21" gradientUnits="userSpaceOnUse">
+                                    <stop stop-color="#c8d4de" />
+                                    <stop offset="1" stop-color="#d40909" />
+                                </linearGradient>
+                                <linearGradient id="paint1_linear_service" x1="5" y1="11" x2="18" y2="17" gradientUnits="userSpaceOnUse">
+                                    <stop stop-color="#c8d4de" />
+                                    <stop offset="1" stop-color="#d40909" />
+                                </linearGradient>
+                            </defs>
+                        </svg>
+                        <span>EXPAND SERVICE MANAGEMENT</span>
+                    </h4>
+                    <p>Expand your service management capabilities</p>
+                </article>
+                <article class="bimasakti-solution-item product-configuration">
+                    <h4>
+                        <svg class="feature-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M21 6H3c-1.1 0-2 .9-2 2v8c0 1.1.9 2 2 2h18c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2zm0 10H3V8h18v8z" fill="url(#paint0_linear_config)" />
+                            <path d="M6 14h12v2H6v-2zm0-3h12v2H6v-2zm0-3h12v2H6V8z" fill="url(#paint1_linear_config)" />
+                            <defs>
+                                <linearGradient id="paint0_linear_config" x1="1" y1="6" x2="23" y2="18" gradientUnits="userSpaceOnUse">
+                                    <stop stop-color="#c8d4de" />
+                                    <stop offset="1" stop-color="#d40909" />
+                                </linearGradient>
+                                <linearGradient id="paint1_linear_config" x1="6" y1="8" x2="18" y2="16" gradientUnits="userSpaceOnUse">
+                                    <stop stop-color="#c8d4de" />
+                                    <stop offset="1" stop-color="#d40909" />
+                                </linearGradient>
+                            </defs>
+                        </svg>
+                        <span>CREATE UNIQUE CONFIGURATIONS</span>
+                    </h4>
+                    <p>Create unique product configurations visually (2D, 3D, and Photo renditions) without creating new item masters</p>
+                </article>
+                <article class="bimasakti-solution-item streamline-processes">
+                    <h4>
+                        <svg class="feature-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M3 3v18h18V3H3zm16 16H5V5h14v14z" fill="url(#paint0_linear_streamline)" />
+                            <path d="M7 7h2v10H7V7zm4 3h2v7h-2v-7zm4 3h2v4h-2v-4z" fill="url(#paint1_linear_streamline)" />
+                            <defs>
+                                <linearGradient id="paint0_linear_streamline" x1="3" y1="3" x2="21" y2="21" gradientUnits="userSpaceOnUse">
+                                    <stop stop-color="#c8d4de" />
+                                    <stop offset="1" stop-color="#d40909" />
+                                </linearGradient>
+                                <linearGradient id="paint1_linear_streamline" x1="7" y1="7" x2="15" y2="17" gradientUnits="userSpaceOnUse">
+                                    <stop stop-color="#c8d4de" />
+                                    <stop offset="1" stop-color="#d40909" />
+                                </linearGradient>
+                            </defs>
+                        </svg>
+                        <span>STREAMLINE PROCESSES</span>
+                    </h4>
+                    <p>Streamlining processes</p>
+                </article>
+                <article class="bimasakti-solution-item data-insights">
+                    <h4>
+                        <svg class="feature-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z" fill="url(#paint0_linear_insights)" />
+                            <defs>
+                                <linearGradient id="paint0_linear_insights" x1="2" y1="2" x2="22" y2="22" gradientUnits="userSpaceOnUse">
+                                    <stop stop-color="#c8d4de" />
+                                    <stop offset="1" stop-color="#d40909" />
+                                </linearGradient>
+                            </defs>
+                        </svg>
+                        <span>LEVERAGE DATA INSIGHTS</span>
+                    </h4>
+                    <p>Leveraging data insights for strategic analysis of risks and opportunities</p>
+                </article>
+                <article class="bimasakti-solution-item drive-efficiency">
+                    <h4>
+                        <svg class="feature-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V5h14v14z" fill="url(#paint0_linear_efficiency)" />
+                            <path d="M7 12h2v5H7v-5zm4-2h2v7h-2v-7zm4-3h2v10h-2V7z" fill="url(#paint1_linear_efficiency)" />
+                            <defs>
+                                <linearGradient id="paint0_linear_efficiency" x1="3" y1="3" x2="21" y2="21" gradientUnits="userSpaceOnUse">
+                                    <stop stop-color="#c8d4de" />
+                                    <stop offset="1" stop-color="#d40909" />
+                                </linearGradient>
+                                <linearGradient id="paint1_linear_efficiency" x1="7" y1="7" x2="17" y2="17" gradientUnits="userSpaceOnUse">
+                                    <stop stop-color="#c8d4de" />
+                                    <stop offset="1" stop-color="#d40909" />
+                                </linearGradient>
+                            </defs>
+                        </svg>
+                        <span>DRIVE EFFICIENCY</span>
+                    </h4>
+                    <p>Drive efficiency and innovation processes and operations</p>
+                </article>
+                <article class="bimasakti-solution-item global-visibility">
+                    <h4>
+                        <svg class="feature-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z" fill="url(#paint0_linear_global)" />
+                            <defs>
+                                <linearGradient id="paint0_linear_global" x1="2" y1="2" x2="22" y2="22" gradientUnits="userSpaceOnUse">
+                                    <stop stop-color="#c8d4de" />
+                                    <stop offset="1" stop-color="#d40909" />
+                                </linearGradient>
+                            </defs>
+                        </svg>
+                        <span>IMPROVE GLOBAL VISIBILITY</span>
+                    </h4>
+                    <p>Improving visibility and control across your global operations</p>
+                </article>
+            </div>
         </div>
     </section>
 
@@ -2336,7 +2021,7 @@ Business Intelligence Solution</H1>
             gap: 15px;
             /* padding: 20px; */
             border-radius: 15px;
-            max-width: 85%;
+            max-width: 97%;
             margin: 0 auto;
         }
 
@@ -2526,8 +2211,7 @@ Business Intelligence Solution</H1>
 
 
 <section class="uui-section_layout74">
-    <div class="uui-page-padding">
-        <div class="container-fluid px-5">
+        <div class="container-fluid">
             <div class="uui-padding-vertical-xhuge">
           <div class="uui-layout74_component">
             <div class="uui-text-align-center">
@@ -2671,7 +2355,6 @@ Business Intelligence Solution</H1>
           </div>
         </div>
       </div>
-    </div>
   </section>
 
 
@@ -3110,7 +2793,7 @@ Business Intelligence Solution</H1>
 }
 
 .a-section-large {
-  padding: 90px 5%;
+  padding-bottom: 90px;
   position: relative;
 }
 
@@ -4853,197 +4536,128 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 </style>
-<!-- 
-    <section id="cta" class="py-5 mt-5">
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-lg-10">
-                    <div class="bg-light p-5 rounded-3 shadow-sm cta-card">
-                        <div class="row align-items-center">
-                            <div class="col-lg-8 mb-4 mb-lg-0">
-                                <h2 class="mb-3 fw-bold"
-                                    style="background: linear-gradient(287deg, #625dfa, #5e68fa); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">
-                                    Want to talk about solution?
-                                    Lets get started right now.
-                                </h2>
-                                <p class="mb-0 text-muted lead">Let's discuss how we can elevate your operations.</p>
-                            </div>
-                            <div class="col-lg-4 text-lg-end text-center">
-                                <a href="#" class="btn btn-lg px-4 py-3 cta-button"
-                                    style="background: linear-gradient(to right, #619fd1, #619fd1); color: #ffffff; border: none;">Contact
-                                    Us</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+
+
+
+<section id="separator" class="" style="background-color: #efecff;">
+    <div class="container-fluid p-4">
+        <div class="banner">
+            <div class="banner-content">
+                <h2>Unlock superior coverage for your team</h2>
+                <p>Build a culture of employee delight by taking the first step towards Benefits</p>
+                <button class="btn-custom" onclick="scheduleCall()"
+                    style="background: linear-gradient(to bottom, #9054d0, #7a4bd7);">Schedule a call</button>
             </div>
+            <img src="assets/img/handshake.png" alt="Business Handshake" class="banner-image">
         </div>
-    </section>
+    </div>
+</section>
 
-    <style>
-        #cta .cta-card {
-            background-color: #f8f9fa;
-            transition: all 0.3s ease;
-            border: 1px solid rgba(0, 0, 0, 0.125);
-        }
+<section id="contact" class="pb-5">
+    <div class="container-fluid p-4">
+        <div class="row justify-content-between">
+            <div id="contact-info" class="col-lg-5 left-column >
+                    <h1 class=" mb-3 contact-heading"
+                style="font-size: 36px; text-align: left; line-height: 1.2; letter-spacing: -0.5px;">
+                What Are You Waiting For?<br>
+                <span
+                    style="font-weight: 700; color: #7a4bd7; text-transform: uppercase; display: block; margin-top: 10px;">Just
+                    Make It Happen!</span>
+                </h1>
+                <p class="text-muted mb-4 contact-text" style="font-size: 18px;">
+                    We'll have a Business Development Representative contact you within
+                    <span style="font-weight: bold;">24 business hours.</span>
+                </p>
 
-
-        body.dark-mode #cta .cta-card {
-            background: linear-gradient(135deg,
-                    rgba(50, 50, 50, 0.4) 0%,
-                    rgba(100, 50, 150, 0.493) 100%) !important;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-        }
-
-        #cta h2 {
-            font-size: 2.5rem;
-            line-height: 1.2;
-        }
-
-        #cta p {
-            font-size: 1.25rem;
-            color: #6c757d;
-        }
-
-        #cta .cta-button {
-            background-color: #7209d4;
-            border: none;
-            color: #ffffff;
-            font-weight: 600;
-            transition: all 0.3s ease;
-        }
-
-        #cta .cta-button:hover {
-            background-color: #5a07a8;
-            transform: translateY(-2px);
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-        }
-
-
-
-        @media (max-width: 991px) {
-            #cta h2 {
-                font-size: 2rem;
-            }
-
-            #cta p {
-                font-size: 1.1rem;
-            }
-
-            #cta .cta-button {
-                width: 100%;
-                margin-top: 1rem;
-            }
-        }
-    </style> -->
-    
-
-    <section id="separator" class="" style="background-color: #efecff;">
-        <div class="container-fluid p-4">
-            <div class="banner">
-                <div class="banner-content">
-                    <h2>Unlock superior coverage for your team</h2>
-                    <p>Build a culture of employee delight by taking the first step towards Benefits</p>
-                    <button class="btn-custom" onclick="scheduleCall()"
-                        style="background: linear-gradient(to bottom, #9054d0, #7a4bd7);">Schedule a call</button>
-                </div>
-                <img src="assets/img/handshake.png" alt="Business Handshake" class="banner-image">
-            </div>
-        </div>
-    </section>
-
-
-
-
-    <section id="contact" class="pb-5">
-        <div class="container-fluid px-5">
-            <div class="row justify-content-between">
-                <div id="contact-info" class="col-lg-5 left-column >
-                    <h1 class=" mb-3 contact-heading" style="font-size: 33px;">What Are You Waiting For?<br> <span
-                        style="font-weight: bold;">Just Make It Happen!</span></h1>
-                    <p class="text-muted mb-4 contact-text" style="font-size: 18px;">
-                        We'll have a Business Development Representative contact you within
-                        <span style="font-weight: bold;">24 business hours.</span>
-                    </p>
-                    <style>
-                        .award {
-                            font-size: 18px;
-                            /* Consistent font size for awards */
-                            font-weight: bold;
-                            /* Make the text bold for emphasis */
-                        }
-
-                        .company-name {
-                            font-size: 24px;
-                            /* Consistent font size for company name */
-                        }
-
-                        .headquarter-title {
-                            font-size: 20px;
-                            /* Consistent font size for headquarter title */
-                        }
-
-                        .address-details {
-                            font-size: 16px;
-                            /* Consistent font size for address details */
-                        }
-                    </style>
-                    
-                    <div class="company-info">
-                        <h3 class="h5 fw-bold mb-2 company-name">PT. REALTA CHAKRADARMA</h3>
-                        <h3 class="headquarter-title">Headquarter Address:</h3>
-                        <p class="mb-4 address-details">
+                <div class="company-info" style="border-radius: 10px;">
+                    <h3 class="h5 fw-bold mb-3 company-name custom-text"
+                        style="color: #333; padding-bottom: 10px; display: inline-block; border-bottom: 1px solid transparent; background-image: linear-gradient(to right, transparent, #333, transparent); background-position: bottom; background-size: 100% 1px; background-repeat: no-repeat;">
+                        PT Realta Chakradarma </h3>
+                    <h3 class="headquarter-title custom-text" style="margin-bottom: 10px;">
+                        Address:</h3>
+                    <div class="address-wrapper">
+                        <p class="address-details custom-text">
                             Jl. Petojo Melintang No. 25A<br>
                             Petojo Selatan - Gambir<br>
-                            Jakarta Pusat 10160<br>
-                            Indonesia
+                            Jakarta 10160<br>
+                            <span class="country custom-text">Indonesia</span>
                         </p>
                     </div>
 
-                    <div class="map-wrapper mb-4" style="width: 85%;">
-                        <iframe
-                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.3279995766406!2d106.8142527!3d-6.172364!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f67f4f44dc2f%3A0x124b0a0f4cb7e845!2sPT%20Realta%20Chakradarma!5e0!3m2!1sen!2sid!4v1653668623967"
-                            frameborder="0" style="border:0" allowfullscreen="">
-                        </iframe>
+                    <style>
+                        .custom-text {
+                            font-size: 20px;
+                        }
+                    </style>
+                </div>
+                <style>
+                    /* Remove the media query and adjust the selectors */
+                    body.dark-mode .company-info {
+                        color: #ffffff !important;
+                    }
+
+                    body.dark-mode .company-name {
+                        color: #ffffff !important;
+                        background-image: linear-gradient(to right, transparent, #ffffff, transparent) !important;
+                    }
+
+                    body.dark-mode .headquarter-title {
+                        color: #ffffff !important;
+                    }
+
+                    body.dark-mode .address-details {
+                        color: #e0e0e0 !important;
+                    }
+
+                    body.dark-mode #contact .contact-heading {
+                        color: #ffffff !important;
+                    }
+                </style>
+
+                <div class="map-wrapper mb-4" style="width: 85%;">
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.3279995766406!2d106.8142527!3d-6.172364!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f67f4f44dc2f%3A0x124b0a0f4cb7e845!2sPT%20Realta%20Chakradarma!5e0!3m2!1sen!2sid!4v1653668623967"
+                        frameborder="0" style="border:0" allowfullscreen="">
+                    </iframe>
+                </div>
+
+                <div class="contact-info mb-4">
+                    <style>
+                        .contact-item {
+                            display: flex;
+                            align-items: flex-start;
+                            margin-bottom: 10px;
+                        }
+
+                        .contact-icon {
+                            font-size: 14px;
+                            margin-right: 10px;
+                            margin-top: 3px;
+                        }
+                    </style>
+                    <div class="contact-item">
+                        <i class="fas fa-phone contact-icon"></i>
+                        <p class="mb-0">Phone: <a href="tel:+62213861772" class="text-decoration-none fw-bold">+62
+                                21 - 386 1772</a></p>
                     </div>
-
-                    <div class="contact-info mb-4">
-                        <style>
-                            .contact-item {
-                                display: flex;
-                                align-items: flex-start;
-                                margin-bottom: 10px;
-                                font-size: 16px;
-                                /* Consistent font size for contact items */
-
-                            }
-
-                            .contact-icon {
-                                font-size: 14px;
-                                margin-right: 10px;
-                                margin-top: 3px;
-                            }
-                        </style>
-                        <div class="contact-item">
-                            <i class="fas fa-phone contact-icon"></i>
-                            <p class="mb-0">Phone: <a href="tel:+62213861772" class="text-decoration-none fw-bold">+62
-                                    21 - 386 1772</a></p>
-                        </div>
-                        <div class="contact-item">
-                            <i class="fas fa-envelope contact-icon"></i>
-                            <p class="mb-0">Email: <a href="mailto:info@realta.co.id"
-                                    class="text-decoration-none fw-bold">info@realta.co.id</a></p>
-                        </div>
-                        <div class="contact-item">
-                            <i class="fab fa-whatsapp contact-icon"></i>
-                            <p class="mb-0">
-                                For sales and marketing, contact our Official WhatsApp:<br>
-                                <a href="https://wa.me/628111221789" class="text-decoration-none fw-bold"
-                                    style="color: #3bc05a;">+62 811 1221 789</a>
-                            </p>
-                        </div>
+                    <div class="contact-item">
+                        <i class="fas fa-envelope contact-icon"></i>
+                        <p class="mb-0">Email: <a href="mailto:info@realta.co.id"
+                                class="text-decoration-none fw-bold">info@realta.co.id</a></p>
                     </div>
+                    <div class="contact-item">
+                        <i class="fab fa-whatsapp contact-icon"></i>
+                        <p class="mb-0">
+                            For sales and marketing, contact our Official WhatsApp:<br><br>
+                            <a href="https://wa.me/628111221789" class="text-decoration-none fw-bold"
+                                style="color: #3bc05a;">+62 811 1221 789 (CHAT ONLY)</a>
+                        </p>
+                    </div>
+                </div>
 
+                <div class="social-icons-container">
+                    <h4 class="mb-3" style="font-size: 0.9rem; text-align: left; margin-left: 10px;"> Connect With
+                        Us Through Social Media</h4>
                     <div class="social-icons d-flex gap-3">
                         <a href="https://www.facebook.com/yourpage" class="social-icon" aria-label="Facebook">
                             <i class="fab fa-facebook-f"></i>
@@ -5062,258 +4676,249 @@ document.addEventListener('DOMContentLoaded', () => {
                         </a>
                     </div>
                 </div>
-                <style>
-                    .social-icons {
-                        display: flex;
-                        align-items: center;
-                    }
+            </div>
+            <style>
+                .social-icons {
+                    display: flex;
+                    align-items: center;
+                }
 
-                    .social-icon {
-                        display: flex;
-                        align-items: center;
-                        justify-content: center;
-                        width: 40px;
-                        height: 40px;
-                        border-radius: 50%;
-                        color: white;
-                        text-decoration: none;
-                        transition: all 0.3s ease;
-                    }
+                .social-icon {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    width: 40px;
+                    height: 40px;
+                    border-radius: 50%;
+                    color: white;
+                    text-decoration: none;
+                    transition: all 0.3s ease;
+                }
 
-                    .social-icon:hover {
-                        transform: translateY(-3px);
-                        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-                        background-image: none !important;
-                        background-color: #f0f0f0 !important;
-                        color: #333 !important;
-                    }
+                .social-icon:hover {
+                    transform: translateY(-3px);
+                    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+                    background-image: none !important;
+                    background-color: #f0f0f0 !important;
+                    color: #333 !important;
+                }
 
-                    .social-icon i {
-                        font-size: 18px;
-                    }
+                .social-icon i {
+                    font-size: 18px;
+                }
 
-                    .social-icon[aria-label="Facebook"] {
-                        background-color: #3b5998;
-                    }
+                .social-icon[aria-label="Facebook"] {
+                    background-color: #3b5998;
+                }
 
-                    .social-icon[aria-label="LinkedIn"] {
-                        background-color: #0077b5;
-                    }
+                .social-icon[aria-label="LinkedIn"] {
+                    background-color: #0077b5;
+                }
 
-                    .social-icon[aria-label="Twitter"] {
-                        background-color: #475258;
-                    }
+                .social-icon[aria-label="Twitter"] {
+                    background-color: #475258;
+                }
 
-                    .social-icon[aria-label="Instagram"] {
-                        background-color: #a19551;
-                    }
+                .social-icon[aria-label="Instagram"] {
+                    background-color: #a19551;
+                }
 
-                    .social-icon[aria-label="YouTube"] {
-                        background-color: #e62e2e;
-                    }
-                </style>
-                <div id="contact-form" class="col-lg-5  right-column right-column-custom p-4 p-md-5 order-1 order-lg-2">
-                    <form class="needs-validation" novalidate>
-                        <div class="mb-3">
-                            <label for="fullname" class="form-label">Name</label>
-                            <input type="text" class="form-control" id="fullname" placeholder="Name" required>
+                .social-icon[aria-label="YouTube"] {
+                    background-color: #e62e2e;
+                }
+            </style>
+            <div id="contact-form" class="col-lg-5  right-column right-column-custom p-4 p-md-5 order-1 order-lg-2">
+                <form class="needs-validation" novalidate>
+                    <div class="mb-3">
+                        <label for="fullname" class="form-label">Name</label>
+                        <input type="text" class="form-control" id="fullname" placeholder="Name" required>
+                        <div class="invalid-feedback">
+                            Please enter your full name.
+                        </div>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="company" class="form-label">Company Name</label>
+                        <input type="text" class="form-control" id="company" placeholder="Company" required>
+                        <div class="invalid-feedback">
+                            Please enter your company name.
+                        </div>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="jobTitle" class="form-label">Job Title</label>
+                        <input type="text" class="form-control" id="jobTitle" placeholder="Job Title" required>
+                        <div class="invalid-feedback">
+                            Please enter your job title.
+                        </div>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="service" class="form-label">Please indicate your area of interest</label>
+                        <select id="service" class="form-select" required>
+                            <option value="">Choose...</option>
+                            <option>Hospitality</option>
+                            <option>Golf</option>
+                            <option>Property & Tenancy</option>
+                            <option>Human Resource (HR)</option>
+                            <option>ITSM</option>
+                            <option>ITAM</option>
+                            <option>ERP</option>
+                            <option>EAM</option>
+                            <option>Other</option>
+                        </select>
+                        <div class="invalid-feedback">
+                            Please select a service.
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="phone" class="form-label">Mobile Phone</label>
+                        <input type="tel" class="form-control" id="phone" placeholder="Mobile Phone" required
+                            pattern="^\+?\d{0,13}">
+                        <div class="invalid-feedback">
+                            Please enter a valid mobile phone number.
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="email" class="form-label">Email</label>
+                        <input type="email" class="form-control" id="email" placeholder="Email" required>
+                        <div class="invalid-feedback">
+                            Please enter a valid email address.
+                        </div>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="employees" class="form-label">Total Employee</label>
+                        <select id="employees" class="form-select" required>
+                            <option value="">Choose...</option>
+                            <option>1-50</option>
+                            <option>51-100</option>
+                            <option>101-500</option>
+                            <option>501-1000</option>
+                            <option>1001-5000</option>
+                            <option>More than 5000</option>
+                        </select>
+                        <div class="invalid-feedback">
+                            Please select the total number of employees.
+                        </div>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="message" class="form-label">How we can help you? </label>
+                        <textarea id="message" class="form-control" rows="4" placeholder="Message"
+                            required></textarea>
+                        <div class="invalid-feedback">
+                            Please enter a message.
+                        </div>
+                    </div>
+
+                    <div class="mb-3 form-check text-center">
+                        <div class="d-inline-block text-start">
+                            <input type="checkbox" class="form-check-input" id="terms" required>
+                            <label class="form-check-label" for="terms">
+                                Before submitting please read our <br>
+                                <a href="#" class="text-decoration-none">Term and Condition</a> &
+                                <a href="#" class="text-decoration-none">Privacy Policy</a>
+                            </label>
                             <div class="invalid-feedback">
-                                Please enter your full name.
+                                You must agree to the terms and conditions.
                             </div>
                         </div>
+                    </div>
 
-                        <div class="mb-3">
-                            <label for="company" class="form-label">Company Name</label>
-                            <input type="text" class="form-control" id="company" placeholder="Company" required>
-                            <div class="invalid-feedback">
-                                Please enter your company name.
-                            </div>
-                        </div>
+                    <button type="submit" class="btn submit-btn w-100">
+                        <i class="fas fa-paper-plane icon"></i>
+                        <span class="text">Submit</span>
+                    </button>
 
-                        <div class="mb-3">
-                            <label for="jobTitle" class="form-label">Job Title</label>
-                            <input type="text" class="form-control" id="jobTitle" placeholder="Job Title" required>
-                            <div class="invalid-feedback">
-                                Please enter your job title.
-                            </div>
-                        </div>
+                    <style>
+                        .submit-btn {
+                            position: relative;
+                            overflow: hidden;
+                            display: inline-flex;
+                            align-items: center;
+                            justify-content: center;
+                            width: 100%;
+                            height: 60px;
+                            font-size: 1.2rem;
+                            letter-spacing: 1px;
+                            text-transform: uppercase;
+                            border: none;
+                            border-radius: 10px;
+                            background: linear-gradient(to bottom, #9054d0, #7a4bd7);
+                            color: #ffffff;
+                            cursor: pointer;
+                            transition: all 0.3s ease-in-out;
+                            margin: 20px auto 0;
+                            /* Added top margin to move the button slightly down */
+                        }
 
-                        <div class="mb-3">
-                            <label for="service" class="form-label">Select A Service</label>
-                            <select id="service" class="form-select" required>
-                                <option value="">Choose...</option>
-                                <option>Hospitality</option>
-                                <option>Golf</option>
-                                <option>Property & Tenancy</option>
-                                <option>Human Resource (HR)</option>
-                                <option>ITSM</option>
-                                <option>ITAM</option>
-                                <option>ERP</option>
-                                <option>EAM</option>
-                                <option>Other</option>
-                            </select>
-                            <div class="invalid-feedback">
-                                Please select a service.
-                            </div>
-                        </div>
-                        <div class="mb-3">
-                            <label for="phone" class="form-label">Mobile Phone</label>
-                            <input type="tel" class="form-control" id="phone" placeholder="Mobile Phone" required
-                                pattern="^\+?\d{0,13}">
-                            <div class="invalid-feedback">
-                                Please enter a valid mobile phone number.
-                            </div>
-                        </div>
-                        <div class="mb-3">
-                            <label for="email" class="form-label">Email</label>
-                            <input type="email" class="form-control" id="email" placeholder="Email" required>
-                            <div class="invalid-feedback">
-                                Please enter a valid email address.
-                            </div>
-                        </div>
+                        .submit-btn .icon {
+                            margin-right: 10px;
+                            font-size: 1.5rem;
+                            transition: all 0.5s ease-in-out;
+                            color: #ffffff;
+                        }
 
-                        <div class="mb-3">
-                            <label for="employees" class="form-label">Total Employee</label>
-                            <select id="employees" class="form-select" required>
-                                <option value="">Choose...</option>
-                                <option>1-50</option>
-                                <option>51-100</option>
-                                <option>101-500</option>
-                                <option>501-1000</option>
-                                <option>1001-5000</option>
-                                <option>More than 5000</option>
-                            </select>
-                            <div class="invalid-feedback">
-                                Please select the total number of employees.
-                            </div>
-                        </div>
+                        .submit-btn .text {
+                            transition: all 0.5s ease-in-out;
+                            color: #ffffff;
 
-                        <div class="mb-3">
-                            <label for="message" class="form-label">Message</label>
-                            <textarea id="message" class="form-control" rows="4" placeholder="Message"
-                                required></textarea>
-                            <div class="invalid-feedback">
-                                Please enter a message.
-                            </div>
-                        </div>
+                        }
 
-                        <div class="mb-3 form-check text-center">
-                            <div class="d-inline-block text-start">
-                                <input type="checkbox" class="form-check-input" id="terms" required>
-                                <label class="form-check-label" for="terms">
-                                    Before submitting please read our <br>
-                                    <a href="#" class="text-decoration-none">Term and Condition</a> &
-                                    <a href="#" class="text-decoration-none">Privacy Policy</a>
-                                </label>
-                                <div class="invalid-feedback">
-                                    You must agree to the terms and conditions.
-                                </div>
-                            </div>
-                        </div>
+                        .submit-btn:hover {
+                            background: linear-gradient(to bottom, #4CAF50, #45a049);
+                        }
 
-                        <button type="submit" class="btn submit-btn w-100">
-                            <i class="fas fa-paper-plane icon"></i>
-                            <span class="text">Submit</span>
-                        </button>
+                        .submit-btn:hover .text {
+                            transform: translateX(320px);
+                            color: #ffffff;
+                        }
 
-                        <style>
-                            .submit-btn {
-                                position: relative;
-                                overflow: hidden;
-                                display: inline-flex;
-                                align-items: center;
-                                justify-content: center;
-                                width: 100%;
-                                height: 60px;
-                                font-size: 1.2rem !important;
-                                letter-spacing: 1px;
-                                text-transform: uppercase;
-                                border: none;
-                                border-radius: 10px;
-                                background: linear-gradient(to bottom, #9054d0, #7a4bd7);
-                                color: #ffffff;
-                                cursor: pointer;
-                                transition: all 0.3s ease-in-out;
-                                box-shadow:
-                                    inset 0 30px 30px -15px rgba(255, 255, 255, 0.1),
-                                    inset 0 0 0 1px rgba(255, 255, 255, 0.3),
-                                    0 5px 10px rgba(0, 0, 0, 0.1),
-                                    0 10px 20px rgba(0, 0, 0, 0.1);
-                                margin: 20px auto 0;
-                                /* Added top margin to move the button slightly down */
-                            }
+                        .submit-btn:hover .icon {
+                            transform: translateX(45px);
+                            /* Adjusted to move to the middle */
+                            color: #ffffff;
+                        }
 
-                            .submit-btn .icon {
-                                margin-right: 10px;
-                                font-size: 1.5rem !important;
-                                transition: all 0.5s ease-in-out;
-                                color: #ffffff;
-                            }
-
-                            .submit-btn .text {
-                                transition: all 0.5s ease-in-out;
-                                color: #ffffff;
-
-                            }
-
-                            .submit-btn:hover {
-                                background: linear-gradient(to bottom, #4CAF50, #45a049);
-                                box-shadow:
-                                    inset 0 20px 20px -10px rgba(255, 255, 255, 0.15),
-                                    inset 0 0 0 1px rgba(255, 255, 255, 0.3),
-                                    0 5px 10px rgba(0, 0, 0, 0.1),
-                                    0 8px 16px rgba(0, 0, 0, 0.1);
-                            }
-
-                            .submit-btn:hover .text {
-                                transform: translateX(333px);
-                                color: #ffffff;
-                            }
-
+                        @media (max-width: 768px) {
                             .submit-btn:hover .icon {
-                                transform: translateX(45px);
-                                /* Adjusted to move to the middle */
-                                color: #ffffff;
+                                transform: translateX(40px);
+                                /* Reduced movement for smaller screens */
                             }
+                        }
 
-                            @media (max-width: 768px) {
-                                .submit-btn:hover .icon {
-                                    transform: translateX(40px);
-                                    /* Reduced movement for smaller screens */
-                                }
-                            }
-
-                            .submit-btn:active {
-                                transform: translateY(3px);
-                                box-shadow:
-                                    inset 0 15px 15px -15px rgba(0, 0, 0, 0.3),
-                                    inset 0 0 0 1px rgba(255, 255, 255, 0.1),
-                                    0 2px 5px rgba(0, 0, 0, 0.1),
-                                    0 5px 10px rgba(0, 0, 0, 0.1);
-                            }
-                        </style>
-                    </form>
-                </div>
+                        .submit-btn:active {
+                            transform: translateY(3px);
+                            box-shadow:
+                                inset 0 15px 15px -15px rgba(0, 0, 0, 0.3),
+                                inset 0 0 0 1px rgba(255, 255, 255, 0.1),
+                                0 2px 5px rgba(0, 0, 0, 0.1),
+                                0 5px 10px rgba(0, 0, 0, 0.1);
+                        }
+                    </style>
+                </form>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
-    <style>
-        @media (max-width: 991px) {
-            #contact .row {
-                display: flex;
-                flex-direction: column;
-            }
-
-            #contact-form {
-                order: 2;
-            }
-
-            #contact-info {
-                order: 1;
-            }
+<style>
+    @media (max-width: 991px) {
+        #contact .row {
+            display: flex;
+            flex-direction: column;
         }
-    </style>
+
+        #contact-form {
+            order: 2;
+        }
+
+        #contact-info {
+            order: 1;
+        }
+    }
+</style>
 
     <section id="newsletter-cta" class="py-4 mb-0">
         <div class="container-fluid px-5">
@@ -5456,7 +5061,6 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         }
     </style>
-
 
     <!-- END -->
 
