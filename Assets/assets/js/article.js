@@ -36,6 +36,70 @@ function findArticleById(id) {
   return null;
 }
 
+function getArticleMetadata() {
+  const article = findArticleById(getArticleIdFromUrl());
+  if (!article) return null;
+  
+  return {
+    title: article.title,
+    description: article.lead?.split('<br>')[0] || '',
+    url: window.location.href,
+    image: article.image
+  };
+}
+
+// Social sharing functions
+function shareOnTwitter() {
+  const metadata = getArticleMetadata();
+  if (!metadata) return;
+  
+  const text = `${metadata.title}\n\n${metadata.description.substring(0, 100)}...`;
+  const shareUrl = `https://twitter.com/intent/tweet?text=${encodeURIComponent(text)}&url=${encodeURIComponent(metadata.url)}`;
+  window.open(shareUrl, '_blank', 'width=550,height=420');
+}
+
+function shareOnWhatsApp() {
+  const metadata = getArticleMetadata();
+  if (!metadata) return;
+  
+  const text = `${metadata.title}\n\n${metadata.description.substring(0, 100)}...\n\n`;
+  const shareUrl = `https://api.whatsapp.com/send?text=${encodeURIComponent(text + metadata.url)}`;
+  window.open(shareUrl, '_blank');
+}
+
+function shareOnFacebook() {
+  const metadata = getArticleMetadata();
+  if (!metadata) return;
+  
+  const shareUrl = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(metadata.url)}`;
+  window.open(shareUrl, '_blank', 'width=550,height=420');
+}
+
+function copyArticleLink() {
+  const metadata = getArticleMetadata();
+  if (!metadata) return;
+
+  navigator.clipboard.writeText(metadata.url).then(() => {
+    const copyIcon = document.querySelector('.social-icon.copy svg');
+    if (copyIcon) {
+      // Save original SVG content
+      const originalSvg = copyIcon.innerHTML;
+      
+      // Replace with checkmark SVG
+      copyIcon.innerHTML = `
+        <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/>
+      `;
+      
+      // Reset back to link icon after 2 seconds
+      setTimeout(() => {
+        copyIcon.innerHTML = originalSvg;
+      }, 2000);
+    }
+  }).catch(err => {
+    console.error('Failed to copy:', err);
+  });
+}
+
 function renderFullArticle(post) {
   console.log('Rendering article:', post);
   const articleContainer = document.getElementById('article-container');
@@ -44,6 +108,40 @@ function renderFullArticle(post) {
     return;
   }
   
+  const socialShareHTML = `
+    <div class="social-share-container mb-4 shimmer-wrapper">
+      <div class="d-flex flex-column align-items-start gap-3">
+        <h5 class="share-title mb-0">Share this article</h5>
+        <div class="social-share-icons shimmer">
+          <a href="#" onclick="shareOnTwitter(); return false;" class="social-icon x-twitter" aria-label="Share on X (Twitter)">
+            <span class="tooltip">Twitter</span>
+            <svg class="x-logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+              <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+            </svg>
+          </a>
+          <a href="#" onclick="shareOnWhatsApp(); return false;" class="social-icon whatsapp" aria-label="Share on WhatsApp">
+            <span class="tooltip">WhatsApp</span>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+              <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+            </svg>
+          </a>
+          <a href="#" onclick="shareOnFacebook(); return false;" class="social-icon facebook" aria-label="Share on Facebook">
+            <span class="tooltip">Facebook</span>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+              <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+            </svg>
+          </a>
+          <a href="#" onclick="copyArticleLink(); return false;" class="social-icon copy" aria-label="Copy link">
+            <span class="tooltip">Copy Link</span>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+              <path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  `;
+
   articleContainer.innerHTML = `
     <article class="pb-5 blog-article">
       <h2 class="display-5 link-body-emphasis mb-3">
@@ -93,8 +191,16 @@ function renderFullArticle(post) {
         <h3 class="mt-4 mb-3">Conclusion</h3>
         <p>${post.conclusion}</p>
       ` : ''}
+      
+      ${socialShareHTML}
     </article>
   `;
+
+  // Remove shimmer effect after content loads
+  setTimeout(() => {
+    const shimmerElements = document.querySelectorAll('.shimmer');
+    shimmerElements.forEach(el => el.classList.remove('shimmer'));
+  }, 1000);
 }
 
 // Add this function to article.js
@@ -102,55 +208,61 @@ function renderLatestPosts() {
   const latestPostsContainer = document.querySelector('.latest-posts .row');
   if (!latestPostsContainer) return;
 
-  // Get all articles from both main and featured articles
-  const allArticles = allBlogPosts.flatMap(post => [
-    post,
-    ...(post.featuredArticles || [])
-  ]);
+  // Show shimmer loading first
+  latestPostsContainer.innerHTML = Array(3).fill(createShimmerCard()).join('');
 
-  // Parse dates and sort articles (newest first)
-  const sortedArticles = allArticles.sort((a, b) => {
-    // Parse dates using a consistent format
-    const dateA = new Date(parseCustomDate(a.date));
-    const dateB = new Date(parseCustomDate(b.date));
-    return dateB - dateA; // Sort in descending order (newest first)
-  });
+  // Simulate loading delay and then render actual content
+  setTimeout(() => {
+    // Get all articles from both main and featured articles
+    const allArticles = allBlogPosts.flatMap(post => [
+      post,
+      ...(post.featuredArticles || [])
+    ]);
 
-  // Take the latest 3 articles
-  const latestArticles = sortedArticles.slice(0, 3);
+    // Parse dates and sort articles (newest first)
+    const sortedArticles = allArticles.sort((a, b) => {
+      // Parse dates using a consistent format
+      const dateA = new Date(parseCustomDate(a.date));
+      const dateB = new Date(parseCustomDate(b.date));
+      return dateB - dateA; // Sort in descending order (newest first)
+    });
 
-  latestPostsContainer.innerHTML = latestArticles.map(post => `
-    <div class="col-md-12">
-      <a href="article.html?id=${post.id}" class="latest-post-card-link">
-        <div class="card border-0 latest-post-card-hover">
-          <div class="row g-0">
-            <div class="col-md-4">
-              <img src="${post.image}"
-                class="img-fluid rounded-start w-100 h-100" 
-                alt="${post.title}"
-                style="object-fit: cover; height: 250px;">
-            </div>
-            <div class="col-md-8">
-              <div class="card-body p-4">
-                <span class="badge mb-2"
-                  style="background-color: #7209d4;">${post.category}</span>
-                <h5 class="card-title fw-bold">${post.title}</h5>
-                <div class="post-meta d-flex align-items-center mb-2">
-                  <span class="text-muted small">
-                    <i class="far fa-calendar-alt me-1"></i>
-                    ${formatDate(post.date)}
-                  </span>
+    // Take the latest 3 articles
+    const latestArticles = sortedArticles.slice(0, 3);
+
+    latestPostsContainer.innerHTML = latestArticles.map(post => `
+      <div class="col-md-12">
+        <a href="article.html?id=${post.id}" class="latest-post-card-link">
+          <div class="card border-0 latest-post-card-hover">
+            <div class="row g-0">
+              <div class="col-md-4">
+                <img src="${post.image}"
+                  class="img-fluid rounded-start w-100 h-100" 
+                  alt="${post.title}"
+                  style="object-fit: cover; height: 250px;">
+              </div>
+              <div class="col-md-8">
+                <div class="card-body p-4">
+                  <span class="badge mb-2"
+                    style="background-color: #7209d4;">${post.category}</span>
+                  <h5 class="card-title fw-bold">${post.title}</h5>
+                  <div class="post-meta d-flex align-items-center mb-2">
+                    <span class="text-muted small">
+                      <i class="far fa-calendar-alt me-1"></i>
+                      ${formatDate(post.date)}
+                    </span>
+                  </div>
+                  <p class="card-text text-muted">
+                    ${post.lead.split('<br>')[0].substring(0, 150)}...
+                  </p>
                 </div>
-                <p class="card-text text-muted">
-                  ${post.lead.split('<br>')[0].substring(0, 150)}...
-                </p>
               </div>
             </div>
           </div>
-        </div>
-      </a>
-    </div>
-  `).join('');
+        </a>
+      </div>
+    `).join('');
+  }, 1000); // Show shimmer for 1 second
 }
 
 // Helper function to parse custom date formats
@@ -197,126 +309,171 @@ function formatDate(dateStr) {
   return date.toLocaleDateString('en-US', options);
 }
 
+// Add at the top with other functions
+function createShimmerCard() {
+  return `
+    <div class="col-md-12">
+      <div class="card border-0">
+        <div class="row g-0">
+          <div class="col-md-4">
+            <div class="shimmer shimmer-image"></div>
+          </div>
+          <div class="col-md-8">
+            <div class="card-body p-4">
+              <div class="shimmer shimmer-badge"></div>
+              <div class="shimmer shimmer-title"></div>
+              <div class="shimmer shimmer-text"></div>
+              <div class="shimmer shimmer-text"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  `;
+}
+
 // Main execution when DOM is loaded
 document.addEventListener('DOMContentLoaded', function() {
-  const articleId = getArticleIdFromUrl();
-  if (!articleId) {
-    console.error('No article ID found in URL');
-    return;
-  }
-
-  const article = findArticleById(articleId);
-  if (article) {
-    renderFullArticle(article);
-    // Add this line to render latest posts
-    renderLatestPosts();
-  } else {
-    const articleContainer = document.getElementById('article-container');
-    // Get 3 random articles as suggestions
-    const suggestedArticles = allBlogPosts
-      .flatMap(post => [post, ...(post.featuredArticles || [])])
-      .sort(() => 0.5 - Math.random())
-      .slice(0, 3);
-
+  const articleContainer = document.getElementById('article-container');
+  
+  // Show shimmer loading first
+  if (articleContainer) {
     articleContainer.innerHTML = `
-      <style>
-        .suggested-card {
-          height: 100%;
-          transition: transform 0.2s;
-          border-radius: 10px;
-          overflow: hidden;
-        }
-        .suggested-card:hover {
-          transform: translateY(-5px);
-        }
-        .suggested-card .card-img-top {
-          height: 200px;
-          object-fit: cover;
-        }
-        .suggested-card .card-body {
-          height: 250px;
-          display: flex;
-          flex-direction: column;
-        }
-        .suggested-card .card-title {
-          font-size: 1.1rem;
-          line-height: 1.4;
-          margin-bottom: 0.5rem;
-          display: -webkit-box;
-          -webkit-line-clamp: 2;
-          -webkit-box-orient: vertical;
-          overflow: hidden;
-        }
-        .suggested-card .card-text {
-          flex-grow: 1;
-          font-size: 0.9rem;
-          display: -webkit-box;
-          -webkit-line-clamp: 3;
-          -webkit-box-orient: vertical;
-          overflow: hidden;
-        }
-        .category-badge {
-          background-color: #6f42c1 !important;
-          color: white;
-          font-size: 0.8rem;
-          padding: 0.4rem 0.8rem;
-        }
-        .btn-custom-purple {
-          background-color: #7209d4;
-          border-color: #7209d4;
-          color: white;
-          border-radius: 10px;
-          padding: 0.5rem 1.5rem;
-          transition: all 0.3s ease;
-        }
-        .btn-custom-purple:hover {
-          background-color: #5f07af;
-          border-color: #5f07af;
-          color: white;
-        }
-        .btn-outline-custom-purple {
-          color: #7209d4;
-          border-color: #7209d4;
-          border-radius: 10px;
-          transition: all 0.3s ease;
-        }
-        .btn-outline-custom-purple:hover {
-          background-color: #7209d4;
-          color: white;
-        }
-      </style>
-      <div class="article-not-found text-center py-5">
-        <div class="mb-5">
-          <svg class="text-muted mb-4" style="width: 64px; height: 64px;" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.172 16.172a4 4 0 015.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-          </svg>
-          <h2 class="display-6 mb-3">Article Not Found</h2>
-          <p class="lead text-muted">Sorry, we couldn't find the article you're looking for.</p>
-          
-        </div>
-        
-        <div class="suggested-articles mt-5">
-          <h3 class="h4 mb-4">You might be interested in:</h3>
-          <div class="row g-4">
-            ${suggestedArticles.map(article => `
-              <div class="col-md-4">
-                <div class="card suggested-card border" style="border: 1px solid #e0e0e0 !important;">
-                  <img src="${article.image}" class="card-img-top" alt="${article.title}">
-                  <div class="card-body">
-                    <div class="d-flex justify-content-between align-items-center mb-2">
-                      <span class="badge category-badge">${article.category}</span>
-                    </div>
-                    <h5 class="card-title">${article.title}</h5>
-                    <p class="card-text">${article.lead}</p>
-                    <a href="article.html?id=${article.id}" class="btn btn-outline-custom-purple btn-sm mt-auto">Read Article</a>
-                  </div>
-                </div>
-              </div>
-            `).join('')}
-          </div>
+      <div class="shimmer-card">
+        <div class="shimmer shimmer-image"></div>
+        <div class="card-body">
+          <div class="shimmer shimmer-title"></div>
+          <div class="shimmer shimmer-text"></div>
+          <div class="shimmer shimmer-text"></div>
         </div>
       </div>
     `;
   }
+
+  // Rest of your existing code...
+  const articleId = getArticleIdFromUrl();
+  
+  setTimeout(() => {
+    if (!articleId) {
+      console.error('No article ID found in URL');
+      renderLatestPosts();
+      return;
+    }
+
+    const article = findArticleById(articleId);
+    if (article) {
+      renderFullArticle(article);
+      renderLatestPosts();
+    } else {
+      const articleContainer = document.getElementById('article-container');
+      // Get 3 random articles as suggestions
+      const suggestedArticles = allBlogPosts
+        .flatMap(post => [post, ...(post.featuredArticles || [])])
+        .sort(() => 0.5 - Math.random())
+        .slice(0, 3);
+
+      articleContainer.innerHTML = `
+        <style>
+          .suggested-card {
+            height: 100%;
+            transition: transform 0.2s;
+            border-radius: 10px;
+            overflow: hidden;
+          }
+          .suggested-card:hover {
+            transform: translateY(-5px);
+          }
+          .suggested-card .card-img-top {
+            height: 200px;
+            object-fit: cover;
+          }
+          .suggested-card .card-body {
+            height: 250px;
+            display: flex;
+            flex-direction: column;
+          }
+          .suggested-card .card-title {
+            font-size: 1.1rem;
+            line-height: 1.4;
+            margin-bottom: 0.5rem;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+          }
+          .suggested-card .card-text {
+            flex-grow: 1;
+            font-size: 0.9rem;
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+          }
+          .category-badge {
+            background-color: #6f42c1 !important;
+            color: white;
+            font-size: 0.8rem;
+            padding: 0.4rem 0.8rem;
+          }
+          .btn-custom-purple {
+            background-color: #7209d4;
+            border-color: #7209d4;
+            color: white;
+            border-radius: 10px;
+            padding: 0.5rem 1.5rem;
+            transition: all 0.3s ease;
+          }
+          .btn-custom-purple:hover {
+            background-color: #5f07af;
+            border-color: #5f07af;
+            color: white;
+          }
+          .btn-outline-custom-purple {
+            color: #7209d4;
+            border-color: #7209d4;
+            border-radius: 10px;
+            transition: all 0.3s ease;
+          }
+          .btn-outline-custom-purple:hover {
+            background-color: #7209d4;
+            color: white;
+          }
+        </style>
+        <div class="article-not-found text-center py-5">
+          <div class="mb-5">
+            <svg class="text-muted mb-4" style="width: 64px; height: 64px;" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.172 16.172a4 4 0 015.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+            <h2 class="display-6 mb-3">Article Not Found</h2>
+            <p class="lead text-muted">Sorry, we couldn't find the article you're looking for.</p>
+            
+          </div>
+          
+          <div class="suggested-articles mt-5">
+            <h3 class="h4 mb-4">You might be interested in:</h3>
+            <div class="row g-4">
+              ${suggestedArticles.map(article => `
+                <div class="col-md-4">
+                  <div class="card suggested-card border" style="border: 1px solid #e0e0e0 !important;">
+                    <img src="${article.image}" class="card-img-top" alt="${article.title}">
+                    <div class="card-body">
+                      <div class="d-flex justify-content-between align-items-center mb-2">
+                        <span class="badge category-badge">${article.category}</span>
+                      </div>
+                      <h5 class="card-title">${article.title}</h5>
+                      <p class="card-text">${article.lead}</p>
+                      <a href="article.html?id=${article.id}" class="btn btn-outline-custom-purple btn-sm mt-auto">Read Article</a>
+                    </div>
+                  </div>
+                </div>
+              `).join('')}
+            </div>
+          </div>
+        </div>
+      `;
+      
+      renderLatestPosts();
+    }
+  }, 1000); // Show shimmer for 1 second
 });
 

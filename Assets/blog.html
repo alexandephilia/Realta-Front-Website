@@ -24,7 +24,7 @@
     <link rel="stylesheet" href="assets/css/responsive.css">
     <link rel="stylesheet" href="assets/css/blog-micro.css">
     <link rel="stylesheet" href="assets/css/navbar-micro.css">
-
+    <link rel="stylesheet" href="assets/css/shimmer.css">
 
 
     <!-- Fonts -->
@@ -53,6 +53,9 @@
     <script src="assets/js/slider.js"></script>
     <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+    <!-- Add this in the head section -->
+    <link rel="stylesheet" href="assets/css/featured-mobile.css">
 
 </head>
 
@@ -169,6 +172,36 @@
 </style>
 <!-- Custom styles for this template -->
 </head>
+
+<style>
+    /* Mobile-specific styles */
+    @media (max-width: 768px) {
+        /* Reorder sidebar sections */
+        .col-md-4 > div:nth-of-type(1) {
+            order: 2;
+            margin-bottom: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .col-md-4 > div:nth-of-type(2) {
+            order: 1;
+            margin-bottom: 1rem;
+        }
+        
+        /* Force flex display on parent */
+        .col-md-4 {
+            display: flex !important;
+            flex-direction: column !important;
+        }
+        
+        /* Ensure proper spacing */
+        .custom-about-section,
+        .categories-container {
+            width: calc(100% - 30px) !important;
+            margin: 0 15px !important;
+        }
+    }
+</style>
 
 
 <header>
@@ -1296,7 +1329,7 @@
 
                     <!-- Add this line below the search container -->
                 </div>
-                <h2 class="latest-post-title pb-4 mb-4 text-center gradient-text">
+                <h2 class="realta-insights-title pb-4 mb-4 text-center gradient-text">
                     Realta Insights
                 </h2>
                 <div id="featured-articles-container" class="">
@@ -1304,7 +1337,37 @@
                 </div>
             </section>
 
+
             <style>
+                .realta-insights-title {
+                    font-family: 'Proxima Nova', sans-serif;
+                    font-weight: bold;
+                    position: relative;
+                    display: inline-block;
+                }
+
+                .realta-insights-title::after {
+                    content: '';
+                    position: absolute;
+                    left: 0;
+                    bottom: 15px;
+                    width: 100%;
+                    height: 2px;
+                    background: linear-gradient(90deg, #7209d4, #2832d4 33%, #00a5b2);
+                    background-size: 100% 100%;
+                    background-repeat: no-repeat;
+                }
+
+                /* Dark mode styles */
+                body.dark-mode .realta-insights-title {
+                    color: #ffffff;
+                }
+
+                body.dark-mode .realta-insights-title::after {
+                    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 2' preserveAspectRatio='none'%3E%3Cpath d='M0,1 C25,0 75,2 100,1' stroke='%23ffffff' fill='none' stroke-width='2'/%3E%3C/svg%3E");
+                }
+
+
                 .latest-post-title {
                     font-family: 'Proxima Nova', sans-serif;
                     font-weight: bold;
@@ -1337,7 +1400,7 @@
             </style>
 
             <div class="row g-5 pt-4">
-                <div class="col-md-8 p-4">
+                <div class="col-md-8 p-4 mb-4">
                     <h2 class="latest-post-title pb-4 mb-4 gradient-text">
                         Latest Posts
                     </h2>
@@ -1554,65 +1617,8 @@
                             style="font-family: 'Proxima Nova', sans-serif; font-weight: bold;">
                             Categories
                         </h4>
-
-                        <!-- Category Cards -->
                         <div class="category-list">
-                            <!-- Technology Category -->
-                            <div class="category-card">
-                                <div class="category-icon">
-                                    <i class="fas fa-tags"></i>
-                                </div>
-                                <div class="category-content">
-                                    <h5 class="category-title">Technology</h5>
-                                    <span class="category-count">24 articles</span>
-                                </div>
-                            </div>
-
-                            <!-- Business Solutions Category -->
-                            <div class="category-card">
-                                <div class="category-icon">
-                                    <i class="fas fa-tags"></i>
-                                </div>
-                                <div class="category-content">
-                                    <h5 class="category-title">Business Solutions</h5>
-                                    <span class="category-count">18 articles</span>
-                                </div>
-                            </div>
-
-                            <!-- Cloud Computing Category -->
-                            <div class="category-card">
-                                <div class="category-icon">
-                                    <i class="fas fa-tags"></i>
-                                </div>
-                                <div class="category-content">
-                                    <h5 class="category-title">Cloud Computing</h5>
-                                    <span class="category-count">15 articles</span>
-                                </div>
-                            </div>
-
-                            <!-- Cybersecurity Category -->
-                            <div class="category-card">
-                                <div class="category-icon">
-                                    <i class="fas fa-tags"></i>
-                                </div>
-                                <div class="category-content">
-                                    <h5 class="category-title">Cybersecurity</h5>
-                                    <span class="category-count">12 articles</span>
-                                </div>
-                            </div>
-
-                            <!-- Digital Transformation Category -->
-                            <div class="category-card">
-                                <div class="category-icon">
-                                    <i class="fas fa-tags"></i>
-                                </div>
-                                <div class="category-content">
-                                    <h5 class="category-title">Digital Transformation</h5>
-                                    <span class="category-count">20 articles</span>
-                                </div>
-                            </div>
-
-
+                            <!-- Categories will be dynamically inserted here by JavaScript -->
                         </div>
                     </div>
 
@@ -1705,6 +1711,35 @@
 
                         body.dark-mode .category-icon i {
                             color: #b388ff;
+                        }
+                    </style>
+
+                    <!-- Add this style block after the existing categories-container styles -->
+                    <style>
+                        @media (max-width: 768px) {
+                            /* Target the specific sidebar column */
+                            .col-md-4 {
+                                display: flex !important;
+                                flex-direction: column !important;
+                            }
+                            
+                            /* Target the subscription section specifically */
+                            .col-md-4 > .custom-about-section {
+                                order: 2 !important;
+                                margin-top: 1rem !important;
+                            }
+                            
+                            /* Target the categories container specifically */
+                            .col-md-4 > .categories-container {
+                                order: 1 !important;
+                            }
+                            
+                            /* Adjust spacing */
+                            .col-md-4 > .custom-about-section,
+                            .col-md-4 > .categories-container {
+                                margin-left: 15px !important;
+                                margin-right: 15px !important;
+                            }
                         }
                     </style>
                 </div>
@@ -1906,6 +1941,7 @@
         // Also call it on initial load
         document.addEventListener('DOMContentLoaded', applyDarkMode);
     </script>
+
 
 
 </body>

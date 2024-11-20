@@ -24,6 +24,7 @@
     <link rel="stylesheet" href="assets/css/mobilenav.css">
     <link rel="stylesheet" href="assets/css/responsive.css">
     <link rel="stylesheet" href="assets/css/navbar-micro.css">
+    <link rel="stylesheet" href="assets/css/shimmer.css">
 
 
 
@@ -1485,34 +1486,6 @@
                 <div id="article-container">
                     <!-- Article content will be loaded here -->
                 </div>
-
-                <!-- Replace the existing social share buttons section with this -->
-                <div class="social-share-container mb-4">
-                    <div class="d-flex align-items-center gap-2">
-                        <span class="share-text me-2">Share:</span>
-                        <div class="social-share-icons">
-                            <!-- Twitter -->
-                            <a href="#" onclick="shareOnTwitter()" class="social-icon twitter">
-                                <i class="fab fa-twitter"></i>
-                            </a>
-
-                            <!-- WhatsApp -->
-                            <a href="#" onclick="shareOnWhatsApp()" class="social-icon whatsapp">
-                                <i class="fab fa-whatsapp"></i>
-                            </a>
-
-                            <!-- Instagram -->
-                            <a href="#" onclick="shareOnInstagram()" class="social-icon instagram">
-                                <i class="fab fa-instagram"></i>
-                            </a>
-
-                            <!-- Copy Link -->
-                            <a href="#" onclick="copyArticleLink()" class="social-icon copy">
-                                <i class="fas fa-link"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
             </div>
 
             <div class="col-md-4 sidebar-column pb-5">
@@ -1747,84 +1720,7 @@
     </script>
 
     <!-- Replace the existing social share styles with these -->
-    <style>
-        .social-share-container {
-            padding: 15px 0;
-            border-top: 1px solid #eee;
-            border-bottom: 1px solid #eee;
-        }
-
-        .share-text {
-            font-family: 'Proxima Nova', sans-serif;
-            font-weight: 500;
-            color: #666;
-            font-size: 0.9rem;
-        }
-
-        .social-share-icons {
-            display: flex;
-            gap: 10px;
-            align-items: center;
-        }
-
-        .social-icon {
-            width: 35px;
-            height: 35px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #fff;
-            text-decoration: none;
-            transition: all 0.3s ease;
-        }
-
-        .social-icon i {
-            font-size: 1rem;
-        }
-
-        .social-icon.twitter {
-            background: #1DA1F2;
-        }
-
-        .social-icon.whatsapp {
-            background: #25D366;
-        }
-
-        .social-icon.instagram {
-            background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
-        }
-
-        .social-icon.copy {
-            background: #6c757d;
-        }
-
-        .social-icon:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15);
-            color: #fff;
-        }
-
-        /* Dark mode styles */
-        body.dark-mode .social-share-container {
-            border-color: #404040;
-        }
-
-        body.dark-mode .share-text {
-            color: #a0aec0;
-        }
-
-        @media (max-width: 576px) {
-            .social-icon {
-                width: 32px;
-                height: 32px;
-            }
-
-            .social-icon i {
-                font-size: 0.9rem;
-            }
-        }
-    </style>
+   
 
     <script>
         function shareOnTwitter() {
