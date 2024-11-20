@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
     <title>Realta Chakradarma | Home</title>
 
     <!-- the favicon -->
@@ -101,12 +101,6 @@
 
     }
 
-    header {
-        overflow: hidden !important;
-        /* This will keep the header content hidden if it overflows */
-    }
-
-
 
     #mainNav {
         position: fixed;
@@ -116,6 +110,7 @@
         right: 0;
         z-index: 1030;
         height: 80px;
+        transition: all 0.3s ease-in-out
         /* Fixed height instead of percentage */
     }
 
@@ -4746,6 +4741,14 @@
                 order: 1;
             }
         }
+
+        .gradient-newsletter {
+            background:linear-gradient(90deg, #7209d4, #2832d4 33%, #00a5b2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            display: inline-block;
+            font-size: 2rem;
+        }
     </style>
 
    
@@ -4755,7 +4758,7 @@
     <div class="container-fluid px-5">
         <div class="row align-items-center">
             <div class="col-md-7 text-start">
-                <h2 class="mb-3 fw-bold gradient-text">Stay Informed, Stay Ahead</h2>
+                <h2 class="mb-3 fw-bold gradient-newsletter">Stay Informed, Stay Ahead</h2>
                 <p class="mb-4">Join our newsletter for exclusive insights and expert tips.</p>
                 <form class="mb-3">
                     <div class="input-group input-group-lg" style="max-width: 500px;">
