@@ -61,7 +61,39 @@
    
 
     <style>
+        .btn-outline-secondary {
+            color: #ffffff;
+            border-color: #35743f;
+            background-color: #35743f !important;
+            background: transparent;
+            transition: all 0.3s ease;
+            padding: 10px 25px;
+            font-weight: 500;
+            font-size: 18px;
+        }
 
+        .btn-outline-secondary:hover {
+            color: #fff;
+            background-color: #35743f;
+            border-color: #35743f;
+        }
+
+        .btn-outline-secondary:focus {
+            box-shadow: 0 0 0 0.25rem rgba(53, 116, 63, 0.25);
+        }
+
+        .btn-outline-secondary:active {
+            color: #fff;
+            background-color: #2b5d33;
+            border-color: #2b5d33;
+        }
+
+        @media (max-width: 768px) {
+            .btn-outline-secondary {
+                font-size: 15px;
+                padding: 8px 20px;
+            }
+        }
         /* Fix section spacing */
         section {
             overflow: hidden !important;
@@ -731,7 +763,7 @@
             <div class="announcement-content">
                 <!-- Logo on the left -->
                 <div class="announcement-logo">
-                    <img src="assets/img/realta.png" alt="Realta Logo" class="announcement-logo-img">
+                    <img src="assets/img/golf.png" alt="Realta Logo" class="announcement-logo-img">
                 </div>
                 
                 <!-- Navigation links on the right -->
@@ -756,7 +788,7 @@
         <style>
         /* Base announcement bar */
         .top-announcement-bar {
-            background-color: rgb(240, 240, 240);
+            background-color: rgb(248, 248, 248);
             position: fixed;
             top: 66px;
             left: 0;
@@ -764,7 +796,7 @@
             z-index: 1029;
             height: 44px;
             border-bottom: 1px solid rgba(0,0,0,0.1);
-            box-shadow: 0 2px px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
         }
     
         /* Content container */
@@ -783,7 +815,7 @@
         }
     
         .announcement-logo-img {
-            height: 24px;
+            height: 38px;
             width: auto;
         }
     
@@ -988,27 +1020,29 @@
         <section class="carousel-header">
             <div id="headerCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="5000">
                 <div class="carousel-inner">
-                    <div class="carousel-item active" data-bg-image="assets/img/erp/banne.webp">
+                    <div class="carousel-item active" data-bg-image="assets/img/golf/Banner1.jpg">
                         <div class="carousel-content">
-                            <h1>ERP, EAM, WMS* &<br>Business Intelligence Solution</h1>
-                            <div class="badge">Medium and Large Enterprise</div>
-                            <p>PT Bisnis Sistem Indonesia was founded to be your partner for successful ERP, EAM, WMS & Business Intelligence implementation. At the heart of any ERP, EAM, WMS & Business Intelligence implementation is the need to sustain growth and increase market share. Those 4 systems when properly implemented gives Visibility and Control over day to day activities such that analysis and improvements can be performed. To this end, PTBSI has helped countless clients to fully align their business processes since 1998.</p>
+                            <h1>Rhapsody Golf To Orchestrate Your Entire Golf Club Operation </h1>
+                            <div class="badge">Elite Golf Operations</div>
+                            <p>Rhapsody Golf is a proven, feature-rich set of golf course system that raises the level of professionalism and service to your members and guests. Rhapsody Golf has helped many prestigious reputable golf clubs streamline their business processes, drive revenues and increase member satisfaction. By fully integrating all key aspects of golf course operation, Rhapsody Golf sets the standard for golf course system in Indonesia.</p>
                             <button class="erp-learn-btn">Learn More</button>
                         </div>
                     </div>
-                    <div class="carousel-item" data-bg-image="assets/img/erp/banner2.webp">
+                    <div class="carousel-item" data-bg-image="assets/img/golf/Banner2.jpg">
                         <div class="carousel-content">
-                            <h1>Streamline Your Business<br>Operations</h1>
-                            <div class="badge">Enterprise Solutions</div>
-                            <p>Transform your business with our comprehensive suite of enterprise solutions. Our integrated systems provide real-time insights, improve efficiency, and drive growth across your organization.</p>
+                            <h1>Indonesian Golf Courses A Spectrum of Challenge and Beauty for Every Golfer </h1>
+                            <div class="badge">Diverse Greens in Paradise</div>
+                            <p>Indonesian golf courses appeal to every caliber of player from beginner/recreational, amateur, to professional players because of the quality of the courses and the spectacular settings of the location.
+                                With many VIP executives as club members, the golf course alone is not enough to attract members. Golf course owners and operators have to link a bit more outside the box than ever. They need to have the right tools to administer the entire operation of the golf course.
+                            </p>
                             <button class="erp-learn-btn">Discover More</button>
                         </div>
                     </div>
-                    <div class="carousel-item" data-bg-image="assets/img/erp/banner3.webp">
+                    <div class="carousel-item" data-bg-image="assets/img/golf/banner-home.jpg">
                         <div class="carousel-content">
-                            <h1>Digital Transformation<br>Made Simple</h1>
-                            <div class="badge">Innovation & Technology</div>
-                            <p>Embrace the future of business with our cutting-edge solutions. We help you navigate the digital landscape and implement technologies that drive sustainable growth.</p>
+                            <h1>Tailored Digital Solutions for Golf Courses</h1>
+                            <div class="badge">Golf Industry Expertise</div>
+                            <p>As a result of accumulated experience and knowledge since 1983, we have gained a profound understanding and insight of what the golf courses really need. With our experience, knowledge and technology, we have been able to deliver a solution, rich with features that are unique to the golf industry, and this is Golf Course System Indonesia.</p>
                             <button class="erp-learn-btn">Get Started</button>
                         </div>
                     </div>
@@ -1071,7 +1105,7 @@
                 text-align: center;
                 color: #fff;
                 padding: 20px;
-                max-width: 1000px;
+                max-width: 1300px;
                 z-index: 2;
                 top: 50%;
                 left: 50%;
@@ -1102,7 +1136,7 @@
 
             .carousel-content .badge {
                 display: inline-block;
-                background: rgba(144, 84, 208, 0.432);
+                background: rgba(84, 208, 84, 0.432);
                 padding: 8px 16px;
                 border-radius: 50px;
                 font-size: 1.1rem;
@@ -1136,7 +1170,7 @@
                 max-width: 280px;
                 font-size: 1rem;
                 padding: 10px 20px;
-                background: linear-gradient(135deg, #9054d0 0%, #7a4bd7 100%);
+                background: linear-gradient(287deg, #2ecc71, #27ae60, #106617);
                 color: #fff;
                 border: none;
                 border-radius: 6px;
@@ -1162,7 +1196,7 @@
             .erp-learn-btn:hover {
                 transform: translateY(-2px);
                 box-shadow: 0 6px 20px rgba(144, 84, 208, 0.4);
-                background: linear-gradient(135deg, #7a4bd7 0%, #9054d0 100%);
+                background: linear-gradient(287deg, #2ecc71, #27ae60, #106617)
             }
 
             .carousel-control-prev,
@@ -1412,7 +1446,7 @@
     </script>
 
 
-    <section id="ict-one-solution" class="ict-one-solution container-fluid container-lg px-2" style="margin-top: 5%;">
+    <section id="ict-one-solution" class="ict-one-solution " style="margin-top: 5%;">
         <div class="container-fluid">
             <div class="row align-items-center">
                 <div class="col-md-6 fade-in-left">
@@ -1515,7 +1549,6 @@
     <style>
         .golf-separator {
             padding: 40px 0;
-            background-color: #f8f8f8;
         }
         .golf-divider {
             position: relative;
@@ -1622,7 +1655,6 @@
             gap: 15px;
             padding: 20px;
             border-radius: 15px;
-            max-width: 75%;
             margin: 0 auto;
         }
 
@@ -1753,8 +1785,8 @@
         }
     </style>
     
-    <section class="hr-solutions-grid container-fluid container-lg px-2">
-        
+    <section class="hr-solutions-grid">
+        <div class="container-fluid">
         <h2 class="hr-title">Why Rhapsody Golf</h2>
         <p class="hr-description" style="font-size: 20px;">Streamline your golf operations with our comprehensive solutions designed to enhance player experience, course management, and organizational efficiency.</p>
         <div class="hr-button-wrapper">
@@ -1884,6 +1916,7 @@
                 </ul>
             </article>
         </div>
+        </div>
     </section>
 
     <section id="cta" class="py-5 mt-5">
@@ -1965,7 +1998,7 @@
 
 <!-- Golf Micro Section: Showcasing Our Solutions -->
 <section id="golf-micro" class="py-5 clipped-section">
-    <div class="container-fluid container-lg px-3 p-4">
+    <div class="container-fluid">
         <div class="row justify-content-center">
             <div class="col-12 py-2 px-5">
                 <div>
@@ -2150,7 +2183,7 @@
 
 </section>
 <section id="integrations" class="py-4 p-3">
-    <div class="container-fluid container-lg px-5">
+    <div class="container-fluid">
         <div class="row align-items-center">
             <style>
                 /* Online indicator styles */
@@ -2201,6 +2234,7 @@
 
                 }
             </style>
+
             <div class="col-lg-6 partners-section">
                 <h2 class="mb-2 mt-4 glass-text" style="background: linear-gradient(287deg, #2ecc71, #27ae60, #106617); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">Our Partners</h2>
                 <p class="lead mb-3" style="max-width: 90%; font-size: 20px;">Rhapsody Golf is deeply committed to marketing excellence and innovation that will drive our customers' success. To enhance our solutions and provide real value for our customers, Rhapsody Golf has sought like-minded partners who deliver nothing but the best of the technology.</p>
@@ -2444,22 +2478,28 @@
     }
 </style>
 
-<section id="separator" class="" style="background-color: #efecff;">
-    <div class="container-fluid p-4">
-        <div class="banner">
-            <div class="banner-content">
-                <h2>Unlock superior coverage for your team</h2>
-                <p>Build a culture of employee delight by taking the first step towards Benefits</p>
-                <button class="btn-custom" onclick="scheduleCall()"
-                    style="background: linear-gradient(to bottom, #9054d0, #7a4bd7);">Schedule a call</button>
+
+
+<section id="separator" class="py-5" style="background-color: #efecff;">
+    <div class="container-fluid">
+        <div class="row justify-content-between">
+            <div class="col-lg-12">
+                <div class="banner p-5">
+                    <div class="banner-content">
+                        <h2>Unlock superior coverage for your team</h2>
+                        <p>Build a culture of employee delight by taking the first step towards Benefits</p>
+                        <button class="btn-custom" onclick="scheduleCall()"
+                            style="background: linear-gradient(to bottom, #9054d0, #7a4bd7);">Schedule a call</button>
+                    </div>
+                    <img src="assets/img/handshake.png" alt="Business Handshake" class="banner-image">
+                </div>
             </div>
-            <img src="assets/img/handshake.png" alt="Business Handshake" class="banner-image">
         </div>
     </div>
 </section>
 
 <section id="contact" class="pb-5">
-    <div class="container-fluid p-4">
+    <div class="container-fluid ">
         <div class="row justify-content-between">
             <div id="contact-info" class="col-lg-5 left-column >
                     <h1 class=" mb-3 contact-heading"
@@ -2776,7 +2816,7 @@
                         }
 
                         .submit-btn:hover .text {
-                            transform: translateX(320px);
+                            transform: translateX(420px);
                             color: #ffffff;
                         }
 
@@ -2966,8 +3006,6 @@
             }
         }
     </style>
-
-
     <!-- END -->
 
     <script>

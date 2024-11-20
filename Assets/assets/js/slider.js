@@ -1414,3 +1414,7 @@ function toggleCard(element, contentKey) {
         applyDarkModeToIndustryContent();
     }
 }
+
+
+
+

@@ -58,1216 +58,158 @@
     <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
+    
+ 
     <style>
-         /* Custom CSS */
-       
-        :root {
-            --primary-color: #007bff;
-            --secondary-color: #6c757d;
-            --accent-color: #ffc107;
-            --text-color: #333;
-            --bg-color: #f8f9fa;
-            --white: #ffffff;
-        }
-
-        body {
-            font-family: 'proxima-nova', sans-serif;
-        }
-
-        section {
-            position: relative;
-            padding-top: 0px !important;
-            padding-bottom: 0px !important;
-        }
-
-        /* Force Proxima Nova for all elements */
-
-        .navbar {
-            box-shadow: 0 3px 3px rgba(0, 0, 0, 0.068);
-
-        }
-
-        .navbar-brand {
-            font-weight: bold;
-            font-size: 1.8rem;
-            color: black;
-            transition: color 0.3s ease;
-        }
-
-        .navbar-brand img {
-            height: 50px !important;
-            /* Increased from 40px to 50px for larger size */
-            width: auto !important;
-            /* Maintain aspect ratio */
-            max-width: 100%;
-            /* Ensure it doesn't overflow its container */
-            object-fit: contain;
-            /* Maintain aspect ratio while fitting within dimensions */
-        }
-
-        .navbar-brand:hover {
-            color: #333;
-        }
-
-        .nav-link {
-            color: var(--text-color);
-            font-weight: 500 !important;
-            transition: color 0.3s ease, transform 0.5s cubic-bezier(0.68, -0.55, 0.27, 1.55), opacity 0.5s ease;
-            font-weight: bold !important;
-            opacity: 0;
-            font-size: 0.9rem !important;
-            transform: translateY(20px);
-            animation: slideInUp 0.5s cubic-bezier(0.68, -0.55, 0.27, 1.55) forwards;
-            animation-delay: calc(var(--nav-item-index, 0) * 0.1s);
-        }
-
-        .nav-link::after {
-            content: '';
-            position: absolute;
-            width: 0;
-            height: 2px;
-            bottom: -5px;
-            left: 0;
-            background-color: #9054d000;
-            transition: width var(--transition-speed) ease;
-        }
-
-        @keyframes slideInUp {
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-
-        body.dark-mode .nav-link {
-            color: white !important;
-        }
-
         .btn-outline-secondary {
-            text-shadow: none;
-            background-color: rgba(64, 98, 150, 0.911);
-            border-radius: 10px;
-            border-color: #4644b4;
-            color: white;
-            transition: all 0.3s ease;
-            padding: 0.375rem 0.75rem;
-            /* Reduced padding */
-            backdrop-filter: blur(5px);
-            -webkit-backdrop-filter: blur(5px);
-        }
-
-        .gradient-text {
-            background: linear-gradient(90deg, #7209d4, #9d28d4 33%, #8ddee4);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            color: transparent;
+            color: #ffffff !important;
+            border-color: none !important;
+            background: linear-gradient(287deg, #a0783b, #833ba0, #833ba0);
+            transition: all 0.3s ease !important;
+            padding: 10px 25px !important;
+            font-weight: 500 !important;
+            font-size: 18px !important;
+            border-radius: 10px !important;
         }
 
         .btn-outline-secondary:hover {
-            background-color: rgb(50, 88, 146);
-            border-color: #312f88;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            color: var(--white);
-            text-shadow: none;
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
+            color: #fff !important;
+            background: linear-gradient(287deg, #a0783b, #833ba0, #833ba0);
+            border-color: none !important;
         }
 
-        .btn-dark {
-            background-color: var(--text-color);
-            border: none;
+        .btn-outline-secondary:focus {
+            box-shadow: 0 0 0 0.25rem rgba(53, 116, 63, 0.25) !important;
+        }
+
+        .btn-outline-secondary:active {
+            color: #fff !important;
+            background: linear-gradient(287deg, #a0783b, #833ba0, #833ba0);
+            border-color: none !important;
+        }
+
+        @media (max-width: 768px) {
+            .btn-outline-secondary {
+                font-size: 15px !important;
+                padding: 8px 20px !important;
+            }
+        }
+
+        /* Fix section spacing */
+        section {
+            overflow: hidden !important;
+            width: 100% !important;
+            position: relative !important;
+        }
+    .dynamic-text-container {
+            font-size: 45px;
+            font-weight: 700;
+            height: 1em;
+            overflow: hidden;
+        }
+    
+        .letter {
+            display: inline-block;
+            opacity: 0;
+            transform: translateY(20px);
+            filter: blur(5px);
             transition: all 0.3s ease;
         }
-
-        .btn-dark:hover {
-            background-color: var(--primary-color);
+    
+        .letter.active {
+            opacity: 1;
+            transform: translateY(0);
+            filter: blur(0);
         }
-
-        .sub-nav {
-            background-color: var(--bg-color);
-            padding: 3px 0;
-            border-bottom: 1px solid #f2e9f6;
-            text-align: center;
+    
+        .letter.fade-out {
+            opacity: 0;
+            transform: translateY(-20px);
+            filter: blur(5px);
         }
-
-        body.dark-mode .sub-nav {
-            background-color: #30214d;
-            border-bottom-color: #1c1c1c;
-        }
-
-        .sub-nav .nav {
-            display: inline-flex;
-            justify-content: center;
-        }
-
-        .sub-nav .nav-item {
-            margin: 0 15px;
-            transition: transform 0.3s ease;
-        }
-
-        .sub-nav .nav-item:hover {
-            transform: translateY(-3px);
-        }
-
-
-        .sub-nav .nav-link {
-            color: var(--text-color);
-            text-decoration: none;
-            font-size: 1rem;
-            display: flex;
-            align-items: center;
-        }
-
-        body.dark-mode .sub-nav .nav-link {
-            color: var(--dark-text-color);
-        }
-
-        body.dark-mode .sub-nav .logo-container img {
-            filter: grayscale(100%) brightness(1000%);
-            transition: filter 0.3s ease;
-        }
-
-        .sub-nav .icon {
-            margin-right: 10px;
-            font-size: 1.2rem;
-        }
-
-        body.dark-mode .sub-nav .icon {
-            color: var(--dark-text-color);
-        }
-
-        .career-link {
-            background-color: var(--accent-color);
-            padding: 10px 0;
-            text-align: center;
-            font-size: 1rem;
-            font-weight: 500;
-        }
-
-        .career-link a {
-            color: var(--text-color);
-            text-decoration: none;
-            transition: color 0.3s ease;
-        }
-
-        .career-link a:hover {
-            color: var(--primary-color);
-        }
-
-        /* New styles for mobile responsiveness */
-        @media (max-width: 991px) {
-            .navbar-collapse {
-                padding: 20px;
-                border-radius: 10px;
-                margin-top: 15px;
-                display: flex;
-                flex-direction: column;
-                align-items: stretch;
-                transition: all 0.1s ease-in-out;
-                opacity: 0;
-                transform: translateY(-20px);
-                max-height: 0;
+    
+        @media (max-width: 768px) {
+            .dynamic-text-container {
+                font-size: 2.5rem;
+                font-weight: 700;
+                height: 1em;
                 overflow: hidden;
             }
-
-            .navbar-collapse.show {
-                opacity: 1;
-                transform: translateY(0);
-                max-height: 1000px;
-                /* Adjust this value based on your content */
-            }
-
-            .navbar-nav {
-                margin-bottom: 15px;
-                width: 100%;
-                border-bottom: 1px solid #e0e0e0;
-                padding-bottom: 15px;
-            }
-
-            .nav-item {
-                margin-bottom: 10px;
-                width: 100%;
-            }
-
-            .nav-link {
-                display: block;
-                font-size: 1rem;
-                padding: 8px 0;
-                transition: all 0.3s ease;
-                width: 100%;
-                text-align: left;
-            }
-
-            .nav-link:hover {
-                color: var(--primary-color);
-                transform: translateX(5px);
-            }
-
-            .d-flex.ms-3 {
-                flex-direction: column;
-                align-items: stretch;
-                margin-top: auto;
-                width: 100%;
-                padding-top: 15px;
-            }
-
-            .btn-group {
-                display: flex;
-                flex-direction: column;
-                width: 100%;
-            }
-
-            .btn {
-                width: 100%;
-                padding: 10px;
-                font-size: 1rem;
-                transition: all 0.3s ease;
-                border-radius: 10px;
-            }
-
-            .btn:last-child {
-                margin-bottom: 0;
-            }
-
-            .btn:hover {
-                transform: translateY(-2px);
-                box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
-            }
-
-            .sub-nav .nav {
-                flex-wrap: wrap;
-                justify-content: space-between;
-            }
-
-            .sub-nav .nav-item {
-                flex-basis: calc(50% - 10px);
-                margin-bottom: 15px;
-                background-color: var(--white);
-                border-radius: 8px;
-                padding: 15px;
-                box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-                transition: all 0.3s ease;
-            }
-
-            .sub-nav .nav-item:hover {
-                transform: translateY(-3px);
-                box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-            }
-
-            .sub-nav .nav-link {
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-                text-align: center;
-            }
-
-            .sub-nav .icon {
-                font-size: 1.5rem;
-                margin-bottom: 10px;
-            }
-
-            .sub-nav small {
-                display: block;
-                margin-top: 5px;
-                font-size: 0.8rem;
-            }
+    
         }
-
-        @media (max-width: 575px) {
-            .sub-nav .nav-item {
-                flex-basis: 100%;
-            }
+    
+        header {
+            overflow: hidden !important;
+            /* This will keep the header content hidden if it overflows */
         }
-
-        .dropdown-menu {
-            margin-top: 0;
-            /* Remove any default margin */
-            top: 100%;
-            /* Position the dropdown right below the nav-link */
-            left: 0;
-            border-top: none;
-            /* Remove top border if present */
-            border-top-left-radius: 0;
-            border-top-right-radius: 0;
-        }
-
-        /* Adjust the glassmorphism effect for dropdowns if needed */
-        .dropdown-menu.glassmorphism {
-            background: rgba(255, 255, 255, 0.962);
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 0 0 10px 10px;
-            /* Rounded bottom corners */
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            /* Add a subtle shadow */
-        }
-
-        /* Ensure dropdown items are properly spaced */
-        .dropdown-menu .dropdown-item {
-            padding: 0.5rem 1rem;
-        }
-    </style>
-</head>
-
-<body>
-    <!-- LOADING -->
-    <div id="loading-overlay" class="loading-overlay">
-        <div class="loading-container">
-            <div class="loading-text">Loading...</div>
-            <div class="spinner">
-                <div class="spinner-inner"></div>
-            </div>
-        </div>
-    </div>
-    <script>
-        function navigateWithLoading(url) {
-            const loadingOverlay = document.getElementById('loading-overlay');
-            loadingOverlay.style.display = 'flex'; // Show the loading overlay
-            document.body.style.overflow = 'hidden'; // Prevent scrolling
-
-            // Wait for the animation to complete before navigating
-            setTimeout(function () {
-                window.location.href = url;
-            }, 2000); // Adjust the delay as needed (in milliseconds)
-        }
-
-        document.addEventListener('DOMContentLoaded', function () {
-            // This script block can contain other page initialization code
-        });
-    </script>
-    <style>
-        .loading-overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(255, 255, 255, 0.8);
-            backdrop-filter: blur(5px);
-            display: none;
-            /* Initially hidden */
-            justify-content: center;
-            align-items: center;
-            z-index: 9999;
-        }
-
-        .loading-container {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-
-        .loading-text {
-            font-size: 24px;
-            font-weight: bold;
-            margin-bottom: 20px;
-            color: #9054d0;
-            opacity: 0;
-            animation: fade-in 0.5s ease-in-out forwards;
-            animation-delay: 0.5s;
-            /* Add a delay to the fade-in animation */
-        }
-
-        .spinner {
-            width: 80px;
-            height: 80px;
-            border-radius: 50%;
-            border: 4px solid rgba(52, 152, 219, 0.2);
-            border-top-color: #9054d0;
-            animation: spin 1s ease-in-out infinite;
-        }
-
-        @keyframes spin {
-            0% {
-                transform: rotate(0deg);
-            }
-
-            100% {
-                transform: rotate(360deg);
-            }
-        }
-
-        @keyframes fade-in {
-            0% {
-                opacity: 0;
-                transform: translateY(-20px);
-            }
-
-            100% {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        .product-banner {
-            cursor: pointer;
-        }
-
-        .nav-link {
-            color: #000000 !important;
-        }
-    </style>
-    <!-- LOADING -->
-
-
-
-    <div class="sub-nav mb-0 d-flex justify-content-between d-md-block sticky-top">
-        <div class="container d-flex justify-content-between align-items-center">
-            <div class="logo-container">
-                <a class="" href="#" onclick="navigateWithLoading('')">
-                    <img src="assets/img/realnet/logo_realnet_realta.png" alt=""
-                        style="max-width: 90px; height: auto; margin-left: 20px; margin-bottom: 10px; margin-top: -7px;">
-                </a>
-            </div>
-
-            <nav class="nav-container">
-                <ul class="horizontal-nav" style="margin-top: 3px;">
-                    <li class="nav-master-item">
-                        <a class="nav-link" href="#ict-one-solution">
-                            Home
-                        </a>
-                    </li>
-                    <li class="nav-master-item">
-                        <a class="nav-link" href="#why-rhapsody">
-                            Why Realnet
-                        </a>
-                    </li>
-                    <li class="nav-master-item">
-                        <a class="nav-link" href="#why-rhapsody">
-                            Our Client
-                        </a>
-                    </li>
-                    <li class="nav-master-item">
-                        <a class="nav-link" href="#why-rhapsody">
-                            Partner
-                        </a>
-                    </li>
-                    <li class="nav-master-item">
-                        <a class="nav-link" href="#company-profile">
-                            Company Profile
-                        </a>
-                    </li>
-                    <li class="nav-master-item">
-                        <a class="nav-link" href="#contact">
-                            Contact
-                        </a>
-                    </li>
-                    <li class="nav-master-item">
-                        <a class="nav-link" href="#blog">
-                            Blog
-                        </a>
-                    </li>
-                    <li class="nav-master-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="consultationDropdown" role="button"
-                            data-bs-toggle="dropdown" aria-expanded="false">
-                            Other Solution <i class="fas fa-chevron-down icon"></i>
-                        </a>
-                        <ul class="dropdown-menu glassmorphism" aria-labelledby="consultationDropdown">
-                            <li><a class="dropdown-item" href="#">Article & News</a></li>
-                        </ul>
-                    </li>
-                    <!-- add more here items comments -->
-                </ul>
-            </nav>
-            <style>
-                .nav-container {
-                    display: flex;
-                    justify-content: center;
-                    width: 100%;
-                }
-
-                .horizontal-nav {
-                    display: flex;
-                    justify-content: center;
-                    list-style-type: none;
-                    padding: 0;
-                    margin: 0;
-                    width: 100%;
-                }
-
-                .nav-master-item {
-                    margin: 0 5px;
-                }
-
-                .nav-link {
-                    color: #777777;
-                    text-decoration: none;
-                    white-space: nowrap;
-                    font-size: 14px;
-                }
-
-                .icon {
-                    font-size: 10px;
-                    margin-left: 3px;
-                }
-            </style>
-            <!-- <div class="icons-container horizontal-nav">
-               
-            </div> -->
-        </div>
-    </div>
-
-    <style>
-        /* Styles for the sub-nav */
-        .sub-nav {
-            position: fixed;
-            top: 80px;
-            left: 0;
-            right: 0;
-            z-index: 1030;
-            background-color: #f8f9fa;
-            height: 45px;
-            display: flex;
-            align-items: center;
-            padding-top: 5px;
-            height: 50px;
-        }
-
-        .sub-nav .container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            height: 100%;
-        }
-
-        .nav-container {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100%;
-        }
-
-        .horizontal-nav {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            list-style-type: none;
-            padding: 0;
-            margin: 0;
-            height: 100%;
-        }
-
-        .nav-master-item {
-            margin: 0 5px;
-            display: flex;
-            align-items: center;
-            height: 100%;
-        }
-
-        .nav-link {
-            color: #777777;
-            text-decoration: none;
-            white-space: nowrap;
-            font-size: 14px;
-            padding: 10px 15px;
-        }
-
-        .logo-container {
-            display: flex;
-            align-items: center;
-            height: 100%;
-        }
-
-        .icons-container {
-            display: flex;
-            align-items: center;
-            height: 100%;
-        }
-
-        /* Styles for the main nav */
+    
+    
+            
         #mainNav {
             position: fixed;
             top: 0;
             left: 0;
             right: 0;
             z-index: 1030;
-            /* Higher z-index to stay on top */
-            background-color: #fff;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, .1);
+            height: 66px; /* PRECISE HEIGHT instead of 8.3% */
+            transition: all 0.3s ease-in-out;
         }
-
-        .sub-nav .nav-link {
-            font-weight: 500 !important;
-            padding: 12px 18px;
-            color: #333;
-            text-decoration: none;
-            transition: all 0.3s ease;
-            border-radius: 4px;
-
+    
+        #mainNav.navbar-scrolled {
+            height: 60px;
         }
-
-        .sub-nav .nav-link:hover {
-            background-color: #f0f0f0;
-            color: #007bff;
-            transform: translateY(-2px);
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    
+        body {
+            padding-top: 110px; /* navbar (66px) + announcement (44px) */
         }
-
-        .navbar {
-            top: 40px;
-            z-index: 5;
-        }
-
-        .navbar-brand {
-            font-size: 18px;
-            color: #777777;
-            font-weight: 600;
-        }
-
-        .icon {
-            font-size: 10px !important;
-        }
-
-        .navbar-toggler {
-            border: none;
-            background-color: transparent;
-            padding: 0.25rem 0.75rem;
-            font-size: 1.25rem;
-            transition: all 0.3s ease;
-        }
-
-        .navbar-toggler:focus,
-        .navbar-toggler:active,
-        .navbar-toggler-icon:focus {
-            outline: none;
-            box-shadow: none;
-            border: none;
-        }
-
-        .navbar-toggler:hover {
-            background-color: rgba(0, 0, 0, 0.05);
-        }
-
-        .navbar-toggler-icon {
-            background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%280, 0, 0, 0.55%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
-        }
-
-        @media (max-width: 991px) {
-            .navbar {
-                z-index: 5;
-                top: 0px !important;
+    
+                /* Add this style block in the <head> section or in your CSS file */
+                    .container-fluid {
+                width: 100%; /* Change from 95% to 100% */
+                padding-left: 3.1%; /* Add consistent padding */
+                padding-right: 3.1%; /* Add consistent padding */
+                margin-left: auto;
+                margin-right: auto;
             }
-
-            .sub-nav {
-                display: none !important;
-            }
-        }
-
+    
         @media (max-width: 768px) {
-            .sub-nav {
-                display: none !important;
+            .container-fluid {
+                width: 100%;
+                padding-left: 0.5%; /* Add consistent padding */
+                padding-right: 0.5%; /* Add consistent padding */
             }
         }
     </style>
-    <nav class="navbar navbar-expand-lg sticky-top navbar-shrink navbar-light" id="mainNav">
-        <div class="container-fluid container-lg px-2">
-            <a class="navbar-logo d-flex align-items-center" href="/">
-                <img src="assets/img/realta.png" alt="Realta Logo" class="realta-logo">
-            </a>
-            <style>
-                .realta-logo {
-                    width: 140px;
-                    height: 50%;
-                }
-
-                @media (min-width: 992px) {
-                    .realta-logo {
-                        margin-left: 15px;
-                    }
-                }
-
-                @media (max-width: 767px) {
-                    .realta-logo {
-                        width: 120px;
-                        height: auto;
-                        margin-left: -10px;
-                    }
-                }
-            </style>
-            <div class="navbar-mobile-actions">
-                <button id="darkModeToggleNav" class="btn-custom download-btn ms-1"
-                    style="border: none; min-width: fit-content; margin-right: 0.4rem;">
-                    <i class="fas fa-moon"></i>
-                </button>
-                <!-- Language switch button -->
-                <!-- Language switch dropdown -->
-                <div class="custom-dropdown">
-                    <button id="languageSwitch" class="btn-custom download-btn ms-1" type="button"
-                        style="border: none; min-width: fit-content; margin-right: 1.4rem;">
-                        <i class="fas fa-globe"></i>
-                    </button>
-                    <ul class="custom-dropdown-menu">
-                        <li><a href="#" data-lang="en">EN</a></li>
-                        <li><a href="#" data-lang="id">ID</a></li>
-                    </ul>
-                </div>
-                <div class="nav-drawer" data-bs-toggle="offcanvas" data-bs-target="#sidebar" aria-controls="sidebar">
-                    <i class="fas fa-bars" style="font-size: 1.7rem;"></i>
-                </div>
-            </div>
-            <!-- Mobile responsive navigation menu -->
-            <div class="offcanvas offcanvas-end" tabindex="-1" id="sidebar" aria-labelledby="sidebarLabel">
-                <div class="offcanvas-header">
-                    <div>
-                        <h5 class="offcanvas-title" id="sidebarLabel"
-                            style="margin-left: 33px; margin-bottom: 20px; font-size: 30px;">Menu</h5>
-                    </div>
-                    <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas"
-                        aria-label="Close"></button>
-                </div>
-                <div class="offcanvas-body">
-                    <div class="sidebar-menu">
-                        <div class="sidebar-item">
-                            <h2 style="font-size: 2.1rem;">Main site</h2>
-                            <hr>
-                            <h2 class="product-header" data-bs-toggle="collapse" data-bs-target="#productsSubmenu"
-                                aria-expanded="false">
-                                Products <i class="fas fa-chevron-right arrow-icon"></i>
-                            </h2>
-                            <div id="productsSubmenu" class="collapse">
-                                <ul class="product-list">
-                                    <li>
-                                        <div class="product-header" data-bs-toggle="collapse"
-                                            data-bs-target="#hmsSubmenu" aria-expanded="false"
-                                            style="font-size: 1rem; font-weight: 400;">
-                                            Hotel Management System <i class="fas fa-chevron-right arrow-icon"></i>
-                                        </div>
-                                        <div id="hmsSubmenu" class="collapse product-submenu">
-                                            <p>Comprehensive solution for efficient hotel operations and guest
-                                                management.</p>
-                                            <a href="#" class="discover-link">Discover HMS ›</a>
-                                            <h3 class="modules-heading">MODULES</h3>
-                                            <ul class="modules-list">
-                                                <li>
-                                                    <strong>Reservation Management</strong>
-                                                    <span>Streamline booking processes</span>
-                                                </li>
-                                                <li>
-                                                    <strong>Front Desk Operations</strong>
-                                                    <span>Efficient check-in and check-out</span>
-                                                </li>
-                                                <li>
-                                                    <strong>Housekeeping Management</strong>
-                                                    <span>Optimize room maintenance</span>
-                                                </li>
-                                                <li>
-                                                    <strong>Revenue Management</strong>
-                                                    <span>Maximize profitability</span>
-                                                </li>
-                                                <li>
-                                                    <strong>Guest Experience Management</strong>
-                                                    <span>Enhance customer satisfaction</span>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="product-header" data-bs-toggle="collapse"
-                                            data-bs-target="#gcsSubmenu" aria-expanded="false"
-                                            style="font-size: 1rem; font-weight: 400;">
-                                            Golf Course System <i class="fas fa-chevron-right arrow-icon"></i>
-                                        </div>
-                                        <div id="gcsSubmenu" class="collapse product-submenu">
-                                            <p>Integrated system for efficient golf course management and
-                                                operations.</p>
-                                            <a href="#" class="discover-link">Discover GCS ›</a>
-                                            <h3 class="modules-heading">MODULES</h3>
-                                            <ul class="modules-list">
-                                                <li>
-                                                    <strong>Tee Time Management</strong>
-                                                    <span>Optimize scheduling and bookings</span>
-                                                </li>
-                                                <li>
-                                                    <strong>Member Management</strong>
-                                                    <span>Streamline membership processes</span>
-                                                </li>
-                                                <li>
-                                                    <strong>Pro Shop Management</strong>
-                                                    <span>Inventory and sales management</span>
-                                                </li>
-                                                <li>
-                                                    <strong>Tournament Management</strong>
-                                                    <span>Organize and manage events</span>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="product-header" data-bs-toggle="collapse"
-                                            data-bs-target="#hrSystemSubmenu" aria-expanded="false"
-                                            style="font-size: 1rem; font-weight: 400;">
-                                            HR System <i class="fas fa-chevron-right arrow-icon"></i>
-                                        </div>
-                                        <div id="hrSystemSubmenu" class="collapse product-submenu">
-                                            <p>Comprehensive human resource management solution for businesses of
-                                                all sizes.</p>
-                                            <a href="#" class <div id="container-header"
-                                                class="container py-5">discover-link">Discover HR System ›</a>
-                                            <h3 class="modules-heading">MODULES</h3>
-                                            <ul class="modules-list">
-                                                <li>
-                                                    <strong>Employee Management</strong>
-                                                    <span>Centralize employee data and records</span>
-                                                </li>
-                                                <li>
-                                                    <strong>Payroll Processing</strong>
-                                                    <span>Automate salary calculations and payments</span>
-                                                </li>
-                                                <li>
-                                                    <strong>Time and Attendance</strong>
-                                                    <span>Track employee work hours and absences</span>
-                                                </li>
-                                                <li>
-                                                    <strong>Performance Management</strong>
-                                                    <span>Set goals and conduct evaluations</span>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="product-header" data-bs-toggle="collapse"
-                                            data-bs-target="#propertyTenantSubmenu" aria-expanded="false"
-                                            style="font-size: 1rem; font-weight: 400;">
-                                            Property and Tenant System <i class="fas fa-chevron-right arrow-icon"></i>
-                                        </div>
-                                        <div id="propertyTenantSubmenu" class="collapse product-submenu">
-                                            <p>Efficient management solution for property owners and landlords.</p>
-                                            <a href="#" class="discover-link">Discover Property and Tenant System
-                                                ›</a>
-                                            <h3 class="modules-heading">MODULES</h3>
-                                            <ul class="modules-list">
-                                                <li>
-                                                    <strong>Property Management</strong>
-                                                    <span>Organize and track property details</span>
-                                                </li>
-                                                <li>
-                                                    <strong>Tenant Management</strong>
-                                                    <span>Manage tenant information and leases</span>
-                                                </li>
-                                                <li>
-                                                    <strong>Rent Collection</strong>
-                                                    <span>Automate rent payments and tracking</span>
-                                                </li>
-                                                <li>
-                                                    <strong>Maintenance Requests</strong>
-                                                    <span>Handle and track property maintenance</span>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="product-header" data-bs-toggle="collapse"
-                                            data-bs-target="#itsmSubmenu" aria-expanded="false"
-                                            style="font-size: 1rem; font-weight: 400;">
-                                            ITSM, ITAM & Unified Endpoint Management <i
-                                                class="fas fa-chevron-right arrow-icon"></i>
-                                        </div>
-                                        <div id="itsmSubmenu" class="collapse product-submenu">
-                                            <p>Comprehensive IT Service Management solution for streamlined IT
-                                                operations.</p>
-                                            <a href="#" class="discover-link">Discover ITSM, ITAM & Unified Endpoint
-                                                Management ›</a>
-                                            <h3 class="modules-heading">MODULES</h3>
-                                            <ul class="modules-list">
-                                                <li>
-                                                    <strong>Incident Management</strong>
-                                                    <span>Efficiently handle and resolve IT issues</span>
-                                                </li>
-                                                <li>
-                                                    <strong>Change Management</strong>
-                                                    <span>Control and implement IT changes</span>
-                                                </li>
-                                                <li>
-                                                    <strong>Asset Management</strong>
-                                                    <span>Track and manage IT assets</span>
-                                                </li>
-                                                <li>
-                                                    <strong>Service Catalog</strong>
-                                                    <span>Organize and offer IT services</span>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="product-header" data-bs-toggle="collapse"
-                                            data-bs-target="#erpSubmenu" aria-expanded="false"
-                                            style="font-size: 1rem; font-weight: 400;">
-                                            ERP & EAM <i class="fas fa-chevron-right arrow-icon"></i>
-                                        </div>
-                                        <div id="erpSubmenu" class="collapse product-submenu">
-                                            <p>Integrated Enterprise Resource Planning solution for business
-                                                management.</p>
-                                            <a href="#" class="discover-link">Discover ERP & EAM ›</a>
-                                            <h3 class="modules-heading">MODULES</h3>
-                                            <ul class="modules-list">
-                                                <li>
-                                                    <strong>Financial Management</strong>
-                                                    <span>Manage accounting and finances</span>
-                                                </li>
-                                                <li>
-                                                    <strong>Supply Chain Management</strong>
-                                                    <span>Optimize procurement and logistics</span>
-                                                </li>
-                                                <li>
-                                                    <strong>Manufacturing</strong>
-                                                    <span>Streamline production processes</span>
-                                                </li>
-                                                <li>
-                                                    <strong>Customer Relationship Management</strong>
-                                                    <span>Enhance customer interactions</span>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="sidebar-item">
-                            <h2 class="product-header" data-bs-toggle="collapse" data-bs-target="#resourcesSubmenu"
-                                aria-expanded="false style=" font-size: 1.1rem;"">
-                                Resources <i class="fas fa-chevron-right arrow-icon"></i>
-                            </h2>
-                            <div id="resourcesSubmenu" class="collapse">
-                                <ul class="submenu-list">
-                                    <li><a href="#">Blog</a></li>
-                                    <li><a href="#">Webinars</a></li>
-                                    <li><a href="#">White Papers</a></li>
-                                    <li><a href="#">Case Studies</a></li>
-                                    <li><a href="#">eBooks</a></li>
-                                    <li><a href="#">Product Videos</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="sidebar-item">
-                            <h2 class="product-header" data-bs-toggle="collapse" data-bs-target="#partnersSubmenu"
-                                aria-expanded="false">
-                                Partners <i class="fas fa-chevron-right arrow-icon"></i>
-                            </h2>
-                            <div id="partnersSubmenu" class="collapse">
-                                <!-- Add partners submenu content here -->
-                            </div>
-                        </div>
-                        <div class="sidebar-item">
-                            <h2 class="product-header" data-bs-toggle="collapse" data-bs-target="#companySubmenu"
-                                aria-expanded="false">
-                                Company <i class="fas fa-chevron-right arrow-icon"></i>
-                            </h2>
-                            <div id="companySubmenu" class="collapse">
-                                <ul class="submenu-list">
-                                    <li><a href="#">About Us</a></li>
-                                    <li><a href="#">Our Team</a></li>
-                                    <li><a href="#" onclick="navigateWithLoading('career.html'); return false;"
-                                            style="text-decoration: none; color: inherit;">Career</a></li>
-                                    <li><a href="#">News</a></li>
-                                    <li><a href="#">Contact</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="sidebar-item">
-                            <h2 class="product-header">
-                                <a href="#" onclick="navigateWithLoading('blog.html'); return false;"
-                                    style="text-decoration: none; color: inherit;">Blog</a>
-                            </h2>
-                        </div>
-                    </div>
-                    <div class="get-started-container" style="margin-top: -10px !important;">
-                        <!-- Adjusted margin-top to move slightly to the top -->
-                        <h2 style="font-size: 2.1rem;">Rhapsody</h2>
-                        <hr style="border-top: 2px solid purple;">
-                        <div class="sidebar-item">
-                            <h2 class="product-header">
-                                <a href="#" onclick="navigateWithLoading('solution.html'); return false;"
-                                    style="text-decoration: none; color: inherit;">Solution</a>
-                            </h2>
-                        </div>
-                        <div class="sidebar-item">
-                            <h2 class="product-header">
-                                <a href="#" onclick="navigateWithLoading('why-rhapsody.html'); return false;"
-                                    style="text-decoration: none; color: inherit;">Why Rhapsody</a>
-                            </h2>
-                        </div>
-                        <div class="sidebar-item">
-                            <h2 class="product-header" data-bs-toggle="collapse"
-                                data-bs-target="#productOverviewSubmenu" aria-expanded="false">
-                                Product Overview <i class="fas fa-chevron-right arrow-icon"></i>
-                            </h2>
-                            <div id="productOverviewSubmenu" class="collapse">
-                                <ul class="submenu-list">
-                                    <li><a href="#">Front Office</a></li>
-                                    <li><a href="#">Back Office</a></li>
-                                    <li><a href="#">Logistic System</a></li>
-                                    <li><a href="#">ICT One Solution</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="sidebar-item">
-                            <h2 class="product-header" data-bs-toggle="collapse" data-bs-target="#blogSubmenu"
-                                aria-expanded="false">
-                                Blog <i class="fas fa-chevron-right arrow-icon"></i>
-                            </h2>
-                            <div id="blogSubmenu" class="collapse">
-                                <ul class="submenu-list">
-                                    <li><a href="#">Article & News</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                        <a href="https://api.whatsapp.com/send?phone=628111221789&text=Hallo%20PT%20Realta..."
-                            target="_blank" rel="noopener noreferrer" class="btn btn-success btn-block"
-                            style="width: 100%; margin-top: 50px;">
-                            <i class="fab fa-whatsapp"></i> Contact Us
-                        </a>
-                        <div class="d-flex justify-content-between align-items-center"
-                            style="padding: 20px 0; margin-top: 20px;">
-                            <h2 class="text-left mb-0" style="margin-right: 20px; font-size: 1.5rem;">Get in Touch</h2>
-                            <div class="social-icons" style="display: flex; justify-content: flex-end;">
-                                <a href="#" target="_blank" rel="noopener noreferrer"
-                                    style="margin-right: 10px; display: inline-flex; justify-content: center; align-items: center; background-color: black; border-radius: 50%; width: 30px; height: 30px;"><i
-                                        class="fab fa-facebook-f" style="color: white;"></i></a>
-                                <a href="#" target="_blank" rel="noopener noreferrer"
-                                    style="margin-right: 10px; display: inline-flex; justify-content: center; align-items: center; background-color: black; border-radius: 50%; width: 30px; height: 30px;"><i
-                                        class="fab fa-twitter" style="color: white;"></i></a>
-                                <a href="#" target="_blank" rel="noopener noreferrer"
-                                    style="margin-right: 10px; display: inline-flex; justify-content: center; align-items: center; background-color: black; border-radius: 50%; width: 30px; height: 30px;"><i
-                                        class="fab fa-instagram" style="color: white;"></i></a>
-                                <a href="#" target="_blank" rel="noopener noreferrer"
-                                    style="display: inline-flex; justify-content: center; align-items: center; background-color: black; border-radius: 50%; width: 30px; height: 30px;"><i
-                                        class="fab fa-linkedin-in" style="color: white;"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <style>
-                @media (min-width: 992px) {
-                    #sidebar {
-                        display: none !important;
-                        z-index: 2031;
-                    }
-
-                    .offcanvas-backdrop {
-                        display: none !important;
-                    }
-
-                    body {
-                        overflow: auto !important;
-                        padding-right: 0 !important;
-                    }
-                }
-            </style>
-
-
-            <style>
-                .custom-dropdown {
-                    position: relative;
-                    display: inline-block;
-                }
-
-                .custom-dropdown-menu {
-                    display: none;
-                    position: absolute;
-                    top: 69%;
-                    right: 5%;
-                    /* Changed from -10% to -5% to move slightly to the left */
-                    background: rgba(179, 179, 179, 0.137);
-                    backdrop-filter: blur(10px);
-                    border-radius: 10px;
-                    width: 80px;
-                    /* Further reduced width for an even smaller dropdown */
-                    z-index: 1000;
-                    list-style-type: none;
-                    padding: 0.25rem 0;
-                    /* Reduced padding for a smaller dropdown */
-                    margin: 0.5rem 0 0 0;
-                    border: 1px solid rgba(255, 255, 255, 0.18);
-                }
-
-                .custom-dropdown-menu li {
-                    padding: 0.2rem 0;
-                    /* Reduced padding for smaller items */
-                    text-align: center;
-                    /* Centered text */
-                }
-
-                .custom-dropdown-menu li a {
-                    color: #333;
-                    padding: 0.3rem 0.3rem;
-                    /* Adjusted padding for better alignment */
-                    text-decoration: none;
-                    display: block;
-                    font-size: 0.8rem;
-                    /* Reduced font size for smaller dropdown */
-                    transition: background-color 0.3s ease;
-                }
-
-                .custom-dropdown-menu li a:hover {
-                    background-color: rgba(126, 126, 126, 0.5);
-                    color: #fff;
-                    /* Change text color on hover */
-                    transform: scale(1.05);
-                    /* Slightly enlarge the item */
-                    border-radius: 10px;
-                    /* Added border radius for hover background */
-                    transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
-                    /* Smooth transition */
-                }
-
-                .custom-dropdown:hover .custom-dropdown-menu {
-                    display: block;
-
-                }
-            </style>
-            <div class="full-screen-sidebar">
+    
+    <header>
+    
+        <nav class="navbar navbar-expand-lg sticky-top navbar-shrink navbar-light" id="mainNav">
+            <div class="container-fluid ">
+                <a class="navbar-logo d-flex align-items-center" href="/">
+                    <img src="assets/img/realta.png" alt="Realta Logo" class="realta-logo">
+                </a>
                 <style>
-                    @media (min-width: 992px) {
-                        .full-screen-sidebar {
-                            margin-right: -35px;
-                        }
+                    .realta-logo {
+                        width: 140px;
+                        height: 50%;
                     }
-
-                    @media (max-width: 768px) {
-                        .full-screen-sidebar {
-                            margin-right: 0;
+    
+               
+                    @media (max-width: 767px) {
+                        .realta-logo {
+                            width: 120px;
+                            height: auto;
+                            margin-left: -10px;
                         }
                     }
                 </style>
-                <ul class="sidebar-nav justify-content-end align-items-center"
-                    style="padding: 0; margin: 0; list-style-type: none;">
-
-                    <li class="me-1"><a class="nav-link dropdown-toggle" href="#" id="solutionsDropdown" role="button"
-                            data-bs-toggle="dropdown" aria-expanded="false">
-                            Solution <i class="fas fa-chevron-down ms-1 fa-xs"></i>
-                        </a></li>
-                    <li class="me-1"><a class="nav-link dropdown-toggle" href="#" id="industriDropdown" role="button"
-                            data-bs-toggle="dropdown" aria-expanded="false">
-                            Industry <i class="fas fa-chevron-down ms-1 fa-xs"></i>
-                        </a></li>
-                    <li class="me-1"><a class="nav-link dropdown-toggle" href="#" id="partnerDropdown" role="button"
-                            data-bs-toggle="dropdown" aria-expanded="false">
-                            Partner <i class="fas fa-chevron-down ms-1 fa-xs"></i>
-                        </a></li>
-                    <li class="me-1"><a class="nav-link dropdown-toggle" href="#" id="konsultasiDropdown" role="button"
-                            data-bs-toggle="dropdown" aria-expanded="false">
-                            Consultation <i class="fas fa-chevron-down ms-1 fa-xs"></i>
-                        </a></li>
-                    <li><a class="nav-link dropdown-toggle" href="#" id="tentangRealtaDropdown" role="button"
-                            data-bs-toggle="dropdown" aria-expanded="false">
-                            About Realta <i class="fas fa-chevron-down ms-1 fa-xs"></i>
-                        </a></li>
-                </ul>
-                <div class="sidebar-actions d-flex justify-content-end align-items-center" style="margin-bottom: 1rem;">
-                    <a class="btn-custom whatsapp-btn me-2"
-                        href="https://api.whatsapp.com/send?phone=628111221789&text=Hallo%20PT%20Realta..."
-                        target="_blank" rel="noopener noreferrer" style="font-size: 0.8em;">
-                        <i class="fab fa-whatsapp"></i>
-                        <span><strong>Whatsapp</strong></span>
-                    </a>
-                    <button id="darkModeToggleSidebar" class="btn-custom ms-2">
+                <div class="navbar-mobile-actions">
+                    <button id="darkModeToggleNav" class="btn-custom download-btn ms-1"
+                        style="border: none; min-width: fit-content; margin-right: 0.4rem;">
                         <i class="fas fa-moon"></i>
                     </button>
+                    <!-- Language switch button -->
+                    <!-- Language switch dropdown -->
                     <div class="custom-dropdown">
                         <button id="languageSwitch" class="btn-custom download-btn ms-1" type="button"
                             style="border: none; min-width: fit-content; margin-right: 1.4rem;">
@@ -1278,131 +220,939 @@
                             <li><a href="#" data-lang="id">ID</a></li>
                         </ul>
                     </div>
+                    <div class="nav-drawer" data-bs-toggle="offcanvas" data-bs-target="#sidebar" aria-controls="sidebar">
+                        <i class="fas fa-bars" style="font-size: 1.7rem;"></i>
+                    </div>
                 </div>
-            </div>
-        </div>
-        <div class="mega-dropdown" id="solutionsDropdownContent">
-            <div class="dropdown-content">
-                <div class="product-categories">
-                    <div class="product-category active" data-product="eam">ERP & EAM</div>
-                    <div class="product-category" data-product="gcs">Golf Course System</div>
-                    <div class="product-category" data-product="hrs">HR System</div>
-                    <div class="product-category " data-product="hms">Hotel Management System</div>
-                    <div class="product-category" data-product="itm">ITSM, ITAM & Unified Endpoint Management</div>
-                    <div class="product-category" data-product="pts">Property & Tenancy System</div>
-                    <div class="product-category" data-product="erp">Network & System Integration</div>
-                    <div class="all-products"><a href="#solutions">All products ›</a></div>
+                <!-- Mobile responsive navigation menu -->
+                <div class="offcanvas offcanvas-end" tabindex="-1" id="sidebar" aria-labelledby="sidebarLabel">
+                    <div class="offcanvas-header">
+                        <div>
+                            <h5 class="offcanvas-title" id="sidebarLabel"
+                                style="margin-left: 33px; margin-bottom: 20px; font-size: 30px;">Menu</h5>
+                        </div>
+                        <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas"
+                            aria-label="Close"></button>
+                    </div>
+                    <div class="offcanvas-body">
+                        <div class="sidebar-menu">
+                            <div class="sidebar-item">
+                                <h2 style="font-size: 2.1rem;">Realta Chakradarma</h2>
+                                <hr>
+                                <h2 class="product-header" data-bs-toggle="collapse" data-bs-target="#productsSubmenu"
+                                    aria-expanded="false">
+                                    Products <i class="fas fa-chevron-right arrow-icon"></i>
+                                </h2>
+                                <div id="productsSubmenu" class="collapse">
+                                    <ul class="product-list">
+                                        <li>
+                                            <div class="product-header" data-bs-toggle="collapse"
+                                                data-bs-target="#hmsSubmenu" aria-expanded="false"
+                                                style="font-size: 1rem; font-weight: 400;">
+                                                Hotel Management System <i class="fas fa-chevron-right arrow-icon"></i>
+                                            </div>
+                                            <div id="hmsSubmenu" class="collapse product-submenu">
+                                                <p>Comprehensive solution for efficient hotel operations and guest
+                                                    management.</p>
+                                                <a href="#" class="discover-link">Discover HMS ›</a>
+                                                <h3 class="modules-heading">MODULES</h3>
+                                                <ul class="modules-list">
+                                                    <li>
+                                                        <strong>Reservation Management</strong>
+                                                        <span>Streamline booking processes</span>
+                                                    </li>
+                                                    <li>
+                                                        <strong>Front Desk Operations</strong>
+                                                        <span>Efficient check-in and check-out</span>
+                                                    </li>
+                                                    <li>
+                                                        <strong>Housekeeping Management</strong>
+                                                        <span>Optimize room maintenance</span>
+                                                    </li>
+                                                    <li>
+                                                        <strong>Revenue Management</strong>
+                                                        <span>Maximize profitability</span>
+                                                    </li>
+                                                    <li>
+                                                        <strong>Guest Experience Management</strong>
+                                                        <span>Enhance customer satisfaction</span>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="product-header" data-bs-toggle="collapse"
+                                                data-bs-target="#gcsSubmenu" aria-expanded="false"
+                                                style="font-size: 1rem; font-weight: 400;">
+                                                Golf Course System <i class="fas fa-chevron-right arrow-icon"></i>
+                                            </div>
+                                            <div id="gcsSubmenu" class="collapse product-submenu">
+                                                <p>Integrated system for efficient golf course management and
+                                                    operations.</p>
+                                                <a href="#" class="discover-link">Discover GCS ›</a>
+                                                <h3 class="modules-heading">MODULES</h3>
+                                                <ul class="modules-list">
+                                                    <li>
+                                                        <strong>Tee Time Management</strong>
+                                                        <span>Optimize scheduling and bookings</span>
+                                                    </li>
+                                                    <li>
+                                                        <strong>Member Management</strong>
+                                                        <span>Streamline membership processes</span>
+                                                    </li>
+                                                    <li>
+                                                        <strong>Pro Shop Management</strong>
+                                                        <span>Inventory and sales management</span>
+                                                    </li>
+                                                    <li>
+                                                        <strong>Tournament Management</strong>
+                                                        <span>Organize and manage events</span>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="product-header" data-bs-toggle="collapse"
+                                                data-bs-target="#hrSystemSubmenu" aria-expanded="false"
+                                                style="font-size: 1rem; font-weight: 400;">
+                                                HR System <i class="fas fa-chevron-right arrow-icon"></i>
+                                            </div>
+                                            <div id="hrSystemSubmenu" class="collapse product-submenu">
+                                                <p>Comprehensive human resource management solution for businesses of
+                                                    all sizes.</p>
+                                                <a href="#" class <div id="container-header"
+                                                    class="container py-5">discover-link">Discover HR System ›</a>
+                                                <h3 class="modules-heading">MODULES</h3>
+                                                <ul class="modules-list">
+                                                    <li>
+                                                        <strong>Employee Management</strong>
+                                                        <span>Centralize employee data and records</span>
+                                                    </li>
+                                                    <li>
+                                                        <strong>Payroll Processing</strong>
+                                                        <span>Automate salary calculations and payments</span>
+                                                    </li>
+                                                    <li>
+                                                        <strong>Time and Attendance</strong>
+                                                        <span>Track employee work hours and absences</span>
+                                                    </li>
+                                                    <li>
+                                                        <strong>Performance Management</strong>
+                                                        <span>Set goals and conduct evaluations</span>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="product-header" data-bs-toggle="collapse"
+                                                data-bs-target="#propertyTenantSubmenu" aria-expanded="false"
+                                                style="font-size: 1rem; font-weight: 400;">
+                                                Property and Tenant System <i class="fas fa-chevron-right arrow-icon"></i>
+                                            </div>
+                                            <div id="propertyTenantSubmenu" class="collapse product-submenu">
+                                                <p>Efficient management solution for property owners and landlords.</p>
+                                                <a href="#" class="discover-link">Discover Property and Tenant System
+                                                    ›</a>
+                                                <h3 class="modules-heading">MODULES</h3>
+                                                <ul class="modules-list">
+                                                    <li>
+                                                        <strong>Property Management</strong>
+                                                        <span>Organize and track property details</span>
+                                                    </li>
+                                                    <li>
+                                                        <strong>Tenant Management</strong>
+                                                        <span>Manage tenant information and leases</span>
+                                                    </li>
+                                                    <li>
+                                                        <strong>Rent Collection</strong>
+                                                        <span>Automate rent payments and tracking</span>
+                                                    </li>
+                                                    <li>
+                                                        <strong>Maintenance Requests</strong>
+                                                        <span>Handle and track property maintenance</span>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="product-header" data-bs-toggle="collapse"
+                                                data-bs-target="#itsmSubmenu" aria-expanded="false"
+                                                style="font-size: 1rem; font-weight: 400;">
+                                                ITSM, ITAM & Unified Endpoint Management <i
+                                                    class="fas fa-chevron-right arrow-icon"></i>
+                                            </div>
+                                            <div id="itsmSubmenu" class="collapse product-submenu">
+                                                <p>Comprehensive IT Service Management solution for streamlined IT
+                                                    operations.</p>
+                                                <a href="#" class="discover-link">Discover ITSM, ITAM & Unified Endpoint
+                                                    Management ›</a>
+                                                <h3 class="modules-heading">MODULES</h3>
+                                                <ul class="modules-list">
+                                                    <li>
+                                                        <strong>Incident Management</strong>
+                                                        <span>Efficiently handle and resolve IT issues</span>
+                                                    </li>
+                                                    <li>
+                                                        <strong>Change Management</strong>
+                                                        <span>Control and implement IT changes</span>
+                                                    </li>
+                                                    <li>
+                                                        <strong>Asset Management</strong>
+                                                        <span>Track and manage IT assets</span>
+                                                    </li>
+                                                    <li>
+                                                        <strong>Service Catalog</strong>
+                                                        <span>Organize and offer IT services</span>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="product-header" data-bs-toggle="collapse"
+                                                data-bs-target="#erpSubmenu" aria-expanded="false"
+                                                style="font-size: 1rem; font-weight: 400;">
+                                                ERP & EAM <i class="fas fa-chevron-right arrow-icon"></i>
+                                            </div>
+                                            <div id="erpSubmenu" class="collapse product-submenu">
+                                                <p>Integrated Enterprise Resource Planning solution for business
+                                                    management.</p>
+                                                <a href="#" class="discover-link">Discover ERP & EAM ›</a>
+                                                <h3 class="modules-heading">MODULES</h3>
+                                                <ul class="modules-list">
+                                                    <li>
+                                                        <strong>Financial Management</strong>
+                                                        <span>Manage accounting and finances</span>
+                                                    </li>
+                                                    <li>
+                                                        <strong>Supply Chain Management</strong>
+                                                        <span>Optimize procurement and logistics</span>
+                                                    </li>
+                                                    <li>
+                                                        <strong>Manufacturing</strong>
+                                                        <span>Streamline production processes</span>
+                                                    </li>
+                                                    <li>
+                                                        <strong>Customer Relationship Management</strong>
+                                                        <span>Enhance customer interactions</span>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="sidebar-item">
+                                <h2 class="product-header" data-bs-toggle="collapse" data-bs-target="#resourcesSubmenu"
+                                    aria-expanded="false style=" font-size: 1.1rem;"">
+                                    Resources <i class="fas fa-chevron-right arrow-icon"></i>
+                                </h2>
+                                <div id="resourcesSubmenu" class="collapse">
+                                    <ul class="submenu-list">
+                                        <li><a href="#">Blog</a></li>
+                                        <li><a href="#">Webinars</a></li>
+                                        <li><a href="#">White Papers</a></li>
+                                        <li><a href="#">Case Studies</a></li>
+                                        <li><a href="#">eBooks</a></li>
+                                        <li><a href="#">Product Videos</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="sidebar-item">
+                                <h2 class="product-header" data-bs-toggle="collapse" data-bs-target="#partnersSubmenu"
+                                    aria-expanded="false">
+                                    Partners <i class="fas fa-chevron-right arrow-icon"></i>
+                                </h2>
+                                <div id="partnersSubmenu" class="collapse">
+                                    <!-- Add partners submenu content here -->
+                                </div>
+                            </div>
+                            <div class="sidebar-item">
+                                <h2 class="product-header" data-bs-toggle="collapse" data-bs-target="#companySubmenu"
+                                    aria-expanded="false">
+                                    Company <i class="fas fa-chevron-right arrow-icon"></i>
+                                </h2>
+                                <div id="companySubmenu" class="collapse">
+                                    <ul class="submenu-list">
+                                        <li><a href="#">About Us</a></li>
+                                        <li><a href="#">Our Team</a></li>
+                                        <li><a href="#" onclick="navigateWithLoading('career.html'); return false;"
+                                                style="text-decoration: none; color: inherit;">Career</a></li>
+                                        <li><a href="#">News</a></li>
+                                        <li><a href="#">Contact</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="sidebar-item">
+                                <h2 class="product-header">
+                                    <a href="#" onclick="navigateWithLoading('blog.html'); return false;"
+                                        style="text-decoration: none; color: inherit;">Blog</a>
+                                </h2>
+                            </div>
+                        </div>
+                        <div class="get-started-container" style="margin-top: -10px !important;">
+                            <!-- Adjusted margin-top to move slightly to the top -->
+    
+                            <a href="https://api.whatsapp.com/send?phone=628111221789&text=Hallo%20PT%20Realta..."
+                                target="_blank" rel="noopener noreferrer" class="btn btn-success btn-block"
+                                style="width: 100%; margin-top: 50px;">
+                                <i class="fab fa-whatsapp"></i> Contact Us
+                            </a>
+                            <div class="d-flex justify-content-between align-items-center"
+                                style="padding: 20px 0; margin-top: 20px;">
+                                <h2 class="text-left mb-0" style="margin-right: 20px; font-size: 1.5rem;">Get in Touch</h2>
+                                <div class="social-icons" style="display: flex; justify-content: flex-end;">
+                                    <a href="#" target="_blank" rel="noopener noreferrer"
+                                        style="margin-right: 10px; display: inline-flex; justify-content: center; align-items: center; background-color: black; border-radius: 50%; width: 30px; height: 30px;"><i
+                                            class="fab fa-facebook-f" style="color: white;"></i></a>
+                                    <a href="#" target="_blank" rel="noopener noreferrer"
+                                        style="margin-right: 10px; display: inline-flex; justify-content: center; align-items: center; background-color: black; border-radius: 50%; width: 30px; height: 30px;"><i
+                                            class="fab fa-twitter" style="color: white;"></i></a>
+                                    <a href="#" target="_blank" rel="noopener noreferrer"
+                                        style="margin-right: 10px; display: inline-flex; justify-content: center; align-items: center; background-color: black; border-radius: 50%; width: 30px; height: 30px;"><i
+                                            class="fab fa-instagram" style="color: white;"></i></a>
+                                    <a href="#" target="_blank" rel="noopener noreferrer"
+                                        style="display: inline-flex; justify-content: center; align-items: center; background-color: black; border-radius: 50%; width: 30px; height: 30px;"><i
+                                            class="fab fa-linkedin-in" style="color: white;"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="product-details" id="product-details">
-                    <!-- Content will be dynamically updated here -->
-                </div>
-            </div>
-        </div>
-        <div class="mega-dropdown" id="industriDropdownContent">
-            <div class="dropdown-content">
-                <div class="product-categories">
-                    <div class="product-category active" data-product="hospitality">Hospitality</div>
-                    <div class="product-category" data-product="property">Property</div>
-                    <div class="product-category" data-product="manufacturing">Manufacturing</div>
-                    <div class="product-category" data-product="fsi">FSI</div>
-                    <div class="all-products">All industries ›</div>
-                </div>
-                <div class="product-details" id="industri-details">
-                    <!-- Content will be dynamically updated here -->
-                </div>
-            </div>
-        </div>
-        <div class="mega-dropdown" id="partnerDropdownContent">
-            <div class="dropdown-content">
-                <div class="product-categories">
-                    <div class="product-category active" data-product="reseller">Reseller Program</div>
-                    <div class="product-category" data-product="technology">Technology Partners</div>
-                    <div class="all-products">All partners ›</div>
-                </div>
-                <div class="product-details" id="partner-details">
-                    <!-- Content will be dynamically updated here -->
-                </div>
-            </div>
-        </div>
-        <div class="mega-dropdown" id="contactDropdownContent">
-            <div class="dropdown-content">
-                <div class="product-categories">
-                    <div class="product-category active" data-product="business">Business Consultation</div>
-                    <div class="product-category" data-product="technical">Technical Consultation</div>
-                    <div class="all-products">All consultations ›</div>
-                </div>
-                <div class="product-details" id="contact-details">
-                    <!-- Content will be dynamically updated here -->
-                </div>
-            </div>
-        </div>
-        <div class="mega-dropdown" id="careerDropdownContent">
-            <!-- * Career megamenu -->
-            <div class="dropdown-content">
-                <div class="product-categories">
-                    <div class="product-category active" data-product="openings">Job Openings</div>
-                    <div class="product-category" data-product="internships">Internship Programs</div>
-                    <div class="product-category" data-product="culture">Company Culture</div>
-                    <div class="all-products">View All Career Opportunities ›</div>
-                </div>
-                <div class="product-details" id="career-details">
-                    <!-- Content will be dynamically updated here -->
-                </div>
-            </div>
-        </div>
-        <div class="mega-dropdown" id="tentangRealtaDropdownContent">
-            <div class="dropdown-content">
-                <div class="product-categories">
-                    <div class="product-category active" data-product="about">About Realta</div>
-                    <div class="all-products">Learn more ›</div>
-                </div>
-                <div class="product-details" id="tentangRealta-details">
-                    <!-- Content will be dynamically updated here -->
-                </div>
-            </div>
-        </div>
-    </nav>
-
-    <!-- <div class="career-link">   
-        Looking for a new career? <a href="#">Get in touch</a>
-    </div> -->
-    <section class="rhapsody-header parallax-section py-4">
-        <div class="parallax-background"
-            style="background-image: url('assets/img/realnet/A_1826_1027_202104_pietro-jeng-n6B49lTx7NM-unsplash.jpg')">
-        </div>
-        <div class="container">
-            <div class="row">
-                <div class="col-12">
-                    <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@300;400;700&display=swap"
-                        rel="stylesheet">
-                    <H1 class="display-3 text-center mb-4 text-white slide-in"
-                        style="font-family: 'Unbounded', sans-serif; font-size: 45px;">
-                        RealNet <br> Network & System Integration
-                    </H1>
+    
+                <style>
+                    @media (min-width: 992px) {
+                        #sidebar {
+                            display: none !important;
+                            z-index: 2031;
+                        }
+    
+                        .offcanvas-backdrop {
+                            display: none !important;
+                        }
+    
+                        body {
+                            overflow: auto !important;
+                            padding-right: 0 !important;
+                        }
+                    }
+                </style>
+    
+    
+                <style>
+                    .custom-dropdown {
+                        position: relative;
+                        display: inline-block;
+                    }
+    
+                    .custom-dropdown-menu {
+                        display: none;
+                        position: absolute;
+                        top: 69%;
+                        right: 5%;
+                        /* Changed from -10% to -5% to move slightly to the left */
+                        background: rgba(179, 179, 179, 0.137);
+                        backdrop-filter: blur(10px);
+                        border-radius: 10px;
+                        width: 80px;
+                        /* Further reduced width for an even smaller dropdown */
+                        z-index: 1000;
+                        list-style-type: none;
+                        padding: 0.25rem 0;
+                        /* Reduced padding for a smaller dropdown */
+                        margin: 0.5rem 0 0 0;
+                        border: 1px solid rgba(255, 255, 255, 0.18);
+                    }
+    
+                    .custom-dropdown-menu li {
+                        padding: 0.2rem 0;
+                        /* Reduced padding for smaller items */
+                        text-align: center;
+                        /* Centered text */
+                    }
+    
+                    .custom-dropdown-menu li a {
+                        color: #333;
+                        padding: 0.3rem 0.3rem;
+                        /* Adjusted padding for better alignment */
+                        text-decoration: none;
+                        display: block;
+                        font-size: 0.8rem;
+                        /* Reduced font size for smaller dropdown */
+                        transition: background-color 0.3s ease;
+                    }
+    
+                    .custom-dropdown-menu li a:hover {
+                        background-color: rgba(126, 126, 126, 0.5);
+                        color: #fff;
+                        /* Change text color on hover */
+                        transform: scale(1.05);
+                        /* Slightly enlarge the item */
+                        border-radius: 10px;
+                        /* Added border radius for hover background */
+                        transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
+                        /* Smooth transition */
+                    }
+    
+                    .custom-dropdown:hover .custom-dropdown-menu {
+                        display: block;
+    
+                    }
+                </style>
+                <div class="full-screen-sidebar">
                     <style>
-                        @media (max-width: 768px) {
-                            .display-3 {
-                                margin-top:  30px;
-                                font-size: 35px !important;
+                        @media (min-width: 992px) {
+                            .full-screen-sidebar {
+                                margin-right: -45px;
                             }
                         }
-                        @media (max-width: 576px) {
-                            .display-3 {
-                                font-size: 28px !important;
+    
+                        @media (max-width: 768px) {
+                            .full-screen-sidebar {
+                                margin-right: 0;
                             }
                         }
                     </style>
-                    <p class="lead text-center text-light mb-4 slide-in" style="width: 70%; margin-left: auto; margin-right: auto; text-align: center; font-family: 'Unbounded', sans-serif;">
-                        One Solution concept, a strategic approach that skillfully blends various IT elements into a
-                        streamlined and efficient framework that is precisely tailored to each client's specific needs.
-                    </p>
-                    <div class="text-center  mt-0 slide-in">
-                        <a href="#" class="btn btn-outline-secondary btn-lg">Contact Us</a>
+                    <ul class="sidebar-nav justify-content-end align-items-center"
+                        style="padding: 0; margin: 0; list-style-type: none;">
+                        <!-- Solutions dropdown -->
+                        <li class="me-1"><a class="nav-link dropdown-toggle" href="#" id="solutionsDropdown" role="button"
+                                data-bs-toggle="dropdown" aria-expanded="false">
+                                Solution <i class="fas fa-chevron-down ms-1 fa-xs"></i>
+                            </a></li>
+    
+                        <!-- Industry dropdown -->
+                        <li class="me-1"><a class="nav-link dropdown-toggle" href="#" id="industriDropdown" role="button"
+                                data-bs-toggle="dropdown" aria-expanded="false">
+                                Industry <i class="fas fa-chevron-down ms-1 fa-xs"></i>
+                            </a></li>
+    
+                        <!-- Partner dropdown -->
+                        <li class="me-1"><a class="nav-link dropdown-toggle" href="#" id="partnerDropdown" role="button"
+                                data-bs-toggle="dropdown" aria-expanded="false">
+                                Partners <i class="fas fa-chevron-down ms-1 fa-xs"></i>
+                            </a></li>
+    
+                        <!-- Contact dropdown -->
+                        <li class="me-1"><a class="nav-link dropdown-toggle" href="#" id="contactDropdown" role="button"
+                                data-bs-toggle="dropdown" aria-expanded="false">
+                                Contact <i class="fas fa-chevron-down ms-1 fa-xs"></i>
+                            </a></li>
+    
+                        <!-- Career dropdown -->
+                        <li class="me-1"><a class="nav-link dropdown-toggle" href="#" id="careerDropdown" role="button"
+                                data-bs-toggle="dropdown" aria-expanded="false">
+                                Career <i class="fas fa-chevron-down ms-1 fa-xs"></i>
+                            </a></li>
+                        <!-- Blog link -->
+                        <li class="me-1">
+                            <a href="blog.html" class="nav-link" onclick="navigateWithLoading('blog.html')">Blog</a>
+                        </li>
+                        <!-- About Realta dropdown -->
+                        <li><a class="nav-link dropdown-toggle" href="#" id="tentangRealtaDropdown" role="button"
+                                data-bs-toggle="dropdown" aria-expanded="false">
+                                About Us <i class="fas fa-chevron-down ms-1 fa-xs"></i>
+                            </a></li>
+    
+                    </ul>
+                    <div class="sidebar-actions d-flex justify-content-end align-items-center" style="margin-bottom: 1rem;">
+                        <a class="btn-custom whatsapp-btn me-2"
+                            href="https://api.whatsapp.com/send?phone=628111221789&text=Hallo%20PT%20Realta..."
+                            target="_blank" rel="noopener noreferrer" style="font-size: 0.8em;">
+                            <i class="fab fa-whatsapp"></i>
+                            <span><strong>Whatsapp</strong></span>
+                        </a>
+                        <button id="darkModeToggleSidebar" class="btn-custom ms-2">
+                            <i class="fas fa-moon"></i>
+                        </button>
+                        <div class="custom-dropdown">
+                            <button id="languageSwitch" class="btn-custom download-btn ms-1" type="button"
+                                style="border: none; min-width: fit-content; margin-right: 1.4rem;">
+                                <i class="fas fa-globe"></i>
+                            </button>
+                            <ul class="custom-dropdown-menu">
+                                <li><a href="#" data-lang="en">EN</a></li>
+                                <li><a href="#" data-lang="id">ID</a></li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
             </div>
+            <div class="mega-dropdown" id="solutionsDropdownContent">
+                <div class="dropdown-content">
+                    <div class="product-categories">
+                        <div class="product-category active" data-product="eam">ERP & EAM</div>
+                        <div class="product-category" data-product="gcs">Golf Course System</div>
+                        <div class="product-category" data-product="hrs">HR System</div>
+                        <div class="product-category " data-product="hms">Hotel Management System</div>
+                        <div class="product-category" data-product="itm">ITSM, ITAM & Unified Endpoint Management</div>
+                        <div class="product-category" data-product="pts">Property & Tenancy System</div>
+                        <div class="product-category" data-product="erp">Network & System Integration</div>
+                        <div style="background: linear-gradient(90deg, transparent 0%, rgba(133, 22, 188, 0.582) 50%, transparent 100%); height: 1px; margin: 10px 0; pointer-events: none;"></div>
+                        <!-- Removed: <div class="all-products"><a href="#solutions">All products ›</a></div> -->
+                    </div>
+                    <div class="product-details" id="product-details">
+                        <!-- Content will be dynamically updated here -->
+                    </div>
+                </div>
+            </div>
+            <div class="mega-dropdown" id="industriDropdownContent">
+                <div class="dropdown-content">
+                    <div class="product-categories">
+                        <div class="product-category active" data-product="hospitality">Hospitality</div>
+                        <div class="product-category" data-product="property">Property</div>
+                        <div class="product-category" data-product="manufacturing">Manufacturing</div>
+                        <div class="product-category" data-product="fsi">FSI</div>
+                        <!-- Removed: <div class="all-products">All industries ›</div> -->
+                    </div>
+                    <div class="product-details" id="industri-details">
+                        <!-- Content will be dynamically updated here -->
+                    </div>
+                </div>
+            </div>
+            <div class="mega-dropdown" id="partnerDropdownContent">
+                <div class="dropdown-content">
+                    <div class="product-categories">
+                        <div class="product-category active" data-product="reseller">Reseller Program</div>
+                        <div class="product-category" data-product="technology">Technology Partners</div>
+                        <!-- Removed: <div class="all-products">All partners ›</div> -->
+                    </div>
+                    <div class="product-details" id="partner-details">
+                        <!-- Content will be dynamically updated here -->
+                    </div>
+                </div>
+            </div>
+            <div class="mega-dropdown" id="contactDropdownContent">
+                <div class="dropdown-content">
+                    <div class="product-categories">
+                        <div class="product-category active" data-product="business">Business Consultation</div>
+                        <div class="product-category" data-product="technical">Technical Consultation</div>
+                        <!-- Removed: <div class="all-products">All consultations ›</div> -->
+                    </div>
+                    <div class="product-details" id="contact-details">
+                        <!-- Content will be dynamically updated here -->
+                    </div>
+                </div>
+            </div>
+            <div class="mega-dropdown" id="careerDropdownContent">
+                <div class="dropdown-content">
+                    <div class="product-categories">
+                        <div class="product-category active" data-product="openings">Job Openings</div>
+                        <div class="product-category" data-product="internships">Internship Programs</div>
+                        <div class="product-category" data-product="culture">Company Culture</div>
+                        <!-- Removed: <div class="all-products">View All Career Opportunities ›</div> -->
+                    </div>
+                    <div class="product-details" id="career-details">
+                        <!-- Content will be dynamically updated here -->
+                    </div>
+                </div>
+            </div>
+            <div class="mega-dropdown" id="tentangRealtaDropdownContent">
+                <div class="dropdown-content">
+                    <div class="product-categories">
+                        <div class="product-category active" data-product="about">About Realta</div>
+                        <!-- Removed: <div class="all-products">Learn more ›</div> -->
+                    </div>
+                    <div class="product-details" id="tentangRealta-details">
+                        <!-- Content will be dynamically updated here -->
+                    </div>
+                </div>
+            </div>
+        </nav>
+    
+        <!-- Update the announcement bar HTML -->
+        <div class="top-announcement-bar">
+            <div class="announcement-content">
+                <!-- Logo on the left -->
+                <div class="announcement-logo">
+                    <img src="assets/img/RealNET.png" alt="Realta Logo" class="announcement-logo-img">
+                </div>
+                
+                <!-- Navigation links on the right -->
+                <nav class="announcement-nav">
+                    <a href="#" class="announcement-nav-item">Home</a>
+                    <a href="#" class="announcement-nav-item">Products</a>
+                    <a href="#" class="announcement-nav-item">Solutions</a>
+                    <a href="#" class="announcement-nav-item">Services</a>
+                    <div class="announcement-dropdown">
+                        <a href="#" class="announcement-nav-item has-dropdown">Company <i class="fas fa-chevron-down"></i></a>
+                        <div class="announcement-dropdown-content">
+                            <a href="#" class="announcement-dropdown-item">About Us</a>
+                            <a href="#" class="announcement-dropdown-item">Our Team</a>
+                            <a href="#" class="announcement-dropdown-item">Careers</a>
+                            <a href="#" class="announcement-dropdown-item">Contact</a>
+                        </div>
+                    </div>
+                </nav>
+            </div>
         </div>
-    </section>
+    
+        <style>
+        /* Base announcement bar */
+        .top-announcement-bar {
+            background-color: rgb(248, 248, 248);
+            position: fixed;
+            top: 66px;
+            left: 0;
+            right: 0;
+            z-index: 1029;
+            height: 44px;
+            border-bottom: 1px solid rgba(0,0,0,0.1);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+    
+        /* Content container */
+        .announcement-content {
+            display: flex;
+            justify-content: space-between; /* Push items to edges */
+            align-items: center;
+            width: 100%;
+            height: 100%;
+            padding: 0 4.4%; /* Match container-fluid padding */
+        }
+    
+        /* Logo styling */
+        .announcement-logo {
+            flex: 0 0 auto;
+            margin-top: -2px;
+        }
+    
+        .announcement-logo-img {
+            height: 25px;
+            width: auto;
+        }
+    
+        /* Navigation styling */
+        .announcement-nav {
+            display: flex;
+            align-items: center;
+            gap: 30px;
+        }
+    
+        .announcement-nav-item {
+            color: #464646c0;
+            text-decoration: none;
+            font-size: 13px;
+            font-weight: bold;
+            transition: color 0.3s ease;
+            display: flex;
+            align-items: center;
+            transition: all 0.3s ease;
+            gap: 5px;
+        }
+    
+        .announcement-nav-item:hover {
+            color: #9054d0;
+            transform: scale(1.05);
+        }
+    
+        /* Dropdown styling */
+        .announcement-dropdown {
+            position: relative;
+        }
+    
+        .announcement-dropdown-content {
+            position: absolute;
+            top: calc(100% + 10px);
+            right: 0;
+            background: #ffffff;
+            min-width: 200px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            border-radius: 8px;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(-10px);
+            transition: all 0.3s ease;
+        }
+    
+        .announcement-dropdown:hover .announcement-dropdown-content {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+    
+        .announcement-dropdown-item {
+            display: block;
+            padding: 12px 20px;
+            color: #333;
+            text-decoration: none;
+            font-size: 13px;
+            transition: all 0.2s ease;
+        }
+    
+        .announcement-dropdown-item:hover {
+            background-color: #f5f5f5;
+            color: #9054d0;
+        }
+    
+        /* Dark mode */
+        body.dark-mode .top-announcement-bar {
+            background-color: rgba(30, 30, 30, 0.95);
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+    
+        body.dark-mode .announcement-nav-item,
+        body.dark-mode .announcement-dropdown-item {
+            color: #fff;
+        }
+    
+        body.dark-mode .announcement-dropdown-content {
+            background: #1a1a1a;
+        }
+    
+        body.dark-mode .announcement-dropdown-item:hover {
+            background-color: #2d2d2d;
+            color: #bb86fc;
+        }
+    
+        /* Mobile hide */
+        @media (max-width: 768px) {
+            .top-announcement-bar {
+                display: none;
+            }
+            
+            body {
+                padding-top: 66px; /* Only navbar height on mobile */
+            }
+        }
+        </style>
+    
+        <div class="navbar-banner__blur navbar-banner__blur--1"></div>
+        <div class="navbar-banner__blur navbar-banner__blur--2"></div>
+       
+       
+    </header>
+    
+    <body>
+        <!-- LOADING -->
+        <div id="loading-overlay" class="loading-overlay">
+            <div class="loading-container">
+                <div class="loading-text">Loading...</div>
+                <div class="spinner">
+                    <div class="spinner-inner"></div>
+                </div>
+            </div>
+        </div>
+        <script>
+            function navigateWithLoading(url) {
+                const loadingOverlay = document.getElementById('loading-overlay');
+                loadingOverlay.style.display = 'flex'; // Show the loading overlay
+                document.body.style.overflow = 'hidden'; // Prevent scrolling
+    
+                // Wait for the animation to complete before navigating
+                setTimeout(function () {
+                    window.location.href = url;
+                }, 2000); // Adjust the delay as needed (in milliseconds)
+            }
+    
+            document.addEventListener('DOMContentLoaded', function () {
+                // This script block can contain other page initialization code
+            });
+        </script>
+        <style>
+            .loading-overlay {
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background-color: rgba(255, 255, 255, 0.8);
+                backdrop-filter: blur(5px);
+                display: none;
+                /* Initially hidden */
+                justify-content: center;
+                align-items: center;
+                z-index: 9999;
+            }
+    
+            .loading-container {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+    
+            .loading-text {
+                font-size: 24px;
+                font-weight: bold;
+                margin-bottom: 20px;
+                color: #9054d0;
+                opacity: 0;
+                animation: fade-in 0.5s ease-in-out forwards;
+                animation-delay: 0.5s;
+                /* Add a delay to the fade-in animation */
+            }
+    
+            .spinner {
+                width: 80px;
+                height: 80px;
+                border-radius: 50%;
+                border: 4px solid rgba(52, 152, 219, 0.2);
+                border-top-color: #9054d0;
+                animation: spin 1s ease-in-out infinite;
+            }
+    
+            @keyframes spin {
+                0% {
+                    transform: rotate(0deg);
+                }
+    
+                100% {
+                    transform: rotate(360deg);
+                }
+            }
+    
+            @keyframes fade-in {
+                0% {
+                    opacity: 0;
+                    transform: translateY(-20px);
+                }
+    
+                100% {
+                    opacity: 1;
+                    transform: translateY(0);
+                }
+            }
+    
+            .product-banner {
+                cursor: pointer;
+            }
+        </style>
+        <!-- LOADING -->
+    
+    
+        <section class="parallax-header">
+            <div class="parallax-content">
+                <h1>RealNet
+                    Network & System Integration </h1>
+                <div class="badge">One Solution Concept</div>
+                <p>One Solution concept, a strategic approach that skillfully blends various IT elements into a streamlined and efficient framework that is precisely tailored to each client's specific needs. </p>
+                <button class="erp-learn-btn">Learn More</button>
+                <style>
+                    .erp-learn-btn {
+                        /* Mobile first base styles */
+                        width: 100%;
+                        max-width: 280px;
+                        font-size: 1rem;
+                        padding: 10px 20px;
+                        background: linear-gradient(287deg, #a0783b, #833ba0, #833ba0);
+                        color: #fff;
+                        border: none;
+                        border-radius: 6px;
+                        cursor: pointer;
+                        transition: all 0.3s ease;
+                        font-weight: 600;
+                        letter-spacing: 0.5px;
+                        box-shadow: 0 4px 15px rgba(144, 84, 208, 0.3);
+                        margin: 0 auto;
+                        display: block;
+                    }
+    
+                    .erp-learn-btn:hover {
+                        transform: translateY(-2px);
+                        box-shadow: 0 6px 20px rgba(144, 84, 208, 0.4);
+                        background: linear-gradient(287deg, #a0783b, #833ba0, #833ba0);
+                    }
+    
+                    .erp-learn-btn:active {
+                        transform: translateY(1px);
+                    }
+    
+                    /* Tablet breakpoint */
+                    @media (min-width: 768px) {
+                        .erp-learn-btn {
+                            font-size: 1.1rem;
+                            padding: 11px 25px;
+                            max-width: 300px;
+                        }
+                    }
+    
+                    /* Desktop breakpoint */
+                    @media (min-width: 1024px) {
+                        .erp-learn-btn {
+                            font-size: 1.2rem;
+                            padding: 12px 30px;
+                            max-width: 320px;
+                        }
+                    }
+                </style>
+            </div>
+        </section>
+    
+        <style>
+            .parallax-header {
+                position: relative;
+                height: 100vh;
+                width: 100%;
+                overflow: hidden;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                background-image: url('assets/img/realnet/A_1826_1027_202104_pietro-jeng-n6B49lTx7NM-unsplash.jpg');
+                background-attachment: fixed;
+                background-position: center;
+                background-repeat: no-repeat;
+                background-size: cover;
+            }
+    
+            .parallax-content {
+                text-align: center;
+                color: #fff;
+                padding: 20px;
+                max-width: 1300px;
+                z-index: 2;
+                animation: fadeIn 1s ease-in;
+            }
+    
+            .parallax-content h1 {
+                font-size: 3.5rem;
+                font-weight: 700;
+                margin-bottom: 1rem;
+                text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+                line-height: 1.2;
+            }
+    
+            .parallax-content .badge {
+                display: inline-block;
+                background: linear-gradient(287deg, #a0783bb2, #833ba09f, #833ba091);
+                padding: 8px 16px;
+                border-radius: 50px;
+                font-size: 1.1rem;
+                font-weight: 500;
+                margin: 1rem 0;
+                text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+            }
+    
+            .parallax-content p {
+                font-size: 20px !important;
+                margin-bottom: 2rem;
+                text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+                line-height: 1.6;
+            }
+    
+            .parallax-header::before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                background: rgba(0,0,0,0.4);
+                z-index: 1;
+            }
+    
+            @media (max-width: 768px) {
+                .parallax-content h1 {
+                    font-size: 2.5rem;
+                }
+                
+                .parallax-content p {
+                    font-size: 1rem !important;
+                }
+    
+                .parallax-content .badge {
+                    font-size: 0.9rem;
+                }
+            }
+        </style>
     <style>
         @keyframes slideIn {
             from {
@@ -1466,7 +1216,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background-color: rgba(23, 0, 128, 0.2);
+            background-color: rgba(128, 0, 128, 0.2);
             /* Slight purple opacity */
             z-index: 1;
         }
@@ -1689,10 +1439,10 @@
 
 
     <section id="ict-one-solution" class="ict-one-solution py-5" style="margin-top: 5%;">
-        <div class="container-fluid container-lg px-2">
+        <div class="container-fluid ">
             <div class="row align-items-center">
-                <div class="col-md-6 fade-in-left">
-                    <img src="assets/img/realnet/realnet-onesol-realta.png" alt="ICT One Solution" class="img-fluid" style="width: 90%; height: auto; margin-left: 10%;">
+                <div class="col-md-6 fade-in-left text-start">
+                    <img src="assets/img/realnet/realnet-onesol-realta.png" alt="ICT One Solution" class="img-fluid" style="width: 80%; height: auto;">
                 </div>
                 <div class="col-md-6  text-center fade-in-right">
                     <div class="medusa-btn mb-4">
@@ -1760,7 +1510,7 @@
                         style="background: linear-gradient(287deg, #e49e44, #6d488b); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">
                         UNIFIED IT MANAGEMENT SOFTWARE SOLUTIONS
                     </h2>
-                    <div class="mb-4" style="max-width: 90%; margin: 0 auto;">
+                    <div class="mb-4" style="max-width: 100%; margin: 0 auto;">
                         <!-- Paragraph 1: The Problem -->
                         <p style="line-height: 1.6; font-size: 20px; margin-bottom: 1rem; text-align: left;">
                             RealNET, a division of REALTA, excels at providing expert network, hardware, software and
@@ -1799,7 +1549,7 @@
     </section>
 
     <section id="ict-solution-reverse" class="ict-solution-reverse py-5" style="margin-top: 5%;">
-        <div class="container-fluid px-5">
+        <div class="container-fluid ">
             <div class="row align-items-center">
                 <div class="col-md-6 text-center fade-in-left">
                     <h2 class="mb-4 gradient-text fw-bold"
@@ -1829,7 +1579,7 @@
                         </p>
                     </div>
                 </div>
-                <div class="col-md-6 fade-in-right d-flex justify-content-center align-items-center">
+                <div class="col-md-6 fade-in-right d-flex justify-content-end align-items-center">
                     <img src="assets/img/realnet/whyrealnet---realta-chakradarma.png" alt="IT Infrastructure Solutions"
                     class="img-fluid" style="width: 80%; height: auto;">
                 </div>
@@ -1912,6 +1662,7 @@
 
 
     <section id="why-rhapsody" class="bimasakti-solutions-grid slide-in">
+        <div class="container-fluid">
         <h2 class="bimasakti-title">FEATURES AND MODULE</h2>
         <h3 class="bimasakti-description">RealNET offers more than just an IT system; it's a partnership that aligns
             technology with your business strategy. We transform your IT infrastructure into a strategic asset, driving
@@ -2061,6 +1812,7 @@
                 <p>You will get our comprehensive services with our "One Solution" strategy.</p>
             </article>
         </div>
+    </div>
     </section>
 
     <style>
@@ -2073,9 +1825,7 @@
                 "button"
                 "features";
             gap: 15px;
-            padding: 20px;
             border-radius: 15px;
-            max-width: 75%;
             margin: 0 auto;
         }
 
@@ -2254,7 +2004,7 @@
         }
 
         #cta .cta-button {
-            background-color: #3e678d;
+            background: linear-gradient(287deg, #e4b97a, #c57ee0, #c57ee0);
             border: none;
             color: #ffffff;
             font-weight: 600;
@@ -2262,7 +2012,7 @@
         }
 
         #cta .cta-button:hover {
-            background-color: #33537c;
+            background: linear-gradient(287deg, #e4b97a, #c57ee0, #c57ee0);
             transform: translateY(-2px);
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
         }
@@ -2287,7 +2037,7 @@
 
     <!-- Testimonial Section with Separate Video -->
     <section id="realnet-testimonial-showcase" class="py-5">
-        <div class="container position-relative">
+        <div class="container-fluid">
             <!-- Background Grid Pattern -->
             <div class="realnet-bg-grid"></div>
 
@@ -2605,12 +2355,12 @@
         }
     </style>
 
-<section id="technology-delivery" class="clipped-section">
+<section id="technology-delivery " class="clipped-section">
     <div class="container-fluid ">
         <div class="row justify-content-center">
-            <div class="col-12 ">
-                <div class="text-center mb-5">
-                    <h2 class="mb-2 glass-text" style="background: linear-gradient(90deg, #783ea8, #e4ac44); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">
+           
+                <div class="text-center">
+                    <h2 class="mb-2 glass-text gradient-text">
                         Delivering Technology for
                         <br>
                         Leading Organizations
@@ -2779,9 +2529,7 @@
                             padding: 1rem;
                             margin: 0.25rem;
                         }
-                        .container-fluid {
-                            padding: 0 1.5rem;
-                        }
+                      
                     }
 
                     #partners-logo .row {
@@ -2795,7 +2543,7 @@
                     }
                 </style>
             </div>
-        </div>
+    
     </div>
     <!-- Add the circle-blur2 div here -->
     <div class="circle-blur2"></div>
@@ -2803,8 +2551,8 @@
 
 
 
-    <section id="integrations" class="py-5 p-3">
-        <div class="container-fluid container-lg px-5">
+    <section id="integrations" class="py-5">
+        <div class="container-fluid">
             <div class="row align-items-center">
                 <style>
                     /* Online indicator styles */
@@ -3098,8 +2846,8 @@
             }
         }
     </style>
-    <section id="wireless-networking">
-        <div class="container-fluid container-lg px-5">
+    <section id="wireless-networking" class="py-5">
+        <div class="container-fluid">
             <div class="row justify-content-center align-items-center">
                 <div class="col-lg-6 order-lg-2">
                     <div class="row justify-content-center align-items-center">
@@ -3161,8 +2909,8 @@
     </style>
 
     <!-- Section: Network Security Solutions -->
-    <section id="network-security" class="py-4 p-3">
-        <div class="container-fluid container-lg px-5">
+    <section id="network-security" class="py-5">
+        <div class="container-fluid">
             <div class="row align-items-center">
                 <div class="col-lg-6 description-section">
                     <h3 class="mb-4 mt-5 bimasakti-title" style="text-align: center">Data Center Solutions</h3>
@@ -3245,8 +2993,8 @@
     </style>
 
 
-    <section id="wireless-networking">
-        <div class="container-fluid container-lg px-5">
+    <section id="wireless-networking" class="py-5">
+        <div class="container-fluid">
             <div class="row justify-content-center align-items-center">
                 <div class="col-lg-6 order-lg-2">
                     <div class="row justify-content-center align-items-center">
@@ -3284,8 +3032,9 @@
             </div>
         </div>
     </section>
+
     <section id="network-security" class="py-5">
-        <div class="container-fluid container-lg px-5">
+        <div class="container-fluid">
             <!-- Section Title and Description -->
             <div class="row justify-content-center text-center mb-5">
                 <div class="col-lg-8">
@@ -3358,528 +3107,532 @@
 
 
 
-<section id="separator" class="" style="background-color: #efecff;">
-    <div class="container-fluid p-4">
-        <div class="banner">
-            <div class="banner-content">
-                <h2>Unlock superior coverage for your team</h2>
-                <p>Build a culture of employee delight by taking the first step towards Benefits</p>
-                <button class="btn-custom" onclick="scheduleCall()"
-                    style="background: linear-gradient(to bottom, #9054d0, #7a4bd7);">Schedule a call</button>
-            </div>
-            <img src="assets/img/handshake.png" alt="Business Handshake" class="banner-image">
-        </div>
-    </div>
-</section>
-
-<section id="contact" class="pb-5">
-    <div class="container-fluid p-4">
-        <div class="row justify-content-between">
-            <div id="contact-info" class="col-lg-5 left-column >
-                    <h1 class=" mb-3 contact-heading"
-                style="font-size: 36px; text-align: left; line-height: 1.2; letter-spacing: -0.5px;">
-                What Are You Waiting For?<br>
-                <span
-                    style="font-weight: 700; color: #7a4bd7; text-transform: uppercase; display: block; margin-top: 10px;">Just
-                    Make It Happen!</span>
-                </h1>
-                <p class="text-muted mb-4 contact-text" style="font-size: 18px;">
-                    We'll have a Business Development Representative contact you within
-                    <span style="font-weight: bold;">24 business hours.</span>
-                </p>
-
-                <div class="company-info" style="border-radius: 10px;">
-                    <h3 class="h5 fw-bold mb-3 company-name custom-text"
-                        style="color: #333; padding-bottom: 10px; display: inline-block; border-bottom: 1px solid transparent; background-image: linear-gradient(to right, transparent, #333, transparent); background-position: bottom; background-size: 100% 1px; background-repeat: no-repeat;">
-                        PT Realta Chakradarma </h3>
-                    <h3 class="headquarter-title custom-text" style="margin-bottom: 10px;">
-                        Address:</h3>
-                    <div class="address-wrapper">
-                        <p class="address-details custom-text">
-                            Jl. Petojo Melintang No. 25A<br>
-                            Petojo Selatan - Gambir<br>
-                            Jakarta 10160<br>
-                            <span class="country custom-text">Indonesia</span>
-                        </p>
-                    </div>
-
-                    <style>
-                        .custom-text {
-                            font-size: 20px;
-                        }
-                    </style>
-                </div>
-                <style>
-                    /* Remove the media query and adjust the selectors */
-                    body.dark-mode .company-info {
-                        color: #ffffff !important;
-                    }
-
-                    body.dark-mode .company-name {
-                        color: #ffffff !important;
-                        background-image: linear-gradient(to right, transparent, #ffffff, transparent) !important;
-                    }
-
-                    body.dark-mode .headquarter-title {
-                        color: #ffffff !important;
-                    }
-
-                    body.dark-mode .address-details {
-                        color: #e0e0e0 !important;
-                    }
-
-                    body.dark-mode #contact .contact-heading {
-                        color: #ffffff !important;
-                    }
-                </style>
-
-                <div class="map-wrapper mb-4" style="width: 85%;">
-                    <iframe
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.3279995766406!2d106.8142527!3d-6.172364!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f67f4f44dc2f%3A0x124b0a0f4cb7e845!2sPT%20Realta%20Chakradarma!5e0!3m2!1sen!2sid!4v1653668623967"
-                        frameborder="0" style="border:0" allowfullscreen="">
-                    </iframe>
-                </div>
-
-                <div class="contact-info mb-4">
-                    <style>
-                        .contact-item {
-                            display: flex;
-                            align-items: flex-start;
-                            margin-bottom: 10px;
-                        }
-
-                        .contact-icon {
-                            font-size: 14px;
-                            margin-right: 10px;
-                            margin-top: 3px;
-                        }
-                    </style>
-                    <div class="contact-item">
-                        <i class="fas fa-phone contact-icon"></i>
-                        <p class="mb-0">Phone: <a href="tel:+62213861772" class="text-decoration-none fw-bold">+62
-                                21 - 386 1772</a></p>
-                    </div>
-                    <div class="contact-item">
-                        <i class="fas fa-envelope contact-icon"></i>
-                        <p class="mb-0">Email: <a href="mailto:info@realta.co.id"
-                                class="text-decoration-none fw-bold">info@realta.co.id</a></p>
-                    </div>
-                    <div class="contact-item">
-                        <i class="fab fa-whatsapp contact-icon"></i>
-                        <p class="mb-0">
-                            For sales and marketing, contact our Official WhatsApp:<br><br>
-                            <a href="https://wa.me/628111221789" class="text-decoration-none fw-bold"
-                                style="color: #3bc05a;">+62 811 1221 789 (CHAT ONLY)</a>
-                        </p>
-                    </div>
-                </div>
-
-                <div class="social-icons-container">
-                    <h4 class="mb-3" style="font-size: 0.9rem; text-align: left; margin-left: 10px;"> Connect With
-                        Us Through Social Media</h4>
-                    <div class="social-icons d-flex gap-3">
-                        <a href="https://www.facebook.com/yourpage" class="social-icon" aria-label="Facebook">
-                            <i class="fab fa-facebook-f"></i>
-                        </a>
-                        <a href="https://www.linkedin.com/yourpage" class="social-icon" aria-label="LinkedIn">
-                            <i class="fab fa-linkedin-in"></i>
-                        </a>
-                        <a href="https://www.twitter.com/yourpage" class="social-icon" aria-label="Twitter">
-                            <i class="fab fa-x-twitter"></i>
-                        </a>
-                        <a href="https://www.instagram.com/yourpage" class="social-icon" aria-label="Instagram">
-                            <i class="fab fa-instagram"></i>
-                        </a>
-                        <a href="https://www.youtube.com/yourchannel" class="social-icon" aria-label="YouTube">
-                            <i class="fab fa-youtube"></i>
-                        </a>
-                    </div>
-                </div>
-            </div>
-            <style>
-                .social-icons {
-                    display: flex;
-                    align-items: center;
-                }
-
-                .social-icon {
-                    display: flex;
-                    align-items: center;
-                    justify-content: center;
-                    width: 40px;
-                    height: 40px;
-                    border-radius: 50%;
-                    color: white;
-                    text-decoration: none;
-                    transition: all 0.3s ease;
-                }
-
-                .social-icon:hover {
-                    transform: translateY(-3px);
-                    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-                    background-image: none !important;
-                    background-color: #f0f0f0 !important;
-                    color: #333 !important;
-                }
-
-                .social-icon i {
-                    font-size: 18px;
-                }
-
-                .social-icon[aria-label="Facebook"] {
-                    background-color: #3b5998;
-                }
-
-                .social-icon[aria-label="LinkedIn"] {
-                    background-color: #0077b5;
-                }
-
-                .social-icon[aria-label="Twitter"] {
-                    background-color: #475258;
-                }
-
-                .social-icon[aria-label="Instagram"] {
-                    background-color: #a19551;
-                }
-
-                .social-icon[aria-label="YouTube"] {
-                    background-color: #e62e2e;
-                }
-            </style>
-            <div id="contact-form" class="col-lg-5  right-column right-column-custom p-4 p-md-5 order-1 order-lg-2">
-                <form class="needs-validation" novalidate>
-                    <div class="mb-3">
-                        <label for="fullname" class="form-label">Name</label>
-                        <input type="text" class="form-control" id="fullname" placeholder="Name" required>
-                        <div class="invalid-feedback">
-                            Please enter your full name.
+    <section id="separator" class="py-5" style="background-color: #efecff;">
+        <div class="container-fluid">
+            <div class="row justify-content-between">
+                <div class="col-lg-12">
+                    <div class="banner p-5">
+                        <div class="banner-content">
+                            <h2>Unlock superior coverage for your team</h2>
+                            <p>Build a culture of employee delight by taking the first step towards Benefits</p>
+                            <button class="btn-custom" onclick="scheduleCall()"
+                                style="background: linear-gradient(to bottom, #9054d0, #7a4bd7);">Schedule a call</button>
                         </div>
-                    </div>
-
-                    <div class="mb-3">
-                        <label for="company" class="form-label">Company Name</label>
-                        <input type="text" class="form-control" id="company" placeholder="Company" required>
-                        <div class="invalid-feedback">
-                            Please enter your company name.
-                        </div>
-                    </div>
-
-                    <div class="mb-3">
-                        <label for="jobTitle" class="form-label">Job Title</label>
-                        <input type="text" class="form-control" id="jobTitle" placeholder="Job Title" required>
-                        <div class="invalid-feedback">
-                            Please enter your job title.
-                        </div>
-                    </div>
-
-                    <div class="mb-3">
-                        <label for="service" class="form-label">Please indicate your area of interest</label>
-                        <select id="service" class="form-select" required>
-                            <option value="">Choose...</option>
-                            <option>Hospitality</option>
-                            <option>Golf</option>
-                            <option>Property & Tenancy</option>
-                            <option>Human Resource (HR)</option>
-                            <option>ITSM</option>
-                            <option>ITAM</option>
-                            <option>ERP</option>
-                            <option>EAM</option>
-                            <option>Other</option>
-                        </select>
-                        <div class="invalid-feedback">
-                            Please select a service.
-                        </div>
-                    </div>
-                    <div class="mb-3">
-                        <label for="phone" class="form-label">Mobile Phone</label>
-                        <input type="tel" class="form-control" id="phone" placeholder="Mobile Phone" required
-                            pattern="^\+?\d{0,13}">
-                        <div class="invalid-feedback">
-                            Please enter a valid mobile phone number.
-                        </div>
-                    </div>
-                    <div class="mb-3">
-                        <label for="email" class="form-label">Email</label>
-                        <input type="email" class="form-control" id="email" placeholder="Email" required>
-                        <div class="invalid-feedback">
-                            Please enter a valid email address.
-                        </div>
-                    </div>
-
-                    <div class="mb-3">
-                        <label for="employees" class="form-label">Total Employee</label>
-                        <select id="employees" class="form-select" required>
-                            <option value="">Choose...</option>
-                            <option>1-50</option>
-                            <option>51-100</option>
-                            <option>101-500</option>
-                            <option>501-1000</option>
-                            <option>1001-5000</option>
-                            <option>More than 5000</option>
-                        </select>
-                        <div class="invalid-feedback">
-                            Please select the total number of employees.
-                        </div>
-                    </div>
-
-                    <div class="mb-3">
-                        <label for="message" class="form-label">How we can help you? </label>
-                        <textarea id="message" class="form-control" rows="4" placeholder="Message"
-                            required></textarea>
-                        <div class="invalid-feedback">
-                            Please enter a message.
-                        </div>
-                    </div>
-
-                    <div class="mb-3 form-check text-center">
-                        <div class="d-inline-block text-start">
-                            <input type="checkbox" class="form-check-input" id="terms" required>
-                            <label class="form-check-label" for="terms">
-                                Before submitting please read our <br>
-                                <a href="#" class="text-decoration-none">Term and Condition</a> &
-                                <a href="#" class="text-decoration-none">Privacy Policy</a>
-                            </label>
-                            <div class="invalid-feedback">
-                                You must agree to the terms and conditions.
-                            </div>
-                        </div>
-                    </div>
-
-                    <button type="submit" class="btn submit-btn w-100">
-                        <i class="fas fa-paper-plane submit-icon"></i>
-                        <span class="submit-text">Submit</span>
-                    </button>
-
-                    <style>
-                        .submit-btn {
-                            position: relative;
-                            overflow: hidden;
-                            display: inline-flex;
-                            align-items: center;
-                            justify-content: center;
-                            width: 100%;
-                            height: 60px;
-                            font-size: 1.2rem;
-                            letter-spacing: 1px;
-                            text-transform: uppercase;
-                            border: none;
-                            border-radius: 10px;
-                            background: linear-gradient(to bottom, #9054d0, #7a4bd7);
-                            color: #ffffff;
-                            cursor: pointer;
-                            transition: all 0.3s ease-in-out;
-                            margin: 20px auto 0;
-                            /* Added top margin to move the button slightly down */
-                        }
-
-                        .submit-btn .submit-icon {
-                            margin-right: 10px;
-                            font-size: 1.5rem;
-                            transition: all 0.5s ease-in-out;
-                            color: #ffffff;
-                        }
-
-                        .submit-btn .submit-text {
-                            transition: all 0.5s ease-in-out;
-                            color: #ffffff;
-                        }
-
-                        .submit-btn:hover {
-                            background: linear-gradient(to bottom, #4CAF50, #45a049);
-                        }
-
-                        .submit-btn:hover .submit-text {
-                            transform: translateX(320px);
-                            color: #ffffff;
-                        }
-
-                        .submit-btn:hover .submit-icon {
-                            transform: translateX(45px);
-                            /* Adjusted to move to the middle */
-                            color: #ffffff;
-                        }
-
-                        @media (max-width: 768px) {
-                            .submit-btn:hover .submit-icon {
-                                transform: translateX(40px);
-                                /* Reduced movement for smaller screens */
-                            }
-                        }
-
-                        .submit-btn:active {
-                            transform: translateY(3px);
-                            box-shadow:
-                                inset 0 15px 15px -15px rgba(0, 0, 0, 0.3),
-                                inset 0 0 0 1px rgba(255, 255, 255, 0.1),
-                                0 2px 5px rgba(0, 0, 0, 0.1),
-                                0 5px 10px rgba(0, 0, 0, 0.1);
-                        }
-                    </style>
-                </form>
-            </div>
-        </div>
-    </div>
-</section>
-
-<style>
-    @media (max-width: 991px) {
-        #contact .row {
-            display: flex;
-            flex-direction: column;
-        }
-
-        #contact-form {
-            order: 2;
-        }
-
-        #contact-info {
-            order: 1;
-        }
-    }
-</style>
-
-    <section id="newsletter-cta" class="py-4 mb-0">
-        <div class="container-fluid px-5">
-            <div class="row align-items-center">
-                <div class="col-md-7 text-start">
-                    <h2 class="mb-3 fw-bold gradient-text">Stay Informed, Stay Ahead</h2>
-                    <p class="mb-4">Join our newsletter for exclusive insights and expert tips.</p>
-                    <form class="mb-3">
-                        <div class="input-group input-group-lg" style="max-width: 500px;">
-                            <input type="email" class="form-control" placeholder="Email address"
-                                aria-label="Email address" required style="border-radius: 10px 0 0 10px;">
-                            <button class="btn btn-primary" type="submit"
-                                style="border-radius: 0 10px 10px 0;">Subscribe</button>
-                        </div>
-                    </form>
-                    <p class="text-muted small">By subscribing, you agree to our <a href="#"
-                            class="text-decoration-none">Privacy Policy</a> and <a href="#"
-                            class="text-decoration-none">Terms of Service</a>.</p>
-                </div>
-                <div class="col-md-5">
-                    <div class="d-flex justify-content-md-end align-items-center mb-3">
-                        <img src="assets/img/footer1.png" alt="Logo 1" class="footer-logo me-3"
-                            style="max-height: 90px; width: auto;">
-                        <img src="assets/sticker.png" alt="Logo 2" class="footer-logo dark-mode-image"
-                            style="max-height: 90px; width: auto;">
-                        <style>
-                            .dark-mode-image {
-                                content: url('assets/sticker.png');
-                            }
-
-                            body.dark-mode .dark-mode-image {
-                                content: url('assets/img/footer2.png');
-                            }
-                        </style>
-                    </div>
-                    <div class="text-md-end">
-                        <p class="mb-2 text-muted small" style="font-size: 0.9rem;">&copy; 2024 Realta. All rights
-                            reserved.</p>
-                        <a href="https://www.realta.co.id/site/privacy-policy.html" class="text-muted small me-3"
-                            style="font-size: 0.9rem;">Privacy Policy</a>
-                        <span class="text-muted small me-3" style="font-size: 0.9rem;">|</span>
-                        <a href="https://www.realta.co.id/site/privacy-policy.html" class="text-muted small"
-                            style="font-size: 0.9rem;">Terms</a>
+                        <img src="assets/img/handshake.png" alt="Business Handshake" class="banner-image">
                     </div>
                 </div>
             </div>
         </div>
     </section>
-
-
-
+    
+    <section id="contact" class="pb-5">
+        <div class="container-fluid ">
+            <div class="row justify-content-between">
+                <div id="contact-info" class="col-lg-5 left-column >
+                        <h1 class=" mb-3 contact-heading"
+                    style="font-size: 36px; text-align: left; line-height: 1.2; letter-spacing: -0.5px;">
+                    What Are You Waiting For?<br>
+                    <span
+                        style="font-weight: 700; color: #7a4bd7; text-transform: uppercase; display: block; margin-top: 10px;">Just
+                        Make It Happen!</span>
+                    </h1>
+                    <p class="text-muted mb-4 contact-text" style="font-size: 18px;">
+                        We'll have a Business Development Representative contact you within
+                        <span style="font-weight: bold;">24 business hours.</span>
+                    </p>
+    
+                    <div class="company-info" style="border-radius: 10px;">
+                        <h3 class="h5 fw-bold mb-3 company-name custom-text"
+                            style="color: #333; padding-bottom: 10px; display: inline-block; border-bottom: 1px solid transparent; background-image: linear-gradient(to right, transparent, #333, transparent); background-position: bottom; background-size: 100% 1px; background-repeat: no-repeat;">
+                            PT Realta Chakradarma </h3>
+                        <h3 class="headquarter-title custom-text" style="margin-bottom: 10px;">
+                            Address:</h3>
+                        <div class="address-wrapper">
+                            <p class="address-details custom-text">
+                                Jl. Petojo Melintang No. 25A<br>
+                                Petojo Selatan - Gambir<br>
+                                Jakarta 10160<br>
+                                <span class="country custom-text">Indonesia</span>
+                            </p>
+                        </div>
+    
+                        <style>
+                            .custom-text {
+                                font-size: 20px;
+                            }
+                        </style>
+                    </div>
+                    <style>
+                        /* Remove the media query and adjust the selectors */
+                        body.dark-mode .company-info {
+                            color: #ffffff !important;
+                        }
+    
+                        body.dark-mode .company-name {
+                            color: #ffffff !important;
+                            background-image: linear-gradient(to right, transparent, #ffffff, transparent) !important;
+                        }
+    
+                        body.dark-mode .headquarter-title {
+                            color: #ffffff !important;
+                        }
+    
+                        body.dark-mode .address-details {
+                            color: #e0e0e0 !important;
+                        }
+    
+                        body.dark-mode #contact .contact-heading {
+                            color: #ffffff !important;
+                        }
+                    </style>
+    
+                    <div class="map-wrapper mb-4" style="width: 85%;">
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.3279995766406!2d106.8142527!3d-6.172364!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f67f4f44dc2f%3A0x124b0a0f4cb7e845!2sPT%20Realta%20Chakradarma!5e0!3m2!1sen!2sid!4v1653668623967"
+                            frameborder="0" style="border:0" allowfullscreen="">
+                        </iframe>
+                    </div>
+    
+                    <div class="contact-info mb-4">
+                        <style>
+                            .contact-item {
+                                display: flex;
+                                align-items: flex-start;
+                                margin-bottom: 10px;
+                            }
+    
+                            .contact-icon {
+                                font-size: 14px;
+                                margin-right: 10px;
+                                margin-top: 3px;
+                            }
+                        </style>
+                        <div class="contact-item">
+                            <i class="fas fa-phone contact-icon"></i>
+                            <p class="mb-0">Phone: <a href="tel:+62213861772" class="text-decoration-none fw-bold">+62
+                                    21 - 386 1772</a></p>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-envelope contact-icon"></i>
+                            <p class="mb-0">Email: <a href="mailto:info@realta.co.id"
+                                    class="text-decoration-none fw-bold">info@realta.co.id</a></p>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fab fa-whatsapp contact-icon"></i>
+                            <p class="mb-0">
+                                For sales and marketing, contact our Official WhatsApp:<br><br>
+                                <a href="https://wa.me/628111221789" class="text-decoration-none fw-bold"
+                                    style="color: #3bc05a;">+62 811 1221 789 (CHAT ONLY)</a>
+                            </p>
+                        </div>
+                    </div>
+    
+                    <div class="social-icons-container">
+                        <h4 class="mb-3" style="font-size: 0.9rem; text-align: left; margin-left: 10px;"> Connect With
+                            Us Through Social Media</h4>
+                        <div class="social-icons d-flex gap-3">
+                            <a href="https://www.facebook.com/yourpage" class="social-icon" aria-label="Facebook">
+                                <i class="fab fa-facebook-f"></i>
+                            </a>
+                            <a href="https://www.linkedin.com/yourpage" class="social-icon" aria-label="LinkedIn">
+                                <i class="fab fa-linkedin-in"></i>
+                            </a>
+                            <a href="https://www.twitter.com/yourpage" class="social-icon" aria-label="Twitter">
+                                <i class="fab fa-x-twitter"></i>
+                            </a>
+                            <a href="https://www.instagram.com/yourpage" class="social-icon" aria-label="Instagram">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                            <a href="https://www.youtube.com/yourchannel" class="social-icon" aria-label="YouTube">
+                                <i class="fab fa-youtube"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <style>
+                    .social-icons {
+                        display: flex;
+                        align-items: center;
+                    }
+    
+                    .social-icon {
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        width: 40px;
+                        height: 40px;
+                        border-radius: 50%;
+                        color: white;
+                        text-decoration: none;
+                        transition: all 0.3s ease;
+                    }
+    
+                    .social-icon:hover {
+                        transform: translateY(-3px);
+                        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+                        background-image: none !important;
+                        background-color: #f0f0f0 !important;
+                        color: #333 !important;
+                    }
+    
+                    .social-icon i {
+                        font-size: 18px;
+                    }
+    
+                    .social-icon[aria-label="Facebook"] {
+                        background-color: #3b5998;
+                    }
+    
+                    .social-icon[aria-label="LinkedIn"] {
+                        background-color: #0077b5;
+                    }
+    
+                    .social-icon[aria-label="Twitter"] {
+                        background-color: #475258;
+                    }
+    
+                    .social-icon[aria-label="Instagram"] {
+                        background-color: #a19551;
+                    }
+    
+                    .social-icon[aria-label="YouTube"] {
+                        background-color: #e62e2e;
+                    }
+                </style>
+                <div id="contact-form" class="col-lg-5  right-column right-column-custom p-4 p-md-5 order-1 order-lg-2">
+                    <form class="needs-validation" novalidate>
+                        <div class="mb-3">
+                            <label for="fullname" class="form-label">Name</label>
+                            <input type="text" class="form-control" id="fullname" placeholder="Name" required>
+                            <div class="invalid-feedback">
+                                Please enter your full name.
+                            </div>
+                        </div>
+    
+                        <div class="mb-3">
+                            <label for="company" class="form-label">Company Name</label>
+                            <input type="text" class="form-control" id="company" placeholder="Company" required>
+                            <div class="invalid-feedback">
+                                Please enter your company name.
+                            </div>
+                        </div>
+    
+                        <div class="mb-3">
+                            <label for="jobTitle" class="form-label">Job Title</label>
+                            <input type="text" class="form-control" id="jobTitle" placeholder="Job Title" required>
+                            <div class="invalid-feedback">
+                                Please enter your job title.
+                            </div>
+                        </div>
+    
+                        <div class="mb-3">
+                            <label for="service" class="form-label">Please indicate your area of interest</label>
+                            <select id="service" class="form-select" required>
+                                <option value="">Choose...</option>
+                                <option>Hospitality</option>
+                                <option>Golf</option>
+                                <option>Property & Tenancy</option>
+                                <option>Human Resource (HR)</option>
+                                <option>ITSM</option>
+                                <option>ITAM</option>
+                                <option>ERP</option>
+                                <option>EAM</option>
+                                <option>Other</option>
+                            </select>
+                            <div class="invalid-feedback">
+                                Please select a service.
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="phone" class="form-label">Mobile Phone</label>
+                            <input type="tel" class="form-control" id="phone" placeholder="Mobile Phone" required
+                                pattern="^\+?\d{0,13}">
+                            <div class="invalid-feedback">
+                                Please enter a valid mobile phone number.
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="email" class="form-label">Email</label>
+                            <input type="email" class="form-control" id="email" placeholder="Email" required>
+                            <div class="invalid-feedback">
+                                Please enter a valid email address.
+                            </div>
+                        </div>
+    
+                        <div class="mb-3">
+                            <label for="employees" class="form-label">Total Employee</label>
+                            <select id="employees" class="form-select" required>
+                                <option value="">Choose...</option>
+                                <option>1-50</option>
+                                <option>51-100</option>
+                                <option>101-500</option>
+                                <option>501-1000</option>
+                                <option>1001-5000</option>
+                                <option>More than 5000</option>
+                            </select>
+                            <div class="invalid-feedback">
+                                Please select the total number of employees.
+                            </div>
+                        </div>
+    
+                        <div class="mb-3">
+                            <label for="message" class="form-label">How we can help you? </label>
+                            <textarea id="message" class="form-control" rows="4" placeholder="Message"
+                                required></textarea>
+                            <div class="invalid-feedback">
+                                Please enter a message.
+                            </div>
+                        </div>
+    
+                        <div class="mb-3 form-check text-center">
+                            <div class="d-inline-block text-start">
+                                <input type="checkbox" class="form-check-input" id="terms" required>
+                                <label class="form-check-label" for="terms">
+                                    Before submitting please read our <br>
+                                    <a href="#" class="text-decoration-none">Term and Condition</a> &
+                                    <a href="#" class="text-decoration-none">Privacy Policy</a>
+                                </label>
+                                <div class="invalid-feedback">
+                                    You must agree to the terms and conditions.
+                                </div>
+                            </div>
+                        </div>
+    
+                        <button type="submit" class="btn submit-btn w-100">
+                            <i class="fas fa-paper-plane icon"></i>
+                            <span class="text">Submit</span>
+                        </button>
+    
+                        <style>
+                            .submit-btn {
+                                position: relative;
+                                overflow: hidden;
+                                display: inline-flex;
+                                align-items: center;
+                                justify-content: center;
+                                width: 100%;
+                                height: 60px;
+                                font-size: 1.2rem;
+                                letter-spacing: 1px;
+                                text-transform: uppercase;
+                                border: none;
+                                border-radius: 10px;
+                                background: linear-gradient(to bottom, #9054d0, #7a4bd7);
+                                color: #ffffff;
+                                cursor: pointer;
+                                transition: all 0.3s ease-in-out;
+                                margin: 20px auto 0;
+                                /* Added top margin to move the button slightly down */
+                            }
+    
+                            .submit-btn .icon {
+                                margin-right: 10px;
+                                font-size: 1.5rem;
+                                transition: all 0.5s ease-in-out;
+                                color: #ffffff;
+                            }
+    
+                            .submit-btn .text {
+                                transition: all 0.5s ease-in-out;
+                                color: #ffffff;
+    
+                            }
+    
+                            .submit-btn:hover {
+                                background: linear-gradient(to bottom, #4CAF50, #45a049);
+                            }
+    
+                            .submit-btn:hover .text {
+                                transform: translateX(420px);
+                                color: #ffffff;
+                            }
+    
+                            .submit-btn:hover .icon {
+                                transform: translateX(45px);
+                                /* Adjusted to move to the middle */
+                                color: #ffffff;
+                            }
+    
+                            @media (max-width: 768px) {
+                                .submit-btn:hover .icon {
+                                    transform: translateX(40px);
+                                    /* Reduced movement for smaller screens */
+                                }
+                            }
+    
+                            .submit-btn:active {
+                                transform: translateY(3px);
+                                box-shadow:
+                                    inset 0 15px 15px -15px rgba(0, 0, 0, 0.3),
+                                    inset 0 0 0 1px rgba(255, 255, 255, 0.1),
+                                    0 2px 5px rgba(0, 0, 0, 0.1),
+                                    0 5px 10px rgba(0, 0, 0, 0.1);
+                            }
+                        </style>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+    
     <style>
-        #newsletter-cta {
-            background: linear-gradient(135deg, #f5f7fa 0%, #a588bd 100%);
-            transition: background 0.3s ease;
-        }
-
-        #newsletter-cta .gradient-text {
-            background: linear-gradient(90deg, #7209d4, #2832d4 33%, #00a5b2);
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-            font-size: 2rem;
-        }
-
-        #newsletter-cta .btn-primary {
-            background: linear-gradient(to bottom, #9054d0, #7a4bd7);
-            border: none;
-            transition: all 0.3s ease;
-        }
-
-        #newsletter-cta .form-control {
-            border: 2px solid #e0e0e0;
-            transition: all 0.3s ease;
-        }
-
-        #newsletter-cta .form-control:focus {
-            border-color: #7209d4;
-            box-shadow: 0 0 0 0.2rem rgba(114, 9, 212, 0.25);
-        }
-
-        body.dark-mode #newsletter-cta {
-            background: #282828;
-        }
-
-        body.dark-mode #newsletter-cta .gradient-text {
-            background: linear-gradient(90deg, #a742ff, #4b5eff 33%, #00d5e6);
-            -webkit-background-clip: text;
-            background-clip: text;
-        }
-
-        body.dark-mode #newsletter-cta .btn-primary {
-            background: linear-gradient(90deg, #a742ff, #4b5eff);
-        }
-
-        body.dark-mode #newsletter-cta .form-control {
-            border-color: #4a5568;
-            color: #fff;
-        }
-
-        body.dark-mode #newsletter-cta .form-control::placeholder {
-            color: #a0aec0;
-        }
-
-        body.dark-mode #newsletter-cta .text-muted {
-            color: #a0aec0 !important;
-        }
-
-        body.dark-mode #newsletter-cta a {
-            color: #00d5e6;
-        }
-
-        @media (max-width: 767px) {
-            #newsletter-cta .gradient-text {
-                font-size: 1.5rem;
+        @media (max-width: 991px) {
+            #contact .row {
+                display: flex;
+                flex-direction: column;
             }
-
-            #newsletter-cta .row {
-                text-align: center;
+    
+            #contact-form {
+                order: 2;
             }
-
-            #newsletter-cta .col-md-7 {
-                text-align: center;
-            }
-
-            #newsletter-cta .col-md-5 {
-                margin-top: 2rem;
-            }
-
-            #newsletter-cta .d-flex {
-                justify-content: center !important;
-            }
-
-            #newsletter-cta .text-md-end {
-                text-align: center !important;
-            }
-
-            #newsletter-cta .form-control {
-                font-size: 0.8rem;
+    
+            #contact-info {
+                order: 1;
             }
         }
     </style>
-
+    
+        <section id="newsletter-cta" class="py-4 mb-0">
+            <div class="container-fluid px-5">
+                <div class="row align-items-center">
+                    <div class="col-md-7 text-start">
+                        <h2 class="mb-3 fw-bold gradient-text">Stay Informed, Stay Ahead</h2>
+                        <p class="mb-4">Join our newsletter for exclusive insights and expert tips.</p>
+                        <form class="mb-3">
+                            <div class="input-group input-group-lg" style="max-width: 500px;">
+                                <input type="email" class="form-control" placeholder="Email address"
+                                    aria-label="Email address" required style="border-radius: 10px 0 0 10px;">
+                                <button class="btn btn-primary" type="submit"
+                                    style="border-radius: 0 10px 10px 0;">Subscribe</button>
+                            </div>
+                        </form>
+                        <p class="text-muted small">By subscribing, you agree to our <a href="#"
+                                class="text-decoration-none">Privacy Policy</a> and <a href="#"
+                                class="text-decoration-none">Terms of Service</a>.</p>
+                    </div>
+                    <div class="col-md-5">
+                        <div class="d-flex justify-content-md-end align-items-center mb-3">
+                            <img src="assets/img/footer1.png" alt="Logo 1" class="footer-logo me-3"
+                                style="max-height: 90px; width: auto;">
+                            <img src="assets/sticker.png" alt="Logo 2" class="footer-logo dark-mode-image"
+                                style="max-height: 90px; width: auto;">
+                            <style>
+                                .dark-mode-image {
+                                    content: url('assets/sticker.png');
+                                }
+    
+                                body.dark-mode .dark-mode-image {
+                                    content: url('assets/img/footer2.png');
+                                }
+                            </style>
+                        </div>
+                        <div class="text-md-end">
+                            <p class="mb-2 text-muted small" style="font-size: 0.9rem;">&copy; 2024 Realta. All rights
+                                reserved.</p>
+                            <a href="https://www.realta.co.id/site/privacy-policy.html" class="text-muted small me-3"
+                                style="font-size: 0.9rem;">Privacy Policy</a>
+                            <span class="text-muted small me-3" style="font-size: 0.9rem;">|</span>
+                            <a href="https://www.realta.co.id/site/privacy-policy.html" class="text-muted small"
+                                style="font-size: 0.9rem;">Terms</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    
+    
+    
+        <style>
+            #newsletter-cta {
+                background: linear-gradient(135deg, #f5f7fa 0%, #a588bd 100%);
+                transition: background 0.3s ease;
+            }
+    
+            #newsletter-cta .gradient-text {
+                background: linear-gradient(90deg, #7209d4, #2832d4 33%, #00a5b2);
+                -webkit-background-clip: text;
+                background-clip: text;
+                color: transparent;
+                font-size: 2rem;
+            }
+    
+            #newsletter-cta .btn-primary {
+                background: linear-gradient(to bottom, #9054d0, #7a4bd7);
+                border: none;
+                transition: all 0.3s ease;
+            }
+    
+            #newsletter-cta .form-control {
+                border: 2px solid #e0e0e0;
+                transition: all 0.3s ease;
+            }
+    
+            #newsletter-cta .form-control:focus {
+                border-color: #7209d4;
+                box-shadow: 0 0 0 0.2rem rgba(114, 9, 212, 0.25);
+            }
+    
+            body.dark-mode #newsletter-cta {
+                background: #282828;
+            }
+    
+            body.dark-mode #newsletter-cta .gradient-text {
+                background: linear-gradient(90deg, #a742ff, #4b5eff 33%, #00d5e6);
+                -webkit-background-clip: text;
+                background-clip: text;
+            }
+    
+            body.dark-mode #newsletter-cta .btn-primary {
+                background: linear-gradient(90deg, #a742ff, #4b5eff);
+            }
+    
+            body.dark-mode #newsletter-cta .form-control {
+                border-color: #4a5568;
+                color: #fff;
+            }
+    
+            body.dark-mode #newsletter-cta .form-control::placeholder {
+                color: #a0aec0;
+            }
+    
+            body.dark-mode #newsletter-cta .text-muted {
+                color: #a0aec0 !important;
+            }
+    
+            body.dark-mode #newsletter-cta a {
+                color: #00d5e6;
+            }
+    
+            @media (max-width: 767px) {
+                #newsletter-cta .gradient-text {
+                    font-size: 1.5rem;
+                }
+    
+                #newsletter-cta .row {
+                    text-align: center;
+                }
+    
+                #newsletter-cta .col-md-7 {
+                    text-align: center;
+                }
+    
+                #newsletter-cta .col-md-5 {
+                    margin-top: 2rem;
+                }
+    
+                #newsletter-cta .d-flex {
+                    justify-content: center !important;
+                }
+    
+                #newsletter-cta .text-md-end {
+                    text-align: center !important;
+                }
+    
+                #newsletter-cta .form-control {
+                    font-size: 0.8rem;
+                }
+            }
+        </style>
     <!-- END -->
 
     <script>

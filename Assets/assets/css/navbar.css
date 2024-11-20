@@ -2,7 +2,7 @@
 .mega-dropdown {
   display: block;
   position: absolute;
-  top: 63px;
+  top: 100%; /* Position relative to navbar instead of fixed pixels */
   left: 50%;
   transform: translateX(-50%) perspective(1000px) rotateX(-90deg);
   transform-origin: top center;
@@ -25,6 +25,7 @@
   will-change: transform, opacity, background-color;
 }
 
+
 .mega-dropdown::before {
   content: '';
   position: absolute;
@@ -37,6 +38,7 @@
 }
 
 .mega-dropdown.show {
+  position: absolute; /* Keep consistent with base state */
   opacity: 1;
   visibility: visible;
   transform: translateX(-50%) perspective(1000px) rotateX(0deg);
@@ -442,6 +444,7 @@ body.dark-mode .dropdown-arrow {
 
 .nav-item {
   position: relative;
+  height: 100%; /* Ensure full height */
 }
 
 /* BUTTON */
@@ -1706,11 +1709,10 @@ margin-right: auto;
   -ms-overflow-style: -ms-autohiding-scrollbar; /* IE/Edge support */
 }
 
-/* Add these media query styles for 1368x768 resolution */
+/* Update media query */
 @media (max-width: 1368px) and (max-height: 768px) {
   .mega-dropdown {
-    top: 75px !important;
-    height: auto !important; /* Remove fixed height */
+    height: auto !important;
     padding: 0rem 0 !important;
   }
 
@@ -1843,41 +1845,39 @@ margin-right: auto;
     padding: 8px 15px;
     border-radius: 6px;
     background: rgba(255,255,255,0.05);
-    transition: all 0.3s ease;
     width: 100%;
-    text-align: left; /* Keep text left-aligned */
-}
-
-.feature-list li i {
-    width: 24px;
-    text-align: center;
-    margin-right: 12px;
-    flex-shrink: 0;
-}
-
-.feature-list li span {
-    font-size: 0.9em;
     text-align: left;
-    flex: 1;
-    white-space: normal;
-    min-width: 0;
-}
-
-/* Ensure consistent styling in dark mode */
-body.dark-mode .feature-list li {
-    background: rgba(255,255,255,0.03);
-}
-
-/* Responsive adjustments */
-@media (max-width: 1368px) and (max-height: 768px) {
-    .feature-list {
-        width: 95%; /* Slightly wider on smaller screens */
-        margin-top: 10px; /* Reduced top margin */
-    }
     
-    .feature-list li {
-        padding: 6px 12px; /* Slightly reduced padding */
-    }
+    /* Initial state */
+    opacity: 0;
+    transform: translateY(20px);
+    filter: blur(15px);
+    
+    /* Separate transitions for each property */
+    transition: 
+        opacity 0.6s ease-out,
+        transform 0.7s ease-out,
+        filter 0.8s ease-out 0.1s; /* Slightly delay blur transition */
+    
+    /* Stagger delay for each item */
+    transition-delay: calc(var(--item-index, 0) * 0.15s);
+}
+
+/* Active state - applied when content loads */
+.feature-list li.feature-item-animate {
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0);
+}
+
+/* Ensure hardware acceleration */
+.feature-list {
+    transform: translateZ(0);
+    -webkit-transform: translateZ(0);
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    perspective: 1000;
+    -webkit-perspective: 1000;
 }
 
 .logo-container {

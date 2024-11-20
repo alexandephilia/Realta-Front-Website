@@ -65,12 +65,28 @@ function createFeaturedCard(article) {
           </div>
           <hr class="my-3 mx-auto" style="width: 80%; border-top: 1px solid rgba(0,0,0,.6);">
           <div class="card-footer">
-            <small class="text-muted">${article.date} | ${article.author}</small>
+            <small class="text-muted">${formatDate(article.date)}</small>
             <a href="#" class="read-more">Read more <i class="fas fa-arrow-right"></i></a>
           </div>
         </div>
       </div>
     `;
+}
+
+// Update the formatDate function
+function formatDate(dateString) {
+    const date = new Date(dateString);
+    const days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+    const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+    
+    const dayName = days[date.getDay()];
+    const day = date.getDate();
+    const month = months[date.getMonth()];
+    const year = date.getFullYear();
+    const hours = date.getHours().toString().padStart(2, '0');
+    const minutes = date.getMinutes().toString().padStart(2, '0');
+    
+    return `${dayName}, ${day} ${month} ${year} ${hours}:${minutes}`;
 }
 
 // Updated updateArticles function (keep only this one)
@@ -117,10 +133,10 @@ function displaySearchResults(articles) {
         li.innerHTML = `
           <div class="ms-2 me-auto">
             <div class="fw-bold">${article.title}</div>
-            <small class="text-muted">${article.category} | ${article.author}</small>
+            <small class="text-muted">${article.category}</small>
             <p class="mb-1 text-truncate" style="max-width: 300px;">${article.description}</p>
           </div>
-        <span class="badge rounded-pill" style="background-color: #7209d4;">${new Date(article.date).toLocaleDateString()}</span>
+          <span class="badge rounded-pill" style="background-color: #7209d4;">${formatDate(article.date)}</span>
         `;
         li.addEventListener('click', () => {
           console.log('Clicked article:', article.title);

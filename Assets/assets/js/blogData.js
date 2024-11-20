@@ -1,72 +1,229 @@
-const blogPosts = [
-  {
-    id: 1,
-    title: "Microsoft Drops From OpenAI's Boards",
-    image: "assets/img/news/news2.jpg",
-    imageAlt: "assets/img/news/computer.fcd1bd54.svg",
-    date: "April 10, 2024",
-    category: "Technology",
-    author: "John Appleseed",
-    lead: `Microsoft has relinquished its observer seat on OpenAI's board amid growing antitrust scrutiny, with Apple also opting out of a similar position, as reported by the Financial Times, Bloomberg, and others. This move reflects the tech giants' efforts to address regulatory concerns about their influence in the AI sector, 
-              <br> <br> Antitrust authorities in the US, UK, and EU have been closely examining Microsoft's substantial investment in OpenAI, raising concerns about potential control over the AI startup.`,
-    content: `<p>Microsoft has relinquished its observer seat on OpenAI's board amid growing antitrust scrutiny, with Apple also opting out of a similar position, as reported by the Financial Times, Bloomberg, and others. This move reflects the tech giants' efforts to address regulatory concerns about their influence in the AI sector.</p>
-              <p>Antitrust authorities in the US, UK, and EU have been closely examining Microsoft's substantial investment in OpenAI, raising concerns about potential control over the AI startup.</p>
-              <h2>Key Points:</h2>
-              <ul>
-                <li>Microsoft's decision to step back from OpenAI's board</li>
-                <li>Apple's choice to decline a board observer position</li>
-                <li>Increasing antitrust scrutiny in the AI sector</li>
-                <li>Implications for future collaborations and investments in AI</li>
-              </ul>
-              <p>This development highlights the complex relationship between major tech companies and AI startups, as well as the growing regulatory focus on AI technologies and their potential impact on market competition.</p>`,
-    features: [
-      "Enhanced Siri Integration for Comprehensive Voice Command Control",
-      "Sophisticated Smart Home Device Management and Automation",
-      "Advanced AI Algorithms for Personalized Learning and Adaptation to User Preferences",
-      "Seamless Integration with Existing Apple Ecosystem for a Unified User Experience"
-    ],
-    challenges: [
-      "Privacy and data security in the home",
-      "Balancing functionality with aesthetics",
-      "Ensuring seamless integration with existing Apple devices",
-      "Pricing strategy for mass market adoption"
-    ],
-    additionalParagraph: "This move by Apple represents a significant shift in their product strategy. While the company has long been a leader in personal computing and mobile devices, entering the home robotics market puts them in direct competition with established players like iRobot and emerging startups in the field. The potential for Apple to leverage its existing ecosystem and AI capabilities could give it a unique advantage in this space.",
-    conclusion: "If Apple succeeds in bringing home robots to market, it could transform daily life for millions. From managing smart home devices to providing companionship, these robots could become an integral part of the modern household."
-  },
-  {
-    id: 2,
-    title: "Introducing Apple Intelligence",
-    image: "assets/img/news/news3.jpg",
-    imageAlt: "assets/img/news/computer.fcd1bd54.svg",
-    date: "April 15, 2024",
-    category: "Technology",
-    author: "Jane Doe",
-    lead: "Apple has announced the launch of Apple Intelligence, a new AI-powered home robotics platform designed to revolutionize the way we live and work.",
-    content: `<p>Apple Intelligence is a comprehensive platform that combines advanced AI algorithms with cutting-edge robotics to create a seamless and intuitive user experience. The platform includes a range of features such as voice command control, smart home device management, and personalized learning and adaptation.</p>
-              <p>The Apple Intelligence platform is built on top of the company's existing ecosystem, allowing users to easily integrate their Apple devices and access a wide range of features and services.</p>
-              <h2>Key Points:</h2>
-              <ul>
-                <li>Advanced AI algorithms for personalized learning and adaptation</li>
-                <li>Seamless integration with existing Apple ecosystem</li>
-                <li>Comprehensive voice command control</li>
-                <li>Smart home device management and automation</li>
-              </ul>
-              <p>The launch of Apple Intelligence marks a significant shift in the company's product strategy, as it enters the home robotics market and competes with established players like iRobot and emerging startups.</p>`,
-    features: [
-      "Advanced AI Algorithms for Personalized Learning and Adaptation",
-      "Seamless Integration with Existing Apple Ecosystem",
-      "Comprehensive Voice Command Control",
-      "Smart Home Device Management and Automation"
-    ],
-    challenges: [
-      "Balancing Functionality with Aesthetics",
-      "Ensuring Seamless Integration with Existing Apple Devices",
-      "Pricing Strategy for Mass Market Adoption",
-      "Addressing Privacy and Security Concerns"
-    ],
-    additionalParagraph: "The potential for Apple to leverage its existing ecosystem and AI capabilities could give it a unique advantage in the home robotics market. However, the company will need to address concerns around privacy and security, as well as balance functionality with aesthetics to appeal to a wider audience.",
-    conclusion: "If Apple Intelligence is successful, it could transform the way we live and work, making our lives more convenient, efficient, and enjoyable."
-  },
-  // Add more blog post objects here as needed
-];
+document.addEventListener('DOMContentLoaded', function () {
+  const blogPosts = [
+    {
+      id: 1,
+      image: "assets/img/news/news2.jpg",
+      alt: "Child Development",
+      category: "Tech",
+      title: "Microsoft Drops From OpenAI's Board",
+      text: "Microsoft has relinquished its observer seat on OpenAI's board amid growing antitrust scrutiny, with Apple also opting out of a similar position, as reported by the Financial Times, Bloomberg, and others.",
+      date: "Monday, Aug 12, 2023",
+      type: "News",
+      link: "",
+      
+    },
+    {
+      id: 2,
+      image: "assets/img/news/news3.jpg",
+      alt: "Tech",
+      category: "Tech",
+      title: "How Neuromorphic Chips Work",
+      text: "Neuromorphic computing is a cutting-edge approach to computer engineering that emulates the neural architecture and processes of the human brain to achieve high efficiency and adaptability.",
+      date: "Monday, Aug 12, 2023",
+      type: "News"
+    },
+    {
+      id: 3,
+      image: "assets/img/news/news5.jpg",
+      alt: "AI Ethics",
+      category: "Breaking News",
+      title: "The Rolls-Royce Nuclear Micro-Reactor",
+      text: "Rolls-Royce is pioneering a nuclear micro-reactor designed to generate 1-10 megawatts of energy, offering a compact, versatile power solution for diverse applications. ",
+      date: "Monday, Aug 15, 2023",
+      type: "Opinion"
+    },
+    {
+      id: 4,
+      image: "assets/img/news/news4.jpg",
+      alt: "Quantum Computing",
+      category: "Computer",
+      title: "Quantum Computing Breakthrough",
+      text: "Scientists have achieved a major milestone in quantum computing, demonstrating quantum supremacy in a complex calculation that would take traditional supercomputers thousands of years.",
+      date: "Monday, Aug 18, 2023",
+      type: "News"
+    },
+    {
+      id: 5,
+      image: "assets/img/news/news6.jpg",
+      alt: "Cybersecurity", 
+      category: "Cybersecurity",
+      title: "OpenAI Acquires Rockset",
+      text: "OpenAI's acquisition of Rockset, a real-time analytics database company, marks a significant move to enhance its AI capabilities and strengthen its position in the competitive AI landscape.",
+      date: "Monday, Aug 20, 2023",
+      type: "Analysis"
+    },
+    {
+      id: 6,
+      image: "assets/img/news/news7.jpg",
+      alt: "AI Research",
+      category: "Technology",
+      title: "DeepMind's Latest AI Breakthrough",
+      text: "DeepMind has announced a groundbreaking advancement in protein structure prediction, using their AI system to map previously unknown protein structures with unprecedented accuracy.",
+      date: "Monday, Aug 22, 2023",
+      type: "Research"
+    }
+  ];
+
+  const postsPerPage = 3;
+  let currentPage = 0;
+  let isMobile = window.innerWidth <= 768; // Define mobile breakpoint
+
+  function renderBlogPosts(page) {
+    const container = document.getElementById('blog-posts-container');
+    container.innerHTML = '';
+
+    // Calculate total pages
+    const totalPages = Math.ceil(blogPosts.length / postsPerPage);
+
+    // Add left arrow with disabled state
+    const leftArrow = document.createElement('div');
+    leftArrow.className = `blog-arrow left-arrow ${page === 0 ? 'disabled' : ''}`;
+    leftArrow.innerHTML = '<i class="fas fa-chevron-left"></i>';
+    leftArrow.addEventListener('click', () => {
+        if (page !== 0) changePage(currentPage - 1);
+    });
+    container.appendChild(leftArrow);
+
+    // Add posts wrapper
+    const postsWrapper = document.createElement('div');
+    postsWrapper.className = 'blog-posts-wrapper';
+    container.appendChild(postsWrapper);
+
+    // Add blog posts
+    const start = page * postsPerPage;
+    const end = start + postsPerPage;
+    const postsToShow = blogPosts.slice(start, end);
+
+    postsToShow.forEach(post => {
+      const postElement = document.createElement('div');
+      postElement.className = 'blog-post';
+      postElement.innerHTML = `
+        <div class="blog-post-image-wrapper">
+          <img src="${post.image}" alt="${post.alt}" class="rounded-image">
+        </div>
+        <div class="blog-post-content">
+          <div class="blog-post-category">${post.category}</div>
+          <h5 class="blog-post-title">${post.title}</h5>
+          <p class="blog-post-text">${post.text}</p>
+          <div class="blog-post-meta">
+            <div class="meta-left">
+              <span>${post.date}</span>
+            </div>
+            <a href="article.html?id=${post.id}" class="read-more">Read more</a>
+          </div>
+        </div>
+      `;
+      container.appendChild(postElement);
+    });
+
+    // Add right arrow with disabled state
+    const rightArrow = document.createElement('div');
+    rightArrow.className = `blog-arrow right-arrow ${page === totalPages - 1 ? 'disabled' : ''}`;
+    rightArrow.innerHTML = '<i class="fas fa-chevron-right"></i>';
+    rightArrow.addEventListener('click', () => {
+        if (page !== totalPages - 1) changePage(currentPage + 1);
+    });
+    container.appendChild(rightArrow);
+
+    // Add pagination dots container
+    const paginationContainer = document.createElement('div');
+    paginationContainer.className = 'blog-pagination';
+    container.appendChild(paginationContainer);
+
+    // Add pagination dots
+    for (let i = 0; i < totalPages; i++) {
+        const dot = document.createElement('span');
+        dot.className = `pagination-dot ${i === currentPage ? 'active' : ''}`;
+        dot.addEventListener('click', () => changePage(i));
+        paginationContainer.appendChild(dot);
+    }
+
+    updatePagination();
+    addCardClickListeners();
+  }
+
+  function updatePagination() {
+    const paginationContainer = document.querySelector('.pagination');
+    paginationContainer.innerHTML = '';
+  
+    const totalPages = Math.ceil(blogPosts.length / postsPerPage);
+  
+    for (let i = 0; i < totalPages; i++) {
+      const span = document.createElement('span');
+      if (i === currentPage) {
+        span.classList.add('active');
+      }
+      span.addEventListener('click', () => {
+        changePage(i);
+      });
+      paginationContainer.appendChild(span);
+    }
+  }
+
+  function changePage(pageIndex) {
+    const totalPages = Math.ceil(blogPosts.length / postsPerPage);
+    if (pageIndex >= 0 && pageIndex < totalPages) {
+      currentPage = pageIndex;
+      renderBlogPosts(currentPage);
+    }
+  }
+
+  function handleSwipe(direction) {
+    if (isMobile) {
+      currentPage += direction;
+      if (currentPage < 0) currentPage = Math.ceil(blogPosts.length / postsPerPage) - 1;
+      if (currentPage >= Math.ceil(blogPosts.length / postsPerPage)) currentPage = 0;
+      renderBlogPosts(currentPage);
+    }
+  }
+
+  function addCardClickListeners() {
+    const blogPostCards = document.querySelectorAll('.blog-post');
+    blogPostCards.forEach(card => {
+      card.addEventListener('click', function(e) {
+        if (!isMobile && !e.target.classList.contains('read-more')) {
+          const readMoreLink = this.querySelector('.read-more');
+          readMoreLink.style.display = 'inline-block';
+          readMoreLink.style.opacity = '1';
+        }
+      });
+    });
+  }
+
+  const blogPostsContainer = document.getElementById('blog-posts-container');
+  let startX, moveX;
+  let isSwiping = false;
+
+  blogPostsContainer.addEventListener('touchstart', (e) => {
+    startX = e.touches[0].clientX;
+    isSwiping = false;
+  });
+
+  blogPostsContainer.addEventListener('touchmove', (e) => {
+    moveX = e.touches[0].clientX;
+    if (Math.abs(moveX - startX) > 10) {
+      isSwiping = true;
+    }
+  });
+
+  blogPostsContainer.addEventListener('touchend', () => {
+    if (isMobile && isSwiping) {
+      if (startX - moveX > 50) {
+        handleSwipe(1); // Swipe left
+      } else if (moveX - startX > 50) {
+        handleSwipe(-1); // Swipe right
+      }
+    }
+    isSwiping = false;
+  });
+
+  // Handle window resize to update isMobile status
+  window.addEventListener('resize', () => {
+    isMobile = window.innerWidth <= 768;
+    updatePagination();
+    addCardClickListeners(); // Re-add listeners with updated isMobile status
+  });
+
+  renderBlogPosts(currentPage);
+});
+

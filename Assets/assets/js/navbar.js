@@ -129,7 +129,19 @@ function handleCategories(containerSelector, detailsId, content) {
             categories.forEach(cat => cat.classList.remove('active'));
             this.classList.add('active');
             const productType = this.getAttribute('data-product');
+            
+            // Update content
             details.innerHTML = content[productType];
+            
+            // Force a reflow before adding animation classes
+            const featureItems = details.querySelectorAll('.feature-list li');
+            featureItems.forEach((item, index) => {
+                item.style.setProperty('--item-index', index);
+                // Force reflow
+                void item.offsetWidth;
+                // Add animation class
+                item.classList.add('feature-item-animate');
+            });
         });
     });
 
@@ -137,6 +149,18 @@ function handleCategories(containerSelector, detailsId, content) {
     if (categories.length > 0) {
         const firstProductType = categories[0].getAttribute('data-product');
         details.innerHTML = content[firstProductType];
+        
+        // Animate initial items
+        requestAnimationFrame(() => {
+            const featureItems = details.querySelectorAll('.feature-list li');
+            featureItems.forEach((item, index) => {
+                item.style.setProperty('--item-index', index);
+                // Force reflow
+                void item.offsetWidth;
+                // Add animation class
+                item.classList.add('feature-item-animate');
+            });
+        });
     }
 }
 

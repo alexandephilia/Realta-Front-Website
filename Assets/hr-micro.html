@@ -60,6 +60,39 @@
 
 
     <style>
+        .btn-outline-secondary {
+            color: #ffffff !important;
+            border-color: #eb23a8c4 !important;
+            background: #eb23a8c4 !important;
+            transition: all 0.3s ease !important;
+            padding: 10px 25px !important;
+            font-weight: 500 !important;
+            font-size: 18px !important;
+            border-radius: 10px !important;
+        }
+
+        .btn-outline-secondary:hover {
+            color: #fff !important;
+            background-color: #8d2c6d !important;
+            border-color: #8d2c6d !important;
+        }
+
+        .btn-outline-secondary:focus {
+            box-shadow: 0 0 0 0.25rem rgba(53, 116, 63, 0.25) !important;
+        }
+
+        .btn-outline-secondary:active {
+            color: #fff !important;
+            background-color: #8d2c6d !important;
+            border-color: #8d2c6d !important;
+        }
+
+        @media (max-width: 768px) {
+            .btn-outline-secondary {
+                font-size: 15px !important;
+                padding: 8px 20px !important;
+            }
+        }
 
         /* Fix section spacing */
         section {
@@ -730,7 +763,7 @@
             <div class="announcement-content">
                 <!-- Logo on the left -->
                 <div class="announcement-logo">
-                    <img src="assets/img/realta.png" alt="Realta Logo" class="announcement-logo-img">
+                    <img src="assets/img/probes3.png" alt="Realta Logo" class="announcement-logo-img">
                 </div>
                 
                 <!-- Navigation links on the right -->
@@ -755,7 +788,7 @@
         <style>
         /* Base announcement bar */
         .top-announcement-bar {
-            background-color: rgb(240, 240, 240);
+            background-color: rgb(248, 248, 248);
             position: fixed;
             top: 66px;
             left: 0;
@@ -763,7 +796,7 @@
             z-index: 1029;
             height: 44px;
             border-bottom: 1px solid rgba(0,0,0,0.1);
-            box-shadow: 0 2px px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
         }
     
         /* Content container */
@@ -773,12 +806,13 @@
             align-items: center;
             width: 100%;
             height: 100%;
-            padding: 0 6.1%; /* Match container-fluid padding */
+            padding: 0 5.1%; /* Match container-fluid padding */
         }
     
         /* Logo styling */
         .announcement-logo {
             flex: 0 0 auto;
+            margin-top: -2px;
         }
     
         .announcement-logo-img {
@@ -986,9 +1020,9 @@
     
         <section class="parallax-header">
             <div class="parallax-content">
-                <h1>ERP, EAM, WMS* &<br>Business Intelligence Solution</h1>
-                <div class="badge">Medium and Large Enterprise</div>
-                <p>PT Bisnis Sistem Indonesia was founded to be your partner for successful ERP, EAM, WMS & Business Intelligence implementation. At the heart of any ERP, EAM, WMS & Business Intelligence implementation is the need to sustain growth and increase market share. Those 4 systems when properly implemented gives Visibility and Control over day to day activities such that analysis and improvements can be performed. To this end, PTBSI has helped countless clients to fully align their business processes since 1998.</p>
+                <h1>Best HRIS Software in Indonesia</h1>
+                <div class="badge">All-in-One HR Solution</div>
+                <p>Discover the leading HRIS software in Indonesia, designed to simplify all aspects of human resource management. From precise attendance tracking to efficient payroll processing, along with seamless management of BPJS contributions and accurate PPh 21 tax calculations, our system ensures all your HR needs are met quickly and correctly.</p>
                 <button class="erp-learn-btn">Learn More</button>
                 <style>
                     .erp-learn-btn {
@@ -997,7 +1031,7 @@
                         max-width: 280px;
                         font-size: 1rem;
                         padding: 10px 20px;
-                        background: linear-gradient(135deg, #9054d0 0%, #7a4bd7 100%);
+                        background: linear-gradient(287deg, #fa5df2, #fa5df2, #a546a0);
                         color: #fff;
                         border: none;
                         border-radius: 6px;
@@ -1013,7 +1047,7 @@
                     .erp-learn-btn:hover {
                         transform: translateY(-2px);
                         box-shadow: 0 6px 20px rgba(144, 84, 208, 0.4);
-                        background: linear-gradient(135deg, #7a4bd7 0%, #9054d0 100%);
+                        background: linear-gradient(287deg, #fa5df2, #fa5df2, #a546a0);
                     }
     
                     .erp-learn-btn:active {
@@ -1050,7 +1084,7 @@
                 display: flex;
                 align-items: center;
                 justify-content: center;
-                background-image: url('assets/img/erp/banne.webp');
+                background-image: url('assets/img/siap/wallpaper-siap-newest.jpg');
                 background-attachment: fixed;
                 background-position: center;
                 background-repeat: no-repeat;
@@ -1061,7 +1095,7 @@
                 text-align: center;
                 color: #fff;
                 padding: 20px;
-                max-width: 1000px;
+                max-width: 1300px;
                 z-index: 2;
                 animation: fadeIn 1s ease-in;
             }
@@ -1076,7 +1110,7 @@
     
             .parallax-content .badge {
                 display: inline-block;
-                background: rgba(144, 84, 208, 0.432);
+                background: rgba(208, 84, 177, 0.432);
                 padding: 8px 16px;
                 border-radius: 50px;
                 font-size: 1.1rem;
@@ -1403,7 +1437,7 @@
 
 
     <section id="ict-one-solution" class="ict-one-solution py-5" style="margin-top: 5%;">
-        <div class="container-fluid container-lg px-2">
+        <div class="container-fluid ">
             <div class="row align-items-center">
                 <div class="col-md-6 fade-in-left">
                     <img src="assets/img/siap/product-overview-newest.png" alt="ICT One Solution" class="img-fluid" style="width: 80%; height: auto; margin-left: 10%;">
@@ -1411,7 +1445,7 @@
                 <div class="col-md-6 text-center fade-in-right">
                     <h2 class="mb-4 gradient-text fw-bold"
                         style="background: linear-gradient(287deg, #fa5df2, #fa5df2, #4446464f); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">
-                        Human Resource Information System Melalui ICT One Solution</h2>
+                        Human Resource Information System Melalui <br> ICT One Solution</h2>
                     <div class="mb-4" style="max-width: 80%; margin: 0 auto;">
                         <p style="line-height: 1.6; font-size: 20px; margin-bottom: 1rem; text-align: left;">
                             SIAP+P is a comprehensive HR solution designed to streamline every HR transaction, from employee data and attendance to payroll and performance management.
@@ -1547,7 +1581,7 @@
     </section>
 
     <section class="features py-5">
-        <div class="container-fluid container-lg px-2">
+        <div class="container-fluid">
             <!-- Title position added above the feature items -->
             <h2 class="text-center mb-5" style="background: linear-gradient(287deg, #fa5df2, #c74b93, #4446464f); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">SIAP+P Simplifies PPh21 Calculation, <br> Payroll, and Online Attendance</h2>
             <div class="row text-center justify-content-center">
@@ -1648,9 +1682,7 @@
                 "button"
                 "features";
             gap: 15px;
-            padding: 20px;
             border-radius: 15px;
-            max-width: 75%;
             margin: 0 auto;
         }
 
@@ -1791,12 +1823,13 @@
     </style>
     
     <section class="hr-solutions-grid">
+        <div class="container-fluid">
         <h2 class="hr-title">Human Resource Solutions</h2>
         <p class="hr-description">Streamline your HR processes with our comprehensive solutions designed to enhance employee management, recruitment, and organizational efficiency.</p>
-        <div class="hr-button-wrapper">
+        <div class="hr-button-wrapper mt-5">
             <a href="#" class="hr-btn">Explore HR Solutions</a>
         </div>
-        <div class="hr-features">
+        <div class="hr-features mt-5">
             <article class="hr-solution-item attendance">
                 <h4>
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -2194,12 +2227,11 @@
      
     </style>
 
-<section id="stats-feature-section" class="py-5 mt-4">
-    <div class="container">
-        <div class="row align-items-center">
+<section id="stats-feature-section" class="mt-5">
+    <div class="container-fluid">
+        <div class="row align-items-center py-4">
             <div class="col-lg-4 mb-4 mb-lg-0">
                 <h2 class="section-title mb-3">Mobile HR: Employee Self Service</h2>
-                <!-- Employee Self Service App: Streamlined HR Management -->
                 <p class="section-description lead" style="font-size: 0.99rem;">Manage your work life effortlessly with our Employee Self Service app. Request time off, view pay stubs, update personal info, and connect with your team—all from your smartphone. It's your pocket HR assistant, simplifying and enhancing your work experience.</p>
             </div>
             <div class="col-lg-8">
@@ -2236,14 +2268,14 @@
                             <p>Say goodbye to lengthy and complicated leave and permission requests and approvals. Now, the process is faster, enhancing HR effectiveness, all without paper.</p>
                         </div>
                     </div>
-                    <div class="stats-separator-container text-center mt-4">
-                        <div class="stats-horizontal-separator"></div>
-                        <!-- Responsive image size -->
-                        <img src="assets/img/siap/ess-mocup-home.png" alt="Company Logo" class="stats-separator-logo mx-auto d-block">
-                        <div class="stats-horizontal-separator" style="height: 2px; margin: 30px 0; margin-left: 0%;"></div>
-                    </div>
-                      
-                <!-- Side by side RHAPSODY LOGISTIC and RHAPSODY POINT OF SALE -->
+                </div>
+
+                <div class="stats-separator-container text-center mt-4">
+                    <div class="stats-horizontal-separator"></div>
+                    <img src="assets/img/siap/ess-mocup-home.png" alt="Company Logo" class="stats-separator-logo mx-auto d-block">
+                    <div class="stats-horizontal-separator" style="height: 2px; margin: 30px 0; margin-left: 0%;"></div>
+                </div>
+
                 <div class="row mt-5">
                     <div class="col-md-6">
                         <div class="stats-item text-center">
@@ -2286,10 +2318,7 @@
 <style>
     #stats-feature-section {
         background-color: #f8f9fa;
-        padding: 80px 20px;
-        max-width: 75%;
         margin: 0 auto;
-        border-radius: 20px;
         border: 2px solid rgba(221, 221, 221, 0.753);
 
     }
@@ -2376,8 +2405,8 @@
     }
 </style>
 
-<section class="hospitality-companies py-5 mt-5">
-    <div class="container">
+<section class="hospitality-companies py-5" style="margin-top: 120px;">
+    <div class="container-fluid">
         <h2 class="text-center mb-3 bimasakti-title rhapsody-title-2023-new" data-aos="fade-up" data-aos-delay="100"
             style="background: linear-gradient(287deg, #fa5df2, #c74b93, #4446464f); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">
             Perusahaan Ini Menggunakan SIAP+P
@@ -2418,22 +2447,26 @@
 
 
 
-<section id="separator" class="" style="background-color: #efecff;">
-    <div class="container-fluid p-4">
-        <div class="banner">
-            <div class="banner-content">
-                <h2>Unlock superior coverage for your team</h2>
-                <p>Build a culture of employee delight by taking the first step towards Benefits</p>
-                <button class="btn-custom" onclick="scheduleCall()"
-                    style="background: linear-gradient(to bottom, #9054d0, #7a4bd7);">Schedule a call</button>
+<section id="separator" class="py-5" style="background-color: #efecff;">
+    <div class="container-fluid">
+        <div class="row justify-content-between">
+            <div class="col-lg-12">
+                <div class="banner p-5">
+                    <div class="banner-content">
+                        <h2>Unlock superior coverage for your team</h2>
+                        <p>Build a culture of employee delight by taking the first step towards Benefits</p>
+                        <button class="btn-custom" onclick="scheduleCall()"
+                            style="background: linear-gradient(to bottom, #9054d0, #7a4bd7);">Schedule a call</button>
+                    </div>
+                    <img src="assets/img/handshake.png" alt="Business Handshake" class="banner-image">
+                </div>
             </div>
-            <img src="assets/img/handshake.png" alt="Business Handshake" class="banner-image">
         </div>
     </div>
 </section>
 
 <section id="contact" class="pb-5">
-    <div class="container-fluid p-4">
+    <div class="container-fluid ">
         <div class="row justify-content-between">
             <div id="contact-info" class="col-lg-5 left-column >
                     <h1 class=" mb-3 contact-heading"
@@ -2750,7 +2783,7 @@
                         }
 
                         .submit-btn:hover .text {
-                            transform: translateX(320px);
+                            transform: translateX(420px);
                             color: #ffffff;
                         }
 
@@ -2940,7 +2973,6 @@
             }
         }
     </style>
-
     <!-- END -->
 
     <script>

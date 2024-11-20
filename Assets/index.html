@@ -27,8 +27,6 @@
 
 
 
-
-
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
     <link
@@ -59,14 +57,14 @@
 </head>
 
 <style>
-
     /* Fix section spacing */
     section {
         overflow: hidden !important;
         width: 100% !important;
         position: relative !important;
     }
-.dynamic-text-container {
+
+    .dynamic-text-container {
         font-size: 45px;
         font-weight: 700;
         height: 1em;
@@ -109,15 +107,16 @@
     }
 
 
-        
+
     #mainNav {
         position: fixed;
-        top: 0px;
+        width: 100%;
+        top: 0;
         left: 0;
         right: 0;
         z-index: 1030;
-        transition: all 0.3s ease-in-out;
-        height: 8.3%;
+        height: 80px;
+        /* Fixed height instead of percentage */
     }
 
     #mainNav.navbar-scrolled {
@@ -130,20 +129,31 @@
         padding-top: 80px;
     }
 
+    @media (max-width: 768px) {
+        body {
+            padding-top: 72px;
+        }
+    }
+
     /* Add this style block in the <head> section or in your CSS file */
-        .container-fluid {
-    width: 100%; /* Change from 95% to 100% */
-    padding-left: 3.1%; /* Add consistent padding */
-    padding-right: 3.1%; /* Add consistent padding */
-    margin-left: auto;
-    margin-right: auto;
-}
+    .container-fluid {
+        width: 100%;
+        /* Change from 95% to 100% */
+        padding-left: 3.1%;
+        /* Add consistent padding */
+        padding-right: 3.1%;
+        /* Add consistent padding */
+        margin-left: auto;
+        margin-right: auto;
+    }
 
     @media (max-width: 768px) {
         .container-fluid {
             width: 100%;
-            padding-left: 0.5%; /* Add consistent padding */
-            padding-right: 0.5%; /* Add consistent padding */
+            padding-left: 0.5%;
+            /* Add consistent padding */
+            padding-right: 0.5%;
+            /* Add consistent padding */
         }
     }
 </style>
@@ -161,7 +171,7 @@
                     height: 50%;
                 }
 
-           
+
                 @media (max-width: 767px) {
                     .realta-logo {
                         width: 120px;
@@ -654,7 +664,9 @@
                     <div class="product-category" data-product="itm">ITSM, ITAM & Unified Endpoint Management</div>
                     <div class="product-category" data-product="pts">Property & Tenancy System</div>
                     <div class="product-category" data-product="erp">Network & System Integration</div>
-                    <div style="background: linear-gradient(90deg, transparent 0%, rgba(133, 22, 188, 0.582) 50%, transparent 100%); height: 1px; margin: 10px 0; pointer-events: none;"></div>
+                    <div
+                        style="background: linear-gradient(90deg, transparent 0%, rgba(133, 22, 188, 0.582) 50%, transparent 100%); height: 1px; margin: 10px 0; pointer-events: none;">
+                    </div>
                     <!-- Removed: <div class="all-products"><a href="#solutions">All products ›</a></div> -->
                 </div>
                 <div class="product-details" id="product-details">
@@ -744,6 +756,8 @@
         .navbar-banner {
             background-color: #f0f0f0;
             padding: 12px 0;
+            top: var(--navbar-height);
+            /* Dynamic navbar height */
             font-size: 16px;
             transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
             position: relative;
@@ -751,7 +765,7 @@
             overflow: hidden;
             backdrop-filter: blur(0px);
             opacity: 1;
-            background-color: rgba(240, 240, 240, 0.845); /* More transparent background */
+            background-color: rgba(240, 240, 240, 0.845);
         }
 
         .navbar-banner--scrolled {
@@ -761,18 +775,21 @@
             right: 0;
             z-index: 152;
             transform: translateY(-100%);
-            backdrop-filter: blur(0px); /* Start with no blur */
+            backdrop-filter: blur(0px);
+            /* Start with no blur */
             opacity: 0;
             transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1),
-                        backdrop-filter 0.5s ease,
-                        opacity 0.5s ease;
+                backdrop-filter 0.5s ease,
+                opacity 0.5s ease;
         }
 
         .navbar-banner--scrolled.show {
             transform: translateY(0);
-            backdrop-filter: blur(6px); /* Add blur when shown */
+            backdrop-filter: blur(6px);
+            /* Add blur when shown */
             opacity: 1;
-            background-color: rgba(240, 240, 240, 0.6); /* More transparent when blurred */
+            background-color: rgba(240, 240, 240, 0.6);
+            /* More transparent when blurred */
         }
 
         /* Adjust navbar position when banner is scrolled */
@@ -851,8 +868,8 @@
             opacity: 0;
             z-index: 1;
             transition: opacity 0.5s ease,
-                        filter 0.5s ease,
-                        transform 0.5s ease;
+                filter 0.5s ease,
+                transform 0.5s ease;
         }
 
         .navbar-banner--scrolled.show .navbar-banner__blur {
@@ -939,7 +956,8 @@
                 position: static;
                 top: auto;
                 transform: none !important;
-                z-index: 9998; /* Below mobile nav z-index */
+                z-index: 9998;
+                /* Below mobile nav z-index */
             }
 
             .navbar-banner__content {
@@ -969,7 +987,7 @@
             }
 
             /* Ensure navbar banner stays below navbar */
-            #mainNav + .navbar-banner {
+            #mainNav+.navbar-banner {
                 margin-top: 0px;
             }
         }
@@ -977,75 +995,77 @@
         /* Banner position when scrolled */
     </style>
     <script>
-      document.addEventListener('DOMContentLoaded', function () {
-    var navbar = document.querySelector('.navbar');
-    var navbarBanner = document.querySelector('.navbar-banner');
-    let lastScrollTop = 0;
-    let scrollTimeout;
-    let isTransitioning = false;
-    
-    // Only apply scroll behavior on desktop
-    if (window.innerWidth > 768) {
-        // Debounced scroll handler with RAF
-        function handleScroll() {
-            if (scrollTimeout) {
-                cancelAnimationFrame(scrollTimeout);
-            }
+        document.addEventListener('DOMContentLoaded', function () {
+            var navbar = document.querySelector('.navbar');
+            var navbarBanner = document.querySelector('.navbar-banner');
+            let lastScrollTop = 0;
+            let scrollTimeout;
+            let isTransitioning = false;
 
-            scrollTimeout = requestAnimationFrame(() => {
-                const scrollTop = window.pageYOffset;
-                const bannerHeight = navbarBanner.offsetHeight;
-                
-                if (isTransitioning) return;
-                
-                isTransitioning = true;
-                
-                if (scrollTop > lastScrollTop && scrollTop > bannerHeight) {
-                    // Scrolling down - hide banner
-                    navbarBanner.classList.add('navbar-banner--scrolled');
-                    navbarBanner.classList.remove('show');
-                    navbar.style.transform = 'translateY(0)';
-                    
-                    navbarBanner.style.backdropFilter = 'blur(0px)';
-                } else if (scrollTop <= lastScrollTop && scrollTop > bannerHeight) {
-                    // Scrolling up - show banner
-                    navbarBanner.classList.add('navbar-banner--scrolled');
-                    
-                    setTimeout(() => {
-                        navbarBanner.classList.add('show');
-                        navbarBanner.style.backdropFilter = 'blur(6px)';
-                    }, 50);
-                    
-                    navbar.style.transform = `translateY(${bannerHeight}px)`;
-                } else {
-                    // At top
-                    navbarBanner.classList.remove('navbar-banner--scrolled', 'show');
-                    navbar.style.transform = 'translateY(0)';
-                    
-                    navbarBanner.style.backdropFilter = 'blur(0px)';
+            // Only apply scroll behavior on desktop
+            if (window.innerWidth > 768) {
+                // Debounced scroll handler with RAF
+                function handleScroll() {
+                    if (scrollTimeout) {
+                        cancelAnimationFrame(scrollTimeout);
+                    }
+
+                    scrollTimeout = requestAnimationFrame(() => {
+                        const scrollTop = window.pageYOffset;
+                        const bannerHeight = navbarBanner.offsetHeight;
+
+                        if (isTransitioning) return;
+
+                        isTransitioning = true;
+
+                        if (scrollTop > lastScrollTop && scrollTop > bannerHeight) {
+                            // Scrolling down - hide banner
+                            navbarBanner.classList.add('navbar-banner--scrolled');
+                            navbarBanner.classList.remove('show');
+                            navbar.style.transform = 'translateY(0)';
+
+                            navbarBanner.style.backdropFilter = 'blur(0px)';
+                        } else if (scrollTop <= lastScrollTop && scrollTop > bannerHeight) {
+                            // Scrolling up - show banner
+                            navbarBanner.classList.add('navbar-banner--scrolled');
+
+                            setTimeout(() => {
+                                navbarBanner.classList.add('show');
+                                navbarBanner.style.backdropFilter = 'blur(6px)';
+                            }, 50);
+
+                            navbar.style.transform = `translateY(${bannerHeight}px)`;
+                        } else {
+                            // At top
+                            navbarBanner.classList.remove('navbar-banner--scrolled', 'show');
+                            navbar.style.transform = 'translateY(0)';
+
+                            navbarBanner.style.backdropFilter = 'blur(0px)';
+                        }
+
+                        lastScrollTop = scrollTop;
+
+                        setTimeout(() => {
+                            isTransitioning = false;
+                        }, 500);
+                    });
                 }
-                
-                lastScrollTop = scrollTop;
-                
-                setTimeout(() => {
-                    isTransitioning = false;
-                }, 500);
-            });
-        }
 
-        // Throttled scroll listener
-        let ticking = false;
-        window.addEventListener('scroll', () => {
-            if (!ticking) {
-                requestAnimationFrame(() => {
-                    handleScroll();
-                    ticking = false; 
+                // Throttled scroll listener
+                let ticking = false;
+                window.addEventListener('scroll', () => {
+                    if (!ticking) {
+                        requestAnimationFrame(() => {
+                            handleScroll();
+                            ticking = false;
+                        });
+                        ticking = true;
+                    }
+                }, {
+                    passive: true
                 });
-                ticking = true;
             }
-        }, { passive: true });
-    }
-});
+        });
     </script>
 </header>
 
@@ -1197,343 +1217,381 @@
     <section id="home" style="margin-bottom: 0; position: relative; overflow: visible;">
         <div class="circle-blur"></div>
         <div id="container-header" class="container-fluid">
-                <!-- Carousel Start -->
-                <style>
+            <!-- Carousel Start -->
+            <style>
+                #businessCarousel {
+                    height: 700px;
+                    /* Fixed height for desktop */
+                }
+
+                @media (max-width: 768px) {
                     #businessCarousel {
-                        height: 700px;
-                        /* Fixed height for desktop */
+                        height: 1100px;
+                        /* Smaller fixed height for mobile */
                     }
+                }
 
-                    @media (max-width: 768px) {
-                        #businessCarousel {
-                            height: 1100px;
-                            /* Smaller fixed height for mobile */
-                        }
-                    }
-
-                    @keyframes fadeInRight {
-                        from {
-                            opacity: 0;
-                            transform: translate3d(100%, 0, 0);
-                        }
-
-                        to {
-                            opacity: 1;
-                            transform: translate3d(0, 0, 0);
-                        }
-                    }
-
-                    @keyframes fadeOutLeft {
-                        from {
-                            opacity: 1;
-                        }
-
-                        to {
-                            opacity: 0;
-                            transform: translate3d(-100%, 0, 0);
-                        }
-                    }
-
-                    .carousel-item {
-                        display: block;
-                        position: absolute;
+                @keyframes fadeInRight {
+                    from {
                         opacity: 0;
-                        right: 0;
-                        transition: none;
+                        transform: translate3d(100%, 0, 0);
                     }
 
-                    .carousel-item.active {
-                        position: relative;
+                    to {
                         opacity: 1;
-                        animation: fadeInRight 0.6s;
-                    }
-
-                    .carousel-item-next.carousel-item-start,
-                    .carousel-item-prev.carousel-item-end {
-                        position: relative;
                         transform: translate3d(0, 0, 0);
                     }
+                }
 
-                    .carousel-item-next.carousel-item-start {
-                        animation: fadeInRight 0.6s;
+                @keyframes fadeOutLeft {
+                    from {
+                        opacity: 1;
                     }
 
-                    .carousel-item-prev.carousel-item-end {
-                        animation: fadeInRight 0.6s reverse;
+                    to {
+                        opacity: 0;
+                        transform: translate3d(-100%, 0, 0);
                     }
+                }
 
-                    /* Ensure the carousel container doesn't clip the controls */
-                    #businessCarousel {
-                        overflow: visible;
-                        padding: 0 0px; /* Added padding to make room for controls */
-                    }
+                .carousel-item {
+                    display: block;
+                    position: absolute;
+                    opacity: 0;
+                    right: 0;
+                    transition: none;
+                }
 
-                    .business-carousel-control-prev {
-                        left: -20px;
-                    }
+                .carousel-item.active {
+                    position: relative;
+                    opacity: 1;
+                    animation: fadeInRight 0.6s;
+                }
 
-                    .business-carousel-control-next {
-                        right: -20px;
-                    }
+                .carousel-item-next.carousel-item-start,
+                .carousel-item-prev.carousel-item-end {
+                    position: relative;
+                    transform: translate3d(0, 0, 0);
+                }
 
-                    .business-carousel-control-prev-icon,
-                    .business-carousel-control-next-icon {
-                        background-image: none;
-                        display: flex;
-                        justify-content: center;
-                        align-items: center;
-                        width: 20px;
-                        height: 20px;
-                        position: absolute;
-                        top: 32%;
-                        transform: translateY(-50%);
-                    }
+                .carousel-item-next.carousel-item-start {
+                    animation: fadeInRight 0.6s;
+                }
+
+                .carousel-item-prev.carousel-item-end {
+                    animation: fadeInRight 0.6s reverse;
+                }
+
+                /* Ensure the carousel container doesn't clip the controls */
+                #businessCarousel {
+                    overflow: visible;
+                    padding: 0 0px;
+                    /* Added padding to make room for controls */
+                }
+
+                .business-carousel-control-prev {
+                    left: -20px;
+                }
+
+                .business-carousel-control-next {
+                    right: -20px;
+                }
+
+                .business-carousel-control-prev-icon,
+                .business-carousel-control-next-icon {
+                    background-image: none;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    width: 20px;
+                    height: 20px;
+                    position: absolute;
+                    top: 32%;
+                    transform: translateY(-50%);
+                }
+
+                .business-carousel-control-prev-icon {
+                    left: 356px !important;
+                    background: #ffffff;
+                    border-radius: 50%;
+                    width: 30px;
+                    height: 30px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    border: 1px solid #000000;
+                    transition: all 0.3s ease;
+                }
+
+                @media (max-width: 768px) {
                     .business-carousel-control-prev-icon {
-                        left: 356px !important;
-                        background: #ffffff;
-                        border-radius: 50%;
-                        width: 30px;
-                        height: 30px;
-                        display: flex;
-                        align-items: center;
-                        justify-content: center;
-                        border: 1px solid #000000;
-                        transition: all 0.3s ease;
+                        left: 80px !important;
                     }
+                }
 
-                    @media (max-width: 768px) {
-                        .business-carousel-control-prev-icon {
-                            left: 80px !important;
-                        }
-                    }
+                .business-carousel-control-prev-icon:hover {
+                    background-color: #474747;
+                }
 
-                    .business-carousel-control-prev-icon:hover {
-                        background-color: #474747;
-                    }
+                .business-carousel-control-prev-icon:hover::before {
+                    background-color: #ffffff;
+                }
 
-                    .business-carousel-control-prev-icon:hover::before {
-                        background-color: #ffffff;
-                    }
+                .business-carousel-control-next-icon {
+                    right: 356px !important;
+                    background: #ffffff;
+                    border-radius: 50%;
+                    width: 30px;
+                    height: 30px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    border: 1px solid #000000;
+                    transition: all 0.3s ease;
+                }
+
+                @media (max-width: 768px) {
+
 
                     .business-carousel-control-next-icon {
-                        right: 356px !important;
-                        background: #ffffff;
-                        border-radius: 50%;
-                        width: 30px; 
-                        height: 30px;
-                        display: flex;
-                        align-items: center;
-                        justify-content: center;
-                        border: 1px solid #000000;
-                        transition: all 0.3s ease;
+                        right: 80px !important;
                     }
+                }
 
-                    @media (max-width: 768px) {
+                .business-carousel-control-next-icon:hover {
+                    background-color: #474747;
+                }
 
-                    
-                        .business-carousel-control-next-icon {
-                            right: 80px !important;
-                        }
-                    }
+                .business-carousel-control-next-icon:hover::before {
+                    background-color: #ffffff;
+                }
 
-                    .business-carousel-control-next-icon:hover {
-                        background-color: #474747;
-                    }
+                .business-carousel-control-prev-icon::before,
+                .business-carousel-control-next-icon::before {
+                    content: "";
+                    display: block;
+                    width: 20px;
+                    height: 20px;
+                    background-color: #000000;
+                    mask-size: 100%;
+                    -webkit-mask-size: 100%;
+                    mask-repeat: no-repeat;
+                    -webkit-mask-repeat: no-repeat;
+                    mask-position: center;
+                    -webkit-mask-position: center;
+                }
 
-                    .business-carousel-control-next-icon:hover::before {
-                        background-color: #ffffff;
-                    }
+                .business-carousel-control-prev-icon::before {
+                    mask-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23000'%3e%3cpath d='M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z' stroke='black' stroke-width='1'/%3e%3c/svg%3e");
+                    -webkit-mask-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23000'%3e%3cpath d='M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z' stroke='black' stroke-width='1'/%3e%3c/svg%3e");
+                }
 
-                    .business-carousel-control-prev-icon::before,
-                    .business-carousel-control-next-icon::before {
-                        content: "";
-                        display: block;
-                        width: 20px;
-                        height: 20px;
-                        background-color: #000000;
-                        mask-size: 100%;
-                        -webkit-mask-size: 100%;
-                        mask-repeat: no-repeat;
-                        -webkit-mask-repeat: no-repeat;
-                        mask-position: center;
-                        -webkit-mask-position: center;
-                    }
+                .business-carousel-control-next-icon::before {
+                    mask-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23000'%3e%3cpath d='M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z' stroke='black' stroke-width='1'/%3e%3c/svg%3e");
+                    -webkit-mask-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23000'%3e%3cpath d='M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z' stroke='black' stroke-width='1'/%3e%3c/svg%3e");
+                }
+            </style>
 
-                    .business-carousel-control-prev-icon::before {
-                        mask-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23000'%3e%3cpath d='M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z' stroke='black' stroke-width='1'/%3e%3c/svg%3e");
-                        -webkit-mask-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23000'%3e%3cpath d='M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z' stroke='black' stroke-width='1'/%3e%3c/svg%3e");
-                    }
+            <div id="businessCarousel" class="carousel slide custom-carousel" data-bs-ride="carousel">
+                <!-- Indicators -->
+                <div class="carousel-indicators">
+                    <button type="button" data-bs-target="#businessCarousel" data-bs-slide-to="0"
+                        class="active business-carousel-control-prev" aria-current="true" aria-label="Slide 1"
+                        data-bs-slide="prev">
+                        <span class="business-carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                    </button>
 
-                    .business-carousel-control-next-icon::before {
-                        mask-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23000'%3e%3cpath d='M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z' stroke='black' stroke-width='1'/%3e%3c/svg%3e");
-                        -webkit-mask-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23000'%3e%3cpath d='M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z' stroke='black' stroke-width='1'/%3e%3c/svg%3e");
-                    }
-               
-                </style>
+                    <button type="button" data-bs-target="#businessCarousel" data-bs-slide-to="1"
+                        class="business-carousel-control-next" aria-label="Slide 2" data-bs-slide="next">
+                        <span class="business-carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                    </button>
+                </div>
 
-                <div id="businessCarousel" class="carousel slide custom-carousel" data-bs-ride="carousel">
-                    <!-- Indicators -->
-                    <div class="carousel-indicators">
-                        <button type="button" data-bs-target="#businessCarousel" data-bs-slide-to="0" class="active business-carousel-control-prev" aria-current="true" aria-label="Slide 1" data-bs-slide="prev">
-                            <span class="business-carousel-control-prev-icon" aria-hidden="true"></span>
-                            <span class="visually-hidden">Previous</span>
-                        </button>
-                       
-                        <button type="button" data-bs-target="#businessCarousel" data-bs-slide-to="1" class="business-carousel-control-next" aria-label="Slide 2" data-bs-slide="next">
-                            <span class="business-carousel-control-next-icon" aria-hidden="true"></span>
-                            <span class="visually-hidden">Next</span>
-                        </button>
-                    </div>
-
-                    <div class="carousel-inner">
-                        <!-- Slide 1 -->
-                        <div class="carousel-item active">
-                            <div class="row gy-5 align-items-center">
-                                <!-- Left Column -->
-                                <div
-                                    class="col-lg-7 d-flex flex-column justify-content-center align-items-start text-lg-start">
-                                    <style>
-                                        @media (max-width: 768px) {
-                                            .col-lg-7 {
-                                                width: 90% !important;
-                                                margin: 0 auto !important;
-                                                padding: 0 15px !important;
-                                            }
-                                        }
-                                    </style>
-                                    <div class="mb-4">
-                                        <!-- <div class="logo-text">
-                                                <p>
-                                                    We are Hiring
-                                                    <span class="online-indicator"></span>
-                                                </p>
-                                            </div> -->
-                                        <h1 class="display-3 fw-bold mb-0">Driving Technology Excellence for Your Entire
-                                            <span class="dynamic-text-container-1"></span>
-                                        </h1>
-                                        <h1 class="display-3 fw-bold mb-4">Ecosystem</h1>
-                                        <h3 class="lead mb-3">Empowering medium and large enterprises with innovative
-                                            technology solutions since 1983. <span class="fw-bold">Realta
-                                                Chakradarma</span> helps businesses reach their full potential through
-                                            enhanced visibility, control, and automation across all operations.</h3>
-                                        <h3 class="lead mb-3">Over decades of experience and integrated systems provide
-                                            the tools you need to <span class="fw-bold">streamline processes, make
-                                                informed decisions, and drive sustainable growth</span> in a rapidly
-                                            evolving market.</h3>
-
-                                            <a class="btn-custom img-animate mobile-responsive" role="button" href="#contact">
-                                                Contact Us
-                                            </a>
-                                    </div>
-                                  
-                                    <!-- stacked -->
-
-                                </div>
-
+                <div class="carousel-inner">
+                    <!-- Slide 1 -->
+                    <div class="carousel-item active">
+                        <div class="row gy-5 align-items-center">
+                            <!-- Left Column -->
+                            <div
+                                class="col-lg-7 d-flex flex-column justify-content-center align-items-start text-lg-start">
                                 <style>
-                                    .stacked-avatars {
-
-                                        display: flex;
-                                        align-items: center;
-                                        margin-top: 35px;
-                                    }
-
-                                    .avatar {
-                                        width: 45px;
-                                        height: 45px;
-                                        border-radius: 50% !important;
-                                        border: 2px solid #fff;
-                                        margin-right: -10px;
-                                        /* Negative margin for overlap */
-                                    }
-
-                                    .rating {
-                                        margin-top: 3px;
-                                        margin-left: 16px;
-                                    }
-
-                                    .stars {
-                                        color: #ffd700;
-                                        /* Gold color for stars */
-                                        margin-right: 5px;
-                                    }
-
-                                    .text {
-                                        font-size: 16px;
-                                        color: #666;
+                                    @media (max-width: 768px) {
+                                        .col-lg-7 {
+                                            width: 90% !important;
+                                            margin: 30px auto 0 !important;
+                                            /* Added top margin to prevent cutoff */
+                                            padding: 0 15px !important;
+                                        }
                                     }
                                 </style>
-                                <!-- Right Column -->
-                                <div class="col-lg-5 d-flex justify-content-center align-items-center mobile-center">
-                                    <style>
-                                        @media (max-width: 768px) {
-                                            .mobile-center {
-                                                justify-content: center !important;
-                                                text-align: center !important;
-                                                margin: 0 auto !important;
-                                            }
-                                        }
-                                    </style>
-                                    <div class="tilt-container" >
-                                        <img class="header img-fluid img-animate tilt-image"
-                                            src="assets/img/heading.png" alt="Business Image" loading="lazy"
-                                              style="width: 100%; height: auto;">   
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Slide 2 -->
-                        <div class="carousel-item">
-                            <div class="row gy-5 align-items-center">
-                                <div
-                                    class="col-lg-7 d-flex flex-column justify-content-center align-items-start text-lg-start">
-                                    <div class="mb-4">
-                                        <!-- <div class="logo-text">
+                                <div class="mb-4">
+                                    <!-- <div class="logo-text">
                                                 <p>
                                                     We are Hiring
                                                     <span class="online-indicator"></span>
                                                 </p>
                                             </div> -->
-                                        <h1 class="display-3 fw-bold mb-1">Transform Your</h1>
-                                        <span class="dynamic-text-container-2"></span>
-                                        <h1 class="display-3 fw-bold mb-1">Better Than Ever</h1>
-                                        <h3 class="lead mb-3">Revolutionize your business processes with
-                                            cutting-edge technology for <span class="fw-bold">enhanced efficiency and
-                                                growth.</span></h3>
-                                      
+                                    <h1 class="display-3 fw-bold mb-0">Driving Technology Excellence for Your Entire
+                                        <span class="dynamic-text-container-1"></span>
+                                    </h1>
+                                    <h1 class="display-3 fw-bold mb-4">Ecosystem</h1>
+                                    <h3 class="lead mb-3">Empowering medium and large enterprises with innovative
+                                        technology solutions since 1983. <span class="fw-bold">Realta
+                                            Chakradarma</span> helps businesses reach their full potential through
+                                        enhanced visibility, control, and automation across all operations.</h3>
+                                    <h3 class="lead mb-3">Over decades of experience and integrated systems provide
+                                        the tools you need to <span class="fw-bold">streamline processes, make
+                                            informed decisions, and drive sustainable growth</span> in a rapidly
+                                        evolving market.</h3>
 
-                                    </div>
                                     <a class="btn-custom img-animate mobile-responsive" role="button" href="#contact">
-                                        <i class="fa-brands fa-whatsapp me-2"></i>Get Started
+                                        Contact Us
                                     </a>
-                                    <div class="stacked-avatars">
-                                        <img src="assets/img/team/real-1.gif" alt="Avatar 1" class="avatar">
-                                        <img src="assets/img/team/real2.jpg" alt="Avatar 1" class="avatar">
-                                        <img src="assets/img/team/real-3.gif" alt="Avatar 1" class="avatar">
-                                    </div>
-                                    <div class="rating">
-                                        <span class="stars">★★★★★</span>
-                                        <span class="text">Trusted by 1 Million users</span>
-                                    </div>
                                 </div>
-                                <div class="col-lg-5 d-flex justify-content-center align-items-center">
-                                    <style>
-                                        .tilt-container {
-                                            margin-right: -5%; /* Negative margin to push content outside */
-                                            width: 80% !important; /* Reduce width */
-                                            height: 80% !important; /* Reduce height */
+
+                                <!-- stacked -->
+
+                            </div>
+
+                            <style>
+                                .stacked-avatars {
+
+                                    display: flex;
+                                    align-items: center;
+                                    margin-top: 35px;
+                                }
+
+                                .avatar {
+                                    width: 45px;
+                                    height: 45px;
+                                    border-radius: 50% !important;
+                                    border: 2px solid #fff;
+                                    margin-right: -10px;
+                                    /* Negative margin for overlap */
+                                }
+
+                                .rating {
+                                    margin-top: 3px;
+                                    margin-left: 16px;
+                                }
+
+                                .stars {
+                                    color: #ffd700;
+                                    /* Gold color for stars */
+                                    margin-right: 5px;
+                                }
+
+                                .text {
+                                    font-size: 16px;
+                                    color: #666;
+                                }
+
+                                @media (min-width: 992px) {
+                                    .col-lg-5 {
+                                        flex: 0 0 auto;
+                                        width: 41.66666667%;
+                                        min-height: 80vh;
+                                    }
+                                }
+                            </style>
+                            <!-- Right Column -->
+                            <div class="col-lg-5 d-flex justify-content-center align-items-center mobile-center">
+                                <style>
+                                    @media (max-width: 768px) {
+                                        .mobile-center {
+                                            justify-content: center !important;
+                                            text-align: center !important;
+                                            margin: 0 auto !important;
                                         }
-                                    </style>
-                                    <div class="tilt-container">
-                                        <img class="header img-fluid img-animate tilt-image"
-                                            src="assets/img/heading.png" alt="Business Image" loading="lazy"
-                                            style="width: 100%; height: auto;">
-                                    </div>
+                                    }
+                                </style>
+                                <div class="tilt-container">
+                                    <img class="header img-fluid img-animate tilt-image" src="assets/img/heading.png"
+                                        alt="Business Image" loading="lazy" style="width: 85%; height: auto;">
                                 </div>
+
                             </div>
                         </div>
+                    </div>
+
+                    <!-- Slide 2 -->
+                    <div class="carousel-item">
+                        <div class="row gy-5 align-items-center">
+                            <div
+                                class="col-lg-7 d-flex flex-column justify-content-center align-items-start text-lg-start">
+                                <div class="mb-4">
+                                    <!-- <div class="logo-text">
+                                                <p>
+                                                    We are Hiring
+                                                    <span class="online-indicator"></span>
+                                                </p>
+                                            </div> -->
+                                    <h1 class="display-3 fw-bold mb-1">Transform Your</h1>
+                                    <span class="dynamic-text-container-2"></span>
+                                    <h1 class="display-3 fw-bold mb-1">Better Than Ever</h1>
+                                    <h3 class="lead mb-3">Revolutionize your business processes with
+                                        cutting-edge technology for <span class="fw-bold">enhanced efficiency and
+                                            growth.</span></h3>
+
+
+                                </div>
+                                <a class="btn-custom img-animate mobile-responsive" role="button" href="#contact">
+                                    <i class="fa-brands fa-whatsapp me-2"></i>Get Started
+                                </a>
+                                <div class="stacked-avatars">
+                                    <img src="assets/img/team/real-1.gif" alt="Avatar 1" class="avatar">
+                                    <img src="assets/img/team/real2.jpg" alt="Avatar 1" class="avatar">
+                                    <img src="assets/img/team/real-3.gif" alt="Avatar 1" class="avatar">
+                                </div>
+                                <div class="rating">
+                                    <span class="stars">★★★★★</span>
+                                    <span class="text">Trusted by 1 Million users</span>
+                                </div>
+                            </div>
+                            <div class="col-lg-5 d-flex justify-content-center align-items-center">
+                                <style>
+                                    .tilt-container {
+                                        width: 85%;
+                                        height: auto;
+                                        overflow: visible;
+                                    }
+
+                                    /* Base styles for the image */
+                                    .tilt-container .header {
+                                        width: 85%;
+                                        height: auto;
+                                        display: block;
+                                        margin: 0 auto;
+                                    }
+
+                                    /* Adjust mobile responsiveness */
+                                    @media (max-width: 768px) {
+                                        .tilt-container {
+                                            margin: 20px auto;
+                                            /* Add some vertical spacing on mobile */
+                                        }
+
+                                        .tilt-image {
+                                            max-width: 100%;
+                                            /* Allow full width on mobile */
+                                            padding: 15px;
+                                            /* Add some padding around the image */
+                                        }
+                                    }
+                                </style>
+                                <div class="tilt-container">
+                                    <img class="header img-fluid img-animate tilt-image" src="assets/img/heading.png"
+                                        alt="Business Image" loading="lazy" style="width: 85%; height: auto;">
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
                 </div>
+
+
                 <!-- Carousel End -->
             </div>
         </div>
@@ -1582,7 +1640,7 @@
                 opacity: 0.5;
             }
         }
-        
+
 
 
         /* Dark mode styles */
@@ -1790,203 +1848,226 @@
         }
     </style>
 
-<style>
-            @media (max-width: 768px) {
-                .glass-text {
-                    font-size: 1.8rem !important;
-                }
+    <style>
+        @media (max-width: 768px) {
+            .glass-text {
+                font-size: 1.8rem !important;
             }
-        </style>
+        }
+    </style>
 
     <section id="technology-delivery " class="clipped-section">
         <div class="container-fluid ">
             <div class="row justify-content-center">
-               
-                    <div class="text-center">
-                        <h2 class="mb-2 glass-text gradient-text">
-                            Delivering Technology for
-                            <br>
-                            Leading Organizations
-                        </h2>
-                    </div>
-                    
-                    <div id="partners-logo" class="col-12" style="cursor: default; pointer-events: none;">
-                        <div class="container-fluid px-2">
-                            <!-- First Row -->
-                            <div class="row row-cols-3 row-cols-sm-4 row-cols-md-6 g-2 mb-2 justify-content-center align-items-center">
-                                <div class="col">
-                                    <div class="partner-logo">
-                                        <img src="assets/img/partners/Accor_logo_Gold-gradient_RVB_digital.png" alt="Partner 1" class="img-fluid" loading="lazy">
-                                    </div>
-                                </div>
-                                <div class="col">
-                                    <div class="partner-logo">
-                                        <img src="assets/img/partners/Logo-Astra-Otoparts-PNG-–-IfoxSoft.Com_-950x500.png" alt="Partner 2" class="img-fluid" loading="lazy">
-                                    </div>
-                                </div>
-                                <div class="col">
-                                    <div class="partner-logo">
-                                        <img src="assets/img/partners/bank-tabungan-negara-seeklogo.png" alt="Partner 3" class="img-fluid" loading="lazy">
-                                    </div>
-                                </div>
-                                <div class="col">
-                                    <div class="partner-logo">
-                                        <img src="assets/img/partners/Logo-BCA-PNG.png" alt="Partner 4" class="img-fluid" loading="lazy">
-                                    </div>
-                                </div>
-                                <div class="col">
-                                    <div class="partner-logo">
-                                        <img src="assets/img/partners/pngegg.png" alt="Partner 5" class="img-fluid" loading="lazy">
-                                    </div>
-                                </div>
-                                <div class="col">
-                                    <div class="partner-logo">
-                                        <img src="assets/img/partners/Energizer.png" alt="Partner 6" class="img-fluid" loading="lazy">
-                                    </div>
+
+                <div class="text-center">
+                    <h2 class="mb-2 glass-text gradient-text">
+                        Delivering Technology for
+                        <br>
+                        Leading Organizations
+                    </h2>
+                </div>
+
+                <div id="partners-logo" class="col-12" style="cursor: default; pointer-events: none;">
+                    <div class="container-fluid px-2">
+                        <!-- First Row -->
+                        <div
+                            class="row row-cols-3 row-cols-sm-4 row-cols-md-6 g-2 mb-2 justify-content-center align-items-center">
+                            <div class="col">
+                                <div class="partner-logo">
+                                    <img src="assets/img/partners/Accor_logo_Gold-gradient_RVB_digital.png"
+                                        alt="Partner 1" class="img-fluid" loading="lazy">
                                 </div>
                             </div>
-
-                            <!-- Second Row -->
-                            <div class="row row-cols-3 row-cols-sm-4 row-cols-md-6 g-2 mb-2 justify-content-center align-items-center">
-                                <div class="col">
-                                    <div class="partner-logo">
-                                        <img src="assets/img/partners/Hilton.png" alt="Partner 7" class="img-fluid" loading="lazy">
-                                    </div>
-                                </div>
-                                <div class="col">
-                                    <div class="partner-logo">
-                                        <img src="assets/img/partners/Hyundai.png" alt="Partner 8" class="img-fluid" loading="lazy">
-                                    </div>
-                                </div>
-                                <div class="col">
-                                    <div class="partner-logo">
-                                        <img src="assets/img/partners/indofood.png" alt="Partner 9" class="img-fluid" loading="lazy">
-                                    </div>
-                                </div>
-                                <div class="col">
-                                    <div class="partner-logo">
-                                        <img src="assets/img/partners/kalbe.png" alt="Partner 10" class="img-fluid" loading="lazy">
-                                    </div>
-                                </div>
-                                <div class="col">
-                                    <div class="partner-logo">
-                                        <img src="assets/img/partners/kao.png" alt="Partner 11" class="img-fluid" loading="lazy">
-                                    </div>
-                                </div>
-                                <div class="col">
-                                    <div class="partner-logo">
-                                        <img src="assets/img/partners/Mercure Hotels.png" alt="Partner 12" class="img-fluid" loading="lazy">
-                                    </div>
+                            <div class="col">
+                                <div class="partner-logo">
+                                    <img src="assets/img/partners/Logo-Astra-Otoparts-PNG-–-IfoxSoft.Com_-950x500.png"
+                                        alt="Partner 2" class="img-fluid" loading="lazy">
                                 </div>
                             </div>
+                            <div class="col">
+                                <div class="partner-logo">
+                                    <img src="assets/img/partners/bank-tabungan-negara-seeklogo.png" alt="Partner 3"
+                                        class="img-fluid" loading="lazy">
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="partner-logo">
+                                    <img src="assets/img/partners/Logo-BCA-PNG.png" alt="Partner 4" class="img-fluid"
+                                        loading="lazy">
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="partner-logo">
+                                    <img src="assets/img/partners/pngegg.png" alt="Partner 5" class="img-fluid"
+                                        loading="lazy">
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="partner-logo">
+                                    <img src="assets/img/partners/Energizer.png" alt="Partner 6" class="img-fluid"
+                                        loading="lazy">
+                                </div>
+                            </div>
+                        </div>
 
-                            <!-- Third Row -->
-                            <div class="row row-cols-3 row-cols-sm-4 row-cols-md-6 g-2 justify-content-center align-items-center">
-                                <div class="col">
-                                    <div class="partner-logo">
-                                        <img src="assets/img/partners/novotel.png" alt="Partner 13" class="img-fluid" loading="lazy">
-                                    </div>
+                        <!-- Second Row -->
+                        <div
+                            class="row row-cols-3 row-cols-sm-4 row-cols-md-6 g-2 mb-2 justify-content-center align-items-center">
+                            <div class="col">
+                                <div class="partner-logo">
+                                    <img src="assets/img/partners/Hilton.png" alt="Partner 7" class="img-fluid"
+                                        loading="lazy">
                                 </div>
-                                <div class="col">
-                                    <div class="partner-logo">
-                                        <img src="assets/img/partners/prudential.png" alt="Partner 14" class="img-fluid" loading="lazy">
-                                    </div>
+                            </div>
+                            <div class="col">
+                                <div class="partner-logo">
+                                    <img src="assets/img/partners/Hyundai.png" alt="Partner 8" class="img-fluid"
+                                        loading="lazy">
                                 </div>
-                                <div class="col">
-                                    <div class="partner-logo">
-                                        <img src="assets/img/partners/sultan.png" alt="Partner 15" class="img-fluid" loading="lazy">
-                                    </div>
+                            </div>
+                            <div class="col">
+                                <div class="partner-logo">
+                                    <img src="assets/img/partners/indofood.png" alt="Partner 9" class="img-fluid"
+                                        loading="lazy">
                                 </div>
-                                <div class="col">
-                                    <div class="partner-logo">
-                                        <img src="assets/img/partners/yakult.png" alt="Partner 16" class="img-fluid" loading="lazy">
-                                    </div>
+                            </div>
+                            <div class="col">
+                                <div class="partner-logo">
+                                    <img src="assets/img/partners/kalbe.png" alt="Partner 10" class="img-fluid"
+                                        loading="lazy">
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="partner-logo">
+                                    <img src="assets/img/partners/kao.png" alt="Partner 11" class="img-fluid"
+                                        loading="lazy">
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="partner-logo">
+                                    <img src="assets/img/partners/Mercure Hotels.png" alt="Partner 12" class="img-fluid"
+                                        loading="lazy">
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Third Row -->
+                        <div
+                            class="row row-cols-3 row-cols-sm-4 row-cols-md-6 g-2 justify-content-center align-items-center">
+                            <div class="col">
+                                <div class="partner-logo">
+                                    <img src="assets/img/partners/novotel.png" alt="Partner 13" class="img-fluid"
+                                        loading="lazy">
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="partner-logo">
+                                    <img src="assets/img/partners/prudential.png" alt="Partner 14" class="img-fluid"
+                                        loading="lazy">
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="partner-logo">
+                                    <img src="assets/img/partners/sultan.png" alt="Partner 15" class="img-fluid"
+                                        loading="lazy">
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="partner-logo">
+                                    <img src="assets/img/partners/yakult.png" alt="Partner 16" class="img-fluid"
+                                        loading="lazy">
                                 </div>
                             </div>
                         </div>
                     </div>
+                </div>
 
-                    <style>
+                <style>
+                    .partner-logo {
+                        height: 100px;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        padding: 0.75rem;
+                        margin: 0.25rem;
+                        transition: all 0.3s ease;
+                        background: rgba(255, 255, 255, 0.05);
+                        border-radius: 8px;
+                    }
+
+                    .partner-logo img {
+                        max-width: 120%;
+                        max-height: 120%;
+                        object-fit: contain;
+                        transition: all 0.3s ease;
+                    }
+
+                    /* Extra small devices (phones) */
+                    @media (max-width: 575.98px) {
+                        .partner-logo {
+                            height: 70px;
+                            padding: 0.5rem;
+                            margin: 0.15rem;
+                        }
+
+                        .glass-text {
+                            margin-bottom: 1.5rem !important;
+                        }
+
+                        .container-fluid {
+                            padding: 0 0.5rem;
+                        }
+                    }
+
+                    /* Small devices (tablets) */
+                    @media (min-width: 576px) and (max-width: 767.98px) {
+                        .partner-logo {
+                            height: 80px;
+                            padding: 0.75rem;
+                            margin: 0.2rem;
+                        }
+
+                        .container-fluid {
+                            padding: 0 0.75rem;
+                        }
+                    }
+
+                    /* Medium devices (small laptops) */
+                    @media (min-width: 768px) and (max-width: 991.98px) {
+                        .partner-logo {
+                            height: 90px;
+                            padding: 0.85rem;
+                            margin: 0.25rem;
+                        }
+
+                        .container-fluid {
+                            padding: 0 1rem;
+                        }
+                    }
+
+                    /* Large devices (desktops) */
+                    @media (min-width: 992px) {
                         .partner-logo {
                             height: 100px;
-                            display: flex;
-                            align-items: center;
-                            justify-content: center;
-                            padding: 0.75rem;
+                            padding: 1rem;
                             margin: 0.25rem;
-                            transition: all 0.3s ease;
-                            background: rgba(255, 255, 255, 0.05);
-                            border-radius: 8px;
                         }
 
-                        .partner-logo img {
-                            max-width: 120%;
-                            max-height: 120%;
-                            object-fit: contain;
-                            transition: all 0.3s ease;
-                        }
+                    }
 
-                        /* Extra small devices (phones) */
-                        @media (max-width: 575.98px) {
-                            .partner-logo {
-                                height: 70px;
-                                padding: 0.5rem;
-                                margin: 0.15rem;
-                            }
-                            .glass-text {
-                                margin-bottom: 1.5rem !important;
-                            }
-                            .container-fluid {
-                                padding: 0 0.5rem;
-                            }
-                        }
+                    #partners-logo .row {
+                        margin-right: 0;
+                        margin-left: 0;
+                    }
 
-                        /* Small devices (tablets) */
-                        @media (min-width: 576px) and (max-width: 767.98px) {
-                            .partner-logo {
-                                height: 80px;
-                                padding: 0.75rem;
-                                margin: 0.2rem;
-                            }
-                            .container-fluid {
-                                padding: 0 0.75rem;
-                            }
-                        }
+                    /* Add gap between rows */
+                    #partners-logo .row+.row {
+                        margin-top: 1rem;
+                    }
+                </style>
+            </div>
 
-                        /* Medium devices (small laptops) */
-                        @media (min-width: 768px) and (max-width: 991.98px) {
-                            .partner-logo {
-                                height: 90px;
-                                padding: 0.85rem;
-                                margin: 0.25rem;
-                            }
-                            .container-fluid {
-                                padding: 0 1rem;
-                            }
-                        }
-
-                        /* Large devices (desktops) */
-                        @media (min-width: 992px) {
-                            .partner-logo {
-                                height: 100px;
-                                padding: 1rem;
-                                margin: 0.25rem;
-                            }
-                          
-                        }
-
-                        #partners-logo .row {
-                            margin-right: 0;
-                            margin-left: 0;
-                        }
-
-                        /* Add gap between rows */
-                        #partners-logo .row + .row {
-                            margin-top: 1rem;
-                        }
-                    </style>
-                </div>
-        
         </div>
         <!-- Add the circle-blur2 div here -->
         <div class="circle-blur2"></div>
@@ -1997,7 +2078,8 @@
                 <div class="row">
                     <div class="text-center mt-0 mb-3" style="margin-top: -50px;">
                         <h1 class="industry-title gradient-text mb-3">Tailored Solutions for Every Sector</h1>
-                        <h3 class="mb-5 industry-subtitle">Innovative technology customized for your industry's unique challenges</h3>
+                        <h3 class="mb-5 industry-subtitle">Innovative technology customized for your industry's unique
+                            challenges</h3>
                     </div>
                     <!-- Statistics Section -->
                     <div class="col-12">
@@ -2138,6 +2220,69 @@
                 opacity: 1;
                 filter: blur(0);
             }
+
+            .product-blur {
+                position: absolute;
+                width: 300px;
+                height: 300px;
+                border-radius: 50%;
+                filter: blur(80px);
+                z-index: -2;
+                background-image: linear-gradient(132deg, #8A2BE2 27%, #4169E1 50%, #5486a6 79%);
+                opacity: 0.77;
+                transform: translate(-50%, -50%);
+                transition: all 0.3s ease;
+            }
+
+            /* Position blur elements relative to their containers */
+            .product-container {
+                position: relative;
+                overflow: hidden;
+            }
+
+            .product-blur-1 {
+                left: 25%;
+                top: 50%;
+            }
+
+            .product-blur-2 {
+                left: 75%;
+                top: 50%;
+            }
+
+            .product-blur-3 {
+                left: 25%;
+                top: 50%;
+            }
+
+            /* Responsive adjustments */
+            @media (max-width: 1200px) {
+                .product-blur {
+                    width: 250px;
+                    height: 250px;
+                }
+            }
+
+            @media (max-width: 992px) {
+                .product-blur {
+                    width: 200px;
+                    height: 200px;
+                }
+            }
+
+            @media (max-width: 768px) {
+                .product-blur {
+                    width: 150px;
+                    height: 150px;
+                }
+
+                .product-blur-1,
+                .product-blur-2,
+                .product-blur-3 {
+                    left: 50%;
+                    top: 30%;
+                }
+            }
         </style>
         <!-- PRODUCT 1 -->
         <div class="container-fluid py-4 pb-2 py-xl-5 product-container">
@@ -2151,10 +2296,12 @@
                     </div>
                 </div>
                 <div class="col-md-6 position-relative">
-                    <div class="text-start" style="max-width: 700px; margin: 0 auto 0 10%; position: relative; z-index: 1;">
+                    <div class="text-start"
+                        style="max-width: 700px; margin: 0 auto 0 10%; position: relative; z-index: 1;">
                         <h2 class="text-uppercase fw-bold fade-in-blur">Visibility</h2>
                         <h3 class="fw-bold fade-in-blur">Unlock Real-Time Visibility Across Your Business</h3>
-                        <p class="my-3 fade-in-blur">Gain integrated, real-time visibility across all areas of your business. This
+                        <p class="my-3 fade-in-blur">Gain integrated, real-time visibility across all areas of your
+                            business. This
                             allows you to make informed decisions with clear insights and a full understanding of your
                             operations.</p>
                         <a href="#" class="btn-custom img-animate me-2 d-inline-block fade-in-blur">Learn More</a>
@@ -2162,30 +2309,6 @@
                 </div>
             </div>
         </div>
-
-        <style>
-            .product-blur {
-                position: absolute;
-                width: 300px;
-                height: 300px;
-                border-radius: 50%;
-                filter: blur(80px);
-                z-index: -2;
-            }
-
-            .product-blur-1 {
-                background-image: linear-gradient(132deg, #8A2BE2 27%, #4169E1 50%, #5486a6 79%);
-                top: 50%;
-                opacity: 0.77;
-                right: 983px;
-                transform: translateY(-50%);
-            }
-
-            .col-md-6 {
-                position: relative;
-                z-index: 1;
-            }
-        </style>
 
         <!-- PRODUCT 2 -->
         <div class="container-fluid py-4 py-xl-5 product-container">
@@ -2204,12 +2327,12 @@
                         style="max-width: 700px; margin: 0 auto 0 8%; position: relative; z-index: 1;">
                         <h2 class="text-uppercase fw-bold fade-in-blur">Control</h2>
                         <h3 class="fw-bold fade-in-blur">Take Command of Your Business Processes</h3>
-                        <p class="my-3 fade-in-blur">Empower your business with precise control over processes and resources. You can
+                        <p class="my-3 fade-in-blur">Empower your business with precise control over processes and
+                            resources. You can
                             maintain consistent performance while quickly adapting to any changes in your business
                             environment.</p>
 
-                        <div class="mx-0 fade-in-blur"
-                            style="max-width: 300px; margin-bottom: 20px;">
+                        <div class="mx-0 fade-in-blur" style="max-width: 300px; margin-bottom: 20px;">
                             <div class="" style="padding: 10px;">
                                 <div class="icon d-flex align-items-center mb-2">
                                     <i class="fas fa-circle"
@@ -2228,15 +2351,6 @@
             </div>
         </div>
 
-        <style>
-            .product-blur-2 {
-                background-image: linear-gradient(132deg, #8A2BE2 27%, #4169E1 50%, #5486a6 79%);
-                top: 45%;
-                opacity: 0.77;
-                left: 993px;
-                transform: translateY(-50%);
-            }
-        </style>
         <!-- PRODUCT 3 -->
         <div class="container-fluid py-4 py-xl-5 product-container">
             <div class="row gy-4 align-items-center position-relative">
@@ -2251,10 +2365,11 @@
                 </div>
                 <div class="col-md-6 position-relative">
                     <div class="text-start"
-                    style="max-width: 700px; margin: 0 auto 0 10%; position: relative; z-index: 1;">
+                        style="max-width: 700px; margin: 0 auto 0 10%; position: relative; z-index: 1;">
                         <h2 class="text-uppercase fw-bold fade-in-blur">Automation</h2>
                         <h3 class="fw-bold fade-in-blur">Automate Routine Tasks for Seamless Efficiency</h3>
-                        <p class="my-3 fade-in-blur">Automate routine tasks to run your business more efficiently with less manual
+                        <p class="my-3 fade-in-blur">Automate routine tasks to run your business more efficiently with
+                            less manual
                             effort. This boosts accuracy, scalability, and frees up your team to focus on strategic
                             initiatives.</p>
                         <a href="#" class="btn-custom img-animate me-2 d-inline-block fade-in-blur">Learn More</a>
@@ -2267,15 +2382,7 @@
             .my-3 {
                 width: 90% !important;
             }
-            .product-blur-3 {
-                background-image: linear-gradient(132deg, #8A2BE2 27%, #4169E1 50%, #5486a6 79%);
-                top: 50%;
-                opacity: 0.77;
-                right: 980px;
-                transform: translateY(-50%);
-            }
-        </style>
-        <style>
+
             @media (max-width: 786px) {
                 .product-container {
                     margin-top: 60px;
@@ -2308,23 +2415,21 @@
                 }
             }
         </style>
-        <!-- Add this CSS to your stylesheet or in a <style> tag in the <head> -->
-        <style>
-
-        </style>
     </section>
 
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
+        document.addEventListener('DOMContentLoaded', function () {
             const fadeElements = document.querySelectorAll('.fade-in-blur');
-            
+
             const observer = new IntersectionObserver((entries) => {
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
                         entry.target.classList.add('active');
                     }
                 });
-            }, { threshold: 0.1 });
+            }, {
+                threshold: 0.1
+            });
 
             fadeElements.forEach(element => {
                 observer.observe(element);
@@ -2858,42 +2963,42 @@
 
 
                 <div class="tags-container-wrapper mb-4"">
-                    <div class="scroll-indicator scroll-left">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <polyline points="15 18 9 12 15 6"></polyline>
-                        </svg>
-                    </div>
-                    <div class="tags-container" style="background: none;">
-                        <div class="tags-wrapper">
-                            <span class="tag-item" onclick="toggleCard(this, 'hospitality')">
-                                Hospitality
-                            </span>
-                            <span class="tag-item" onclick="toggleCard(this, 'property')">
-                                Property
-                            </span>
+                    <div class=" scroll-indicator scroll-left">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="15 18 9 12 15 6"></polyline>
+                    </svg>
+                </div>
+                <div class="tags-container" style="background: none;">
+                    <div class="tags-wrapper">
+                        <span class="tag-item" onclick="toggleCard(this, 'hospitality')">
+                            Hospitality
+                        </span>
+                        <span class="tag-item" onclick="toggleCard(this, 'property')">
+                            Property
+                        </span>
 
-                            <span class="tag-item" onclick="toggleCard(this, 'manufacturing')">
-                                </i> Manufacturing
-                            </span>
-                            <span class="tag-item" onclick="toggleCard(this, 'finance')">
-                                FSI
-                            </span>
-                            <!-- <span class="tag-item" onclick="toggleCard(this, 'industry')">
+                        <span class="tag-item" onclick="toggleCard(this, 'manufacturing')">
+                            </i> Manufacturing
+                        </span>
+                        <span class="tag-item" onclick="toggleCard(this, 'finance')">
+                            FSI
+                        </span>
+                        <!-- <span class="tag-item" onclick="toggleCard(this, 'industry')">
                                 Others
                             </span> -->
-                        </div>
-                    </div>
-                    <div class="scroll-indicator scroll-right">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <polyline points="9 18 15 12 9 6"></polyline>
-                        </svg>
                     </div>
                 </div>
+                <div class="scroll-indicator scroll-right">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="9 18 15 12 9 6"></polyline>
+                    </svg>
+                </div>
             </div>
-            <div id="contentCards" class="row justify-content-center ">
-            </div>
+        </div>
+        <div id="contentCards" class="row justify-content-center ">
+        </div>
 
 
 
@@ -3021,7 +3126,8 @@
                                 Ensure on-time hotel opening and improve guest satisfaction through synergy between
                                 technology and services in the hotel.
                             </p>
-                            <a href="rhapsody-micro.html" class="business-btn" onclick="navigateWithLoading('rhapsody-micro.html')">Learn More</a>
+                            <a href="rhapsody-micro.html" class="business-btn"
+                                onclick="navigateWithLoading('rhapsody-micro.html')">Learn More</a>
                         </div>
                     </div>
                 </div>
@@ -3039,7 +3145,8 @@
                                 Provide seamless and high quality experience for club members and guest players through
                                 technology driven operation: from bag-drop to check-out.
                             </p>
-                            <a href="golf-micro.html" class="business-btn" onclick="navigateWithLoading('golf-micro.html')">Learn More</a>
+                            <a href="golf-micro.html" class="business-btn"
+                                onclick="navigateWithLoading('golf-micro.html')">Learn More</a>
                         </div>
                     </div>
                 </div>
@@ -3056,7 +3163,8 @@
                                 Empower your HR to accurately manage processes from recruitment to retirement and
                                 maintain compliance with tax and labor regulations.
                             </p>
-                            <a href="hr-micro.html" class="business-btn" onclick="navigateWithLoading('hr-micro.html')">Learn More</a>
+                            <a href="hr-micro.html" class="business-btn"
+                                onclick="navigateWithLoading('hr-micro.html')">Learn More</a>
                         </div>
                     </div>
                 </div>
@@ -3073,7 +3181,8 @@
                                 Deliver superior service to your tenants by proper management of contracts and services.
                                 Deliver invoices, information, and service report through Tenant Mobile Application.
                             </p>
-                            <a href="bimasakti-micro.html" class="business-btn" onclick="navigateWithLoading('bimasakti-micro.html')">Learn More</a>
+                            <a href="bimasakti-micro.html" class="business-btn"
+                                onclick="navigateWithLoading('bimasakti-micro.html')">Learn More</a>
                         </div>
                     </div>
                 </div>
@@ -3090,7 +3199,8 @@
                             <p class="card-text text-muted text-center small flex-grow-1">Optimize IT management to
                                 safeguard the core of your business and turn potential hurdles into triumphs.
                             </p>
-                            <a href="itsm-micro.html" class="business-btn" onclick="navigateWithLoading('itsm-micro.html')">Learn More</a>
+                            <a href="itsm-micro.html" class="business-btn"
+                                onclick="navigateWithLoading('itsm-micro.html')">Learn More</a>
                         </div>
                     </div>
                 </div>
@@ -3108,7 +3218,8 @@
                                 expectations.Increase your Return by lengthening the service life of your capital
                                 investment.
                             </p>
-                            <a href="erp-micro.html" class="business-btn" onclick="navigateWithLoading('erp-micro.html')">Learn More</a>
+                            <a href="erp-micro.html" class="business-btn"
+                                onclick="navigateWithLoading('erp-micro.html')">Learn More</a>
                         </div>
                     </div>
                 </div>
@@ -3123,7 +3234,8 @@
                             <p class="card-text text-muted text-center small flex-grow-1">Ensure IT environment operates
                                 in synergy with every business process
                             </p>
-                            <a href="realnet-micro.html" class="business-btn" onclick="navigateWithLoading('realnet-micro.html')">Learn More</a>
+                            <a href="realnet-micro.html" class="business-btn"
+                                onclick="navigateWithLoading('realnet-micro.html')">Learn More</a>
                         </div>
                     </div>
                 </div>
@@ -3131,15 +3243,15 @@
         </div>
     </section>
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
+        document.addEventListener('DOMContentLoaded', function () {
             const cards = document.querySelectorAll('.blur-card');
             let isMobile = window.innerWidth <= 768;
-            
+
             function updateBlur() {
                 cards.forEach(card => {
                     const rect = card.getBoundingClientRect();
                     const viewportHeight = window.innerHeight;
-                    
+
                     // Calculate the percentage of the card that's in view
                     const visiblePercentage = Math.min(
                         Math.max(0, (viewportHeight - rect.top) / rect.height),
@@ -3180,7 +3292,7 @@
             window.addEventListener('scroll', updateBlur);
 
             // Update on resize and check if device type changed
-            window.addEventListener('resize', function() {
+            window.addEventListener('resize', function () {
                 const wasDesktop = !isMobile;
                 isMobile = window.innerWidth <= 768;
                 if (wasDesktop !== !isMobile) {
@@ -3196,7 +3308,7 @@
         });
     </script>
     <style>
-              .blur-card {
+        .blur-card {
             filter: blur(5px);
             opacity: 0;
             transform: translateY(20px);
@@ -3208,6 +3320,7 @@
             opacity: 1;
             transform: translateY(0);
         }
+
         /* Modern and Minimalist Business Button Styles */
         .business-btn {
             display: inline-block;
@@ -3546,7 +3659,7 @@
     </div>
 
 
-    
+
 
 
     <section id="testi" class="py-5">
@@ -3778,8 +3891,12 @@
             }
 
             // Touch events (primarily for mobile)
-            slider.addEventListener('touchstart', handleInteraction, { passive: false });
-            slider.addEventListener('touchmove', handleMove, { passive: true });
+            slider.addEventListener('touchstart', handleInteraction, {
+                passive: false
+            });
+            slider.addEventListener('touchmove', handleMove, {
+                passive: true
+            });
             slider.addEventListener('touchend', handleEnd);
 
             // Mouse events (primarily for desktop)
@@ -3871,163 +3988,168 @@
 
 
 
-<!-- BLOG -->
-<section id="blog" class="">
-    <div class="container-fluid">
-        <div class="blog-header text-center">
-            <h1 class="gradient-text" style="font-weight: bolder; font-size: 48px;">Blog</h1>
-            <p class="">Stay informed and inspired with our latest articles covering a wide range of topics from
-                career advice to latest our insights.</p>
-        </div>
-        <div id="blog-posts-container" class="blog-posts">
-            <!-- Desktop arrows -->
-            <div class="blog-arrow left-arrow desktop-control">
-                <i class="fas fa-chevron-left"></i>
+    <!-- BLOG -->
+    <section id="blog" class="">
+        <div class="container-fluid">
+            <div class="blog-header text-center">
+                <h1 class="gradient-text" style="font-weight: bolder; font-size: 48px;">Blog</h1>
+                <p class="">Stay informed and inspired with our latest articles covering a wide range of topics from
+                    career advice to latest our insights.</p>
             </div>
-            <div class="blog-posts-wrapper">
-                <!-- Blog posts will be dynamically inserted here -->
-            </div>
-            <div class="blog-arrow right-arrow desktop-control">
-                <i class="fas fa-chevron-right"></i>
-            </div>
-            
-            <!-- Mobile controls -->
-            <div class="mobile-controls">
-                <div class="blog-arrow left-arrow mobile-control">
+            <div id="blog-posts-container" class="blog-posts">
+                <!-- Desktop arrows -->
+                <div class="blog-arrow left-arrow desktop-control">
                     <i class="fas fa-chevron-left"></i>
                 </div>
-                <div class="blog-dots">
-                    <!-- Dots will be dynamically inserted here -->
+                <div class="blog-posts-wrapper">
+                    <!-- Blog posts will be dynamically inserted here -->
                 </div>
-                <div class="blog-arrow right-arrow mobile-control">
+                <div class="blog-arrow right-arrow desktop-control">
                     <i class="fas fa-chevron-right"></i>
+                </div>
+
+                <!-- Mobile controls -->
+                <div class="mobile-controls">
+                    <div class="blog-arrow left-arrow mobile-control">
+                        <i class="fas fa-chevron-left"></i>
+                    </div>
+                    <div class="blog-dots">
+                        <!-- Dots will be dynamically inserted here -->
+                    </div>
+                    <div class="blog-arrow right-arrow mobile-control">
+                        <i class="fas fa-chevron-right"></i>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-</section>
+    </section>
 
-<style>
-.blog-pagination {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        gap: 8px;
-        margin-top: 2rem;
-        position: absolute;
-        bottom: -2rem;
-        left: 50%;
-        transform: translateX(-50%);
-        width: 100%;
-    }
-
-    .pagination-dot {
-        width: 10px;
-        height: 10px;
-        border-radius: 50%;
-        background-color: #ddd;
-        cursor: pointer;
-        transition: all 0.3s ease;
-    }
-
-    .pagination-dot.active {
-        background-color: #9054d0;
-        transform: scale(1.2);
-    }
-
-    .pagination-dot:hover {
-        background-color: #7a4bd7;
-    }
-
-    @media (max-width: 768px) {
+    <style>
         .blog-pagination {
-            margin-top: 1.5rem;
-            bottom: -1.5rem;
-        }
-        
-        .pagination-dot {
-            width: 8px;
-            height: 8px;
-        }
-    }
-    #blog-posts-container {
-        position: relative;
-        display: flex;
-        align-items: center;
-        width: 100%; /* Ensure the container takes full width */
-        padding: 0 65px; /* Add padding to make space for arrows */
-    }
-
-    .blog-posts-wrapper {
-        display: flex;
-        justify-content: space-between;
-        width: 100%;
-        overflow: hidden;
-    }
-
-    .blog-arrow {
-        position: absolute;
-        top: 50%;
-        transform: translateY(-50%);
-        font-size: 17px;
-        color: #000000;
-        cursor: pointer;
-        user-select: none;
-        background-color: rgba(255, 255, 255, 0.363);
-        width: 40px;
-        height: 40px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        border-radius: 50%;
-        border: 1px solid #000000;
-        z-index: 10;
-        padding: 0;
-        aspect-ratio: 1;
-        transition: all 0.3s ease;
-    }
-
-    .blog-arrow:hover {
-        background-color: rgba(0, 0, 0, 0.8);
-        color: #ffffff;
-    }
-
-    .blog-arrow.left-arrow {
-        left: 0;
-    }
-
-    .blog-arrow.right-arrow {
-        right: 0;
-    }
-
-    .blog-arrow.disabled {
-        color: #ccc;
-        cursor: not-allowed;
-    }
-
- 
-    @media (max-width: 768px) {
-        .blog-arrow {
             display: flex;
-            position: absolute;
-            top: 100%;
-            transform: none;
-            margin-top: 1ch;
-            align-items: center;
             justify-content: center;
+            align-items: center;
+            gap: 8px;
+            margin-top: 2rem;
+            position: absolute;
+            bottom: -2rem;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100%;
+        }
+
+        .pagination-dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background-color: #ddd;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .pagination-dot.active {
+            background-color: #9054d0;
+            transform: scale(1.2);
+        }
+
+        .pagination-dot:hover {
+            background-color: #7a4bd7;
+        }
+
+        @media (max-width: 768px) {
+            .blog-pagination {
+                margin-top: 1.5rem;
+                bottom: -1.5rem;
+            }
+
+            .pagination-dot {
+                width: 8px;
+                height: 8px;
+            }
+        }
+
+        #blog-posts-container {
+            position: relative;
+            display: flex;
+            align-items: center;
+            width: 100%;
+            /* Ensure the container takes full width */
+            padding: 0 65px;
+            /* Add padding to make space for arrows */
+        }
+
+        .blog-posts-wrapper {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            overflow: hidden;
+        }
+
+        .blog-arrow {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 17px;
+            color: #000000;
+            cursor: pointer;
+            user-select: none;
+            background-color: rgba(255, 255, 255, 0.363);
             width: 40px;
             height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            border: 1px solid #000000;
+            z-index: 10;
             padding: 0;
-            line-height: 0;
+            aspect-ratio: 1;
+            transition: all 0.3s ease;
         }
+
+        .blog-arrow:hover {
+            background-color: rgba(0, 0, 0, 0.8);
+            color: #ffffff;
+        }
+
         .blog-arrow.left-arrow {
-            left: 145px;
+            left: 0;
         }
+
         .blog-arrow.right-arrow {
-            right: 145px;
+            right: 0;
         }
-    }
-</style>
+
+        .blog-arrow.disabled {
+            color: #ccc;
+            cursor: not-allowed;
+        }
+
+
+        @media (max-width: 768px) {
+            .blog-arrow {
+                display: flex;
+                position: absolute;
+                top: 100%;
+                transform: none;
+                margin-top: 1ch;
+                align-items: center;
+                justify-content: center;
+                width: 40px;
+                height: 40px;
+                padding: 0;
+                line-height: 0;
+            }
+
+            .blog-arrow.left-arrow {
+                left: 145px;
+            }
+
+            .blog-arrow.right-arrow {
+                right: 145px;
+            }
+        }
+    </style>
 
 
 
@@ -4064,7 +4186,8 @@
                                 <div class="accordion-collapse collapse" aria-labelledby="headingOne">
                                     <div class="accordion-body">
                                         We offer a wide range of services including web design, mobile app
-                                        development, SEO optimization, and digital marketing strategies. Our team of experts is
+                                        development, SEO optimization, and digital marketing strategies. Our team of
+                                        experts is
                                         dedicated to providing tailored solutions to meet your specific business needs.
                                     </div>
                                 </div>
@@ -4086,7 +4209,8 @@
                                 <div class="accordion-collapse collapse" aria-labelledby="headingTwo">
                                     <div class="accordion-body">
                                         Project timelines can vary depending on the scope and complexity of the
-                                        work. A simple website might take 2-4 weeks, while a more complex application could
+                                        work. A simple website might take 2-4 weeks, while a more complex application
+                                        could
                                         take several months. We always provide a detailed timeline during our initial
                                         consultation.
                                     </div>
@@ -4108,8 +4232,10 @@
                                 <div class="accordion-collapse collapse" aria-labelledby="headingThree">
                                     <div class="accordion-body">
                                         Our pricing is project-based and depends on the specific requirements and scope
-                                        of work. We offer competitive rates and strive to provide excellent value for our
-                                        services. We'll provide a detailed quote after our initial consultation and needs
+                                        of work. We offer competitive rates and strive to provide excellent value for
+                                        our
+                                        services. We'll provide a detailed quote after our initial consultation and
+                                        needs
                                         assessment.
                                     </div>
                                 </div>
@@ -4133,19 +4259,23 @@
         .accordion-button::after {
             display: none;
         }
+
         .accordion-button {
             display: flex;
             justify-content: space-between;
             align-items: center;
             cursor: pointer;
         }
+
         .button-content {
             display: flex;
             align-items: center;
         }
+
         .icon-container {
             margin-right: 10px;
         }
+
         .explore-more-faq {
             display: inline-flex;
             align-items: center;
@@ -4159,39 +4289,49 @@
             transition: all 0.3s ease;
             /* box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); */
         }
+
         .explore-more-faq:hover {
             transform: translateY(2px);
             box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.267), 0 1px 4px rgba(0, 0, 0, 0.2) !important;
             background: linear-gradient(to bottom, #7a4bd7, #9054d0);
         }
+
         .explore-text {
             margin-right: 0;
         }
+
         .accordion-collapse {
             max-height: 0;
             overflow: hidden;
             transition: max-height 0.3s ease-out;
         }
+
         .accordion-collapse.show {
-            max-height: 500px; /* Adjust this value based on your content */
+            max-height: 500px;
+            /* Adjust this value based on your content */
         }
+
         @media (max-width: 767px) {
             .accordion-body {
                 font-size: 14px !important;
                 padding: 15px;
             }
+
             .accordion-button span {
                 font-size: 15px;
             }
+
             .accordion-button {
                 font-size: 16px !important;
                 padding: 15px;
             }
+
             .icon-container {
                 width: 30px;
                 height: 30px;
                 margin-right: 10px;
             }
+
             .icon-container i {
                 font-size: 14px;
             }
@@ -4199,22 +4339,24 @@
     </style>
 
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
+        document.addEventListener('DOMContentLoaded', function () {
             var accordionItems = document.querySelectorAll('.accordion-item');
-            
-            accordionItems.forEach(function(item) {
+
+            accordionItems.forEach(function (item) {
                 var button = item.querySelector('.accordion-button');
                 var collapse = item.querySelector('.accordion-collapse');
-                
-                button.addEventListener('click', function() {
+
+                button.addEventListener('click', function () {
                     // Close all other accordion items
-                    accordionItems.forEach(function(otherItem) {
+                    accordionItems.forEach(function (otherItem) {
                         if (otherItem !== item) {
-                            otherItem.querySelector('.accordion-button').classList.add('collapsed');
-                            otherItem.querySelector('.accordion-collapse').classList.remove('show');
+                            otherItem.querySelector('.accordion-button').classList.add(
+                                'collapsed');
+                            otherItem.querySelector('.accordion-collapse').classList
+                                .remove('show');
                         }
                     });
-                    
+
                     // Toggle current accordion item
                     this.classList.toggle('collapsed');
                     collapse.classList.toggle('show');
@@ -4241,7 +4383,7 @@
 
     <section id="contact" class="pb-5">
         <div class="container-fluid">
-            <div class="row justify-content-between p-5">
+            <div class="row justify-content-between">
                 <div id="contact-info" class="col-lg-4 left-column >
                         <h1 class=" mb-3 contact-heading"
                     style="font-size: 36px; text-align: left; line-height: 1.2; letter-spacing: -0.5px;">
@@ -4309,7 +4451,6 @@
 
                     <div class="contact-info mb-4">
                         <style>
-                            
                             .contact-item {
                                 display: flex;
                                 align-items: flex-start;
@@ -4558,7 +4699,7 @@
                             }
 
                             .submit-btn:hover .text {
-                                transform: translateX(320px);
+                                transform: translateX(420px);
                                 color: #ffffff;
                             }
 
@@ -4823,6 +4964,7 @@
     <script src="assets/js/bold-and-bright.js"></script>
     <script src="assets/js/slider.js"></script>
     <script src="assets/js/blog.js"></script>
+    <script src="assets/js/blogData.js"></script>
     <script src="assets/js/mobilenav.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="assets/js/text.js"></script>
@@ -4836,7 +4978,7 @@
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.1.3/js/bootstrap.min.js"></script>
 
-    <script>
+    <!-- <script>
         document.addEventListener('DOMContentLoaded', function () {
             const tiltImages = document.querySelectorAll('.tilt-image');
 
@@ -4862,7 +5004,7 @@
                 event.currentTarget.style.transform = 'perspective(1000px) rotateX(0) rotateY(0)';
             }
         });
-    </script>
+    </script> -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" async defer></script>
     <script>
         $(document).ready(function () {
@@ -4923,7 +5065,10 @@
             tags.forEach(tag => tag.classList.add('fading'));
 
             setTimeout(() => {
-                slider.scrollBy({ left: direction * 100, behavior: 'smooth' });
+                slider.scrollBy({
+                    left: direction * 100,
+                    behavior: 'smooth'
+                });
 
                 setTimeout(() => {
                     tags.forEach(tag => tag.classList.remove('fading'));
@@ -5307,7 +5452,8 @@
                 let lazyBackgroundObserver = new IntersectionObserver(function (entries, observer) {
                     entries.forEach(function (entry) {
                         if (entry.isIntersecting) {
-                            entry.target.style.backgroundImage = "url(" + entry.target.dataset.bg + ")";
+                            entry.target.style.backgroundImage = "url(" + entry.target.dataset
+                                .bg + ")";
                             lazyBackgroundObserver.unobserve(entry.target);
                         }
                     });
@@ -5337,7 +5483,6 @@
     </script>
 
     <script>
-
         document.addEventListener('DOMContentLoaded', function () {
             // Disable text selection
             document.body.style.userSelect = 'none';
@@ -5375,57 +5520,68 @@
         });
     </script>
 
-<script>
-// Lazy load images
-const lazyLoadImages = () => {
-    const images = document.querySelectorAll('img[data-src]');
-    const imageObserver = new IntersectionObserver((entries, observer) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                const img = entry.target;
-                img.src = img.dataset.src;
-                img.removeAttribute('data-src');
-                imageObserver.unobserve(img);
-            }
+    <script>
+        // Lazy load images
+        const lazyLoadImages = () => {
+            const images = document.querySelectorAll('img[data-src]');
+            const imageObserver = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const img = entry.target;
+                        img.src = img.dataset.src;
+                        img.removeAttribute('data-src');
+                        imageObserver.unobserve(img);
+                    }
+                });
+            });
+
+            images.forEach(img => imageObserver.observe(img));
+        };
+
+
+        // Optimize third-party scripts
+        const loadScriptAsync = (src) => {
+            const script = document.createElement('script');
+            script.src = src;
+            script.async = true;
+            document.body.appendChild(script);
+        };
+
+        // Main optimization function
+        const optimizeWebsite = () => {
+            // Defer non-critical CSS
+            deferCSS('/assets/css/non-critical.css');
+
+            // Lazy load images
+            lazyLoadImages();
+
+            // Preload critical resources
+            preloadResources();
+
+            // Load third-party scripts asynchronously
+            loadScriptAsync('https://www.google-analytics.com/analytics.js');
+
+            // Use requestIdleCallback for non-essential tasks
+            requestIdleCallback(() => {
+                console.log('Performing non-essential tasks during idle time');
+                // Add any non-essential tasks here
+            });
+        };
+    </script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const mainNav = document.getElementById('mainNav');
+
+            window.addEventListener('scroll', function () {
+                if (window.scrollY > 50) { // Adjust this value as needed
+                    mainNav.classList.add('navbar-scrolled');
+                } else {
+                    mainNav.classList.remove('navbar-scrolled');
+                }
+            });
         });
-    });
-
-    images.forEach(img => imageObserver.observe(img));
-};
-
-
-// Optimize third-party scripts
-const loadScriptAsync = (src) => {
-    const script = document.createElement('script');
-    script.src = src;
-    script.async = true;
-    document.body.appendChild(script);
-};
-
-// Main optimization function
-const optimizeWebsite = () => {
-    // Defer non-critical CSS
-    deferCSS('/assets/css/non-critical.css');
-
-    // Lazy load images
-    lazyLoadImages();
-
-    // Preload critical resources
-    preloadResources();
-
-    // Load third-party scripts asynchronously
-    loadScriptAsync('https://www.google-analytics.com/analytics.js');
-
-    // Use requestIdleCallback for non-essential tasks
-    requestIdleCallback(() => {
-        console.log('Performing non-essential tasks during idle time');
-        // Add any non-essential tasks here
-    });
-};
-
-
-</script>
-
+    </script>
 </body>
 
 </html>
