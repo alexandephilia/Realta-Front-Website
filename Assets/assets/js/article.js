@@ -198,7 +198,7 @@ document.addEventListener('DOMContentLoaded', function() {
           <div class="row g-4">
             ${suggestedArticles.map(article => `
               <div class="col-md-4">
-                <div class="card suggested-card shadow-sm">
+                <div class="card suggested-card border" style="border: 1px solid #e0e0e0 !important;">
                   <img src="${article.image}" class="card-img-top" alt="${article.title}">
                   <div class="card-body">
                     <div class="d-flex justify-content-between align-items-center mb-2">
