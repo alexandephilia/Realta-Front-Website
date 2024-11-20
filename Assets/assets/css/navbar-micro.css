@@ -499,6 +499,11 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 
+@keyframes simpleFade {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
 .heading-large,
 h1,
 h2,
@@ -507,13 +512,17 @@ h4,
 h5,
 h6 {
   font-size: 2.1rem;
-  /* Example size for large headings */
   font-family: 'Proxima Nova', sans-serif;
-  font-weight: 700;
-  /* Proxima Nova for headings */
-  animation: fadeIn 1s ease-in forwards;
-  /* Add a slight shadow to the text */
+  font-weight: 700 !important;
+  animation: simpleFade 1s ease-in forwards !important;
 }
+
+p {
+  font-family: 'Proxima Nova' !important;
+  font-size: 17px;
+  animation: simpleFade 1s ease-in forwards;
+}
+
 
 .collapse {
   font-family: 'Proxima Nova', sans-serif;
@@ -531,12 +540,6 @@ h3 {
 }
 
 
-p {
-  font-family: 'Proxima Nova' !important;
-  font-size: 17px;
-  /* animation fade */
-  animation: fadeIn 1s ease-in forwards;
-}
 
 container-cta {
   font-family: 'Zilla Slab', sans-serif;
