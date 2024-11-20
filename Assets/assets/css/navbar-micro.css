@@ -16,6 +16,10 @@ html, body {
   overflow: hidden;
 }
 
+.mb-4 {
+  color: #333;
+}
+
 
 .circle-blur {
   position: absolute;
@@ -519,7 +523,7 @@ h6 {
 
 p {
   font-family: 'Proxima Nova' !important;
-  font-size: 17px;
+  font-size: 20px;
   animation: simpleFade 1s ease-in forwards;
 }
 

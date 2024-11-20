@@ -454,8 +454,10 @@ body.dark-mode .custom-about-section {
 }
 
 .text-muted {
-  font-size: 0.8rem;
+  font-size: 14px;
 }
+
+
 
 .read-more {
   display: inline-flex;
