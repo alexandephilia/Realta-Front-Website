@@ -912,77 +912,71 @@
         /* Banner position when scrolled */
     </style>
     <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            var navbar = document.querySelector('.navbar');
-            var navbarBanner = document.querySelector('.navbar-banner');
-            let lastScrollTop = 0;
-            let scrollTimeout;
-            let isTransitioning = false;
+      document.addEventListener('DOMContentLoaded', function () {
+    const navbar = document.querySelector('.navbar');
+    const navbarBanner = document.querySelector('.navbar-banner');
+    let lastScrollTop = 0;
+    let isTransitioning = false;
 
-            // Only apply scroll behavior on desktop
-            if (window.innerWidth > 768) {
-                // Debounced scroll handler with RAF
-                function handleScroll() {
-                    if (scrollTimeout) {
-                        cancelAnimationFrame(scrollTimeout);
-                    }
+    // Only apply scroll behavior on desktop
+    if (window.innerWidth > 768) {
+        // Add transition class on load
+        navbar.classList.add('navbar-transition');
+        navbarBanner.classList.add('navbar-banner-transition');
 
-                    scrollTimeout = requestAnimationFrame(() => {
-                        const scrollTop = window.pageYOffset;
-                        const bannerHeight = navbarBanner.offsetHeight;
+        function handleScroll() {
+            if (isTransitioning) return;
 
-                        if (isTransitioning) return;
+            const scrollTop = window.pageYOffset;
+            const bannerHeight = navbarBanner.offsetHeight;
 
-                        isTransitioning = true;
+            // Set transitioning state
+            isTransitioning = true;
 
-                        if (scrollTop > lastScrollTop && scrollTop > bannerHeight) {
-                            // Scrolling down - hide banner
-                            navbarBanner.classList.add('navbar-banner--scrolled');
-                            navbarBanner.classList.remove('show');
-                            navbar.style.transform = 'translateY(0)';
-
-                            navbarBanner.style.backdropFilter = 'blur(0px)';
-                        } else if (scrollTop <= lastScrollTop && scrollTop > bannerHeight) {
-                            // Scrolling up - show banner
-                            navbarBanner.classList.add('navbar-banner--scrolled');
-
-                            setTimeout(() => {
-                                navbarBanner.classList.add('show');
-                                navbarBanner.style.backdropFilter = 'blur(6px)';
-                            }, 50);
-
-                            navbar.style.transform = `translateY(${bannerHeight}px)`;
-                        } else {
-                            // At top
-                            navbarBanner.classList.remove('navbar-banner--scrolled', 'show');
-                            navbar.style.transform = 'translateY(0)';
-
-                            navbarBanner.style.backdropFilter = 'blur(0px)';
-                        }
-
-                        lastScrollTop = scrollTop;
-
-                        setTimeout(() => {
-                            isTransitioning = false;
-                        }, 500);
-                    });
-                }
-
-                // Throttled scroll listener
-                let ticking = false;
-                window.addEventListener('scroll', () => {
-                    if (!ticking) {
-                        requestAnimationFrame(() => {
-                            handleScroll();
-                            ticking = false;
-                        });
-                        ticking = true;
-                    }
-                }, {
-                    passive: true
-                });
+            // Handle different scroll scenarios
+            if (scrollTop === 0) {
+                // At the top of the page
+                navbarBanner.classList.remove('navbar-banner--scrolled', 'show');
+                navbar.style.transform = 'translateY(0)';
+                navbarBanner.style.backdropFilter = 'blur(0px)';
+            } else if (scrollTop > lastScrollTop && scrollTop > bannerHeight) {
+                // Scrolling down
+                navbarBanner.classList.add('navbar-banner--scrolled');
+                navbarBanner.classList.remove('show');
+                navbar.style.transform = 'translateY(0)';
+                navbarBanner.style.backdropFilter = 'blur(0px)';
+            } else if (scrollTop < lastScrollTop && scrollTop > bannerHeight) {
+                // Scrolling up
+                navbarBanner.classList.add('navbar-banner--scrolled');
+                navbarBanner.classList.add('show');
+                navbar.style.transform = `translateY(${bannerHeight}px)`;
+                navbarBanner.style.backdropFilter = 'blur(6px)';
             }
-        });
+
+            lastScrollTop = scrollTop;
+
+            // Reset transitioning state after animation completes
+            setTimeout(() => {
+                isTransitioning = false;
+            }, 300); // Match this with your CSS transition duration
+        }
+
+        // Throttled scroll listener using requestAnimationFrame
+        let ticking = false;
+        window.addEventListener('scroll', () => {
+            if (!ticking) {
+                requestAnimationFrame(() => {
+                    handleScroll();
+                    ticking = false;
+                });
+                ticking = true;
+            }
+        }, { passive: true });
+
+        // Initial call to set correct state
+        handleScroll();
+    }
+});
     </script>
 </header>
 

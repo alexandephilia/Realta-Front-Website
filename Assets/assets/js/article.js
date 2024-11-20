@@ -203,7 +203,6 @@ document.addEventListener('DOMContentLoaded', function() {
                   <div class="card-body">
                     <div class="d-flex justify-content-between align-items-center mb-2">
                       <span class="badge category-badge">${article.category}</span>
-                      <small class="text-muted">${article.date.split(',')[0]}</small>
                     </div>
                     <h5 class="card-title">${article.title}</h5>
                     <p class="card-text">${article.lead}</p>
