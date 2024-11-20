@@ -29,6 +29,30 @@ document.addEventListener('DOMContentLoaded', function () {
   `;
   document.head.appendChild(style);
 
+  // Add after the style declaration at the start
+  function createShimmerCards(count) {
+    const wrapper = document.createElement('div');
+    wrapper.className = 'blog-posts-wrapper';
+    
+    for (let i = 0; i < count; i++) {
+      const shimmerCard = document.createElement('div');
+      shimmerCard.className = 'blog-post shimmer-wrapper';
+      shimmerCard.innerHTML = `
+        <div class="blog-post-image-wrapper">
+          <div class="shimmer shimmer-image"></div>
+        </div>
+        <div class="blog-post-content">
+          <div class="shimmer shimmer-badge"></div>
+          <div class="shimmer shimmer-title"></div>
+          <div class="shimmer shimmer-text"></div>
+          <div class="shimmer shimmer-text"></div>
+        </div>
+      `;
+      wrapper.appendChild(shimmerCard);
+    }
+    return wrapper;
+  }
+
   // Get data from blog.js
   const { mainBlogPosts, secondPageBlogPosts } = window.blogData || { mainBlogPosts: [], secondPageBlogPosts: [] };
 
@@ -71,72 +95,81 @@ document.addEventListener('DOMContentLoaded', function () {
     const container = document.getElementById('blog-posts-container');
     container.innerHTML = '';
 
-    const totalPages = Math.ceil(blogPosts.length / postsPerPage);
+    // Show shimmer loading state first
+    const shimmerCards = createShimmerCards(postsPerPage);
+    container.appendChild(shimmerCards);
 
-    // Add left arrow
-    const leftArrow = document.createElement('div');
-    leftArrow.className = `blog-arrow left-arrow ${page === 0 ? 'disabled' : ''}`;
-    leftArrow.innerHTML = '<i class="fas fa-chevron-left"></i>';
-    leftArrow.addEventListener('click', () => {
-        if (page !== 0) changePage(currentPage - 1);
-    });
-    container.appendChild(leftArrow);
+    // Simulate loading delay
+    setTimeout(() => {
+      container.innerHTML = '';
+      
+      const totalPages = Math.ceil(blogPosts.length / postsPerPage);
+      
+      // Add left arrow
+      const leftArrow = document.createElement('div');
+      leftArrow.className = `blog-arrow left-arrow ${page === 0 ? 'disabled' : ''}`;
+      leftArrow.innerHTML = '<i class="fas fa-chevron-left"></i>';
+      leftArrow.addEventListener('click', () => {
+          if (page !== 0) changePage(currentPage - 1);
+      });
+      container.appendChild(leftArrow);
 
-    // Add posts wrapper
-    const postsWrapper = document.createElement('div');
-    postsWrapper.className = 'blog-posts-wrapper';
-    container.appendChild(postsWrapper);
+      // Add posts wrapper
+      const postsWrapper = document.createElement('div');
+      postsWrapper.className = 'blog-posts-wrapper';
+      container.appendChild(postsWrapper);
 
-    // Add blog posts
-    const start = page * postsPerPage;
-    const end = start + postsPerPage;
-    const postsToShow = blogPosts.slice(start, end);
+      // Add blog posts
+      const start = page * postsPerPage;
+      const end = start + postsPerPage;
+      const postsToShow = blogPosts.slice(start, end);
 
-    postsToShow.forEach(post => {
-      const postElement = document.createElement('div');
-      postElement.className = 'blog-post';
-      postElement.innerHTML = `
-        <div class="blog-post-image-wrapper">
-          <img src="${post.image}" alt="${post.alt}" class="rounded-image">
-        </div>
-        <div class="blog-post-content">
-          <div class="blog-post-category">${post.category}</div>
-          <h5 class="blog-post-title">${post.title}</h5>
-          <p class="blog-post-text">${post.text}</p>
-          <div class="blog-post-meta">
-            <div class="meta-left">
-              <span>${post.date}</span>
-            </div>
-            <a href="article.html?id=${post.id}" class="read-more">Read more</a>
+      postsToShow.forEach(post => {
+        const postElement = document.createElement('div');
+        postElement.className = 'blog-post';
+        postElement.innerHTML = `
+          <div class="blog-post-image-wrapper">
+            <img src="${post.image}" alt="${post.alt}" class="rounded-image">
           </div>
-        </div>
-      `;
-      postsWrapper.appendChild(postElement);
-    });
+          <div class="blog-post-content">
+            <div class="blog-post-category">${post.category}</div>
+            <h5 class="blog-post-title">${post.title}</h5>
+            <p class="blog-post-text">${post.text}</p>
+            <div class="blog-post-meta">
+              <div class="meta-left">
+                <span>${post.date}</span>
+              </div>
+              <a href="article.html?id=${post.id}" class="read-more">Read more</a>
+            </div>
+          </div>
+        `;
+        postsWrapper.appendChild(postElement);
+      });
 
-    // Add right arrow
-    const rightArrow = document.createElement('div');
-    rightArrow.className = `blog-arrow right-arrow ${page === totalPages - 1 ? 'disabled' : ''}`;
-    rightArrow.innerHTML = '<i class="fas fa-chevron-right"></i>';
-    rightArrow.addEventListener('click', () => {
-        if (page !== totalPages - 1) changePage(currentPage + 1);
-    });
-    container.appendChild(rightArrow);
+      // Add right arrow
+      const rightArrow = document.createElement('div');
+      rightArrow.className = `blog-arrow right-arrow ${page === totalPages - 1 ? 'disabled' : ''}`;
+      rightArrow.innerHTML = '<i class="fas fa-chevron-right"></i>';
+      rightArrow.addEventListener('click', () => {
+          if (page !== totalPages - 1) changePage(currentPage + 1);
+      });
+      container.appendChild(rightArrow);
 
-    // Add pagination dots
-    const paginationContainer = document.createElement('div');
-    paginationContainer.className = 'blog-pagination';
-    container.appendChild(paginationContainer);
+      // Add pagination dots
+      const paginationContainer = document.createElement('div');
+      paginationContainer.className = 'blog-pagination';
+      container.appendChild(paginationContainer);
 
-    for (let i = 0; i < totalPages; i++) {
-        const dot = document.createElement('span');
-        dot.className = `pagination-dot ${i === currentPage ? 'active' : ''}`;
-        dot.addEventListener('click', () => changePage(i));
-        paginationContainer.appendChild(dot);
-    }
+      for (let i = 0; i < totalPages; i++) {
+          const dot = document.createElement('span');
+          dot.className = `pagination-dot ${i === currentPage ? 'active' : ''}`;
+          dot.addEventListener('click', () => changePage(i));
+          paginationContainer.appendChild(dot);
+      }
 
-    updatePagination();
-    addCardClickListeners();
+      updatePagination();
+      addCardClickListeners();
+    }, 1000);
   }
 
   function updatePagination() {

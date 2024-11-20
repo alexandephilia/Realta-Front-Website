@@ -439,7 +439,7 @@ document.addEventListener('DOMContentLoaded', function() {
             color: white;
           }
         </style>
-        <div class="article-not-found text-center py-5">
+        <div class="article-not-found text-center mb-4">
           <div class="mb-5">
             <svg class="text-muted mb-4" style="width: 64px; height: 64px;" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.172 16.172a4 4 0 015.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
@@ -451,7 +451,7 @@ document.addEventListener('DOMContentLoaded', function() {
           
           <div class="suggested-articles mt-5">
             <h3 class="h4 mb-4">You might be interested in:</h3>
-            <div class="row g-4">
+            <div class="row g-4 mt-4">
               ${suggestedArticles.map(article => `
                 <div class="col-md-4">
                   <div class="card suggested-card border" style="border: 1px solid #e0e0e0 !important;">
