@@ -4203,6 +4203,7 @@
                 let prevTranslate = 0;
                 let touchStartX = 0;
                 let touchEndX = 0;
+                let animationFrameId = null;
 
                 // Create pagination dots
                 for (let i = 0; i < slideCount; i++) {
@@ -4214,13 +4215,17 @@
                 }
 
                 function updateSlidePosition(translate = null) {
-                    if (translate !== null) {
-                        track.style.transform = `translateX(${translate}px)`;
-                    } else {
-                        track.style.transform = `translateX(-${currentIndex * 100}%)`;
-                    }
-                    updateDots();
-                    updateButtons();
+                    cancelAnimationFrame(animationFrameId);
+                    animationFrameId = requestAnimationFrame(() => {
+                        if (translate !== null) {
+                            track.style.transform = `translateX(${translate}px)`;
+                        } else {
+                            const slideWidth = track.offsetWidth;
+                            track.style.transform = `translateX(-${currentIndex * slideWidth}px)`;
+                        }
+                        updateDots();
+                        updateButtons();
+                    });
                 }
 
                 function updateDots() {
@@ -4240,21 +4245,12 @@
                     updateSlidePosition();
                 }
 
-                // Mouse drag functionality
-                track.addEventListener('mousedown', dragStart);
-                track.addEventListener('mousemove', drag);
-                track.addEventListener('mouseup', dragEnd);
-                track.addEventListener('mouseleave', dragEnd);
-
-                // Touch functionality
-                track.addEventListener('touchstart', touchStart);
-                track.addEventListener('touchmove', touchMove);
-                track.addEventListener('touchend', touchEnd);
-
+                // Touch functionality with improved responsiveness
                 function touchStart(e) {
                     touchStartX = e.touches[0].clientX;
                     isDragging = true;
                     startPos = touchStartX;
+                    prevTranslate = currentTranslate;
                     track.style.transition = 'none';
                 }
 
@@ -4264,22 +4260,30 @@
                     const currentPosition = e.touches[0].clientX;
                     const diff = currentPosition - startPos;
                     currentTranslate = prevTranslate + diff;
+                    
+                    // Add resistance at edges
+                    if (currentTranslate > 0) {
+                        currentTranslate = currentTranslate * 0.3;
+                    } else if (currentTranslate < -(slideCount - 1) * track.offsetWidth) {
+                        const overScroll = currentTranslate + (slideCount - 1) * track.offsetWidth;
+                        currentTranslate = -(slideCount - 1) * track.offsetWidth + (overScroll * 0.3);
+                    }
+                    
                     updateSlidePosition(currentTranslate);
                 }
 
                 function touchEnd(e) {
-                    touchEndX = e.changedTouches[0].clientX;
-                    handleSwipeGesture();
+                    if (!isDragging) return;
                     isDragging = false;
-                }
-
-                function handleSwipeGesture() {
+                    touchEndX = e.changedTouches[0].clientX;
+                    
                     const swipeDistance = touchEndX - touchStartX;
-                    const minSwipeDistance = 50;
+                    const slideWidth = track.offsetWidth;
+                    const threshold = slideWidth * 0.2;
 
-                    track.style.transition = 'transform 0.5s ease-in-out';
+                    track.style.transition = 'transform 0.3s ease-out';
 
-                    if (Math.abs(swipeDistance) > minSwipeDistance) {
+                    if (Math.abs(swipeDistance) > threshold) {
                         if (swipeDistance > 0 && currentIndex > 0) {
                             currentIndex--;
                         } else if (swipeDistance < 0 && currentIndex < slideCount - 1) {
@@ -4287,15 +4291,18 @@
                         }
                     }
 
-                    prevTranslate = -(currentIndex * track.offsetWidth);
-                    currentTranslate = prevTranslate;
+                    currentTranslate = -currentIndex * slideWidth;
+                    prevTranslate = currentTranslate;
                     updateSlidePosition();
                 }
 
+                // Mouse drag functionality
                 function dragStart(e) {
                     isDragging = true;
                     startPos = e.clientX;
+                    prevTranslate = currentTranslate;
                     track.style.transition = 'none';
+                    track.style.cursor = 'grabbing';
                 }
 
                 function drag(e) {
@@ -4306,13 +4313,16 @@
                     updateSlidePosition(currentTranslate);
                 }
 
-                function dragEnd() {
+                function dragEnd(e) {
                     if (!isDragging) return;
                     isDragging = false;
-                    track.style.transition = 'transform 0.5s ease-in-out';
+                    track.style.cursor = 'grab';
+                    track.style.transition = 'transform 0.3s ease-out';
 
                     const movedBy = currentTranslate - prevTranslate;
-                    if (Math.abs(movedBy) > track.offsetWidth * 0.2) {
+                    const slideWidth = track.offsetWidth;
+                    
+                    if (Math.abs(movedBy) > slideWidth * 0.2) {
                         if (movedBy < 0 && currentIndex < slideCount - 1) {
                             currentIndex++;
                         } else if (movedBy > 0 && currentIndex > 0) {
@@ -4320,10 +4330,19 @@
                         }
                     }
 
-                    prevTranslate = -(currentIndex * track.offsetWidth);
-                    currentTranslate = prevTranslate;
+                    currentTranslate = -currentIndex * slideWidth;
+                    prevTranslate = currentTranslate;
                     updateSlidePosition();
                 }
+
+                // Event Listeners
+                track.addEventListener('mousedown', dragStart);
+                track.addEventListener('mousemove', drag);
+                track.addEventListener('mouseup', dragEnd);
+                track.addEventListener('mouseleave', dragEnd);
+                track.addEventListener('touchstart', touchStart, {passive: false});
+                track.addEventListener('touchmove', touchMove, {passive: false});
+                track.addEventListener('touchend', touchEnd);
 
                 prevBtn.addEventListener('click', () => {
                     if (currentIndex > 0) {
