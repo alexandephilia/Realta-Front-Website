@@ -97,6 +97,106 @@ function renderFullArticle(post) {
   `;
 }
 
+// Add this function to article.js
+function renderLatestPosts() {
+  const latestPostsContainer = document.querySelector('.latest-posts .row');
+  if (!latestPostsContainer) return;
+
+  // Get all articles from both main and featured articles
+  const allArticles = allBlogPosts.flatMap(post => [
+    post,
+    ...(post.featuredArticles || [])
+  ]);
+
+  // Parse dates and sort articles (newest first)
+  const sortedArticles = allArticles.sort((a, b) => {
+    // Parse dates using a consistent format
+    const dateA = new Date(parseCustomDate(a.date));
+    const dateB = new Date(parseCustomDate(b.date));
+    return dateB - dateA; // Sort in descending order (newest first)
+  });
+
+  // Take the latest 3 articles
+  const latestArticles = sortedArticles.slice(0, 3);
+
+  latestPostsContainer.innerHTML = latestArticles.map(post => `
+    <div class="col-md-12">
+      <a href="article.html?id=${post.id}" class="latest-post-card-link">
+        <div class="card border-0 latest-post-card-hover">
+          <div class="row g-0">
+            <div class="col-md-4">
+              <img src="${post.image}"
+                class="img-fluid rounded-start w-100 h-100" 
+                alt="${post.title}"
+                style="object-fit: cover; height: 250px;">
+            </div>
+            <div class="col-md-8">
+              <div class="card-body p-4">
+                <span class="badge mb-2"
+                  style="background-color: #7209d4;">${post.category}</span>
+                <h5 class="card-title fw-bold">${post.title}</h5>
+                <div class="post-meta d-flex align-items-center mb-2">
+                  <span class="text-muted small">
+                    <i class="far fa-calendar-alt me-1"></i>
+                    ${formatDate(post.date)}
+                  </span>
+                </div>
+                <p class="card-text text-muted">
+                  ${post.lead.split('<br>')[0].substring(0, 150)}...
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </a>
+    </div>
+  `).join('');
+}
+
+// Helper function to parse custom date formats
+function parseCustomDate(dateStr) {
+  // Handle different date formats
+  const formats = [
+    // Friday, 15 March 2024 11:30
+    {
+      regex: /(\w+), (\d+) (\w+) (\d{4}) (\d{2}):(\d{2})/,
+      parse: (match) => `${match[4]}-${getMonthNumber(match[3])}-${match[2]} ${match[5]}:${match[6]}`
+    },
+    // Wednesday, 10 April 2024 09:15
+    {
+      regex: /(\w+), (\d+) (\w+) (\d{4}) (\d{2}):(\d{2})/,
+      parse: (match) => `${match[4]}-${getMonthNumber(match[3])}-${match[2]} ${match[5]}:${match[6]}`
+    }
+  ];
+
+  for (const format of formats) {
+    const match = dateStr.match(format.regex);
+    if (match) {
+      return format.parse(match);
+    }
+  }
+
+  // If no format matches, return the original string
+  return dateStr;
+}
+
+// Helper function to get month number from name
+function getMonthNumber(monthName) {
+  const months = {
+    'January': '01', 'February': '02', 'March': '03', 'April': '04',
+    'May': '05', 'June': '06', 'July': '07', 'August': '08',
+    'September': '09', 'October': '10', 'November': '11', 'December': '12'
+  };
+  return months[monthName] || '01';
+}
+
+// Helper function to format dates consistently
+function formatDate(dateStr) {
+  const date = new Date(parseCustomDate(dateStr));
+  const options = { weekday: 'long', day: 'numeric', month: 'long', year: 'numeric' };
+  return date.toLocaleDateString('en-US', options);
+}
+
 // Main execution when DOM is loaded
 document.addEventListener('DOMContentLoaded', function() {
   const articleId = getArticleIdFromUrl();
@@ -108,6 +208,8 @@ document.addEventListener('DOMContentLoaded', function() {
   const article = findArticleById(articleId);
   if (article) {
     renderFullArticle(article);
+    // Add this line to render latest posts
+    renderLatestPosts();
   } else {
     const articleContainer = document.getElementById('article-container');
     // Get 3 random articles as suggestions
