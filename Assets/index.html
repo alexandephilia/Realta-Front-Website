@@ -4194,6 +4194,7 @@
                 const prevBtn = document.getElementById('rt-prev');
                 const nextBtn = document.getElementById('rt-next');
                 const pagination = document.getElementById('rt-pagination');
+                const sliderContainer = document.querySelector('.rt-testimonial-slider'); // Get the container
 
                 let currentIndex = 0;
                 const slideCount = slides.length;
@@ -4245,13 +4246,14 @@
                     updateSlidePosition();
                 }
 
-                // Touch functionality with improved responsiveness
+                // Enhanced touch functionality for better responsiveness
                 function touchStart(e) {
                     touchStartX = e.touches[0].clientX;
                     isDragging = true;
                     startPos = touchStartX;
                     prevTranslate = currentTranslate;
                     track.style.transition = 'none';
+                    track.style.willChange = 'transform'; // Optimize performance
                 }
 
                 function touchMove(e) {
@@ -4279,9 +4281,10 @@
                     
                     const swipeDistance = touchEndX - touchStartX;
                     const slideWidth = track.offsetWidth;
-                    const threshold = slideWidth * 0.2;
+                    const threshold = slideWidth * 0.15; // Reduced threshold for easier swipe
 
                     track.style.transition = 'transform 0.3s ease-out';
+                    track.style.willChange = 'auto';
 
                     if (Math.abs(swipeDistance) > threshold) {
                         if (swipeDistance > 0 && currentIndex > 0) {
@@ -4296,6 +4299,13 @@
                     updateSlidePosition();
                 }
 
+                // Add touch events to both track and container
+                [track, sliderContainer].forEach(element => {
+                    element.addEventListener('touchstart', touchStart, {passive: false});
+                    element.addEventListener('touchmove', touchMove, {passive: false});
+                    element.addEventListener('touchend', touchEnd);
+                });
+
                 // Mouse drag functionality
                 function dragStart(e) {
                     isDragging = true;
@@ -4303,6 +4313,7 @@
                     prevTranslate = currentTranslate;
                     track.style.transition = 'none';
                     track.style.cursor = 'grabbing';
+                    track.style.willChange = 'transform';
                 }
 
                 function drag(e) {
@@ -4318,11 +4329,12 @@
                     isDragging = false;
                     track.style.cursor = 'grab';
                     track.style.transition = 'transform 0.3s ease-out';
+                    track.style.willChange = 'auto';
 
                     const movedBy = currentTranslate - prevTranslate;
                     const slideWidth = track.offsetWidth;
                     
-                    if (Math.abs(movedBy) > slideWidth * 0.2) {
+                    if (Math.abs(movedBy) > slideWidth * 0.15) { // Reduced threshold
                         if (movedBy < 0 && currentIndex < slideCount - 1) {
                             currentIndex++;
                         } else if (movedBy > 0 && currentIndex > 0) {
@@ -4335,14 +4347,13 @@
                     updateSlidePosition();
                 }
 
-                // Event Listeners
-                track.addEventListener('mousedown', dragStart);
-                track.addEventListener('mousemove', drag);
-                track.addEventListener('mouseup', dragEnd);
-                track.addEventListener('mouseleave', dragEnd);
-                track.addEventListener('touchstart', touchStart, {passive: false});
-                track.addEventListener('touchmove', touchMove, {passive: false});
-                track.addEventListener('touchend', touchEnd);
+                // Add mouse events to both track and container
+                [track, sliderContainer].forEach(element => {
+                    element.addEventListener('mousedown', dragStart);
+                    element.addEventListener('mousemove', drag);
+                    element.addEventListener('mouseup', dragEnd);
+                    element.addEventListener('mouseleave', dragEnd);
+                });
 
                 prevBtn.addEventListener('click', () => {
                     if (currentIndex > 0) {
