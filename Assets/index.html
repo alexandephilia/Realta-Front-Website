@@ -3546,7 +3546,6 @@
     </style>
 
 
-
     <section class="rt-testimonial-section py-5">
         <div class="container-fluid">
             <div class="rt-testimonial-container position-relative" style="max-width: 1000px; margin: 0 auto;">
@@ -3556,7 +3555,7 @@
                         who have experienced our services firsthand.</p>
                 </div>
                 <div class="rt-testimonial-wrapper">
-                    <div class="rt-slider-track" id="rt-slider-track">
+                    <div class="rt-slider-track" id="rt-slider-track" style="touch-action: pan-x;">
                         <!-- Testimonial 1 -->
                         <div class="rt-testimonial-card">
                             <div class="rt-testimonial-inner">
@@ -3652,15 +3651,202 @@
         </div>
     </section>
 
+    
+      
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const track = document.getElementById('rt-slider-track');
+            const slides = track.getElementsByClassName('rt-testimonial-card');
+            const prevBtn = document.getElementById('rt-prev');
+            const nextBtn = document.getElementById('rt-next');
+            const pagination = document.getElementById('rt-pagination');
+
+            let currentIndex = 0;
+            const slideCount = slides.length;
+            let isDragging = false;
+            let startPos = 0;
+            let currentTranslate = 0;
+            let prevTranslate = 0;
+            let touchStartX = 0;
+            let touchEndX = 0;
+            let animationID = null;
+
+            // Create pagination dots
+            for (let i = 0; i < slideCount; i++) {
+                const dot = document.createElement('div');
+                dot.classList.add('rt-dot');
+                if (i === 0) dot.classList.add('active');
+                dot.addEventListener('click', () => goToSlide(i));
+                pagination.insertBefore(dot, nextBtn);
+            }
+
+            function updateSlidePosition(translate = null) {
+                if (translate !== null) {
+                    track.style.transform = `translateX(${translate}px)`;
+                } else {
+                    const position = -currentIndex * 100;
+                    track.style.transform = `translateX(${position}%)`;
+                }
+                updateDots();
+                updateButtons();
+            }
+
+            function updateDots() {
+                const dots = pagination.getElementsByClassName('rt-dot');
+                Array.from(dots).forEach((dot, index) => {
+                    dot.classList.toggle('active', index === currentIndex);
+                });
+            }
+
+            function updateButtons() {
+                prevBtn.style.opacity = currentIndex === 0 ? '0.5' : '1';
+                nextBtn.style.opacity = currentIndex === slideCount - 1 ? '0.5' : '1';
+            }
+
+            function goToSlide(index) {
+                currentIndex = Math.max(0, Math.min(index, slideCount - 1));
+                track.style.transition = 'transform 0.3s ease-out';
+                updateSlidePosition();
+            }
+
+            function touchStart(event) {
+                touchStartX = event.touches[0].clientX;
+                isDragging = true;
+                startPos = touchStartX;
+                
+                cancelAnimationFrame(animationID);
+                track.style.transition = 'none';
+                track.style.cursor = 'grabbing';
+            }
+
+            function touchMove(event) {
+                if (!isDragging) return;
+                
+                const currentPosition = event.touches[0].clientX;
+                const diff = currentPosition - startPos;
+                const slideWidth = track.offsetWidth;
+                
+                currentTranslate = prevTranslate + diff;
+                
+                // Limit the sliding range
+                const minTranslate = -((slideCount - 1) * slideWidth);
+                const maxTranslate = 0;
+                currentTranslate = Math.max(minTranslate, Math.min(maxTranslate, currentTranslate));
+                
+                track.style.transform = `translateX(${currentTranslate}px)`;
+            }
+
+            function touchEnd() {
+                isDragging = false;
+                const movedBy = currentTranslate - prevTranslate;
+                const slideWidth = track.offsetWidth;
+                
+                track.style.transition = 'transform 0.3s ease-out';
+                track.style.cursor = 'grab';
+
+                if (Math.abs(movedBy) > slideWidth * 0.2) {
+                    if (movedBy < 0 && currentIndex < slideCount - 1) {
+                        currentIndex++;
+                    } else if (movedBy > 0 && currentIndex > 0) {
+                        currentIndex--;
+                    }
+                }
+
+                updateSlidePosition();
+                prevTranslate = -(currentIndex * slideWidth);
+                currentTranslate = prevTranslate;
+            }
+
+            // Touch Events
+            track.addEventListener('touchstart', touchStart, {passive: true});
+            track.addEventListener('touchmove', touchMove, {passive: true});
+            track.addEventListener('touchend', touchEnd);
+            track.addEventListener('touchcancel', touchEnd);
+
+            // Auto-play functionality
+            let autoplayInterval = setInterval(() => {
+                if (currentIndex < slideCount - 1) {
+                    currentIndex++;
+                } else {
+                    currentIndex = 0;
+                }
+                updateSlidePosition();
+            }, 5000);
+
+            // Pause auto-play on interaction
+            track.addEventListener('touchstart', () => {
+                clearInterval(autoplayInterval);
+            });
+
+            track.addEventListener('touchend', () => {
+                if (!isDragging) {
+                    autoplayInterval = setInterval(() => {
+                        if (currentIndex < slideCount - 1) {
+                            currentIndex++;
+                        } else {
+                            currentIndex = 0;
+                        }
+                        updateSlidePosition();
+                    }, 5000);
+                }
+            });
+
+            // Video popup functionality
+            function openVideoPopup() {
+                const overlay = document.getElementById('video-popup-overlay');
+                const iframe = document.getElementById('popup-video-iframe');
+                
+                // Set video URL (replace with your video URL)
+                iframe.src = 'https://www.youtube.com/embed/YOUR_VIDEO_ID?autoplay=1';
+                
+                // Show overlay with animation
+                overlay.classList.add('active');
+                document.body.style.overflow = 'hidden'; // Prevent scrolling
+            }
+
+            // Add close functionality
+            document.querySelector('.video-popup-close').addEventListener('click', () => {
+                const overlay = document.getElementById('video-popup-overlay');
+                const iframe = document.getElementById('popup-video-iframe');
+                
+                overlay.classList.remove('active');
+                setTimeout(() => {
+                    overlay.style.display = 'none';
+                    iframe.src = ''; // Clear iframe source
+                }, 300);
+                document.body.style.overflow = ''; // Restore scrolling
+            });
+
+            // Close on overlay click
+            document.getElementById('video-popup-overlay').addEventListener('click', (e) => {
+                if (e.target === e.currentTarget) {
+                    document.querySelector('.video-popup-close').click();
+                }
+            });
+
+            // Close on escape key
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape') {
+                    document.querySelector('.video-popup-close').click();
+                }
+            });
+
+            // Initial setup
+            updateSlidePosition();
+        });
+    </script>
+
     <style>
         .rt-testimonial-section {
             overflow: hidden;
+            touch-action: pan-y pinch-zoom;
         }
 
         .rt-testimonial-wrapper {
             position: relative;
-            overflow: visible;
+            overflow: hidden;
             cursor: grab;
+            touch-action: pan-x;
         }
 
         .rt-testimonial-wrapper:active {
@@ -3669,15 +3855,19 @@
 
         .rt-slider-track {
             display: flex;
-            transition: transform 0.5s ease-in-out;
+            transition: transform 0.3s ease-out;
             gap: 30px;
             user-select: none;
+            -webkit-user-select: none;
+            -webkit-touch-callout: none;
+            -webkit-tap-highlight-color: transparent;
         }
 
         .rt-testimonial-card {
             min-width: 100%;
             padding: 15px;
             box-sizing: border-box;
+            flex-shrink: 0;
         }
 
         .rt-testimonial-inner {
@@ -4186,408 +4376,10 @@
         });
     </script>
 
-      
-        <script>
-            document.addEventListener('DOMContentLoaded', function () {
-                const track = document.getElementById('rt-slider-track');
-                const slides = track.getElementsByClassName('rt-testimonial-card');
-                const prevBtn = document.getElementById('rt-prev');
-                const nextBtn = document.getElementById('rt-next');
-                const pagination = document.getElementById('rt-pagination');
-                const sliderContainer = document.querySelector('.rt-testimonial-slider');
-
-                let currentIndex = 0;
-                const slideCount = slides.length;
-                let isDragging = false;
-                let startPos = 0;
-                let currentTranslate = 0;
-                let prevTranslate = 0;
-                let touchStartX = 0;
-                let touchEndX = 0;
-                let animationFrameId = null;
-                let isAnimating = false;
-
-                // Create pagination dots
-                for (let i = 0; i < slideCount; i++) {
-                    const dot = document.createElement('div');
-                    dot.classList.add('rt-dot');
-                    if (i === 0) dot.classList.add('active');
-                    dot.addEventListener('click', () => goToSlide(i));
-                    pagination.insertBefore(dot, nextBtn);
-                }
-
-                function getSlideWidth() {
-                    return window.innerWidth; // Use full viewport width
-                }
-
-                function updateSlidePosition(translate = null) {
-                    if (isAnimating) return;
-                    
-                    cancelAnimationFrame(animationFrameId);
-                    animationFrameId = requestAnimationFrame(() => {
-                        if (translate !== null) {
-                            track.style.transform = `translateX(${translate}px)`;
-                        } else {
-                            const slideWidth = getSlideWidth();
-                            track.style.transform = `translateX(-${currentIndex * slideWidth}px)`;
-                        }
-                        updateDots();
-                        updateButtons();
-                    });
-                }
-
-                function updateDots() {
-                    const dots = pagination.getElementsByClassName('rt-dot');
-                    Array.from(dots).forEach((dot, index) => {
-                        dot.classList.toggle('active', index === currentIndex);
-                    });
-                }
-
-                function updateButtons() {
-                    prevBtn.style.opacity = currentIndex === 0 ? '0.5' : '1';
-                    nextBtn.style.opacity = currentIndex === slideCount - 1 ? '0.5' : '1';
-                }
-
-                function goToSlide(index) {
-                    if (isAnimating) return;
-                    
-                    isAnimating = true;
-                    currentIndex = index;
-                    track.style.transition = 'transform 0.3s ease-out';
-                    updateSlidePosition();
-                    
-                    setTimeout(() => {
-                        isAnimating = false;
-                        track.style.transition = 'none';
-                    }, 300);
-                }
-
-                function touchStart(e) {
-                    if (isAnimating) return;
-                    
-                    touchStartX = e.touches[0].clientX;
-                    isDragging = true;
-                    startPos = touchStartX;
-                    prevTranslate = -currentIndex * getSlideWidth();
-                    currentTranslate = prevTranslate;
-                    track.style.transition = 'none';
-                }
-
-                function touchMove(e) {
-                    if (!isDragging || isAnimating) return;
-                    
-                    const currentPosition = e.touches[0].clientX;
-                    const diff = currentPosition - startPos;
-                    currentTranslate = prevTranslate + diff;
-                    
-                    // Prevent overscroll
-                    const maxTranslate = 0;
-                    const minTranslate = -(slideCount - 1) * getSlideWidth();
-                    
-                    if (currentTranslate > maxTranslate) {
-                        currentTranslate = maxTranslate;
-                    } else if (currentTranslate < minTranslate) {
-                        currentTranslate = minTranslate;
-                    }
-                    
-                    updateSlidePosition(currentTranslate);
-                    e.preventDefault(); // Prevent scrolling while dragging
-                }
-
-                function touchEnd(e) {
-                    if (!isDragging || isAnimating) return;
-                    
-                    isDragging = false;
-                    touchEndX = e.changedTouches[0].clientX;
-                    
-                    const swipeDistance = touchEndX - touchStartX;
-                    const slideWidth = getSlideWidth();
-                    const threshold = slideWidth * 0.2;
-
-                    isAnimating = true;
-                    track.style.transition = 'transform 0.3s ease-out';
-
-                    if (Math.abs(swipeDistance) > threshold) {
-                        if (swipeDistance > 0 && currentIndex > 0) {
-                            currentIndex--;
-                        } else if (swipeDistance < 0 && currentIndex < slideCount - 1) {
-                            currentIndex++;
-                        }
-                    }
-
-                    currentTranslate = -currentIndex * slideWidth;
-                    prevTranslate = currentTranslate;
-                    updateSlidePosition();
-
-                    setTimeout(() => {
-                        isAnimating = false;
-                        track.style.transition = 'none';
-                    }, 300);
-                }
-
-                // Add touch events with passive: false to prevent scrolling
-                [track, sliderContainer].forEach(element => {
-                    element.addEventListener('touchstart', touchStart, { passive: false });
-                    element.addEventListener('touchmove', touchMove, { passive: false });
-                    element.addEventListener('touchend', touchEnd, { passive: false });
-                });
-
-                // Handle window resize
-                window.addEventListener('resize', () => {
-                    if (!isDragging && !isAnimating) {
-                        currentTranslate = -currentIndex * getSlideWidth();
-                        prevTranslate = currentTranslate;
-                        updateSlidePosition();
-                    }
-                });
-
-                // Button click handlers
-                prevBtn.addEventListener('click', () => {
-                    if (currentIndex > 0 && !isAnimating) {
-                        currentIndex--;
-                        goToSlide(currentIndex);
-                    }
-                });
-
-                nextBtn.addEventListener('click', () => {
-                    if (currentIndex < slideCount - 1 && !isAnimating) {
-                        currentIndex++;
-                        goToSlide(currentIndex);
-                    }
-                });
-
-                // Initialize position
-                updateSlidePosition();
-
-                // Auto-play functionality
-                let autoplayInterval = setInterval(() => {
-                    if (currentIndex < slideCount - 1) {
-                        currentIndex++;
-                    } else {
-                        currentIndex = 0;
-                    }
-                    updateSlidePosition();
-                }, 5000);
-
-                // Pause auto-play on hover or drag
-                track.addEventListener('mouseenter', () => {
-                    clearInterval(autoplayInterval);
-                });
-
-                track.addEventListener('mouseleave', () => {
-                    if (!isDragging) {
-                        autoplayInterval = setInterval(() => {
-                            if (currentIndex < slideCount - 1) {
-                                currentIndex++;
-                            } else {
-                                currentIndex = 0;
-                            }
-                            updateSlidePosition();
-                        }, 5000);
-                    }
-                });
-
-                // Video popup functionality
-                function openVideoPopup() {
-                    const overlay = document.getElementById('video-popup-overlay');
-                    const iframe = document.getElementById('popup-video-iframe');
-                    
-                    // Set video URL (replace with your video URL)
-                    iframe.src = 'https://www.youtube.com/embed/YOUR_VIDEO_ID?autoplay=1';
-                    
-                    // Show overlay with animation
-                    overlay.classList.add('active');
-                    document.body.style.overflow = 'hidden'; // Prevent scrolling
-                }
-
-                // Add close functionality
-                document.querySelector('.video-popup-close').addEventListener('click', () => {
-                    const overlay = document.getElementById('video-popup-overlay');
-                    const iframe = document.getElementById('popup-video-iframe');
-                    
-                    overlay.classList.remove('active');
-                    setTimeout(() => {
-                        overlay.style.display = 'none';
-                        iframe.src = ''; // Clear iframe source
-                    }, 300);
-                    document.body.style.overflow = ''; // Restore scrolling
-                });
-
-                // Close on overlay click
-                document.getElementById('video-popup-overlay').addEventListener('click', (e) => {
-                    if (e.target === e.currentTarget) {
-                        document.querySelector('.video-popup-close').click();
-                    }
-                });
-
-                // Close on escape key
-                document.addEventListener('keydown', (e) => {
-                    if (e.key === 'Escape') {
-                        document.querySelector('.video-popup-close').click();
-                    }
-                });
-
-                // Initial setup
-                updateSlidePosition();
-            });
-        </script>
     </section>
 
 
 
-
-
-
-
-
-
-
-    <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            const slider = document.querySelector('.unique-testimonial-slider');
-            const testimonials = document.querySelectorAll('.unique-testimonial-card');
-            const playButtons = document.querySelectorAll('.play-icon');
-            let startX, moveX;
-            let activeIndex = 0;
-            const testimonialCount = testimonials.length;
-            let isMobile = window.innerWidth <= 768; // Adjust this threshold as needed
-
-            function changeTestimonial(index) {
-                activeIndex = (index + testimonialCount) % testimonialCount;
-                document.getElementById(`unique-testimonial-item-${activeIndex + 1}`).checked = true;
-            }
-
-            function handleSwipe(direction) {
-                changeTestimonial(activeIndex + direction);
-            }
-
-            function handleInteraction(e) {
-                if (isMobile && !e.target.closest('.play-icon')) {
-                    // Prevent default behavior on mobile except for play button
-                    e.preventDefault();
-                }
-
-                if (e.type.startsWith('touch')) {
-                    startX = e.touches[0].clientX;
-                } else if (e.type === 'mousedown' && !isMobile) {
-                    startX = e.clientX;
-                }
-            }
-
-            function handleMove(e) {
-                if (isMobile || (e.type === 'mousemove' && e.buttons === 1)) {
-                    moveX = e.type.startsWith('touch') ? e.touches[0].clientX : e.clientX;
-                }
-            }
-
-            function handleEnd() {
-                if (startX !== undefined && moveX !== undefined) {
-                    const swipeThreshold = slider.offsetWidth * 0.15;
-                    if (startX - moveX > swipeThreshold) {
-                        handleSwipe(1); // Swipe left
-                    } else if (moveX - startX > swipeThreshold) {
-                        handleSwipe(-1); // Swipe right
-                    }
-                }
-                startX = undefined;
-                moveX = undefined;
-            }
-
-            // Touch events (primarily for mobile)
-            slider.addEventListener('touchstart', handleInteraction, {
-                passive: false
-            });
-            slider.addEventListener('touchmove', handleMove, {
-                passive: true
-            });
-            slider.addEventListener('touchend', handleEnd);
-
-            // Mouse events (primarily for desktop)
-            if (!isMobile) {
-                slider.addEventListener('mousedown', handleInteraction);
-                slider.addEventListener('mousemove', handleMove);
-                slider.addEventListener('mouseup', handleEnd);
-                slider.addEventListener('mouseleave', handleEnd);
-            }
-
-            // Keyboard navigation
-            document.addEventListener('keydown', (e) => {
-                if (e.key === 'ArrowLeft') {
-                    handleSwipe(-1);
-                } else if (e.key === 'ArrowRight') {
-                    handleSwipe(1);
-                }
-            });
-
-            // Auto-rotate testimonials
-            setInterval(() => {
-                handleSwipe(1);
-            }, 5000);
-
-            // Resize event for responsiveness
-            window.addEventListener('resize', () => {
-                isMobile = window.innerWidth <= 768; // Update isMobile status on resize
-                updateMobileStyles();
-            });
-
-            function updateMobileStyles() {
-                if (isMobile) {
-                    testimonials.forEach(card => {
-                        card.style.pointerEvents = 'none';
-                        card.style.cursor = 'default';
-                    });
-                    playButtons.forEach(button => {
-                        button.style.pointerEvents = 'auto';
-                        button.style.cursor = 'pointer';
-                    });
-                } else {
-                    testimonials.forEach(card => {
-                        card.style.pointerEvents = '';
-                        card.style.cursor = '';
-                    });
-                    playButtons.forEach(button => {
-                        button.style.pointerEvents = '';
-                        button.style.cursor = '';
-                    });
-                }
-            }
-
-            updateMobileStyles();
-
-            // Video popup functionality
-            const videoOverlay = document.getElementById('video-overlay');
-            const popupVideo = document.getElementById('popup-video');
-            const closeVideo = document.getElementById('close-video');
-            const playTestimonialVideo = document.getElementById('play-testimonial-video');
-
-            function openVideoPopup() {
-                popupVideo.src = 'https://www.youtube.com/embed/sjL6Gl6ZIqs?autoplay=1';
-                videoOverlay.style.display = 'flex';
-                videoOverlay.style.opacity = '0';
-                videoOverlay.style.transform = 'scale(0.9)';
-                setTimeout(() => {
-                    videoOverlay.style.opacity = '1';
-                    videoOverlay.style.transform = 'scale(1)';
-                }, 50);
-            }
-
-            function closeVideoPopup() {
-                videoOverlay.style.opacity = '0';
-                videoOverlay.style.transform = 'scale(1.1)';
-                setTimeout(() => {
-                    popupVideo.src = '';
-                    videoOverlay.style.display = 'none';
-                    videoOverlay.style.transform = 'scale(1)';
-                }, 300);
-            }
-
-            playTestimonialVideo.addEventListener('click', openVideoPopup);
-            closeVideo.addEventListener('click', closeVideoPopup);
-
-            // Add transition styles to video overlay
-            videoOverlay.style.transition = 'opacity 0.3s ease, transform 0.3s ease';
-        });
-    </script>
 
 
 
