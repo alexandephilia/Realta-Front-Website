@@ -180,7 +180,7 @@ const secondPageBlogPosts = [
       {
         id: 7,
         title: "Cryptocurrency: The New Frontier",
-        image: "assets/img/news/news9.jpg",
+        image: "assets/img/news/news8.jpg",
         imageAlt: "Cryptocurrency",
         date: "Monday, 8 April 2024 14:20",
         category: "Finance",
@@ -230,7 +230,7 @@ const secondPageBlogPosts = [
       {
         id: 9,
         title: "Sustainable Investing: A Growing Trend",
-        image: "assets/img/news/news9.jpg",
+        image: "assets/img/news/news8.jpg",
         imageAlt: "Sustainable Investing",
         date: "Saturday, 6 April 2024 16:30",
         category: "Finance",
