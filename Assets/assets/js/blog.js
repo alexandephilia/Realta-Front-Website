@@ -4,7 +4,7 @@ const mainBlogPosts = [
   {
     id: 1,
     title: "Microsoft Drops From OpenAI's Boards",
-    image: "assets/img/news/news2.jpg",
+    image: "assets/img/news/new7.png",
     imageAlt: "assets/img/news/computer.fcd1bd54.svg",
     date: "Wednesday, 10 April 2024 09:15",
     category: "Technology",
