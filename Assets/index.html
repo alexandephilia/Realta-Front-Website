@@ -11,6 +11,8 @@
 
 
     <!-- Preload fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
     <link rel="preload" href="assets/fonts/important-font.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="assets/font/proxima-nova/ProximaNova-Regular.woff2" as="font" type="font/woff2"
         crossorigin>
@@ -30,7 +32,6 @@
 
 
     <!-- Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
     <link
         href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;700&family=Roboto:wght@400;500&display=swap"
         rel="stylesheet">
@@ -113,7 +114,7 @@
         z-index: 1030;
         height: 80px;
         transition: all 0.3s ease-in-out
-        /* Fixed height instead of percentage */
+            /* Fixed height instead of percentage */
     }
 
     #mainNav.navbar-scrolled {
@@ -628,7 +629,8 @@
                         </a></li>
 
                 </ul>
-                <div class="sidebar-actions d-flex justify-content-end align-items-center" style="margin-bottom: 0.5rem;">
+                <div class="sidebar-actions d-flex justify-content-end align-items-center"
+                    style="margin-bottom: 0.5rem;">
                     <a class="btn-custom whatsapp-btn me-2"
                         href="https://api.whatsapp.com/send?phone=628111221789&text=Hallo%20PT%20Realta..."
                         target="_blank" rel="noopener noreferrer" style="font-size: 0.8em;">
@@ -1702,7 +1704,7 @@
 
             .btn-custom {
                 margin-top: 1.1vh;
-                font-size:15px;
+                font-size: 15px;
                 /* Slightly smaller button text */
                 padding: 0.9vh 1.8vw;
                 /* Slightly reduced padding */
@@ -3545,296 +3547,720 @@
 
 
 
-    <!-- TESTIMONIAL -->
-    <div id="video-overlay" class="video-overlay">
-        <div class="video-container">
-            <button id="close-video" class="close-video">&times;</button>
-            <div class="video-wrapper">
-                <iframe id="popup-video" src="" frameborder="0" allow="autoplay; encrypted-media"
-                    allowfullscreen></iframe>
-            </div>
-        </div>
-    </div>
-    <style>
-        .video-overlay {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(179, 176, 176, 0.8);
-            backdrop-filter: blur(6px);
-            z-index: 9999;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .video-container {
-            position: relative;
-            width: 90%;
-            max-width: 800px;
-            border-radius: 15px;
-            padding: 20px;
-        }
-
-        .video-wrapper {
-            position: relative;
-            width: 100%;
-            padding-top: 56.25%;
-            /* 16:9 aspect ratio */
-        }
-
-        #popup-video {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            border-radius: 5px;
-        }
-
-        .close-video {
-            position: absolute !important;
-            top: -5px !important;
-            right: -15px !important;
-            font-size: 24px !important;
-            /* Adjusted for precise sizing */
-            color: #ffffff !important;
-            background-color: rgba(0, 0, 0, 0.5) !important;
-            border: none !important;
-            cursor: pointer !important;
-            width: 30px !important;
-            height: 30px !important;
-            border-radius: 50% !important;
-            display: flex !important;
-            justify-content: center !important;
-            align-items: center !important;
-            transition: background-color 0.3s !important;
-            z-index: 1 !important;
-            padding: 0 !important;
-            /* Added for precise sizing */
-            line-height: 1 !important;
-            /* Added for precise sizing */
-        }
-
-        .close-video:hover {
-            background-color: rgba(0, 0, 0, 0.7);
-        }
-
-        .play-icon {
-            cursor: pointer;
-        }
-
-        @media (max-width: 768px) {
-            .video-container {
-                width: 100%;
-                padding: 10px;
-                margin: 0 auto;
-            }
-
-            .video-wrapper {
-                padding-top: 75%;
-                /* 4:3 aspect ratio for better mobile viewing */
-            }
-
-            .close-video {
-                top: 5px !important;
-                right: 5px !important;
-                width: 30px !important;
-                height: 30px !important;
-                font-size: 20px !important;
-            }
-
-            .play-icon {
-                transform: scale(0.8);
-            }
-        }
-    </style>
-
-
-    </div>
-
-
-
-
-
-    <section id="testi" class="py-5">
+    <section class="rt-testimonial-section py-5">
         <div class="container-fluid">
-            <div class="floating-orbs"></div>
-            <style>
-                .testimonial-heading {
-                    font-size: 3rem;
-                    font-weight: bold;
-                    letter-spacing: 1px;
-                    text-align: center;
-                    margin-bottom: 1.5rem;
-                }
-
-                .testimonial-subheading {
-                    font-size: 1.5rem;
-                    text-align: center;
-                    margin-top: 1rem;
-                    margin-bottom: 1rem;
-                }
-
-                @media (max-width: 768px) {
-                    .testimonial-heading {
-                        font-size: 2.5rem;
-                        text-align: center;
-                    }
-
-                    .testimonial-subheading {
-                        font-size: 1.2rem;
-                        text-align: center;
-                    }
-
-                    #testi {
-                        padding: none !important;
-                        display: flex;
-                        flex-direction: column;
-                        align-items: center;
-                        margin-bottom: -20px;
-                    }
-
-                    .unique-testimonial-slider {
-                        margin: 0 auto;
-                        max-width: 90%;
-                    }
-
-                    .unique-testimonial-avatar {
-                        width: 80px;
-                        height: 80px;
-                        margin: 0 auto;
-                    }
-
-                    .unique-testimonial-name {
-                        font-size: 1.2rem;
-                        text-align: center;
-                    }
-
-                    .unique-testimonial-title {
-                        font-size: 0.9rem;
-                        text-align: center;
-                    }
-
-                    .unique-testimonial-text {
-                        font-size: 0.95rem;
-                        text-align: center;
-                    }
-                }
-
-                @media (max-width: 768px) {
-                    .unique-testimonial-card {
-                        pointer-events: none;
-                        cursor: default;
-                    }
-
-                    .unique-testimonial-card:hover {
-                        transform: none;
-                        box-shadow: none;
-                    }
-
-                    .unique-testimonial-slider input[type="radio"] {
-                        display: none;
-                    }
-
-                    .unique-testimonial-slider label {
-                        pointer-events: none;
-                    }
-
-                    .unique-testimonial-cards-container {
-                        transform: none !important;
-                        transition: none !important;
-                    }
-
-                    .play-icon {
-                        pointer-events: auto !important;
-                        cursor: pointer !important;
-                    }
-                }
-            </style>
-            <h1 class="testimonial-heading gradient-text">Testimonial</h1>
-            <h3 class="testimonial-subheading">What Our Customers Say</h3>
-            <svg width="100" height="20" viewBox="0 0 100 20" class="d-block mx-auto mb-5">
-                <line x1="0" y1="10" x2="100" y2="10" stroke="#5d2d90" stroke-width="2" />
-            </svg>
-            <div class="row justify-content-center">
-                <div class="col-12">
-                    <div class="unique-testimonial-slider">
-                        <input type="radio" name="unique-testimonial-radio" id="unique-testimonial-item-1" checked>
-                        <input type="radio" name="unique-testimonial-radio" id="unique-testimonial-item-2">
-                        <input type="radio" name="unique-testimonial-radio" id="unique-testimonial-item-3">
-                        <div class="unique-testimonial-cards-container">
-                            <label class="unique-testimonial-card" for="unique-testimonial-item-1"
-                                id="unique-testimonial-1">
-                                <div class="unique-testimonial-content">
-                                    <div class="text-center d-flex flex-column  h-100">
-                                        <div>
-                                            <div class="position-relative d-inline-block">
-                                                <img src="assets/img/team/avatar2.jpg" alt="Avatar"
-                                                    class="unique-testimonial-avatar mb-3">
-                                                <div class="play-button-pulse"></div>
-                                                <i class="fas fa-play play-icon" id="play-testimonial-video"></i>
-                                            </div>
-                                            <h2 class="unique-testimonial-name mb-1">John Doe</h2>
-                                            <p class="unique-testimonial-title mb-3">CEO, Tech Innovators</p>
-                                        </div>
-                                        <blockquote class="unique-testimonial-text mt-4">
-                                            This product has completely transformed my workflow. It's intuitive,
-                                            powerful, and a joy to use every day!
-                                        </blockquote>
-                                    </div>
+            <div class="rt-testimonial-container position-relative" style="max-width: 1000px; margin: 0 auto;">
+                <div class="text-center mb-5">
+                    <h1 class="gradient-text" style="font-weight: bolder; font-size: 48px;">Testimonials</h1>
+                    <p class="" style="font-weight: bold;">Stay informed and inspired with our testimonials from clients
+                        who have experienced our services firsthand.</p>
+                </div>
+                <div class="rt-testimonial-wrapper">
+                    <div class="rt-slider-track" id="rt-slider-track">
+                        <!-- Testimonial 1 -->
+                        <div class="rt-testimonial-card">
+                            <div class="rt-testimonial-inner">
+                                <div class="rt-avatar-wrapper">
+                                    <img src="assets/img/team/real-3.gif" alt="John Doe" class="rt-avatar">
                                 </div>
-                            </label>
-                            <label class="unique-testimonial-card" for="unique-testimonial-item-2"
-                                id="unique-testimonial-2">
-                                <div class="unique-testimonial-content">
-                                    <div class="text-center d-flex flex-column  h-100">
-                                        <div>
-                                            <div class="position-relative d-inline-block">
-                                                <img src="assets/img/team/avatar5.jpg" alt="Avatar"
-                                                    class="unique-testimonial-avatar mb-3">
-                                                <!-- <div class="play-button-pulse"></div>
-                                            <i class="fas fa-play play-icon"></i> -->
-                                            </div>
-                                            <h2 class="unique-testimonial-name mb-1">Jane Smith</h2>
-                                            <p class="unique-testimonial-title mb-3">CTO, Digital Solutions</p>
-                                        </div>
-                                        <blockquote class="unique-testimonial-text mt-4">
-                                            I can't imagine running my business without this tool. It's been a
-                                            game-changer for our team's productivity.
-                                        </blockquote>
-                                    </div>
+                                <div class="rt-quote-wrapper">
+                                    <i class="fas fa-quote-left rt-quote-icon"></i>
+                                    <blockquote class="rt-testimonial-text">
+                                        The level of innovation and technical excellence demonstrated by this team is
+                                        truly exceptional. They've revolutionized how we approach our daily operations.
+                                    </blockquote>
+                                    <i class="fas fa-quote-right rt-quote-icon"></i>
                                 </div>
-                            </label>
-                            <label class="unique-testimonial-card" for="unique-testimonial-item-3"
-                                id="unique-testimonial-3">
-                                <div class="unique-testimonial-content">
-                                    <div class="text-center d-flex flex-column  h-100">
-                                        <div>
-                                            <div class="position-relative d-inline-block">
-                                                <img src="assets/img/team/avatar4.jpg" alt="Avatar"
-                                                    class="unique-testimonial-avatar mb-3">
-                                                <!-- <div class="play-button-pulse"></div>
-                                            <i class="fas fa-play play-icon"></i> -->
-                                            </div>
-                                            <h2 class="unique-testimonial-name mb-1">Mike Johnson</h2>
-                                            <p class="unique-testimonial-title mb-3">Founder, StartUp Success</p>
-                                        </div>
-                                        <blockquote class="unique-testimonial-text mt-4">
-                                            The customer support is outstanding. They've gone above and beyond to
-                                            ensure our success with the platform.
-                                        </blockquote>
-                                    </div>
+                                <div class="rt-author-info">
+                                    <h3 class="rt-author-name">John Doe</h3>
+                                    <p class="rt-author-title">CEO, Tech Innovations</p>
                                 </div>
-                            </label>
+                            </div>
                         </div>
+
+                        <!-- Testimonial 2 -->
+                        <div class="rt-testimonial-card">
+                            <div class="rt-testimonial-inner">
+                                <div class="rt-avatar-wrapper">
+                                    <img src="assets/img/team/avatar2.jpg" alt="Sarah Wilson" class="rt-avatar">
+                                </div>
+                                <div class="rt-quote-wrapper">
+                                    <i class="fas fa-quote-left rt-quote-icon"></i>
+                                    <blockquote class="rt-testimonial-text">
+                                        Implementing this solution has resulted in a 200% increase in our team's
+                                        productivity. The ROI has been nothing short of remarkable.
+                                    </blockquote>
+                                    <i class="fas fa-quote-right rt-quote-icon"></i>
+                                </div>
+                                <div class="rt-author-info">
+                                    <h3 class="rt-author-name">Sarah Wilson</h3>
+                                    <p class="rt-author-title">COO, Growth Dynamics</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Testimonial 3 -->
+                        <div class="rt-testimonial-card">
+                            <div class="rt-testimonial-inner">
+                                <div class="rt-avatar-wrapper">
+                                    <img src="assets/img/team/real-3.gif" alt="John Doe" class="rt-avatar">
+                                    <!-- Add play button overlay -->
+                                    <div class="play-overlay" onclick="openVideoPopup()">
+                                        <div class="play-button">
+                                            <i class="fas fa-play"></i>
+                                        </div>
+                                        <div class="pulse-ring"></div>
+                                    </div>
+                                </div>
+                                <div class="rt-quote-wrapper">
+                                    <i class="fas fa-quote-left rt-quote-icon"></i>
+                                    <blockquote class="rt-testimonial-text">
+                                        The attention to detail and customer-centric approach sets them apart. Every
+                                        interaction has been meaningful and value-driven.
+                                    </blockquote>
+                                    <i class="fas fa-quote-right rt-quote-icon"></i>
+                                </div>
+                                <div class="rt-author-info">
+                                    <h3 class="rt-author-name">Mark Thompson</h3>
+                                    <p class="rt-author-title">Director, Strategic Solutions</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Video Popup Overlay -->
+                    <div class="video-popup-overlay" id="videoPopupOverlay">
+                        <div class="video-popup-content">
+                            <button class="video-popup-close" onclick="closeVideoPopup()">
+                                <i class="fas fa-times"></i>
+                            </button>
+                            <div class="video-wrapper">
+                                <iframe id="videoIframe" src="" frameborder="0" allowfullscreen></iframe>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Pagination Dots with Navigation Arrows -->
+                    <div class="rt-pagination" id="rt-pagination">
+                        <button class="rt-nav-btn rt-prev" id="rt-prev" style="display: none;">
+                            <i class="fas fa-chevron-left"></i>
+                        </button>
+                        <!-- Dots will be inserted here by JavaScript -->
+                        <button class="rt-nav-btn rt-next" id="rt-next" style="display: none;">
+                            <i class="fas fa-chevron-right"></i>
+                        </button>
                     </div>
                 </div>
             </div>
         </div>
     </section>
+
+    <style>
+    /* Video popup styles */
+    .video-popup-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.85);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        display: none;
+        justify-content: center;
+        align-items: center;
+        z-index: 999999;
+        opacity: 0;
+        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .video-popup-content {
+        position: relative;
+        width: 90%;
+        max-width: 800px;
+        background: transparent;
+        border: 2px solid rgba(255, 255, 255, 0.2);
+        border-radius: 15px;
+        padding: 20px;
+        transform: scale(0.8);
+        transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.15);
+        backdrop-filter: blur(5px);
+    }
+
+    .video-popup-close {
+        position: absolute;
+        top: -40px;
+        right: -40px;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        background: #9054d0;
+        border: none;
+        color: white;
+        font-size: 20px;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: all 0.3s ease;
+        z-index: 1000000;
+    }
+
+    .video-popup-close:hover {
+        background: #7a4bd7;
+        transform: scale(1.1) rotate(90deg);
+    }
+
+    .video-wrapper {
+        position: relative;
+        padding-bottom: 56.25%;
+        height: 0;
+        overflow: hidden;
+        border-radius: 10px;
+        box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.3);
+    }
+
+    .video-wrapper iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border-radius: 10px;
+        border: none;
+    }
+
+
+    /* Show popup with animation */
+    .video-popup-overlay.active {
+        display: flex;
+        opacity: 1;
+    }
+
+    .video-popup-overlay.active .video-popup-content {
+        transform: scale(1);
+    }
+
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+            backdrop-filter: blur(0px);
+        }
+        to {
+            opacity: 1;
+            backdrop-filter: blur(10px);
+        }
+    }
+    </style>
+
+    <script>
+        function openVideoPopup() {
+            const overlay = document.getElementById('videoPopupOverlay');
+            const iframe = document.getElementById('videoIframe');
+            
+            // Set your video URL here
+            iframe.src = 'https://www.youtube.com/embed/YOUR_VIDEO_ID?autoplay=1&rel=0';
+            
+            overlay.style.display = 'flex';
+            document.body.style.overflow = 'hidden';
+            
+            // Trigger reflow
+            overlay.offsetHeight;
+            
+            overlay.classList.add('active');
+        }
+
+        function closeVideoPopup() {
+            const overlay = document.getElementById('videoPopupOverlay');
+            const iframe = document.getElementById('videoIframe');
+            
+            overlay.classList.remove('active');
+            document.body.style.overflow = '';
+            
+            setTimeout(() => {
+                overlay.style.display = 'none';
+                iframe.src = '';
+            }, 400);
+        }
+
+        // Close on overlay click
+        document.getElementById('videoPopupOverlay').addEventListener('click', (e) => {
+            if (e.target === e.currentTarget) {
+                closeVideoPopup();
+            }
+        });
+
+        // Close on escape key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                closeVideoPopup();
+            }
+        });
+    </script>
+
+        <style>
+            .rt-testimonial-section {
+                overflow: hidden;
+            }
+
+            .rt-testimonial-wrapper {
+                position: relative;
+                overflow: visible;
+                cursor: grab;
+            }
+
+            .rt-testimonial-wrapper:active {
+                cursor: grabbing;
+            }
+
+            .rt-slider-track {
+                display: flex;
+                transition: transform 0.5s ease-in-out;
+                gap: 30px;
+                user-select: none;
+            }
+
+            .rt-testimonial-card {
+                min-width: 100%;
+                padding: 20px;
+                box-sizing: border-box;
+            }
+
+            .rt-testimonial-inner {
+                background: white;
+                border-radius: 20px;
+                padding: 30px;
+                border: 1px solid #e5e5e5;
+                height: 100%;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                transition: transform 0.3s ease;
+            }
+
+            .rt-testimonial-inner:hover {
+                transform: translateY(-5px);
+                box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            }
+
+            .rt-avatar-wrapper {
+                width: 120px;
+                height: 120px;
+                border-radius: 50%;
+                overflow: visible;
+                margin-bottom: 20px;
+                border: 4px solid #9054d090;
+                box-shadow: 0 5px 15px rgba(144, 84, 208, 0.3);
+                position: relative;
+            }
+
+            .play-overlay {
+                position: absolute;
+                top: 77%;
+                left: 85%;
+                transform: translate(-50%, -50%);
+                width: 100%;
+                height: 100%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                z-index: 999;
+                cursor: pointer;
+                pointer-events: auto;
+            }
+
+            .play-button {
+                width: 40px;
+                height: 40px;
+                background: #9054d0;
+                border-radius: 50%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                z-index: 1000;
+            }
+
+            .play-button i {
+                color: white;
+                font-size: 16px;
+                margin-left: 3px;
+            }
+
+            .pulse-ring {
+                position: absolute;
+                width: 40px;
+                height: 40px;
+                border-radius: 50%;
+                background: #9054d0;
+                opacity: 0.6;
+                animation: pulse-play 2s infinite;
+            }
+
+            @keyframes pulse-play {
+                0% {
+                    transform: scale(1);
+                    opacity: 0.6;
+                }
+                70% {
+                    transform: scale(1.7);
+                    opacity: 0;
+                }
+                100% {
+                    transform: scale(1.7);
+                    opacity: 0;
+                }
+            }
+
+            .rt-avatar {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                position: relative;
+                z-index: 1;
+                border-radius: 50%;
+            }
+
+            .rt-quote-wrapper {
+                position: relative;
+                padding: 20px 25px;
+                margin: 20px auto;
+                width: 80%;
+                background: linear-gradient(145deg, #ffffff, #f8f9fa);
+                border-radius: 15px;
+                box-shadow: inset 0 2px 10px rgba(144, 84, 208, 0.1);
+            }
+
+            .rt-quote-icon {
+                color: #9054d0;
+                font-size: 30px;
+                position: absolute;
+                filter: drop-shadow(0 2px 4px rgba(144, 84, 208, 0.2));
+            }
+
+            .rt-quote-icon.fa-quote-left {
+                top: -13px;
+                left: 18px;
+            }
+
+            .rt-quote-icon.fa-quote-right {
+                bottom: -18px;
+                right: 20px;
+            }
+
+            .rt-testimonial-text {
+                font-size: 20px;
+                line-height: 1.6;
+                color: #333;
+                text-align: center;
+                margin: 0;
+                font-weight: bold;
+            }
+
+            .rt-author-info {
+                text-align: center;
+                margin-top: 20px;
+            }
+
+            .rt-author-name {
+                font-size: 24px;
+                color: #333;
+                margin: 0 0 5px 0;
+            }
+
+            .rt-author-title {
+                font-size: 16px;
+                color: #9054d0;
+                margin: 0;
+                font-weight: bold;
+                text-transform: uppercase;
+            }
+
+            .rt-nav-btn {
+                width: 40px;
+                height: 40px;
+                border-radius: 50%;
+                background: #9054d0;
+                border: none;
+                color: white;
+                font-size: 16px;
+                cursor: pointer;
+                transition: all 0.3s ease;
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+                box-shadow: 0 4px 15px rgba(144, 84, 208, 0.3);
+                margin: 0 10px;
+            }
+
+            .rt-nav-btn:hover {
+                background: #7a4bd7;
+                transform: scale(1.1);
+            }
+
+            .rt-pagination {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                gap: 10px;
+                margin-top: 30px;
+            }
+
+            .rt-dot {
+                width: 12px;
+                height: 12px;
+                border-radius: 50%;
+                background: #ddd;
+                cursor: pointer;
+                position: relative;
+                transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+            }
+
+            .rt-dot::before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: #9054d0;
+                border-radius: 50%;
+                transform: scale(0);
+                transition: transform 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+            }
+
+            .rt-dot.active::before {
+                transform: scale(1);
+                animation: dotPulse 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+            }
+
+            @keyframes dotPulse {
+                0% {
+                    transform: scale(0);
+                }
+
+                50% {
+                    transform: scale(1.2);
+                }
+
+                100% {
+                    transform: scale(1);
+                }
+
+            }
+
+            
+    @keyframes scaleIn {
+        from {
+            transform: scale(0.8);
+        }
+        to {
+            transform: scale(1);
+            }
+        }
+
+            @media (max-width: 768px) {
+                .rt-testimonial-card {
+                    padding: 10px;
+                }
+
+                .rt-testimonial-text {
+                    font-size: 18px;
+                }
+
+                .rt-nav-btn {
+                    width: 35px;
+                    height: 35px;
+                    font-size: 14px;
+                }
+            }
+        </style>
+        <script>
+            document.addEventListener('DOMContentLoaded', function () {
+                const track = document.getElementById('rt-slider-track');
+                const slides = track.getElementsByClassName('rt-testimonial-card');
+                const prevBtn = document.getElementById('rt-prev');
+                const nextBtn = document.getElementById('rt-next');
+                const pagination = document.getElementById('rt-pagination');
+
+                let currentIndex = 0;
+                const slideCount = slides.length;
+                let isDragging = false;
+                let startPos = 0;
+                let currentTranslate = 0;
+                let prevTranslate = 0;
+
+                // Create pagination dots
+                for (let i = 0; i < slideCount; i++) {
+                    const dot = document.createElement('div');
+                    dot.classList.add('rt-dot');
+                    if (i === 0) dot.classList.add('active');
+                    dot.addEventListener('click', () => goToSlide(i));
+                    pagination.insertBefore(dot, nextBtn);
+                }
+
+                function updateSlidePosition(translate = null) {
+                    if (translate !== null) {
+                        track.style.transform = `translateX(${translate}px)`;
+                    } else {
+                        track.style.transform = `translateX(-${currentIndex * 100}%)`;
+                    }
+                    updateDots();
+                    updateButtons();
+                }
+
+                function updateDots() {
+                    const dots = pagination.getElementsByClassName('rt-dot');
+                    Array.from(dots).forEach((dot, index) => {
+                        dot.classList.toggle('active', index === currentIndex);
+                    });
+                }
+
+                function updateButtons() {
+                    prevBtn.style.opacity = currentIndex === 0 ? '0.5' : '1';
+                    nextBtn.style.opacity = currentIndex === slideCount - 1 ? '0.5' : '1';
+                }
+
+                function goToSlide(index) {
+                    currentIndex = index;
+                    updateSlidePosition();
+                }
+
+                // Mouse drag functionality
+                track.addEventListener('mousedown', dragStart);
+                track.addEventListener('mousemove', drag);
+                track.addEventListener('mouseup', dragEnd);
+                track.addEventListener('mouseleave', dragEnd);
+
+                function dragStart(e) {
+                    isDragging = true;
+                    startPos = e.clientX;
+                    track.style.transition = 'none';
+                }
+
+                function drag(e) {
+                    if (!isDragging) return;
+                    const currentPosition = e.clientX;
+                    const diff = currentPosition - startPos;
+                    currentTranslate = prevTranslate + diff;
+                    updateSlidePosition(currentTranslate);
+                }
+
+                function dragEnd() {
+                    if (!isDragging) return;
+                    isDragging = false;
+                    track.style.transition = 'transform 0.5s ease-in-out';
+
+                    const movedBy = currentTranslate - prevTranslate;
+                    if (Math.abs(movedBy) > track.offsetWidth * 0.2) {
+                        if (movedBy < 0 && currentIndex < slideCount - 1) {
+                            currentIndex++;
+                        } else if (movedBy > 0 && currentIndex > 0) {
+                            currentIndex--;
+                        }
+                    }
+
+                    prevTranslate = -(currentIndex * track.offsetWidth);
+                    currentTranslate = prevTranslate;
+                    updateSlidePosition();
+                }
+
+                prevBtn.addEventListener('click', () => {
+                    if (currentIndex > 0) {
+                        currentIndex--;
+                        updateSlidePosition();
+                    }
+                });
+
+                nextBtn.addEventListener('click', () => {
+                    if (currentIndex < slideCount - 1) {
+                        currentIndex++;
+                        updateSlidePosition();
+                    }
+                });
+
+                // Auto-play functionality
+                let autoplayInterval = setInterval(() => {
+                    if (currentIndex < slideCount - 1) {
+                        currentIndex++;
+                    } else {
+                        currentIndex = 0;
+                    }
+                    updateSlidePosition();
+                }, 5000);
+
+                // Pause auto-play on hover or drag
+                track.addEventListener('mouseenter', () => {
+                    clearInterval(autoplayInterval);
+                });
+
+                track.addEventListener('mouseleave', () => {
+                    if (!isDragging) {
+                        autoplayInterval = setInterval(() => {
+                            if (currentIndex < slideCount - 1) {
+                                currentIndex++;
+                            } else {
+                                currentIndex = 0;
+                            }
+                            updateSlidePosition();
+                        }, 5000);
+                    }
+                });
+
+                // Video popup functionality
+                function openVideoPopup() {
+                    const overlay = document.getElementById('video-popup-overlay');
+                    const iframe = document.getElementById('popup-video-iframe');
+                    
+                    // Set video URL (replace with your video URL)
+                    iframe.src = 'https://www.youtube.com/embed/YOUR_VIDEO_ID?autoplay=1';
+                    
+                    // Show overlay with animation
+                    overlay.classList.add('active');
+                    document.body.style.overflow = 'hidden'; // Prevent scrolling
+                }
+
+                // Add close functionality
+                document.querySelector('.video-popup-close').addEventListener('click', () => {
+                    const overlay = document.getElementById('video-popup-overlay');
+                    const iframe = document.getElementById('popup-video-iframe');
+                    
+                    overlay.classList.remove('active');
+                    setTimeout(() => {
+                        overlay.style.display = 'none';
+                        iframe.src = ''; // Clear iframe source
+                    }, 300);
+                    document.body.style.overflow = ''; // Restore scrolling
+                });
+
+                // Close on overlay click
+                document.getElementById('video-popup-overlay').addEventListener('click', (e) => {
+                    if (e.target === e.currentTarget) {
+                        document.querySelector('.video-popup-close').click();
+                    }
+                });
+
+                // Close on escape key
+                document.addEventListener('keydown', (e) => {
+                    if (e.key === 'Escape') {
+                        document.querySelector('.video-popup-close').click();
+                    }
+                });
+
+                // Initial setup
+                updateSlidePosition();
+            });
+        </script>
+    </section>
+
+
+
+
+
+
+
+
+
 
     <script>
         document.addEventListener('DOMContentLoaded', function () {
@@ -3982,6 +4408,8 @@
             videoOverlay.style.transition = 'opacity 0.3s ease, transform 0.3s ease';
         });
     </script>
+
+
 
 
 
@@ -4743,153 +5171,152 @@
                 order: 1;
             }
         }
-        
     </style>
 
-   
 
 
-<section id="newsletter-cta" class="py-4 mb-0">
-    <div class="container-fluid px-5">
-        <div class="row align-items-center">
-            <div class="col-md-7 text-start">
-                <h2 class="mb-3 fw-bold gradient-text">Stay Informed, Stay Ahead</h2>
-                <p class="mb-4">Join our newsletter for exclusive insights and expert tips.</p>
-                <form class="mb-3">
-                    <div class="input-group input-group-lg" style="max-width: 500px;">
-                        <input type="email" class="form-control" placeholder="Email address"
-                            aria-label="Email address" required style="border-radius: 10px 0 0 10px;">
-                        <button class="btn btn-primary" type="submit"
-                            style="border-radius: 0 10px 10px 0;">Subscribe</button>
-                    </div>
-                </form>
-                <p class="text-muted small">By subscribing, you agree to our <a href="#"
-                        class="text-decoration-none">Privacy Policy</a> and <a href="#"
-                        class="text-decoration-none">Terms of Service</a>.</p>
-            </div>
-            <div class="col-md-5">
-                <div class="d-flex justify-content-md-end align-items-center mb-3">
-                    <img src="assets/img/footer1.png" alt="Logo 1" class="footer-logo me-3"
-                        style="max-height: 90px; width: auto;">
-                    <img src="assets/sticker.png" alt="Logo 2" class="footer-logo dark-mode-image"
-                        style="max-height: 90px; width: auto;">
-                    <style>
-                        .dark-mode-image {
-                            content: url('assets/sticker.png');
-                        }
 
-                        body.dark-mode .dark-mode-image {
-                            content: url('assets/img/footer2.png');
-                        }
-                    </style>
+    <section id="newsletter-cta" class="py-4 mb-0">
+        <div class="container-fluid px-5">
+            <div class="row align-items-center">
+                <div class="col-md-7 text-start">
+                    <h2 class="mb-3 fw-bold gradient-text">Stay Informed, Stay Ahead</h2>
+                    <p class="mb-4">Join our newsletter for exclusive insights and expert tips.</p>
+                    <form class="mb-3">
+                        <div class="input-group input-group-lg" style="max-width: 500px;">
+                            <input type="email" class="form-control" placeholder="Email address"
+                                aria-label="Email address" required style="border-radius: 10px 0 0 10px;">
+                            <button class="btn btn-primary" type="submit"
+                                style="border-radius: 0 10px 10px 0;">Subscribe</button>
+                        </div>
+                    </form>
+                    <p class="text-muted small">By subscribing, you agree to our <a href="#"
+                            class="text-decoration-none">Privacy Policy</a> and <a href="#"
+                            class="text-decoration-none">Terms of Service</a>.</p>
                 </div>
-                <div class="text-md-end">
-                    <p class="mb-2 text-muted small" style="font-size: 0.9rem;">&copy; 2024 Realta. All rights
-                        reserved.</p>
-                    <a href="https://www.realta.co.id/site/privacy-policy.html" class="text-muted small me-3"
-                        style="font-size: 0.9rem;">Privacy Policy</a>
-                    <span class="text-muted small me-3" style="font-size: 0.9rem;">|</span>
-                    <a href="https://www.realta.co.id/site/privacy-policy.html" class="text-muted small"
-                        style="font-size: 0.9rem;">Terms</a>
+                <div class="col-md-5">
+                    <div class="d-flex justify-content-md-end align-items-center mb-3">
+                        <img src="assets/img/footer1.png" alt="Logo 1" class="footer-logo me-3"
+                            style="max-height: 90px; width: auto;">
+                        <img src="assets/sticker.png" alt="Logo 2" class="footer-logo dark-mode-image"
+                            style="max-height: 90px; width: auto;">
+                        <style>
+                            .dark-mode-image {
+                                content: url('assets/sticker.png');
+                            }
+
+                            body.dark-mode .dark-mode-image {
+                                content: url('assets/img/footer2.png');
+                            }
+                        </style>
+                    </div>
+                    <div class="text-md-end">
+                        <p class="mb-2 text-muted small" style="font-size: 0.9rem;">&copy; 2024 Realta. All rights
+                            reserved.</p>
+                        <a href="https://www.realta.co.id/site/privacy-policy.html" class="text-muted small me-3"
+                            style="font-size: 0.9rem;">Privacy Policy</a>
+                        <span class="text-muted small me-3" style="font-size: 0.9rem;">|</span>
+                        <a href="https://www.realta.co.id/site/privacy-policy.html" class="text-muted small"
+                            style="font-size: 0.9rem;">Terms</a>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-</section>
+    </section>
 
 
 
-<style>
-    #newsletter-cta {
-        background: linear-gradient(135deg, #f5f7fa 0%, #a588bd 100%);
-        transition: background 0.3s ease;
-    }
+    <style>
+        #newsletter-cta {
+            background: linear-gradient(135deg, #f5f7fa 0%, #a588bd 100%);
+            transition: background 0.3s ease;
+        }
 
-    #newsletter-cta .gradient-text {
-        background: linear-gradient(90deg, #7209d4, #2832d4 33%, #00a5b2);
-        -webkit-background-clip: text;
-        background-clip: text;
-        color: transparent;
-        font-size: 2rem;
-    }
-
-    #newsletter-cta .btn-primary {
-        background: linear-gradient(to bottom, #9054d0, #7a4bd7);
-        border: none;
-        transition: all 0.3s ease;
-    }
-
-    #newsletter-cta .form-control {
-        border: 2px solid #e0e0e0;
-        transition: all 0.3s ease;
-    }
-
-    #newsletter-cta .form-control:focus {
-        border-color: #7209d4;
-        box-shadow: 0 0 0 0.2rem rgba(114, 9, 212, 0.25);
-    }
-
-    body.dark-mode #newsletter-cta {
-        background: #282828;
-    }
-
-    body.dark-mode #newsletter-cta .gradient-text {
-        background: linear-gradient(90deg, #a742ff, #4b5eff 33%, #00d5e6);
-        -webkit-background-clip: text;
-        background-clip: text;
-    }
-
-    body.dark-mode #newsletter-cta .btn-primary {
-        background: linear-gradient(90deg, #a742ff, #4b5eff);
-    }
-
-    body.dark-mode #newsletter-cta .form-control {
-        border-color: #4a5568;
-        color: #fff;
-    }
-
-    body.dark-mode #newsletter-cta .form-control::placeholder {
-        color: #a0aec0;
-    }
-
-    body.dark-mode #newsletter-cta .text-muted {
-        color: #a0aec0 !important;
-    }
-
-    body.dark-mode #newsletter-cta a {
-        color: #00d5e6;
-    }
-
-    @media (max-width: 767px) {
         #newsletter-cta .gradient-text {
-            font-size: 1.5rem;
+            background: linear-gradient(90deg, #7209d4, #2832d4 33%, #00a5b2);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            font-size: 2rem;
         }
 
-        #newsletter-cta .row {
-            text-align: center;
-        }
-
-        #newsletter-cta .col-md-7 {
-            text-align: center;
-        }
-
-        #newsletter-cta .col-md-5 {
-            margin-top: 2rem;
-        }
-
-        #newsletter-cta .d-flex {
-            justify-content: center !important;
-        }
-
-        #newsletter-cta .text-md-end {
-            text-align: center !important;
+        #newsletter-cta .btn-primary {
+            background: linear-gradient(to bottom, #9054d0, #7a4bd7);
+            border: none;
+            transition: all 0.3s ease;
         }
 
         #newsletter-cta .form-control {
-            font-size: 0.8rem;
+            border: 2px solid #e0e0e0;
+            transition: all 0.3s ease;
         }
-    }
-</style>
+
+        #newsletter-cta .form-control:focus {
+            border-color: #7209d4;
+            box-shadow: 0 0 0 0.2rem rgba(114, 9, 212, 0.25);
+        }
+
+        body.dark-mode #newsletter-cta {
+            background: #282828;
+        }
+
+        body.dark-mode #newsletter-cta .gradient-text {
+            background: linear-gradient(90deg, #a742ff, #4b5eff 33%, #00d5e6);
+            -webkit-background-clip: text;
+            background-clip: text;
+        }
+
+        body.dark-mode #newsletter-cta .btn-primary {
+            background: linear-gradient(90deg, #a742ff, #4b5eff);
+        }
+
+        body.dark-mode #newsletter-cta .form-control {
+            border-color: #4a5568;
+            color: #fff;
+        }
+
+        body.dark-mode #newsletter-cta .form-control::placeholder {
+            color: #a0aec0;
+        }
+
+        body.dark-mode #newsletter-cta .text-muted {
+            color: #a0aec0 !important;
+        }
+
+        body.dark-mode #newsletter-cta a {
+            color: #00d5e6;
+        }
+
+        @media (max-width: 767px) {
+            #newsletter-cta .gradient-text {
+                font-size: 1.5rem;
+            }
+
+            #newsletter-cta .row {
+                text-align: center;
+            }
+
+            #newsletter-cta .col-md-7 {
+                text-align: center;
+            }
+
+            #newsletter-cta .col-md-5 {
+                margin-top: 2rem;
+            }
+
+            #newsletter-cta .d-flex {
+                justify-content: center !important;
+            }
+
+            #newsletter-cta .text-md-end {
+                text-align: center !important;
+            }
+
+            #newsletter-cta .form-control {
+                font-size: 0.8rem;
+            }
+        }
+    </style>
     <!-- <footer class="bg-primary-gradient">
         <div class="container py-4 py-lg-5">
             <div class="row justify-content-center">
