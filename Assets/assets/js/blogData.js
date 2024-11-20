@@ -1,81 +1,79 @@
 document.addEventListener('DOMContentLoaded', function () {
-  const blogPosts = [
-    {
-      id: 1,
-      image: "assets/img/news/news2.jpg",
-      alt: "Child Development",
-      category: "Tech",
-      title: "Microsoft Drops From OpenAI's Board",
-      text: "Microsoft has relinquished its observer seat on OpenAI's board amid growing antitrust scrutiny, with Apple also opting out of a similar position, as reported by the Financial Times, Bloomberg, and others.",
-      date: "Monday, Aug 12, 2023",
-      type: "News",
-      link: "",
-      
-    },
-    {
-      id: 2,
-      image: "assets/img/news/news3.jpg",
-      alt: "Tech",
-      category: "Tech",
-      title: "How Neuromorphic Chips Work",
-      text: "Neuromorphic computing is a cutting-edge approach to computer engineering that emulates the neural architecture and processes of the human brain to achieve high efficiency and adaptability.",
-      date: "Monday, Aug 12, 2023",
-      type: "News"
-    },
-    {
-      id: 3,
-      image: "assets/img/news/news5.jpg",
-      alt: "AI Ethics",
-      category: "Breaking News",
-      title: "The Rolls-Royce Nuclear Micro-Reactor",
-      text: "Rolls-Royce is pioneering a nuclear micro-reactor designed to generate 1-10 megawatts of energy, offering a compact, versatile power solution for diverse applications. ",
-      date: "Monday, Aug 15, 2023",
-      type: "Opinion"
-    },
-    {
-      id: 4,
-      image: "assets/img/news/news4.jpg",
-      alt: "Quantum Computing",
-      category: "Computer",
-      title: "Quantum Computing Breakthrough",
-      text: "Scientists have achieved a major milestone in quantum computing, demonstrating quantum supremacy in a complex calculation that would take traditional supercomputers thousands of years.",
-      date: "Monday, Aug 18, 2023",
-      type: "News"
-    },
-    {
-      id: 5,
-      image: "assets/img/news/news6.jpg",
-      alt: "Cybersecurity", 
-      category: "Cybersecurity",
-      title: "OpenAI Acquires Rockset",
-      text: "OpenAI's acquisition of Rockset, a real-time analytics database company, marks a significant move to enhance its AI capabilities and strengthen its position in the competitive AI landscape.",
-      date: "Monday, Aug 20, 2023",
-      type: "Analysis"
-    },
-    {
-      id: 6,
-      image: "assets/img/news/news7.jpg",
-      alt: "AI Research",
-      category: "Technology",
-      title: "DeepMind's Latest AI Breakthrough",
-      text: "DeepMind has announced a groundbreaking advancement in protein structure prediction, using their AI system to map previously unknown protein structures with unprecedented accuracy.",
-      date: "Monday, Aug 22, 2023",
-      type: "Research"
+  // Add styles at the start
+  const style = document.createElement('style');
+  style.textContent = `
+    .blog-posts-wrapper {
+      display: flex;
+      gap: 2rem;
+      overflow: visible !important;
+      position: relative;
+      width: 100%;
+      padding: 1rem 0;
     }
-  ];
+    
+    #blog-posts-container {
+      overflow: visible !important;
+      position: relative;
+    }
+    
+    .blog-post {
+      flex: 0 0 calc(33.333% - 1.33rem);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      position: relative;
+    }
+    
+    .blog-post:hover {
+      transform: translateY(-10px);
+      z-index: 1;
+    }
+  `;
+  document.head.appendChild(style);
+
+  // Get data from blog.js
+  const { mainBlogPosts, secondPageBlogPosts } = window.blogData || { mainBlogPosts: [], secondPageBlogPosts: [] };
+
+  // Combine and flatten all blog posts including featured articles
+  const blogPosts = [...mainBlogPosts, ...secondPageBlogPosts].reduce((acc, post) => {
+    // Add main post
+    acc.push({
+      id: post.id,
+      image: post.image,
+      alt: post.imageAlt || post.title,
+      category: post.category,
+      title: post.title,
+      text: post.lead ? post.lead.split('<br>')[0] : post.text,
+      date: post.date,
+      type: post.type || "Article"
+    });
+
+    // Add featured articles
+    if (post.featuredArticles) {
+      acc.push(...post.featuredArticles.map(article => ({
+        id: article.id,
+        image: article.image,
+        alt: article.imageAlt || article.title,
+        category: article.category,
+        title: article.title,
+        text: article.lead ? article.lead.split('<br>')[0] : article.text,
+        date: article.date,
+        type: article.type || "Article"
+      })));
+    }
+
+    return acc;
+  }, []).sort((a, b) => new Date(b.date) - new Date(a.date));
 
   const postsPerPage = 3;
   let currentPage = 0;
-  let isMobile = window.innerWidth <= 768; // Define mobile breakpoint
+  let isMobile = window.innerWidth <= 768;
 
   function renderBlogPosts(page) {
     const container = document.getElementById('blog-posts-container');
     container.innerHTML = '';
 
-    // Calculate total pages
     const totalPages = Math.ceil(blogPosts.length / postsPerPage);
 
-    // Add left arrow with disabled state
+    // Add left arrow
     const leftArrow = document.createElement('div');
     leftArrow.className = `blog-arrow left-arrow ${page === 0 ? 'disabled' : ''}`;
     leftArrow.innerHTML = '<i class="fas fa-chevron-left"></i>';
@@ -113,10 +111,10 @@ document.addEventListener('DOMContentLoaded', function () {
           </div>
         </div>
       `;
-      container.appendChild(postElement);
+      postsWrapper.appendChild(postElement);
     });
 
-    // Add right arrow with disabled state
+    // Add right arrow
     const rightArrow = document.createElement('div');
     rightArrow.className = `blog-arrow right-arrow ${page === totalPages - 1 ? 'disabled' : ''}`;
     rightArrow.innerHTML = '<i class="fas fa-chevron-right"></i>';
@@ -125,12 +123,11 @@ document.addEventListener('DOMContentLoaded', function () {
     });
     container.appendChild(rightArrow);
 
-    // Add pagination dots container
+    // Add pagination dots
     const paginationContainer = document.createElement('div');
     paginationContainer.className = 'blog-pagination';
     container.appendChild(paginationContainer);
 
-    // Add pagination dots
     for (let i = 0; i < totalPages; i++) {
         const dot = document.createElement('span');
         dot.className = `pagination-dot ${i === currentPage ? 'active' : ''}`;
@@ -144,6 +141,8 @@ document.addEventListener('DOMContentLoaded', function () {
 
   function updatePagination() {
     const paginationContainer = document.querySelector('.pagination');
+    if (!paginationContainer) return;
+    
     paginationContainer.innerHTML = '';
   
     const totalPages = Math.ceil(blogPosts.length / postsPerPage);
@@ -190,6 +189,7 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }
 
+  // Mobile swipe functionality
   const blogPostsContainer = document.getElementById('blog-posts-container');
   let startX, moveX;
   let isSwiping = false;
@@ -217,13 +217,14 @@ document.addEventListener('DOMContentLoaded', function () {
     isSwiping = false;
   });
 
-  // Handle window resize to update isMobile status
+  // Handle window resize
   window.addEventListener('resize', () => {
     isMobile = window.innerWidth <= 768;
     updatePagination();
-    addCardClickListeners(); // Re-add listeners with updated isMobile status
+    addCardClickListeners();
   });
 
+  // Initial render
   renderBlogPosts(currentPage);
 });
 

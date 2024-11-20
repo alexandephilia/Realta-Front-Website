@@ -156,7 +156,7 @@ const secondPageBlogPosts = [
   {
     id: "s",
     title: "The Rise of Fintech in Modern Banking",
-    image: "assets/img/news/news8.jpg",
+    image: "assets/img/news/news11.png",
     imageAlt: "Fintech Revolution",
     date: "Tuesday, 9 April 2024 10:30",
     category: "Finance",
@@ -180,7 +180,7 @@ const secondPageBlogPosts = [
       {
         id: 7,
         title: "Cryptocurrency: The New Frontier",
-        image: "assets/img/news/news8.jpg",
+        image: "assets/img/news/news12.png",
         imageAlt: "Cryptocurrency",
         date: "Monday, 8 April 2024 14:20",
         category: "Finance",
@@ -205,7 +205,7 @@ const secondPageBlogPosts = [
       {
         id: 8,
         title: "The Future of Digital Banking",
-        image: "assets/img/news/news8.jpg",
+        image: "assets/img/news/news7.jpg",
         imageAlt: "Digital Banking",
         date: "Sunday, 7 April 2024 09:45",
         category: "Finance",
@@ -1019,4 +1019,7 @@ categoryStyle.textContent = `
 document.head.appendChild(categoryStyle);
 
 
-
+window.blogData = {
+  mainBlogPosts,
+  secondPageBlogPosts
+};
