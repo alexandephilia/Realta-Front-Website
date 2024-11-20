@@ -4194,7 +4194,7 @@
                 const prevBtn = document.getElementById('rt-prev');
                 const nextBtn = document.getElementById('rt-next');
                 const pagination = document.getElementById('rt-pagination');
-                const sliderContainer = document.querySelector('.rt-testimonial-slider'); // Get the container
+                const sliderContainer = document.querySelector('.rt-testimonial-slider');
 
                 let currentIndex = 0;
                 const slideCount = slides.length;
@@ -4205,6 +4205,7 @@
                 let touchStartX = 0;
                 let touchEndX = 0;
                 let animationFrameId = null;
+                let isAnimating = false;
 
                 // Create pagination dots
                 for (let i = 0; i < slideCount; i++) {
@@ -4215,13 +4216,19 @@
                     pagination.insertBefore(dot, nextBtn);
                 }
 
+                function getSlideWidth() {
+                    return window.innerWidth; // Use full viewport width
+                }
+
                 function updateSlidePosition(translate = null) {
+                    if (isAnimating) return;
+                    
                     cancelAnimationFrame(animationFrameId);
                     animationFrameId = requestAnimationFrame(() => {
                         if (translate !== null) {
                             track.style.transform = `translateX(${translate}px)`;
                         } else {
-                            const slideWidth = track.offsetWidth;
+                            const slideWidth = getSlideWidth();
                             track.style.transform = `translateX(-${currentIndex * slideWidth}px)`;
                         }
                         updateDots();
@@ -4242,49 +4249,63 @@
                 }
 
                 function goToSlide(index) {
+                    if (isAnimating) return;
+                    
+                    isAnimating = true;
                     currentIndex = index;
+                    track.style.transition = 'transform 0.3s ease-out';
                     updateSlidePosition();
+                    
+                    setTimeout(() => {
+                        isAnimating = false;
+                        track.style.transition = 'none';
+                    }, 300);
                 }
 
-                // Enhanced touch functionality for better responsiveness
                 function touchStart(e) {
+                    if (isAnimating) return;
+                    
                     touchStartX = e.touches[0].clientX;
                     isDragging = true;
                     startPos = touchStartX;
-                    prevTranslate = currentTranslate;
+                    prevTranslate = -currentIndex * getSlideWidth();
+                    currentTranslate = prevTranslate;
                     track.style.transition = 'none';
-                    track.style.willChange = 'transform'; // Optimize performance
                 }
 
                 function touchMove(e) {
-                    if (!isDragging) return;
-                    e.preventDefault();
+                    if (!isDragging || isAnimating) return;
+                    
                     const currentPosition = e.touches[0].clientX;
                     const diff = currentPosition - startPos;
                     currentTranslate = prevTranslate + diff;
                     
-                    // Add resistance at edges
-                    if (currentTranslate > 0) {
-                        currentTranslate = currentTranslate * 0.3;
-                    } else if (currentTranslate < -(slideCount - 1) * track.offsetWidth) {
-                        const overScroll = currentTranslate + (slideCount - 1) * track.offsetWidth;
-                        currentTranslate = -(slideCount - 1) * track.offsetWidth + (overScroll * 0.3);
+                    // Prevent overscroll
+                    const maxTranslate = 0;
+                    const minTranslate = -(slideCount - 1) * getSlideWidth();
+                    
+                    if (currentTranslate > maxTranslate) {
+                        currentTranslate = maxTranslate;
+                    } else if (currentTranslate < minTranslate) {
+                        currentTranslate = minTranslate;
                     }
                     
                     updateSlidePosition(currentTranslate);
+                    e.preventDefault(); // Prevent scrolling while dragging
                 }
 
                 function touchEnd(e) {
-                    if (!isDragging) return;
+                    if (!isDragging || isAnimating) return;
+                    
                     isDragging = false;
                     touchEndX = e.changedTouches[0].clientX;
                     
                     const swipeDistance = touchEndX - touchStartX;
-                    const slideWidth = track.offsetWidth;
-                    const threshold = slideWidth * 0.15; // Reduced threshold for easier swipe
+                    const slideWidth = getSlideWidth();
+                    const threshold = slideWidth * 0.2;
 
+                    isAnimating = true;
                     track.style.transition = 'transform 0.3s ease-out';
-                    track.style.willChange = 'auto';
 
                     if (Math.abs(swipeDistance) > threshold) {
                         if (swipeDistance > 0 && currentIndex > 0) {
@@ -4297,77 +4318,46 @@
                     currentTranslate = -currentIndex * slideWidth;
                     prevTranslate = currentTranslate;
                     updateSlidePosition();
+
+                    setTimeout(() => {
+                        isAnimating = false;
+                        track.style.transition = 'none';
+                    }, 300);
                 }
 
-                // Add touch events to both track and container
+                // Add touch events with passive: false to prevent scrolling
                 [track, sliderContainer].forEach(element => {
-                    element.addEventListener('touchstart', touchStart, {passive: false});
-                    element.addEventListener('touchmove', touchMove, {passive: false});
-                    element.addEventListener('touchend', touchEnd);
+                    element.addEventListener('touchstart', touchStart, { passive: false });
+                    element.addEventListener('touchmove', touchMove, { passive: false });
+                    element.addEventListener('touchend', touchEnd, { passive: false });
                 });
 
-                // Mouse drag functionality
-                function dragStart(e) {
-                    isDragging = true;
-                    startPos = e.clientX;
-                    prevTranslate = currentTranslate;
-                    track.style.transition = 'none';
-                    track.style.cursor = 'grabbing';
-                    track.style.willChange = 'transform';
-                }
-
-                function drag(e) {
-                    if (!isDragging) return;
-                    const currentPosition = e.clientX;
-                    const diff = currentPosition - startPos;
-                    currentTranslate = prevTranslate + diff;
-                    updateSlidePosition(currentTranslate);
-                }
-
-                function dragEnd(e) {
-                    if (!isDragging) return;
-                    isDragging = false;
-                    track.style.cursor = 'grab';
-                    track.style.transition = 'transform 0.3s ease-out';
-                    track.style.willChange = 'auto';
-
-                    const movedBy = currentTranslate - prevTranslate;
-                    const slideWidth = track.offsetWidth;
-                    
-                    if (Math.abs(movedBy) > slideWidth * 0.15) { // Reduced threshold
-                        if (movedBy < 0 && currentIndex < slideCount - 1) {
-                            currentIndex++;
-                        } else if (movedBy > 0 && currentIndex > 0) {
-                            currentIndex--;
-                        }
-                    }
-
-                    currentTranslate = -currentIndex * slideWidth;
-                    prevTranslate = currentTranslate;
-                    updateSlidePosition();
-                }
-
-                // Add mouse events to both track and container
-                [track, sliderContainer].forEach(element => {
-                    element.addEventListener('mousedown', dragStart);
-                    element.addEventListener('mousemove', drag);
-                    element.addEventListener('mouseup', dragEnd);
-                    element.addEventListener('mouseleave', dragEnd);
-                });
-
-                prevBtn.addEventListener('click', () => {
-                    if (currentIndex > 0) {
-                        currentIndex--;
+                // Handle window resize
+                window.addEventListener('resize', () => {
+                    if (!isDragging && !isAnimating) {
+                        currentTranslate = -currentIndex * getSlideWidth();
+                        prevTranslate = currentTranslate;
                         updateSlidePosition();
+                    }
+                });
+
+                // Button click handlers
+                prevBtn.addEventListener('click', () => {
+                    if (currentIndex > 0 && !isAnimating) {
+                        currentIndex--;
+                        goToSlide(currentIndex);
                     }
                 });
 
                 nextBtn.addEventListener('click', () => {
-                    if (currentIndex < slideCount - 1) {
+                    if (currentIndex < slideCount - 1 && !isAnimating) {
                         currentIndex++;
-                        updateSlidePosition();
+                        goToSlide(currentIndex);
                     }
                 });
+
+                // Initialize position
+                updateSlidePosition();
 
                 // Auto-play functionality
                 let autoplayInterval = setInterval(() => {
