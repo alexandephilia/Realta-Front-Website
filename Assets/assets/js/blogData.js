@@ -26,6 +26,54 @@ document.addEventListener('DOMContentLoaded', function () {
       transform: translateY(-10px);
       z-index: 1;
     }
+
+    /* Updated Mobile Responsive Styles */
+    @media screen and (max-width: 768px) {
+      #blog-posts-container {
+        padding: 0 !important;
+        margin: 0 !important;
+      }
+
+      .blog-posts-wrapper {
+        gap: 0;
+        padding: 0;
+        width: 100% !important;
+        margin: 0;
+        touch-action: pan-x;
+      }
+
+      .blog-post {
+        flex: 0 0 100% !important;
+        margin: 0 !important;
+        width: 95vw !important;
+        max-width: none !important;
+      }
+
+      /* Hide arrows on mobile */
+      .blog-arrow {
+        display: none !important;
+      }
+
+      /* Updated swipe indicator position */
+      .swipe-indicator {
+        position: relative;
+        text-align: center;
+        font-size: 12px;
+        color: #666;
+        opacity: 0.7;
+        pointer-events: none;
+        padding: 5px 10px;
+        margin-top: 8px;
+        background: rgba(255, 255, 255, 0.9);
+        border-radius: 12px;
+        transform: none;
+        left: auto;
+      }
+
+      .blog-pagination {
+        margin-bottom: 0;
+      }
+    }
   `;
   document.head.appendChild(style);
 
@@ -37,6 +85,7 @@ document.addEventListener('DOMContentLoaded', function () {
     for (let i = 0; i < count; i++) {
       const shimmerCard = document.createElement('div');
       shimmerCard.className = 'blog-post shimmer-wrapper';
+      shimmerCard.style.opacity = '0.7';
       shimmerCard.innerHTML = `
         <div class="blog-post-image-wrapper">
           <div class="shimmer shimmer-image"></div>
@@ -95,33 +144,77 @@ document.addEventListener('DOMContentLoaded', function () {
     const container = document.getElementById('blog-posts-container');
     container.innerHTML = '';
 
-    // Show shimmer loading state first
-    const shimmerCards = createShimmerCards(postsPerPage);
-    container.appendChild(shimmerCards);
+    // Create a container for better positioning
+    const contentContainer = document.createElement('div');
+    contentContainer.style.width = '100%';
+    contentContainer.style.position = 'relative';
+    container.appendChild(contentContainer);
 
-    // Simulate loading delay
+    // Show shimmer loading state
+    const shimmerCards = createShimmerCards(isMobile ? 1 : postsPerPage);
+    contentContainer.appendChild(shimmerCards);
+
     setTimeout(() => {
-      container.innerHTML = '';
+      contentContainer.innerHTML = '';
       
-      const totalPages = Math.ceil(blogPosts.length / postsPerPage);
+      const totalPages = Math.ceil(blogPosts.length / (isMobile ? 1 : postsPerPage));
       
-      // Add left arrow
-      const leftArrow = document.createElement('div');
-      leftArrow.className = `blog-arrow left-arrow ${page === 0 ? 'disabled' : ''}`;
-      leftArrow.innerHTML = '<i class="fas fa-chevron-left"></i>';
-      leftArrow.addEventListener('click', () => {
-          if (page !== 0) changePage(currentPage - 1);
-      });
-      container.appendChild(leftArrow);
-
       // Add posts wrapper
       const postsWrapper = document.createElement('div');
       postsWrapper.className = 'blog-posts-wrapper';
-      container.appendChild(postsWrapper);
+      contentContainer.appendChild(postsWrapper);
 
-      // Add blog posts
-      const start = page * postsPerPage;
-      const end = start + postsPerPage;
+      // Add touch handling for mobile
+      if (isMobile) {
+        let touchStartX = 0;
+        let touchEndX = 0;
+        
+        postsWrapper.addEventListener('touchstart', (e) => {
+          touchStartX = e.touches[0].clientX;
+        }, { passive: true });
+
+        postsWrapper.addEventListener('touchmove', (e) => {
+          touchEndX = e.touches[0].clientX;
+        }, { passive: true });
+
+        postsWrapper.addEventListener('touchend', () => {
+          const swipeDistance = touchStartX - touchEndX;
+          const minSwipeDistance = 50; // Minimum distance for swipe
+
+          if (Math.abs(swipeDistance) > minSwipeDistance) {
+            if (swipeDistance > 0 && currentPage < totalPages - 1) {
+              // Swipe left -> next page
+              changePage(currentPage + 1);
+            } else if (swipeDistance < 0 && currentPage > 0) {
+              // Swipe right -> previous page
+              changePage(currentPage - 1);
+            }
+          }
+        });
+
+        // First add pagination
+        const paginationContainer = document.createElement('div');
+        paginationContainer.className = 'blog-pagination';
+        contentContainer.appendChild(paginationContainer);
+
+        for (let i = 0; i < totalPages; i++) {
+          const dot = document.createElement('span');
+          dot.className = `pagination-dot ${i === currentPage ? 'active' : ''}`;
+          dot.addEventListener('click', () => changePage(i));
+          paginationContainer.appendChild(dot);
+        }
+
+        // Then add swipe indicator after pagination
+        const swipeIndicator = document.createElement('div');
+        swipeIndicator.className = 'swipe-indicator';
+        swipeIndicator.textContent = '← Swipe to navigate →';
+        contentContainer.appendChild(swipeIndicator);
+      }
+
+      // Adjust posts per page for mobile
+      const effectivePostsPerPage = isMobile ? 1 : postsPerPage;
+      const start = page * effectivePostsPerPage;
+      const end = start + effectivePostsPerPage;
       const postsToShow = blogPosts.slice(start, end);
 
       postsToShow.forEach(post => {
@@ -146,25 +239,25 @@ document.addEventListener('DOMContentLoaded', function () {
         postsWrapper.appendChild(postElement);
       });
 
-      // Add right arrow
-      const rightArrow = document.createElement('div');
-      rightArrow.className = `blog-arrow right-arrow ${page === totalPages - 1 ? 'disabled' : ''}`;
-      rightArrow.innerHTML = '<i class="fas fa-chevron-right"></i>';
-      rightArrow.addEventListener('click', () => {
+      // Add arrows only for desktop
+      if (!isMobile) {
+        // Add left arrow
+        const leftArrow = document.createElement('div');
+        leftArrow.className = `blog-arrow left-arrow ${page === 0 ? 'disabled' : ''}`;
+        leftArrow.innerHTML = '<i class="fas fa-chevron-left"></i>';
+        leftArrow.addEventListener('click', () => {
+          if (page !== 0) changePage(currentPage - 1);
+        });
+        contentContainer.appendChild(leftArrow);
+
+        // Add right arrow
+        const rightArrow = document.createElement('div');
+        rightArrow.className = `blog-arrow right-arrow ${page === totalPages - 1 ? 'disabled' : ''}`;
+        rightArrow.innerHTML = '<i class="fas fa-chevron-right"></i>';
+        rightArrow.addEventListener('click', () => {
           if (page !== totalPages - 1) changePage(currentPage + 1);
-      });
-      container.appendChild(rightArrow);
-
-      // Add pagination dots
-      const paginationContainer = document.createElement('div');
-      paginationContainer.className = 'blog-pagination';
-      container.appendChild(paginationContainer);
-
-      for (let i = 0; i < totalPages; i++) {
-          const dot = document.createElement('span');
-          dot.className = `pagination-dot ${i === currentPage ? 'active' : ''}`;
-          dot.addEventListener('click', () => changePage(i));
-          paginationContainer.appendChild(dot);
+        });
+        contentContainer.appendChild(rightArrow);
       }
 
       updatePagination();
