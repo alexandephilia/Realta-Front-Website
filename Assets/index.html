@@ -4201,6 +4201,8 @@
                 let startPos = 0;
                 let currentTranslate = 0;
                 let prevTranslate = 0;
+                let touchStartX = 0;
+                let touchEndX = 0;
 
                 // Create pagination dots
                 for (let i = 0; i < slideCount; i++) {
@@ -4243,6 +4245,52 @@
                 track.addEventListener('mousemove', drag);
                 track.addEventListener('mouseup', dragEnd);
                 track.addEventListener('mouseleave', dragEnd);
+
+                // Touch functionality
+                track.addEventListener('touchstart', touchStart);
+                track.addEventListener('touchmove', touchMove);
+                track.addEventListener('touchend', touchEnd);
+
+                function touchStart(e) {
+                    touchStartX = e.touches[0].clientX;
+                    isDragging = true;
+                    startPos = touchStartX;
+                    track.style.transition = 'none';
+                }
+
+                function touchMove(e) {
+                    if (!isDragging) return;
+                    e.preventDefault();
+                    const currentPosition = e.touches[0].clientX;
+                    const diff = currentPosition - startPos;
+                    currentTranslate = prevTranslate + diff;
+                    updateSlidePosition(currentTranslate);
+                }
+
+                function touchEnd(e) {
+                    touchEndX = e.changedTouches[0].clientX;
+                    handleSwipeGesture();
+                    isDragging = false;
+                }
+
+                function handleSwipeGesture() {
+                    const swipeDistance = touchEndX - touchStartX;
+                    const minSwipeDistance = 50;
+
+                    track.style.transition = 'transform 0.5s ease-in-out';
+
+                    if (Math.abs(swipeDistance) > minSwipeDistance) {
+                        if (swipeDistance > 0 && currentIndex > 0) {
+                            currentIndex--;
+                        } else if (swipeDistance < 0 && currentIndex < slideCount - 1) {
+                            currentIndex++;
+                        }
+                    }
+
+                    prevTranslate = -(currentIndex * track.offsetWidth);
+                    currentTranslate = prevTranslate;
+                    updateSlidePosition();
+                }
 
                 function dragStart(e) {
                     isDragging = true;
