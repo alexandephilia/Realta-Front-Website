@@ -230,16 +230,95 @@ function renderLatestPosts() {
     // Take the latest 3 articles
     const latestArticles = sortedArticles.slice(0, 3);
 
-    latestPostsContainer.innerHTML = latestArticles.map(post => `
+    latestPostsContainer.innerHTML = `
+      <style>
+        /* Mobile responsive styles for latest posts */
+        .latest-post-card-link {
+          text-decoration: none;
+          color: inherit;
+          display: block;
+          margin-bottom: 1.5rem;
+        }
+        
+        .latest-post-card-hover {
+          transition: transform 0.2s ease-in-out;
+          overflow: hidden !important; /* Force contain overflow */
+        }
+        
+        .latest-post-card-hover:hover {
+          transform: translateY(-5px);
+        }
+        
+        /* More specific selectors to override external styles */
+        .latest-post-card .col-md-4 {
+          max-height: 250px !important;
+          overflow: hidden !important;
+        }
+        
+        .latest-post-card .latest-post-image {
+          height: 100% !important;
+          width: 100% !important;
+          object-fit: cover !important;
+          object-position: center !important;
+          max-height: 250px !important;
+        }
+        
+        /* Ensure card maintains structure */
+        .latest-post-card .row.g-0 {
+          display: flex;
+          align-items: stretch;
+        }
+        
+        /* Mobile responsive adjustments */
+        @media (max-width: 768px) {
+          .latest-post-card .row {
+            flex-direction: column;
+          }
+          
+          .latest-post-card .col-md-4 {
+            max-height: 200px !important;
+            width: 100% !important;
+          }
+          
+          .latest-post-card .latest-post-image {
+            height: 200px !important;
+            border-radius: 8px 8px 0 0 !important;
+            width: 100% !important;
+          }
+          
+          .latest-post-card .card-body {
+            padding: 1rem !important;
+          }
+          
+          .latest-post-card .col-md-8 {
+            padding: 0 !important;
+          }
+          
+          .card-title {
+            font-size: 1.1rem !important;
+            margin-top: 0.5rem;
+          }
+          
+          .post-meta {
+            font-size: 0.8rem;
+          }
+          
+          .card-text {
+            font-size: 0.9rem;
+            margin-bottom: 0.5rem;
+          }
+        }
+      </style>
+    ` + latestArticles.map(post => `
       <div class="col-md-12">
         <a href="article.html?id=${post.id}" class="latest-post-card-link">
-          <div class="card border-0 latest-post-card-hover">
+          <div class="card border-0 latest-post-card-hover latest-post-card">
             <div class="row g-0">
               <div class="col-md-4">
                 <img src="${post.image}"
-                  class="img-fluid rounded-start w-100 h-100" 
+                  class="img-fluid rounded-start latest-post-image" 
                   alt="${post.title}"
-                  style="object-fit: cover; height: 250px;">
+                  loading="lazy">
               </div>
               <div class="col-md-8">
                 <div class="card-body p-4">
@@ -262,7 +341,7 @@ function renderLatestPosts() {
         </a>
       </div>
     `).join('');
-  }, 1000); // Show shimmer for 1 second
+  }, 1000);
 }
 
 // Helper function to parse custom date formats

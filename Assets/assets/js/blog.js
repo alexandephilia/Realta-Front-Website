@@ -686,7 +686,6 @@ function clearFilter() {
     renderBlogPosts();
   }, 50);
 }
-
 // Update the CSS styles for better consistency
 const categoryStyle = document.createElement('style');
 categoryStyle.textContent = `
@@ -852,6 +851,12 @@ categoryStyle.textContent = `
     border-radius: 8px;
     cursor: pointer;
     transition: all 0.3s ease;
+  }
+  
+  @media (max-width: 768px) {
+    .clear-filter-btn {
+      min-width: 130px;
+    }
   }
 
   .clear-filter-btn i {
@@ -1023,3 +1028,4 @@ window.blogData = {
   mainBlogPosts,
   secondPageBlogPosts
 };
+
