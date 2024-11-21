@@ -3672,6 +3672,7 @@
             let touchStartX = 0;
             let touchEndX = 0;
             let animationID = null;
+            let initialTouchTarget = null;
 
             // Create pagination dots
             for (let i = 0; i < slideCount; i++) {
@@ -3719,31 +3720,46 @@
             }
 
             // Mobile touch functionality
-            track.addEventListener('touchstart', touchStart, { passive: false });
-            track.addEventListener('touchmove', touchMove, { passive: false });
+            track.addEventListener('touchstart', touchStart, { passive: true });
+            track.addEventListener('touchmove', touchMove, { passive: true });
             track.addEventListener('touchend', touchEnd);
 
             function touchStart(e) {
-                e.preventDefault();
+                initialTouchTarget = e.target;
+                
+                // Check if touch started on avatar or play button - don't start drag
+                if (initialTouchTarget.closest('.rt-avatar-wrapper') || 
+                    initialTouchTarget.closest('.play-button')) {
+                    return;
+                }
+
                 touchStartX = e.touches[0].clientX;
                 isDragging = true;
                 startPos = touchStartX;
                 currentTranslate = prevTranslate;
                 track.style.transition = 'none';
                 
-                // Start animation loop
                 animationID = requestAnimationFrame(animation);
             }
 
             function touchMove(e) {
-                if (!isDragging) return;
-                e.preventDefault();
+                // Don't drag if started on avatar/play button
+                if (!isDragging || initialTouchTarget.closest('.rt-avatar-wrapper') ||
+                    initialTouchTarget.closest('.play-button')) return;
+
                 const currentPosition = e.touches[0].clientX;
                 const diff = currentPosition - startPos;
                 currentTranslate = prevTranslate + diff;
             }
 
             function touchEnd() {
+                // Don't process drag end if started on avatar/play button
+                if (initialTouchTarget.closest('.rt-avatar-wrapper') ||
+                    initialTouchTarget.closest('.play-button')) {
+                    initialTouchTarget = null;
+                    return;
+                }
+
                 isDragging = false;
                 cancelAnimationFrame(animationID);
                 
@@ -3763,6 +3779,7 @@
                 prevTranslate = -currentIndex * track.offsetWidth;
                 currentTranslate = prevTranslate;
                 updateSlidePosition();
+                initialTouchTarget = null;
             }
 
             function animation() {
@@ -4443,8 +4460,8 @@
         <div class="container-fluid">
             <div class="blog-header text-center">
                 <h1 class="gradient-text" style="font-weight: bolder; font-size: 48px;">Blog</h1>
-                <p class="">Stay informed and inspired with our latest articles covering a wide range of topics from
-                    career advice to latest our insights.</p>
+                <p class=""><strong>Stay informed and inspired with our latest articles covering a wide range of topics from
+                    career advice to latest our insights.</strong></p>
             </div>
             <div id="blog-posts-container" class="blog-posts">
                 <!-- Desktop arrows -->
