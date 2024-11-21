@@ -35,17 +35,15 @@ document.addEventListener('DOMContentLoaded', function () {
       }
 
       .blog-posts-wrapper {
-        gap: 0;
-        padding: 0;
-        width: 100% !important;
-        margin: 0;
-        touch-action: pan-x;
+        flex-wrap: wrap;
+        gap: 1rem;
+        padding: 0 1rem;
       }
 
       .blog-post {
-        flex: 0 0 100% !important;
-        margin: 0 !important;
-        width: 95vw !important;
+        flex: 0 0 100%;
+        margin-bottom: 1rem;
+        width: 100% !important;
         max-width: none !important;
       }
 
@@ -68,10 +66,12 @@ document.addEventListener('DOMContentLoaded', function () {
         border-radius: 12px;
         transform: none;
         left: auto;
+        top: -10px;
       }
 
       .blog-pagination {
-        margin-bottom: 0;
+        margin: 1rem 0;
+        padding: 0 1rem;
       }
     }
 
@@ -192,48 +192,33 @@ document.addEventListener('DOMContentLoaded', function () {
 
   const postsPerPage = 3;
   let currentPage = 0;
-  let isMobile = window.innerWidth <= 768;
 
   function renderBlogPosts(page) {
     const container = document.getElementById('blog-posts-container');
     container.innerHTML = '';
 
-    // Create a container for better positioning
     const contentContainer = document.createElement('div');
     contentContainer.style.width = '100%';
     contentContainer.style.position = 'relative';
     container.appendChild(contentContainer);
 
-    // Show shimmer loading state
-    const shimmerCards = createShimmerCards(isMobile ? 1 : postsPerPage);
+    // Always create 3 shimmer cards regardless of screen size
+    const shimmerCards = createShimmerCards(postsPerPage);
     contentContainer.appendChild(shimmerCards);
 
     setTimeout(() => {
       contentContainer.innerHTML = '';
       
-      const totalPages = Math.ceil(blogPosts.length / (isMobile ? 1 : postsPerPage));
+      // Calculate total pages using consistent postsPerPage
+      const totalPages = Math.ceil(blogPosts.length / postsPerPage);
       
-      // Add posts wrapper
       const postsWrapper = document.createElement('div');
       postsWrapper.className = 'blog-posts-wrapper';
       contentContainer.appendChild(postsWrapper);
 
-      // Create pagination container (for both mobile and desktop)
-        const paginationContainer = document.createElement('div');
-        paginationContainer.className = 'blog-pagination';
-
-      // Create pagination dots
-        for (let i = 0; i < totalPages; i++) {
-          const dot = document.createElement('span');
-          dot.className = `pagination-dot ${i === currentPage ? 'active' : ''}`;
-          dot.addEventListener('click', () => changePage(i));
-          paginationContainer.appendChild(dot);
-        }
-
-      // Add posts
-      const effectivePostsPerPage = isMobile ? 1 : postsPerPage;
-      const start = page * effectivePostsPerPage;
-      const end = start + effectivePostsPerPage;
+      // Add posts using consistent pagination
+      const start = page * postsPerPage;
+      const end = start + postsPerPage;
       const postsToShow = blogPosts.slice(start, end);
 
       postsToShow.forEach(post => {
@@ -258,19 +243,40 @@ document.addEventListener('DOMContentLoaded', function () {
         postsWrapper.appendChild(postElement);
       });
 
-      // Add pagination after posts
+      // Update mobile styles
+      if (window.innerWidth <= 768) {
+        postsWrapper.style.flexWrap = 'wrap';
+        const posts = postsWrapper.querySelectorAll('.blog-post');
+        posts.forEach(post => {
+          post.style.flex = '0 0 100%';
+          post.style.marginBottom = '1rem';
+        });
+      }
+
+      // Add pagination container
+      const paginationContainer = document.createElement('div');
+      paginationContainer.className = 'blog-pagination';
+      
+      // Create pagination dots
+      for (let i = 0; i < totalPages; i++) {
+        const dot = document.createElement('span');
+        dot.className = `pagination-dot ${i === currentPage ? 'active' : ''}`;
+        dot.addEventListener('click', () => changePage(i));
+        paginationContainer.appendChild(dot);
+      }
+      
       contentContainer.appendChild(paginationContainer);
 
-      // Add mobile swipe indicator if needed
-      if (isMobile) {
+      // Update swipe handler for mobile
+      if (window.innerWidth <= 768) {
         const swipeIndicator = document.createElement('div');
         swipeIndicator.className = 'swipe-indicator';
         swipeIndicator.textContent = '← Swipe to navigate →';
         contentContainer.appendChild(swipeIndicator);
       }
 
-      // Add arrows for desktop
-      if (!isMobile) {
+      // Add desktop arrows
+      if (window.innerWidth > 768) {
         // Add left arrow
         const leftArrow = document.createElement('div');
         leftArrow.className = `blog-arrow left-arrow ${page === 0 ? 'disabled' : ''}`;
@@ -315,12 +321,11 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 
   function handleSwipe(direction) {
-    if (isMobile) {
-      currentPage += direction;
-      if (currentPage < 0) currentPage = Math.ceil(blogPosts.length / postsPerPage) - 1;
-      if (currentPage >= Math.ceil(blogPosts.length / postsPerPage)) currentPage = 0;
-      renderBlogPosts(currentPage);
-    }
+    const totalPages = Math.ceil(blogPosts.length / postsPerPage);
+    currentPage += direction;
+    if (currentPage < 0) currentPage = totalPages - 1;
+    if (currentPage >= totalPages) currentPage = 0;
+    renderBlogPosts(currentPage);
   }
 
   function addCardClickListeners() {
