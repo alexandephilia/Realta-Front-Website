@@ -4336,13 +4336,12 @@
         transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
         box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.15);
     }
-
     .video-popup-close {
         position: absolute;
-        top: -40px;
-        right: -40px;
-        width: 40px;
-        height: 40px;
+        top: -9px;
+        right: -9px;
+        width: 30px;
+        height: 30px;
         border-radius: 50%;
         background: #9054d0;
         border: none;
@@ -4355,6 +4354,15 @@
         transition: all 0.3s ease;
         z-index: 1000000;
     }
+
+    @media screen and (max-width: 768px) {
+        .video-popup-close {
+            right: -9px;
+            top: -9px;
+            width: 25px;
+            height: 25px;
+            }
+        }
 
     .video-popup-close:hover {
         background: #7a4bd7;
