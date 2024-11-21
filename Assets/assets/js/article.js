@@ -75,105 +75,73 @@ function shareOnFacebook() {
   window.open(shareUrl, '_blank', 'width=550,height=420');
 }
 
-function copyArticleLink() {
-  const metadata = getArticleMetadata();
-  if (!metadata) {
-    console.error('No article metadata found');
-    return;
+function copyArticleLink(event) {
+  // Prevent the default anchor behavior
+  if (event) event.preventDefault();
+  
+  // Create a temporary input element
+  const tempInput = document.createElement('textarea');
+  tempInput.value = window.location.href;
+  
+  // Make it invisible but keep it in the viewport (important for iOS)
+  tempInput.style.cssText = `
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    z-index: -1;
+  `;
+  
+  document.body.appendChild(tempInput);
+  
+  try {
+    // Select the text
+    tempInput.focus();
+    tempInput.select();
+    
+    // For iOS devices
+    tempInput.setSelectionRange(0, 99999);
+    
+    // Try the new API first
+    if (navigator.clipboard && window.isSecureContext) {
+      navigator.clipboard.writeText(tempInput.value)
+        .then(() => showCopySuccess())
+        .catch(() => fallbackCopy(tempInput));
+    } else {
+      fallbackCopy(tempInput);
+    }
+  } catch (err) {
+    console.error('Copy failed:', err);
+    alert('Failed to copy link. Please try again.');
+  } finally {
+    // Clean up
+    document.body.removeChild(tempInput);
   }
+}
 
-  // More specific element selection
-  const copyButton = document.querySelector('.social-share-icons .social-icon.copy');
-  if (!copyButton) {
-    console.error('Copy button not found');
-    return;
+function fallbackCopy(element) {
+  try {
+    // Execute copy command
+    const successful = document.execCommand('copy');
+    if (successful) {
+      showCopySuccess();
+    } else {
+      throw new Error('Copy command failed');
+    }
+  } catch (err) {
+    console.error('Fallback copy failed:', err);
+    alert('Failed to copy link. Please try again.');
   }
+}
 
-  const copyIcon = copyButton.querySelector('svg');
-  if (!copyIcon) {
-    console.error('Copy icon SVG not found');
-    return;
+function showCopySuccess() {
+  const copyIcon = document.querySelector('.social-icon.copy svg');
+  if (copyIcon) {
+    const originalSvg = copyIcon.innerHTML;
+    copyIcon.innerHTML = `<path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/>`;
+    setTimeout(() => copyIcon.innerHTML = originalSvg, 2000);
   }
-
-  // Store original SVG content
-  const originalViewBox = copyIcon.getAttribute('viewBox') || '0 0 24 24';
-  const originalHTML = copyIcon.innerHTML;
-
-  // Function to show success state
-  const showSuccess = () => {
-    try {
-      copyIcon.setAttribute('viewBox', '0 0 24 24');
-      copyIcon.innerHTML = '<path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/>';
-      copyButton.classList.add('success');
-    } catch (err) {
-      console.error('Error showing success state:', err);
-    }
-  };
-
-  // Function to restore original state
-  const restoreOriginal = () => {
-    try {
-      copyIcon.setAttribute('viewBox', originalViewBox);
-      copyIcon.innerHTML = originalHTML;
-      copyButton.classList.remove('success', 'error');
-    } catch (err) {
-      console.error('Error restoring original state:', err);
-    }
-  };
-
-  // Function to show error state
-  const showError = () => {
-    try {
-      copyButton.classList.add('error');
-    } catch (err) {
-      console.error('Error showing error state:', err);
-    }
-  };
-
-  // Main copy logic
-  const copyText = async () => {
-    try {
-      await navigator.clipboard.writeText(metadata.url);
-      showSuccess();
-      setTimeout(restoreOriginal, 2000);
-    } catch (err) {
-      console.error('Clipboard API failed:', err);
-      
-      // Fallback method
-      try {
-        const textarea = document.createElement('textarea');
-        textarea.value = metadata.url;
-        textarea.style.position = 'fixed';
-        textarea.style.left = '-9999px';
-        textarea.style.top = '0';
-        document.body.appendChild(textarea);
-        
-        textarea.focus();
-        textarea.select();
-        
-        const successful = document.execCommand('copy');
-        document.body.removeChild(textarea);
-        
-        if (successful) {
-          showSuccess();
-        } else {
-          throw new Error('execCommand failed');
-        }
-      } catch (fallbackErr) {
-        console.error('Fallback copy failed:', fallbackErr);
-        showError();
-      }
-      
-      setTimeout(restoreOriginal, 2000);
-    }
-  };
-
-  // Execute copy operation
-  copyText().catch(err => {
-    console.error('Copy operation failed:', err);
-    showError();
-    setTimeout(restoreOriginal, 2000);
-  });
 }
 
 function renderFullArticle(post) {

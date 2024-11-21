@@ -1749,21 +1749,73 @@
             alert('Instagram sharing is not directly supported. You can copy the link and share it on Instagram.');
         }
 
-        function copyArticleLink() {
-            const url = window.location.href;
-            navigator.clipboard.writeText(url).then(() => {
-                // Change the button text temporarily to show success
-                const copyBtn = document.querySelector('.copy-btn');
-                const originalText = copyBtn.innerHTML;
-                copyBtn.innerHTML = '<i class="fas fa-check"></i><span class="share-text">Copied!</span>';
-
-                setTimeout(() => {
-                    copyBtn.innerHTML = originalText;
-                }, 2000);
-            }).catch(err => {
-                console.error('Failed to copy:', err);
+        function copyArticleLink(event) {
+            // Prevent the default anchor behavior
+            if (event) event.preventDefault();
+            
+            // Create a temporary input element
+            const tempInput = document.createElement('textarea');
+            tempInput.value = window.location.href;
+            
+            // Make it invisible but keep it in the viewport (important for iOS)
+            tempInput.style.cssText = `
+                position: fixed;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                opacity: 0;
+                z-index: -1;
+            `;
+            
+            document.body.appendChild(tempInput);
+            
+            try {
+                // Select the text
+                tempInput.focus();
+                tempInput.select();
+                
+                // For iOS devices
+                tempInput.setSelectionRange(0, 99999);
+                
+                // Try the new API first
+                if (navigator.clipboard && window.isSecureContext) {
+                    navigator.clipboard.writeText(tempInput.value)
+                        .then(() => showCopySuccess())
+                        .catch(() => fallbackCopy(tempInput));
+                } else {
+                    fallbackCopy(tempInput);
+                }
+            } catch (err) {
+                console.error('Copy failed:', err);
                 alert('Failed to copy link. Please try again.');
-            });
+            } finally {
+                // Clean up
+                document.body.removeChild(tempInput);
+            }
+        }
+
+        function fallbackCopy(element) {
+            try {
+                // Execute copy command
+                const successful = document.execCommand('copy');
+                if (successful) {
+                    showCopySuccess();
+                } else {
+                    throw new Error('Copy command failed');
+                }
+            } catch (err) {
+                console.error('Fallback copy failed:', err);
+                alert('Failed to copy link. Please try again.');
+            }
+        }
+
+        function showCopySuccess() {
+            const copyIcon = document.querySelector('.social-icon.copy svg');
+            if (copyIcon) {
+                const originalSvg = copyIcon.innerHTML;
+                copyIcon.innerHTML = `<path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/>`;
+                setTimeout(() => copyIcon.innerHTML = originalSvg, 2000);
+            }
         }
     </script>
 
