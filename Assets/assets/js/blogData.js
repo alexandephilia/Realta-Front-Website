@@ -31,47 +31,46 @@ document.addEventListener('DOMContentLoaded', function () {
     @media screen and (max-width: 768px) {
       #blog-posts-container {
         padding: 0 !important;
-        margin: 0 !important;
+        margin: 0 auto !important;
+        width: 100%;
       }
 
       .blog-posts-wrapper {
-        flex-wrap: wrap;
+        flex-direction: column;
+        align-items: center;
         gap: 1rem;
         padding: 0 1rem;
+        width: 100%;
+        max-width: 500px;  /* Limit maximum width on mobile */
+        margin: 0 auto;    /* Center the wrapper */
       }
 
       .blog-post {
         flex: 0 0 100%;
-        margin-bottom: 1rem;
         width: 100% !important;
-        max-width: none !important;
+        max-width: 100% !important;
+        margin: 0 0 1rem 0 !important;
       }
 
-      /* Hide arrows on mobile */
-      .blog-arrow {
-        display: none !important;
+      .blog-post-content {
+        padding: 1rem;
       }
 
-      /* Updated swipe indicator position */
-      .swipe-indicator {
-        position: relative;
-        text-align: center;
-        font-size: 12px;
-        color: #666;
-        opacity: 0.7;
-        pointer-events: none;
-        padding: 5px 10px;
-        margin-top: 8px;
-        background: rgba(255, 255, 255, 0.9);
-        border-radius: 12px;
-        transform: none;
-        left: auto;
-        top: -10px;
-      }
-
+      /* Center pagination */
       .blog-pagination {
-        margin: 1rem 0;
-        padding: 0 1rem;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        margin: 1rem auto;
+        padding: 0;
+      }
+
+      /* Center swipe indicator */
+      .swipe-indicator {
+        width: 100%;
+        text-align: center;
+        margin: 0.5rem auto;
+        color: #a5a5a5;
       }
     }
 
@@ -245,11 +244,17 @@ document.addEventListener('DOMContentLoaded', function () {
 
       // Update mobile styles
       if (window.innerWidth <= 768) {
-        postsWrapper.style.flexWrap = 'wrap';
+        postsWrapper.style.display = 'flex';
+        postsWrapper.style.flexDirection = 'column';
+        postsWrapper.style.alignItems = 'center';
+        postsWrapper.style.maxWidth = '500px';
+        postsWrapper.style.margin = '0 auto';
+        
         const posts = postsWrapper.querySelectorAll('.blog-post');
         posts.forEach(post => {
-          post.style.flex = '0 0 100%';
-          post.style.marginBottom = '1rem';
+            post.style.width = '100%';
+            post.style.maxWidth = '100%';
+            post.style.margin = '0 0 1rem 0';
         });
       }
 
