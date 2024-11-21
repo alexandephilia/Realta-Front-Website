@@ -3,13 +3,15 @@
   background-image: linear-gradient(
     to right,
     #f6f7f8 0%,
-    #edeef1 20%,
-    #f6f7f8 40%,
+    #edeef1 10%,
+    #f6f7f8 20%,
     #f6f7f8 100%
   );
   background-repeat: no-repeat;
   background-size: 800px 104px;
-  animation: shimmer 1.5s infinite linear;
+  animation: shimmer 2s infinite;
+  transform: translateZ(0);
+  will-change: background-position;
 }
 
 @keyframes shimmer {
@@ -379,29 +381,64 @@ body.dark-mode .social-icon .tooltip {
   background-image: linear-gradient(
     to right,
     #f6f7f8 0%,
-    #edeef1 20%,
-    #f6f7f8 40%,
+    #edeef1 10%,
+    #f6f7f8 20%,
     #f6f7f8 100%
   );
   background-repeat: no-repeat;
   background-size: 800px 104px;
   display: inline-block;
   position: relative;
-  animation-duration: 1.5s;
+  animation-duration: 2s;
   animation-fill-mode: forwards;
   animation-iteration-count: infinite;
   animation-name: shimmer;
-  animation-timing-function: linear;
+  animation-timing-function: ease;
 }
 
-/* Adjust dark mode shimmer */
+/* Adjust dark mode shimmer for smoother transition */
 body.dark-mode .shimmer {
   background: #2d2d2d;
   background-image: linear-gradient(
     to right,
     #2d2d2d 0%,
-    #353535 20%,
-    #2d2d2d 40%,
+    #353535 10%,
+    #2d2d2d 20%,
+    #2d2d2d 100%
+  );
+}
+
+/* Add these new styles for social icons shimmer */
+.social-share-container.shimmer-loading {
+  opacity: 0.7;
+}
+
+.social-share-container.shimmer-loading .social-icon {
+  background: #f6f7f8;
+  background-image: linear-gradient(
+    to right,
+    #f6f7f8 0%,
+    #edeef1 10%,
+    #f6f7f8 20%,
+    #f6f7f8 100%
+  );
+  background-repeat: no-repeat;
+  background-size: 800px 104px;
+  animation: shimmer 2s infinite;
+}
+
+.social-share-container.shimmer-loading .social-icon svg {
+  opacity: 0.3;
+}
+
+/* Dark mode adjustment for social icons shimmer */
+body.dark-mode .social-share-container.shimmer-loading .social-icon {
+  background: #2d2d2d;
+  background-image: linear-gradient(
+    to right,
+    #2d2d2d 0%,
+    #353535 10%,
+    #2d2d2d 20%,
     #2d2d2d 100%
   );
 }
