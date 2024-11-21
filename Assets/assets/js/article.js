@@ -77,26 +77,102 @@ function shareOnFacebook() {
 
 function copyArticleLink() {
   const metadata = getArticleMetadata();
-  if (!metadata) return;
+  if (!metadata) {
+    console.error('No article metadata found');
+    return;
+  }
 
-  navigator.clipboard.writeText(metadata.url).then(() => {
-    const copyIcon = document.querySelector('.social-icon.copy svg');
-    if (copyIcon) {
-      // Save original SVG content
-      const originalSvg = copyIcon.innerHTML;
-      
-      // Replace with checkmark SVG
-      copyIcon.innerHTML = `
-        <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/>
-      `;
-      
-      // Reset back to link icon after 2 seconds
-      setTimeout(() => {
-        copyIcon.innerHTML = originalSvg;
-      }, 2000);
+  // More specific element selection
+  const copyButton = document.querySelector('.social-share-icons .social-icon.copy');
+  if (!copyButton) {
+    console.error('Copy button not found');
+    return;
+  }
+
+  const copyIcon = copyButton.querySelector('svg');
+  if (!copyIcon) {
+    console.error('Copy icon SVG not found');
+    return;
+  }
+
+  // Store original SVG content
+  const originalViewBox = copyIcon.getAttribute('viewBox') || '0 0 24 24';
+  const originalHTML = copyIcon.innerHTML;
+
+  // Function to show success state
+  const showSuccess = () => {
+    try {
+      copyIcon.setAttribute('viewBox', '0 0 24 24');
+      copyIcon.innerHTML = '<path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/>';
+      copyButton.classList.add('success');
+    } catch (err) {
+      console.error('Error showing success state:', err);
     }
-  }).catch(err => {
-    console.error('Failed to copy:', err);
+  };
+
+  // Function to restore original state
+  const restoreOriginal = () => {
+    try {
+      copyIcon.setAttribute('viewBox', originalViewBox);
+      copyIcon.innerHTML = originalHTML;
+      copyButton.classList.remove('success', 'error');
+    } catch (err) {
+      console.error('Error restoring original state:', err);
+    }
+  };
+
+  // Function to show error state
+  const showError = () => {
+    try {
+      copyButton.classList.add('error');
+    } catch (err) {
+      console.error('Error showing error state:', err);
+    }
+  };
+
+  // Main copy logic
+  const copyText = async () => {
+    try {
+      await navigator.clipboard.writeText(metadata.url);
+      showSuccess();
+      setTimeout(restoreOriginal, 2000);
+    } catch (err) {
+      console.error('Clipboard API failed:', err);
+      
+      // Fallback method
+      try {
+        const textarea = document.createElement('textarea');
+        textarea.value = metadata.url;
+        textarea.style.position = 'fixed';
+        textarea.style.left = '-9999px';
+        textarea.style.top = '0';
+        document.body.appendChild(textarea);
+        
+        textarea.focus();
+        textarea.select();
+        
+        const successful = document.execCommand('copy');
+        document.body.removeChild(textarea);
+        
+        if (successful) {
+          showSuccess();
+        } else {
+          throw new Error('execCommand failed');
+        }
+      } catch (fallbackErr) {
+        console.error('Fallback copy failed:', fallbackErr);
+        showError();
+      }
+      
+      setTimeout(restoreOriginal, 2000);
+    }
+  };
+
+  // Execute copy operation
+  copyText().catch(err => {
+    console.error('Copy operation failed:', err);
+    showError();
+    setTimeout(restoreOriginal, 2000);
   });
 }
 
