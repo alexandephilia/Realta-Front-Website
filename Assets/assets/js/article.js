@@ -276,95 +276,89 @@ function renderLatestPosts() {
 
     latestPostsContainer.innerHTML = `
       <style>
-        /* Mobile responsive styles for latest posts */
-        .latest-post-card-link {
+        .latest-posts-section {
+          /* Container specific styles */
+          position: relative;
+          width: 100%;
+        }
+
+        .latest-post-article {
           text-decoration: none;
           color: inherit;
           display: block;
           margin-bottom: 1.5rem;
         }
         
-        .latest-post-card-hover {
+        .latest-post-wrapper {
           transition: transform 0.2s ease-in-out;
-          overflow: hidden !important; /* Force contain overflow */
+          height: 100%;
+          background: #fff;
+          border-radius: 8px;
+          overflow: hidden;
+          border: 1px solid #e0e0e0;
         }
         
-        .latest-post-card-hover:hover {
+        .latest-post-wrapper:hover {
           transform: translateY(-5px);
         }
         
-        /* More specific selectors to override external styles */
-        .latest-post-card .col-md-4 {
-          max-height: 250px !important;
+        .latest-post-image-container {
+          width: 33.333%;
           overflow: hidden !important;
+          position: relative !important;
         }
         
-        .latest-post-card .latest-post-image {
-          height: 100% !important;
+        .latest-post-thumbnail {
           width: 100% !important;
+          height: 100% !important;
           object-fit: cover !important;
-          object-position: center !important;
-          max-height: 250px !important;
+          position: absolute !important;
+          left: 0;
+          top: 0;
         }
         
-        /* Ensure card maintains structure */
-        .latest-post-card .row.g-0 {
+        .latest-post-row {
+          min-height: 240px !important;
           display: flex;
           align-items: stretch;
         }
         
-        /* Mobile responsive adjustments */
+        .latest-post-content {
+          width: 66.666%;
+        }
+        
         @media (max-width: 768px) {
-          .latest-post-card .row {
+          .latest-post-row {
             flex-direction: column;
           }
           
-          .latest-post-card .col-md-4 {
-            max-height: 200px !important;
+          .latest-post-image-container {
             width: 100% !important;
-          }
-          
-          .latest-post-card .latest-post-image {
             height: 200px !important;
+          }
+          
+          .latest-post-thumbnail {
             border-radius: 8px 8px 0 0 !important;
-            width: 100% !important;
           }
           
-          .latest-post-card .card-body {
-            padding: 1rem !important;
-          }
-          
-          .latest-post-card .col-md-8 {
+          .latest-post-content {
+            width: 100%;
             padding: 0 !important;
-          }
-          
-          .card-title {
-            font-size: 1.1rem !important;
-            margin-top: 0.5rem;
-          }
-          
-          .post-meta {
-            font-size: 0.8rem;
-          }
-          
-          .card-text {
-            font-size: 0.9rem;
-            margin-bottom: 0.5rem;
           }
         }
       </style>
     ` + latestArticles.map(post => `
       <div class="col-md-12">
-        <a href="article.html?id=${post.id}" class="latest-post-card-link">
-          <div class="card border-0 latest-post-card-hover latest-post-card">
-            <div class="row g-0">
-              <div class="col-md-4">
+        <a href="article.html?id=${post.id}" class="latest-post-article">
+          <div class="latest-post-wrapper">
+            <div class="latest-post-row g-0">
+              <div class="latest-post-image-container">
                 <img src="${post.image}"
-                  class="img-fluid rounded-start latest-post-image" 
+                  class="latest-post-thumbnail" 
                   alt="${post.title}"
                   loading="lazy">
               </div>
-              <div class="col-md-8">
+              <div class="latest-post-content">
                 <div class="card-body p-4">
                   <span class="badge mb-2"
                     style="background-color: #7209d4;">${post.category}</span>
