@@ -74,6 +74,60 @@ document.addEventListener('DOMContentLoaded', function () {
         margin-bottom: 0;
       }
     }
+
+    /* Pagination dots styling */
+    .blog-pagination {
+      display: flex;
+      justify-content: center;
+      gap: 8px;
+      margin: 20px 0;
+      width: 100%;
+    }
+
+    .pagination-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: #ccc;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    .pagination-dot.active {
+      background: #333;
+    }
+
+    /* Adjusted arrow positioning */
+    .blog-arrow.left-arrow {
+      left: -40px;  /* Moved further left */
+    }
+
+    .blog-arrow.right-arrow {
+      right: -40px;  /* Moved further right */
+    }
+
+    /* Make sure arrows are visible on desktop */
+    @media screen and (min-width: 769px) {
+      .blog-arrow {
+        display: flex !important;
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 40px;
+        height: 40px;
+        background: white;
+        border-radius: 50%;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        cursor: pointer;
+        transition: all 0.3s ease;
+      }
+
+      .blog-arrow:hover {
+        box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+      }
+    }
   `;
   document.head.appendChild(style);
 
@@ -164,39 +218,11 @@ document.addEventListener('DOMContentLoaded', function () {
       postsWrapper.className = 'blog-posts-wrapper';
       contentContainer.appendChild(postsWrapper);
 
-      // Add touch handling for mobile
-      if (isMobile) {
-        let touchStartX = 0;
-        let touchEndX = 0;
-        
-        postsWrapper.addEventListener('touchstart', (e) => {
-          touchStartX = e.touches[0].clientX;
-        }, { passive: true });
-
-        postsWrapper.addEventListener('touchmove', (e) => {
-          touchEndX = e.touches[0].clientX;
-        }, { passive: true });
-
-        postsWrapper.addEventListener('touchend', () => {
-          const swipeDistance = touchStartX - touchEndX;
-          const minSwipeDistance = 50; // Minimum distance for swipe
-
-          if (Math.abs(swipeDistance) > minSwipeDistance) {
-            if (swipeDistance > 0 && currentPage < totalPages - 1) {
-              // Swipe left -> next page
-              changePage(currentPage + 1);
-            } else if (swipeDistance < 0 && currentPage > 0) {
-              // Swipe right -> previous page
-              changePage(currentPage - 1);
-            }
-          }
-        });
-
-        // First add pagination
+      // Create pagination container (for both mobile and desktop)
         const paginationContainer = document.createElement('div');
         paginationContainer.className = 'blog-pagination';
-        contentContainer.appendChild(paginationContainer);
 
+      // Create pagination dots
         for (let i = 0; i < totalPages; i++) {
           const dot = document.createElement('span');
           dot.className = `pagination-dot ${i === currentPage ? 'active' : ''}`;
@@ -204,14 +230,7 @@ document.addEventListener('DOMContentLoaded', function () {
           paginationContainer.appendChild(dot);
         }
 
-        // Then add swipe indicator after pagination
-        const swipeIndicator = document.createElement('div');
-        swipeIndicator.className = 'swipe-indicator';
-        swipeIndicator.textContent = '← Swipe to navigate →';
-        contentContainer.appendChild(swipeIndicator);
-      }
-
-      // Adjust posts per page for mobile
+      // Add posts
       const effectivePostsPerPage = isMobile ? 1 : postsPerPage;
       const start = page * effectivePostsPerPage;
       const end = start + effectivePostsPerPage;
@@ -239,7 +258,18 @@ document.addEventListener('DOMContentLoaded', function () {
         postsWrapper.appendChild(postElement);
       });
 
-      // Add arrows only for desktop
+      // Add pagination after posts
+      contentContainer.appendChild(paginationContainer);
+
+      // Add mobile swipe indicator if needed
+      if (isMobile) {
+        const swipeIndicator = document.createElement('div');
+        swipeIndicator.className = 'swipe-indicator';
+        swipeIndicator.textContent = '← Swipe to navigate →';
+        contentContainer.appendChild(swipeIndicator);
+      }
+
+      // Add arrows for desktop
       if (!isMobile) {
         // Add left arrow
         const leftArrow = document.createElement('div');
@@ -266,23 +296,14 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 
   function updatePagination() {
-    const paginationContainer = document.querySelector('.pagination');
-    if (!paginationContainer) return;
-    
-    paginationContainer.innerHTML = '';
-  
-    const totalPages = Math.ceil(blogPosts.length / postsPerPage);
-  
-    for (let i = 0; i < totalPages; i++) {
-      const span = document.createElement('span');
-      if (i === currentPage) {
-        span.classList.add('active');
+    const dots = document.querySelectorAll('.pagination-dot');
+    dots.forEach((dot, index) => {
+      if (index === currentPage) {
+        dot.classList.add('active');
+      } else {
+        dot.classList.remove('active');
       }
-      span.addEventListener('click', () => {
-        changePage(i);
-      });
-      paginationContainer.appendChild(span);
-    }
+    });
   }
 
   function changePage(pageIndex) {
