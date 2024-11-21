@@ -3944,6 +3944,8 @@
             min-width: 100%;
             padding: 15px;
             box-sizing: border-box;
+            position: relative;
+            padding-top: 60px; /* Make space for overlapping avatar */
         }
 
         .rt-testimonial-inner {
@@ -3965,7 +3967,11 @@
             margin-bottom: 20px;
             border: 4px solid #9054d090;
             box-shadow: 0 5px 15px rgba(144, 84, 208, 0.3);
-            position: relative;
+            position: absolute;
+            top: 18px; /* Half the height to overlap */
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 10;
         }
 
         .play-overlay {
@@ -4228,6 +4234,7 @@
             .rt-avatar-wrapper {
                 width: 100px;
                 height: 100px;
+                top: 18px; /* Adjust for smaller avatar size */
             }
 
             .play-button {
