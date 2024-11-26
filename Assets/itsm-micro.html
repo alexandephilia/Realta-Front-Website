@@ -193,7 +193,7 @@
                         height: 50%;
                     }
     
-               
+    
                     @media (max-width: 767px) {
                         .realta-logo {
                             width: 120px;
@@ -612,71 +612,46 @@
                         }
                     </style>
                     <ul class="sidebar-nav justify-content-end align-items-center"
-                    style="padding: 0; margin: 0; list-style-type: none;">
-                    <!-- Solutions dropdown -->
-                    <li class="me-1"><a class="nav-link dropdown-toggle" href="#" id="solutionsDropdown" role="button"
-                            data-bs-toggle="dropdown" aria-expanded="false">
-                            Solution <i class="fas fa-chevron-down ms-1 fa-xs"></i>
-                        </a></li>
-
-                    <!-- Industry dropdown -->
-                    <li class="me-1"><a class="nav-link dropdown-toggle" href="#" id="industriDropdown" role="button"
-                            data-bs-toggle="dropdown" aria-expanded="false">
-                            Industry <i class="fas fa-chevron-down ms-1 fa-xs"></i>
-                        </a></li>
-
-                    <!-- Partner dropdown -->
-                    <li class="me-1">
-                        <a href="index.html#partners" class="nav-link" onclick="navigateToSection('partners')">Partners</a>
-                    </li>
-
-                    <!-- Contact dropdown -->
-                    <li class="me-1">
-                        <a href="index.html#contact" class="nav-link" onclick="navigateToSection('contact')">Contact</a>
-                    </li>
-
-                    <!-- Career dropdown -->
-                    <li class="me-1">
-                        <a href="career.html" class="nav-link" onclick="navigateWithLoading('career.html')">Career</a>
-                    </li>
-
-                    <!-- Blog link -->
-                    <li class="me-1">
-                        <a href="blog.html" class="nav-link" onclick="navigateWithLoading('blog.html')">Blog</a>
-                    </li>
-
-                    <!-- About Realta dropdown -->
-                    <li>
-                        <a href="about.html" class="nav-link" onclick="navigateWithLoading('about.html')">About Us</a>
-                    </li>
-
-                </ul>
-
-                  
-<script>
-    document.addEventListener('DOMContentLoaded', function() {
-        // Check if there's a hash in the URL when coming from about.html
-        if (window.location.hash) {
-            const targetId = window.location.hash;
-            const targetElement = document.querySelector(targetId);
-            
-            if (targetElement) {
-                // Get header height for offset
-                const headerHeight = document.querySelector('#mainNav').offsetHeight;
-                
-                // Calculate scroll position
-                const scrollPosition = targetElement.offsetTop - headerHeight;
-                
-                // Smooth scroll to target
-                window.scrollTo({
-                    top: scrollPosition,
-                    behavior: 'smooth'
-                });
-            }
-        }
-    });
-    </script>
-                    <div class="sidebar-actions d-flex justify-content-end align-items-center" style="margin-bottom: 1rem;">
+                        style="padding: 0; margin: 0; list-style-type: none;">
+                        <!-- Solutions dropdown -->
+                        <li class="me-1"><a class="nav-link dropdown-toggle" href="#" id="solutionsDropdown" role="button"
+                                data-bs-toggle="dropdown" aria-expanded="false">
+                                Solution <i class="fas fa-chevron-down ms-1 fa-xs"></i>
+                            </a></li>
+    
+                        <!-- Industry dropdown -->
+                        <li class="me-1">
+                            <a href="hospitality.html" class="nav-link" onclick="navigateWithLoading('hospitality.html')">Industry</a>
+                        </li>
+    
+                        <!-- Partner dropdown -->
+                        <li class="me-1">
+                            <a href="#partners" class="nav-link scroll-link">Partners</a>
+                        </li>
+    
+                        <!-- Contact dropdown -->
+                        <li class="me-1">
+                            <a href="#contact" class="nav-link scroll-link">Contact</a>
+                        </li>
+    
+                        <!-- Career dropdown -->
+                        <li class="me-1">
+                            <a href="career.html" class="nav-link" onclick="navigateWithLoading('career.html')">Career</a>
+                        </li>
+    
+                        <!-- Blog link -->
+                        <li class="me-1">
+                            <a href="blog.html" class="nav-link" onclick="navigateWithLoading('blog.html')">Blog</a>
+                        </li>
+    
+                        <!-- About Realta dropdown -->
+                        <li>
+                            <a href="about.html" class="nav-link" onclick="navigateWithLoading('about.html')">About Us</a>
+                        </li>
+    
+                    </ul>
+                    <div class="sidebar-actions d-flex justify-content-end align-items-center"
+                        style="margin-bottom: 0.5rem;">
                         <a class="btn-custom whatsapp-btn me-2"
                             href="https://api.whatsapp.com/send?phone=628111221789&text=Hallo%20PT%20Realta..."
                             target="_blank" rel="noopener noreferrer" style="font-size: 0.8em;">
@@ -709,8 +684,9 @@
                         <div class="product-category" data-product="itm">ITSM, ITAM & Unified Endpoint Management</div>
                         <div class="product-category" data-product="pts">Property & Tenancy System</div>
                         <div class="product-category" data-product="erp">Network & System Integration</div>
-                        <div style="background: linear-gradient(90deg, transparent 0%, rgba(133, 22, 188, 0.582) 50%, transparent 100%); height: 1px; margin: 10px 0; pointer-events: none;"></div>
-                        <!-- Removed: <div class="all-products"><a href="#solutions">All products ›</a></div> -->
+                        <div
+                            style="background: linear-gradient(90deg, transparent 0%, rgba(133, 22, 188, 0.582) 50%, transparent 100%); height: 1px; margin: 10px 0; pointer-events: none;">
+                        </div>
                     </div>
                     <div class="product-details" id="product-details">
                         <!-- Content will be dynamically updated here -->
@@ -724,7 +700,6 @@
                         <div class="product-category" data-product="property">Property</div>
                         <div class="product-category" data-product="manufacturing">Manufacturing</div>
                         <div class="product-category" data-product="fsi">FSI</div>
-                        <!-- Removed: <div class="all-products">All industries ›</div> -->
                     </div>
                     <div class="product-details" id="industri-details">
                         <!-- Content will be dynamically updated here -->
@@ -736,7 +711,6 @@
                     <div class="product-categories">
                         <div class="product-category active" data-product="reseller">Reseller Program</div>
                         <div class="product-category" data-product="technology">Technology Partners</div>
-                        <!-- Removed: <div class="all-products">All partners ›</div> -->
                     </div>
                     <div class="product-details" id="partner-details">
                         <!-- Content will be dynamically updated here -->
@@ -748,7 +722,6 @@
                     <div class="product-categories">
                         <div class="product-category active" data-product="business">Business Consultation</div>
                         <div class="product-category" data-product="technical">Technical Consultation</div>
-                        <!-- Removed: <div class="all-products">All consultations ›</div> -->
                     </div>
                     <div class="product-details" id="contact-details">
                         <!-- Content will be dynamically updated here -->
@@ -761,7 +734,6 @@
                         <div class="product-category active" data-product="openings">Job Openings</div>
                         <div class="product-category" data-product="internships">Internship Programs</div>
                         <div class="product-category" data-product="culture">Company Culture</div>
-                        <!-- Removed: <div class="all-products">View All Career Opportunities ›</div> -->
                     </div>
                     <div class="product-details" id="career-details">
                         <!-- Content will be dynamically updated here -->
@@ -772,7 +744,6 @@
                 <div class="dropdown-content">
                     <div class="product-categories">
                         <div class="product-category active" data-product="about">About Realta</div>
-                        <!-- Removed: <div class="all-products">Learn more ›</div> -->
                     </div>
                     <div class="product-details" id="tentangRealta-details">
                         <!-- Content will be dynamically updated here -->

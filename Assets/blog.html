@@ -482,14 +482,13 @@
                             </div>
                         </div>
                         <div class="sidebar-item">
-                            <h2 class="product-header">
-                                <a href="index.html#partners" class="nav-link" onclick="navigateToSection('partners')">Partners</a>
+                            <h2 class="product-header" data-bs-toggle="collapse" data-bs-target="#partnersSubmenu"
+                                aria-expanded="false">
+                                Partners <i class="fas fa-chevron-right arrow-icon"></i>
                             </h2>
-                        </div>
-                        <div class="sidebar-item">
-                            <h2 class="product-header">
-                                <a href="index.html#contact" class="nav-link" onclick="navigateToSection('contact')">Contact</a>
-                            </h2>
+                            <div id="partnersSubmenu" class="collapse">
+                                <!-- Add partners submenu content here -->
+                            </div>
                         </div>
                         <div class="sidebar-item">
                             <h2 class="product-header" data-bs-toggle="collapse" data-bs-target="#companySubmenu"
@@ -646,19 +645,18 @@
                         </a></li>
 
                     <!-- Industry dropdown -->
-                    <li class="me-1"><a class="nav-link dropdown-toggle" href="#" id="industriDropdown" role="button"
-                            data-bs-toggle="dropdown" aria-expanded="false">
-                            Industry <i class="fas fa-chevron-down ms-1 fa-xs"></i>
-                        </a></li>
+                    <li class="me-1">
+                        <a href="hospitality.html" class="nav-link" onclick="navigateWithLoading('hospitality.html')">Industry</a>
+                    </li>
 
                     <!-- Partner dropdown -->
                     <li class="me-1">
-                        <a href="index.html#partners" class="nav-link" onclick="navigateToSection('partners')">Partners</a>
+                        <a href="#partners" class="nav-link scroll-link">Partners</a>
                     </li>
 
                     <!-- Contact dropdown -->
                     <li class="me-1">
-                        <a href="index.html#contact" class="nav-link" onclick="navigateToSection('contact')">Contact</a>
+                        <a href="#contact" class="nav-link scroll-link">Contact</a>
                     </li>
 
                     <!-- Career dropdown -->
