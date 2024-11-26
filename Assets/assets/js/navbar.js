@@ -824,7 +824,7 @@ pts: `
 handleDropdown('industriDropdown', 'industriDropdownContent');
 handleCategories('#industriDropdownContent', 'industri-details', {
     hospitality: `
-        <div class="product-banner" style="background-image: url('assets/img/hospitality.jpg');">   
+        <div class="product-banner" style="background-image: url('assets/img/hospitality.jpg');" onclick="navigateWithLoading('hospitality.html');">   
             <div class="glare"></div>
             <div class="product-banner-content">
                 <h2 class="product-title">Hospitality Solutions</h2>
