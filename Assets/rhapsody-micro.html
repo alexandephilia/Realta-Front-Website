@@ -610,48 +610,71 @@
                             }
                         }
                     </style>
-                    <ul class="sidebar-nav justify-content-end align-items-center"
-                        style="padding: 0; margin: 0; list-style-type: none;">
-                        <!-- Solutions dropdown -->
-                        <li class="me-1"><a class="nav-link dropdown-toggle" href="#" id="solutionsDropdown" role="button"
-                                data-bs-toggle="dropdown" aria-expanded="false">
-                                Solution <i class="fas fa-chevron-down ms-1 fa-xs"></i>
-                            </a></li>
-    
-                        <!-- Industry dropdown -->
-                        <li class="me-1"><a class="nav-link dropdown-toggle" href="#" id="industriDropdown" role="button"
-                                data-bs-toggle="dropdown" aria-expanded="false">
-                                Industry <i class="fas fa-chevron-down ms-1 fa-xs"></i>
-                            </a></li>
-    
-                        <!-- Partner dropdown -->
-                        <li class="me-1"><a class="nav-link dropdown-toggle" href="#" id="partnerDropdown" role="button"
-                                data-bs-toggle="dropdown" aria-expanded="false">
-                                Partners <i class="fas fa-chevron-down ms-1 fa-xs"></i>
-                            </a></li>
-    
-                        <!-- Contact dropdown -->
-                        <li class="me-1"><a class="nav-link dropdown-toggle" href="#" id="contactDropdown" role="button"
-                                data-bs-toggle="dropdown" aria-expanded="false">
-                                Contact <i class="fas fa-chevron-down ms-1 fa-xs"></i>
-                            </a></li>
-    
-                        <!-- Career dropdown -->
-                        <li class="me-1"><a class="nav-link dropdown-toggle" href="#" id="careerDropdown" role="button"
-                                data-bs-toggle="dropdown" aria-expanded="false">
-                                Career <i class="fas fa-chevron-down ms-1 fa-xs"></i>
-                            </a></li>
-                        <!-- Blog link -->
-                        <li class="me-1">
-                            <a href="blog.html" class="nav-link" onclick="navigateWithLoading('blog.html')">Blog</a>
-                        </li>
-                        <!-- About Realta dropdown -->
-                        <li><a class="nav-link dropdown-toggle" href="#" id="tentangRealtaDropdown" role="button"
-                                data-bs-toggle="dropdown" aria-expanded="false">
-                                About Us <i class="fas fa-chevron-down ms-1 fa-xs"></i>
-                            </a></li>
-    
-                    </ul>
+                   <ul class="sidebar-nav justify-content-end align-items-center"
+                   style="padding: 0; margin: 0; list-style-type: none;">
+                   <!-- Solutions dropdown -->
+                   <li class="me-1"><a class="nav-link dropdown-toggle" href="#" id="solutionsDropdown" role="button"
+                           data-bs-toggle="dropdown" aria-expanded="false">
+                           Solution <i class="fas fa-chevron-down ms-1 fa-xs"></i>
+                       </a></li>
+
+                   <!-- Industry dropdown -->
+                   <li class="me-1"><a class="nav-link dropdown-toggle" href="#" id="industriDropdown" role="button"
+                           data-bs-toggle="dropdown" aria-expanded="false">
+                           Industry <i class="fas fa-chevron-down ms-1 fa-xs"></i>
+                       </a></li>
+
+                   <!-- Partner dropdown -->
+                   <li class="me-1">
+                       <a href="index.html#partners" class="nav-link" onclick="navigateToSection('partners')">Partners</a>
+                   </li>
+
+                   <!-- Contact dropdown -->
+                   <li class="me-1">
+                       <a href="index.html#contact" class="nav-link" onclick="navigateToSection('contact')">Contact</a>
+                   </li>
+
+                   <!-- Career dropdown -->
+                   <li class="me-1">
+                       <a href="career.html" class="nav-link" onclick="navigateWithLoading('career.html')">Career</a>
+                   </li>
+
+                   <!-- Blog link -->
+                   <li class="me-1">
+                       <a href="blog.html" class="nav-link" onclick="navigateWithLoading('blog.html')">Blog</a>
+                   </li>
+
+                   <!-- About Realta dropdown -->
+                   <li>
+                       <a href="about.html" class="nav-link" onclick="navigateWithLoading('about.html')">About Us</a>
+                   </li>
+
+               </ul>
+
+                 
+<script>
+   document.addEventListener('DOMContentLoaded', function() {
+       // Check if there's a hash in the URL when coming from about.html
+       if (window.location.hash) {
+           const targetId = window.location.hash;
+           const targetElement = document.querySelector(targetId);
+           
+           if (targetElement) {
+               // Get header height for offset
+               const headerHeight = document.querySelector('#mainNav').offsetHeight;
+               
+               // Calculate scroll position
+               const scrollPosition = targetElement.offsetTop - headerHeight;
+               
+               // Smooth scroll to target
+               window.scrollTo({
+                   top: scrollPosition,
+                   behavior: 'smooth'
+               });
+           }
+       }
+   });
+   </script>
                     <div class="sidebar-actions d-flex justify-content-end align-items-center" style="margin-bottom: 1rem;">
                         <a class="btn-custom whatsapp-btn me-2"
                             href="https://api.whatsapp.com/send?phone=628111221789&text=Hallo%20PT%20Realta..."

@@ -1914,4 +1914,20 @@ body.dark-mode .menu-logo {
     filter: brightness(1.2);
 }
 
+/* Add smooth scroll behavior to html */
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 80px; /* Adjust this value to match your header height */
+}
+
+/* Optional: Add highlight effect when section is in view */
+section:target {
+    animation: highlight 1s ease-out;
+}
+
+@keyframes highlight {
+    0% { background-color: rgba(144, 84, 208, 0.1); }
+    100% { background-color: transparent; }
+}
+
 /* 

@@ -75,6 +75,7 @@
 </style>
 
 
+
 <header>
 
     <nav class="navbar navbar-expand-lg sticky-top navbar-shrink navbar-light" id="mainNav">
@@ -352,13 +353,14 @@
                             </div>
                         </div>
                         <div class="sidebar-item">
-                            <h2 class="product-header" data-bs-toggle="collapse" data-bs-target="#partnersSubmenu"
-                                aria-expanded="false">
-                                Partners <i class="fas fa-chevron-right arrow-icon"></i>
+                            <h2 class="product-header">
+                                <a href="index.html#partners" class="nav-link" onclick="navigateToSection('partners')">Partners</a>
                             </h2>
-                            <div id="partnersSubmenu" class="collapse">
-                                <!-- Add partners submenu content here -->
-                            </div>
+                        </div>
+                        <div class="sidebar-item">
+                            <h2 class="product-header">
+                                <a href="index.html#contact" class="nav-link" onclick="navigateToSection('contact')">Contact</a>
+                            </h2>
                         </div>
                         <div class="sidebar-item">
                             <h2 class="product-header" data-bs-toggle="collapse" data-bs-target="#companySubmenu"
@@ -521,34 +523,33 @@
                         </a></li>
 
                     <!-- Partner dropdown -->
-                    <li class="me-1"><a class="nav-link dropdown-toggle" href="#" id="partnerDropdown" role="button"
-                            data-bs-toggle="dropdown" aria-expanded="false">
-                            Partners <i class="fas fa-chevron-down ms-1 fa-xs"></i>
-                        </a></li>
+                    <li class="me-1">
+                        <a href="index.html#partners" class="nav-link" onclick="navigateToSection('partners')">Partners</a>
+                    </li>
 
                     <!-- Contact dropdown -->
-                    <li class="me-1"><a class="nav-link dropdown-toggle" href="#" id="contactDropdown" role="button"
-                            data-bs-toggle="dropdown" aria-expanded="false">
-                            Contact <i class="fas fa-chevron-down ms-1 fa-xs"></i>
-                        </a></li>
+                    <li class="me-1">
+                        <a href="index.html#contact" class="nav-link" onclick="navigateToSection('contact')">Contact</a>
+                    </li>
 
                     <!-- Career dropdown -->
-                    <li class="me-1"><a class="nav-link dropdown-toggle" href="#" id="careerDropdown" role="button"
-                            data-bs-toggle="dropdown" aria-expanded="false">
-                            Career <i class="fas fa-chevron-down ms-1 fa-xs"></i>
-                        </a></li>
+                    <li class="me-1">
+                        <a href="career.html" class="nav-link" onclick="navigateWithLoading('career.html')">Career</a>
+                    </li>
+
                     <!-- Blog link -->
                     <li class="me-1">
                         <a href="blog.html" class="nav-link" onclick="navigateWithLoading('blog.html')">Blog</a>
                     </li>
+
                     <!-- About Realta dropdown -->
-                    <li><a class="nav-link dropdown-toggle" href="#" id="tentangRealtaDropdown" role="button"
-                            data-bs-toggle="dropdown" aria-expanded="false">
-                            About Us <i class="fas fa-chevron-down ms-1 fa-xs"></i>
-                        </a></li>
+                    <li>
+                        <a href="about.html" class="nav-link" onclick="navigateWithLoading('about.html')">About Us</a>
+                    </li>
 
                 </ul>
-                <div class="sidebar-actions d-flex justify-content-end align-items-center" style="margin-bottom: 1rem;">
+                <div class="sidebar-actions d-flex justify-content-end align-items-center"
+                    style="margin-bottom: 0.5rem;">
                     <a class="btn-custom whatsapp-btn me-2"
                         href="https://api.whatsapp.com/send?phone=628111221789&text=Hallo%20PT%20Realta..."
                         target="_blank" rel="noopener noreferrer" style="font-size: 0.8em;">
@@ -584,7 +585,6 @@
                     <div
                         style="background: linear-gradient(90deg, transparent 0%, rgba(133, 22, 188, 0.582) 50%, transparent 100%); height: 1px; margin: 10px 0; pointer-events: none;">
                     </div>
-                    <!-- Removed: <div class="all-products"><a href="#solutions">All products ›</a></div> -->
                 </div>
                 <div class="product-details" id="product-details">
                     <!-- Content will be dynamically updated here -->
@@ -598,7 +598,6 @@
                     <div class="product-category" data-product="property">Property</div>
                     <div class="product-category" data-product="manufacturing">Manufacturing</div>
                     <div class="product-category" data-product="fsi">FSI</div>
-                    <!-- Removed: <div class="all-products">All industries ›</div> -->
                 </div>
                 <div class="product-details" id="industri-details">
                     <!-- Content will be dynamically updated here -->
@@ -610,7 +609,6 @@
                 <div class="product-categories">
                     <div class="product-category active" data-product="reseller">Reseller Program</div>
                     <div class="product-category" data-product="technology">Technology Partners</div>
-                    <!-- Removed: <div class="all-products">All partners ›</div> -->
                 </div>
                 <div class="product-details" id="partner-details">
                     <!-- Content will be dynamically updated here -->
@@ -622,7 +620,6 @@
                 <div class="product-categories">
                     <div class="product-category active" data-product="business">Business Consultation</div>
                     <div class="product-category" data-product="technical">Technical Consultation</div>
-                    <!-- Removed: <div class="all-products">All consultations ›</div> -->
                 </div>
                 <div class="product-details" id="contact-details">
                     <!-- Content will be dynamically updated here -->
@@ -635,7 +632,6 @@
                     <div class="product-category active" data-product="openings">Job Openings</div>
                     <div class="product-category" data-product="internships">Internship Programs</div>
                     <div class="product-category" data-product="culture">Company Culture</div>
-                    <!-- Removed: <div class="all-products">View All Career Opportunities ›</div> -->
                 </div>
                 <div class="product-details" id="career-details">
                     <!-- Content will be dynamically updated here -->
@@ -646,7 +642,6 @@
             <div class="dropdown-content">
                 <div class="product-categories">
                     <div class="product-category active" data-product="about">About Realta</div>
-                    <!-- Removed: <div class="all-products">Learn more ›</div> -->
                 </div>
                 <div class="product-details" id="tentangRealta-details">
                     <!-- Content will be dynamically updated here -->
@@ -908,75 +903,113 @@
                 margin-top: 0px;
             }
         }
-
-        /* Banner position when scrolled */
     </style>
     <script>
-      document.addEventListener('DOMContentLoaded', function () {
-    const navbar = document.querySelector('.navbar');
-    const navbarBanner = document.querySelector('.navbar-banner');
-    let lastScrollTop = 0;
-    let isTransitioning = false;
+        document.addEventListener('DOMContentLoaded', function () {
+            var navbar = document.querySelector('.navbar');
+            var navbarBanner = document.querySelector('.navbar-banner');
+            let lastScrollTop = 0;
+            let scrollTimeout;
+            let isTransitioning = false;
 
-    // Only apply scroll behavior on desktop
-    if (window.innerWidth > 768) {
-        // Add transition class on load
-        navbar.classList.add('navbar-transition');
-        navbarBanner.classList.add('navbar-banner-transition');
+            // Only apply scroll behavior on desktop
+            if (window.innerWidth > 768) {
+                // Debounced scroll handler with RAF
+                function handleScroll() {
+                    if (scrollTimeout) {
+                        cancelAnimationFrame(scrollTimeout);
+                    }
 
-        function handleScroll() {
-            if (isTransitioning) return;
+                    scrollTimeout = requestAnimationFrame(() => {
+                        const scrollTop = window.pageYOffset;
+                        const bannerHeight = navbarBanner.offsetHeight;
 
-            const scrollTop = window.pageYOffset;
-            const bannerHeight = navbarBanner.offsetHeight;
+                        if (isTransitioning) return;
 
-            // Set transitioning state
-            isTransitioning = true;
+                        isTransitioning = true;
 
-            // Handle different scroll scenarios
-            if (scrollTop === 0) {
-                // At the top of the page
-                navbarBanner.classList.remove('navbar-banner--scrolled', 'show');
-                navbar.style.transform = 'translateY(0)';
-                navbarBanner.style.backdropFilter = 'blur(0px)';
-            } else if (scrollTop > lastScrollTop && scrollTop > bannerHeight) {
-                // Scrolling down
-                navbarBanner.classList.add('navbar-banner--scrolled');
-                navbarBanner.classList.remove('show');
-                navbar.style.transform = 'translateY(0)';
-                navbarBanner.style.backdropFilter = 'blur(0px)';
-            } else if (scrollTop < lastScrollTop && scrollTop > bannerHeight) {
-                // Scrolling up
-                navbarBanner.classList.add('navbar-banner--scrolled');
-                navbarBanner.classList.add('show');
-                navbar.style.transform = `translateY(${bannerHeight}px)`;
-                navbarBanner.style.backdropFilter = 'blur(6px)';
-            }
+                        if (scrollTop > lastScrollTop && scrollTop > bannerHeight) {
+                            // Scrolling down - hide banner
+                            navbarBanner.classList.add('navbar-banner--scrolled');
+                            navbarBanner.classList.remove('show');
+                            navbar.style.transform = 'translateY(0)';
 
-            lastScrollTop = scrollTop;
+                            navbarBanner.style.backdropFilter = 'blur(0px)';
+                        } else if (scrollTop <= lastScrollTop && scrollTop > bannerHeight) {
+                            // Scrolling up - show banner
+                            navbarBanner.classList.add('navbar-banner--scrolled');
 
-            // Reset transitioning state after animation completes
-            setTimeout(() => {
-                isTransitioning = false;
-            }, 300); // Match this with your CSS transition duration
-        }
+                            setTimeout(() => {
+                                navbarBanner.classList.add('show');
+                                navbarBanner.style.backdropFilter = 'blur(6px)';
+                            }, 50);
 
-        // Throttled scroll listener using requestAnimationFrame
-        let ticking = false;
-        window.addEventListener('scroll', () => {
-            if (!ticking) {
-                requestAnimationFrame(() => {
-                    handleScroll();
-                    ticking = false;
+                            navbar.style.transform = `translateY(${bannerHeight}px)`;
+                        } else {
+                            // At top
+                            navbarBanner.classList.remove('navbar-banner--scrolled', 'show');
+                            navbar.style.transform = 'translateY(0)';
+
+                            navbarBanner.style.backdropFilter = 'blur(0px)';
+                        }
+
+                        lastScrollTop = scrollTop;
+
+                        setTimeout(() => {
+                            isTransitioning = false;
+                        }, 500);
+                    });
+                }
+
+                // Throttled scroll listener
+                let ticking = false;
+                window.addEventListener('scroll', () => {
+                    if (!ticking) {
+                        requestAnimationFrame(() => {
+                            handleScroll();
+                            ticking = false;
+                        });
+                        ticking = true;
+                    }
+                }, {
+                    passive: true
                 });
-                ticking = true;
             }
-        }, { passive: true });
+        });
+    </script>
 
-        // Initial call to set correct state
-        handleScroll();
+<script>
+    function navigateToSection(sectionId) {
+        // Store the target section in localStorage
+        localStorage.setItem('scrollToSection', sectionId);
+        
+        // Navigate to index.html
+        window.location.href = 'index.html#' + sectionId;
     }
-});
+    </script>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // Check if there's a hash in the URL when coming from about.html
+        if (window.location.hash) {
+            const targetId = window.location.hash;
+            const targetElement = document.querySelector(targetId);
+            
+            if (targetElement) {
+                // Get header height for offset
+                const headerHeight = document.querySelector('#mainNav').offsetHeight;
+                
+                // Calculate scroll position
+                const scrollPosition = targetElement.offsetTop - headerHeight;
+                
+                // Smooth scroll to target
+                window.scrollTo({
+                    top: scrollPosition,
+                    behavior: 'smooth'
+                });
+            }
+        }
+    });
     </script>
 </header>
 
