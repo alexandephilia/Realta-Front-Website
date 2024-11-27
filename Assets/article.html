@@ -152,6 +152,7 @@
             line-height: 1.6;
             font-family: 'Proxima Nova', sans-serif !important;
         }
+
         .blog-list-item {
             margin-bottom: 0.5rem;
             font-family: 'Proxima Nova', sans-serif !important;
@@ -802,28 +803,28 @@
                     }
                 </style>
                 <ul class="sidebar-nav justify-content-end align-items-center"
-                style="padding: 0; margin: 0; margin-top: 8px; list-style-type: none;">
-                <!-- Solutions dropdown -->
+                    style="padding: 0; margin: 0; margin-top: 8px; list-style-type: none;">
+                    <!-- Solutions dropdown -->
                     <li class="me-1"><a class="nav-link dropdown-toggle" href="#" id="solutionsDropdown" role="button"
                             data-bs-toggle="dropdown" aria-expanded="false">
                             Solution <i class="fas fa-chevron-down ms-1 fa-xs"></i>
                         </a></li>
 
-                    <!-- Industry dropdown -->
                     <li class="me-1">
-                        <a href="hospitality.html" class="nav-link" onclick="navigateWithLoading('hospitality.html')">Industry</a>
+                        <a href="hospitality.html" class="nav-link"
+                            onclick="navigateWithLoading('hospitality.html')">Industry</a>
                     </li>
 
                     <!-- Partner dropdown -->
                     <li class="me-1">
-                        <a href="#partners" class="nav-link scroll-link">Partners</a>
+                        <a href="index.html#partners" class="nav-link"
+                            onclick="navigateWithLoading('index.html#partners')">Partners</a>
                     </li>
-
                     <!-- Contact dropdown -->
                     <li class="me-1">
-                        <a href="#contact" class="nav-link scroll-link">Contact</a>
+                        <a href="index.html#contact" class="nav-link"
+                            onclick="navigateWithLoading('index.html#contact')">Contact</a>
                     </li>
-
                     <!-- Career dropdown -->
                     <li class="me-1">
                         <a href="career.html" class="nav-link" onclick="navigateWithLoading('career.html')">Career</a>
@@ -1717,7 +1718,7 @@
     </script>
 
     <!-- Replace the existing social share styles with these -->
-   
+
 
     <script>
         function shareOnTwitter() {
@@ -1744,11 +1745,11 @@
         function copyArticleLink(event) {
             // Prevent the default anchor behavior
             if (event) event.preventDefault();
-            
+
             // Create a temporary input element
             const tempInput = document.createElement('textarea');
             tempInput.value = window.location.href;
-            
+
             // Make it invisible but keep it in the viewport (important for iOS)
             tempInput.style.cssText = `
                 position: fixed;
@@ -1758,17 +1759,17 @@
                 opacity: 0;
                 z-index: -1;
             `;
-            
+
             document.body.appendChild(tempInput);
-            
+
             try {
                 // Select the text
                 tempInput.focus();
                 tempInput.select();
-                
+
                 // For iOS devices
                 tempInput.setSelectionRange(0, 99999);
-                
+
                 // Try the new API first
                 if (navigator.clipboard && window.isSecureContext) {
                     navigator.clipboard.writeText(tempInput.value)

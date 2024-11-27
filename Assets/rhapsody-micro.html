@@ -99,13 +99,14 @@
             width: 100% !important;
             position: relative !important;
         }
-    .dynamic-text-container {
+
+        .dynamic-text-container {
             font-size: 45px;
             font-weight: 700;
             height: 1em;
             overflow: hidden;
         }
-    
+
         .letter {
             display: inline-block;
             opacity: 0;
@@ -113,19 +114,19 @@
             filter: blur(5px);
             transition: all 0.3s ease;
         }
-    
+
         .letter.active {
             opacity: 1;
             transform: translateY(0);
             filter: blur(0);
         }
-    
+
         .letter.fade-out {
             opacity: 0;
             transform: translateY(-20px);
             filter: blur(5px);
         }
-    
+
         @media (max-width: 768px) {
             .dynamic-text-container {
                 font-size: 2.5rem;
@@ -133,54 +134,61 @@
                 height: 1em;
                 overflow: hidden;
             }
-    
+
         }
-    
+
         header {
             overflow: hidden !important;
             /* This will keep the header content hidden if it overflows */
         }
-    
-    
-            
+
+
+
         #mainNav {
             position: fixed;
             top: 0;
             left: 0;
             right: 0;
             z-index: 1030;
-            height: 66px; /* PRECISE HEIGHT instead of 8.3% */
+            height: 66px;
+            /* PRECISE HEIGHT instead of 8.3% */
             transition: all 0.3s ease-in-out;
         }
-    
+
         #mainNav.navbar-scrolled {
             height: 60px;
         }
-    
+
         body {
-            padding-top: 110px; /* navbar (66px) + announcement (44px) */
+            padding-top: 110px;
+            /* navbar (66px) + announcement (44px) */
         }
-    
+
         /* Add this style block in the <head> section or in your CSS file */
-            .container-fluid {
-        width: 100%; /* Change from 95% to 100% */
-        padding-left: 3.1%; /* Add consistent padding */
-        padding-right: 3.1%; /* Add consistent padding */
-        margin-left: auto;
-        margin-right: auto;
-    }
-    
+        .container-fluid {
+            width: 100%;
+            /* Change from 95% to 100% */
+            padding-left: 3.1%;
+            /* Add consistent padding */
+            padding-right: 3.1%;
+            /* Add consistent padding */
+            margin-left: auto;
+            margin-right: auto;
+        }
+
         @media (max-width: 768px) {
             .container-fluid {
                 width: 100%;
-                padding-left: 0.5%; /* Add consistent padding */
-                padding-right: 0.5%; /* Add consistent padding */
+                padding-left: 0.5%;
+                /* Add consistent padding */
+                padding-right: 0.5%;
+                /* Add consistent padding */
             }
         }
     </style>
-    
+
     <header>
-    
+
         <nav class="navbar navbar-expand-lg sticky-top navbar-shrink navbar-light" id="mainNav">
             <div class="container-fluid ">
                 <a class="navbar-logo d-flex align-items-center" href="/">
@@ -191,8 +199,8 @@
                         width: 140px;
                         height: 50%;
                     }
-    
-    
+
+
                     @media (max-width: 767px) {
                         .realta-logo {
                             width: 120px;
@@ -218,7 +226,8 @@
                             <li><a href="#" data-lang="id">ID</a></li>
                         </ul>
                     </div>
-                    <div class="nav-drawer" data-bs-toggle="offcanvas" data-bs-target="#sidebar" aria-controls="sidebar">
+                    <div class="nav-drawer" data-bs-toggle="offcanvas" data-bs-target="#sidebar"
+                        aria-controls="sidebar">
                         <i class="fas fa-bars" style="font-size: 1.7rem;"></i>
                     </div>
                 </div>
@@ -345,7 +354,8 @@
                                             <div class="product-header" data-bs-toggle="collapse"
                                                 data-bs-target="#propertyTenantSubmenu" aria-expanded="false"
                                                 style="font-size: 1rem; font-weight: 400;">
-                                                Property and Tenant System <i class="fas fa-chevron-right arrow-icon"></i>
+                                                Property and Tenant System <i
+                                                    class="fas fa-chevron-right arrow-icon"></i>
                                             </div>
                                             <div id="propertyTenantSubmenu" class="collapse product-submenu">
                                                 <p>Efficient management solution for property owners and landlords.</p>
@@ -489,7 +499,7 @@
                         </div>
                         <div class="get-started-container" style="margin-top: -10px !important;">
                             <!-- Adjusted margin-top to move slightly to the top -->
-    
+
                             <a href="https://api.whatsapp.com/send?phone=628111221789&text=Hallo%20PT%20Realta..."
                                 target="_blank" rel="noopener noreferrer" class="btn btn-success btn-block"
                                 style="width: 100%; margin-top: 50px;">
@@ -497,7 +507,8 @@
                             </a>
                             <div class="d-flex justify-content-between align-items-center"
                                 style="padding: 20px 0; margin-top: 20px;">
-                                <h2 class="text-left mb-0" style="margin-right: 20px; font-size: 1.5rem;">Get in Touch</h2>
+                                <h2 class="text-left mb-0" style="margin-right: 20px; font-size: 1.5rem;">Get in Touch
+                                </h2>
                                 <div class="social-icons" style="display: flex; justify-content: flex-end;">
                                     <a href="#" target="_blank" rel="noopener noreferrer"
                                         style="margin-right: 10px; display: inline-flex; justify-content: center; align-items: center; background-color: black; border-radius: 50%; width: 30px; height: 30px;"><i
@@ -516,32 +527,32 @@
                         </div>
                     </div>
                 </div>
-    
+
                 <style>
                     @media (min-width: 992px) {
                         #sidebar {
                             display: none !important;
                             z-index: 2031;
                         }
-    
+
                         .offcanvas-backdrop {
                             display: none !important;
                         }
-    
+
                         body {
                             overflow: auto !important;
                             padding-right: 0 !important;
                         }
                     }
                 </style>
-    
-    
+
+
                 <style>
                     .custom-dropdown {
                         position: relative;
                         display: inline-block;
                     }
-    
+
                     .custom-dropdown-menu {
                         display: none;
                         position: absolute;
@@ -560,14 +571,14 @@
                         margin: 0.5rem 0 0 0;
                         border: 1px solid rgba(255, 255, 255, 0.18);
                     }
-    
+
                     .custom-dropdown-menu li {
                         padding: 0.2rem 0;
                         /* Reduced padding for smaller items */
                         text-align: center;
                         /* Centered text */
                     }
-    
+
                     .custom-dropdown-menu li a {
                         color: #333;
                         padding: 0.3rem 0.3rem;
@@ -578,7 +589,7 @@
                         /* Reduced font size for smaller dropdown */
                         transition: background-color 0.3s ease;
                     }
-    
+
                     .custom-dropdown-menu li a:hover {
                         background-color: rgba(126, 126, 126, 0.5);
                         color: #fff;
@@ -590,10 +601,10 @@
                         transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
                         /* Smooth transition */
                     }
-    
+
                     .custom-dropdown:hover .custom-dropdown-menu {
                         display: block;
-    
+
                     }
                 </style>
                 <div class="full-screen-sidebar">
@@ -603,7 +614,7 @@
                                 margin-right: -45px;
                             }
                         }
-    
+
                         @media (max-width: 768px) {
                             .full-screen-sidebar {
                                 margin-right: 0;
@@ -611,43 +622,46 @@
                         }
                     </style>
                     <ul class="sidebar-nav justify-content-end align-items-center"
-                    style="padding: 0; margin: 0; margin-top: 8px; list-style-type: none;">
+                        style="padding: 0; margin: 0; margin-top: 8px; list-style-type: none;">
                         <!-- Solutions dropdown -->
-                        <li class="me-1"><a class="nav-link dropdown-toggle" href="#" id="solutionsDropdown" role="button"
-                                data-bs-toggle="dropdown" aria-expanded="false">
+                        <li class="me-1"><a class="nav-link dropdown-toggle" href="#" id="solutionsDropdown"
+                                role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                 Solution <i class="fas fa-chevron-down ms-1 fa-xs"></i>
                             </a></li>
-    
-                        <!-- Industry dropdown -->
+
                         <li class="me-1">
-                            <a href="hospitality.html" class="nav-link" onclick="navigateWithLoading('hospitality.html')">Industry</a>
+                            <a href="hospitality.html" class="nav-link"
+                                onclick="navigateWithLoading('hospitality.html')">Industry</a>
                         </li>
-    
+
                         <!-- Partner dropdown -->
                         <li class="me-1">
-                            <a href="#partners" class="nav-link scroll-link">Partners</a>
+                            <a href="index.html#partners" class="nav-link"
+                                onclick="navigateWithLoading('index.html#partners')">Partners</a>
                         </li>
-    
                         <!-- Contact dropdown -->
                         <li class="me-1">
-                            <a href="#contact" class="nav-link scroll-link">Contact</a>
+                            <a href="index.html#contact" class="nav-link"
+                                onclick="navigateWithLoading('index.html#contact')">Contact</a>
                         </li>
-    
+
                         <!-- Career dropdown -->
                         <li class="me-1">
-                            <a href="career.html" class="nav-link" onclick="navigateWithLoading('career.html')">Career</a>
+                            <a href="career.html" class="nav-link"
+                                onclick="navigateWithLoading('career.html')">Career</a>
                         </li>
-    
+
                         <!-- Blog link -->
                         <li class="me-1">
                             <a href="blog.html" class="nav-link" onclick="navigateWithLoading('blog.html')">Blog</a>
                         </li>
-    
+
                         <!-- About Realta dropdown -->
                         <li>
-                            <a href="about.html" class="nav-link" onclick="navigateWithLoading('about.html')">About Us</a>
+                            <a href="about.html" class="nav-link" onclick="navigateWithLoading('about.html')">About
+                                Us</a>
                         </li>
-    
+
                     </ul>
                     <div class="sidebar-actions d-flex justify-content-end align-items-center"
                         style="margin-bottom: 0.5rem;">
@@ -757,7 +771,7 @@
                 <div class="announcement-logo">
                     <img src="assets/img/hotel/logo (1).png" alt="Realta Logo" class="announcement-logo-img">
                 </div>
-                
+
                 <!-- Navigation links on the right -->
                 <nav class="announcement-nav">
                     <a href="#" class="announcement-nav-item">Home</a>
@@ -765,7 +779,8 @@
                     <a href="#" class="announcement-nav-item">Solutions</a>
                     <a href="#" class="announcement-nav-item">Services</a>
                     <div class="announcement-dropdown">
-                        <a href="#" class="announcement-nav-item has-dropdown">Company <i class="fas fa-chevron-down"></i></a>
+                        <a href="#" class="announcement-nav-item has-dropdown">Company <i
+                                class="fas fa-chevron-down"></i></a>
                         <div class="announcement-dropdown-content">
                             <a href="#" class="announcement-dropdown-item">About Us</a>
                             <a href="#" class="announcement-dropdown-item">Our Team</a>
@@ -776,373 +791,380 @@
                 </nav>
             </div>
         </div>
-    
+
         <style>
-        /* Base announcement bar */
-        .top-announcement-bar {
-            background-color: rgb(248, 248, 248);
-            position: fixed;
-            top: 66px;
-            left: 0;
-            right: 0;
-            z-index: 1029;
-            height: 44px;
-            border-bottom: 1px solid rgba(0,0,0,0.1);
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-        }
-    
-        /* Content container */
-        .announcement-content {
-            display: flex;
-            justify-content: space-between; /* Push items to edges */
-            align-items: center;
-            width: 100%;
-            height: 100%;
-            padding: 0 5.1%; /* Match container-fluid padding */
-        }
-    
-        /* Logo styling */
-        .announcement-logo {
-            flex: 0 0 auto;
-            margin-top: -2px;
-        }
-    
-        .announcement-logo-img {
-            height: 30px;
-            width: auto;
-        }
-    
-        /* Navigation styling */
-        .announcement-nav {
-            display: flex;
-            align-items: center;
-            gap: 30px;
-        }
-    
-        .announcement-nav-item {
-            color: #464646c0;
-            text-decoration: none;
-            font-size: 13px;
-            font-weight: bold;
-            transition: color 0.3s ease;
-            display: flex;
-            align-items: center;
-            transition: all 0.3s ease;
-            gap: 5px;
-        }
-    
-        .announcement-nav-item:hover {
-            color: #9054d0;
-            transform: scale(1.05);
-        }
-    
-        /* Dropdown styling */
-        .announcement-dropdown {
-            position: relative;
-        }
-    
-        .announcement-dropdown-content {
-            position: absolute;
-            top: calc(100% + 10px);
-            right: 0;
-            background: #ffffff;
-            min-width: 200px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-            border-radius: 8px;
-            opacity: 0;
-            visibility: hidden;
-            transform: translateY(-10px);
-            transition: all 0.3s ease;
-        }
-    
-        .announcement-dropdown:hover .announcement-dropdown-content {
-            opacity: 1;
-            visibility: visible;
-            transform: translateY(0);
-        }
-    
-        .announcement-dropdown-item {
-            display: block;
-            padding: 12px 20px;
-            color: #333;
-            text-decoration: none;
-            font-size: 13px;
-            transition: all 0.2s ease;
-        }
-    
-        .announcement-dropdown-item:hover {
-            background-color: #f5f5f5;
-            color: #9054d0;
-        }
-    
-        /* Dark mode */
-        body.dark-mode .top-announcement-bar {
-            background-color: rgba(30, 30, 30, 0.95);
-            border-bottom: 1px solid rgba(255,255,255,0.1);
-        }
-    
-        body.dark-mode .announcement-nav-item,
-        body.dark-mode .announcement-dropdown-item {
-            color: #fff;
-        }
-    
-        body.dark-mode .announcement-dropdown-content {
-            background: #1a1a1a;
-        }
-    
-        body.dark-mode .announcement-dropdown-item:hover {
-            background-color: #2d2d2d;
-            color: #bb86fc;
-        }
-    
-        /* Mobile hide */
-        @media (max-width: 768px) {
+            /* Base announcement bar */
             .top-announcement-bar {
-                display: none;
-            }
-            
-            body {
-                padding-top: 66px; /* Only navbar height on mobile */
-            }
-        }
-        </style>
-    
-        <div class="navbar-banner__blur navbar-banner__blur--1"></div>
-        <div class="navbar-banner__blur navbar-banner__blur--2"></div>
-       
-       
-    </header>
-    
-    <body>
-        <!-- LOADING -->
-        <div id="loading-overlay" class="loading-overlay">
-            <div class="loading-container">
-                <div class="loading-text">Loading...</div>
-                <div class="spinner">
-                    <div class="spinner-inner"></div>
-                </div>
-            </div>
-        </div>
-        <script>
-            function navigateWithLoading(url) {
-                const loadingOverlay = document.getElementById('loading-overlay');
-                loadingOverlay.style.display = 'flex'; // Show the loading overlay
-                document.body.style.overflow = 'hidden'; // Prevent scrolling
-    
-                // Wait for the animation to complete before navigating
-                setTimeout(function () {
-                    window.location.href = url;
-                }, 2000); // Adjust the delay as needed (in milliseconds)
-            }
-    
-            document.addEventListener('DOMContentLoaded', function () {
-                // This script block can contain other page initialization code
-            });
-        </script>
-        <style>
-            .loading-overlay {
+                background-color: rgb(248, 248, 248);
                 position: fixed;
-                top: 0;
-                left: 0;
-                width: 100%;
-                height: 100%;
-                background-color: rgba(255, 255, 255, 0.8);
-                backdrop-filter: blur(5px);
-                display: none;
-                /* Initially hidden */
-                justify-content: center;
-                align-items: center;
-                z-index: 9999;
-            }
-    
-            .loading-container {
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-            }
-    
-            .loading-text {
-                font-size: 24px;
-                font-weight: bold;
-                margin-bottom: 20px;
-                color: #9054d0;
-                opacity: 0;
-                animation: fade-in 0.5s ease-in-out forwards;
-                animation-delay: 0.5s;
-                /* Add a delay to the fade-in animation */
-            }
-    
-            .spinner {
-                width: 80px;
-                height: 80px;
-                border-radius: 50%;
-                border: 4px solid rgba(52, 152, 219, 0.2);
-                border-top-color: #9054d0;
-                animation: spin 1s ease-in-out infinite;
-            }
-    
-            @keyframes spin {
-                0% {
-                    transform: rotate(0deg);
-                }
-    
-                100% {
-                    transform: rotate(360deg);
-                }
-            }
-    
-            @keyframes fade-in {
-                0% {
-                    opacity: 0;
-                    transform: translateY(-20px);
-                }
-    
-                100% {
-                    opacity: 1;
-                    transform: translateY(0);
-                }
-            }
-    
-            .product-banner {
-                cursor: pointer;
-            }
-        </style>
-        <!-- LOADING -->
-    
-    
-        <section class="parallax-header">
-            <div class="parallax-content">
-                <h1>Rhapsody Hotel Management System</h1>
-                <div class="badge">Premier Hospitality Management</div>
-                <p>Rhapsody stands as the trusted technological ally for top-tier hotel operators across Indonesia and the broader Asian region. Our comprehensive system is designed to enhance every facet of hotel management, ensuring seamless operations, elevated guest experiences, and optimized business performance. With Rhapsody, you gain a partner that understands the intricacies of the hospitality industry, offering solutions that are both innovative and reliable.</p>
-                <button class="erp-learn-btn">See More Clients</button>
-                <style>
-                    .erp-learn-btn {
-                        /* Mobile first base styles */
-                        width: 100%;
-                        max-width: 280px;
-                        font-size: 1rem;
-                        padding: 10px 20px;
-                        background: linear-gradient(287deg, #c85efa, #c85efa, #763096);
-                        color: #fff;
-                        border: none;
-                        border-radius: 6px;
-                        cursor: pointer;
-                        transition: all 0.3s ease;
-                        font-weight: 600;
-                        letter-spacing: 0.5px;
-                        box-shadow: 0 4px 15px rgba(144, 84, 208, 0.3);
-                        margin: 0 auto;
-                        display: block;
-                    }
-    
-                    .erp-learn-btn:hover {
-                        transform: translateY(-2px);
-                        box-shadow: 0 6px 20px rgba(144, 84, 208, 0.4);
-                        background: linear-gradient(287deg, #c85efa, #c85efa, #763096);
-                    }
-    
-                    .erp-learn-btn:active {
-                        transform: translateY(1px);
-                    }
-    
-                    /* Tablet breakpoint */
-                    @media (min-width: 768px) {
-                        .erp-learn-btn {
-                            font-size: 1.1rem;
-                            padding: 11px 25px;
-                            max-width: 300px;
-                        }
-                    }
-    
-                    /* Desktop breakpoint */
-                    @media (min-width: 1024px) {
-                        .erp-learn-btn {
-                            font-size: 1.2rem;
-                            padding: 12px 30px;
-                            max-width: 320px;
-                        }
-                    }
-                </style>
-            </div>
-        </section>
-    
-        <style>
-            .parallax-header {
-                position: relative;
-                height: 100vh;
-                width: 100%;
-                overflow: hidden;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                background-image: url('assets/img/hotel/hotel.jpg');
-                background-attachment: fixed;
-                background-position: center;
-                background-repeat: no-repeat;
-                background-size: cover;
-            }
-    
-            .parallax-content {
-                text-align: center;
-                color: #fff;
-                padding: 20px;
-                max-width: 1300px;
-                z-index: 2;
-                animation: fadeIn 1s ease-in;
-            }
-    
-            .parallax-content h1 {
-                font-size: 3.5rem;
-                font-weight: 700;
-                margin-bottom: 1rem;
-                text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
-                line-height: 1.2;
-            }
-    
-            .parallax-content .badge {
-                display: inline-block;
-                background: rgba(179, 84, 208, 0.432);
-                padding: 8px 16px;
-                border-radius: 50px;
-                font-size: 1.1rem;
-                font-weight: 500;
-                margin: 1rem 0;
-                text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
-            }
-    
-            .parallax-content p {
-                font-size: 20px !important;
-                margin-bottom: 2rem;
-                text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
-                line-height: 1.6;
-            }
-    
-            .parallax-header::before {
-                content: '';
-                position: absolute;
-                top: 0;
+                top: 66px;
                 left: 0;
                 right: 0;
-                bottom: 0;
-                background: rgba(0,0,0,0.4);
-                z-index: 1;
+                z-index: 1029;
+                height: 44px;
+                border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+                box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
             }
-    
+
+            /* Content container */
+            .announcement-content {
+                display: flex;
+                justify-content: space-between;
+                /* Push items to edges */
+                align-items: center;
+                width: 100%;
+                height: 100%;
+                padding: 0 5.1%;
+                /* Match container-fluid padding */
+            }
+
+            /* Logo styling */
+            .announcement-logo {
+                flex: 0 0 auto;
+                margin-top: -2px;
+            }
+
+            .announcement-logo-img {
+                height: 30px;
+                width: auto;
+            }
+
+            /* Navigation styling */
+            .announcement-nav {
+                display: flex;
+                align-items: center;
+                gap: 30px;
+            }
+
+            .announcement-nav-item {
+                color: #464646c0;
+                text-decoration: none;
+                font-size: 13px;
+                font-weight: bold;
+                transition: color 0.3s ease;
+                display: flex;
+                align-items: center;
+                transition: all 0.3s ease;
+                gap: 5px;
+            }
+
+            .announcement-nav-item:hover {
+                color: #9054d0;
+                transform: scale(1.05);
+            }
+
+            /* Dropdown styling */
+            .announcement-dropdown {
+                position: relative;
+            }
+
+            .announcement-dropdown-content {
+                position: absolute;
+                top: calc(100% + 10px);
+                right: 0;
+                background: #ffffff;
+                min-width: 200px;
+                box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+                border-radius: 8px;
+                opacity: 0;
+                visibility: hidden;
+                transform: translateY(-10px);
+                transition: all 0.3s ease;
+            }
+
+            .announcement-dropdown:hover .announcement-dropdown-content {
+                opacity: 1;
+                visibility: visible;
+                transform: translateY(0);
+            }
+
+            .announcement-dropdown-item {
+                display: block;
+                padding: 12px 20px;
+                color: #333;
+                text-decoration: none;
+                font-size: 13px;
+                transition: all 0.2s ease;
+            }
+
+            .announcement-dropdown-item:hover {
+                background-color: #f5f5f5;
+                color: #9054d0;
+            }
+
+            /* Dark mode */
+            body.dark-mode .top-announcement-bar {
+                background-color: rgba(30, 30, 30, 0.95);
+                border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            }
+
+            body.dark-mode .announcement-nav-item,
+            body.dark-mode .announcement-dropdown-item {
+                color: #fff;
+            }
+
+            body.dark-mode .announcement-dropdown-content {
+                background: #1a1a1a;
+            }
+
+            body.dark-mode .announcement-dropdown-item:hover {
+                background-color: #2d2d2d;
+                color: #bb86fc;
+            }
+
+            /* Mobile hide */
             @media (max-width: 768px) {
-                .parallax-content h1 {
-                    font-size: 2.5rem;
+                .top-announcement-bar {
+                    display: none;
                 }
-                
-                .parallax-content p {
-                    font-size: 1rem !important;
-                }
-    
-                .parallax-content .badge {
-                    font-size: 0.9rem;
+
+                body {
+                    padding-top: 66px;
+                    /* Only navbar height on mobile */
                 }
             }
         </style>
+
+        <div class="navbar-banner__blur navbar-banner__blur--1"></div>
+        <div class="navbar-banner__blur navbar-banner__blur--2"></div>
+
+
+    </header>
+
+<body>
+    <!-- LOADING -->
+    <div id="loading-overlay" class="loading-overlay">
+        <div class="loading-container">
+            <div class="loading-text">Loading...</div>
+            <div class="spinner">
+                <div class="spinner-inner"></div>
+            </div>
+        </div>
+    </div>
+    <script>
+        function navigateWithLoading(url) {
+            const loadingOverlay = document.getElementById('loading-overlay');
+            loadingOverlay.style.display = 'flex'; // Show the loading overlay
+            document.body.style.overflow = 'hidden'; // Prevent scrolling
+
+            // Wait for the animation to complete before navigating
+            setTimeout(function () {
+                window.location.href = url;
+            }, 2000); // Adjust the delay as needed (in milliseconds)
+        }
+
+        document.addEventListener('DOMContentLoaded', function () {
+            // This script block can contain other page initialization code
+        });
+    </script>
+    <style>
+        .loading-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(5px);
+            display: none;
+            /* Initially hidden */
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+        }
+
+        .loading-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .loading-text {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 20px;
+            color: #9054d0;
+            opacity: 0;
+            animation: fade-in 0.5s ease-in-out forwards;
+            animation-delay: 0.5s;
+            /* Add a delay to the fade-in animation */
+        }
+
+        .spinner {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            border: 4px solid rgba(52, 152, 219, 0.2);
+            border-top-color: #9054d0;
+            animation: spin 1s ease-in-out infinite;
+        }
+
+        @keyframes spin {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        @keyframes fade-in {
+            0% {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .product-banner {
+            cursor: pointer;
+        }
+    </style>
+    <!-- LOADING -->
+
+
+    <section class="parallax-header">
+        <div class="parallax-content">
+            <h1>Rhapsody Hotel Management System</h1>
+            <div class="badge">Premier Hospitality Management</div>
+            <p>Rhapsody stands as the trusted technological ally for top-tier hotel operators across Indonesia and the
+                broader Asian region. Our comprehensive system is designed to enhance every facet of hotel management,
+                ensuring seamless operations, elevated guest experiences, and optimized business performance. With
+                Rhapsody, you gain a partner that understands the intricacies of the hospitality industry, offering
+                solutions that are both innovative and reliable.</p>
+            <button class="erp-learn-btn">See More Clients</button>
+            <style>
+                .erp-learn-btn {
+                    /* Mobile first base styles */
+                    width: 100%;
+                    max-width: 280px;
+                    font-size: 1rem;
+                    padding: 10px 20px;
+                    background: linear-gradient(287deg, #c85efa, #c85efa, #763096);
+                    color: #fff;
+                    border: none;
+                    border-radius: 6px;
+                    cursor: pointer;
+                    transition: all 0.3s ease;
+                    font-weight: 600;
+                    letter-spacing: 0.5px;
+                    box-shadow: 0 4px 15px rgba(144, 84, 208, 0.3);
+                    margin: 0 auto;
+                    display: block;
+                }
+
+                .erp-learn-btn:hover {
+                    transform: translateY(-2px);
+                    box-shadow: 0 6px 20px rgba(144, 84, 208, 0.4);
+                    background: linear-gradient(287deg, #c85efa, #c85efa, #763096);
+                }
+
+                .erp-learn-btn:active {
+                    transform: translateY(1px);
+                }
+
+                /* Tablet breakpoint */
+                @media (min-width: 768px) {
+                    .erp-learn-btn {
+                        font-size: 1.1rem;
+                        padding: 11px 25px;
+                        max-width: 300px;
+                    }
+                }
+
+                /* Desktop breakpoint */
+                @media (min-width: 1024px) {
+                    .erp-learn-btn {
+                        font-size: 1.2rem;
+                        padding: 12px 30px;
+                        max-width: 320px;
+                    }
+                }
+            </style>
+        </div>
+    </section>
+
+    <style>
+        .parallax-header {
+            position: relative;
+            height: 100vh;
+            width: 100%;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-image: url('assets/img/hotel/hotel.jpg');
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        .parallax-content {
+            text-align: center;
+            color: #fff;
+            padding: 20px;
+            max-width: 1300px;
+            z-index: 2;
+            animation: fadeIn 1s ease-in;
+        }
+
+        .parallax-content h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+            line-height: 1.2;
+        }
+
+        .parallax-content .badge {
+            display: inline-block;
+            background: rgba(179, 84, 208, 0.432);
+            padding: 8px 16px;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: 500;
+            margin: 1rem 0;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+        }
+
+        .parallax-content p {
+            font-size: 20px !important;
+            margin-bottom: 2rem;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+            line-height: 1.6;
+        }
+
+        .parallax-header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.4);
+            z-index: 1;
+        }
+
+        @media (max-width: 768px) {
+            .parallax-content h1 {
+                font-size: 2.5rem;
+            }
+
+            .parallax-content p {
+                font-size: 1rem !important;
+            }
+
+            .parallax-content .badge {
+                font-size: 0.9rem;
+            }
+        }
+    </style>
     <style>
         @keyframes slideIn {
             from {
@@ -1432,10 +1454,13 @@
         <div class="container-fluid">
             <div class="row align-items-center">
                 <div class="col-md-6 fade-in-left">
-                    <img src="assets/img/hotel/feature-ict.png" alt="ICT One Solution" class="img-fluid" style="width: 80%; height: auto; margin-left: 10%;">
+                    <img src="assets/img/hotel/feature-ict.png" alt="ICT One Solution" class="img-fluid"
+                        style="width: 80%; height: auto; margin-left: 10%;">
                 </div>
                 <div class="col-md-6 text-center fade-in-right">
-                    <h2 class="mb-4 gradient-text fw-bold" style="background: linear-gradient(287deg, #625dfa, #c85efa, #8ddee4); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">ICT ONE
+                    <h2 class="mb-4 gradient-text fw-bold"
+                        style="background: linear-gradient(287deg, #625dfa, #c85efa, #8ddee4); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">
+                        ICT ONE
                         SOLUTION</h2>
                     <h3 class="mb-3">Hotel System</h3>
                     <div class="mb-4" style="max-width: 90%; margin: 0 auto;">
@@ -1450,7 +1475,8 @@
                             <li>Menu analysis and cost calculation tools</li>
                         </ul>
                         <p style="line-height: 1.6; font-size: 20px;">
-                            Our solution empowers management with detailed insights and efficient operations, driving your hotel's success.
+                            Our solution empowers management with detailed insights and efficient operations, driving
+                            your hotel's success.
                         </p>
                     </div>
                     <a href="#" class="btn btn-outline-secondary btn-sm d-inline-block mx-auto"
@@ -1559,252 +1585,277 @@
     </script>
 
 
-<section id="why-rhapsody" class="bimasakti-solutions-grid slide-in">
-    <div class="container-fluid">
-    <h2 class="bimasakti-title">WHY RHAPSODY</h2>
-    <h3 class="bimasakti-description">Rhapsody offers a comprehensive suite of solutions tailored for the hospitality industry, transforming your operations into a strategic asset that drives business growth and guest satisfaction.</h3>
-    <div class="bimasakti-button-wrapper">
-    </div>
-    <div class="bimasakti-features mt-5">
-        <article class="bimasakti-solution-item business-clarity">
-            <h4>
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M3 3v18h18V3H3zm16 16H5V5h14v14zm-2-4h-4v-2h4v2zm0-4h-4V9h4v2zm-6 4H7v-2h4v2zm0-4H7V9h4v2z" fill="url(#paint0_linear_business_clarity)"/>
-                    <defs>
-                        <linearGradient id="paint0_linear_business_clarity" x1="3" y1="3" x2="21" y2="21" gradientUnits="userSpaceOnUse">
-                            <stop stop-color="#90227e"/>
-                            <stop offset="0.5" stop-color="#a327a0"/>
-                            <stop offset="1" stop-color="#b62cc2"/>
-                        </linearGradient>
-                    </defs>
-                </svg>
-                &nbsp;Business Clarity & Synergy
-            </h4>
-            <p>Enhance your hotel's efficiency with our integrated management solutions, providing clear insights and fostering synergy across all departments.</p>
-        </article>
-        <article class="bimasakti-solution-item service-excellence">
-            <h4>
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M12 2L1 21h22L12 2zm0 4l7.53 13H4.47L12 6zm-1 10h2v2h-2v-2zm0-6h2v4h-2v-4z" fill="url(#paint0_linear_service_excellence)"/>
-                    <defs>
-                        <linearGradient id="paint0_linear_service_excellence" x1="1" y1="2" x2="23" y2="21" gradientUnits="userSpaceOnUse">
-                            <stop stop-color="#90227e"/>
-                            <stop offset="0.5" stop-color="#a327a0"/>
-                            <stop offset="1" stop-color="#b62cc2"/>
-                        </linearGradient>
-                    </defs>
-                </svg>
-                &nbsp;Ensuring Service Excellence & Revenue Realization
-            </h4>
-            <p>Optimize your revenue streams and elevate guest experiences with our comprehensive hospitality management tools.</p>
-        </article>
-        <article class="bimasakti-solution-item one-stop-service">
-            <h4>
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm5 11h-4v4h-2v-4H7v-2h4V7h2v4h4v2z" fill="url(#paint0_linear_one_stop_service)"/>
-                    <defs>
-                        <linearGradient id="paint0_linear_one_stop_service" x1="2" y1="2" x2="22" y2="22" gradientUnits="userSpaceOnUse">
-                            <stop stop-color="#90227e"/>
-                            <stop offset="0.5" stop-color="#a327a0"/>
-                            <stop offset="1" stop-color="#b62cc2"/>
-                        </linearGradient>
-                    </defs>
-                </svg>
-                &nbsp;One Stop Service
-            </h4>
-            <p>Access all your hotel management needs in one comprehensive platform, streamlining operations and enhancing efficiency.</p>
-        </article>
-        <article class="bimasakti-solution-item seamless-integration ">
-            <h4>
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M16 1H8C6.34 1 5 2.34 5 4v16c0 1.66 1.34 3 3 3h8c1.66 0 3-1.34 3-3V4c0-1.66-1.34-3-3-3zm-2 20h-4v-1h4v1zm3.25-3H6.75V4h10.5v14z" fill="url(#paint0_linear_seamless_integration)"/>
-                    <defs>
-                        <linearGradient id="paint0_linear_seamless_integration" x1="5" y1="1" x2="19" y2="23" gradientUnits="userSpaceOnUse">
-                            <stop stop-color="#90227e"/>
-                            <stop offset="0.5" stop-color="#a327a0"/>
-                            <stop offset="1" stop-color="#b62cc2"/>
-                        </linearGradient>
-                    </defs>
-                </svg>
-                &nbsp;Seamless Integration & Reporting System
-            </h4>
-            <p>Enjoy smooth data integration and generate insightful reports across all departments, facilitating informed decision-making.</p>
-        </article>
-        <article class="bimasakti-solution-item cost-effectiveness">
-            <h4>
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M11.8 10.9c-2.27-.59-3-1.2-3-2.15 0-1.09 1.01-1.85 2.7-1.85 1.78 0 2.44.85 2.5 2.1h2.21c-.07-1.72-1.12-3.3-3.21-3.81V3h-3v2.16c-1.94.42-3.5 1.68-3.5 3.61 0 2.31 1.91 3.46 4.7 4.13 2.5.6 3 1.48 3 2.41 0 .69-.49 1.79-2.7 1.79-2.06 0-2.87-.92-2.98-2.1h-2.2c.12 2.19 1.76 3.42 3.68 3.83V21h3v-2.15c1.95-.37 3.5-1.5 3.5-3.55 0-2.84-2.43-3.81-4.7-4.4z" fill="url(#paint0_linear_cost_effectiveness)"/>
-                    <defs>
-                        <linearGradient id="paint0_linear_cost_effectiveness" x1="6.5" y1="3" x2="17.5" y2="21" gradientUnits="userSpaceOnUse">
-                            <stop stop-color="#90227e"/>
-                            <stop offset="0.5" stop-color="#a327a0"/>
-                            <stop offset="1" stop-color="#b62cc2"/>
-                        </linearGradient>
-                    </defs>
-                </svg>
-                &nbsp;Superior Cost Price Effectiveness
-            </h4>
-            <p>Maximize your ROI with our cost-effective hotel management solutions, designed to optimize operations and boost profitability.</p>
-        </article>
-        <article class="bimasakti-solution-item comprehensive-system">
-            <h4>
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M4 8h4V4H4v4zm6 12h4v-4h-4v4zm-6 0h4v-4H4v4zm0-6h4v-4H4v4zm6 0h4v-4h-4v4zm6-10v4h4V4h-4zm-6 4h4V4h-4v4zm6 6h4v-4h-4v4zm0 6h4v-4h-4v4z" fill="url(#paint0_linear_comprehensive_system)"/>
-                    <defs>
-                        <linearGradient id="paint0_linear_comprehensive_system" x1="4" y1="4" x2="20" y2="20" gradientUnits="userSpaceOnUse">
-                            <stop stop-color="#90227e"/>
-                            <stop offset="0.5" stop-color="#a327a0"/>
-                            <stop offset="1" stop-color="#b62cc2"/>
-                        </linearGradient>
-                    </defs>
-                </svg>
-                &nbsp;Comprehensive Hotel Management System
-            </h4>
-            <p>Manage all aspects of your hotel operations with our all-in-one system, designed to meet the unique needs of the hospitality industry.</p>
-        </article>
-    </div>
-</div>
-</section>
+    <section id="why-rhapsody" class="bimasakti-solutions-grid slide-in">
+        <div class="container-fluid">
+            <h2 class="bimasakti-title">WHY RHAPSODY</h2>
+            <h3 class="bimasakti-description">Rhapsody offers a comprehensive suite of solutions tailored for the
+                hospitality industry, transforming your operations into a strategic asset that drives business growth
+                and guest satisfaction.</h3>
+            <div class="bimasakti-button-wrapper">
+            </div>
+            <div class="bimasakti-features mt-5">
+                <article class="bimasakti-solution-item business-clarity">
+                    <h4>
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M3 3v18h18V3H3zm16 16H5V5h14v14zm-2-4h-4v-2h4v2zm0-4h-4V9h4v2zm-6 4H7v-2h4v2zm0-4H7V9h4v2z"
+                                fill="url(#paint0_linear_business_clarity)" />
+                            <defs>
+                                <linearGradient id="paint0_linear_business_clarity" x1="3" y1="3" x2="21" y2="21"
+                                    gradientUnits="userSpaceOnUse">
+                                    <stop stop-color="#90227e" />
+                                    <stop offset="0.5" stop-color="#a327a0" />
+                                    <stop offset="1" stop-color="#b62cc2" />
+                                </linearGradient>
+                            </defs>
+                        </svg>
+                        &nbsp;Business Clarity & Synergy
+                    </h4>
+                    <p>Enhance your hotel's efficiency with our integrated management solutions, providing clear
+                        insights and fostering synergy across all departments.</p>
+                </article>
+                <article class="bimasakti-solution-item service-excellence">
+                    <h4>
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 2L1 21h22L12 2zm0 4l7.53 13H4.47L12 6zm-1 10h2v2h-2v-2zm0-6h2v4h-2v-4z"
+                                fill="url(#paint0_linear_service_excellence)" />
+                            <defs>
+                                <linearGradient id="paint0_linear_service_excellence" x1="1" y1="2" x2="23" y2="21"
+                                    gradientUnits="userSpaceOnUse">
+                                    <stop stop-color="#90227e" />
+                                    <stop offset="0.5" stop-color="#a327a0" />
+                                    <stop offset="1" stop-color="#b62cc2" />
+                                </linearGradient>
+                            </defs>
+                        </svg>
+                        &nbsp;Ensuring Service Excellence & Revenue Realization
+                    </h4>
+                    <p>Optimize your revenue streams and elevate guest experiences with our comprehensive hospitality
+                        management tools.</p>
+                </article>
+                <article class="bimasakti-solution-item one-stop-service">
+                    <h4>
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm5 11h-4v4h-2v-4H7v-2h4V7h2v4h4v2z"
+                                fill="url(#paint0_linear_one_stop_service)" />
+                            <defs>
+                                <linearGradient id="paint0_linear_one_stop_service" x1="2" y1="2" x2="22" y2="22"
+                                    gradientUnits="userSpaceOnUse">
+                                    <stop stop-color="#90227e" />
+                                    <stop offset="0.5" stop-color="#a327a0" />
+                                    <stop offset="1" stop-color="#b62cc2" />
+                                </linearGradient>
+                            </defs>
+                        </svg>
+                        &nbsp;One Stop Service
+                    </h4>
+                    <p>Access all your hotel management needs in one comprehensive platform, streamlining operations and
+                        enhancing efficiency.</p>
+                </article>
+                <article class="bimasakti-solution-item seamless-integration ">
+                    <h4>
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M16 1H8C6.34 1 5 2.34 5 4v16c0 1.66 1.34 3 3 3h8c1.66 0 3-1.34 3-3V4c0-1.66-1.34-3-3-3zm-2 20h-4v-1h4v1zm3.25-3H6.75V4h10.5v14z"
+                                fill="url(#paint0_linear_seamless_integration)" />
+                            <defs>
+                                <linearGradient id="paint0_linear_seamless_integration" x1="5" y1="1" x2="19" y2="23"
+                                    gradientUnits="userSpaceOnUse">
+                                    <stop stop-color="#90227e" />
+                                    <stop offset="0.5" stop-color="#a327a0" />
+                                    <stop offset="1" stop-color="#b62cc2" />
+                                </linearGradient>
+                            </defs>
+                        </svg>
+                        &nbsp;Seamless Integration & Reporting System
+                    </h4>
+                    <p>Enjoy smooth data integration and generate insightful reports across all departments,
+                        facilitating informed decision-making.</p>
+                </article>
+                <article class="bimasakti-solution-item cost-effectiveness">
+                    <h4>
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M11.8 10.9c-2.27-.59-3-1.2-3-2.15 0-1.09 1.01-1.85 2.7-1.85 1.78 0 2.44.85 2.5 2.1h2.21c-.07-1.72-1.12-3.3-3.21-3.81V3h-3v2.16c-1.94.42-3.5 1.68-3.5 3.61 0 2.31 1.91 3.46 4.7 4.13 2.5.6 3 1.48 3 2.41 0 .69-.49 1.79-2.7 1.79-2.06 0-2.87-.92-2.98-2.1h-2.2c.12 2.19 1.76 3.42 3.68 3.83V21h3v-2.15c1.95-.37 3.5-1.5 3.5-3.55 0-2.84-2.43-3.81-4.7-4.4z"
+                                fill="url(#paint0_linear_cost_effectiveness)" />
+                            <defs>
+                                <linearGradient id="paint0_linear_cost_effectiveness" x1="6.5" y1="3" x2="17.5" y2="21"
+                                    gradientUnits="userSpaceOnUse">
+                                    <stop stop-color="#90227e" />
+                                    <stop offset="0.5" stop-color="#a327a0" />
+                                    <stop offset="1" stop-color="#b62cc2" />
+                                </linearGradient>
+                            </defs>
+                        </svg>
+                        &nbsp;Superior Cost Price Effectiveness
+                    </h4>
+                    <p>Maximize your ROI with our cost-effective hotel management solutions, designed to optimize
+                        operations and boost profitability.</p>
+                </article>
+                <article class="bimasakti-solution-item comprehensive-system">
+                    <h4>
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M4 8h4V4H4v4zm6 12h4v-4h-4v4zm-6 0h4v-4H4v4zm0-6h4v-4H4v4zm6 0h4v-4h-4v4zm6-10v4h4V4h-4zm-6 4h4V4h-4v4zm6 6h4v-4h-4v4zm0 6h4v-4h-4v4z"
+                                fill="url(#paint0_linear_comprehensive_system)" />
+                            <defs>
+                                <linearGradient id="paint0_linear_comprehensive_system" x1="4" y1="4" x2="20" y2="20"
+                                    gradientUnits="userSpaceOnUse">
+                                    <stop stop-color="#90227e" />
+                                    <stop offset="0.5" stop-color="#a327a0" />
+                                    <stop offset="1" stop-color="#b62cc2" />
+                                </linearGradient>
+                            </defs>
+                        </svg>
+                        &nbsp;Comprehensive Hotel Management System
+                    </h4>
+                    <p>Manage all aspects of your hotel operations with our all-in-one system, designed to meet the
+                        unique needs of the hospitality industry.</p>
+                </article>
+            </div>
+        </div>
+    </section>
 
-<style>
-    /* BIMASAKTI Solutions Grid Styles */
-    .bimasakti-solutions-grid {
-        display: grid;
-        grid-template-areas:
-            "title"
-            "description"
-            "button"
-            "features";
-        gap: 15px;
-        padding: 20px;
-        border-radius: 15px;
-        margin: 0 auto;
-    }
-
-    .bimasakti-solution-item {
-        border-radius: 10px;
-        padding: 15px;
-        font-size: 14px;
-        transition: all 0.3s ease;
-        background: white !important;
-        border: 2px solid rgba(221, 221, 221, 0.753);
-    }
-
-    .bimasakti-solution-item h4 {
-        font-size: 1rem;
-        margin-bottom: 10px;
-        background: linear-gradient(287deg, #90227e, #a327a0, #b62cc2);
-        -webkit-background-clip: text;
-        background-clip: text;
-        color: transparent;
-        font-weight: 600;
-        position: relative;
-        padding-bottom: 5px;
-        display: flex;
-        align-items: center;
-    }
-
-    .bimasakti-solution-item h4::after {
-        content: '';
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        right: 0;
-        height: 2px;
-        background: linear-gradient(90deg, rgba(255, 255, 255, 0.767), #c85efa, #c85efa, rgba(255, 255, 255, 0.767));
-        width: 100%;
-    }
-
-    .bimasakti-title {
-        grid-area: title;
-        text-align: center;
-        font-size: 2rem !important;
-        background: linear-gradient(287deg, #625dfa, #c85efa, #8ddee4);
-        -webkit-background-clip: text;
-        background-clip: text;
-        color: transparent;
-        margin-bottom: 15px;
-        font-weight: bold;
-    }
-
-    .bimasakti-description {
-        grid-area: description;
-        text-align: center;
-        max-width: 80%;
-        margin: 0 auto;
-        margin-bottom: 15px;
-        color: #666;
-        font-size: 1.2em !important;
-    }
-
-    .bimasakti-features {
-        grid-area: features;
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 15px;
-    }
-
-    .bimasakti-solution-item {
-        flex-basis: calc(33.333% - 10px);
-        max-width: calc(33.333% - 10px);
-    }
-
-    /* Mobile responsive styles */
-    @media (max-width: 1024px) {
+    <style>
+        /* BIMASAKTI Solutions Grid Styles */
         .bimasakti-solutions-grid {
-            max-width: 90%;
+            display: grid;
+            grid-template-areas:
+                "title"
+                "description"
+                "button"
+                "features";
+            gap: 15px;
+            padding: 20px;
+            border-radius: 15px;
+            margin: 0 auto;
         }
 
         .bimasakti-solution-item {
-            flex-basis: calc(50% - 10px);
-            max-width: calc(50% - 10px);
-        }
-    }
-
-    @media (max-width: 768px) {
-        .bimasakti-solutions-grid {
-            max-width: 95%;
+            border-radius: 10px;
             padding: 15px;
-        }
-
-        .bimasakti-title {
-            font-size: 1.8rem;
-        }
-
-        .bimasakti-description {
-            font-size: 1em !important;
-            max-width: 90%;
-        }
-
-        .bimasakti-solution-item {
-            flex-basis: 100%;
-            max-width: 100%;
-        }
-    }
-
-    @media (max-width: 480px) {
-        .bimasakti-solutions-grid {
-            padding: 10px;
-        }
-
-        .bimasakti-title {
-            font-size: 1.5rem;
-        }
-
-        .bimasakti-description {
-            font-size: 0.9em !important;
+            font-size: 14px;
+            transition: all 0.3s ease;
+            background: white !important;
+            border: 2px solid rgba(221, 221, 221, 0.753);
         }
 
         .bimasakti-solution-item h4 {
-            font-size: 0.9rem;
+            font-size: 1rem;
+            margin-bottom: 10px;
+            background: linear-gradient(287deg, #90227e, #a327a0, #b62cc2);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            font-weight: 600;
+            position: relative;
+            padding-bottom: 5px;
+            display: flex;
+            align-items: center;
         }
 
-        .bimasakti-solution-item p {
-            font-size: 0.8rem;
+        .bimasakti-solution-item h4::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: linear-gradient(90deg, rgba(255, 255, 255, 0.767), #c85efa, #c85efa, rgba(255, 255, 255, 0.767));
+            width: 100%;
         }
-    }
-</style>
+
+        .bimasakti-title {
+            grid-area: title;
+            text-align: center;
+            font-size: 2rem !important;
+            background: linear-gradient(287deg, #625dfa, #c85efa, #8ddee4);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            margin-bottom: 15px;
+            font-weight: bold;
+        }
+
+        .bimasakti-description {
+            grid-area: description;
+            text-align: center;
+            max-width: 80%;
+            margin: 0 auto;
+            margin-bottom: 15px;
+            color: #666;
+            font-size: 1.2em !important;
+        }
+
+        .bimasakti-features {
+            grid-area: features;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        .bimasakti-solution-item {
+            flex-basis: calc(33.333% - 10px);
+            max-width: calc(33.333% - 10px);
+        }
+
+        /* Mobile responsive styles */
+        @media (max-width: 1024px) {
+            .bimasakti-solutions-grid {
+                max-width: 90%;
+            }
+
+            .bimasakti-solution-item {
+                flex-basis: calc(50% - 10px);
+                max-width: calc(50% - 10px);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .bimasakti-solutions-grid {
+                max-width: 95%;
+                padding: 15px;
+            }
+
+            .bimasakti-title {
+                font-size: 1.8rem;
+            }
+
+            .bimasakti-description {
+                font-size: 1em !important;
+                max-width: 90%;
+            }
+
+            .bimasakti-solution-item {
+                flex-basis: 100%;
+                max-width: 100%;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .bimasakti-solutions-grid {
+                padding: 10px;
+            }
+
+            .bimasakti-title {
+                font-size: 1.5rem;
+            }
+
+            .bimasakti-description {
+                font-size: 0.9em !important;
+            }
+
+            .bimasakti-solution-item h4 {
+                font-size: 0.9rem;
+            }
+
+            .bimasakti-solution-item p {
+                font-size: 0.8rem;
+            }
+        }
+    </style>
 
 
 
@@ -1815,8 +1866,11 @@
                     <div class="bg-light p-5 rounded-3 shadow-sm cta-card">
                         <div class="row align-items-center">
                             <div class="col-lg-8 mb-4 mb-lg-0">
-                                <h2 class="mb-3 fw-bold" style="background: linear-gradient(287deg, #625dfa, #c85efa); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">Ready to Transform Your Hotel Management?</h2>
-                                <p class="mb-0 text-muted lead">Let's discuss how Rhapsody can elevate your operations.</p>
+                                <h2 class="mb-3 fw-bold"
+                                    style="background: linear-gradient(287deg, #625dfa, #c85efa); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">
+                                    Ready to Transform Your Hotel Management?</h2>
+                                <p class="mb-0 text-muted lead">Let's discuss how Rhapsody can elevate your operations.
+                                </p>
                             </div>
                             <div class="col-lg-4 text-lg-end text-center">
                                 <a href="#" class="btn btn-primary btn-lg px-4 py-3 cta-button">Schedule a Demo</a>
@@ -1867,7 +1921,7 @@
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
         }
 
-       
+
 
         @media (max-width: 991px) {
             #cta h2 {
@@ -1884,152 +1938,158 @@
             }
         }
     </style>
-<section id="stats-feature-section" class="mt-4">
-    <div class="container-fluid "> <!-- Added px-4 for consistent padding -->
-        <div class="row align-items-center justify-content-center"> <!-- Added justify-content-center -->
-            <div class="col-lg-4 mb-4 mb-lg-0">
-           
-                <h2 class="section-title mb-3">Our Solutions</h2>
-                <style>
-                    @media (max-width: 767px) {
-                        .section-title {
-                            text-align: center;
+    <section id="stats-feature-section" class="mt-4">
+        <div class="container-fluid ">
+            <!-- Added px-4 for consistent padding -->
+            <div class="row align-items-center justify-content-center">
+                <!-- Added justify-content-center -->
+                <div class="col-lg-4 mb-4 mb-lg-0">
+
+                    <h2 class="section-title mb-3">Our Solutions</h2>
+                    <style>
+                        @media (max-width: 767px) {
+                            .section-title {
+                                text-align: center;
+                            }
                         }
-                    }
-                </style>
-                <p class="section-description lead">Comprehensive software solutions for the hospitality industry.</p>
-            </div>
-            <div class="col-lg-8">
-              <div class="row mt-4">
-                    <div class="col-md-6">
-                        <div class="stats-item">
-                            <h3 class="stats-number mb-2">RHAPSODY FRONT OFFICE</h3>
-                            <ul class="list-unstyled stats-list">
-                                <li class="stats-text mb-2"><strong>Sales</strong></li>
-                                <li class="stats-text mb-2"><strong>Reservation</strong></li>
-                                <li class="stats-text mb-2"><strong>Housekeeping</strong></li>
-                                <li class="stats-text mb-2"><strong>Check-In</strong></li>
-                            </ul>
+                    </style>
+                    <p class="section-description lead">Comprehensive software solutions for the hospitality industry.
+                    </p>
+                </div>
+                <div class="col-lg-8">
+                    <div class="row mt-4">
+                        <div class="col-md-6">
+                            <div class="stats-item">
+                                <h3 class="stats-number mb-2">RHAPSODY FRONT OFFICE</h3>
+                                <ul class="list-unstyled stats-list">
+                                    <li class="stats-text mb-2"><strong>Sales</strong></li>
+                                    <li class="stats-text mb-2"><strong>Reservation</strong></li>
+                                    <li class="stats-text mb-2"><strong>Housekeeping</strong></li>
+                                    <li class="stats-text mb-2"><strong>Check-In</strong></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="stats-item">
+                                <h3 class="stats-number mb-2">RHAPSODY BACK OFFICE</h3>
+                                <ul class="list-unstyled stats-list">
+                                    <li class="stats-text mb-2"><strong>Account Receivable</strong></li>
+                                    <li class="stats-text mb-2"><strong>Cash & Bank</strong></li>
+                                    <li class="stats-text mb-2"><strong>Fixed Asset</strong></li>
+                                    <li class="stats-text mb-2"><strong>General Ledger</strong></li>
+                                </ul>
+                            </div>
                         </div>
                     </div>
-                    <div class="col-md-6">
-                        <div class="stats-item">
-                            <h3 class="stats-number mb-2">RHAPSODY BACK OFFICE</h3>
-                            <ul class="list-unstyled stats-list">
-                                <li class="stats-text mb-2"><strong>Account Receivable</strong></li>
-                                <li class="stats-text mb-2"><strong>Cash & Bank</strong></li>
-                                <li class="stats-text mb-2"><strong>Fixed Asset</strong></li>
-                                <li class="stats-text mb-2"><strong>General Ledger</strong></li>
-                            </ul>
-                        </div>
+                    <div class="stats-separator-container">
+                        <div class="stats-horizontal-separator"></div>
+                        <svg class="stats-separator-logo mx-2" width="60" height="60" viewBox="0 0 64 64"
+                            xmlns="http://www.w3.org/2000/svg" fill="#6a0dad">
+                            <rect x="10" y="20" width="10" height="30" fill="#6a0dad" />
+                            <rect x="25" y="10" width="10" height="40" fill="#6a0dad" />
+                            <rect x="40" y="20" width="10" height="30" fill="#6a0dad" />
+                            <rect x="15" y="35" width="5" height="5" fill="#ffffff" />
+                            <rect x="30" y="25" width="5" height="5" fill="#ffffff" />
+                            <rect x="45" y="35" width="5" height="5" fill="#ffffff" />
+                            <rect x="30" y="45" width="5" height="5" fill="#ffffff" />
+                        </svg>
+                        <div class="stats-horizontal-separator"></div>
                     </div>
-                </div>
-                <div class="stats-separator-container">
-                    <div class="stats-horizontal-separator"></div>
-                    <svg class="stats-separator-logo mx-2" width="60" height="60" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" fill="#6a0dad">
-                        <rect x="10" y="20" width="10" height="30" fill="#6a0dad"/>
-                        <rect x="25" y="10" width="10" height="40" fill="#6a0dad"/>
-                        <rect x="40" y="20" width="10" height="30" fill="#6a0dad"/>
-                        <rect x="15" y="35" width="5" height="5" fill="#ffffff"/>
-                        <rect x="30" y="25" width="5" height="5" fill="#ffffff"/>
-                        <rect x="45" y="35" width="5" height="5" fill="#ffffff"/>
-                        <rect x="30" y="45" width="5" height="5" fill="#ffffff"/>
-                    </svg>
-                    <div class="stats-horizontal-separator"></div>
-                </div>
-                <div class="row justify-content-center" style="margin-top: 5%;">
-                    <div class="col-md-6">
-                        <div class="stats-item">
-                            <h3 class="stats-number mb-2">RHAPSODY LOGISTIC</h3>
-                            <ul class="list-unstyled stats-list">
-                                <li class="stats-text mb-2"><strong>Purchasing</strong></li>
-                                <li class="stats-text mb-2"><strong>Receiving</strong></li>
-                                <li class="stats-text mb-2"><strong>Inventory</strong></li>
-                                <li class="stats-text mb-2"><strong>Cost Control</strong></li>
-                            </ul>
+                    <div class="row justify-content-center" style="margin-top: 5%;">
+                        <div class="col-md-6">
+                            <div class="stats-item">
+                                <h3 class="stats-number mb-2">RHAPSODY LOGISTIC</h3>
+                                <ul class="list-unstyled stats-list">
+                                    <li class="stats-text mb-2"><strong>Purchasing</strong></li>
+                                    <li class="stats-text mb-2"><strong>Receiving</strong></li>
+                                    <li class="stats-text mb-2"><strong>Inventory</strong></li>
+                                    <li class="stats-text mb-2"><strong>Cost Control</strong></li>
+                                </ul>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-</section>
+    </section>
 
-<style>
-    #stats-feature-section {
-        background-color: #f8f9fa;
-        padding: 80px 0;
-        margin: 0 auto;
-        border: 2px solid rgba(221, 221, 221, 0.753);
-    }
+    <style>
+        #stats-feature-section {
+            background-color: #f8f9fa;
+            padding: 80px 0;
+            margin: 0 auto;
+            border: 2px solid rgba(221, 221, 221, 0.753);
+        }
 
-    body.dark-mode #stats-feature-section {
-        background-color: rgba(33, 23, 52, 0.7);
-        backdrop-filter: blur(10px);
-        border: 1px solid rgba(185, 185, 185, 0.74);
-    }
+        body.dark-mode #stats-feature-section {
+            background-color: rgba(33, 23, 52, 0.7);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(185, 185, 185, 0.74);
+        }
 
-    .stats-row {
-        display: flex;
-        justify-content: space-between;
-        position: relative;
-    }
-
- 
-    .stats-col {
-        width: 48%;
-    }
-
-    .stats-item {
-        text-align: center;
-        margin-bottom: 30px;
-    }
-
-    .stats-number {
-        font-size: 3.5rem;
-        font-weight: bold;
-        margin-bottom: 10px;
-    }
-
-    .stats-text {
-        font-size: 1.1rem;
-        color: #6c757d;
-    }
-
-    .stats-separator-container {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        margin: -15px 0;
-    }
-
-    .stats-horizontal-separator {
-        flex-grow: 1;
-        height: 2px;
-        background-color: #dee2e6;
-    }
-
-    .stats-separator-logo {
-        width: 60px;
-        height: 60px;
-        margin: 0 20px;
-    }
-
-    @media (max-width: 768px) {
         .stats-row {
-            flex-direction: column;
+            display: flex;
+            justify-content: space-between;
+            position: relative;
         }
 
-        .stats-row::after {
-            display: none;
-        }
 
         .stats-col {
-            width: 105%; /* Increased width slightly */
-            margin-left: -2.5%; /* Adjust for centering */
+            width: 48%;
         }
-    }
-</style>
+
+        .stats-item {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .stats-number {
+            font-size: 3.5rem;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .stats-text {
+            font-size: 1.1rem;
+            color: #6c757d;
+        }
+
+        .stats-separator-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: -15px 0;
+        }
+
+        .stats-horizontal-separator {
+            flex-grow: 1;
+            height: 2px;
+            background-color: #dee2e6;
+        }
+
+        .stats-separator-logo {
+            width: 60px;
+            height: 60px;
+            margin: 0 20px;
+        }
+
+        @media (max-width: 768px) {
+            .stats-row {
+                flex-direction: column;
+            }
+
+            .stats-row::after {
+                display: none;
+            }
+
+            .stats-col {
+                width: 105%;
+                /* Increased width slightly */
+                margin-left: -2.5%;
+                /* Adjust for centering */
+            }
+        }
+    </style>
 
 
 
@@ -2055,11 +2115,10 @@
         .separator-line {
             flex-grow: 1;
             height: 2px;
-            background: linear-gradient(90deg, 
-                rgba(255,255,255,0) 0%,
-                rgba(144,84,208,0.8) 50%,
-                rgba(255,255,255,0) 100%
-            );
+            background: linear-gradient(90deg,
+                    rgba(255, 255, 255, 0) 0%,
+                    rgba(144, 84, 208, 0.8) 50%,
+                    rgba(255, 255, 255, 0) 100%);
             position: relative;
             overflow: hidden;
         }
@@ -2071,11 +2130,10 @@
             left: -100%;
             width: 100%;
             height: 100%;
-            background: linear-gradient(90deg, 
-                transparent,
-                rgba(255, 255, 255, 0.8),
-                transparent
-            );
+            background: linear-gradient(90deg,
+                    transparent,
+                    rgba(255, 255, 255, 0.8),
+                    transparent);
             animation: shimmer 2s infinite;
         }
 
@@ -2094,8 +2152,8 @@
             margin: 0 30px;
             background-color: #9054d0;
             border-radius: 50%;
-            box-shadow: 0 0 25px rgba(144,84,208,0.5), 
-                        0 0 15px rgba(144,84,208,0.3) inset;
+            box-shadow: 0 0 25px rgba(144, 84, 208, 0.5),
+                0 0 15px rgba(144, 84, 208, 0.3) inset;
             position: relative;
             overflow: hidden;
             transition: all 0.3s ease;
@@ -2103,8 +2161,8 @@
 
         .separator-icon:hover {
             transform: scale(1.1) rotate(360deg);
-            box-shadow: 0 0 35px rgba(144,84,208,0.8), 
-                        0 0 25px rgba(144,84,208,0.5) inset;
+            box-shadow: 0 0 35px rgba(144, 84, 208, 0.8),
+                0 0 25px rgba(144, 84, 208, 0.5) inset;
         }
 
         .separator-icon::before {
@@ -2114,14 +2172,12 @@
             left: -50%;
             width: 200%;
             height: 200%;
-            background: conic-gradient(
-                from 0deg,
-                rgba(124, 79, 201, 0.9),
-                rgba(144, 84, 208, 0.9),
-                rgba(177, 84, 208, 0.9),
-                rgba(144, 84, 208, 0.9),
-                rgba(124, 79, 201, 0.9)
-            );
+            background: conic-gradient(from 0deg,
+                    rgba(124, 79, 201, 0.9),
+                    rgba(144, 84, 208, 0.9),
+                    rgba(177, 84, 208, 0.9),
+                    rgba(144, 84, 208, 0.9),
+                    rgba(124, 79, 201, 0.9));
             animation: rotate 8s linear infinite;
         }
 
@@ -2130,7 +2186,7 @@
             color: #ffffff;
             z-index: 1;
             position: relative;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
             animation: pulse 2s infinite alternate;
         }
 
@@ -2144,6 +2200,7 @@
             0% {
                 transform: scale(1);
             }
+
             100% {
                 transform: scale(1.2);
             }
@@ -2174,6 +2231,7 @@
                 opacity: 0.6;
                 transform: translateY(-50%) scale(1);
             }
+
             100% {
                 opacity: 1;
                 transform: translateY(-50%) scale(1.2);
@@ -2198,7 +2256,7 @@
     <section id="rhapsody-features-2023" class="py-5 mt-5">
         <div class="container-fluid">
             <h2 class="text-center mb-5 bimasakti-title rhapsody-title-2023-new ">Rhapsody Features</h2>
-            
+
             <div class="rhapsody-tabs-2023-new">
                 <button class="rhapsody-tab-2023-new active" data-tab="front-office">
                     <i class="fas fa-concierge-bell"></i> Front Office
@@ -2209,45 +2267,77 @@
                 <button class="rhapsody-tab-2023-new" data-tab="logistic-system">
                     <i class="fas fa-truck"></i> Logistic System
                 </button>
-          
+
                 <div class="tab-indicator-new"></div>
             </div>
-            
+
             <div class="animated-separator"></div>
-            
+
             <div class="rhapsody-content-2023-new">
                 <div class="rhapsody-tab-content-2023-new active" id="front-office">
                     <h3 class="text-center mb-4">Front Office Solutions</h3>
                     <div class="rhapsody-image-wrapper">
-                        <img src="assets/img/hotel/front_office_realta_rhapsody_hotel_management_system.jpg" alt="Front Office" class="rhapsody-image-2023-new rounded mb-5 zoomable-image">
+                        <img src="assets/img/hotel/front_office_realta_rhapsody_hotel_management_system.jpg"
+                            alt="Front Office" class="rhapsody-image-2023-new rounded mb-5 zoomable-image">
                     </div>
                     <div class="rhapsody-description-wrapper">
-                        <p class="rhapsody-description-new mt-4">Rhapsody's Front Office solutions empower staff to deliver exceptional personal service. By automating administrative tasks, it allows front desk officers to focus on creating memorable guest experiences.</p>
-                        <p class="rhapsody-description-new">Our system provides powerful tools for building long-term customer relationships and identifying revenue opportunities. It analyzes guest behavior and preferences, enabling tailored services and targeted marketing campaigns.</p>
-                        <p class="rhapsody-description-new">Rhapsody offers real-time integration between Point of Sale and Front Office systems, enabling features like automatic charge restrictions for cash-basis guests and instant updates to sales analysis reports.</p>
-                        <p class="rhapsody-description-new">For banquet management, Rhapsody streamlines interdepartmental communication and event preparation. It generates Banquet Event Orders instantly and incorporates them into a Tracing System for efficient coordination and timely execution.</p>
+                        <p class="rhapsody-description-new mt-4">Rhapsody's Front Office solutions empower staff to
+                            deliver exceptional personal service. By automating administrative tasks, it allows front
+                            desk officers to focus on creating memorable guest experiences.</p>
+                        <p class="rhapsody-description-new">Our system provides powerful tools for building long-term
+                            customer relationships and identifying revenue opportunities. It analyzes guest behavior and
+                            preferences, enabling tailored services and targeted marketing campaigns.</p>
+                        <p class="rhapsody-description-new">Rhapsody offers real-time integration between Point of Sale
+                            and Front Office systems, enabling features like automatic charge restrictions for
+                            cash-basis guests and instant updates to sales analysis reports.</p>
+                        <p class="rhapsody-description-new">For banquet management, Rhapsody streamlines
+                            interdepartmental communication and event preparation. It generates Banquet Event Orders
+                            instantly and incorporates them into a Tracing System for efficient coordination and timely
+                            execution.</p>
                     </div>
                 </div>
                 <div class="rhapsody-tab-content-2023-new" id="back-office">
                     <h3 class="text-center mb-4">Back Office Management</h3>
                     <div class="rhapsody-image-wrapper">
-                        <img src="assets/img/hotel/back_office_realta_rhapsody_hotel_management_system.jpg" alt="Back Office" class="rhapsody-image-2023-new rounded mb-5 zoomable-image">
+                        <img src="assets/img/hotel/back_office_realta_rhapsody_hotel_management_system.jpg"
+                            alt="Back Office" class="rhapsody-image-2023-new rounded mb-5 zoomable-image">
                     </div>
                     <div class="rhapsody-description-wrapper">
-                        <p class="rhapsody-description-new mt-4">Rhapsody Back Office is a powerful tool that seamlessly transfers operational information into financial modules. It integrates analytical reports across Income Audit, Accounts Receivable, Accounts Payable, Cash & Bank, Fixed Assets, and General Ledger.</p>
-                        <p class="rhapsody-description-new">Our Multi Budget utility empowers management teams to compare initial budgets with revised budgets and forecasts. Rhapsody streamlines Income Audit by automating sales summary and journal preparation, generating Consolidated Daily Revenue Reports and Sales Analysis by Department.</p>
-                        <p class="rhapsody-description-new">For supplier management, Rhapsody offers AP Aging Analysis and Payment Schedules with approval hierarchies, directly linked to the Cash & Bank module for immediate payment processing. The system also provides Bank Reconciliation and Cash/Bank Daily Activity Reports for efficient cash flow management.</p>
+                        <p class="rhapsody-description-new mt-4">Rhapsody Back Office is a powerful tool that seamlessly
+                            transfers operational information into financial modules. It integrates analytical reports
+                            across Income Audit, Accounts Receivable, Accounts Payable, Cash & Bank, Fixed Assets, and
+                            General Ledger.</p>
+                        <p class="rhapsody-description-new">Our Multi Budget utility empowers management teams to
+                            compare initial budgets with revised budgets and forecasts. Rhapsody streamlines Income
+                            Audit by automating sales summary and journal preparation, generating Consolidated Daily
+                            Revenue Reports and Sales Analysis by Department.</p>
+                        <p class="rhapsody-description-new">For supplier management, Rhapsody offers AP Aging Analysis
+                            and Payment Schedules with approval hierarchies, directly linked to the Cash & Bank module
+                            for immediate payment processing. The system also provides Bank Reconciliation and Cash/Bank
+                            Daily Activity Reports for efficient cash flow management.</p>
                     </div>
                 </div>
                 <div class="rhapsody-tab-content-2023-new" id="logistic-system">
                     <h3 class="text-center mb-4">Logistic System</h3>
                     <div class="rhapsody-image-wrapper">
-                        <img src="assets/img/hotel/logistic_realta_rhapsody_hotel_management_system.jpg" alt="Logistic System" class="rhapsody-image-2023-new rounded mb-5 zoomable-image">
+                        <img src="assets/img/hotel/logistic_realta_rhapsody_hotel_management_system.jpg"
+                            alt="Logistic System" class="rhapsody-image-2023-new rounded mb-5 zoomable-image">
                     </div>
                     <div class="rhapsody-description-wrapper">
-                        <p class="rhapsody-description-new mt-4">Rhapsody's purchasing system categorizes buying based on frequency. The Daily Market List handles perishables like vegetables and meats, instantly processing kitchen staff requests. Regular Order manages periodic purchases such as toiletries and stationery. Purchase History stores records, enabling analysis of purchase frequency and supplier price comparisons.</p>
-                        <p class="rhapsody-description-new">Rhapsody equips Receiving departments with tools for optimal handling of receipts, redistribution, and reporting. The Expected Delivery Report aids in storage planning and proactively notifies of delays. Receiving Record Forms are auto-generated and integrated into Daily Receiving Report Summaries. This module's integration with Accounts Payable ensures simultaneous database updates.</p>
-                        <p class="rhapsody-description-new">For efficient supply management, Rhapsody provides Department Usage Report and Daily Flash Report to department heads and Cost Control. These tools assist in forecasting and managing supply usage, helping to prevent departmental overspending.</p>
+                        <p class="rhapsody-description-new mt-4">Rhapsody's purchasing system categorizes buying based
+                            on frequency. The Daily Market List handles perishables like vegetables and meats, instantly
+                            processing kitchen staff requests. Regular Order manages periodic purchases such as
+                            toiletries and stationery. Purchase History stores records, enabling analysis of purchase
+                            frequency and supplier price comparisons.</p>
+                        <p class="rhapsody-description-new">Rhapsody equips Receiving departments with tools for optimal
+                            handling of receipts, redistribution, and reporting. The Expected Delivery Report aids in
+                            storage planning and proactively notifies of delays. Receiving Record Forms are
+                            auto-generated and integrated into Daily Receiving Report Summaries. This module's
+                            integration with Accounts Payable ensures simultaneous database updates.</p>
+                        <p class="rhapsody-description-new">For efficient supply management, Rhapsody provides
+                            Department Usage Report and Daily Flash Report to department heads and Cost Control. These
+                            tools assist in forecasting and managing supply usage, helping to prevent departmental
+                            overspending.</p>
                     </div>
                 </div>
             </div>
@@ -2255,373 +2345,653 @@
     </section>
 
     <style>
-    #rhapsody-features-2023 {
-        overflow-x: hidden;
-    }
+        #rhapsody-features-2023 {
+            overflow-x: hidden;
+        }
 
-    #rhapsody-features-2023 .rhapsody-title-2023-new {
-        margin-bottom: 2rem;
-        font-size: 2.8rem;
-        opacity: 0;
-        transform: translateY(50px);
-        transition: opacity 0.5s ease, transform 0.5s ease;
-    }
-
-    @media (max-width: 768px) {
         #rhapsody-features-2023 .rhapsody-title-2023-new {
-            font-size: 2.2rem;
-        }
-    }
-
-    #rhapsody-features-2023 .rhapsody-title-2023-new.visible {
-        opacity: 1;
-        transform: translateY(0);
-    }
-    #rhapsody-features-2023 .rhapsody-description-new {
-        max-width: 80%;
-        margin: 1.5rem auto;
-        text-align: left;
-        font-size: 20px;
-        font-weight: 500;
-        opacity: 0;
-        transform: translateX(-50px);
-        transition: opacity 0.5s ease, transform 0.5s ease;
-    }
-    
-    #rhapsody-features-2023 .rhapsody-description-new.visible {
-        opacity: 1;
-        transform: translateX(0);
-    }
-
-    #rhapsody-features-2023 .rhapsody-image-wrapper {
-        overflow: hidden;
-        border-radius: 10px;
-        cursor: pointer;
-    }
-
-    #rhapsody-features-2023 .rhapsody-image-2023-new {
-        max-width: 80%;
-        width: 80%;
-        height: auto;
-        display: block;
-        margin: 0 auto 2rem;
-        transition: transform 0.5s ease, box-shadow 0.5s ease;
-        opacity: 0;
-        transform: scale(0.9);
-    }
-
-    #rhapsody-features-2023 .rhapsody-image-2023-new.visible {
-        opacity: 1;
-        transform: scale(1);
-    }
-
-    #rhapsody-features-2023 .rhapsody-tabs-2023-new {
-        display: flex;
-        justify-content: center;
-        margin-bottom: 2.5rem;
-        position: relative;
-        overflow: hidden;
-        border-radius: 50px;
-        padding: 10px;
-        opacity: 0;
-        transform: translateY(30px);
-        transition: opacity 0.5s ease, transform 0.5s ease;
-    }
-
-    #rhapsody-features-2023 .rhapsody-tabs-2023-new.visible {
-        opacity: 1;
-        transform: translateY(0);
-    }
-
-    #rhapsody-features-2023 .rhapsody-tab-2023-new {
-        background: transparent;
-        border: none;
-        padding: 16px 26px;
-        margin: 0 5px;
-        border-radius: 25px;
-        font-size: 0.95rem;
-        font-weight: bolder;
-        color: #585858;
-        transition: all 0.3s ease;
-        cursor: pointer;
-        position: relative;
-        overflow: hidden;
-        z-index: 1;
-    }
-
-    #rhapsody-features-2023 .rhapsody-tab-2023-new::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background:  linear-gradient(45deg, #a1379559, #7209d494);
-        opacity: 0;
-        transition: opacity 0.3s ease;
-        z-index: -1;
-        border-radius: 25px;
-    }
-
-    #rhapsody-features-2023 .rhapsody-tab-2023-new:hover::before,
-    #rhapsody-features-2023 .rhapsody-tab-2023-new.active::before {
-        opacity: 1;
-    }
-
-    #rhapsody-features-2023 .rhapsody-tab-2023-new:hover,
-    #rhapsody-features-2023 .rhapsody-tab-2023-new.active {
-        color: white;
-        transform: translateY(-3px);
-        background: white !important;
-
-    }
-
-    #rhapsody-features-2023 .rhapsody-tab-2023-new i {
-        margin-right: 5px;
-        transition: transform 0.3s ease;
-    }
-
-    #rhapsody-features-2023 .rhapsody-tab-2023-new:hover i,
-    #rhapsody-features-2023 .rhapsody-tab-2023-new.active i {
-        transform: scale(1.2);
-    }
-
-    #rhapsody-features-2023 .tab-indicator-new {
-        position: absolute;
-        bottom: 5px;
-        height: 3px;
-        background: linear-gradient(45deg, #a137959d, #7209d486);
-        transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-        border-radius: 2px;
-    }
-
-    #rhapsody-features-2023 .rhapsody-content-2023-new {
-        border-radius: 10px;
-        padding: 2rem;
-        margin: 0 auto;
-        transition: opacity 0.5s ease, transform 0.5s ease;
-        border: 1px solid rgba(225, 228, 231, 0.644);
-    }
-
-    #rhapsody-features-2023 .rhapsody-tab-content-2023-new {
-        display: none;
-        opacity: 0;
-        transform: translateY(20px);
-        transition: opacity 0.5s ease, transform 0.5s ease;
-    }
-
-    #rhapsody-features-2023 .rhapsody-tab-content-2023-new.active {
-        display: block;
-        opacity: 1;
-        transform: translateY(0);
-        animation: rhapsodyFadeIn 0.5s ease;
-    }
-
-    @keyframes rhapsodyFadeIn {
-        from { opacity: 0; transform: translateY(20px); }
-        to { opacity: 1; transform: translateY(0); }
-    }
-
-    #rhapsody-features-2023 .rhapsody-tab-content-2023-new h3 {
-        color: #a13795;
-        margin-bottom: 1rem;
-        position: relative;
-        display: block;
-        text-align: center;
-        padding-bottom: 10px;
-        width: 100%;
-        opacity: 0;
-        transform: translateY(30px);
-        transition: opacity 0.5s ease, transform 0.5s ease;
-    }
-
-    #rhapsody-features-2023 .rhapsody-tab-content-2023-new h3.visible {
-        opacity: 1;
-        transform: translateY(0);
-    }
-    .modal {
-        display: none;
-        position: fixed;
-        z-index: 1000;
-        left: 0;
-        top: 0;
-        width: 100%;
-        height: 100%;
-        overflow: auto;
-        background-color: rgba(0, 0, 0, 0.411);
-        backdrop-filter: blur(8px);
-        -webkit-backdrop-filter: blur(8px);
-    }
-
-    .modal::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background: inherit;
-        filter: blur(10px);
-        z-index: -1;
-    }
-
-    .modal-content {
-        margin: auto;
-        display: block;
-        width: 80%;
-        max-width: 700px;
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-    }
-
-    .close {
-        position: absolute;
-        top: 15px;
-        right: 35px;
-        color: #f1f1f1;
-        font-size: 40px;
-        font-weight: bold;
-        transition: 0.3s;
-    }
-
-    .close:hover,
-    .close:focus {
-        color: #bbb;
-        text-decoration: none;
-        cursor: pointer;
-    }
-    .animated-separator {
-        width: 100%;
-        height: 2px;
-        background: linear-gradient(90deg, transparent, #a1379586, #7209d479, transparent);
-        position: relative;
-        overflow: hidden;
-        margin: -30px 0 20px; /* Changed: Negative top margin to move it up */
-    }
-
-    .animated-separator::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: -100%;
-        width: 100%;
-        height: 100%;
-        background: linear-gradient(90deg, transparent, #ffffff, transparent);
-        animation: separatorAnimation 2s linear infinite;
-    }
-
-    @keyframes separatorAnimation {
-        0% {
-            left: -100%;
-        }
-        100% {
-            left: 100%;
-        }
-    }
-
-    @media (max-width: 768px) {
-        #rhapsody-features-2023 .rhapsody-tabs-2023-new {
-            flex-wrap: wrap;
-            border-radius: 25px;
-            overflow: hidden;
+            margin-bottom: 2rem;
+            font-size: 2.8rem;
+            opacity: 0;
+            transform: translateY(50px);
+            transition: opacity 0.5s ease, transform 0.5s ease;
         }
 
-        #rhapsody-features-2023 .tab-indicator-new {
-            display: none;
+        @media (max-width: 768px) {
+            #rhapsody-features-2023 .rhapsody-title-2023-new {
+                font-size: 2.2rem;
+            }
         }
 
-        #rhapsody-features-2023 .rhapsody-tab-2023-new {
-            margin-bottom: 10px;
-            width: calc(50% - 10px);
-        }
-
-        #rhapsody-features-2023 .rhapsody-image-2023-new {
-            max-width: 100%;
-            width: 100%;
+        #rhapsody-features-2023 .rhapsody-title-2023-new.visible {
+            opacity: 1;
+            transform: translateY(0);
         }
 
         #rhapsody-features-2023 .rhapsody-description-new {
-            max-width: 100%;
+            max-width: 80%;
+            margin: 1.5rem auto;
+            text-align: left;
+            font-size: 20px;
+            font-weight: 500;
+            opacity: 0;
+            transform: translateX(-50px);
+            transition: opacity 0.5s ease, transform 0.5s ease;
+        }
+
+        #rhapsody-features-2023 .rhapsody-description-new.visible {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        #rhapsody-features-2023 .rhapsody-image-wrapper {
+            overflow: hidden;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+
+        #rhapsody-features-2023 .rhapsody-image-2023-new {
+            max-width: 80%;
+            width: 80%;
+            height: auto;
+            display: block;
+            margin: 0 auto 2rem;
+            transition: transform 0.5s ease, box-shadow 0.5s ease;
+            opacity: 0;
+            transform: scale(0.9);
+        }
+
+        #rhapsody-features-2023 .rhapsody-image-2023-new.visible {
+            opacity: 1;
+            transform: scale(1);
+        }
+
+        #rhapsody-features-2023 .rhapsody-tabs-2023-new {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 2.5rem;
+            position: relative;
+            overflow: hidden;
+            border-radius: 50px;
+            padding: 10px;
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.5s ease, transform 0.5s ease;
+        }
+
+        #rhapsody-features-2023 .rhapsody-tabs-2023-new.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        #rhapsody-features-2023 .rhapsody-tab-2023-new {
+            background: transparent;
+            border: none;
+            padding: 16px 26px;
+            margin: 0 5px;
+            border-radius: 25px;
+            font-size: 0.95rem;
+            font-weight: bolder;
+            color: #585858;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+        }
+
+        #rhapsody-features-2023 .rhapsody-tab-2023-new::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, #a1379559, #7209d494);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            z-index: -1;
+            border-radius: 25px;
+        }
+
+        #rhapsody-features-2023 .rhapsody-tab-2023-new:hover::before,
+        #rhapsody-features-2023 .rhapsody-tab-2023-new.active::before {
+            opacity: 1;
+        }
+
+        #rhapsody-features-2023 .rhapsody-tab-2023-new:hover,
+        #rhapsody-features-2023 .rhapsody-tab-2023-new.active {
+            color: white;
+            transform: translateY(-3px);
+            background: white !important;
+
+        }
+
+        #rhapsody-features-2023 .rhapsody-tab-2023-new i {
+            margin-right: 5px;
+            transition: transform 0.3s ease;
+        }
+
+        #rhapsody-features-2023 .rhapsody-tab-2023-new:hover i,
+        #rhapsody-features-2023 .rhapsody-tab-2023-new.active i {
+            transform: scale(1.2);
+        }
+
+        #rhapsody-features-2023 .tab-indicator-new {
+            position: absolute;
+            bottom: 5px;
+            height: 3px;
+            background: linear-gradient(45deg, #a137959d, #7209d486);
+            transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+            border-radius: 2px;
+        }
+
+        #rhapsody-features-2023 .rhapsody-content-2023-new {
+            border-radius: 10px;
+            padding: 2rem;
+            margin: 0 auto;
+            transition: opacity 0.5s ease, transform 0.5s ease;
+            border: 1px solid rgba(225, 228, 231, 0.644);
+        }
+
+        #rhapsody-features-2023 .rhapsody-tab-content-2023-new {
+            display: none;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.5s ease, transform 0.5s ease;
+        }
+
+        #rhapsody-features-2023 .rhapsody-tab-content-2023-new.active {
+            display: block;
+            opacity: 1;
+            transform: translateY(0);
+            animation: rhapsodyFadeIn 0.5s ease;
+        }
+
+        @keyframes rhapsodyFadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        #rhapsody-features-2023 .rhapsody-tab-content-2023-new h3 {
+            color: #a13795;
+            margin-bottom: 1rem;
+            position: relative;
+            display: block;
+            text-align: center;
+            padding-bottom: 10px;
+            width: 100%;
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.5s ease, transform 0.5s ease;
+        }
+
+        #rhapsody-features-2023 .rhapsody-tab-content-2023-new h3.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.411);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+        }
+
+        .modal::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: inherit;
+            filter: blur(10px);
+            z-index: -1;
         }
 
         .modal-content {
-            width: 95%;
+            margin: auto;
+            display: block;
+            width: 80%;
+            max-width: 700px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
         }
-    }
+
+        .close {
+            position: absolute;
+            top: 15px;
+            right: 35px;
+            color: #f1f1f1;
+            font-size: 40px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: #bbb;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        .animated-separator {
+            width: 100%;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, #a1379586, #7209d479, transparent);
+            position: relative;
+            overflow: hidden;
+            margin: -30px 0 20px;
+            /* Changed: Negative top margin to move it up */
+        }
+
+        .animated-separator::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, #ffffff, transparent);
+            animation: separatorAnimation 2s linear infinite;
+        }
+
+        @keyframes separatorAnimation {
+            0% {
+                left: -100%;
+            }
+
+            100% {
+                left: 100%;
+            }
+        }
+
+        @media (max-width: 768px) {
+            #rhapsody-features-2023 .rhapsody-tabs-2023-new {
+                flex-wrap: wrap;
+                border-radius: 25px;
+                overflow: hidden;
+            }
+
+            #rhapsody-features-2023 .tab-indicator-new {
+                display: none;
+            }
+
+            #rhapsody-features-2023 .rhapsody-tab-2023-new {
+                margin-bottom: 10px;
+                width: calc(50% - 10px);
+            }
+
+            #rhapsody-features-2023 .rhapsody-image-2023-new {
+                max-width: 100%;
+                width: 100%;
+            }
+
+            #rhapsody-features-2023 .rhapsody-description-new {
+                max-width: 100%;
+            }
+
+            .modal-content {
+                width: 95%;
+            }
+        }
     </style>
 
     <script>
-    document.addEventListener('DOMContentLoaded', function() {
-        const tabs = document.querySelectorAll('.rhapsody-tab-2023-new');
-        const contents = document.querySelectorAll('.rhapsody-tab-content-2023-new');
-        const tabIndicator = document.querySelector('.tab-indicator-new');
+        document.addEventListener('DOMContentLoaded', function () {
+            const tabs = document.querySelectorAll('.rhapsody-tab-2023-new');
+            const contents = document.querySelectorAll('.rhapsody-tab-content-2023-new');
+            const tabIndicator = document.querySelector('.tab-indicator-new');
 
-        function setIndicatorPosition(tab) {
-            tabIndicator.style.width = `${tab.offsetWidth}px`;
-            tabIndicator.style.left = `${tab.offsetLeft}px`;
-        }
+            function setIndicatorPosition(tab) {
+                tabIndicator.style.width = `${tab.offsetWidth}px`;
+                tabIndicator.style.left = `${tab.offsetLeft}px`;
+            }
 
-        function switchTab(tab) {
-            const target = tab.getAttribute('data-tab');
+            function switchTab(tab) {
+                const target = tab.getAttribute('data-tab');
 
-            tabs.forEach(t => t.classList.remove('active'));
-            tab.classList.add('active');
+                tabs.forEach(t => t.classList.remove('active'));
+                tab.classList.add('active');
 
-            contents.forEach(content => {
-                content.classList.remove('active');
-                if (content.id === target) {
-                    content.classList.add('active');
-                    animateContent(content);
-                }
-            });
+                contents.forEach(content => {
+                    content.classList.remove('active');
+                    if (content.id === target) {
+                        content.classList.add('active');
+                        animateContent(content);
+                    }
+                });
 
-            setIndicatorPosition(tab);
-        }
-
-        function animateContent(content) {
-            const elements = content.querySelectorAll('h3, .rhapsody-image-2023-new, .rhapsody-description-new');
-            elements.forEach((el, index) => {
-                setTimeout(() => {
-                    el.classList.add('visible');
-                }, index * 200);
-            });
-        }
-
-        tabs.forEach(tab => {
-            tab.addEventListener('click', () => switchTab(tab));
-        });
-
-        // Set initial indicator position and retain current tab
-        const activeTab = document.querySelector('.rhapsody-tab-2023-new.active') || tabs[0];
-        switchTab(activeTab);
-
-        // Update indicator position on window resize
-        window.addEventListener('resize', () => {
-            const activeTab = document.querySelector('.rhapsody-tab-2023-new.active');
-            setIndicatorPosition(activeTab);
-        });
-
-        // Add hover effect for indicator
-        tabs.forEach(tab => {
-            tab.addEventListener('mouseover', () => {
                 setIndicatorPosition(tab);
+            }
+
+            function animateContent(content) {
+                const elements = content.querySelectorAll(
+                    'h3, .rhapsody-image-2023-new, .rhapsody-description-new');
+                elements.forEach((el, index) => {
+                    setTimeout(() => {
+                        el.classList.add('visible');
+                    }, index * 200);
+                });
+            }
+
+            tabs.forEach(tab => {
+                tab.addEventListener('click', () => switchTab(tab));
             });
 
-            tab.addEventListener('mouseout', () => {
+            // Set initial indicator position and retain current tab
+            const activeTab = document.querySelector('.rhapsody-tab-2023-new.active') || tabs[0];
+            switchTab(activeTab);
+
+            // Update indicator position on window resize
+            window.addEventListener('resize', () => {
                 const activeTab = document.querySelector('.rhapsody-tab-2023-new.active');
                 setIndicatorPosition(activeTab);
             });
+
+            // Add hover effect for indicator
+            tabs.forEach(tab => {
+                tab.addEventListener('mouseover', () => {
+                    setIndicatorPosition(tab);
+                });
+
+                tab.addEventListener('mouseout', () => {
+                    const activeTab = document.querySelector('.rhapsody-tab-2023-new.active');
+                    setIndicatorPosition(activeTab);
+                });
+            });
+
+            // Scroll-based animations
+            const rhapsodySection = document.getElementById('rhapsody-features-2023');
+            const title = rhapsodySection.querySelector('.rhapsody-title-2023-new');
+            const tabsContainer = rhapsodySection.querySelector('.rhapsody-tabs-2023-new');
+
+            function isElementInViewport(el) {
+                const rect = el.getBoundingClientRect();
+                return (
+                    rect.top >= 0 &&
+                    rect.left >= 0 &&
+                    rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+                    rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+                );
+            }
+
+            function animateOnScroll() {
+                if (isElementInViewport(title)) {
+                    title.classList.add('visible');
+                }
+                if (isElementInViewport(tabsContainer)) {
+                    tabsContainer.classList.add('visible');
+                }
+
+                const activeContent = rhapsodySection.querySelector('.rhapsody-tab-content-2023-new.active');
+                if (activeContent && isElementInViewport(activeContent)) {
+                    animateContent(activeContent);
+                }
+            }
+
+            window.addEventListener('scroll', animateOnScroll);
+            animateOnScroll(); // Initial check on load
+
+            // Image zoom functionality
+            const modal = document.createElement('div');
+            modal.classList.add('modal');
+            modal.innerHTML = `
+            <span class="close">&times;</span>
+            <img class="modal-content" id="img01">
+        `;
+            document.body.appendChild(modal);
+
+            const modalImg = document.getElementById("img01");
+            const closeBtn = document.getElementsByClassName("close")[0];
+
+            const images = document.querySelectorAll('.zoomable-image');
+            images.forEach(img => {
+                img.addEventListener('click', function () {
+                    modal.style.display = "block";
+                    modalImg.src = this.src;
+                });
+            });
+
+            closeBtn.onclick = function () {
+                modal.style.display = "none";
+            }
+
+            window.onclick = function (event) {
+                if (event.target == modal) {
+                    modal.style.display = "none";
+                }
+            }
+        });
+    </script>
+
+    <style>
+        .image-tabs-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            padding: 20px;
+        }
+
+        .image-tab {
+            width: 200px;
+            height: 200px;
+            position: relative;
+            cursor: pointer;
+            transition: all 0.5s cubic-bezier(0.25, 0.1, 0.25, 1);
+            overflow: hidden;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .image-tab img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: all 0.5s ease;
+        }
+
+        .image-tab.expanded {
+            width: 400px;
+            height: 400px;
+            z-index: 10;
+        }
+
+        .image-tab:not(.expanded):hover {
+            transform: scale(1.05);
+        }
+
+        .image-tab-content {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.9);
+            padding: 10px;
+            box-sizing: border-box;
+            transform: translateY(100%);
+            transition: transform 0.5s ease;
+        }
+
+        .image-tab.expanded .image-tab-content {
+            transform: translateY(0);
+        }
+
+        .image-tab.expanded img {
+            transform: scale(1.2);
+        }
+    </style>
+
+
+
+    <style>
+        .ict-solution-title {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .ict-solution-title h2 {
+            font-size: 2.5rem;
+            color: #ac53a2;
+            margin-bottom: 1rem;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+
+        .scroll-animation-container h2 {
+            font-size: 2.5rem;
+        }
+
+        .scroll-animation-container h3 {
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.5s ease, transform 0.5s ease;
+        }
+
+        .scroll-animation-container h3.bimasakti-title {
+            font-size: 2.2rem !important;
+        }
+
+        @media (max-width: 768px) {
+
+            .ict-solution-title h2,
+            .scroll-animation-container h2 {
+                font-size: 2rem;
+            }
+
+            .ict-solution-title h3,
+            .scroll-animation-container h3 {
+                font-size: 1rem !important;
+                max-width: 70%;
+            }
+
+            .scroll-animation-container h3.bimasakti-title {
+                font-size: 1.5rem !important;
+            }
+        }
+    </style>
+
+
+    <section class="hospitality-companies py-5">
+        <div class="container-fluid">
+            <h2 class="text-center mb-3 bimasakti-title rhapsody-title-2023-new" data-aos="fade-up"
+                data-aos-delay="100">
+                These Awesome Hospitality Companies Using Software
+            </h2>
+            <div class="ict-separator" data-aos="fade-in" data-aos-delay="200"></div>
+            <div class="full-image-container" data-aos="fade-up" data-aos-delay="300">
+                <img src="assets/img/hotel/rhapsody-client.png" alt="Hospitality Companies" class="img-fluid">
+            </div>
+        </div>
+    </section>
+
+    <style>
+        .hospitality-companies h2 {
+            font-size: 2.2rem;
+            font-weight: bold;
+        }
+
+        .full-image-container {
+            max-width: 100%;
+            overflow: hidden;
+            border-radius: 10px;
+            border: 2px solid rgba(221, 221, 221, 0.753);
+        }
+
+        .full-image-container img {
+            width: 100%;
+            height: auto;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        @media (max-width: 768px) {
+            .hospitality-companies h2 {
+                font-size: 1.8rem;
+            }
+        }
+    </style>
+
+
+
+
+    <div class="scroll-animation-container">
+        <h2 class="text-center mb-3 bimasakti-title rhapsody-title-2023-new" data-aos="fade-up">ICT ONE Solution For
+            Hospitality</h2>
+        <h3 class="ict-solution-title mt-2" data-aos="fade-up" data-aos-delay="100">With Standardized and Proven
+            Implementation method, ICT ONE Solution provides a Comprehensive Solution for Hospitality Business.</h3>
+        <h3 class="text-center mb-3 bimasakti-title rhapsody-title-2023-new" data-aos="fade-up" data-aos-delay="200">
+            Business Operations</h3>
+
+        <style>
+            .ict-separator {
+                width: 80%;
+                height: 1px;
+                background: linear-gradient(90deg, transparent, #ac53a2, transparent);
+                margin: 2rem auto 3rem;
+            }
+
+            .scroll-visible {
+                opacity: 1 !important;
+                transform: translateY(0) !important;
+            }
+        </style>
+
+
+        <div class="ict-separator" data-aos="fade-in" data-aos-delay="300"></div>
+    </div>
+
+    <div class="container-fluid">
+        <div class="ict-grid-container ">
+            <div class="ict-grid-item" data-aos="fade-up" data-aos-delay="400">
+                <img src="assets/img/hotel/1.1.jpg" alt="Accommodation" class="ict-grid-image">
+            </div>
+            <div class="ict-grid-item" data-aos="fade-up" data-aos-delay="500">
+                <img src="assets/img/hotel/1.2.jpg" alt="Dining" class="ict-grid-image">
+            </div>
+            <div class="ict-grid-item" data-aos="fade-up" data-aos-delay="600">
+                <img src="assets/img/hotel/1.3.png" alt="Wellness" class="ict-grid-image">
+            </div>
+            <div class="ict-grid-item" data-aos="fade-up" data-aos-delay="700">
+                <img src="assets/img/hotel/1.4.jpg" alt="Nightlife" class="ict-grid-image">
+            </div>
+            <div class="ict-grid-item" data-aos="fade-up" data-aos-delay="800">
+                <img src="assets/img/hotel/1.5.jpg" alt="Concierge" class="ict-grid-image">
+            </div>
+        </div>
+    </div>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 800,
+            once: true,
+            offset: 150
         });
 
-        // Scroll-based animations
-        const rhapsodySection = document.getElementById('rhapsody-features-2023');
-        const title = rhapsodySection.querySelector('.rhapsody-title-2023-new');
-        const tabsContainer = rhapsodySection.querySelector('.rhapsody-tabs-2023-new');
-
-        function isElementInViewport(el) {
-            const rect = el.getBoundingClientRect();
+        // Function to check if an element is in viewport
+        function isInViewport(element) {
+            const rect = element.getBoundingClientRect();
             return (
                 rect.top >= 0 &&
                 rect.left >= 0 &&
@@ -2630,373 +3000,114 @@
             );
         }
 
-        function animateOnScroll() {
-            if (isElementInViewport(title)) {
-                title.classList.add('visible');
-            }
-            if (isElementInViewport(tabsContainer)) {
-                tabsContainer.classList.add('visible');
-            }
-
-            const activeContent = rhapsodySection.querySelector('.rhapsody-tab-content-2023-new.active');
-            if (activeContent && isElementInViewport(activeContent)) {
-                animateContent(activeContent);
-            }
-        }
-
-        window.addEventListener('scroll', animateOnScroll);
-        animateOnScroll(); // Initial check on load
-
-        // Image zoom functionality
-        const modal = document.createElement('div');
-        modal.classList.add('modal');
-        modal.innerHTML = `
-            <span class="close">&times;</span>
-            <img class="modal-content" id="img01">
-        `;
-        document.body.appendChild(modal);
-
-        const modalImg = document.getElementById("img01");
-        const closeBtn = document.getElementsByClassName("close")[0];
-
-        const images = document.querySelectorAll('.zoomable-image');
-        images.forEach(img => {
-            img.addEventListener('click', function() {
-                modal.style.display = "block";
-                modalImg.src = this.src;
+        // Function to handle scroll event
+        function handleScroll() {
+            const h3Elements = document.querySelectorAll('.ict-solution-title, .bimasakti-title');
+            h3Elements.forEach((h3) => {
+                if (isInViewport(h3)) {
+                    h3.classList.add('scroll-visible');
+                }
             });
-        });
-
-        closeBtn.onclick = function() {
-            modal.style.display = "none";
         }
 
-        window.onclick = function(event) {
-            if (event.target == modal) {
-                modal.style.display = "none";
-            }
-        }
-    });
+        // Add scroll event listener
+        window.addEventListener('scroll', handleScroll);
+
+        // Initial check on page load
+        handleScroll();
     </script>
 
-<style>
-    .image-tabs-container {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 20px;
-        padding: 20px;
-    }
+    <style>
+        @import url('https://unpkg.com/aos@next/dist/aos.css');
 
-    .image-tab {
-        width: 200px;
-        height: 200px;
-        position: relative;
-        cursor: pointer;
-        transition: all 0.5s cubic-bezier(0.25, 0.1, 0.25, 1);
-        overflow: hidden;
-        border-radius: 10px;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    }
-
-    .image-tab img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        transition: all 0.5s ease;
-    }
-
-    .image-tab.expanded {
-        width: 400px;
-        height: 400px;
-        z-index: 10;
-    }
-
-    .image-tab:not(.expanded):hover {
-        transform: scale(1.05);
-    }
-
-    .image-tab-content {
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        width: 100%;
-        background: rgba(255, 255, 255, 0.9);
-        padding: 10px;
-        box-sizing: border-box;
-        transform: translateY(100%);
-        transition: transform 0.5s ease;
-    }
-
-    .image-tab.expanded .image-tab-content {
-        transform: translateY(0);
-    }
-
-    .image-tab.expanded img {
-        transform: scale(1.2);
-    }
-</style>
-
-
-
-<style>
-    .ict-solution-title {
-        text-align: center;
-        margin-bottom: 2rem;
-    }
-    
-    .ict-solution-title h2 {
-        font-size: 2.5rem;
-        color: #ac53a2;
-        margin-bottom: 1rem;
-        font-weight: bold;
-        text-transform: uppercase;
-    }
-    
-    .scroll-animation-container h2 {
-        font-size: 2.5rem;
-    }
-    
-    .scroll-animation-container h3 {
-        max-width: 800px;
-        margin-left: auto;
-        margin-right: auto;
-        opacity: 0;
-        transform: translateY(20px);
-        transition: opacity 0.5s ease, transform 0.5s ease;
-    }
-    
-    .scroll-animation-container h3.bimasakti-title {
-        font-size: 2.2rem !important;
-    }
-    
-    @media (max-width: 768px) {
-        .ict-solution-title h2,
-        .scroll-animation-container h2 {
-            font-size: 2rem;
+        .ict-grid-container-wrapper {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
         }
-        
-        .ict-solution-title h3,
-        .scroll-animation-container h3 {
-            font-size: 1rem !important;
-            max-width: 70%;
-        }
-        
-        .scroll-animation-container h3.bimasakti-title {
-            font-size: 1.5rem !important;
-        }
-    }
-</style>
 
-
-<section class="hospitality-companies py-5">
-    <div class="container-fluid">
-        <h2 class="text-center mb-3 bimasakti-title rhapsody-title-2023-new" data-aos="fade-up" data-aos-delay="100">
-            These Awesome Hospitality Companies Using Software
-        </h2>
-        <div class="ict-separator" data-aos="fade-in" data-aos-delay="200"></div>
-        <div class="full-image-container" data-aos="fade-up" data-aos-delay="300">
-            <img src="assets/img/hotel/rhapsody-client.png" alt="Hospitality Companies" class="img-fluid">
-        </div>
-    </div>
-</section>
-
-<style>
-
-    .hospitality-companies h2 {
-        font-size: 2.2rem;
-        font-weight: bold;
-    }
-
-    .full-image-container {
-        max-width: 100%;
-        overflow: hidden;
-        border-radius: 10px;
-        border: 2px solid rgba(221, 221, 221, 0.753);
-    }
-
-    .full-image-container img {
-        width: 100%;
-        height: auto;
-        transition: transform 0.3s ease-in-out;
-    }
-
-    @media (max-width: 768px) {
-        .hospitality-companies h2 {
-            font-size: 1.8rem;
-        }
-    }
-</style>
-
-
-
-
-<div class="scroll-animation-container">
-    <h2 class="text-center mb-3 bimasakti-title rhapsody-title-2023-new" data-aos="fade-up">ICT ONE Solution For Hospitality</h2>
-    <h3 class="ict-solution-title mt-2" data-aos="fade-up" data-aos-delay="100">With Standardized and Proven Implementation method, ICT ONE Solution provides a Comprehensive Solution for Hospitality Business.</h3>
-    <h3 class="text-center mb-3 bimasakti-title rhapsody-title-2023-new" data-aos="fade-up" data-aos-delay="200">Business Operations</h3>
-
-<style>
-    .ict-separator {
-        width: 80%;
-        height: 1px;
-        background: linear-gradient(90deg, transparent, #ac53a2, transparent);
-        margin: 2rem auto 3rem;
-    }
-
-    .scroll-visible {
-        opacity: 1 !important;
-        transform: translateY(0) !important;
-    }
-</style>
-
-
-<div class="ict-separator" data-aos="fade-in" data-aos-delay="300"></div>
-</div>
-
-<div class="container-fluid">
-    <div class="ict-grid-container ">
-        <div class="ict-grid-item" data-aos="fade-up" data-aos-delay="400">
-            <img src="assets/img/hotel/1.1.jpg" alt="Accommodation" class="ict-grid-image">
-        </div>
-        <div class="ict-grid-item" data-aos="fade-up" data-aos-delay="500">
-            <img src="assets/img/hotel/1.2.jpg" alt="Dining" class="ict-grid-image">
-        </div>
-        <div class="ict-grid-item" data-aos="fade-up" data-aos-delay="600">
-            <img src="assets/img/hotel/1.3.png" alt="Wellness" class="ict-grid-image">
-        </div>
-        <div class="ict-grid-item" data-aos="fade-up" data-aos-delay="700">
-            <img src="assets/img/hotel/1.4.jpg" alt="Nightlife" class="ict-grid-image">
-        </div>
-        <div class="ict-grid-item" data-aos="fade-up" data-aos-delay="800">
-            <img src="assets/img/hotel/1.5.jpg" alt="Concierge" class="ict-grid-image">
-        </div>
-    </div>
-</div>
-
-<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-<script>
-  AOS.init({
-    duration: 800,
-    once: true,
-    offset: 150
-  });
-
-  // Function to check if an element is in viewport
-  function isInViewport(element) {
-    const rect = element.getBoundingClientRect();
-    return (
-      rect.top >= 0 &&
-      rect.left >= 0 &&
-      rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
-      rect.right <= (window.innerWidth || document.documentElement.clientWidth)
-    );
-  }
-
-  // Function to handle scroll event
-  function handleScroll() {
-    const h3Elements = document.querySelectorAll('.ict-solution-title, .bimasakti-title');
-    h3Elements.forEach((h3) => {
-      if (isInViewport(h3)) {
-        h3.classList.add('scroll-visible');
-      }
-    });
-  }
-
-  // Add scroll event listener
-  window.addEventListener('scroll', handleScroll);
-
-  // Initial check on page load
-  handleScroll();
-</script>
-
-<style>
-    @import url('https://unpkg.com/aos@next/dist/aos.css');
-
-    .ict-grid-container-wrapper {
-        max-width: 1200px;
-        margin: 0 auto;
-        padding: 0 20px;
-    }
-
-    .ict-grid-container {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-        gap: 2rem;
-        padding: 2rem 0;
-        justify-content: center;
-    }
-
-    .ict-grid-item {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-        transition: transform 0.3s ease;
-    }
-
-    .ict-grid-item:hover {
-        transform: translateY(-10px);
-    }
-
-    .ict-grid-image {
-        width: 100%;
-        height: 200px;
-        object-fit: contain;
-        border-radius: 10px;
-        margin-bottom: 1rem;
-    }
-
-    .ict-grid-text {
-        font-size: 1rem;
-        color: #333;
-        margin: 0;
-    }
-
-    @media (max-width: 768px) {
         .ict-grid-container {
-            grid-template-columns: 1fr;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            padding: 2rem 0;
+            justify-content: center;
         }
-    }
 
-    /* Ensure centering for all items */
-    .ict-grid-container {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-    }
-
-    .ict-grid-item {
-        flex: 0 0 calc(33.333% - 2rem);
-        margin: 1rem;
-    }
-
-    @media (max-width: 992px) {
         .ict-grid-item {
-            flex: 0 0 calc(50% - 2rem);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            transition: transform 0.3s ease;
         }
-    }
 
-    @media (max-width: 576px) {
-        .ict-grid-item {
-            flex: 0 0 100%;
+        .ict-grid-item:hover {
+            transform: translateY(-10px);
         }
-    }
-</style>
+
+        .ict-grid-image {
+            width: 100%;
+            height: 200px;
+            object-fit: contain;
+            border-radius: 10px;
+            margin-bottom: 1rem;
+        }
+
+        .ict-grid-text {
+            font-size: 1rem;
+            color: #333;
+            margin: 0;
+        }
+
+        @media (max-width: 768px) {
+            .ict-grid-container {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Ensure centering for all items */
+        .ict-grid-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .ict-grid-item {
+            flex: 0 0 calc(33.333% - 2rem);
+            margin: 1rem;
+        }
+
+        @media (max-width: 992px) {
+            .ict-grid-item {
+                flex: 0 0 calc(50% - 2rem);
+            }
+        }
+
+        @media (max-width: 576px) {
+            .ict-grid-item {
+                flex: 0 0 100%;
+            }
+        }
+    </style>
 
     <section id="infrastructure-section" class="py-5">
         <div class="container-fluid">
-            <h3 class="text-center mb-3  bimasakti-title rhapsody-title-2023-new" data-aos="fade-up" data-aos-delay="200">Infrastructure</h3>
+            <h3 class="text-center mb-3  bimasakti-title rhapsody-title-2023-new" data-aos="fade-up"
+                data-aos-delay="200">Infrastructure</h3>
             <div class="ict-separator" data-aos="fade-in" data-aos-delay="300"></div>
             <div class="rhapsody-grid-container">
                 <div class="rhapsody-grid-item">
-                    <img src="assets/img/hotel/infrastructure-rhapsody-01.png" alt="Key Card" class="rhapsody-grid-image">
+                    <img src="assets/img/hotel/infrastructure-rhapsody-01.png" alt="Key Card"
+                        class="rhapsody-grid-image">
                 </div>
                 <div class="rhapsody-grid-item">
-                    <img src="assets/img/hotel/infrastructure-rhapsody-02.png" alt="Cloud Backup & Restore" class="rhapsody-grid-image">
+                    <img src="assets/img/hotel/infrastructure-rhapsody-02.png" alt="Cloud Backup & Restore"
+                        class="rhapsody-grid-image">
                 </div>
                 <div class="rhapsody-grid-item">
-                    <img src="assets/img/hotel/infrastructure-rhapsody-03.png" alt="Distribution Channel" class="rhapsody-grid-image">
+                    <img src="assets/img/hotel/infrastructure-rhapsody-03.png" alt="Distribution Channel"
+                        class="rhapsody-grid-image">
                 </div>
             </div>
         </div>
@@ -3005,7 +3116,8 @@
 
     <section id="infrastructure-section" class="py-5">
         <div class="container-fluid">
-            <h3 class="text-center mb-3  bimasakti-title rhapsody-title-2023-new" data-aos="fade-up" data-aos-delay="200">Digital Transformation</h3>
+            <h3 class="text-center mb-3  bimasakti-title rhapsody-title-2023-new" data-aos="fade-up"
+                data-aos-delay="200">Digital Transformation</h3>
             <div class="ict-separator" data-aos="fade-in" data-aos-delay="300"></div>
             <div class="rhapsody-grid-container">
                 <div class="rhapsody-grid-item">
@@ -3026,7 +3138,8 @@
 
     <section id="infrastructure-section" class="py-5">
         <div class="container-fluid">
-            <h3 class="text-center mb-3  bimasakti-title rhapsody-title-2023-new" data-aos="fade-up" data-aos-delay="200">Cyber Security</h3>
+            <h3 class="text-center mb-3  bimasakti-title rhapsody-title-2023-new" data-aos="fade-up"
+                data-aos-delay="200">Cyber Security</h3>
             <div class="ict-separator" data-aos="fade-in" data-aos-delay="300"></div>
             <div class="rhapsody-grid-container">
                 <div class="rhapsody-grid-item">
@@ -3045,6 +3158,7 @@
                         list-style-type: none;
                         padding: 0;
                     }
+
                     .cyber-security-list li {
                         margin: 10px 0;
                         padding: 5px 0;
@@ -3053,469 +3167,471 @@
                         display: flex;
                         align-items: center;
                     }
+
                     .cyber-security-list .icon {
                         margin-right: 10px;
-                        font-weight:  800;
+                        font-weight: 800;
                         font-size: 1.3em !important;
-                    }             
+                    }
                 </style>
-            
+
             </div>
         </div>
     </section>
     <style>
-    #infrastructure-section {
-        padding: 60px 0;
-        width: 80%;
-        margin: 0 auto;
-    }
+        #infrastructure-section {
+            padding: 60px 0;
+            width: 80%;
+            margin: 0 auto;
+        }
 
-    body.dark-mode #infrastructure-section {
-        backdrop-filter: blur(10px);
-    }
+        body.dark-mode #infrastructure-section {
+            backdrop-filter: blur(10px);
+        }
 
-    #infrastructure-section .glass-text {
-        font-size: 2.2rem;
-        font-weight: bold;
-        margin-bottom: 1.5rem;
-        background: linear-gradient(90deg, #7209d4, #2832d4 33%, #00a5b2);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        background-clip: text;
-        color: transparent;
-    }
+        #infrastructure-section .glass-text {
+            font-size: 2.2rem;
+            font-weight: bold;
+            margin-bottom: 1.5rem;
+            background: linear-gradient(90deg, #7209d4, #2832d4 33%, #00a5b2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            color: transparent;
+        }
 
-    .rhapsody-grid-container {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        gap: 20px;
-        flex-wrap: wrap;
-    }
+        .rhapsody-grid-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
 
-    .rhapsody-grid-item {
-        flex: 0 1 calc(30% - 20px);
-        max-width: calc(30% - 20px);
-        transition: transform 0.3s ease;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
+        .rhapsody-grid-item {
+            flex: 0 1 calc(30% - 20px);
+            max-width: calc(30% - 20px);
+            transition: transform 0.3s ease;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
 
-    /* .rhapsody-grid-item:hover {
+        /* .rhapsody-grid-item:hover {
         transform: scale(1.05);
     } */
 
-    .rhapsody-grid-image {
-        width: 80%;
-        height: auto;
-        object-fit: contain;
-        border-radius: 10px;
-    }
-
-    @media (max-width: 768px) {
-        .rhapsody-grid-item {
-            flex: 0 1 calc(45% - 20px);
-            max-width: calc(45% - 20px);
+        .rhapsody-grid-image {
+            width: 80%;
+            height: auto;
+            object-fit: contain;
+            border-radius: 10px;
         }
-    }
 
-    @media (max-width: 480px) {
-        .rhapsody-grid-item {
-            flex: 0 1 90%;
-            max-width: 90%;
+        @media (max-width: 768px) {
+            .rhapsody-grid-item {
+                flex: 0 1 calc(45% - 20px);
+                max-width: calc(45% - 20px);
+            }
         }
-    }
+
+        @media (max-width: 480px) {
+            .rhapsody-grid-item {
+                flex: 0 1 90%;
+                max-width: 90%;
+            }
+        }
     </style>
 
 
-  
 
 
-<section id="separator" class="py-5" style="background-color: #efecff;">
-    <div class="container-fluid">
-        <div class="row justify-content-between">
-            <div class="col-lg-12">
-                <div class="banner p-5">
-                    <div class="banner-content">
-                        <h2>Unlock superior coverage for your team</h2>
-                        <p>Build a culture of employee delight by taking the first step towards Benefits</p>
-                        <button class="btn-custom" onclick="scheduleCall()"
-                            style="background: linear-gradient(to bottom, #9054d0, #7a4bd7);">Schedule a call</button>
+
+    <section id="separator" class="py-5" style="background-color: #efecff;">
+        <div class="container-fluid">
+            <div class="row justify-content-between">
+                <div class="col-lg-12">
+                    <div class="banner p-5">
+                        <div class="banner-content">
+                            <h2>Unlock superior coverage for your team</h2>
+                            <p>Build a culture of employee delight by taking the first step towards Benefits</p>
+                            <button class="btn-custom" onclick="scheduleCall()"
+                                style="background: linear-gradient(to bottom, #9054d0, #7a4bd7);">Schedule a
+                                call</button>
+                        </div>
+                        <img src="assets/img/handshake.png" alt="Business Handshake" class="banner-image">
                     </div>
-                    <img src="assets/img/handshake.png" alt="Business Handshake" class="banner-image">
                 </div>
             </div>
         </div>
-    </div>
-</section>
+    </section>
 
-<section id="contact" class="pb-5">
-    <div class="container-fluid ">
-        <div class="row justify-content-between">
-            <div id="contact-info" class="col-lg-5 left-column >
+    <section id="contact" class="pb-5">
+        <div class="container-fluid ">
+            <div class="row justify-content-between">
+                <div id="contact-info" class="col-lg-5 left-column >
                     <h1 class=" mb-3 contact-heading"
-                style="font-size: 36px; text-align: left; line-height: 1.2; letter-spacing: -0.5px;">
-                What Are You Waiting For?<br>
-                <span
-                    style="font-weight: 700; color: #7a4bd7; text-transform: uppercase; display: block; margin-top: 10px;">Just
-                    Make It Happen!</span>
-                </h1>
-                <p class="text-muted mb-4 contact-text" style="font-size: 18px;">
-                    We'll have a Business Development Representative contact you within
-                    <span style="font-weight: bold;">24 business hours.</span>
-                </p>
+                    style="font-size: 36px; text-align: left; line-height: 1.2; letter-spacing: -0.5px;">
+                    What Are You Waiting For?<br>
+                    <span
+                        style="font-weight: 700; color: #7a4bd7; text-transform: uppercase; display: block; margin-top: 10px;">Just
+                        Make It Happen!</span>
+                    </h1>
+                    <p class="text-muted mb-4 contact-text" style="font-size: 18px;">
+                        We'll have a Business Development Representative contact you within
+                        <span style="font-weight: bold;">24 business hours.</span>
+                    </p>
 
-                <div class="company-info" style="border-radius: 10px;">
-                    <h3 class="h5 fw-bold mb-3 company-name custom-text"
-                        style="color: #333; padding-bottom: 10px; display: inline-block; border-bottom: 1px solid transparent; background-image: linear-gradient(to right, transparent, #333, transparent); background-position: bottom; background-size: 100% 1px; background-repeat: no-repeat;">
-                        PT Realta Chakradarma </h3>
-                    <h3 class="headquarter-title custom-text" style="margin-bottom: 10px;">
-                        Address:</h3>
-                    <div class="address-wrapper">
-                        <p class="address-details custom-text">
-                            Jl. Petojo Melintang No. 25A<br>
-                            Petojo Selatan - Gambir<br>
-                            Jakarta 10160<br>
-                            <span class="country custom-text">Indonesia</span>
-                        </p>
+                    <div class="company-info" style="border-radius: 10px;">
+                        <h3 class="h5 fw-bold mb-3 company-name custom-text"
+                            style="color: #333; padding-bottom: 10px; display: inline-block; border-bottom: 1px solid transparent; background-image: linear-gradient(to right, transparent, #333, transparent); background-position: bottom; background-size: 100% 1px; background-repeat: no-repeat;">
+                            PT Realta Chakradarma </h3>
+                        <h3 class="headquarter-title custom-text" style="margin-bottom: 10px;">
+                            Address:</h3>
+                        <div class="address-wrapper">
+                            <p class="address-details custom-text">
+                                Jl. Petojo Melintang No. 25A<br>
+                                Petojo Selatan - Gambir<br>
+                                Jakarta 10160<br>
+                                <span class="country custom-text">Indonesia</span>
+                            </p>
+                        </div>
+
+                        <style>
+                            .custom-text {
+                                font-size: 20px;
+                            }
+                        </style>
                     </div>
-
                     <style>
-                        .custom-text {
-                            font-size: 20px;
+                        /* Remove the media query and adjust the selectors */
+                        body.dark-mode .company-info {
+                            color: #ffffff !important;
+                        }
+
+                        body.dark-mode .company-name {
+                            color: #ffffff !important;
+                            background-image: linear-gradient(to right, transparent, #ffffff, transparent) !important;
+                        }
+
+                        body.dark-mode .headquarter-title {
+                            color: #ffffff !important;
+                        }
+
+                        body.dark-mode .address-details {
+                            color: #e0e0e0 !important;
+                        }
+
+                        body.dark-mode #contact .contact-heading {
+                            color: #ffffff !important;
                         }
                     </style>
+
+                    <div class="map-wrapper mb-4" style="width: 85%;">
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.3279995766406!2d106.8142527!3d-6.172364!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f67f4f44dc2f%3A0x124b0a0f4cb7e845!2sPT%20Realta%20Chakradarma!5e0!3m2!1sen!2sid!4v1653668623967"
+                            frameborder="0" style="border:0" allowfullscreen="">
+                        </iframe>
+                    </div>
+
+                    <div class="contact-info mb-4">
+                        <style>
+                            .contact-item {
+                                display: flex;
+                                align-items: flex-start;
+                                margin-bottom: 10px;
+                            }
+
+                            .contact-icon {
+                                font-size: 14px;
+                                margin-right: 10px;
+                                margin-top: 3px;
+                            }
+                        </style>
+                        <div class="contact-item">
+                            <i class="fas fa-phone contact-icon"></i>
+                            <p class="mb-0">Phone: <a href="tel:+62213861772" class="text-decoration-none fw-bold">+62
+                                    21 - 386 1772</a></p>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-envelope contact-icon"></i>
+                            <p class="mb-0">Email: <a href="mailto:info@realta.co.id"
+                                    class="text-decoration-none fw-bold">info@realta.co.id</a></p>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fab fa-whatsapp contact-icon"></i>
+                            <p class="mb-0">
+                                For sales and marketing, contact our Official WhatsApp:<br><br>
+                                <a href="https://wa.me/628111221789" class="text-decoration-none fw-bold"
+                                    style="color: #3bc05a;">+62 811 1221 789 (CHAT ONLY)</a>
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="social-icons-container">
+                        <h4 class="mb-3" style="font-size: 0.9rem; text-align: left; margin-left: 10px;"> Connect With
+                            Us Through Social Media</h4>
+                        <div class="social-icons d-flex gap-3">
+                            <a href="https://www.facebook.com/yourpage" class="social-icon" aria-label="Facebook">
+                                <i class="fab fa-facebook-f"></i>
+                            </a>
+                            <a href="https://www.linkedin.com/yourpage" class="social-icon" aria-label="LinkedIn">
+                                <i class="fab fa-linkedin-in"></i>
+                            </a>
+                            <a href="https://www.twitter.com/yourpage" class="social-icon" aria-label="Twitter">
+                                <i class="fab fa-x-twitter"></i>
+                            </a>
+                            <a href="https://www.instagram.com/yourpage" class="social-icon" aria-label="Instagram">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                            <a href="https://www.youtube.com/yourchannel" class="social-icon" aria-label="YouTube">
+                                <i class="fab fa-youtube"></i>
+                            </a>
+                        </div>
+                    </div>
                 </div>
                 <style>
-                    /* Remove the media query and adjust the selectors */
-                    body.dark-mode .company-info {
-                        color: #ffffff !important;
+                    .social-icons {
+                        display: flex;
+                        align-items: center;
                     }
 
-                    body.dark-mode .company-name {
-                        color: #ffffff !important;
-                        background-image: linear-gradient(to right, transparent, #ffffff, transparent) !important;
+                    .social-icon {
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        width: 40px;
+                        height: 40px;
+                        border-radius: 50%;
+                        color: white;
+                        text-decoration: none;
+                        transition: all 0.3s ease;
                     }
 
-                    body.dark-mode .headquarter-title {
-                        color: #ffffff !important;
+                    .social-icon:hover {
+                        transform: translateY(-3px);
+                        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+                        background-image: none !important;
+                        background-color: #f0f0f0 !important;
+                        color: #333 !important;
                     }
 
-                    body.dark-mode .address-details {
-                        color: #e0e0e0 !important;
+                    .social-icon i {
+                        font-size: 18px;
                     }
 
-                    body.dark-mode #contact .contact-heading {
-                        color: #ffffff !important;
+                    .social-icon[aria-label="Facebook"] {
+                        background-color: #3b5998;
+                    }
+
+                    .social-icon[aria-label="LinkedIn"] {
+                        background-color: #0077b5;
+                    }
+
+                    .social-icon[aria-label="Twitter"] {
+                        background-color: #475258;
+                    }
+
+                    .social-icon[aria-label="Instagram"] {
+                        background-color: #a19551;
+                    }
+
+                    .social-icon[aria-label="YouTube"] {
+                        background-color: #e62e2e;
                     }
                 </style>
-
-                <div class="map-wrapper mb-4" style="width: 85%;">
-                    <iframe
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.3279995766406!2d106.8142527!3d-6.172364!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f67f4f44dc2f%3A0x124b0a0f4cb7e845!2sPT%20Realta%20Chakradarma!5e0!3m2!1sen!2sid!4v1653668623967"
-                        frameborder="0" style="border:0" allowfullscreen="">
-                    </iframe>
-                </div>
-
-                <div class="contact-info mb-4">
-                    <style>
-                        .contact-item {
-                            display: flex;
-                            align-items: flex-start;
-                            margin-bottom: 10px;
-                        }
-
-                        .contact-icon {
-                            font-size: 14px;
-                            margin-right: 10px;
-                            margin-top: 3px;
-                        }
-                    </style>
-                    <div class="contact-item">
-                        <i class="fas fa-phone contact-icon"></i>
-                        <p class="mb-0">Phone: <a href="tel:+62213861772" class="text-decoration-none fw-bold">+62
-                                21 - 386 1772</a></p>
-                    </div>
-                    <div class="contact-item">
-                        <i class="fas fa-envelope contact-icon"></i>
-                        <p class="mb-0">Email: <a href="mailto:info@realta.co.id"
-                                class="text-decoration-none fw-bold">info@realta.co.id</a></p>
-                    </div>
-                    <div class="contact-item">
-                        <i class="fab fa-whatsapp contact-icon"></i>
-                        <p class="mb-0">
-                            For sales and marketing, contact our Official WhatsApp:<br><br>
-                            <a href="https://wa.me/628111221789" class="text-decoration-none fw-bold"
-                                style="color: #3bc05a;">+62 811 1221 789 (CHAT ONLY)</a>
-                        </p>
-                    </div>
-                </div>
-
-                <div class="social-icons-container">
-                    <h4 class="mb-3" style="font-size: 0.9rem; text-align: left; margin-left: 10px;"> Connect With
-                        Us Through Social Media</h4>
-                    <div class="social-icons d-flex gap-3">
-                        <a href="https://www.facebook.com/yourpage" class="social-icon" aria-label="Facebook">
-                            <i class="fab fa-facebook-f"></i>
-                        </a>
-                        <a href="https://www.linkedin.com/yourpage" class="social-icon" aria-label="LinkedIn">
-                            <i class="fab fa-linkedin-in"></i>
-                        </a>
-                        <a href="https://www.twitter.com/yourpage" class="social-icon" aria-label="Twitter">
-                            <i class="fab fa-x-twitter"></i>
-                        </a>
-                        <a href="https://www.instagram.com/yourpage" class="social-icon" aria-label="Instagram">
-                            <i class="fab fa-instagram"></i>
-                        </a>
-                        <a href="https://www.youtube.com/yourchannel" class="social-icon" aria-label="YouTube">
-                            <i class="fab fa-youtube"></i>
-                        </a>
-                    </div>
-                </div>
-            </div>
-            <style>
-                .social-icons {
-                    display: flex;
-                    align-items: center;
-                }
-
-                .social-icon {
-                    display: flex;
-                    align-items: center;
-                    justify-content: center;
-                    width: 40px;
-                    height: 40px;
-                    border-radius: 50%;
-                    color: white;
-                    text-decoration: none;
-                    transition: all 0.3s ease;
-                }
-
-                .social-icon:hover {
-                    transform: translateY(-3px);
-                    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-                    background-image: none !important;
-                    background-color: #f0f0f0 !important;
-                    color: #333 !important;
-                }
-
-                .social-icon i {
-                    font-size: 18px;
-                }
-
-                .social-icon[aria-label="Facebook"] {
-                    background-color: #3b5998;
-                }
-
-                .social-icon[aria-label="LinkedIn"] {
-                    background-color: #0077b5;
-                }
-
-                .social-icon[aria-label="Twitter"] {
-                    background-color: #475258;
-                }
-
-                .social-icon[aria-label="Instagram"] {
-                    background-color: #a19551;
-                }
-
-                .social-icon[aria-label="YouTube"] {
-                    background-color: #e62e2e;
-                }
-            </style>
-            <div id="contact-form" class="col-lg-5  right-column right-column-custom p-4 p-md-5 order-1 order-lg-2">
-                <form class="needs-validation" novalidate>
-                    <div class="mb-3">
-                        <label for="fullname" class="form-label">Name</label>
-                        <input type="text" class="form-control" id="fullname" placeholder="Name" required>
-                        <div class="invalid-feedback">
-                            Please enter your full name.
-                        </div>
-                    </div>
-
-                    <div class="mb-3">
-                        <label for="company" class="form-label">Company Name</label>
-                        <input type="text" class="form-control" id="company" placeholder="Company" required>
-                        <div class="invalid-feedback">
-                            Please enter your company name.
-                        </div>
-                    </div>
-
-                    <div class="mb-3">
-                        <label for="jobTitle" class="form-label">Job Title</label>
-                        <input type="text" class="form-control" id="jobTitle" placeholder="Job Title" required>
-                        <div class="invalid-feedback">
-                            Please enter your job title.
-                        </div>
-                    </div>
-
-                    <div class="mb-3">
-                        <label for="service" class="form-label">Please indicate your area of interest</label>
-                        <select id="service" class="form-select" required>
-                            <option value="">Choose...</option>
-                            <option>Hospitality</option>
-                            <option>Golf</option>
-                            <option>Property & Tenancy</option>
-                            <option>Human Resource (HR)</option>
-                            <option>ITSM</option>
-                            <option>ITAM</option>
-                            <option>ERP</option>
-                            <option>EAM</option>
-                            <option>Other</option>
-                        </select>
-                        <div class="invalid-feedback">
-                            Please select a service.
-                        </div>
-                    </div>
-                    <div class="mb-3">
-                        <label for="phone" class="form-label">Mobile Phone</label>
-                        <input type="tel" class="form-control" id="phone" placeholder="Mobile Phone" required
-                            pattern="^\+?\d{0,13}">
-                        <div class="invalid-feedback">
-                            Please enter a valid mobile phone number.
-                        </div>
-                    </div>
-                    <div class="mb-3">
-                        <label for="email" class="form-label">Email</label>
-                        <input type="email" class="form-control" id="email" placeholder="Email" required>
-                        <div class="invalid-feedback">
-                            Please enter a valid email address.
-                        </div>
-                    </div>
-
-                    <div class="mb-3">
-                        <label for="employees" class="form-label">Total Employee</label>
-                        <select id="employees" class="form-select" required>
-                            <option value="">Choose...</option>
-                            <option>1-50</option>
-                            <option>51-100</option>
-                            <option>101-500</option>
-                            <option>501-1000</option>
-                            <option>1001-5000</option>
-                            <option>More than 5000</option>
-                        </select>
-                        <div class="invalid-feedback">
-                            Please select the total number of employees.
-                        </div>
-                    </div>
-
-                    <div class="mb-3">
-                        <label for="message" class="form-label">How we can help you? </label>
-                        <textarea id="message" class="form-control" rows="4" placeholder="Message"
-                            required></textarea>
-                        <div class="invalid-feedback">
-                            Please enter a message.
-                        </div>
-                    </div>
-
-                    <div class="mb-3 form-check text-center">
-                        <div class="d-inline-block text-start">
-                            <input type="checkbox" class="form-check-input" id="terms" required>
-                            <label class="form-check-label" for="terms">
-                                Before submitting please read our <br>
-                                <a href="#" class="text-decoration-none">Term and Condition</a> &
-                                <a href="#" class="text-decoration-none">Privacy Policy</a>
-                            </label>
+                <div id="contact-form" class="col-lg-5  right-column right-column-custom p-4 p-md-5 order-1 order-lg-2">
+                    <form class="needs-validation" novalidate>
+                        <div class="mb-3">
+                            <label for="fullname" class="form-label">Name</label>
+                            <input type="text" class="form-control" id="fullname" placeholder="Name" required>
                             <div class="invalid-feedback">
-                                You must agree to the terms and conditions.
+                                Please enter your full name.
                             </div>
                         </div>
-                    </div>
 
-                    <button type="submit" class="btn submit-btn w-100">
-                        <i class="fas fa-paper-plane icon"></i>
-                        <span class="text">Submit</span>
-                    </button>
+                        <div class="mb-3">
+                            <label for="company" class="form-label">Company Name</label>
+                            <input type="text" class="form-control" id="company" placeholder="Company" required>
+                            <div class="invalid-feedback">
+                                Please enter your company name.
+                            </div>
+                        </div>
 
-                    <style>
-                        .submit-btn {
-                            position: relative;
-                            overflow: hidden;
-                            display: inline-flex;
-                            align-items: center;
-                            justify-content: center;
-                            width: 100%;
-                            height: 60px;
-                            font-size: 1.2rem;
-                            letter-spacing: 1px;
-                            text-transform: uppercase;
-                            border: none;
-                            border-radius: 10px;
-                            background: linear-gradient(to bottom, #9054d0, #7a4bd7);
-                            color: #ffffff;
-                            cursor: pointer;
-                            transition: all 0.3s ease-in-out;
-                            margin: 20px auto 0;
-                            /* Added top margin to move the button slightly down */
-                        }
+                        <div class="mb-3">
+                            <label for="jobTitle" class="form-label">Job Title</label>
+                            <input type="text" class="form-control" id="jobTitle" placeholder="Job Title" required>
+                            <div class="invalid-feedback">
+                                Please enter your job title.
+                            </div>
+                        </div>
 
-                        .submit-btn .icon {
-                            margin-right: 10px;
-                            font-size: 1.5rem;
-                            transition: all 0.5s ease-in-out;
-                            color: #ffffff;
-                        }
+                        <div class="mb-3">
+                            <label for="service" class="form-label">Please indicate your area of interest</label>
+                            <select id="service" class="form-select" required>
+                                <option value="">Choose...</option>
+                                <option>Hospitality</option>
+                                <option>Golf</option>
+                                <option>Property & Tenancy</option>
+                                <option>Human Resource (HR)</option>
+                                <option>ITSM</option>
+                                <option>ITAM</option>
+                                <option>ERP</option>
+                                <option>EAM</option>
+                                <option>Other</option>
+                            </select>
+                            <div class="invalid-feedback">
+                                Please select a service.
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="phone" class="form-label">Mobile Phone</label>
+                            <input type="tel" class="form-control" id="phone" placeholder="Mobile Phone" required
+                                pattern="^\+?\d{0,13}">
+                            <div class="invalid-feedback">
+                                Please enter a valid mobile phone number.
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="email" class="form-label">Email</label>
+                            <input type="email" class="form-control" id="email" placeholder="Email" required>
+                            <div class="invalid-feedback">
+                                Please enter a valid email address.
+                            </div>
+                        </div>
 
-                        .submit-btn .text {
-                            transition: all 0.5s ease-in-out;
-                            color: #ffffff;
+                        <div class="mb-3">
+                            <label for="employees" class="form-label">Total Employee</label>
+                            <select id="employees" class="form-select" required>
+                                <option value="">Choose...</option>
+                                <option>1-50</option>
+                                <option>51-100</option>
+                                <option>101-500</option>
+                                <option>501-1000</option>
+                                <option>1001-5000</option>
+                                <option>More than 5000</option>
+                            </select>
+                            <div class="invalid-feedback">
+                                Please select the total number of employees.
+                            </div>
+                        </div>
 
-                        }
+                        <div class="mb-3">
+                            <label for="message" class="form-label">How we can help you? </label>
+                            <textarea id="message" class="form-control" rows="4" placeholder="Message"
+                                required></textarea>
+                            <div class="invalid-feedback">
+                                Please enter a message.
+                            </div>
+                        </div>
 
-                        .submit-btn:hover {
-                            background: linear-gradient(to bottom, #4CAF50, #45a049);
-                        }
+                        <div class="mb-3 form-check text-center">
+                            <div class="d-inline-block text-start">
+                                <input type="checkbox" class="form-check-input" id="terms" required>
+                                <label class="form-check-label" for="terms">
+                                    Before submitting please read our <br>
+                                    <a href="#" class="text-decoration-none">Term and Condition</a> &
+                                    <a href="#" class="text-decoration-none">Privacy Policy</a>
+                                </label>
+                                <div class="invalid-feedback">
+                                    You must agree to the terms and conditions.
+                                </div>
+                            </div>
+                        </div>
 
-                        .submit-btn:hover .text {
-                            transform: translateX(420px);
-                            color: #ffffff;
-                        }
+                        <button type="submit" class="btn submit-btn w-100">
+                            <i class="fas fa-paper-plane icon"></i>
+                            <span class="text">Submit</span>
+                        </button>
 
-                        .submit-btn:hover .icon {
-                            transform: translateX(45px);
-                            /* Adjusted to move to the middle */
-                            color: #ffffff;
-                        }
-
-                        @media (max-width: 768px) {
-                            .submit-btn:hover .icon {
-                                transform: translateX(40px);
-                                /* Reduced movement for smaller screens */
+                        <style>
+                            .submit-btn {
+                                position: relative;
+                                overflow: hidden;
+                                display: inline-flex;
+                                align-items: center;
+                                justify-content: center;
+                                width: 100%;
+                                height: 60px;
+                                font-size: 1.2rem;
+                                letter-spacing: 1px;
+                                text-transform: uppercase;
+                                border: none;
+                                border-radius: 10px;
+                                background: linear-gradient(to bottom, #9054d0, #7a4bd7);
+                                color: #ffffff;
+                                cursor: pointer;
+                                transition: all 0.3s ease-in-out;
+                                margin: 20px auto 0;
+                                /* Added top margin to move the button slightly down */
                             }
-                        }
 
-                        .submit-btn:active {
-                            transform: translateY(3px);
-                            box-shadow:
-                                inset 0 15px 15px -15px rgba(0, 0, 0, 0.3),
-                                inset 0 0 0 1px rgba(255, 255, 255, 0.1),
-                                0 2px 5px rgba(0, 0, 0, 0.1),
-                                0 5px 10px rgba(0, 0, 0, 0.1);
-                        }
-                    </style>
-                </form>
+                            .submit-btn .icon {
+                                margin-right: 10px;
+                                font-size: 1.5rem;
+                                transition: all 0.5s ease-in-out;
+                                color: #ffffff;
+                            }
+
+                            .submit-btn .text {
+                                transition: all 0.5s ease-in-out;
+                                color: #ffffff;
+
+                            }
+
+                            .submit-btn:hover {
+                                background: linear-gradient(to bottom, #4CAF50, #45a049);
+                            }
+
+                            .submit-btn:hover .text {
+                                transform: translateX(420px);
+                                color: #ffffff;
+                            }
+
+                            .submit-btn:hover .icon {
+                                transform: translateX(45px);
+                                /* Adjusted to move to the middle */
+                                color: #ffffff;
+                            }
+
+                            @media (max-width: 768px) {
+                                .submit-btn:hover .icon {
+                                    transform: translateX(40px);
+                                    /* Reduced movement for smaller screens */
+                                }
+                            }
+
+                            .submit-btn:active {
+                                transform: translateY(3px);
+                                box-shadow:
+                                    inset 0 15px 15px -15px rgba(0, 0, 0, 0.3),
+                                    inset 0 0 0 1px rgba(255, 255, 255, 0.1),
+                                    0 2px 5px rgba(0, 0, 0, 0.1),
+                                    0 5px 10px rgba(0, 0, 0, 0.1);
+                            }
+                        </style>
+                    </form>
+                </div>
             </div>
         </div>
-    </div>
-</section>
+    </section>
 
-<style>
-    @media (max-width: 991px) {
-        #contact .row {
-            display: flex;
-            flex-direction: column;
-        }
+    <style>
+        @media (max-width: 991px) {
+            #contact .row {
+                display: flex;
+                flex-direction: column;
+            }
 
-        #contact-form {
-            order: 2;
-        }
+            #contact-form {
+                order: 2;
+            }
 
-        #contact-info {
-            order: 1;
+            #contact-info {
+                order: 1;
+            }
         }
-    }
-</style>
+    </style>
 
     <section id="newsletter-cta" class="py-4 mb-0">
         <div class="container-fluid px-5">
@@ -3673,7 +3789,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
 
 
-    
+
 </body>
 
 </html>

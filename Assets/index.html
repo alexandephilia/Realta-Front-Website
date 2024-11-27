@@ -597,7 +597,8 @@
 
                     <!-- Industry dropdown -->
                     <li class="me-1">
-                        <a href="hospitality.html" class="nav-link" onclick="navigateWithLoading('hospitality.html')">Industry</a>
+                        <a href="hospitality.html" class="nav-link"
+                            onclick="navigateWithLoading('hospitality.html')">Industry</a>
                     </li>
 
                     <!-- Partner dropdown -->
@@ -1043,41 +1044,41 @@
         });
     </script>
 
-<script>
-    document.addEventListener('DOMContentLoaded', function() {
-        // Get all scroll links
-        const scrollLinks = document.querySelectorAll('.scroll-link');
-        
-        scrollLinks.forEach(link => {
-            link.addEventListener('click', function(e) {
-                e.preventDefault();
-                
-                // Get the target section id from href
-                const targetId = this.getAttribute('href');
-                const targetSection = document.querySelector(targetId);
-                
-                if (targetSection) {
-                    // Get header height for offset
-                    const headerHeight = document.querySelector('#mainNav').offsetHeight;
-                    
-                    // Calculate scroll position
-                    const scrollPosition = targetSection.offsetTop - headerHeight;
-                    
-                    // Smooth scroll to target
-                    window.scrollTo({
-                        top: scrollPosition,
-                        behavior: 'smooth'
-                    });
-                    
-                    // Close mobile menu if open
-                    const navbarCollapse = document.querySelector('.navbar-collapse');
-                    if (navbarCollapse.classList.contains('show')) {
-                        navbarCollapse.classList.remove('show');
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Get all scroll links
+            const scrollLinks = document.querySelectorAll('.scroll-link');
+
+            scrollLinks.forEach(link => {
+                link.addEventListener('click', function (e) {
+                    e.preventDefault();
+
+                    // Get the target section id from href
+                    const targetId = this.getAttribute('href');
+                    const targetSection = document.querySelector(targetId);
+
+                    if (targetSection) {
+                        // Get header height for offset
+                        const headerHeight = document.querySelector('#mainNav').offsetHeight;
+
+                        // Calculate scroll position
+                        const scrollPosition = targetSection.offsetTop - headerHeight;
+
+                        // Smooth scroll to target
+                        window.scrollTo({
+                            top: scrollPosition,
+                            behavior: 'smooth'
+                        });
+
+                        // Close mobile menu if open
+                        const navbarCollapse = document.querySelector('.navbar-collapse');
+                        if (navbarCollapse.classList.contains('show')) {
+                            navbarCollapse.classList.remove('show');
+                        }
                     }
-                }
+                });
             });
         });
-    });
     </script>
 </header>
 
@@ -3579,19 +3580,22 @@
                         <!-- Testimonial 1 -->
                         <div class="rt-testimonial-card">
                             <div class="rt-testimonial-inner">
-                                <div class="rt-avatar-wrapper">
-                                    <img src="assets/img/team/real-3.gif" alt="John Doe" class="rt-avatar">
+                                <div class="rt-image-section">
+                                    <img src="assets/img/team/real-3.gif" alt="John Doe">
                                 </div>
-                                <div class="rt-quote-wrapper">
-                                    <i class="fas fa-quote-left rt-quote-icon"></i>
-                                    <blockquote class="rt-testimonial-text">
-                                        PT Realta Chakradrama has transformed our IT infrastructure completely. Their solutions are cutting-edge and their team's expertise in implementing enterprise systems is outstanding. They've helped us achieve operational excellence.
-                                    </blockquote>
-                                    <i class="fas fa-quote-right rt-quote-icon"></i>
-                                </div>
-                                <div class="rt-author-info">
-                                    <h3 class="rt-author-name">John Doe</h3>
-                                    <p class="rt-author-title">CEO, Tech Innovations</p>
+                                <div class="rt-content-section">
+                                    <div class="rt-quote-wrapper">
+                                        <blockquote class="rt-testimonial-text">
+                                            PT Realta Chakradrama has transformed our IT infrastructure completely.
+                                            Their solutions are cutting-edge and their team's expertise in implementing
+                                            enterprise systems is outstanding. They've helped us achieve operational
+                                            excellence.
+                                        </blockquote>
+                                    </div>
+                                    <div class="rt-author-info">
+                                        <h3 class="rt-author-name">John Doe</h3>
+                                        <p class="rt-author-title">CEO, Tech Innovations</p>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -3599,19 +3603,22 @@
                         <!-- Testimonial 2 -->
                         <div class="rt-testimonial-card">
                             <div class="rt-testimonial-inner">
-                                <div class="rt-avatar-wrapper">
-                                    <img src="assets/img/team/avatar2.jpg" alt="Sarah Wilson" class="rt-avatar">
+                                <div class="rt-image-section">
+                                    <img src="assets/img/team/avatar2.jpg" alt="Sarah Wilson">
                                 </div>
-                                <div class="rt-quote-wrapper">
-                                    <i class="fas fa-quote-left rt-quote-icon"></i>
-                                    <blockquote class="rt-testimonial-text">
-                                        Working with PT Realta Chakradrama has been a game-changer for our business. Their IT solutions have streamlined our processes and their support team is always responsive. We've seen significant improvements in efficiency since partnering with them.
-                                    </blockquote>
-                                    <i class="fas fa-quote-right rt-quote-icon"></i>
-                                </div>
-                                <div class="rt-author-info">
-                                    <h3 class="rt-author-name">Sarah Wilson</h3>
-                                    <p class="rt-author-title">COO, Growth Dynamics</p>
+                                <div class="rt-content-section">
+                                    <div class="rt-quote-wrapper">
+                                        <blockquote class="rt-testimonial-text">
+                                            Working with PT Realta Chakradrama has been a game-changer for our business.
+                                            Their IT solutions have streamlined our processes and their support team is
+                                            always responsive. We've seen significant improvements in efficiency since
+                                            partnering with them.
+                                        </blockquote>
+                                    </div>
+                                    <div class="rt-author-info">
+                                        <h3 class="rt-author-name">Sarah Wilson</h3>
+                                        <p class="rt-author-title">COO, Growth Dynamics</p>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -3619,26 +3626,27 @@
                         <!-- Testimonial 3 -->
                         <div class="rt-testimonial-card">
                             <div class="rt-testimonial-inner">
-                                <div class="rt-avatar-wrapper">
-                                    <img src="assets/img/team/real2.jpg" alt="John Doe" class="rt-avatar">
-                                    <!-- Add play button overlay -->
+                                <div class="rt-image-section">
+                                    <img src="assets/img/team/real2.jpg" alt="Mark Thompson">
                                     <div class="play-overlay" onclick="openVideoPopup()">
                                         <div class="play-button">
                                             <i class="fas fa-play"></i>
                                         </div>
-                                        <div class="pulse-ring"></div>
                                     </div>
                                 </div>
-                                <div class="rt-quote-wrapper">
-                                    <i class="fas fa-quote-left rt-quote-icon"></i>
-                                    <blockquote class="rt-testimonial-text">
-                                        PT Realta Chakradrama's commitment to delivering innovative IT solutions is unmatched. Their deep understanding of business needs and technical expertise has helped us modernize our entire digital infrastructure. They're truly a reliable technology partner.
-                                    </blockquote>
-                                    <i class="fas fa-quote-right rt-quote-icon"></i>
-                                </div>
-                                <div class="rt-author-info">
-                                    <h3 class="rt-author-name">Mark Thompson</h3>
-                                    <p class="rt-author-title">Director, Strategic Solutions</p>
+                                <div class="rt-content-section">
+                                    <div class="rt-quote-wrapper">
+                                        <blockquote class="rt-testimonial-text">
+                                            PT Realta Chakradrama's commitment to delivering innovative IT solutions is
+                                            unmatched. Their deep understanding of business needs and technical
+                                            expertise has helped us modernize our entire digital infrastructure. They're
+                                            truly a reliable technology partner.
+                                        </blockquote>
+                                    </div>
+                                    <div class="rt-author-info">
+                                        <h3 class="rt-author-name">Mark Thompson</h3>
+                                        <p class="rt-author-title">Director, Strategic Solutions</p>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -3658,11 +3666,11 @@
 
                     <!-- Pagination Dots with Navigation Arrows -->
                     <div class="rt-pagination" id="rt-pagination">
-                        <button class="rt-nav-btn rt-prev" id="rt-prev" style="display: none;">
+                        <button class="rt-nav-btn rt-prev" id="rt-prev">
                             <i class="fas fa-chevron-left"></i>
                         </button>
                         <!-- Dots will be inserted here by JavaScript -->
-                        <button class="rt-nav-btn rt-next" id="rt-next" style="display: none;">
+                        <button class="rt-nav-btn rt-next" id="rt-next">
                             <i class="fas fa-chevron-right"></i>
                         </button>
                     </div>
@@ -3670,9 +3678,332 @@
             </div>
         </div>
     </section>
+    <style>
+        .rt-testimonial-section {
+            overflow: hidden;
+            padding: 40px 0;
+        }
 
-    
-      
+        .rt-testimonial-wrapper {
+            position: relative;
+            overflow: visible;
+            cursor: grab;
+            max-width: 400px;
+            margin: 0 auto;
+        }
+
+        .rt-testimonial-wrapper:active {
+            cursor: grabbing;
+        }
+
+        .rt-slider-track {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+            gap: 50px;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .rt-testimonial-card {
+            min-width: 100%;
+            padding: 0 5px;
+            box-sizing: border-box;
+        }
+
+        .rt-testimonial-inner {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            height: 700px;
+            display: flex;
+            flex-direction: column;
+            border: 1px solid #e0e0e0;
+            transition: box-shadow 0.3s ease;
+        }
+
+        .rt-testimonial-inner:hover {
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .rt-image-section {
+            width: 100%;
+            height: 400px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .rt-image-section img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .rt-image-section:hover img {
+            transform: scale(1.05);
+        }
+
+        .rt-content-section {
+            padding: 30px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            background: linear-gradient(180deg, #ffffff 0%, #f8f9fa 100%);
+        }
+
+        .rt-quote-wrapper {
+            position: relative;
+            margin-bottom: 20px;
+        }
+
+        .rt-testimonial-text {
+            font-size: 18px;
+            line-height: 1.7;
+            color: #2c3e50;
+            margin: 0;
+            padding: 0;
+            font-weight: 500;
+            position: relative;
+            text-align: left;
+        }
+
+        .rt-testimonial-text::before {
+            content: '❝';
+            font-size: 60px;
+            color: #9054d0;
+            position: absolute;
+            left: -15px;
+            top: -40px;
+            opacity: 0.2;
+        }
+
+        .rt-author-info {
+            text-align: left;
+            padding-top: 20px;
+            border-top: 2px solid rgba(144, 84, 208, 0.1);
+        }
+
+        .rt-author-name {
+            font-size: 22px;
+            color: #1a1a1a;
+            margin: 0;
+            font-weight: 700;
+        }
+
+        .rt-author-title {
+            font-size: 14px;
+            color: #9054d0;
+            margin: 5px 0 0;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .play-overlay {
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
+            cursor: pointer;
+        }
+
+        .play-button {
+            width: 40px;
+            height: 40px;
+            background-color: #e62e2e;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 15px rgba(144, 84, 208, 0.3);
+            position: relative;
+            animation: scale_pulse 2s infinite;
+        }
+
+        /* Add the pulse animation overlay */
+        .play-button::before {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            background: rgba(208, 84, 84, 0.4);
+            animation: testimonial_pulse 2s infinite;
+            z-index: -1;
+        }
+
+        @keyframes testimonial_pulse {
+            0% {
+                transform: scale(1);
+                opacity: 0.8;
+            }
+
+            70% {
+                transform: scale(1.5);
+                opacity: 0;
+            }
+
+            100% {
+                transform: scale(1.5);
+                opacity: 0;
+            }
+        }
+
+        @keyframes scale_pulse {
+            0% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.1);
+            }
+
+            100% {
+                transform: scale(1);
+            }
+        }
+
+        .play-button i {
+            color: white;
+            font-size: 20px;
+            margin-left: 4px;
+        }
+
+        /* Mobile responsiveness */
+        @media (max-width: 768px) {
+            .rt-testimonial-wrapper {
+                width: 90%;
+                max-width: 355px;
+                padding: 0;
+                overflow: visible;
+                margin: 0 auto;
+                position: relative;
+            }
+
+            .rt-slider-track {
+                justify-content: flex-start;
+                gap: 50px;
+                /* Add padding to ensure last slide centers properly */
+                padding-right: calc(50% - 165px);
+                /* Half wrapper width minus half card width */
+                padding-left: 0;
+                margin: 0;
+                /* Ensure track can show full last slide */
+                width: calc(100% + (50% - 165px));
+                scroll-snap-type: x mandatory;
+                -webkit-overflow-scrolling: touch;
+            }
+
+            .rt-testimonial-card {
+                scroll-snap-align: center;
+                scroll-snap-stop: always;
+                min-width: 330px;
+                /* Match wrapper max-width */
+                /* Ensure consistent card width */
+                flex: 0 0 330px;
+            }
+
+            .rt-testimonial-inner {
+                min-height: auto;
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+                aspect-ratio: 3/4;
+                /* Prevent card from being cut off */
+                margin-right: 0;
+            }
+
+            .rt-image-section {
+                height: 40%;
+                flex: 0 0 auto;
+                min-height: 200px;
+            }
+
+            .rt-content-section {
+                height: 60%;
+                padding: clamp(15px, 5vw, 25px);
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+            }
+
+            .rt-quote-wrapper {
+                position: relative;
+                flex: 0 1 auto;
+                /* Allow shrinking */
+                display: flex;
+                align-items: flex-start;
+                padding-top: 10px;
+            }
+
+            .rt-testimonial-text {
+                font-size: 16px;
+                width: 100%;
+                margin: 0;
+                position: relative;
+            }
+
+            .rt-testimonial-text::before {
+                content: '❝';
+                font-size: 60px;
+                color: #9054d0;
+                position: absolute;
+                left: -15px;
+                top: -40px;
+                opacity: 0.2;
+            }
+
+            .rt-author-info {
+                margin-top: clamp(10px, 3vw, 15px);
+                padding-top: clamp(8px, 2vw, 10px);
+                border-top: 2px solid rgba(144, 84, 208, 0.1);
+            }
+
+            .rt-author-name {
+                font-size: clamp(16px, 5vw, 18px);
+            }
+
+            .play-button {
+                width: clamp(32px, 8vw, 40px);
+                height: clamp(32px, 8vw, 40px);
+            }
+
+            .play-button i {
+                font-size: clamp(14px, 4vw, 16px);
+            }
+        }
+
+        .rt-pagination {
+            margin-top: clamp(20px, 5vw, 30px);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: clamp(10px, 3vw, 15px);
+            width: 100%;
+            padding: 0 20px;
+        }
+
+        .rt-nav-btn {
+            width: clamp(35px, 10vw, 45px);
+            height: clamp(35px, 10vw, 45px);
+            border-radius: 50%;
+            background: #9054d0;
+            border: none;
+            color: white;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 15px rgba(144, 84, 208, 0.2);
+            z-index: 2;
+        }
+
+        .rt-nav-btn:hover {
+            background: #7a4bd7;
+            transform: scale(1.1);
+        }
+    </style>
+
     <script>
         document.addEventListener('DOMContentLoaded', function () {
             const track = document.getElementById('rt-slider-track');
@@ -3691,7 +4022,6 @@
             let touchStartX = 0;
             let touchEndX = 0;
             let animationID = null;
-            let initialTouchTarget = null;
 
             // Create pagination dots
             for (let i = 0; i < slideCount; i++) {
@@ -3730,7 +4060,7 @@
                 updateSlidePosition();
             }
 
-            // Desktop-only drag functionality
+            // Desktop drag functionality
             if (!isMobile) {
                 track.addEventListener('mousedown', dragStart);
                 track.addEventListener('mousemove', drag);
@@ -3738,55 +4068,69 @@
                 track.addEventListener('mouseleave', dragEnd);
             }
 
-            // Mobile touch functionality
-            track.addEventListener('touchstart', touchStart, { passive: true });
-            track.addEventListener('touchmove', touchMove, { passive: true });
-            track.addEventListener('touchend', touchEnd);
+            // Enhanced mobile touch functionality
+            if (isMobile) {
+                // Add touch events to each slide for better mobile response
+                Array.from(slides).forEach(slide => {
+                    slide.addEventListener('touchstart', touchStart, {
+                        passive: false
+                    });
+                    slide.addEventListener('touchmove', touchMove, {
+                        passive: false
+                    });
+                    slide.addEventListener('touchend', touchEnd);
+                });
+            }
 
             function touchStart(e) {
-                initialTouchTarget = e.target;
-                
-                // Check if touch started on avatar or play button - don't start drag
-                if (initialTouchTarget.closest('.rt-avatar-wrapper') || 
-                    initialTouchTarget.closest('.play-button')) {
-                    return;
-                }
+                // Prevent default only for horizontal swipes
+                const touch = e.touches[0];
+                touchStartX = touch.clientX;
 
-                touchStartX = e.touches[0].clientX;
                 isDragging = true;
                 startPos = touchStartX;
                 currentTranslate = prevTranslate;
                 track.style.transition = 'none';
-                
+
+                // Stop any ongoing animations
+                cancelAnimationFrame(animationID);
                 animationID = requestAnimationFrame(animation);
             }
 
             function touchMove(e) {
-                // Don't drag if started on avatar/play button
-                if (!isDragging || initialTouchTarget.closest('.rt-avatar-wrapper') ||
-                    initialTouchTarget.closest('.play-button')) return;
+                if (!isDragging) return;
 
-                const currentPosition = e.touches[0].clientX;
-                const diff = currentPosition - startPos;
-                currentTranslate = prevTranslate + diff;
-            }
+                const touch = e.touches[0];
+                const currentX = touch.clientX;
+                const diffX = currentX - touchStartX;
+                const diffY = touch.clientY - e.touches[0].clientY;
 
-            function touchEnd() {
-                // Don't process drag end if started on avatar/play button
-                if (initialTouchTarget.closest('.rt-avatar-wrapper') ||
-                    initialTouchTarget.closest('.play-button')) {
-                    initialTouchTarget = null;
-                    return;
+                // If horizontal movement is greater than vertical, prevent scrolling
+                if (Math.abs(diffX) > Math.abs(diffY)) {
+                    e.preventDefault();
                 }
 
+                const diff = currentX - startPos;
+                currentTranslate = prevTranslate + diff;
+
+                // Add resistance at edges
+                if (currentTranslate > 0) {
+                    currentTranslate = currentTranslate * 0.3;
+                } else if (currentTranslate < -(slideCount - 1) * track.offsetWidth) {
+                    const overflowTranslate = currentTranslate + (slideCount - 1) * track.offsetWidth;
+                    currentTranslate = -(slideCount - 1) * track.offsetWidth + (overflowTranslate * 0.3);
+                }
+            }
+
+            function touchEnd(e) {
                 isDragging = false;
                 cancelAnimationFrame(animationID);
-                
+
                 const movedBy = currentTranslate - prevTranslate;
                 const threshold = track.offsetWidth * 0.2;
-                
+
                 track.style.transition = 'transform 0.3s ease-out';
-                
+
                 if (Math.abs(movedBy) > threshold) {
                     if (movedBy < 0 && currentIndex < slideCount - 1) {
                         currentIndex++;
@@ -3794,11 +4138,10 @@
                         currentIndex--;
                     }
                 }
-                
+
                 prevTranslate = -currentIndex * track.offsetWidth;
                 currentTranslate = prevTranslate;
                 updateSlidePosition();
-                initialTouchTarget = null;
             }
 
             function animation() {
@@ -3811,7 +4154,7 @@
                 startPos = e.clientX;
                 currentTranslate = prevTranslate;
                 track.style.transition = 'none';
-                
+
                 animationID = requestAnimationFrame(animation);
             }
 
@@ -3825,12 +4168,12 @@
             function dragEnd() {
                 isDragging = false;
                 cancelAnimationFrame(animationID);
-                
+
                 const movedBy = currentTranslate - prevTranslate;
                 const threshold = track.offsetWidth * 0.2;
-                
+
                 track.style.transition = 'transform 0.3s ease-out';
-                
+
                 if (Math.abs(movedBy) > threshold) {
                     if (movedBy < 0 && currentIndex < slideCount - 1) {
                         currentIndex++;
@@ -3838,7 +4181,7 @@
                         currentIndex--;
                     }
                 }
-                
+
                 prevTranslate = -currentIndex * track.offsetWidth;
                 currentTranslate = prevTranslate;
                 updateSlidePosition();
@@ -3847,53 +4190,65 @@
             prevBtn.addEventListener('click', () => {
                 if (currentIndex > 0) {
                     currentIndex--;
-                    updateSlidePosition();
+                } else {
+                    // Reset to last slide if at beginning
+                    currentIndex = slideCount - 1;
                 }
+                updateSlidePosition();
             });
 
             nextBtn.addEventListener('click', () => {
                 if (currentIndex < slideCount - 1) {
                     currentIndex++;
-                    updateSlidePosition();
-                }
-            });
-
-            // Auto-play functionality
-            let autoplayInterval = setInterval(() => {
-                if (currentIndex < slideCount - 1) {
-                    currentIndex++;
                 } else {
+                    // Reset to first slide if at end
                     currentIndex = 0;
                 }
                 updateSlidePosition();
-            }, 5000);
-
-            // Pause auto-play on hover or drag
-            track.addEventListener('mouseenter', () => {
-                clearInterval(autoplayInterval);
             });
 
-            track.addEventListener('mouseleave', () => {
-                if (!isDragging) {
+            // Auto-play functionality only if more than 4 slides
+            let autoplayInterval;
+
+            function startAutoplay() {
+                if (slideCount > 4 && !isDragging) {
                     autoplayInterval = setInterval(() => {
                         if (currentIndex < slideCount - 1) {
                             currentIndex++;
                         } else {
+                            // Reset to first slide when reaching the end
                             currentIndex = 0;
                         }
                         updateSlidePosition();
                     }, 5000);
                 }
-            });
+            }
+
+            function stopAutoplay() {
+                clearInterval(autoplayInterval);
+            }
+
+            // Start autoplay initially if enough slides
+            if (slideCount > 4) {
+                startAutoplay();
+            }
+
+            // Pause auto-play on hover or drag
+            track.addEventListener('mouseenter', stopAutoplay);
+            track.addEventListener('mouseleave', startAutoplay);
+
+            // Stop autoplay during dragging
+            track.addEventListener('mousedown', stopAutoplay);
+            track.addEventListener('touchstart', stopAutoplay);
 
             // Video popup functionality
             function openVideoPopup() {
                 const overlay = document.getElementById('video-popup-overlay');
                 const iframe = document.getElementById('popup-video-iframe');
-                
+
                 // Set video URL (replace with your video URL)
                 iframe.src = 'https://www.youtube.com/embed/YOUR_VIDEO_ID?autoplay=1';
-                
+
                 // Show overlay with animation
                 overlay.classList.add('active');
                 document.body.style.overflow = 'hidden'; // Prevent scrolling
@@ -3903,7 +4258,7 @@
             document.querySelector('.video-popup-close').addEventListener('click', () => {
                 const overlay = document.getElementById('video-popup-overlay');
                 const iframe = document.getElementById('popup-video-iframe');
-                
+
                 overlay.classList.remove('active');
                 setTimeout(() => {
                     overlay.style.display = 'none';
@@ -3931,534 +4286,138 @@
         });
     </script>
 
+
+
+
     <style>
-        .rt-testimonial-section {
-            overflow: hidden;
+        /* Video popup styles */
+        .video-popup-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.85);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+            opacity: 0;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
-        .rt-testimonial-wrapper {
+        .video-popup-content {
             position: relative;
-            overflow: visible;
-            cursor: grab;
-        }
-
-        .rt-testimonial-wrapper:active {
-            cursor: grabbing;
-        }
-
-        .rt-slider-track {
-            display: flex;
-            transition: transform 0.5s ease-in-out;
-            gap: 5px;
-            user-select: none;
-        }
-
-        .rt-testimonial-card {
-            min-width: 100%;
-            padding: 15px;
-            box-sizing: border-box;
-            position: relative;
-            padding-top: 60px; /* Make space for overlapping avatar */
-        }
-
-        .rt-testimonial-inner {
-            background: white;
+            width: 90%;
+            max-width: 800px;
+            background: transparent;
+            border: 2px solid rgba(255, 255, 255, 0.2);
             border-radius: 15px;
             padding: 20px;
-            height: 100%;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            transition: transform 0.3s ease;
+            transform: scale(0.8);
+            transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.15);
         }
 
-        .rt-avatar-wrapper {
-            width: 120px;
-            height: 120px;
-            border-radius: 50%;
-            overflow: visible;
-            margin-bottom: 20px;
-            border: 4px solid #9054d090;
-            box-shadow: 0 5px 15px rgba(144, 84, 208, 0.3);
+        .video-popup-close {
             position: absolute;
-            top: 18px; /* Half the height to overlap */
-            left: 50%;
-            transform: translateX(-50%);
-            z-index: 10;
-        }
-
-        .play-overlay {
-            position: absolute;
-            top: 77%;
-            left: 85%;
-            transform: translate(-50%, -50%);
-            width: 100%;
-            height: 100%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            z-index: 999;
-            cursor: pointer;
-            pointer-events: auto;
-        }
-
-        .play-button {
-            width: 40px;
-            height: 40px;
-            background: #9054d0;
-            border-radius: 50%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            z-index: 1000;
-        }
-
-        .play-button i {
-            color: white;
-            font-size: 16px;
-            margin-left: 3px;
-        }
-
-        .pulse-ring {
-            position: absolute;
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            background: #9054d0;
-            opacity: 0.6;
-            animation: pulse-play 2s infinite;
-        }
-
-        @keyframes pulse-play {
-            0% {
-                transform: scale(1);
-                opacity: 0.6;
-            }
-            70% {
-                transform: scale(1.7);
-                opacity: 0;
-            }
-            100% {
-                transform: scale(1.7);
-                opacity: 0;
-            }
-        }
-
-        .rt-avatar {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            position: relative;
-            z-index: 1;
-            border-radius: 50%;
-        }
-
-        .rt-quote-wrapper {
-            position: relative;
-            padding: 20px 50px;
-            margin: 20px auto;
-            width: 80%;
-            border-radius: 15px;
-        }
-        
-        .rt-quote-icon {
-            color: #4a4a4a;
-            font-size: 24px;
-            position: absolute;
-            opacity: 0.8;
-            transition: all 0.3s ease;
-            width: 45px;
-            height: 45px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            z-index: 1;
-        }
-
-        .rt-quote-icon.fa-quote-left {
-            top: 18px;
-            left: 65px;
-            transform: rotate(-10deg);
-        }
-
-        .rt-quote-icon.fa-quote-right {
-            bottom: 25px;
-            right: 60px;
-            transform: rotate(10deg);
-        }
-
-        .rt-testimonial-text {
-            font-size: 22px;
-            line-height: 1.8;
-            color: #1a1a1a;
-            text-align: left;
-            margin: 0;
-            font-weight: 600;
-            font-style: normal;
-            position: relative;
-            padding: 35px 45px;
-            background: #ffffff;
-            border-left: 6px solid #9054d0;
-            border-radius: 8px;
-            box-shadow: 0 4px 12px rgba(144,84,208,0.12);
-            letter-spacing: -0.02em;
-        }
-
-        .rt-testimonial-text::after {
-            content: '';
-            position: absolute;
-            bottom: -15px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 95%;
-            height: 3px;
-            background: linear-gradient(
-                to right,
-                transparent,
-                #9054d0 25%,
-                #9054d0 75%, 
-                transparent
-            );
-        }
-
-        .rt-testimonial-text::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            right: 0;
-            width: 60px;
-            height: 60px;
-            background: linear-gradient(135deg, #9054d0 0%, #b088e3 100%);
-            opacity: 0.15;
-            border-radius: 0 8px 0 30px;
-        }
-
-        .rt-author-info {
-            text-align: center;
-            margin-top: 20px;
-        }
-
-        .rt-author-name {
-            font-size: 24px;
-            color: #333;
-            margin: 0 0 5px 0;
-        }
-
-        .rt-author-title {
-            font-size: 16px;
-            color: #9054d0;
-            margin: 0;
-            font-weight: bold;
-            text-transform: uppercase;
-        }
-
-        .rt-nav-btn {
-            width: 40px;
-            height: 40px;
+            top: -9px;
+            right: -9px;
+            width: 30px;
+            height: 30px;
             border-radius: 50%;
             background: #9054d0;
             border: none;
             color: white;
-            font-size: 16px;
+            font-size: 20px;
             cursor: pointer;
-            transition: all 0.3s ease;
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            box-shadow: 0 4px 15px rgba(144, 84, 208, 0.3);
-            margin: 0 10px;
-        }
-
-        .rt-nav-btn:hover {
-            background: #7a4bd7;
-            transform: scale(1.1);
-        }
-
-        .rt-pagination {
             display: flex;
-            justify-content: center;
             align-items: center;
-            gap: 10px;
-            margin-top: 30px;
+            justify-content: center;
+            transition: all 0.3s ease;
+            z-index: 1000000;
         }
 
-        .rt-dot {
-            width: 12px;
-            height: 12px;
-            border-radius: 50%;
-            background: #ddd;
-            cursor: pointer;
+        @media screen and (max-width: 768px) {
+            .video-popup-close {
+                right: -9px;
+                top: -9px;
+                width: 20px;
+                height: 20px;
+                font-size: 13px;
+            }
+        }
+
+        .video-popup-close:hover {
+            background: #7a4bd7;
+            transform: scale(1.1) rotate(90deg);
+        }
+
+        .video-wrapper {
             position: relative;
-            transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.3);
         }
 
-        .rt-dot::before {
-            content: '';
+        .video-wrapper iframe {
             position: absolute;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            background: #9054d0;
-            border-radius: 50%;
-            transform: scale(0);
-            transition: transform 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+            border-radius: 10px;
+            border: none;
         }
 
-        .rt-dot.active::before {
-            transform: scale(1);
-            animation: dotPulse 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-        }
 
-        /* Mobile Responsive Styles */
-        @media screen and (max-width: 768px) {
-            .rt-quote-wrapper {
-                width: 95%;
-                padding: 10px 20px;
-            }
-
-            .rt-testimonial-text {
-                font-size: 18px;
-                padding: 25px 30px;
-            }
-
-            .rt-quote-icon {
-                width: 35px;
-                height: 35px;
-                font-size: 18px;
-            }
-
-            .rt-quote-icon.fa-quote-left {
-                left: 25px;
-            }
-
-            .rt-quote-icon.fa-quote-right {
-                right: 25px;
-            }
-
-            .rt-author-name {
-                font-size: 20px;
-            }
-
-            .rt-author-title {
-                font-size: 14px;
-            }
-
-            .rt-avatar-wrapper {
-                width: 100px;
-                height: 100px;
-                top: 18px; /* Adjust for smaller avatar size */
-            }
-
-            .play-button {
-                width: 35px;
-                height: 35px;
-            }
-
-            .pulse-ring {
-                width: 35px;
-                height: 35px;
-            }
-
-            .rt-slider-track {
-                gap: 0px;
-            }
-        }
-
-        @media screen and (max-width: 480px) {
-            .rt-quote-wrapper {
-                width: 100%;
-                padding: 5px 10px;
-            }
-
-            .rt-testimonial-text {
-                font-size: 16px;
-                padding: 20px 25px;
-            }
-
-            .rt-quote-icon {
-                width: 30px;
-                height: 30px;
-                font-size: 16px;
-            }
-
-            .rt-quote-icon.fa-quote-left {
-                left: 15px;
-                top: 7px;
-            }
-
-            .rt-quote-icon.fa-quote-right {
-                right: 15px;
-                bottom: 15px;
-            }
-
-            .rt-nav-btn {
-                width: 35px;
-                height: 35px;
-                font-size: 14px;
-            }
-
-            .rt-dot {
-                width: 10px;
-                height: 10px;
-            }
-        }
-
-        @keyframes dotPulse {
-            0% {
-                transform: scale(0);
-            }
-
-            50% {
-                transform: scale(1.2);
-            }
-
-            100% {
-                transform: scale(1);
-            }
-
-        }
-
-        
-@keyframes scaleIn {
-    from {
-        transform: scale(0.8);
-    }
-    to {
-        transform: scale(1);
-        }
-    }
-
-    </style>
-
-
-    <style>
-    /* Video popup styles */
-    .video-popup-overlay {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: rgba(0, 0, 0, 0.85);
-        display: none;
-        justify-content: center;
-        align-items: center;
-        z-index: 9999;
-        opacity: 0;
-        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-    }
-
-    .video-popup-content {
-        position: relative;
-        width: 90%;
-        max-width: 800px;
-        background: transparent;
-        border: 2px solid rgba(255, 255, 255, 0.2);
-        border-radius: 15px;
-        padding: 20px;
-        transform: scale(0.8);
-        transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-        box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.15);
-    }
-    .video-popup-close {
-        position: absolute;
-        top: -9px;
-        right: -9px;
-        width: 30px;
-        height: 30px;
-        border-radius: 50%;
-        background: #9054d0;
-        border: none;
-        color: white;
-        font-size: 20px;
-        cursor: pointer;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        transition: all 0.3s ease;
-        z-index: 1000000;
-    }
-
-    @media screen and (max-width: 768px) {
-        .video-popup-close {
-            right: -9px;
-            top: -9px;
-            width: 20px;
-            height: 20px;
-            font-size: 13px;
-            }
-        }
-
-    .video-popup-close:hover {
-        background: #7a4bd7;
-        transform: scale(1.1) rotate(90deg);
-    }
-
-    .video-wrapper {
-        position: relative;
-        padding-bottom: 56.25%;
-        height: 0;
-        overflow: hidden;
-        border-radius: 10px;
-        box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.3);
-    }
-
-    .video-wrapper iframe {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        border-radius: 10px;
-        border: none;
-    }
-
-
-    /* Show popup with animation */
-    .video-popup-overlay.active {
-        display: flex;
-        opacity: 1;
-    }
-
-    .video-popup-overlay.active .video-popup-content {
-        transform: scale(1);
-    }
-
-    @keyframes fadeIn {
-        from {
-            opacity: 0;
-        }
-        to {
+        /* Show popup with animation */
+        .video-popup-overlay.active {
+            display: flex;
             opacity: 1;
         }
-    }
+
+        .video-popup-overlay.active .video-popup-content {
+            transform: scale(1);
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
     </style>
 
     <script>
         function openVideoPopup() {
             const overlay = document.getElementById('videoPopupOverlay');
             const iframe = document.getElementById('videoIframe');
-            
+
             // Set your video URL here
             iframe.src = 'https://www.youtube.com/embed/YOUR_VIDEO_ID?autoplay=1&rel=0';
-            
+
             overlay.style.display = 'flex';
             document.body.style.overflow = 'hidden';
-            
+
             // Trigger reflow
             overlay.offsetHeight;
-            
+
             overlay.classList.add('active');
         }
 
         function closeVideoPopup() {
             const overlay = document.getElementById('videoPopupOverlay');
             const iframe = document.getElementById('videoIframe');
-            
+
             overlay.classList.remove('active');
             document.body.style.overflow = '';
-            
+
             setTimeout(() => {
                 overlay.style.display = 'none';
                 iframe.src = '';
@@ -4488,8 +4447,9 @@
         <div class="container-fluid">
             <div class="blog-header text-center">
                 <h1 class="gradient-text" style="font-weight: bolder; font-size: 48px;">Blog</h1>
-                <p class=""><strong>Stay informed and inspired with our latest articles covering a wide range of topics from
-                    career advice to latest our insights.</strong></p>
+                <p class=""><strong>Stay informed and inspired with our latest articles covering a wide range of topics
+                        from
+                        career advice to latest our insights.</strong></p>
             </div>
             <div id="blog-posts-container" class="blog-posts">
                 <!-- Desktop arrows -->
@@ -5687,21 +5647,37 @@
     <!-- Cookie Consent Popup -->
     <div id="cookie-consent" class="cookie-consent">
         <div class="cookie-content">
-            <button id="close-cookie" class="close-cookie">&times;</button>
-            <div class="cookie-header">
-                <svg class="cookie-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="48"
-                    height="48">
-                    <path fill="currentColor"
-                        d="M510.52 255.82c-69.97-.85-126.47-57.69-126.47-127.86-70.17 0-127-56.49-127.86-126.45-27.26-4.14-55.13.3-79.72 12.82l-69.13 35.22a132.221 132.221 0 0 0-57.79 57.81l-35.1 68.88a132.645 132.645 0 0 0-12.82 80.95l12.08 76.27a132.521 132.521 0 0 0 37.16 72.96l54.77 54.76a132.036 132.036 0 0 0 72.71 37.06l76.71 12.15c27.51 4.36 55.7-.11 80.53-12.76l69.13-35.21a132.273 132.273 0 0 0 57.79-57.81l35.1-68.88c12.56-24.64 17.01-52.58 12.91-79.91zM176 368c-17.67 0-32-14.33-32-32s14.33-32 32-32 32 14.33 32 32-14.33 32-32 32zm32-160c-17.67 0-32-14.33-32-32s14.33-32 32-32 32 14.33 32 32-14.33 32-32 32zm160 128c-17.67 0-32-14.33-32-32s14.33-32 32-32 32 14.33 32 32-14.33 32-32 32z" />
-                </svg>
-            </div>
-            <h3>Cookie Consent</h3>
-            <p>We use cookies to enhance your browsing experience and analyze our traffic. By clicking "Accept All",
-                you consent to our use of cookies. For more information, please read our <a href="#"
-                    class="cookie-link">Cookie Policy</a>.</p>
-            <div class="cookie-buttons">
-                <button id="accept-cookies" class="btn-cookie btn-accept">Accept All</button>
-                <button id="refuse-cookies" class="btn-cookie btn-refuse">Refuse</button>
+            <div class="cookie-grid">
+                <div class="cookie-info">
+                    <h3>We use cookies</h3>
+                    <p>We use cookies to collect information about you. We use this information:</p>
+                </div>
+                <div class="cookie-options">
+                    <div class="cookie-purposes">
+                        <div class="cookie-purpose">
+                            <input type="checkbox" id="functional" checked disabled>
+                            <label for="functional">To give you a better experience of our website (functional)</label>
+                        </div>
+                        <div class="cookie-purpose">
+                            <input type="checkbox" id="statistical">
+                            <label for="statistical">To count the pages you visit (statistics)</label>
+                        </div>
+                        <div class="cookie-purpose">
+                            <input type="checkbox" id="marketing">
+                            <label for="marketing">To serve you relevant promotions (marketing)</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="cookie-actions">
+                    <div class="cookie-links">
+                        <a href="#" class="cookie-link">Privacy policy</a>
+                        <a href="#" class="cookie-link">Cookie policy</a>
+                    </div>
+                    <div class="cookie-buttons">
+                        <button id="save-cookies" class="btn-cookie btn-save">Save settings</button>
+                        <button id="accept-cookies" class="btn-cookie btn-accept">OK</button>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
@@ -5709,238 +5685,344 @@
     <style>
         .cookie-consent {
             position: fixed;
-            bottom: -100%;
-            left: 50%;
-            transform: translateX(-50%);
-            background-color: rgba(255, 255, 255, 0.95);
+            bottom: 0;
+            left: 0;
+            right: 0;
+            width: 100%;
+            background-color: rgba(255, 255, 255, 0.98);
             backdrop-filter: blur(10px);
             -webkit-backdrop-filter: blur(10px);
-            padding: 20px;
-            width: 90%;
-            max-width: 400px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            padding: 16px;
+            box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.1);
             z-index: 1000;
-            border-radius: 20px;
-            border: 1px solid rgba(255, 255, 255, 0.18);
             font-family: 'Proxima Nova', sans-serif;
             color: #333333;
-            opacity: 0;
-            transition: all 0.5s cubic-bezier(0.68, -0.55, 0.27, 1.55);
-            max-height: 90vh;
-            overflow-y: auto;
+            transform: translateY(100%);
+            transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
         .cookie-consent.show {
-            bottom: 20px;
-            opacity: 1;
+            transform: translateY(0);
         }
 
         .cookie-content {
-            text-align: center;
+            width: 100%;
+            padding: 0 20px;
         }
 
-        .cookie-header {
-            display: flex;
-            justify-content: center;
-            margin-bottom: 15px;
+        .cookie-grid {
+            display: grid;
+            grid-template-columns: 1fr 1.5fr 1fr;
+            gap: 24px;
+            align-items: center;
+            width: 100%;
         }
 
-        .cookie-icon {
-            color: #0056b3;
-            animation: rotateCookie 3s ease-in-out infinite;
-        }
-
-        @keyframes rotateCookie {
-
-            0%,
-            100% {
-                transform: rotate(0deg);
-            }
-
-            25% {
-                transform: rotate(5deg);
-            }
-
-            75% {
-                transform: rotate(-5deg);
-            }
-        }
-
-        .cookie-consent h3 {
-            margin: 0 0 15px 0;
-            font-size: 22px;
+        .cookie-info h3 {
+            margin: 0 0 8px 0;
+            font-size: 20px;
             font-weight: 600;
+            color: #333;
         }
 
-        .cookie-consent p {
-            margin: 0 0 20px 0;
-            font-size: 16px;
-            line-height: 1.6;
-            color: #555;
+        .cookie-info p {
+            margin: 0;
+            font-size: 14px;
+            line-height: 1.5;
+            color: #666;
+        }
+
+        .cookie-purposes {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .cookie-purpose {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .cookie-purpose input[type="checkbox"] {
+            width: 16px;
+            height: 16px;
+            accent-color: #9054d0;
+        }
+
+        .cookie-purpose label {
+            font-size: 14px;
+            color: #444;
+            margin: 0;
+        }
+
+        .cookie-actions {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+        }
+
+        .cookie-links {
+            display: flex;
+            gap: 16px;
+            justify-content: center;
+            width: 100%;
         }
 
         .cookie-link {
-            color: #0056b3;
+            color: #9054d0;
             text-decoration: none;
+            font-size: 13px;
             transition: color 0.3s ease;
         }
 
         .cookie-link:hover {
-            color: #003d82;
+            color: #7641b0;
             text-decoration: underline;
         }
 
         .cookie-buttons {
             display: flex;
+            gap: 8px;
             justify-content: center;
-            gap: 10px;
+            width: 100%;
         }
 
         .btn-cookie {
-            padding: 12px 20px;
+            padding: 8px 16px;
             border: none;
-            border-radius: 30px;
+            border-radius: 6px;
             cursor: pointer;
-            font-size: 16px;
-            font-weight: 600;
+            font-size: 14px;
+            font-weight: 500;
             transition: all 0.3s ease;
+            white-space: nowrap;
+            min-width: 120px;
         }
 
-        .btn-accept {
-            background-color: #0056b3;
-            color: white;
-        }
-
-        .btn-accept:hover {
-            background-color: #004494;
-            transform: translateY(-2px);
-            box-shadow: 0 4px 8px rgba(0, 86, 179, 0.3);
-        }
-
-        .btn-refuse {
+        .btn-save {
             background-color: #f1f1f1;
             color: #333333;
         }
 
-        .btn-refuse:hover {
+        .btn-save:hover {
             background-color: #e1e1e1;
-            transform: translateY(-2px);
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
 
-        .close-cookie {
-            position: absolute;
-            top: 10px;
-            right: 15px;
-            background: none;
-            border: none;
-            font-size: 24px;
-            cursor: pointer;
-            color: #999;
-            transition: color 0.3s ease;
+        .btn-accept {
+            background-color: #9054d0;
+            color: white;
         }
 
-        .close-cookie:hover {
-            color: #333;
+        .btn-accept:hover {
+            background-color: #7641b0;
         }
 
+        /* Dark mode styles */
         body.dark-mode .cookie-consent {
-            background-color: rgba(38, 26, 60, 0.95);
+            background-color: rgba(38, 26, 60, 0.98);
             color: #ffffff;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
         }
 
-        body.dark-mode .btn-accept {
-            background-color: #6a1b9a;
+        body.dark-mode .cookie-info h3 {
+            color: #fff;
         }
 
-        body.dark-mode .btn-accept:hover {
-            background-color: #4a148c;
+        body.dark-mode .cookie-info p {
+            color: #e1e1e1;
         }
 
-        body.dark-mode .btn-refuse {
+        body.dark-mode .cookie-purpose label {
+            color: #e1e1e1;
+        }
+
+        body.dark-mode .btn-save {
             background-color: #3c2f50;
             color: #ffffff;
         }
 
-        body.dark-mode .btn-refuse:hover {
+        body.dark-mode .btn-save:hover {
             background-color: #2e2440;
         }
 
-        body.dark-mode .close-cookie {
-            color: #a0a0a0;
+        body.dark-mode .btn-accept {
+            background-color: #9054d0;
         }
 
-        body.dark-mode .close-cookie:hover {
-            color: #ffffff;
+        body.dark-mode .btn-accept:hover {
+            background-color: #7641b0;
         }
 
-        body.dark-mode .cookie-link {
-            color: #bb86fc;
-        }
+        /* Responsive adjustments */
+        @media (max-width: 991px) {
+            .cookie-grid {
+                grid-template-columns: 1fr;
+                gap: 16px;
+            }
 
-        body.dark-mode .cookie-link:hover {
-            color: #9d4edd;
+            .cookie-actions {
+                padding: 0 16px;
+            }
         }
 
         @media (max-width: 480px) {
-            .cookie-consent {
-                width: 95%;
-                padding: 15px;
-            }
-
-            .cookie-consent h3 {
-                font-size: 20px;
-            }
-
-            .cookie-consent p {
-                font-size: 14px;
+            .cookie-buttons {
+                flex-direction: column;
+                align-items: center;
+                width: 100%;
+                max-width: 300px;
+                margin: 0 auto;
             }
 
             .btn-cookie {
-                padding: 10px 16px;
-                font-size: 14px;
+                width: 100%;
+                min-width: unset;
             }
         }
     </style>
 
     <script>
         document.addEventListener('DOMContentLoaded', function () {
-            const cookieConsent = document.getElementById('cookie-consent');
-            const acceptButton = document.getElementById('accept-cookies');
-            const refuseButton = document.getElementById('refuse-cookies');
-            const closeButton = document.getElementById('close-cookie');
+            const COOKIE_PREFERENCES_KEY = 'cookiePreferences';
+            const CONSENT_EXPIRY_DAYS = 365;
 
-            function hideCookieConsent() {
-                cookieConsent.classList.remove('show');
+            const elements = {
+                cookieConsent: document.getElementById('cookie-consent'),
+                acceptButton: document.getElementById('accept-cookies'),
+                saveButton: document.getElementById('save-cookies'),
+                statisticalCheckbox: document.getElementById('statistical'),
+                marketingCheckbox: document.getElementById('marketing')
+            };
+
+            // Validate elements
+            for (const [key, element] of Object.entries(elements)) {
+                if (!element) {
+                    console.error(`Cookie consent: Required element "${key}" not found`);
+                    return;
+                }
+            }
+
+            function getPreferences() {
+                try {
+                    const saved = localStorage.getItem(COOKIE_PREFERENCES_KEY);
+                    return saved ? JSON.parse(saved) : null;
+                } catch (error) {
+                    console.error('Error reading cookie preferences:', error);
+                    return null;
+                }
+            }
+
+            function setPreferences(preferences) {
+                try {
+                    preferences.timestamp = new Date().toISOString();
+                    preferences.expiresAt = new Date(Date.now() + CONSENT_EXPIRY_DAYS * 24 * 60 * 60 * 1000)
+                        .toISOString();
+                    localStorage.setItem(COOKIE_PREFERENCES_KEY, JSON.stringify(preferences));
+                    return true;
+                } catch (error) {
+                    console.error('Error saving cookie preferences:', error);
+                    return false;
+                }
+            }
+
+            function isPreferencesExpired(preferences) {
+                if (!preferences || !preferences.expiresAt) return true;
+                try {
+                    return new Date(preferences.expiresAt) < new Date();
+                } catch (error) {
+                    console.error('Error checking preferences expiry:', error);
+                    return true;
+                }
+            }
+
+            function updateAnalyticsConsent(preferences) {
+                if (typeof gtag !== 'function') return;
+
+                try {
+                    gtag('consent', 'update', {
+                        'analytics_storage': preferences.statistical ? 'granted' : 'denied',
+                        'ad_storage': preferences.marketing ? 'granted' : 'denied',
+                        'personalization_storage': preferences.marketing ? 'granted' : 'denied',
+                        'functionality_storage': 'granted' // Always allow functional
+                    });
+                } catch (error) {
+                    console.error('Error updating consent:', error);
+                }
+            }
+
+            function setDefaultConsent() {
+                if (typeof gtag !== 'function') return;
+
+                try {
+                    gtag('consent', 'default', {
+                        'analytics_storage': 'denied',
+                        'ad_storage': 'denied',
+                        'personalization_storage': 'denied',
+                        'functionality_storage': 'granted'
+                    });
+                } catch (error) {
+                    console.error('Error setting default consent:', error);
+                }
+            }
+
+            function showBanner() {
+                elements.cookieConsent.style.display = 'block';
+                requestAnimationFrame(() => {
+                    requestAnimationFrame(() => {
+                        elements.cookieConsent.classList.add('show');
+                    });
+                });
+            }
+
+            function hideBanner() {
+                elements.cookieConsent.classList.remove('show');
                 setTimeout(() => {
-                    cookieConsent.style.display = 'none';
+                    elements.cookieConsent.style.display = 'none';
                 }, 500);
             }
 
-            function showCookieConsent() {
-                cookieConsent.style.display = 'block';
-                setTimeout(() => {
-                    cookieConsent.classList.add('show');
-                }, 10);
+            function savePreferences(acceptAll = false) {
+                const preferences = {
+                    functional: true, // Always required
+                    statistical: acceptAll || elements.statisticalCheckbox.checked,
+                    marketing: acceptAll || elements.marketingCheckbox.checked
+                };
+
+                if (setPreferences(preferences)) {
+                    updateAnalyticsConsent(preferences);
+                    hideBanner();
+                    return true;
+                }
+                return false;
             }
 
-            // Check if user has already made a choice about cookies
-            if (!localStorage.getItem('cookiesChoice')) {
-                setTimeout(showCookieConsent, 1000);
+            function initializeCookieConsent() {
+                const savedPreferences = getPreferences();
+
+                if (!savedPreferences || isPreferencesExpired(savedPreferences)) {
+                    setDefaultConsent();
+                    showBanner();
+                } else {
+                    elements.statisticalCheckbox.checked = savedPreferences.statistical;
+                    elements.marketingCheckbox.checked = savedPreferences.marketing;
+                    updateAnalyticsConsent(savedPreferences);
+                }
             }
 
-            acceptButton.addEventListener('click', function () {
-                localStorage.setItem('cookiesChoice', 'accepted');
-                hideCookieConsent();
+            // Event Listeners
+            elements.acceptButton.addEventListener('click', () => {
+                savePreferences(true);
             });
 
-            refuseButton.addEventListener('click', function () {
-                localStorage.setItem('cookiesChoice', 'refused');
-                hideCookieConsent();
+            elements.saveButton.addEventListener('click', () => {
+                savePreferences(false);
             });
 
-            closeButton.addEventListener('click', hideCookieConsent);
+            // Init
+            initializeCookieConsent();
         });
     </script>
 
@@ -6087,71 +6169,71 @@
     </script>
 
     <script>
-    document.addEventListener('DOMContentLoaded', function() {
-        // Get all scroll links
-        const scrollLinks = document.querySelectorAll('.scroll-link');
-        
-        scrollLinks.forEach(link => {
-            link.addEventListener('click', function(e) {
-                e.preventDefault();
-                
-                // Get the target section id from href
-                const targetId = this.getAttribute('href');
-                const targetSection = document.querySelector(targetId);
-                
-                if (targetSection) {
-                    // Get header height for offset
-                    const headerHeight = document.querySelector('#mainNav').offsetHeight;
-                    
-                    // Calculate scroll position
-                    const scrollPosition = targetSection.offsetTop - headerHeight;
-                    
-                    // Smooth scroll to target
-                    window.scrollTo({
-                        top: scrollPosition,
-                        behavior: 'smooth'
-                    });
-                    
-                    // Close mobile menu if open
-                    const navbarCollapse = document.querySelector('.navbar-collapse');
-                    if (navbarCollapse.classList.contains('show')) {
-                        navbarCollapse.classList.remove('show');
+        document.addEventListener('DOMContentLoaded', function () {
+            const scrollLinks = document.querySelectorAll('.scroll-link');
+
+            scrollLinks.forEach(link => {
+                link.addEventListener('click', function (e) {
+                    e.preventDefault();
+
+                    const targetId = this.getAttribute('href');
+                    const targetSection = document.querySelector(targetId);
+
+                    if (targetSection) {
+                        // Get header height
+                        const headerHeight = document.querySelector('#mainNav').offsetHeight;
+                        // Increase this negative offset to scroll higher up (adjust as needed)
+                        const extraOffset = 420; // Try 100px offset to move it higher
+
+                        // Calculate scroll position with larger offset
+                        const scrollPosition = targetSection.offsetTop - headerHeight -
+                            extraOffset;
+
+                        window.scrollTo({
+                            top: scrollPosition,
+                            behavior: 'smooth'
+                        });
+
+                        // Close mobile menu if open
+                        const navbarCollapse = document.querySelector('.navbar-collapse');
+                        if (navbarCollapse.classList.contains('show')) {
+                            navbarCollapse.classList.remove('show');
+                        }
                     }
-                }
+                });
             });
         });
-    });
     </script>
 
     <script>
-    document.addEventListener('DOMContentLoaded', function() {
-        // Check if we have a stored section to scroll to
-        const scrollToSection = localStorage.getItem('scrollToSection');
-        
-        if (scrollToSection) {
-            // Clear the stored section
-            localStorage.removeItem('scrollToSection');
-            
-            // Find the target element
-            const targetElement = document.getElementById(scrollToSection);
-            
-            if (targetElement) {
-                // Get header height for offset
-                const headerHeight = document.querySelector('#mainNav').offsetHeight;
-                
-                // Calculate scroll position
-                const scrollPosition = targetElement.offsetTop - headerHeight;
-                
-                // Add a slight delay to ensure proper scrolling after page load
-                setTimeout(() => {
-                    window.scrollTo({
-                        top: scrollPosition,
-                        behavior: 'smooth'
-                    });
-                }, 100);
+        document.addEventListener('DOMContentLoaded', function () {
+            // Check if we have a stored section to scroll to
+            const scrollToSection = localStorage.getItem('scrollToSection');
+
+            if (scrollToSection) {
+                // Clear the stored section
+                localStorage.removeItem('scrollToSection');
+
+                // Find the target element
+                const targetElement = document.getElementById(scrollToSection);
+
+                if (targetElement) {
+                    // Get header height for offset
+                    const headerHeight = document.querySelector('#mainNav').offsetHeight;
+
+                    // Calculate scroll position
+                    const scrollPosition = targetElement.offsetTop - headerHeight;
+
+                    // Add a slight delay to ensure proper scrolling after page load
+                    setTimeout(() => {
+                        window.scrollTo({
+                            top: scrollPosition,
+                            behavior: 'smooth'
+                        });
+                    }, 100);
+                }
             }
-        }
-    });
+        });
     </script>
 </body>
 

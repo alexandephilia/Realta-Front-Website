@@ -176,24 +176,25 @@
 <style>
     /* Mobile-specific styles */
     @media (max-width: 768px) {
+
         /* Reorder sidebar sections */
-        .col-md-4 > div:nth-of-type(1) {
+        .col-md-4>div:nth-of-type(1) {
             order: 2;
             margin-bottom: 2rem;
             margin-top: 2rem;
         }
-        
-        .col-md-4 > div:nth-of-type(2) {
+
+        .col-md-4>div:nth-of-type(2) {
             order: 1;
             margin-bottom: 1rem;
         }
-        
+
         /* Force flex display on parent */
         .col-md-4 {
             display: flex !important;
             flex-direction: column !important;
         }
-        
+
         /* Ensure proper spacing */
         .custom-about-section,
         .categories-container {
@@ -637,26 +638,27 @@
                     }
                 </style>
                 <ul class="sidebar-nav justify-content-end align-items-center"
-                style="padding: 0; margin: 0; margin-top: 8px; list-style-type: none;">
-                <!-- Solutions dropdown -->
+                    style="padding: 0; margin: 0; margin-top: 8px; list-style-type: none;">
+                    <!-- Solutions dropdown -->
                     <li class="me-1"><a class="nav-link dropdown-toggle" href="#" id="solutionsDropdown" role="button"
                             data-bs-toggle="dropdown" aria-expanded="false">
                             Solution <i class="fas fa-chevron-down ms-1 fa-xs"></i>
                         </a></li>
 
-                    <!-- Industry dropdown -->
                     <li class="me-1">
-                        <a href="hospitality.html" class="nav-link" onclick="navigateWithLoading('hospitality.html')">Industry</a>
+                        <a href="hospitality.html" class="nav-link"
+                            onclick="navigateWithLoading('hospitality.html')">Industry</a>
                     </li>
 
                     <!-- Partner dropdown -->
                     <li class="me-1">
-                        <a href="#partners" class="nav-link scroll-link">Partners</a>
+                        <a href="index.html#partners" class="nav-link"
+                            onclick="navigateWithLoading('index.html#partners')">Partners</a>
                     </li>
-
                     <!-- Contact dropdown -->
                     <li class="me-1">
-                        <a href="#contact" class="nav-link scroll-link">Contact</a>
+                        <a href="index.html#contact" class="nav-link"
+                            onclick="navigateWithLoading('index.html#contact')">Contact</a>
                     </li>
 
                     <!-- Career dropdown -->
@@ -1105,38 +1107,38 @@
         });
     </script>
 
-<script>
-    function navigateToSection(sectionId) {
-        // Store the target section in localStorage
-        localStorage.setItem('scrollToSection', sectionId);
-        
-        // Navigate to index.html
-        window.location.href = 'index.html#' + sectionId;
-    }
+    <script>
+        function navigateToSection(sectionId) {
+            // Store the target section in localStorage
+            localStorage.setItem('scrollToSection', sectionId);
+
+            // Navigate to index.html
+            window.location.href = 'index.html#' + sectionId;
+        }
     </script>
 
-<script>
-    document.addEventListener('DOMContentLoaded', function() {
-        // Check if there's a hash in the URL when coming from about.html
-        if (window.location.hash) {
-            const targetId = window.location.hash;
-            const targetElement = document.querySelector(targetId);
-            
-            if (targetElement) {
-                // Get header height for offset
-                const headerHeight = document.querySelector('#mainNav').offsetHeight;
-                
-                // Calculate scroll position
-                const scrollPosition = targetElement.offsetTop - headerHeight;
-                
-                // Smooth scroll to target
-                window.scrollTo({
-                    top: scrollPosition,
-                    behavior: 'smooth'
-                });
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Check if there's a hash in the URL when coming from about.html
+            if (window.location.hash) {
+                const targetId = window.location.hash;
+                const targetElement = document.querySelector(targetId);
+
+                if (targetElement) {
+                    // Get header height for offset
+                    const headerHeight = document.querySelector('#mainNav').offsetHeight;
+
+                    // Calculate scroll position
+                    const scrollPosition = targetElement.offsetTop - headerHeight;
+
+                    // Smooth scroll to target
+                    window.scrollTo({
+                        top: scrollPosition,
+                        behavior: 'smooth'
+                    });
+                }
             }
-        }
-    });
+        });
     </script>
 </header>
 
@@ -1741,26 +1743,27 @@
                     <!-- Add this style block after the existing categories-container styles -->
                     <style>
                         @media (max-width: 768px) {
+
                             /* Target the specific sidebar column */
                             .col-md-4 {
                                 display: flex !important;
                                 flex-direction: column !important;
                             }
-                            
+
                             /* Target the subscription section specifically */
-                            .col-md-4 > .custom-about-section {
+                            .col-md-4>.custom-about-section {
                                 order: 2 !important;
                                 margin-top: 1rem !important;
                             }
-                            
+
                             /* Target the categories container specifically */
-                            .col-md-4 > .categories-container {
+                            .col-md-4>.categories-container {
                                 order: 1 !important;
                             }
-                            
+
                             /* Adjust spacing */
-                            .col-md-4 > .custom-about-section,
-                            .col-md-4 > .categories-container {
+                            .col-md-4>.custom-about-section,
+                            .col-md-4>.categories-container {
                                 margin-left: 15px !important;
                                 margin-right: 15px !important;
                             }

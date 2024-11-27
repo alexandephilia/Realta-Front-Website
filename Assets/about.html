@@ -583,26 +583,27 @@
                     }
                 </style>
                 <ul class="sidebar-nav justify-content-end align-items-center"
-                style="padding: 0; margin: 0; margin-top: 8px; list-style-type: none;">
-                <!-- Solutions dropdown -->
+                    style="padding: 0; margin: 0; margin-top: 8px; list-style-type: none;">
+                    <!-- Solutions dropdown -->
                     <li class="me-1"><a class="nav-link dropdown-toggle" href="#" id="solutionsDropdown" role="button"
                             data-bs-toggle="dropdown" aria-expanded="false">
                             Solution <i class="fas fa-chevron-down ms-1 fa-xs"></i>
                         </a></li>
 
-                    <!-- Industry dropdown -->
                     <li class="me-1">
-                        <a href="hospitality.html" class="nav-link" onclick="navigateWithLoading('hospitality.html')">Industry</a>
+                        <a href="hospitality.html" class="nav-link"
+                            onclick="navigateWithLoading('hospitality.html')">Industry</a>
                     </li>
 
                     <!-- Partner dropdown -->
                     <li class="me-1">
-                        <a href="#partners" class="nav-link scroll-link">Partners</a>
+                        <a href="index.html#partners" class="nav-link"
+                            onclick="navigateWithLoading('index.html#partners')">Partners</a>
                     </li>
-
                     <!-- Contact dropdown -->
                     <li class="me-1">
-                        <a href="#contact" class="nav-link scroll-link">Contact</a>
+                        <a href="index.html#contact" class="nav-link"
+                            onclick="navigateWithLoading('index.html#contact')">Contact</a>
                     </li>
 
                     <!-- Career dropdown -->
@@ -1051,38 +1052,38 @@
         });
     </script>
 
-<script>
-    function navigateToSection(sectionId) {
-        // Store the target section in localStorage
-        localStorage.setItem('scrollToSection', sectionId);
-        
-        // Navigate to index.html
-        window.location.href = 'index.html#' + sectionId;
-    }
+    <script>
+        function navigateToSection(sectionId) {
+            // Store the target section in localStorage
+            localStorage.setItem('scrollToSection', sectionId);
+
+            // Navigate to index.html
+            window.location.href = 'index.html#' + sectionId;
+        }
     </script>
 
-<script>
-    document.addEventListener('DOMContentLoaded', function() {
-        // Check if there's a hash in the URL when coming from about.html
-        if (window.location.hash) {
-            const targetId = window.location.hash;
-            const targetElement = document.querySelector(targetId);
-            
-            if (targetElement) {
-                // Get header height for offset
-                const headerHeight = document.querySelector('#mainNav').offsetHeight;
-                
-                // Calculate scroll position
-                const scrollPosition = targetElement.offsetTop - headerHeight;
-                
-                // Smooth scroll to target
-                window.scrollTo({
-                    top: scrollPosition,
-                    behavior: 'smooth'
-                });
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Check if there's a hash in the URL when coming from about.html
+            if (window.location.hash) {
+                const targetId = window.location.hash;
+                const targetElement = document.querySelector(targetId);
+
+                if (targetElement) {
+                    // Get header height for offset
+                    const headerHeight = document.querySelector('#mainNav').offsetHeight;
+
+                    // Calculate scroll position
+                    const scrollPosition = targetElement.offsetTop - headerHeight;
+
+                    // Smooth scroll to target
+                    window.scrollTo({
+                        top: scrollPosition,
+                        behavior: 'smooth'
+                    });
+                }
             }
-        }
-    });
+        });
     </script>
 </header>
 
@@ -1706,7 +1707,7 @@
         }
 
         .gradient-text {
-            background:linear-gradient(90deg, #7209d4, #2832d4 33%, #00a5b2);
+            background: linear-gradient(90deg, #7209d4, #2832d4 33%, #00a5b2);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             display: inline-block;
@@ -2532,150 +2533,152 @@
 
 
 
-   
 
 
-<section id="newsletter-cta" class="py-4 mb-0">
-    <div class="container-fluid px-5">
-        <div class="row align-items-center">
-            <div class="col-md-7 text-start">
-                <h2 class="mb-3 fw-bold" style="background: linear-gradient(90deg, #7209d4, #2832d4 33%, #00a5b2); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">Stay Informed, Stay Ahead</h2>
-                <p class="mb-4">Join our newsletter for exclusive insights and expert tips.</p>
-                <form class="mb-3">
-                    <div class="input-group input-group-lg" style="max-width: 500px;">
-                        <input type="email" class="form-control" placeholder="Email address"
-                            aria-label="Email address" required style="border-radius: 10px 0 0 10px;">
-                        <button class="btn btn-primary" type="submit"
-                            style="border-radius: 0 10px 10px 0;">Subscribe</button>
-                    </div>
-                </form>
-                <p class="text-muted small">By subscribing, you agree to our <a href="#"
-                        class="text-decoration-none">Privacy Policy</a> and <a href="#"
-                        class="text-decoration-none">Terms of Service</a>.</p>
-            </div>
-            <div class="col-md-5">
-                <div class="d-flex justify-content-md-end align-items-center mb-3">
-                    <img src="assets/img/footer1.png" alt="Logo 1" class="footer-logo me-3"
-                        style="max-height: 90px; width: auto;">
-                    <img src="assets/sticker.png" alt="Logo 2" class="footer-logo dark-mode-image"
-                        style="max-height: 90px; width: auto;">
-                    <style>
-                        .dark-mode-image {
-                            content: url('assets/sticker.png');
-                        }
 
-                        body.dark-mode .dark-mode-image {
-                            content: url('assets/img/footer2.png');
-                        }
-                    </style>
+    <section id="newsletter-cta" class="py-4 mb-0">
+        <div class="container-fluid px-5">
+            <div class="row align-items-center">
+                <div class="col-md-7 text-start">
+                    <h2 class="mb-3 fw-bold"
+                        style="background: linear-gradient(90deg, #7209d4, #2832d4 33%, #00a5b2); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">
+                        Stay Informed, Stay Ahead</h2>
+                    <p class="mb-4">Join our newsletter for exclusive insights and expert tips.</p>
+                    <form class="mb-3">
+                        <div class="input-group input-group-lg" style="max-width: 500px;">
+                            <input type="email" class="form-control" placeholder="Email address"
+                                aria-label="Email address" required style="border-radius: 10px 0 0 10px;">
+                            <button class="btn btn-primary" type="submit"
+                                style="border-radius: 0 10px 10px 0;">Subscribe</button>
+                        </div>
+                    </form>
+                    <p class="text-muted small">By subscribing, you agree to our <a href="#"
+                            class="text-decoration-none">Privacy Policy</a> and <a href="#"
+                            class="text-decoration-none">Terms of Service</a>.</p>
                 </div>
-                <div class="text-md-end">
-                    <p class="mb-2 text-muted small" style="font-size: 0.9rem;">&copy; 2024 Realta. All rights
-                        reserved.</p>
-                    <a href="https://www.realta.co.id/site/privacy-policy.html" class="text-muted small me-3"
-                        style="font-size: 0.9rem;">Privacy Policy</a>
-                    <span class="text-muted small me-3" style="font-size: 0.9rem;">|</span>
-                    <a href="https://www.realta.co.id/site/privacy-policy.html" class="text-muted small"
-                        style="font-size: 0.9rem;">Terms</a>
+                <div class="col-md-5">
+                    <div class="d-flex justify-content-md-end align-items-center mb-3">
+                        <img src="assets/img/footer1.png" alt="Logo 1" class="footer-logo me-3"
+                            style="max-height: 90px; width: auto;">
+                        <img src="assets/sticker.png" alt="Logo 2" class="footer-logo dark-mode-image"
+                            style="max-height: 90px; width: auto;">
+                        <style>
+                            .dark-mode-image {
+                                content: url('assets/sticker.png');
+                            }
+
+                            body.dark-mode .dark-mode-image {
+                                content: url('assets/img/footer2.png');
+                            }
+                        </style>
+                    </div>
+                    <div class="text-md-end">
+                        <p class="mb-2 text-muted small" style="font-size: 0.9rem;">&copy; 2024 Realta. All rights
+                            reserved.</p>
+                        <a href="https://www.realta.co.id/site/privacy-policy.html" class="text-muted small me-3"
+                            style="font-size: 0.9rem;">Privacy Policy</a>
+                        <span class="text-muted small me-3" style="font-size: 0.9rem;">|</span>
+                        <a href="https://www.realta.co.id/site/privacy-policy.html" class="text-muted small"
+                            style="font-size: 0.9rem;">Terms</a>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-</section>
+    </section>
 
 
 
-<style>
-    #newsletter-cta {
-        background: linear-gradient(135deg, #f5f7fa 0%, #a588bd 100%);
-        transition: background 0.3s ease;
-    }
+    <style>
+        #newsletter-cta {
+            background: linear-gradient(135deg, #f5f7fa 0%, #a588bd 100%);
+            transition: background 0.3s ease;
+        }
 
-    #newsletter-cta .gradient-text {
-        background: linear-gradient(90deg, #7209d4, #2832d4 33%, #00a5b2);
-        -webkit-background-clip: text;
-        background-clip: text;
-        color: transparent;
-        font-size: 2rem;
-    }
-
-    #newsletter-cta .btn-primary {
-        background: linear-gradient(to bottom, #9054d0, #7a4bd7);
-        border: none;
-        transition: all 0.3s ease;
-    }
-
-    #newsletter-cta .form-control {
-        border: 2px solid #e0e0e0;
-        transition: all 0.3s ease;
-    }
-
-    #newsletter-cta .form-control:focus {
-        border-color: #7209d4;
-        box-shadow: 0 0 0 0.2rem rgba(114, 9, 212, 0.25);
-    }
-
-    body.dark-mode #newsletter-cta {
-        background: #282828;
-    }
-
-    body.dark-mode #newsletter-cta .gradient-text {
-        background: linear-gradient(90deg, #a742ff, #4b5eff 33%, #00d5e6);
-        -webkit-background-clip: text;
-        background-clip: text;
-    }
-
-    body.dark-mode #newsletter-cta .btn-primary {
-        background: linear-gradient(90deg, #a742ff, #4b5eff);
-    }
-
-    body.dark-mode #newsletter-cta .form-control {
-        border-color: #4a5568;
-        color: #fff;
-    }
-
-    body.dark-mode #newsletter-cta .form-control::placeholder {
-        color: #a0aec0;
-    }
-
-    body.dark-mode #newsletter-cta .text-muted {
-        color: #a0aec0 !important;
-    }
-
-    body.dark-mode #newsletter-cta a {
-        color: #00d5e6;
-    }
-
-    @media (max-width: 767px) {
         #newsletter-cta .gradient-text {
-            font-size: 1.5rem;
+            background: linear-gradient(90deg, #7209d4, #2832d4 33%, #00a5b2);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            font-size: 2rem;
         }
 
-        #newsletter-cta .row {
-            text-align: center;
-        }
-
-        #newsletter-cta .col-md-7 {
-            text-align: center;
-        }
-
-        #newsletter-cta .col-md-5 {
-            margin-top: 2rem;
-        }
-
-        #newsletter-cta .d-flex {
-            justify-content: center !important;
-        }
-
-        #newsletter-cta .text-md-end {
-            text-align: center !important;
+        #newsletter-cta .btn-primary {
+            background: linear-gradient(to bottom, #9054d0, #7a4bd7);
+            border: none;
+            transition: all 0.3s ease;
         }
 
         #newsletter-cta .form-control {
-            font-size: 0.8rem;
+            border: 2px solid #e0e0e0;
+            transition: all 0.3s ease;
         }
-    }
-</style>
+
+        #newsletter-cta .form-control:focus {
+            border-color: #7209d4;
+            box-shadow: 0 0 0 0.2rem rgba(114, 9, 212, 0.25);
+        }
+
+        body.dark-mode #newsletter-cta {
+            background: #282828;
+        }
+
+        body.dark-mode #newsletter-cta .gradient-text {
+            background: linear-gradient(90deg, #a742ff, #4b5eff 33%, #00d5e6);
+            -webkit-background-clip: text;
+            background-clip: text;
+        }
+
+        body.dark-mode #newsletter-cta .btn-primary {
+            background: linear-gradient(90deg, #a742ff, #4b5eff);
+        }
+
+        body.dark-mode #newsletter-cta .form-control {
+            border-color: #4a5568;
+            color: #fff;
+        }
+
+        body.dark-mode #newsletter-cta .form-control::placeholder {
+            color: #a0aec0;
+        }
+
+        body.dark-mode #newsletter-cta .text-muted {
+            color: #a0aec0 !important;
+        }
+
+        body.dark-mode #newsletter-cta a {
+            color: #00d5e6;
+        }
+
+        @media (max-width: 767px) {
+            #newsletter-cta .gradient-text {
+                font-size: 1.5rem;
+            }
+
+            #newsletter-cta .row {
+                text-align: center;
+            }
+
+            #newsletter-cta .col-md-7 {
+                text-align: center;
+            }
+
+            #newsletter-cta .col-md-5 {
+                margin-top: 2rem;
+            }
+
+            #newsletter-cta .d-flex {
+                justify-content: center !important;
+            }
+
+            #newsletter-cta .text-md-end {
+                text-align: center !important;
+            }
+
+            #newsletter-cta .form-control {
+                font-size: 0.8rem;
+            }
+        }
+    </style>
 
     <!-- <footer class="bg-primary-gradient">
         <div class="container py-4 py-lg-5">
@@ -3288,30 +3291,30 @@
     </script>
 
     <script>
-    document.addEventListener('DOMContentLoaded', function() {
-        // Check if there's a hash in the URL when coming from about.html
-        if (window.location.hash) {
-            const targetId = window.location.hash;
-            const targetElement = document.querySelector(targetId);
-            
-            if (targetElement) {
-                // Get header height for offset
-                const headerHeight = document.querySelector('#mainNav').offsetHeight;
-                
-                // Calculate scroll position
-                const scrollPosition = targetElement.offsetTop - headerHeight;
-                
-                // Smooth scroll to target
-                window.scrollTo({
-                    top: scrollPosition,
-                    behavior: 'smooth'
-                });
+        document.addEventListener('DOMContentLoaded', function () {
+            // Check if there's a hash in the URL when coming from about.html
+            if (window.location.hash) {
+                const targetId = window.location.hash;
+                const targetElement = document.querySelector(targetId);
+
+                if (targetElement) {
+                    // Get header height for offset
+                    const headerHeight = document.querySelector('#mainNav').offsetHeight;
+
+                    // Calculate scroll position
+                    const scrollPosition = targetElement.offsetTop - headerHeight;
+
+                    // Smooth scroll to target
+                    window.scrollTo({
+                        top: scrollPosition,
+                        behavior: 'smooth'
+                    });
+                }
             }
-        }
-    });
+        });
     </script>
 
-   
+
 </body>
 
 </html>

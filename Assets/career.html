@@ -508,26 +508,27 @@
                     }
                 </style>
                 <ul class="sidebar-nav justify-content-end align-items-center"
-                style="padding: 0; margin: 0; margin-top: 8px; list-style-type: none;">
-                <!-- Solutions dropdown -->
+                    style="padding: 0; margin: 0; margin-top: 8px; list-style-type: none;">
+                    <!-- Solutions dropdown -->
                     <li class="me-1"><a class="nav-link dropdown-toggle" href="#" id="solutionsDropdown" role="button"
                             data-bs-toggle="dropdown" aria-expanded="false">
                             Solution <i class="fas fa-chevron-down ms-1 fa-xs"></i>
                         </a></li>
 
-                    <!-- Industry dropdown -->
                     <li class="me-1">
-                        <a href="hospitality.html" class="nav-link" onclick="navigateWithLoading('hospitality.html')">Industry</a>
+                        <a href="hospitality.html" class="nav-link"
+                            onclick="navigateWithLoading('hospitality.html')">Industry</a>
                     </li>
 
                     <!-- Partner dropdown -->
                     <li class="me-1">
-                        <a href="#partners" class="nav-link scroll-link">Partners</a>
+                        <a href="index.html#partners" class="nav-link"
+                            onclick="navigateWithLoading('index.html#partners')">Partners</a>
                     </li>
-
                     <!-- Contact dropdown -->
                     <li class="me-1">
-                        <a href="#contact" class="nav-link scroll-link">Contact</a>
+                        <a href="index.html#contact" class="nav-link"
+                            onclick="navigateWithLoading('index.html#contact')">Contact</a>
                     </li>
 
                     <!-- Career dropdown -->
@@ -976,38 +977,38 @@
         });
     </script>
 
-<script>
-    function navigateToSection(sectionId) {
-        // Store the target section in localStorage
-        localStorage.setItem('scrollToSection', sectionId);
-        
-        // Navigate to index.html
-        window.location.href = 'index.html#' + sectionId;
-    }
+    <script>
+        function navigateToSection(sectionId) {
+            // Store the target section in localStorage
+            localStorage.setItem('scrollToSection', sectionId);
+
+            // Navigate to index.html
+            window.location.href = 'index.html#' + sectionId;
+        }
     </script>
 
-<script>
-    document.addEventListener('DOMContentLoaded', function() {
-        // Check if there's a hash in the URL when coming from about.html
-        if (window.location.hash) {
-            const targetId = window.location.hash;
-            const targetElement = document.querySelector(targetId);
-            
-            if (targetElement) {
-                // Get header height for offset
-                const headerHeight = document.querySelector('#mainNav').offsetHeight;
-                
-                // Calculate scroll position
-                const scrollPosition = targetElement.offsetTop - headerHeight;
-                
-                // Smooth scroll to target
-                window.scrollTo({
-                    top: scrollPosition,
-                    behavior: 'smooth'
-                });
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Check if there's a hash in the URL when coming from about.html
+            if (window.location.hash) {
+                const targetId = window.location.hash;
+                const targetElement = document.querySelector(targetId);
+
+                if (targetElement) {
+                    // Get header height for offset
+                    const headerHeight = document.querySelector('#mainNav').offsetHeight;
+
+                    // Calculate scroll position
+                    const scrollPosition = targetElement.offsetTop - headerHeight;
+
+                    // Smooth scroll to target
+                    window.scrollTo({
+                        top: scrollPosition,
+                        behavior: 'smooth'
+                    });
+                }
             }
-        }
-    });
+        });
     </script>
 </header>
 
@@ -2137,7 +2138,7 @@
 
     </main>
 
-   
+
 
 
     <section id="newsletter-cta" class="py-4 mb-0">
