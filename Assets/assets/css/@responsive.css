@@ -1,0 +1,121 @@
+/* Testimonial Section Responsive Styles */
+
+@media (max-width: 768px) {
+    #testi .container {
+        padding: 2rem 1rem;
+    }
+
+    #testi h1 {
+        font-size: 2.5rem;
+    }
+
+    #testi h3 {
+        font-size: 1.2rem;
+    }
+
+    .unique-testimonial-slider {
+        max-width: 100%;
+    }
+
+    .unique-testimonial-card {
+        padding: 1.5rem;
+    }
+
+    .unique-testimonial-avatar {
+        width: 80px;
+        height: 80px;
+    }
+
+    .unique-testimonial-name {
+        font-size: 1.2rem;
+    }
+
+    .unique-testimonial-title {
+        font-size: 0.9rem;
+    }
+
+    .unique-testimonial-text {
+        font-size: 0.95rem;
+    }
+
+    .play-button-pulse {
+        width: 40px;
+        height: 40px;
+    }
+
+    .play-icon {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 576px) {
+    #testi h1 {
+        font-size: 2rem;
+    }
+
+    #testi h3 {
+        font-size: 1rem;
+    }
+
+    .unique-testimonial-card {
+        padding: 1rem;
+    }
+
+    .unique-testimonial-avatar {
+        width: 60px;
+        height: 60px;
+    }
+
+    .unique-testimonial-name {
+        font-size: 1rem;
+    }
+
+    .unique-testimonial-title {
+        font-size: 0.8rem;
+    }
+
+    .unique-testimonial-text {
+        font-size: 0.9rem;
+    }
+
+    .play-button-pulse {
+        width: 30px;
+        height: 30px;
+    }
+
+    .play-icon {
+        font-size: 0.8rem;
+    }
+}
+
+/* Video Overlay Responsive Styles */
+
+@media (max-width: 768px) {
+    .video-container {
+        width: 90%;
+        max-width: none;
+    }
+
+    #popup-video {
+        width: 100%;
+        height: auto;
+    }
+
+    .close-video {
+        top: -30px;
+        right: 0;
+        font-size: 24px;
+    }
+}
+
+@media (max-width: 576px) {
+    .video-container {
+        width: 95%;
+    }
+
+    .close-video {
+        top: -25px;
+        right: -5px;
+        font-size: 20px;
+    }
+}

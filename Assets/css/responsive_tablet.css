@@ -1,0 +1,263 @@
+/* Tablet-specific styles (768px to 991px) */
+@media (min-width: 768px) and (max-width: 991px) {
+    /* Header/Navigation */
+    #mainNav {
+        height: 72px;
+    }
+
+    body {
+        padding-top: 72px;
+    }
+
+    .container-fluid {
+        width: 100%;
+        padding-left: 0.5%;
+        padding-right: 0.5%;
+    }
+
+    /* Logo */
+    .realta-logo {
+        width: 120px;
+        height: auto;
+        margin-left: -10px;
+    }
+
+    /* Hero Section */
+    .display-3, 
+    .dynamic-text-container-1,
+    .dynamic-text-container-2,
+    .dynamic-text-container {
+        font-size: 35px !important;
+        line-height: 1.3;
+        word-wrap: break-word;
+    }
+
+    .lead {
+        font-size: 14px !important;
+        line-height: 1.4;
+        margin-top: 8px;
+        word-wrap: break-word;
+    }
+
+    .btn-custom.mobile-responsive {
+        font-size: 14px !important;
+        padding: 6px 13px !important;
+        margin-top: 10px;
+    }
+
+    /* Industry Section */
+    .industry-title {
+        font-size: 36px;
+    }
+
+    .industry-subtitle {
+        font-size: 16px !important;
+    }
+
+    /* Partners Section */
+    .partners-heading {
+        font-size: 36px;
+    }
+
+    .partners-subheading {
+        font-size: 0.9rem !important;
+    }
+
+    /* Solutions Section */
+    .solution-title {
+        font-size: 1.9rem;
+    }
+
+    .solution-subtitle {
+        font-size: 1rem;
+    }
+
+    .card-title {
+        font-size: 1.2rem;
+        min-height: 2.2em;
+    }
+
+    .card-text {
+        font-size: 0.95rem;
+        line-height: 1.4;
+        margin-bottom: 0.7rem;
+    }
+
+    .solution-card {
+        margin-bottom: 0.7rem;
+        width: 100%;
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    .image-container {
+        height: 85px;
+    }
+
+    /* Business Button */
+    .business-btn {
+        font-size: 15px;
+    }
+
+    /* FAQ Section */
+    .accordion-body {
+        font-size: 14px !important;
+        padding: 15px;
+    }
+
+    .accordion-button span {
+        font-size: 15px;
+    }
+
+    .accordion-button {
+        font-size: 16px !important;
+        padding: 15px;
+    }
+
+    /* Contact Section */
+    .custom-text {
+        font-size: 20px !important;
+    }
+
+    /* Blog Section */
+    .blog-arrow.left-arrow {
+        left: 145px;
+    }
+
+    .blog-arrow.right-arrow {
+        right: 145px;
+    }
+}
+
+/* 800-900px range - Mobile-like styling */
+@media (min-width: 800px) and (max-width: 900px) {
+    /* Mobile-like Header/Navigation */
+    #mainNav {
+        height: 72px;
+    }
+    
+    body {
+        padding-top: 72px;
+    }
+    
+    .container-fluid {
+        width: 100% !important;
+        padding-left: 15px !important;
+        padding-right: 15px !important;
+    }
+    
+    /* Mobile-like Hero Section */
+    .col-lg-7 {
+        width: 90% !important;
+        margin: 30px auto 0 !important;
+        padding: 0 15px !important;
+    }
+    
+    .display-3,
+    .dynamic-text-container-1,
+    .dynamic-text-container-2,
+    .dynamic-text-container {
+        font-size: 35px !important;
+        line-height: 1.3;
+        word-wrap: break-word;
+    }
+    
+    .lead {
+        font-size: 14px !important;
+        line-height: 1.4;
+    }
+    
+    /* Mobile-like Industry Section */
+    .industry-title {
+        font-size: 28px !important;
+    }
+    
+    .industry-subtitle {
+        font-size: 16px !important;
+    }
+    
+    /* Mobile-like Solutions Cards */
+    .solution-card {
+        width: 100% !important;
+        margin: 10px 0 !important;
+    }
+    
+    .card-title-business {
+        font-size: 1.1rem !important;
+    }
+    
+    .card-text {
+        font-size: 0.9rem !important;
+    }
+    
+    /* Mobile-like Partners Section */
+    .partner-logo {
+        height: 70px !important;
+        padding: 0.5rem !important;
+    }
+    
+    /* Mobile-like Testimonials */
+    .rt-testimonial-wrapper {
+        width: 90% !important;
+        max-width: 355px !important;
+    }
+    
+    .rt-testimonial-card {
+        min-width: 330px !important;
+    }
+    
+    /* Mobile-like FAQ Section */
+    .accordion-body {
+        font-size: 14px !important;
+    }
+    
+    .accordion-button {
+        font-size: 15px !important;
+    }
+    
+    /* Mobile-like Contact Section */
+    #contact .row {
+        display: flex !important;
+        flex-direction: column !important;
+    }
+    
+    #contact-form {
+        order: 2 !important;
+    }
+    
+    #contact-info {
+        order: 1 !important;
+    }
+    
+    /* Mobile-like Blog Section */
+    .blog-arrow.left-arrow {
+        left: 145px !important;
+    }
+    
+    .blog-arrow.right-arrow {
+        right: 145px !important;
+    }
+    
+    /* Mobile-like Newsletter Section */
+    #newsletter-cta .gradient-text {
+        font-size: 1.5rem !important;
+    }
+    
+    #newsletter-cta .row {
+        text-align: center !important;
+    }
+    
+    #newsletter-cta .col-md-7 {
+        text-align: center !important;
+    }
+    
+    /* Mobile-like Buttons */
+    .btn-custom.mobile-responsive {
+        font-size: 14px !important;
+        padding: 6px 13px !important;
+    }
+    
+    .business-btn {
+        font-size: 15px !important;
+    }
+} 

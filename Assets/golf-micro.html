@@ -1,0 +1,3235 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rhapsody Golf | To Orchestrate Your Entire Golf Operations</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+
+    <!-- the favicon -->
+    <link rel="icon" type="image/png" href="assets/img/r.png">
+
+
+    <!-- Preload fonts -->
+    <link rel="preload" href="assets/fonts/important-font.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="assets/font/proxima-nova/ProximaNova-Regular.woff2" as="font" type="font/woff2"
+        crossorigin>
+    <link rel="preload" href="assets/font/proxima-nova/ProximaNova-Bold.woff2" as="font" type="font/woff2" crossorigin>
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <!-- <link rel="stylesheet" href="assets/css/blog.css"> -->
+    <link rel="stylesheet" href="assets/css/responsive.css">
+    <link rel="stylesheet" href="assets/css/navbar-micro.css">
+    <link rel="stylesheet" href="assets/css/navbar.css">
+    <link rel="stylesheet" href="assets/css/mobilenav.css">
+
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;700&family=Roboto:wght@400;500&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Zilla+Slab:wght@400;700&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"> -->
+    <link rel="stylesheet" href="assets/fontawesome/css/all.min.css">
+
+    <!-- Slick Carousel -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css">
+
+    <!-- Owl Carousel -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
+
+    <!-- Scripts -->
+    <script src="assets/js/slider.js"></script>
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+
+
+    <style>
+
+
+
+        
+        .btn-outline-secondary {
+            color: #ffffff;
+            border-color: #35743f;
+            background-color: #35743f !important;
+            background: transparent;
+            transition: all 0.3s ease;
+            padding: 10px 25px;
+            font-weight: 500;
+            font-size: 18px;
+        }
+
+        .btn-outline-secondary:hover {
+            color: #fff;
+            background-color: #35743f;
+            border-color: #35743f;
+        }
+
+        .btn-outline-secondary:focus {
+            box-shadow: 0 0 0 0.25rem rgba(53, 116, 63, 0.25);
+        }
+
+        .btn-outline-secondary:active {
+            color: #fff;
+            background-color: #2b5d33;
+            border-color: #2b5d33;
+        }
+
+        @media (max-width: 768px) {
+            .btn-outline-secondary {
+                font-size: 15px;
+                padding: 8px 20px;
+            }
+        }
+
+        /* Fix section spacing */
+        section {
+            overflow: hidden !important;
+            width: 100% !important;
+            position: relative !important;
+        }
+
+        .dynamic-text-container {
+            font-size: 45px;
+            font-weight: 700;
+            height: 1em;
+            overflow: hidden;
+        }
+
+        .letter {
+            display: inline-block;
+            opacity: 0;
+            transform: translateY(20px);
+            filter: blur(5px);
+            transition: all 0.3s ease;
+        }
+
+        .letter.active {
+            opacity: 1;
+            transform: translateY(0);
+            filter: blur(0);
+        }
+
+        .letter.fade-out {
+            opacity: 0;
+            transform: translateY(-20px);
+            filter: blur(5px);
+        }
+
+        @media (max-width: 768px) {
+            .dynamic-text-container {
+                font-size: 2.5rem;
+                font-weight: 700;
+                height: 1em;
+                overflow: hidden;
+            }
+
+        }
+
+        header {
+            overflow: hidden !important;
+            /* This will keep the header content hidden if it overflows */
+        }
+
+
+
+        #mainNav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1030;
+            height: 66px;
+            /* PRECISE HEIGHT instead of 8.3% */
+            transition: all 0.3s ease-in-out;
+        }
+
+        #mainNav.navbar-scrolled {
+            height: 60px;
+        }
+
+        body {
+            /* navbar (66px) + announcement (44px) */
+        }
+
+        /* Add this style block in the <head> section or in your CSS file */
+        .container-fluid {
+            width: 100%;
+            /* Change from 95% to 100% */
+            padding-left: 8rem;
+            /* Add consistent padding */
+            padding-right: 8rem;
+            /* Add consistent padding */
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        @media (max-width: 768px) {
+            .container-fluid {
+                width: 100%;
+                padding-left: 0.5%;
+                /* Add consistent padding */
+                padding-right: 0.5%;
+                /* Add consistent padding */
+            }
+        }
+    </style>
+
+    <header>
+
+        <nav class="navbar navbar-expand-lg sticky-top navbar-shrink navbar-light" id="mainNav">
+            <div class="container-fluid ">
+                <a class="navbar-logo d-flex align-items-center" href="/">
+                    <img src="assets/img/realta.png" alt="Realta Logo" class="realta-logo">
+                </a>
+                <style>
+                    .realta-logo {
+                        width: 140px;
+                        height: 50%;
+                    }
+
+
+                    @media (max-width: 767px) {
+                        .realta-logo {
+                            width: 120px;
+                            height: auto;
+                            margin-left: -10px;
+                        }
+                    }
+                </style>
+                <div class="navbar-mobile-actions">
+                    <button id="darkModeToggleNav" class="btn-custom download-btn ms-1"
+                        style="border: none; min-width: fit-content; margin-right: 0.4rem;">
+                        <i class="fas fa-moon"></i>
+                    </button>
+                    <!-- Language switch button -->
+                    <!-- Language switch dropdown -->
+                    <div class="custom-dropdown">
+                        <button id="languageSwitch" class="btn-custom download-btn ms-1" type="button"
+                            style="border: none; min-width: fit-content; margin-right: 1.4rem;">
+                            <i class="fas fa-globe"></i>
+                        </button>
+                        <ul class="custom-dropdown-menu">
+                            <li><a href="#" data-lang="en">EN</a></li>
+                            <li><a href="#" data-lang="id">ID</a></li>
+                        </ul>
+                    </div>
+                    <div class="nav-drawer" data-bs-toggle="offcanvas" data-bs-target="#sidebar"
+                        aria-controls="sidebar">
+                        <i class="fas fa-bars" style="font-size: 1.7rem;"></i>
+                    </div>
+                </div>
+                <!-- Mobile responsive navigation menu -->
+                <div class="offcanvas offcanvas-end" tabindex="-1" id="sidebar" aria-labelledby="sidebarLabel">
+                    <div class="offcanvas-header">
+                        <div>
+                            <h5 class="offcanvas-title" id="sidebarLabel"
+                                style="margin-left: 33px; margin-bottom: 20px; font-size: 30px;">Menu</h5>
+                        </div>
+                        <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas"
+                            aria-label="Close"></button>
+                    </div>
+                    <div class="offcanvas-body">
+                        <div class="sidebar-menu">
+                            <div class="sidebar-item">
+                                <h2 style="font-size: 2.1rem;">Realta Chakradarma</h2>
+                                <hr>
+                                <h2 class="product-header" data-bs-toggle="collapse" data-bs-target="#productsSubmenu"
+                                    aria-expanded="false">
+                                    Products <i class="fas fa-chevron-right arrow-icon"></i>
+                                </h2>
+                                <div id="productsSubmenu" class="collapse">
+                                    <ul class="product-list">
+                                        <li>
+                                            <div class="product-header" data-bs-toggle="collapse"
+                                                data-bs-target="#hmsSubmenu" aria-expanded="false"
+                                                style="font-size: 1rem; font-weight: 400;">
+                                                Hotel Management System <i class="fas fa-chevron-right arrow-icon"></i>
+                                            </div>
+                                            <div id="hmsSubmenu" class="collapse product-submenu">
+                                                <p>Comprehensive solution for efficient hotel operations and guest
+                                                    management.</p>
+                                                <a href="#" class="discover-link">Discover HMS ›</a>
+                                                <h3 class="modules-heading">MODULES</h3>
+                                                <ul class="modules-list">
+                                                    <li>
+                                                        <strong>Reservation Management</strong>
+                                                        <span>Streamline booking processes</span>
+                                                    </li>
+                                                    <li>
+                                                        <strong>Front Desk Operations</strong>
+                                                        <span>Efficient check-in and check-out</span>
+                                                    </li>
+                                                    <li>
+                                                        <strong>Housekeeping Management</strong>
+                                                        <span>Optimize room maintenance</span>
+                                                    </li>
+                                                    <li>
+                                                        <strong>Revenue Management</strong>
+                                                        <span>Maximize profitability</span>
+                                                    </li>
+                                                    <li>
+                                                        <strong>Guest Experience Management</strong>
+                                                        <span>Enhance customer satisfaction</span>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="product-header" data-bs-toggle="collapse"
+                                                data-bs-target="#gcsSubmenu" aria-expanded="false"
+                                                style="font-size: 1rem; font-weight: 400;">
+                                                Golf Course System <i class="fas fa-chevron-right arrow-icon"></i>
+                                            </div>
+                                            <div id="gcsSubmenu" class="collapse product-submenu">
+                                                <p>Integrated system for efficient golf course management and
+                                                    operations.</p>
+                                                <a href="#" class="discover-link">Discover GCS ›</a>
+                                                <h3 class="modules-heading">MODULES</h3>
+                                                <ul class="modules-list">
+                                                    <li>
+                                                        <strong>Tee Time Management</strong>
+                                                        <span>Optimize scheduling and bookings</span>
+                                                    </li>
+                                                    <li>
+                                                        <strong>Member Management</strong>
+                                                        <span>Streamline membership processes</span>
+                                                    </li>
+                                                    <li>
+                                                        <strong>Pro Shop Management</strong>
+                                                        <span>Inventory and sales management</span>
+                                                    </li>
+                                                    <li>
+                                                        <strong>Tournament Management</strong>
+                                                        <span>Organize and manage events</span>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="product-header" data-bs-toggle="collapse"
+                                                data-bs-target="#hrSystemSubmenu" aria-expanded="false"
+                                                style="font-size: 1rem; font-weight: 400;">
+                                                HR System <i class="fas fa-chevron-right arrow-icon"></i>
+                                            </div>
+                                            <div id="hrSystemSubmenu" class="collapse product-submenu">
+                                                <p>Comprehensive human resource management solution for businesses of
+                                                    all sizes.</p>
+                                                <a href="#" class <div id="container-header"
+                                                    class="container py-5">discover-link">Discover HR System ›</a>
+                                                <h3 class="modules-heading">MODULES</h3>
+                                                <ul class="modules-list">
+                                                    <li>
+                                                        <strong>Employee Management</strong>
+                                                        <span>Centralize employee data and records</span>
+                                                    </li>
+                                                    <li>
+                                                        <strong>Payroll Processing</strong>
+                                                        <span>Automate salary calculations and payments</span>
+                                                    </li>
+                                                    <li>
+                                                        <strong>Time and Attendance</strong>
+                                                        <span>Track employee work hours and absences</span>
+                                                    </li>
+                                                    <li>
+                                                        <strong>Performance Management</strong>
+                                                        <span>Set goals and conduct evaluations</span>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="product-header" data-bs-toggle="collapse"
+                                                data-bs-target="#propertyTenantSubmenu" aria-expanded="false"
+                                                style="font-size: 1rem; font-weight: 400;">
+                                                Property and Tenant System <i
+                                                    class="fas fa-chevron-right arrow-icon"></i>
+                                            </div>
+                                            <div id="propertyTenantSubmenu" class="collapse product-submenu">
+                                                <p>Efficient management solution for property owners and landlords.</p>
+                                                <a href="#" class="discover-link">Discover Property and Tenant System
+                                                    ›</a>
+                                                <h3 class="modules-heading">MODULES</h3>
+                                                <ul class="modules-list">
+                                                    <li>
+                                                        <strong>Property Management</strong>
+                                                        <span>Organize and track property details</span>
+                                                    </li>
+                                                    <li>
+                                                        <strong>Tenant Management</strong>
+                                                        <span>Manage tenant information and leases</span>
+                                                    </li>
+                                                    <li>
+                                                        <strong>Rent Collection</strong>
+                                                        <span>Automate rent payments and tracking</span>
+                                                    </li>
+                                                    <li>
+                                                        <strong>Maintenance Requests</strong>
+                                                        <span>Handle and track property maintenance</span>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="product-header" data-bs-toggle="collapse"
+                                                data-bs-target="#itsmSubmenu" aria-expanded="false"
+                                                style="font-size: 1rem; font-weight: 400;">
+                                                ITSM, ITAM & Unified Endpoint Management <i
+                                                    class="fas fa-chevron-right arrow-icon"></i>
+                                            </div>
+                                            <div id="itsmSubmenu" class="collapse product-submenu">
+                                                <p>Comprehensive IT Service Management solution for streamlined IT
+                                                    operations.</p>
+                                                <a href="#" class="discover-link">Discover ITSM, ITAM & Unified Endpoint
+                                                    Management ›</a>
+                                                <h3 class="modules-heading">MODULES</h3>
+                                                <ul class="modules-list">
+                                                    <li>
+                                                        <strong>Incident Management</strong>
+                                                        <span>Efficiently handle and resolve IT issues</span>
+                                                    </li>
+                                                    <li>
+                                                        <strong>Change Management</strong>
+                                                        <span>Control and implement IT changes</span>
+                                                    </li>
+                                                    <li>
+                                                        <strong>Asset Management</strong>
+                                                        <span>Track and manage IT assets</span>
+                                                    </li>
+                                                    <li>
+                                                        <strong>Service Catalog</strong>
+                                                        <span>Organize and offer IT services</span>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="product-header" data-bs-toggle="collapse"
+                                                data-bs-target="#erpSubmenu" aria-expanded="false"
+                                                style="font-size: 1rem; font-weight: 400;">
+                                                ERP & EAM <i class="fas fa-chevron-right arrow-icon"></i>
+                                            </div>
+                                            <div id="erpSubmenu" class="collapse product-submenu">
+                                                <p>Integrated Enterprise Resource Planning solution for business
+                                                    management.</p>
+                                                <a href="#" class="discover-link">Discover ERP & EAM ›</a>
+                                                <h3 class="modules-heading">MODULES</h3>
+                                                <ul class="modules-list">
+                                                    <li>
+                                                        <strong>Financial Management</strong>
+                                                        <span>Manage accounting and finances</span>
+                                                    </li>
+                                                    <li>
+                                                        <strong>Supply Chain Management</strong>
+                                                        <span>Optimize procurement and logistics</span>
+                                                    </li>
+                                                    <li>
+                                                        <strong>Manufacturing</strong>
+                                                        <span>Streamline production processes</span>
+                                                    </li>
+                                                    <li>
+                                                        <strong>Customer Relationship Management</strong>
+                                                        <span>Enhance customer interactions</span>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="sidebar-item">
+                                <h2 class="product-header" data-bs-toggle="collapse" data-bs-target="#resourcesSubmenu"
+                                    aria-expanded="false style=" font-size: 1.1rem;"">
+                                    Resources <i class="fas fa-chevron-right arrow-icon"></i>
+                                </h2>
+                                <div id="resourcesSubmenu" class="collapse">
+                                    <ul class="submenu-list">
+                                        <li><a href="#">Blog</a></li>
+                                        <li><a href="#">Webinars</a></li>
+                                        <li><a href="#">White Papers</a></li>
+                                        <li><a href="#">Case Studies</a></li>
+                                        <li><a href="#">eBooks</a></li>
+                                        <li><a href="#">Product Videos</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="sidebar-item">
+                                <h2 class="product-header" data-bs-toggle="collapse" data-bs-target="#partnersSubmenu"
+                                    aria-expanded="false">
+                                    Partners <i class="fas fa-chevron-right arrow-icon"></i>
+                                </h2>
+                                <div id="partnersSubmenu" class="collapse">
+                                    <!-- Add partners submenu content here -->
+                                </div>
+                            </div>
+                            <div class="sidebar-item">
+                                <h2 class="product-header" data-bs-toggle="collapse" data-bs-target="#companySubmenu"
+                                    aria-expanded="false">
+                                    Company <i class="fas fa-chevron-right arrow-icon"></i>
+                                </h2>
+                                <div id="companySubmenu" class="collapse">
+                                    <ul class="submenu-list">
+                                        <li><a href="#">About Us</a></li>
+                                        <li><a href="#">Our Team</a></li>
+                                        <li><a href="#" onclick="navigateWithLoading('career.html'); return false;"
+                                                style="text-decoration: none; color: inherit;">Career</a></li>
+                                        <li><a href="#">News</a></li>
+                                        <li><a href="#">Contact</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="sidebar-item">
+                                <h2 class="product-header">
+                                    <a href="#" onclick="navigateWithLoading('blog.html'); return false;"
+                                        style="text-decoration: none; color: inherit;">Blog</a>
+                                </h2>
+                            </div>
+                        </div>
+                        <div class="get-started-container" style="margin-top: -10px !important;">
+                            <!-- Adjusted margin-top to move slightly to the top -->
+
+                            <a href="https://api.whatsapp.com/send?phone=628111221789&text=Hallo%20PT%20Realta..."
+                                target="_blank" rel="noopener noreferrer" class="btn btn-success btn-block"
+                                style="width: 100%; margin-top: 50px;">
+                                <i class="fab fa-whatsapp"></i> Contact Us
+                            </a>
+                            <div class="d-flex justify-content-between align-items-center"
+                                style="padding: 20px 0; margin-top: 20px;">
+                                <h2 class="text-left mb-0" style="margin-right: 20px; font-size: 1.5rem;">Get in Touch
+                                </h2>
+                                <div class="social-icons" style="display: flex; justify-content: flex-end;">
+                                    <a href="#" target="_blank" rel="noopener noreferrer"
+                                        style="margin-right: 10px; display: inline-flex; justify-content: center; align-items: center; background-color: black; border-radius: 50%; width: 30px; height: 30px;"><i
+                                            class="fab fa-facebook-f" style="color: white;"></i></a>
+                                    <a href="#" target="_blank" rel="noopener noreferrer"
+                                        style="margin-right: 10px; display: inline-flex; justify-content: center; align-items: center; background-color: black; border-radius: 50%; width: 30px; height: 30px;"><i
+                                            class="fab fa-twitter" style="color: white;"></i></a>
+                                    <a href="#" target="_blank" rel="noopener noreferrer"
+                                        style="margin-right: 10px; display: inline-flex; justify-content: center; align-items: center; background-color: black; border-radius: 50%; width: 30px; height: 30px;"><i
+                                            class="fab fa-instagram" style="color: white;"></i></a>
+                                    <a href="#" target="_blank" rel="noopener noreferrer"
+                                        style="display: inline-flex; justify-content: center; align-items: center; background-color: black; border-radius: 50%; width: 30px; height: 30px;"><i
+                                            class="fab fa-linkedin-in" style="color: white;"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <style>
+                    @media (min-width: 992px) {
+                        #sidebar {
+                            display: none !important;
+                            z-index: 2031;
+                        }
+
+                        .offcanvas-backdrop {
+                            display: none !important;
+                        }
+
+                        body {
+                            overflow: auto !important;
+                            padding-right: 0 !important;
+                        }
+                    }
+                </style>
+
+
+                <style>
+                    .custom-dropdown {
+                        position: relative;
+                        display: inline-block;
+                    }
+
+                    .custom-dropdown-menu {
+                        display: none;
+                        position: absolute;
+                        top: 69%;
+                        right: 5%;
+                        /* Changed from -10% to -5% to move slightly to the left */
+                        background: rgba(179, 179, 179, 0.137);
+                        backdrop-filter: blur(10px);
+                        border-radius: 10px;
+                        width: 80px;
+                        /* Further reduced width for an even smaller dropdown */
+                        z-index: 1000;
+                        list-style-type: none;
+                        padding: 0.25rem 0;
+                        /* Reduced padding for a smaller dropdown */
+                        margin: 0.5rem 0 0 0;
+                        border: 1px solid rgba(255, 255, 255, 0.18);
+                    }
+
+                    .custom-dropdown-menu li {
+                        padding: 0.2rem 0;
+                        /* Reduced padding for smaller items */
+                        text-align: center;
+                        /* Centered text */
+                    }
+
+                    .custom-dropdown-menu li a {
+                        color: #333;
+                        padding: 0.3rem 0.3rem;
+                        /* Adjusted padding for better alignment */
+                        text-decoration: none;
+                        display: block;
+                        font-size: 0.8rem;
+                        /* Reduced font size for smaller dropdown */
+                        transition: background-color 0.3s ease;
+                    }
+
+                    .custom-dropdown-menu li a:hover {
+                        background-color: rgba(126, 126, 126, 0.5);
+                        color: #fff;
+                        /* Change text color on hover */
+                        transform: scale(1.05);
+                        /* Slightly enlarge the item */
+                        border-radius: 10px;
+                        /* Added border radius for hover background */
+                        transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
+                        /* Smooth transition */
+                    }
+
+                    .custom-dropdown:hover .custom-dropdown-menu {
+                        display: block;
+
+                    }
+                </style>
+                <div class="full-screen-sidebar">
+                    <style>
+                        @media (min-width: 992px) {
+                            .full-screen-sidebar {
+                                margin-right: -45px;
+                            }
+                        }
+
+                        @media (max-width: 768px) {
+                            .full-screen-sidebar {
+                                margin-right: 0;
+                            }
+                        }
+                    </style>
+                    <ul class="sidebar-nav justify-content-end align-items-center"
+                        style="padding: 0; margin: 0; margin-top: 8px; list-style-type: none;">
+                        <!-- Solutions dropdown -->
+                        <li class="me-1"><a class="nav-link dropdown-toggle" href="#" id="solutionsDropdown"
+                                role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Solution <i class="fas fa-chevron-down ms-1 fa-xs"></i>
+                            </a></li>
+
+                        <li class="me-1">
+                            <a href="hospitality.html" class="nav-link"
+                                onclick="navigateWithLoading('hospitality.html')">Industry</a>
+                        </li>
+
+                        <!-- Partner dropdown -->
+                        <li class="me-1">
+                            <a href="index.html#partners" class="nav-link"
+                                onclick="navigateWithLoading('index.html#partners')">Partners</a>
+                        </li>
+                        <!-- Contact dropdown -->
+                        <li class="me-1">
+                            <a href="index.html#contact" class="nav-link"
+                                onclick="navigateWithLoading('index.html#contact')">Contact</a>
+                        </li>
+
+                        <!-- Career dropdown -->
+                        <li class="me-1">
+                            <a href="career.html" class="nav-link"
+                                onclick="navigateWithLoading('career.html')">Career</a>
+                        </li>
+
+                        <!-- Blog link -->
+                        <li class="me-1">
+                            <a href="blog.html" class="nav-link" onclick="navigateWithLoading('blog.html')">Blog</a>
+                        </li>
+
+                        <!-- About Realta dropdown -->
+                        <li>
+                            <a href="about.html" class="nav-link" onclick="navigateWithLoading('about.html')">About
+                                Us</a>
+                        </li>
+
+                    </ul>
+                    <div class="sidebar-actions d-flex justify-content-end align-items-center"
+                        style="margin-bottom: 0.5rem;">
+                       
+                        <button id="darkModeToggleSidebar" class="btn-custom ms-2">
+                            <i class="fas fa-moon"></i>
+                        </button>
+                        <div class="custom-dropdown">
+                            <button id="languageSwitch" class="btn-custom download-btn ms-1" type="button"
+                                style="border: none; min-width: fit-content; margin-right: 1.4rem;">
+                                <i class="fas fa-globe"></i>
+                            </button>
+                            <ul class="custom-dropdown-menu">
+                                <li><a href="#" data-lang="en">EN</a></li>
+                                <li><a href="#" data-lang="id">ID</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="mega-dropdown" id="solutionsDropdownContent">
+                <div class="dropdown-content">
+                    <div class="product-categories">
+                        <div class="product-category" data-product="gcs">Golf Course System</div>
+                        <div class="product-category" data-product="hrs">HR System</div>
+                        <div class="product-category " data-product="hms">Hotel Management System</div>
+                        <div class="product-category" data-product="itm">ITSM, ITAM & Unified Endpoint Management</div>
+                        <div class="product-category" data-product="pts">Property & Tenancy System</div>
+                        <div class="product-category" data-product="erp">Network & System Integration</div>
+                        <div
+                            style="background: linear-gradient(90deg, transparent 0%, rgba(133, 22, 188, 0.582) 50%, transparent 100%); height: 1px; margin: 10px 0; pointer-events: none;">
+                        </div>
+                    </div>
+                    <div class="product-details" id="product-details">
+                        <!-- Content will be dynamically updated here -->
+                    </div>
+                </div>
+            </div>
+            <div class="mega-dropdown" id="industriDropdownContent">
+                <div class="dropdown-content">
+                    <div class="product-categories">
+                        <div class="product-category active" data-product="hospitality">Hospitality</div>
+                        <div class="product-category" data-product="property">Property</div>
+                        <div class="product-category" data-product="manufacturing">Manufacturing</div>
+                        <div class="product-category" data-product="fsi">FSI</div>
+                    </div>
+                    <div class="product-details" id="industri-details">
+                        <!-- Content will be dynamically updated here -->
+                    </div>
+                </div>
+            </div>
+            <div class="mega-dropdown" id="partnerDropdownContent">
+                <div class="dropdown-content">
+                    <div class="product-categories">
+                        <div class="product-category active" data-product="reseller">Reseller Program</div>
+                        <div class="product-category" data-product="technology">Technology Partners</div>
+                    </div>
+                    <div class="product-details" id="partner-details">
+                        <!-- Content will be dynamically updated here -->
+                    </div>
+                </div>
+            </div>
+            <div class="mega-dropdown" id="contactDropdownContent">
+                <div class="dropdown-content">
+                    <div class="product-categories">
+                        <div class="product-category active" data-product="business">Business Consultation</div>
+                        <div class="product-category" data-product="technical">Technical Consultation</div>
+                    </div>
+                    <div class="product-details" id="contact-details">
+                        <!-- Content will be dynamically updated here -->
+                    </div>
+                </div>
+            </div>
+            <div class="mega-dropdown" id="careerDropdownContent">
+                <div class="dropdown-content">
+                    <div class="product-categories">
+                        <div class="product-category active" data-product="openings">Job Openings</div>
+                        <div class="product-category" data-product="internships">Internship Programs</div>
+                        <div class="product-category" data-product="culture">Company Culture</div>
+                    </div>
+                    <div class="product-details" id="career-details">
+                        <!-- Content will be dynamically updated here -->
+                    </div>
+                </div>
+            </div>
+            <div class="mega-dropdown" id="tentangRealtaDropdownContent">
+                <div class="dropdown-content">
+                    <div class="product-categories">
+                        <div class="product-category active" data-product="about">About Realta</div>
+                    </div>
+                    <div class="product-details" id="tentangRealta-details">
+                        <!-- Content will be dynamically updated here -->
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+
+        <div class="navbar-banner__blur navbar-banner__blur--1"></div>
+        <div class="navbar-banner__blur navbar-banner__blur--2"></div>
+
+
+    </header>
+
+<body>
+     <!-- Add WhatsApp floating button -->
+     <a href="https://api.whatsapp.com/send?phone=628111221789&text=Hallo%20PT%20Realta..." target="_blank"
+         rel="noopener noreferrer" class="whatsapp-float">
+         <i class="fab fa-whatsapp"></i>
+         <div class="text-content">
+             <span class="click-text">Click here</span>
+             <span class="sub-text">To arrange meeting and demo with us</span>
+         </div>
+     </a>
+
+    <!-- LOADING -->
+    <div id="loading-overlay" class="loading-overlay">
+        <div class="loading-container">
+            <div class="loading-text">Loading...</div>
+            <div class="spinner">
+                <div class="spinner-inner"></div>
+            </div>
+        </div>
+    </div>
+    <script>
+        function navigateWithLoading(url) {
+            const loadingOverlay = document.getElementById('loading-overlay');
+            loadingOverlay.style.display = 'flex'; // Show the loading overlay
+            document.body.style.overflow = 'hidden'; // Prevent scrolling
+
+            // Wait for the animation to complete before navigating
+            setTimeout(function () {
+                window.location.href = url;
+            }, 2000); // Adjust the delay as needed (in milliseconds)
+        }
+
+        document.addEventListener('DOMContentLoaded', function () {
+            // This script block can contain other page initialization code
+        });
+    </script>
+    <style>
+        .loading-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(5px);
+            display: none;
+            /* Initially hidden */
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+        }
+
+        .loading-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .loading-text {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 20px;
+            color: #9054d0;
+            opacity: 0;
+            animation: fade-in 0.5s ease-in-out forwards;
+            animation-delay: 0.5s;
+            /* Add a delay to the fade-in animation */
+        }
+
+        .spinner {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            border: 4px solid rgba(52, 152, 219, 0.2);
+            border-top-color: #9054d0;
+            animation: spin 1s ease-in-out infinite;
+        }
+
+        @keyframes spin {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        @keyframes fade-in {
+            0% {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .product-banner {
+            cursor: pointer;
+        }
+    </style>
+    <!-- LOADING -->
+
+
+    <section class="carousel-header">
+        <div id="headerCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="5000">
+            <div class="carousel-inner">
+                <div class="carousel-item active" data-bg-image="assets/img/golf/Banner1.jpg">
+                    <div class="carousel-overlay"></div>
+                    <div class="dot-pattern-overlay"></div>
+                    <div class="carousel-container">
+                        <div class="carousel-content-left">
+                            <h1>Rhapsody Golf To Orchestrate Your Entire Golf Club Operation </h1>
+                            <div class="badge">Elite Golf Operations</div>
+                            <p>Rhapsody Golf is a proven, feature-rich set of golf course system that raises the level of
+                                professionalism and service to your members and guests. Rhapsody Golf has helped many
+                                prestigious reputable golf clubs streamline their business processes, drive revenues and
+                                increase member satisfaction.</p>
+                            <button class="erp-learn-btn">Learn More</button>
+                        </div>
+                        <div class="carousel-content-right">
+                            <div class="floating-cards-container">
+                                <div class="floating-card card-top">
+                                    <div class="card-icon">
+                                        <i class="fas fa-golf-ball"></i>
+                                    </div>
+                                    <h3>Smart Booking</h3>
+                                    <p>Streamlined tee time management and member scheduling</p>
+                                </div>
+                                <img src="assets/img/golf/golf-icon.png" alt="Golf Icon" class="center-image">
+                                <div class="floating-card card-bottom">
+                                    <div class="card-icon">
+                                        <i class="fas fa-chart-line"></i>
+                                    </div>
+                                    <h3>Real-time Analytics</h3>
+                                    <p>Comprehensive insights into your golf operations</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item" data-bg-image="assets/img/golf/Banner2.jpg">
+                    <div class="carousel-overlay"></div>
+                    <div class="dot-pattern-overlay"></div>
+                    <div class="carousel-container">
+                        <div class="carousel-content-left">
+                            <h1>Indonesian Golf Courses A Spectrum of Challenge and Beauty for Every Golfer </h1>
+                            <div class="badge">Diverse Greens in Paradise</div>
+                            <p>Indonesian golf courses appeal to every caliber of player from beginner/recreational,
+                                amateur, to professional players because of the quality of the courses and the spectacular
+                                settings of the location.</p>
+                            <button class="erp-learn-btn">Discover More</button>
+                        </div>
+                        <div class="carousel-content-right">
+                            <div class="floating-card card-top">
+                                <div class="card-icon">
+                                    <i class="fas fa-trophy"></i>
+                                </div>
+                                <h3>Tournament Management</h3>
+                                <p>Effortlessly organize and manage golf tournaments</p>
+                            </div>
+                            <div class="floating-card card-bottom">
+                                <div class="card-icon">
+                                    <i class="fas fa-users"></i>
+                                </div>
+                                <h3>Member Experience</h3>
+                                <p>Enhanced services for an exceptional golfing journey</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Similar structure for third slide -->
+            </div>
+
+            <button class="carousel-control-prev" type="button" data-bs-target="#headerCarousel" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#headerCarousel" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+
+        <style>
+            .carousel-header {
+                position: relative;
+                height: 100vh;
+                width: 100%;
+                overflow: hidden;
+            }
+
+            .carousel-item {
+                height: 100vh;
+                background-position: center;
+                background-repeat: no-repeat;
+                background-size: cover;
+                position: relative;
+                transition: transform 1.2s cubic-bezier(0.4, 0, 0.2, 1);
+                will-change: transform;
+            }
+
+            .carousel-fade .carousel-item {
+                opacity: 0;
+                transition: opacity 1s cubic-bezier(0.4, 0, 0.2, 1);
+                will-change: opacity;
+                backface-visibility: hidden;
+                perspective: 1000px;
+            }
+
+            .carousel-fade .carousel-item.active {
+                opacity: 1;
+            }
+
+            .carousel-overlay {
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                background: rgba(0, 0, 0, 0.5);
+                z-index: 1;
+            }
+
+            .dot-pattern-overlay {
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                background-image: radial-gradient(rgba(255, 255, 255, 0.2) 1px, transparent 1px);
+                background-size: 20px 20px;
+                z-index: 2;
+                opacity: 0.3;
+            }
+
+            .carousel-container {
+                position: relative;
+                display: flex;
+                height: 100%;
+                z-index: 3;
+                max-width: 1755px;
+                margin: 0 auto;
+                padding: 0 2rem;
+                gap: 4rem;
+            }
+
+            .carousel-content-left {
+                flex: 1;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: flex-start;  /* Align items to the left */
+                padding-right: 4rem;
+                color: #fff;
+                text-align: left;
+                opacity: 0;
+                transform: translateY(20px);
+                transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+                max-width: 50%;
+            }
+
+            .carousel-item.active .carousel-content-left {
+                opacity: 1;
+                transform: translateY(0);
+            }
+
+            .carousel-content-left h1 {
+                font-size: 3.5rem;
+                font-weight: 700;
+                margin-bottom: 1rem;
+                text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+                line-height: 1.2;
+                transform: translateY(20px);
+                transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1) 0.2s;
+            }
+
+            .carousel-content-left .badge {
+                display: inline-block;
+                background: rgba(84, 208, 84, 0.25);
+                padding: 8px 16px;
+                border-radius: 50px;
+                font-size: 1.1rem;
+                font-weight: 500;
+                margin: 1rem 0;
+                text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+                transform: translateY(20px);
+                transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1) 0.3s;
+                width: auto;
+                max-width: fit-content;
+                backdrop-filter: blur(5px);
+            }
+
+            .carousel-content-left p {
+                font-size: 20px !important;
+                margin-bottom: 2rem;
+                text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+                line-height: 1.6;
+                transform: translateY(20px);
+                transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1) 0.4s;
+                max-width: 90%;
+            }
+
+            .carousel-content-right {
+                flex: 1;
+                position: relative;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                padding-left: 2rem;
+            }
+
+            .floating-card {
+                position: absolute;
+                background: rgba(255, 255, 255, 0.1);
+                backdrop-filter: blur(10px);
+                -webkit-backdrop-filter: blur(10px);
+                padding: 2rem;
+                border-radius: 15px;
+                box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+                width: 300px;
+                transition: all 0.3s ease;
+                z-index: 4;
+                opacity: 0;
+                transform: translateY(30px);
+                border: 2px solid rgba(255, 255, 255, 0.2);
+            }
+
+            .carousel-item.active .floating-card {
+                opacity: 1;
+                transform: translateY(0);
+            }
+
+            .card-top {
+                top: 25%;
+                left: 0;
+                transition-delay: 0.3s;
+                z-index: 5;
+            }
+
+            .card-bottom {
+                bottom: 25%;
+                right: 0;
+                transition-delay: 0.6s;
+                z-index: 4;
+            }
+
+            .floating-card:hover {
+                transform: translateY(-5px);
+                box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+            }
+
+            .floating-card .card-icon {
+                font-size: 2rem;
+                color: rgba(255, 255, 255, 0.9);
+                margin-bottom: 1rem;
+            }
+
+            .floating-card h3 {
+                color: rgba(255, 255, 255, 0.9);
+                font-size: 1.5rem;
+                margin-bottom: 0.5rem;
+            }
+
+            .floating-card p {
+                color: rgba(255, 255, 255, 0.7);
+                font-size: 1rem;
+                margin: 0;
+            }
+
+            /* Center image between cards */
+            .floating-cards-container {
+                position: relative;
+                width: 100%;
+                height: 100%;
+            }
+
+            .center-image {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                width: 200px;
+                height: 200px;
+                border-radius: 50%;
+                z-index: 3;
+                box-shadow: 0 0 30px rgba(0, 0, 0, 0.2);
+                border: 3px solid rgba(255, 255, 255, 0.3);
+            }
+
+            .erp-learn-btn {
+                width: fit-content;
+                font-size: 1rem;
+                padding: 10px 20px;
+                background: linear-gradient(287deg, #2ecc71, #27ae60, #106617);
+                color: #fff;
+                border: none;
+                border-radius: 6px;
+                cursor: pointer;
+                transition: all 0.3s ease;
+                font-weight: 600;
+                letter-spacing: 0.5px;
+                box-shadow: 0 4px 15px rgba(84, 208, 105, 0.192) !important;
+                transform: translateY(20px);
+                opacity: 0;
+                margin: 0;  /* Reset margin */
+                align-self: flex-start;  /* Keep left alignment */
+                transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1) 0.5s,
+                    opacity 0.6s cubic-bezier(0.4, 0, 0.2, 1) 0.5s,
+                    background 0.3s ease;
+            }
+
+            .carousel-item.active .erp-learn-btn {
+                transform: translateY(0);
+                margin-top: 25px;
+                opacity: 1;
+            }
+
+            .erp-learn-btn:hover {
+                transform: translateY(-2px);
+                box-shadow: 0 6px 20px rgba(144, 84, 208, 0.4);
+                background: linear-gradient(287deg, #2ecc71, #27ae60, #106617);
+            }
+
+            @media (max-width: 991px) {
+
+                .carousel-content-left h1 {
+                    font-size: 2.5rem;
+                }
+
+                .carousel-container {
+                    flex-direction: column;
+                    gap: 2rem;
+                    max-width: 100%;
+                    height: 100vh; /* Adjusted height since we're hiding right content */
+                    padding-bottom: 8rem;
+                }
+
+                .carousel-content-left {
+                    padding-right: 0;
+                    align-items: center;
+                    text-align: center;
+                    padding-top: 4rem;
+                    max-width: 100%;
+                }
+
+                .carousel-content-right {
+                    display: none; /* Hide right content on mobile */
+                }
+
+                .erp-learn-btn {
+                    margin: 0 auto;  /* Center button on mobile */
+                    align-self: center;
+                }
+
+                .floating-card {
+                    position: relative;
+                    width: 100%;
+                    max-width: 300px;
+                    margin: 1rem auto;
+                }
+
+                .card-top, .card-bottom {
+                    position: static;
+                    transition-delay: 0s;
+                }
+
+                .center-image {
+                    position: static;
+                    transform: none;
+                    margin: 2rem auto;
+                    display: block;
+                }
+            }
+        </style>
+    </section>
+
+    <style>
+        .carousel-header {
+            position: relative;
+            height: 100vh;
+            width: 100%;
+            overflow: hidden;
+        }
+
+        .carousel-item {
+            height: 100vh;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            transition: transform 1.2s cubic-bezier(0.4, 0, 0.2, 1);
+            will-change: transform;
+        }
+
+        .carousel-fade .carousel-item {
+            opacity: 0;
+            transition: opacity 1s cubic-bezier(0.4, 0, 0.2, 1);
+            will-change: opacity;
+            backface-visibility: hidden;
+            perspective: 1000px;
+        }
+
+        .carousel-fade .carousel-item.active {
+            opacity: 1;
+        }
+
+        .carousel-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.4);
+            z-index: 1;
+            transition: background 0.6s ease;
+        }
+
+        .carousel-content {
+            position: absolute;
+            text-align: center;
+            color: #fff;
+            padding: 20px;
+            max-width: 1300px;
+            z-index: 2;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 100%;
+            opacity: 0;
+            transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .carousel-item.active .carousel-content {
+            opacity: 1;
+            transform: translate(-50%, -50%) scale(1);
+        }
+
+        .carousel-content h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+            line-height: 1.2;
+            transform: translateY(20px);
+            transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1) 0.2s;
+        }
+
+        .carousel-item.active .carousel-content h1 {
+            transform: translateY(0);
+        }
+
+        .carousel-content .badge {
+            display: inline-block;
+            background: rgba(84, 208, 84, 0.432);
+            padding: 8px 16px;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: 500;
+            margin: 1rem 0;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+            transform: translateY(20px);
+            transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1) 0.3s;
+        }
+
+        .carousel-item.active .carousel-content .badge {
+            transform: translateY(0);
+        }
+
+        .carousel-content p {
+            font-size: 20px !important;
+            margin-bottom: 2rem;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+            line-height: 1.6;
+            padding: 0 20px;
+            transform: translateY(20px);
+            transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1) 0.4s;
+        }
+
+        .carousel-item.active .carousel-content p {
+            transform: translateY(0);
+        }
+
+        .erp-learn-btn {
+            width: 100%;
+            max-width: 280px;
+            font-size: 1rem;
+            padding: 10px 20px;
+            background: linear-gradient(287deg, #2ecc71, #27ae60, #106617);
+            color: #fff;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            box-shadow: 0 4px 15px rgba(144, 84, 208, 0.3);
+            display: block;
+            transform: translateY(20px);
+            opacity: 0;
+            transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1) 0.5s,
+                opacity 0.6s cubic-bezier(0.4, 0, 0.2, 1) 0.5s,
+                background 0.3s ease;
+        }
+
+        .carousel-item.active .erp-learn-btn {
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+        .erp-learn-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(144, 84, 208, 0.4);
+            background: linear-gradient(287deg, #2ecc71, #27ae60, #106617)
+        }
+
+        .carousel-control-prev,
+        .carousel-control-next {
+            width: 5%;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            background: none;
+        }
+
+        .carousel-header:hover .carousel-control-prev,
+        .carousel-header:hover .carousel-control-next {
+            opacity: 0.8;
+        }
+
+        .carousel-control-prev-icon,
+        .carousel-control-next-icon {
+            width: 40px;
+            height: 40px;
+            filter: drop-shadow(0 0 2px rgba(0, 0, 0, 0.3));
+        }
+
+        @media (max-width: 768px) {
+            .carousel-content h1 {
+                font-size: 2.5rem;
+            }
+
+            .carousel-content p {
+                font-size: 1rem !important;
+            }
+
+            .carousel-content .badge {
+                font-size: 0.9rem;
+            }
+
+            .erp-learn-btn {
+                max-width: 240px;
+                font-size: 0.9rem;
+            }
+
+            .carousel-control-prev,
+            .carousel-control-next {
+                width: 10%;
+            }
+
+        }
+
+        @media (min-width: 768px) {
+            .erp-learn-btn {
+                font-size: 1.1rem;
+                padding: 11px 25px;
+                max-width: 300px;
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .erp-learn-btn {
+                font-size: 1.2rem;
+                padding: 12px 30px;
+                max-width: 320px;
+            }
+        }
+    </style>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const carouselItems = document.querySelectorAll('.carousel-item');
+            carouselItems.forEach(item => {
+                const bgImage = item.getAttribute('data-bg-image');
+                item.style.backgroundImage = `url('${bgImage}')`;
+            });
+        });
+    </script>
+
+
+    <style>
+        .advanced-section {
+            position: relative;
+            overflow: visible;
+            background-color: transparent;
+            margin-top: -90px;
+            /* Increased negative margin for more overlap */
+            z-index: 2;
+        }
+
+        .card-container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 30px;
+            margin: 0 auto;
+            max-width: 1200px;
+            /* Adjust this value as needed */
+            padding: 0 15px;
+        }
+
+        .card {
+            width: 320px;
+            height: 100%;
+            background-color: #fff;
+            border-radius: 12px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.048) !important;
+            padding: 0px;
+            margin: 10px;
+            opacity: 0;
+            transform: translateY(50px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .card h3 {
+            margin-top: 0;
+            color: #333;
+            font-size: 1.5rem;
+            padding: 20px 20px 0;
+        }
+
+        .card p {
+            margin-bottom: 15px;
+            color: #666;
+            padding: 0 20px;
+            flex-grow: 1;
+        }
+
+        .card-icon {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            color: #007bff;
+            padding: 0 20px;
+        }
+
+        .card-img {
+            width: 120%;
+            height: 450px;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+
+        @media (max-width: 768px) {
+            .advanced-section {
+                margin-top: -100px;
+                /* Adjusted for mobile to maintain some overlap */
+                padding: 0 15px;
+                /* Add padding to ensure content doesn't touch screen edges */
+            }
+
+            .card-container {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .card {
+                width: 100%;
+                max-width: 320px;
+                margin: 15px 0;
+            }
+
+            .card-img {
+                width: 100%;
+                height: auto;
+                max-height: 300px;
+                object-fit: cover;
+            }
+        }
+    </style>
+
+    <section class="advanced-section">
+        <div class="container-fluid p-0">
+            <div class="card-container">
+                <div class="card">
+                    <img src="assets/img/hotel/1.jpg" alt="Advanced Feature 1" class="card-img">
+                </div>
+                <div class="card">
+                    <img src="assets/img/hotel/2.png" alt="Advanced Feature 2" class="card-img">
+                </div>
+                <div class="card">
+                    <img src="assets/img/hotel/3.png" alt="Advanced Feature 3" class="card-img">
+                </div>
+            </div>
+            <!-- <div class="text-center mt-4">
+                <a href="#" class="btn custom-btn btn-lg px-4 py-3 cta-button">
+                    Contact Us
+                </a>
+            </div> -->
+            <style>
+                .custom-btn {
+                    background-color: #9e44b4;
+                    color: white;
+                    border: 2px solid #9e44b4;
+                    padding: 12px 24px;
+                    font-weight: 600;
+                    font-size: 1.1rem;
+                    text-transform: uppercase;
+                    letter-spacing: 0.5px;
+                    border-radius: 10px;
+                    transition: all 0.3s ease;
+                    box-shadow: 0 4px 6px rgba(114, 9, 212, 0.2);
+                }
+
+                .custom-btn:hover {
+                    background-color: #9e44b4b5;
+                    color: #ffffff;
+                    box-shadow: 0 6px 10px rgba(114, 9, 212, 0.3);
+                }
+
+                .custom-btn:active {
+                    transform: translateY(0);
+                    box-shadow: 0 2px 4px rgba(114, 9, 212, 0.2);
+                }
+            </style>
+        </div>
+    </section>
+
+    <script>
+        function isElementInViewport(el) {
+            var rect = el.getBoundingClientRect();
+            return (
+                rect.top <= (window.innerHeight || document.documentElement.clientHeight) &&
+                rect.bottom >= 0 &&
+                rect.left <= (window.innerWidth || document.documentElement.clientWidth) &&
+                rect.right >= 0
+            );
+        }
+
+        function handleScroll() {
+            var cards = document.querySelectorAll('.card');
+            cards.forEach((card, index) => {
+                if (isElementInViewport(card)) {
+                    setTimeout(() => {
+                        card.classList.add('visible');
+                    }, index * 200); // Stagger the animation
+                }
+            });
+        }
+
+        window.addEventListener('scroll', handleScroll);
+        window.addEventListener('load', handleScroll);
+        // Trigger the handleScroll function immediately after page load
+        setTimeout(handleScroll, 100);
+    </script>
+
+
+    <section id="ict-one-solution" class="ict-one-solution " style="margin-top: 5%;">
+        <div class="container-fluid">
+            <div class="row align-items-center">
+                <div class="col-md-6 fade-in-left">
+                    <img src="assets/img/golf/gambar_grams.jpg" alt="ICT One Solution" class="img-fluid"
+                        style="max-width: 80%; height: auto;">
+                </div>
+                <div class="col-md-6 text-center fade-in-right">
+                    <h2 class="mb-4 gradient-text fw-bold"
+                        style="background: linear-gradient(287deg, #2ecc71, #27ae60, #106617); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">
+                        Orchestrate Your Entire Golf Club Operation
+                    </h2>
+                    <h3 class="mb-3">Rhapsody Golf</h3>
+                    <div class="mb-4" style="max-width: 90%; margin: 0 auto; text-align: left;">
+                        <p style="line-height: 1.6; font-size: 20px; margin-bottom: 1rem;">
+                            Rhapsody Golf is a proven, feature-rich set of golf course system that raises the level of
+                            professionalism and service to your members and guests.
+                        </p>
+                        <p style="line-height: 1.6; font-size: 20px; margin-bottom: 1rem;">
+                            Rhapsody Golf has helped many prestigious reputable golf clubs streamline their business
+                            processes, drive revenues and increase member satisfaction. By fully integrating all key
+                            aspects of golf course operation, Rhapsody Golf sets the standard for golf course system in
+                            Indonesia.
+                        </p>
+                        <p style="line-height: 1.6; font-size: 20px; margin-bottom: 1rem;">
+                            Indonesian golf courses appeal to every caliber of player from beginner/recreational,
+                            amateur, to professional players because of the quality of the courses and the spectacular
+                            settings of the location.
+                        </p>
+                        <p style="line-height: 1.6; font-size: 20px; margin-bottom: 1rem;">
+                            Of Course, with many VIP executives as club members, the golf course alone is not enough to
+                            attract members. Golf course owners and operators have to link a bit more outside the box
+                            than ever. They need to have the right tools to administer the entire operation of the golf
+                            course.
+                        </p>
+                        <p style="line-height: 1.6; font-size: 20px;">
+                            As a result of accumulated experience and knowledge since 1983, we have gained a profound
+                            understanding and insight of what the golf courses really need. With our experience,
+                            knowledge and technology, we have been able to deliver a solution, rich with features that
+                            are unique to the golf industry, and this is Golf Course System Indonesia.
+                        </p>
+                    </div>
+                    <a href="#" class="btn btn-outline-secondary btn-sm d-inline-block mx-auto"
+                        style="max-width: 200px;">Learn More</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- 
+    <section class="features py-5">
+        <div class="container">
+            <div class="row text-center justify-content-center">
+                <div class="col-md-2 col-sm-4 mb-4 feature-item">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" fill="url(#greenGradient)" class="bi bi-credit-card mb-3" viewBox="0 0 16 16">
+                      <defs>
+                        <linearGradient id="greenGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                          <stop offset="0%" style="stop-color:#27ae60;stop-opacity:1" />
+                          <stop offset="50%" style="stop-color:#27ae60;stop-opacity:1" />
+                          <stop offset="100%" style="stop-color:#27ae60;stop-opacity:1" />
+                        </linearGradient>
+                      </defs>
+                      <path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V4zm2-1a1 1 0 0 0-1 1v1h14V4a1 1 0 0 0-1-1H2zm13 4H1v5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V7z"/>
+                      <path d="M2 10a1 1 0 0 1 1-1h1a1 1 0 0 1 1 1v1a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1v-1z"/>
+                    </svg>
+                    <p>Passport</p>
+                </div>
+                <div class="col-md-2 col-sm-4 mb-4 feature-item">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" fill="url(#greenGradient)" class="bi bi-chat-dots mb-3" viewBox="0 0 16 16">
+                      <path d="M5 8a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm4 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm3 1a1 1 0 1 0 0-2 1 1 0 0 0 0 2z"/>
+                      <path d="m2.165 15.803.02-.004c1.83-.363 2.948-.842 3.468-1.105A9.06 9.06 0 0 0 8 15c4.418 0 8-3.134 8-7s-3.582-7-8-7-8 3.134-8 7c0 1.76.743 3.37 1.97 4.6a10.437 10.437 0 0 1-.524 2.318l-.003.011a10.722 10.722 0 0 1-.244.637c-.079.186.074.394.273.362a21.673 21.673 0 0 0 .693-.125zm.8-3.108a1 1 0 0 0-.287-.801C1.618 10.83 1 9.468 1 8c0-3.192 3.004-6 7-6s7 2.808 7 6c0 3.193-3.004 6-7 6a8.06 8.06 0 0 1-2.088-.272 1 1 0 0 0-.711.074c-.387.196-1.24.57-2.634.893a10.97 10.97 0 0 0 .398-2z"/>
+                    </svg>
+                    <p>RealSMS (Golf Messaging)</p>
+                </div>
+                <div class="col-md-2 col-sm-4 mb-4 feature-item">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" fill="url(#greenGradient)" class="bi bi-phone mb-3" viewBox="0 0 16 16">
+                      <path d="M11 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h6zM5 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H5z"/>
+                      <path d="M8 14a1 1 0 1 0 0-2 1 1 0 0 0 0 2z"/>
+                    </svg>
+                    <p>Mobile Taking Order</p>
+                </div>
+                <div class="col-md-2 col-sm-4 mb-4 feature-item">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" fill="url(#greenGradient)" class="bi bi-fingerprint mb-3" viewBox="0 0 16 16">
+                      <path d="M8.06 6.5a.5.5 0 0 1 .5.5v.776a11.5 11.5 0 0 1-.552 3.519l-1.331 4.14a.5.5 0 0 1-.952-.305l1.33-4.141a10.5 10.5 0 0 0 .504-3.213V7a.5.5 0 0 1 .5-.5Z"/>
+                      <path d="M6.06 7a2 2 0 1 1 4 0 .5.5 0 1 1-1 0 1 1 0 1 0-2 0v.332c0 .409-.022.816-.066 1.221A.5.5 0 0 1 6 8.447c.04-.37.06-.742.06-1.115V7Zm3.509 1a.5.5 0 0 1 .487.513 11.5 11.5 0 0 1-.587 3.339l-1.266 3.8a.5.5 0 0 1-.949-.317l1.267-3.8a10.5 10.5 0 0 0 .535-3.048A.5.5 0 0 1 9.569 8Zm-3.356 2.115a.5.5 0 0 1 .33.626L5.24 14.939a.5.5 0 1 1-.955-.296l1.303-4.199a.5.5 0 0 1 .625-.329Z"/>
+                      <path d="M4.759 5.833A3.501 3.501 0 0 1 11.559 7a.5.5 0 0 1-1 0 2.5 2.5 0 0 0-4.857-.833.5.5 0 1 1-.943-.334Zm.3 1.67a.5.5 0 0 1 .449.546 10.72 10.72 0 0 1-.4 2.031l-1.222 4.072a.5.5 0 1 1-.958-.287L4.15 9.793a9.72 9.72 0 0 0 .363-1.842.5.5 0 0 1 .546-.449Zm6 .647a.5.5 0 0 1 .5.5c0 1.28-.213 2.552-.632 3.762l-1.09 3.145a.5.5 0 0 1-.944-.327l1.089-3.145c.382-1.105.578-2.266.578-3.435a.5.5 0 0 1 .5-.5Z"/>
+                      <path d="M3.902 4.222a4.996 4.996 0 0 1 5.202-2.113.5.5 0 0 1-.208.979 3.996 3.996 0 0 0-4.163 1.69.5.5 0 0 1-.831-.556Zm6.72-.955a.5.5 0 0 1 .705-.052A4.99 4.99 0 0 1 13.059 7v1.5a.5.5 0 1 1-1 0V7a3.99 3.99 0 0 0-1.386-3.028.5.5 0 0 1-.051-.705ZM3.68 5.842a.5.5 0 0 1 .422.568c-.029.192-.044.39-.044.59 0 .71-.1 1.417-.298 2.1l-1.14 3.923a.5.5 0 1 1-.96-.279L2.8 8.821A6.531 6.531 0 0 0 3.058 7c0-.25.019-.496.054-.736a.5.5 0 0 1 .568-.422Zm8.882 3.66a.5.5 0 0 1 .456.54c-.084 1-.298 1.986-.64 2.934l-.744 2.068a.5.5 0 0 1-.941-.338l.745-2.07a10.51 10.51 0 0 0 .584-2.678.5.5 0 0 1 .54-.456Z"/>
+                      <path d="M4.81 1.37A6.5 6.5 0 0 1 14.56 7a.5.5 0 1 1-1 0 5.5 5.5 0 0 0-8.25-4.765.5.5 0 0 1-.5-.865Zm-.89 1.257a.5.5 0 0 1 .04.706A5.478 5.478 0 0 0 2.56 7a.5.5 0 0 1-1 0c0-1.664.626-3.184 1.655-4.333a.5.5 0 0 1 .706-.04ZM1.915 8.02a.5.5 0 0 1 .346.616l-.779 2.767a.5.5 0 1 1-.962-.27l.778-2.767a.5.5 0 0 1 .617-.346Zm12.15.481a.5.5 0 0 1 .49.51c-.03 1.499-.161 3.025-.727 4.533l-.07.187a.5.5 0 0 1-.936-.351l.07-.187c.506-1.35.634-2.74.663-4.202a.5.5 0 0 1 .51-.49Z"/>
+                    </svg>
+                    <p>Biometric Recognition</p>
+                </div>
+                <div class="col-md-2 col-sm-4 mb-4 feature-item">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" fill="url(#greenGradient)" class="bi bi-graph-up mb-3" viewBox="0 0 16 16">
+                      <path fill-rule="evenodd" d="M0 0h1v15h15v1H0V0Zm14.817 3.113a.5.5 0 0 1 .07.704l-4.5 5.5a.5.5 0 0 1-.74.037L7.06 6.767l-3.656 5.027a.5.5 0 0 1-.808-.588l4-5.5a.5.5 0 0 1 .758-.06l2.609 2.61 4.15-5.073a.5.5 0 0 1 .704-.07Z"/>
+                    </svg>
+                    <p>RealEIS (Executive Information System)</p>
+                </div>
+                <div class="col-md-2 col-sm-4 mb-4 feature-item">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" fill="url(#greenGradient)" class="bi bi-calendar-event mb-3" viewBox="0 0 16 16">
+                      <path d="M11 6.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1z"/>
+                      <path d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5zM1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4H1z"/>
+                    </svg>
+                    <p>Integrated with Banquet</p>
+                </div>
+            </div>
+        </div>
+    </section> -->
+    <section class="golf-separator">
+        <div class="container">
+            <div class="golf-divider">
+                <div class="golf-ball"></div>
+                <div class="golf-tee"></div>
+            </div>
+        </div>
+    </section>
+
+    <style>
+        .golf-separator {
+            padding: 40px 0;
+        }
+
+        .golf-divider {
+            position: relative;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, #27ae60, transparent);
+            max-width: 80%;
+            margin: 0 auto;
+        }
+
+        .golf-ball {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            width: 20px;
+            height: 20px;
+            background-color: #ffffff;
+            border-radius: 50%;
+            border: 2px solid #27ae60;
+        }
+
+        .golf-tee {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, 50%);
+            width: 10px;
+            height: 15px;
+            background-color: #27ae60;
+            clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+        }
+    </style>
+
+
+
+    <style>
+        .fade-in-left,
+        .fade-in-right {
+            opacity: 0;
+            transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+        }
+
+        .fade-in-left {
+            transform: translateX(-50px);
+        }
+
+        .fade-in-right {
+            transform: translateX(50px);
+        }
+
+        .fade-in-left.visible,
+        .fade-in-right.visible {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .feature-item {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+        }
+
+        .feature-item.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+
+    <script>
+        function isElementInViewport(el) {
+            var rect = el.getBoundingClientRect();
+            return (
+                rect.top <= (window.innerHeight || document.documentElement.clientHeight) &&
+                rect.bottom >= 0 &&
+                rect.left <= (window.innerWidth || document.documentElement.clientWidth) &&
+                rect.right >= 0
+            );
+        }
+
+        function handleScroll() {
+            var fadeElements = document.querySelectorAll('.fade-in-left, .fade-in-right, .feature-item');
+            fadeElements.forEach((el, index) => {
+                if (isElementInViewport(el)) {
+                    setTimeout(() => {
+                        el.classList.add('visible');
+                    }, index * 100);
+                }
+            });
+        }
+
+        window.addEventListener('scroll', handleScroll);
+        window.addEventListener('load', handleScroll);
+        // Trigger the handleScroll function immediately after page load
+        setTimeout(handleScroll, 100);
+    </script>
+
+    <style>
+        /* HR Solutions Grid Styles */
+        .hr-solutions-grid {
+            display: grid;
+            grid-template-areas:
+                "title"
+                "description"
+                "button"
+                "features";
+            gap: 15px;
+            padding: 20px;
+            border-radius: 15px;
+            margin: 0 auto;
+        }
+
+        /* HR Solution Item Styles */
+        .hr-solution-item {
+            border-radius: 10px;
+            padding: 15px;
+            transition: all 0.3s ease;
+            background: white !important;
+            border: 2px solid rgba(221, 221, 221, 0.753);
+        }
+
+        /* HR Solution Item Header Styles */
+        .hr-solution-item h4 {
+            font-size: 1.1rem;
+            margin-bottom: 10px;
+            background: linear-gradient(287deg, #5dfa91, #35743f, #35743fa8);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            font-weight: 600;
+            position: relative;
+            padding-bottom: 5px;
+            display: flex;
+            align-items: center;
+        }
+
+        .hr-solution-item h4::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: linear-gradient(287deg, rgba(255, 255, 255, 0.1), #d6dbd7, #35743f, #c2d3c24f, rgba(255, 255, 255, 0.1));
+            width: 100%;
+        }
+
+        /* HR Solution Item List Styles */
+        .hr-solution-item ul {
+            padding-left: 0;
+            list-style-type: none;
+        }
+
+        .hr-solution-item li {
+            margin-bottom: 0.4rem;
+            position: relative;
+            padding-left: 1.2em;
+        }
+
+        .hr-solution-item li::before {
+            content: "•";
+            background: linear-gradient(287deg, #5dfa91, #35743f, #4446464f);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+
+        /* HR Title Styles */
+        .hr-title {
+            grid-area: title;
+            text-align: center;
+            font-size: 2rem;
+            background: linear-gradient(287deg, #5dfa91, #35743f, #4446464f);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            margin-bottom: 15px;
+            font-weight: bold;
+        }
+
+        /* HR Description Styles */
+        .hr-description {
+            grid-area: description;
+            text-align: center;
+            max-width: 60%;
+            margin: 0 auto;
+            margin-bottom: 15px;
+            color: #666;
+            font-size: 1rem;
+        }
+
+        /* HR Button Wrapper Styles */
+        .hr-button-wrapper {
+            grid-area: button;
+            text-align: center;
+            margin-top: 10px;
+            margin-bottom: 20px;
+        }
+
+        /* HR Features Styles */
+        .hr-features {
+            grid-area: features;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+        }
+
+
+
+
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            .hr-solutions-grid {
+                padding: 10px;
+                max-width: 95%;
+            }
+
+            .hr-description {
+                max-width: 100%;
+            }
+
+            .hr-features {
+                grid-template-columns: 1fr;
+            }
+
+            .hr-solution-item {
+                padding: 10px;
+            }
+
+            .hr-solution-item h4 {
+                font-size: 1rem;
+            }
+
+            .hr-title {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+
+    <section class="hr-solutions-grid">
+        <div class="container-fluid">
+            <h2 class="hr-title">Why Rhapsody Golf</h2>
+            <p class="hr-description" style="font-size: 20px;">Streamline your golf operations with our comprehensive
+                solutions designed to enhance player experience, course management, and organizational efficiency.</p>
+            <div class="hr-button-wrapper">
+                <a href="#" class="btn btn-outline-secondary">Explore Rhapsody Golf Solutions</a>
+            </div>
+            <div class="hr-features">
+
+                <article class="hr-solution-item attendance">
+                    <h4>
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8z"
+                                fill="url(#paint0_linear_attendance)" />
+                            <path d="M12.5 7H11v6l5.25 3.15.75-1.23-4.5-2.67z" fill="url(#paint0_linear_attendance)" />
+                            <defs>
+                                <linearGradient id="paint0_linear_attendance" x1="2" y1="2" x2="22" y2="22"
+                                    gradientUnits="userSpaceOnUse">
+                                    <stop stop-color="#5dfa91" />
+                                    <stop offset="0.5" stop-color="#35743f" />
+                                    <stop offset="1" stop-color="#4446464f" />
+                                </linearGradient>
+                            </defs>
+                        </svg>
+                        PASSPORT
+                    </h4>
+                    <ul>
+                        <li>Smart card for express check-in</li>
+                        <li>One-stop payment</li>
+                        <li>Hassle-free transactions across all outlets</li>
+                    </ul>
+                </article>
+                <article class="hr-solution-item loan">
+                    <h4>
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M11.8 10.9C9.53 10.31 8.8 9.7 8.8 8.75C8.8 7.66 9.81 6.9 11.5 6.9C13.28 6.9 13.94 7.75 14 9H16.21C16.14 7.28 15.09 5.7 13 5.19V3H10V5.16C8.06 5.58 6.5 6.84 6.5 8.77C6.5 11.08 8.41 12.23 11.2 12.9C13.7 13.5 14.2 14.38 14.2 15.31C14.2 16 13.71 17.1 11.5 17.1C9.44 17.1 8.63 16.18 8.52 15H6.32C6.44 17.19 8.08 18.42 10 18.83V21H13V18.85C14.95 18.48 16.5 17.35 16.5 15.3C16.5 12.46 14.07 11.49 11.8 10.9Z"
+                                fill="url(#paint0_linear_loan)" />
+                            <defs>
+                                <linearGradient id="paint0_linear_loan" x1="6.32" y1="3" x2="16.5" y2="21"
+                                    gradientUnits="userSpaceOnUse">
+                                    <stop stop-color="#5dfa91" />
+                                    <stop offset="0.5" stop-color="#35743f" />
+                                    <stop offset="1" stop-color="#4446464f" />
+                                </linearGradient>
+                            </defs>
+                        </svg>
+                        REALSMS
+                    </h4>
+                    <ul>
+                        <li>Efficient SMS booking system</li>
+                        <li>Reduces no-shows</li>
+                        <li>Quick communication for promotions and updates</li>
+                    </ul>
+                </article>
+                <article class="hr-solution-item performance-appraisal">
+                    <h4>
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zM9 17H7v-7h2v7zm4 0h-2V7h2v10zm4 0h-2v-4h2v4z"
+                                fill="url(#paint0_linear_performance)" />
+                            <defs>
+                                <linearGradient id="paint0_linear_performance" x1="3" y1="3" x2="21" y2="21"
+                                    gradientUnits="userSpaceOnUse">
+                                    <stop stop-color="#5dfa91" />
+                                    <stop offset="0.5" stop-color="#35743f" />
+                                    <stop offset="1" stop-color="#4446464f" />
+                                </linearGradient>
+                            </defs>
+                        </svg>
+                        MOBILE TAKING ORDER
+                    </h4>
+                    <ul>
+                        <li>On-course food ordering</li>
+                        <li>Instant handicap updates</li>
+                        <li>Via mobile devices</li>
+                    </ul>
+                </article>
+                <article class="hr-solution-item employee-self-service">
+                    <h4>
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"
+                                fill="url(#paint0_linear_self_service)" />
+                            <defs>
+                                <linearGradient id="paint0_linear_self_service" x1="4" y1="4" x2="20" y2="20"
+                                    gradientUnits="userSpaceOnUse">
+                                    <stop stop-color="#5dfa91" />
+                                    <stop offset="0.5" stop-color="#35743f" />
+                                    <stop offset="1" stop-color="#4446464f" />
+                                </linearGradient>
+                            </defs>
+                        </svg>
+                        BIOMETRIC RECOGNITION
+                    </h4>
+                    <ul>
+                        <li>Enhanced security</li>
+                        <li>Finger scan login for cashiers</li>
+                        <li>Prevents password misuse</li>
+                    </ul>
+                </article>
+                <article class="hr-solution-item medical">
+                    <h4>
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M19 3H5c-1.1 0-1.99.9-1.99 2L3 19c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-1 11h-4v4h-4v-4H6v-4h4V6h4v4h4v4z"
+                                fill="url(#paint0_linear_medical)" />
+                            <defs>
+                                <linearGradient id="paint0_linear_medical" x1="3" y1="3" x2="21" y2="21"
+                                    gradientUnits="userSpaceOnUse">
+                                    <stop stop-color="#5dfa91" />
+                                    <stop offset="0.5" stop-color="#35743f" />
+                                    <stop offset="1" stop-color="#4446464f" />
+                                </linearGradient>
+                            </defs>
+                        </svg>
+                        REALEIS
+                    </h4>
+                    <ul>
+                        <li>Real-time golf course performance reports</li>
+                        <li>Informed decision-making</li>
+                        <li>Accessible anytime, anywhere</li>
+                    </ul>
+                </article>
+                <article class="hr-solution-item quality-assurance">
+                    <h4>
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-5 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z"
+                                fill="url(#paint0_linear_banquet)" />
+                            <defs>
+                                <linearGradient id="paint0_linear_banquet" x1="3" y1="3" x2="21" y2="21"
+                                    gradientUnits="userSpaceOnUse">
+                                    <stop stop-color="#5dfa91" />
+                                    <stop offset="0.5" stop-color="#35743f" />
+                                    <stop offset="1" stop-color="#4446464f" />
+                                </linearGradient>
+                            </defs>
+                        </svg>
+                        INTEGRATED BANQUET MODULE
+                    </h4>
+                    <ul>
+                        <li>Streamlined planning and control</li>
+                        <li>Food and beverage management</li>
+                        <li>For large club events</li>
+                    </ul>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <section id="cta" class="py-5 mt-5">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-10">
+                    <div class="bg-light p-5 rounded-3 shadow-sm cta-card">
+                        <div class="row align-items-center">
+                            <div class="col-lg-8 mb-4 mb-lg-0">
+                                <h2 class="mb-3 fw-bold"
+                                    style="background: linear-gradient(287deg, #5dfa91, rgb(53, 116, 63)); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">
+                                    Ready to Transform Your Golf Operation?</h2>
+                                <p class="mb-0 text-muted lead">Let's discuss how Rhapsody can elevate your operations.
+                                </p>
+                            </div>
+                            <div class="col-lg-4 text-lg-end text-center">
+                                <a href="#" class="btn btn-primary btn-lg px-4 py-3 cta-button"
+                                    style="background: linear-gradient(to bottom, #4caf4fb6, #45a0499f); color: white;">Schedule
+                                    a Demo</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <style>
+        #cta .cta-card {
+            background-color: #f8f9fa;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(0, 0, 0, 0.125);
+        }
+
+
+        body.dark-mode #cta .cta-card {
+            background: linear-gradient(135deg,
+                    rgba(50, 50, 50, 0.4) 0%,
+                    rgba(100, 50, 150, 0.493) 100%) !important;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        #cta h2 {
+            font-size: 2.5rem;
+            line-height: 1.2;
+        }
+
+        #cta p {
+            font-size: 1.25rem;
+            color: #6c757d;
+        }
+
+        #cta .cta-button {
+            background-color: #7209d4;
+            border: none;
+            color: #ffffff;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        #cta .cta-button:hover {
+            background-color: #5a07a8;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+
+
+        @media (max-width: 991px) {
+            #cta h2 {
+                font-size: 2rem;
+            }
+
+            #cta p {
+                font-size: 1.1rem;
+            }
+
+            #cta .cta-button {
+                width: 100%;
+                margin-top: 1rem;
+            }
+        }
+    </style>
+
+    <!-- Golf Micro Section: Showcasing Our Solutions -->
+    <section id="golf-micro" class="py-5 clipped-section">
+        <div class="container-fluid">
+            <div class="row justify-content-center">
+                <div class="col-12 py-2 px-5">
+                    <div>
+                        <div class="card-section">
+                            <div class="row gy-4">
+                                <div class="col-12">
+                                    <div class="text-center">
+                                        <h2 class="mb-2 mt-4 glass-text"
+                                            style="background: linear-gradient(287deg, #2ecc71, #27ae60, #106617); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">
+                                            Our Solutions
+                                        </h2>
+                                        <h3 class="mb-4 glass-subtext">
+                                            Streamlined Solutions for Modern Golf Courses
+                                        </h3>
+                                        <p class="mb-5 glass-description">
+                                            Rhapsody Golf consists of 3 main modules that are fully integrated with each
+                                            other: Front Office, Back Office, and Logistic.
+                                            These modules cater to the entire operation of the golf club, from
+                                            Membership and Reservation to Accounting & Finance operations, Inventory,
+                                            Purchasing, and Cost Control.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <style>
+                                .module-grid {
+                                    display: grid;
+                                    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+                                    gap: 0.1rem;
+                                    /* Reduced gap from 2rem to 1rem */
+                                    padding: 0.5rem;
+                                    /* Reduced padding from 1rem to 0.5rem */
+                                    justify-items: center;
+                                }
+
+                                .module-card {
+                                    position: relative;
+                                    background: rgba(255, 255, 255, 0.1);
+                                    backdrop-filter: blur(10px);
+                                    border-radius: 20px;
+                                    padding: 1rem;
+                                    /* Reduced padding from 1.5rem to 1rem */
+                                    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+                                    overflow: hidden;
+                                    display: flex;
+                                    justify-content: center;
+                                    align-items: center;
+                                }
+
+                                .module-card:hover {
+                                    transform: translateY(-10px);
+                                }
+
+                                .module-card::before {
+                                    content: '';
+                                    position: absolute;
+                                    top: 0;
+                                    left: 0;
+                                    width: 100%;
+                                    height: 100%;
+                                    background: linear-gradient(45deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0));
+                                    opacity: 0;
+                                    transition: opacity 0.3s ease;
+                                }
+
+                                .module-card:hover::before {
+                                    opacity: 1;
+                                }
+
+                                .golf-module-img {
+                                    width: 80%;
+                                    height: auto;
+                                    border-radius: 12px;
+                                    transform: scale(0.95);
+                                    transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+                                    margin: 0 auto;
+                                    display: block;
+                                }
+
+                                .module-card:hover .golf-module-img {
+                                    transform: scale(1);
+                                }
+                            </style>
+
+                            <div class="module-grid">
+                                <div class="module-card front-office" data-aos="fade-up" data-aos-delay="100">
+                                    <img src="assets/img/golf/front.png" alt="Front Office Module"
+                                        class="golf-module-img">
+                                </div>
+
+                                <div class="module-card back-office" data-aos="fade-up" data-aos-delay="200">
+                                    <img src="assets/img/golf/back.png" alt="Back Office Module"
+                                        class="golf-module-img">
+                                </div>
+
+                                <div class="module-card logistic" data-aos="fade-up" data-aos-delay="300">
+                                    <img src="assets/img/golf/logistic.png" alt="Logistic Module"
+                                        class="golf-module-img">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+        </div>
+    </section>
+
+    <style>
+        .module-card {
+            padding: 0px;
+            border-radius: 10px;
+            height: 100%;
+        }
+
+        .module-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: #ffffff;
+            padding: 10px;
+            border-radius: 5px;
+            text-align: center;
+        }
+
+        .module-card p {
+            font-size: 0.9rem;
+            margin-bottom: 15px;
+        }
+
+        .module-card h4 {
+            font-size: 1.1rem;
+            margin-bottom: 10px;
+            padding-left: 60px;
+        }
+
+        .module-card ul {
+            padding-left: 100px;
+        }
+
+        .module-card li {
+            font-size: 0.85rem;
+            margin-bottom: 5px;
+        }
+
+        .front-office h3 {
+            background-color: #e74c3c;
+        }
+
+        .back-office h3 {
+            background-color: #3498db;
+        }
+
+        .logistic h3 {
+            background-color: #2ecc71;
+        }
+
+        @media (max-width: 768px) {
+            .module-card {
+                margin-bottom: 20px;
+            }
+        }
+
+        /* Main container styles */
+        #golf-micro {
+            padding-top: 80px;
+            /* Reduced from 100px to move content up */
+        }
+
+        /* Description text styles */
+        .glass-description {
+            font-size: 1.1rem;
+            color: #141414;
+            max-width: 720px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Media query for smaller screens */
+        @media (max-width: 768px) {
+            .glass-text {
+                font-size: 1.8rem !important;
+            }
+
+            .glass-description {
+                font-size: 1rem;
+            }
+        }
+    </style>
+
+
+
+
+
+
+    </section>
+    <section id="integrations" class="py-4 p-3">
+        <div class="container-fluid">
+            <div class="row align-items-center">
+                <style>
+                    /* Online indicator styles */
+                    .online-indicator-container {
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        margin-bottom: 20px;
+                    }
+
+                    .online-status {
+                        display: inline-flex;
+                        align-items: center;
+                        background-color: #f8f9fa;
+                        border: 1px solid #eff0f1;
+                        border-radius: 20px;
+                        padding: 8px 15px;
+                        font-weight: bold;
+                    }
+
+                    .online-text {
+                        font-size: 14px;
+                        color: #495057;
+                        margin-left: 8px;
+                    }
+
+                    .cable-icon {
+                        width: 20px;
+                        height: 20px;
+                        fill: #495057;
+                    }
+
+                    @media (max-width: 768px) {
+                        .partners-section {
+                            text-align: center;
+                        }
+
+                        .partners-section h2 {
+                            text-align: center !important;
+                        }
+
+                        .partners-section p {
+                            margin-left: auto;
+                            margin-right: auto;
+                            text-align: center;
+                            width: 96%;
+                        }
+
+                    }
+                </style>
+
+                <div class="col-lg-6 partners-section">
+                    <h2 class="mb-2 mt-4 glass-text"
+                        style="background: linear-gradient(287deg, #2ecc71, #27ae60, #106617); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">
+                        Our Partners</h2>
+                    <p class="lead mb-3" style="max-width: 90%; font-size: 20px;">Rhapsody Golf is deeply committed to
+                        marketing excellence and innovation that will drive our customers' success. To enhance our
+                        solutions and provide real value for our customers, Rhapsody Golf has sought like-minded
+                        partners who deliver nothing but the best of the technology.</p>
+                </div>
+                <div class="col-lg-6  mt-lg-0">
+
+                    <div class="online-indicator-container">
+                        <div class="online-status">
+                            <svg class="cable-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                <defs>
+                                    <linearGradient id="cableGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                                        <stop offset="0%" style="stop-color:#006400;stop-opacity:1" />
+                                        <stop offset="100%" style="stop-color:#90EE90;stop-opacity:1" />
+                                    </linearGradient>
+                                </defs>
+                                <path
+                                    d="M20 5V4c0-.55-.45-1-1-1h-2c-.55 0-1 .45-1 1v1h-1v4c0 .55.45 1 1 1h1v7c0 1.1-.9 2-2 2s-2-.9-2-2V7c0-2.21-1.79-4-4-4S5 4.79 5 7v7H4c-.55 0-1 .45-1 1v4h1v1c0 .55.45 1 1 1h2c.55 0 1-.45 1-1v-1h1v-4c0-.55-.45-1-1-1H7V7c0-1.1.9-2 2-2s2 .9 2 2v10c0 2.21 1.79 4 4 4s4-1.79 4-4v-7h1c.55 0 1-.45 1-1V5h-1z"
+                                    fill="url(#cableGradient)" />
+                            </svg>
+                            <span class="online-text">Proudly Partner with</span>
+                        </div>
+                    </div>
+                    <div class="integration-grid">
+                        <img src="assets/img/golf/Partners/mirosoft-partner.png" alt="D-Link" class="integration-icon">
+                        <img src="assets/img/golf/Partners/cisco.jpg" alt="Cisco" class="integration-icon">
+                        <img src="assets/img/golf/Partners/doku.jpg" alt="Doku" class="integration-icon">
+                        <img src="assets/img/golf/Partners/symantec.jpg" alt="Symantec" class="integration-icon">
+                        <img src="assets/img/golf/Partners/easyrms.jpg" alt="Emerson" class="integration-icon">
+                        <img src="assets/img/golf/Partners/engenius.jpg" alt="EnGenius" class="integration-icon">
+                        <img src="assets/img/golf/Partners/COMMSCOPE.jpg" alt="CommScope" class="integration-icon">
+                        <img src="assets/img/golf/Partners/hp.jpg" alt="HP" class="integration-icon">
+                        <img src="assets/img/golf/Partners/siteminder.jpg" alt="SiteMinder" class="integration-icon">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <style>
+        /* Integration section styles */
+        #integrations {
+            padding: 4rem 0;
+        }
+
+        .integration-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: auto auto;
+            gap: 2rem;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .integration-icon {
+            width: 100%;
+            max-width: 350px;
+            height: auto;
+            object-fit: contain;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            padding: 1.5rem;
+            background-color: #ffffff;
+            border-radius: 15px;
+            border: 2px solid rgba(221, 221, 221, 0.753);
+        }
+
+        .centered-icons {
+            grid-column: 1 / -1;
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+
+        }
+
+        .centered-icons .integration-icon {
+            max-width: 350px;
+            /* Keeping the size consistent with other icons */
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 1200px) {
+            .integration-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .integration-icon,
+            .centered-icons .integration-icon {
+                max-width: 300px;
+            }
+        }
+
+        @media (max-width: 991px) {
+            .integration-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .integration-icon,
+            .centered-icons .integration-icon {
+                max-width: 280px;
+            }
+        }
+
+        @media (max-width: 767px) {
+            #integrations .row {
+                flex-direction: column;
+            }
+
+            #integrations .col-lg-6 {
+                width: 100%;
+                text-align: center;
+            }
+
+            .bimasakti-title {
+                font-size: 2rem;
+                text-align: center !important;
+            }
+
+            .lead {
+                font-size: 0.9em;
+                max-width: 100%;
+            }
+
+            .integration-grid {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+
+            .integration-icon,
+            .centered-icons .integration-icon {
+                max-width: 150px;
+                padding: 1rem;
+                margin: 0 auto;
+            }
+
+            .centered-icons {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+
+        @media (max-width: 575px) {
+            .integration-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .integration-icon,
+            .centered-icons .integration-icon {
+                max-width: 155px !important;
+            }
+        }
+    </style>
+
+
+    <style>
+        .online-indicator-container {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .online-status {
+            display: inline-flex;
+            align-items: center;
+            background-color: #f8f9fa;
+            border: 1px solid #eff0f1;
+            border-radius: 20px;
+            padding: 8px 15px;
+            font-weight: bold;
+        }
+
+        .online-text {
+            font-size: 14px;
+            color: #495057;
+            margin-left: 8px;
+        }
+
+        .wireless-icon {
+            width: 20px;
+            height: 20px;
+            fill: #495057;
+        }
+
+
+        .centered-icons {
+            grid-column: 2 / -1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 1rem;
+            width: 100%;
+            transform: translateX(-80%);
+            position: relative;
+            left: 50%;
+        }
+
+        @media (max-width: 992px) {
+            .integration-grid {
+                grid-template-columns: repeat(1, 1fr);
+            }
+
+            .integration-icon {
+                max-width: 150px;
+                margin: 0 auto;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .integration-grid {
+                grid-template-columns: repeat(1, 1fr);
+            }
+
+            .integration-icon {
+                max-width: 150px;
+                margin: 0 auto;
+            }
+
+            .centered-icons {
+                grid-column: 1;
+                flex-direction: column;
+                align-items: center;
+                transform: translateX(0);
+                left: 0;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .integration-grid {
+                grid-template-columns: repeat(1, 1fr);
+            }
+
+            .integration-icon {
+                max-width: 150px;
+                margin: 0 auto;
+            }
+
+            .centered-icons {
+                flex-direction: column;
+                align-items: center;
+                margin: 0 auto;
+            }
+        }
+    </style>
+
+
+
+    <section id="separator" class="py-5" style="background-color: #efecff;">
+        <div class="container-fluid">
+            <div class="row justify-content-between">
+                <div class="col-lg-12">
+                    <div class="banner p-5">
+                        <div class="banner-content">
+                            <h2>Unlock superior coverage for your team</h2>
+                            <p>Build a culture of employee delight by taking the first step towards Benefits</p>
+                            <button class="btn-custom" onclick="scheduleCall()"
+                                style="background: linear-gradient(to bottom, #9054d0, #7a4bd7);">Schedule a
+                                call</button>
+                        </div>
+                        <img src="assets/img/handshake.png" alt="Business Handshake" class="banner-image">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="pb-5">
+        <div class="container-fluid ">
+            <div class="row justify-content-between">
+                <div id="contact-info" class="col-lg-5 left-column >
+                    
+                    <p class="text-muted mb-4 contact-text" ;">
+                    </p>
+
+                    <div class="company-info" style="border-radius: 10px;">
+                        <h3 class="h5 fw-bold mb-3 company-name custom-text"
+                            style="color: #333; padding-bottom: 10px; display: inline-block; border-bottom: 1px solid transparent; background-image: linear-gradient(to right, transparent, #333, transparent); background-position: bottom; background-size: 100% 1px; background-repeat: no-repeat;">
+                            PT Realta Chakradarma </h3>
+                        <h3 class="headquarter-title custom-text" style="margin-bottom: 10px;">
+                            Address:</h3>
+                        <div class="address-wrapper">
+                            <p class="address-details custom-text">
+                                Jl. Petojo Melintang No. 25A<br>
+                                Petojo Selatan - Gambir<br>
+                                Jakarta 10160<br>
+                                <span class="country custom-text">Indonesia</span>
+                            </p>
+                        </div>
+
+                       
+                    </div>
+                    <style>
+                        /* Remove the media query and adjust the selectors */
+                        body.dark-mode .company-info {
+                            color: #ffffff !important;
+                        }
+
+                        body.dark-mode .company-name {
+                            color: #ffffff !important;
+                            background-image: linear-gradient(to right, transparent, #ffffff, transparent) !important;
+                        }
+
+                        body.dark-mode .headquarter-title {
+                            color: #ffffff !important;
+                        }
+
+                        body.dark-mode .address-details {
+                            color: #e0e0e0 !important;
+                        }
+
+                        body.dark-mode #contact .contact-heading {
+                            color: #ffffff !important;
+                        }
+                    </style>
+
+                    <div class="map-wrapper mb-4" style="width: 85%;">
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.3279995766406!2d106.8142527!3d-6.172364!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f67f4f44dc2f%3A0x124b0a0f4cb7e845!2sPT%20Realta%20Chakradarma!5e0!3m2!1sen!2sid!4v1653668623967"
+                            frameborder="0" style="border:0" allowfullscreen="">
+                        </iframe>
+                    </div>
+
+                    <div class="contact-info mb-4">
+                        <style>
+                            .contact-item {
+                                display: flex;
+                                align-items: flex-start;
+                                margin-bottom: 10px;
+                            }
+
+                            .contact-icon {
+                                margin-right: 10px;
+                                margin-top: 3px;
+                            }
+                        </style>
+                       <div class="contact-item">
+                           <i class="fas fa-phone contact-icon"></i>
+                           <a href="tel:+62213861772" class="text-decoration-none fw-bold">+62 21 - 386 1772</a>
+                       </div>
+                       <div class="contact-item">
+                           <i class="fas fa-envelope contact-icon"></i>
+                           <a href="mailto:info@realta.co.id" class="text-decoration-none fw-bold">info@realta.co.id</a>
+                       </div>
+                       <div class="contact-item">
+                           <p class="mb-0">
+                               For sales and marketing, contact our Official WhatsApp:<br>
+                               <a href="https://wa.me/628111221789" class="text-decoration-none fw-bold"
+                                   style="color: #3bc05a;">+62 811 1221 789 (Chat Only)</a>
+                           </p>
+                       </div>
+                       </div>
+
+
+                    <div class="social-icons-container">
+                        <h4 class="mb-3" style="font-size: 0.9rem; text-align: left; margin-left: 10px;"> Connect With
+                            Us Through Social Media</h4>
+                        <div class="social-icons d-flex gap-3">
+                            <a href="https://www.facebook.com/yourpage" class="social-icon" aria-label="Facebook">
+                                <i class="fab fa-facebook-f"></i>
+                            </a>
+                            <a href="https://www.linkedin.com/yourpage" class="social-icon" aria-label="LinkedIn">
+                                <i class="fab fa-linkedin-in"></i>
+                            </a>
+                            <a href="https://www.twitter.com/yourpage" class="social-icon" aria-label="Twitter">
+                                <i class="fab fa-x-twitter"></i>
+                            </a>
+                            <a href="https://www.instagram.com/yourpage" class="social-icon" aria-label="Instagram">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                            <a href="https://www.youtube.com/yourchannel" class="social-icon" aria-label="YouTube">
+                                <i class="fab fa-youtube"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <style>
+                    .social-icons {
+                        display: flex;
+                        align-items: center;
+                    }
+
+                    .social-icon {
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        width: 40px;
+                        height: 40px;
+                        border-radius: 50%;
+                        color: white;
+                        text-decoration: none;
+                        transition: all 0.3s ease;
+                    }
+
+                    .social-icon:hover {
+                        transform: translateY(-3px);
+                        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+                        background-image: none !important;
+                        background-color: #f0f0f0 !important;
+                        color: #333 !important;
+                    }
+
+                    .social-icon i {
+                        font-size: 18px;
+                    }
+
+                    .social-icon[aria-label="Facebook"] {
+                        background-color: #3b5998;
+                    }
+
+                    .social-icon[aria-label="LinkedIn"] {
+                        background-color: #0077b5;
+                    }
+
+                    .social-icon[aria-label="Twitter"] {
+                        background-color: #475258;
+                    }
+
+                    .social-icon[aria-label="Instagram"] {
+                        background-color: #a19551;
+                    }
+
+                    .social-icon[aria-label="YouTube"] {
+                        background-color: #e62e2e;
+                    }
+                </style>
+                <div id="contact-form" class="col-lg-5  right-column right-column-custom p-4 p-md-5 order-1 order-lg-2">
+                    <form class="needs-validation" id="microContactForm" novalidate>
+                        <div class="mb-3">
+                            <label for="fullname" class="form-label">Name</label>
+                            <input type="text" class="form-control" id="fullname" placeholder="Name" required>
+                            <div class="invalid-feedback">
+                                Please enter your full name.
+                            </div>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="company" class="form-label">Company Name</label>
+                            <input type="text" class="form-control" id="company" placeholder="Company" required>
+                            <div class="invalid-feedback">
+                                Please enter your company name.
+                            </div>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="jobTitle" class="form-label">Job Title</label>
+                            <input type="text" class="form-control" id="jobTitle" placeholder="Job Title" required>
+                            <div class="invalid-feedback">
+                                Please enter your job title.
+                            </div>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="phone" class="form-label">Mobile Phone</label>
+                            <input type="tel" class="form-control" id="phone" placeholder="Mobile Phone" required
+                                pattern="^\+?\d{0,13}">
+                            <div class="invalid-feedback">
+                                Please enter a valid mobile phone number.
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="email" class="form-label">Email</label>
+                            <input type="email" class="form-control" id="email" placeholder="Email" required>
+                            <div class="invalid-feedback">
+                                Please enter a valid email address.
+                            </div>
+                        </div>
+
+
+                        <div class="mb-3">
+                            <label for="message" class="form-label">How we can help you? </label>
+                            <textarea id="message" class="form-control" rows="4" placeholder="Message"
+                                required></textarea>
+                            <div class="invalid-feedback">
+                                Please enter a message.
+                            </div>
+                        </div>
+
+                        <div class="mb-3 form-check ">
+                            <div class="d-inline-block text-start">
+                                <input type="checkbox" class="form-check-input" id="terms" required>
+                                <label class="form-check-label" for="terms">
+                                    Before submitting please read our <br>
+                                    <a href="#" class="text-decoration-none">Term and Condition</a> &
+                                    <a href="#" class="text-decoration-none">Privacy Policy</a>
+                                </label>
+                                <div class="invalid-feedback">
+                                    You must agree to the terms and conditions.
+                                </div>
+                            </div>
+                        </div>
+
+                        <button type="submit" class="btn submit-btn w-100">
+                            <i class="fas fa-paper-plane icon"></i>
+                            <span class="text">Submit</span>
+                        </button>
+
+                        <style>
+                            .submit-btn {
+                                position: relative;
+                                overflow: hidden;
+                                display: inline-flex;
+                                align-items: center;
+                                justify-content: center;
+                                width: 100%;
+                                height: 60px;
+                                font-size: 1.2rem;
+                                letter-spacing: 1px;
+                                text-transform: uppercase;
+                                border: none;
+                                border-radius: 10px;
+                                background: linear-gradient(to bottom, #9054d0, #7a4bd7);
+                                color: #ffffff;
+                                cursor: pointer;
+                                transition: all 0.3s ease-in-out;
+                                margin: 20px auto 0;
+                                /* Added top margin to move the button slightly down */
+                            }
+
+                            .submit-btn .icon {
+                                margin-right: 10px;
+                                font-size: 1.5rem;
+                                transition: all 0.5s ease-in-out;
+                                color: #ffffff;
+                            }
+
+                            .submit-btn .text {
+                                transition: all 0.5s ease-in-out;
+                                color: #ffffff;
+
+                            }
+
+                            .submit-btn:hover {
+                                background: linear-gradient(to bottom, #4CAF50, #45a049);
+                            }
+
+                            .submit-btn:hover .text {
+                                transform: translateX(420px);
+                                color: #ffffff;
+                            }
+
+                            .submit-btn:hover .icon {
+                                transform: translateX(45px);
+                                /* Adjusted to move to the middle */
+                                color: #ffffff;
+                            }
+
+                            @media (max-width: 768px) {
+                                .submit-btn:hover .icon {
+                                    transform: translateX(40px);
+                                    /* Reduced movement for smaller screens */
+                                }
+                            }
+
+                            .submit-btn:active {
+                                transform: translateY(3px);
+                                box-shadow:
+                                    inset 0 15px 15px -15px rgba(0, 0, 0, 0.3),
+                                    inset 0 0 0 1px rgba(255, 255, 255, 0.1),
+                                    0 2px 5px rgba(0, 0, 0, 0.1),
+                                    0 5px 10px rgba(0, 0, 0, 0.1);
+                            }
+                        </style>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <style>
+        @media (max-width: 991px) {
+            #contact .row {
+                display: flex;
+                flex-direction: column;
+            }
+
+            #contact-form {
+                order: 2;
+            }
+
+            #contact-info {
+                order: 1;
+            }
+        }
+    </style>
+
+    <section id="newsletter-cta" class="py-4 mb-0">
+        <div class="container-fluid ">
+            <div class="row align-items-center">
+                <div class="col-md-7 text-start">
+                    <h2 class="mb-3 fw-bold gradient-text">Stay Informed, Stay Ahead</h2>
+                    <p class="mb-4">Join our newsletter for exclusive insights and expert tips.</p>
+                    <form class="mb-3">
+                        <div class="input-group input-group-lg" style="max-width: 500px;">
+                            <input type="email" class="form-control" placeholder="Email address"
+                                aria-label="Email address" required style="border-radius: 10px 0 0 10px;">
+                            <button class="btn btn-primary" type="submit"
+                                style="border-radius: 0 10px 10px 0;">Subscribe</button>
+                        </div>
+                    </form>
+                    <p class="text-muted small">By subscribing, you agree to our <a href="#"
+                            class="text-decoration-none">Privacy Policy</a> and <a href="#"
+                            class="text-decoration-none">Terms of Service</a>.</p>
+                </div>
+                <div class="col-md-5">
+                    <div class="d-flex justify-content-md-end align-items-center mb-3">
+                        <img src="assets/img/footer1.png" alt="Logo 1" class="footer-logo me-3"
+                            style="max-height: 90px; width: auto;">
+                        <img src="assets/sticker.png" alt="Logo 2" class="footer-logo dark-mode-image"
+                            style="max-height: 90px; width: auto;">
+                        <style>
+                            .dark-mode-image {
+                                content: url('assets/sticker.png');
+                            }
+
+                            body.dark-mode .dark-mode-image {
+                                content: url('assets/img/footer2.png');
+                            }
+                        </style>
+                    </div>
+                    <div class="text-md-end">
+                        <p class="mb-2 text-muted small" style="font-size: 0.9rem;">&copy; 2024 Realta. All rights
+                            reserved.</p>
+                        <a href="https://www.realta.co.id/site/privacy-policy.html" class="text-muted small me-3"
+                            style="font-size: 0.9rem;">Privacy Policy</a>
+                        <span class="text-muted small me-3" style="font-size: 0.9rem;">|</span>
+                        <a href="https://www.realta.co.id/site/privacy-policy.html" class="text-muted small"
+                            style="font-size: 0.9rem;">Terms</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <style>
+        #newsletter-cta {
+            background: linear-gradient(135deg, #f5f7fa 0%, #a588bd 100%);
+            transition: background 0.3s ease;
+        }
+
+        #newsletter-cta .gradient-text {
+            background: linear-gradient(90deg, #7209d4, #2832d4 33%, #00a5b2);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            font-size: 2rem;
+        }
+
+        #newsletter-cta .btn-primary {
+            background: linear-gradient(to bottom, #9054d0, #7a4bd7);
+            border: none;
+            transition: all 0.3s ease;
+        }
+
+        #newsletter-cta .form-control {
+            border: 2px solid #e0e0e0;
+            transition: all 0.3s ease;
+        }
+
+        #newsletter-cta .form-control:focus {
+            border-color: #7209d4;
+            box-shadow: 0 0 0 0.2rem rgba(114, 9, 212, 0.25);
+        }
+
+        body.dark-mode #newsletter-cta {
+            background: #282828;
+        }
+
+        body.dark-mode #newsletter-cta .gradient-text {
+            background: linear-gradient(90deg, #a742ff, #4b5eff 33%, #00d5e6);
+            -webkit-background-clip: text;
+            background-clip: text;
+        }
+
+        body.dark-mode #newsletter-cta .btn-primary {
+            background: linear-gradient(90deg, #a742ff, #4b5eff);
+        }
+
+        body.dark-mode #newsletter-cta .form-control {
+            border-color: #4a5568;
+            color: #fff;
+        }
+
+        body.dark-mode #newsletter-cta .form-control::placeholder {
+            color: #a0aec0;
+        }
+
+        body.dark-mode #newsletter-cta .text-muted {
+            color: #a0aec0 !important;
+        }
+
+        body.dark-mode #newsletter-cta a {
+            color: #00d5e6;
+        }
+
+        @media (max-width: 767px) {
+            #newsletter-cta .gradient-text {
+                font-size: 1.5rem;
+            }
+
+            #newsletter-cta .row {
+                text-align: center;
+            }
+
+            #newsletter-cta .col-md-7 {
+                text-align: center;
+            }
+
+            #newsletter-cta .col-md-5 {
+                margin-top: 2rem;
+            }
+
+            #newsletter-cta .d-flex {
+                justify-content: center !important;
+            }
+
+            #newsletter-cta .text-md-end {
+                text-align: center !important;
+            }
+
+            #newsletter-cta .form-control {
+                font-size: 0.8rem;
+            }
+        }
+    </style>
+    <!-- END -->
+
+    <script>
+        window.addEventListener('scroll', function () {
+            var scrolled = window.pageYOffset;
+            var parallax = document.querySelector('.parallax-background');
+            parallax.style.transform = 'translateY(' + (scrolled * 0.4) + 'px)';
+        });
+    </script>
+    <script src="assets/js/navbar.js"></script>
+    <script src="assets/js/mobilenav.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/contact-valid-micro.js" data-service-type="Golf Course System"></script>
+
+
+
+</body>
+
+</html>

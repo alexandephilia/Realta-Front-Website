@@ -1,0 +1,3302 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Software Apartment| Mall, Offcice, Property & Tenancy System </title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+
+    <!-- the favicon -->
+    <link rel="icon" type="image/png" href="assets/img/r.png">
+
+
+    <!-- Preload fonts -->
+    <link rel="preload" href="assets/fonts/important-font.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="assets/font/proxima-nova/ProximaNova-Regular.woff2" as="font" type="font/woff2"
+        crossorigin>
+    <link rel="preload" href="assets/font/proxima-nova/ProximaNova-Bold.woff2" as="font" type="font/woff2" crossorigin>
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <!-- <link rel="stylesheet" href="assets/css/blog.css"> -->
+    <link rel="stylesheet" href="assets/css/responsive.css">
+    <link rel="stylesheet" href="assets/css/navbar-micro.css">
+    <link rel="stylesheet" href="assets/css/navbar.css">
+    <link rel="stylesheet" href="assets/css/mobilenav.css">
+
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;700&family=Roboto:wght@400;500&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Zilla+Slab:wght@400;700&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"> -->
+    <link rel="stylesheet" href="assets/fontawesome/css/all.min.css">
+
+    <!-- Slick Carousel -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css">
+
+    <!-- Owl Carousel -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
+
+    <!-- Scripts -->
+    <script src="assets/js/slider.js"></script>
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+
+    <style>
+       
+
+
+        .btn-outline-secondary {
+            color: #ffffff !important;
+            border-color: none !important;
+            background: linear-gradient(to right, #619fd1, #619fd1) !important;
+            transition: all 0.3s ease !important;
+            padding: 10px 25px !important;
+            font-weight: 500 !important;
+            font-size: 18px !important;
+            border-radius: 10px !important;
+        }
+
+        .btn-outline-secondary:hover {
+            color: #fff !important;
+            background-color: linear-gradient(to right, #619fd1, #619fd1) !important;
+            border-color: none !important;
+        }
+
+        .btn-outline-secondary:focus {
+            box-shadow: 0 0 0 0.25rem rgba(53, 116, 63, 0.25) !important;
+        }
+
+        .btn-outline-secondary:active {
+            color: #fff !important;
+            background-color: linear-gradient(to right, #619fd1, #619fd1) !important;
+            border-color: none !important;
+        }
+
+        @media (max-width: 768px) {
+            .btn-outline-secondary {
+                font-size: 15px !important;
+                padding: 8px 20px !important;
+            }
+        }
+
+        /* Fix section spacing */
+        section {
+            overflow: hidden !important;
+            width: 100% !important;
+            position: relative !important;
+        }
+
+        .dynamic-text-container {
+            font-size: 45px;
+            font-weight: 700;
+            height: 1em;
+            overflow: hidden;
+        }
+
+        .letter {
+            display: inline-block;
+            opacity: 0;
+            transform: translateY(20px);
+            filter: blur(5px);
+            transition: all 0.3s ease;
+        }
+
+        .letter.active {
+            opacity: 1;
+            transform: translateY(0);
+            filter: blur(0);
+        }
+
+        .letter.fade-out {
+            opacity: 0;
+            transform: translateY(-20px);
+            filter: blur(5px);
+        }
+
+        @media (max-width: 768px) {
+            .dynamic-text-container {
+                font-size: 2.5rem;
+                font-weight: 700;
+                height: 1em;
+                overflow: hidden;
+            }
+
+        }
+
+        header {
+            overflow: hidden !important;
+            /* This will keep the header content hidden if it overflows */
+        }
+
+
+
+        #mainNav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1030;
+            height: 66px;
+            /* PRECISE HEIGHT instead of 8.3% */
+            transition: all 0.3s ease-in-out;
+        }
+
+        #mainNav.navbar-scrolled {
+            height: 60px;
+        }
+
+        body {
+            /* navbar (66px) + announcement (44px) */
+        }
+
+        /* Add this style block in the <head> section or in your CSS file */
+        .container-fluid {
+            width: 100%;
+            /* Change from 95% to 100% */
+            padding-left: 8rem;
+            /* Add consistent padding */
+            padding-right: 8rem;
+            /* Add consistent padding */
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        @media (max-width: 768px) {
+            .container-fluid {
+                width: 100%;
+                padding-left: 0.5%;
+                /* Add consistent padding */
+                padding-right: 0.5%;
+                /* Add consistent padding */
+            }
+        }
+    </style>
+
+    <header>
+
+        <nav class="navbar navbar-expand-lg sticky-top navbar-shrink navbar-light" id="mainNav">
+            <div class="container-fluid ">
+                <a class="navbar-logo d-flex align-items-center" href="/">
+                    <img src="assets/img/realta.png" alt="Realta Logo" class="realta-logo">
+                </a>
+                <style>
+                    .realta-logo {
+                        width: 140px;
+                        height: 50%;
+                    }
+
+
+                    @media (max-width: 767px) {
+                        .realta-logo {
+                            width: 120px;
+                            height: auto;
+                            margin-left: -10px;
+                        }
+                    }
+                </style>
+                <div class="navbar-mobile-actions">
+                    <button id="darkModeToggleNav" class="btn-custom download-btn ms-1"
+                        style="border: none; min-width: fit-content; margin-right: 0.4rem;">
+                        <i class="fas fa-moon"></i>
+                    </button>
+                    <!-- Language switch button -->
+                    <!-- Language switch dropdown -->
+                    <div class="custom-dropdown">
+                        <button id="languageSwitch" class="btn-custom download-btn ms-1" type="button"
+                            style="border: none; min-width: fit-content; margin-right: 1.4rem;">
+                            <i class="fas fa-globe"></i>
+                        </button>
+                        <ul class="custom-dropdown-menu">
+                            <li><a href="#" data-lang="en">EN</a></li>
+                            <li><a href="#" data-lang="id">ID</a></li>
+                        </ul>
+                    </div>
+                    <div class="nav-drawer" data-bs-toggle="offcanvas" data-bs-target="#sidebar"
+                        aria-controls="sidebar">
+                        <i class="fas fa-bars" style="font-size: 1.7rem;"></i>
+                    </div>
+                </div>
+                <!-- Mobile responsive navigation menu -->
+                <div class="offcanvas offcanvas-end" tabindex="-1" id="sidebar" aria-labelledby="sidebarLabel">
+                    <div class="offcanvas-header">
+                        <div>
+                            <h5 class="offcanvas-title" id="sidebarLabel"
+                                style="margin-left: 33px; margin-bottom: 20px; font-size: 30px;">Menu</h5>
+                        </div>
+                        <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas"
+                            aria-label="Close"></button>
+                    </div>
+                    <div class="offcanvas-body">
+                        <div class="sidebar-menu">
+                            <div class="sidebar-item">
+                                <h2 style="font-size: 2.1rem;">Realta Chakradarma</h2>
+                                <hr>
+                                <h2 class="product-header" data-bs-toggle="collapse" data-bs-target="#productsSubmenu"
+                                    aria-expanded="false">
+                                    Products <i class="fas fa-chevron-right arrow-icon"></i>
+                                </h2>
+                                <div id="productsSubmenu" class="collapse">
+                                    <ul class="product-list">
+                                        <li>
+                                            <div class="product-header" data-bs-toggle="collapse"
+                                                data-bs-target="#hmsSubmenu" aria-expanded="false"
+                                                style="font-size: 1rem; font-weight: 400;">
+                                                Hotel Management System <i class="fas fa-chevron-right arrow-icon"></i>
+                                            </div>
+                                            <div id="hmsSubmenu" class="collapse product-submenu">
+                                                <p>Comprehensive solution for efficient hotel operations and guest
+                                                    management.</p>
+                                                <a href="#" class="discover-link">Discover HMS ›</a>
+                                                <h3 class="modules-heading">MODULES</h3>
+                                                <ul class="modules-list">
+                                                    <li>
+                                                        <strong>Reservation Management</strong>
+                                                        <span>Streamline booking processes</span>
+                                                    </li>
+                                                    <li>
+                                                        <strong>Front Desk Operations</strong>
+                                                        <span>Efficient check-in and check-out</span>
+                                                    </li>
+                                                    <li>
+                                                        <strong>Housekeeping Management</strong>
+                                                        <span>Optimize room maintenance</span>
+                                                    </li>
+                                                    <li>
+                                                        <strong>Revenue Management</strong>
+                                                        <span>Maximize profitability</span>
+                                                    </li>
+                                                    <li>
+                                                        <strong>Guest Experience Management</strong>
+                                                        <span>Enhance customer satisfaction</span>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="product-header" data-bs-toggle="collapse"
+                                                data-bs-target="#gcsSubmenu" aria-expanded="false"
+                                                style="font-size: 1rem; font-weight: 400;">
+                                                Golf Course System <i class="fas fa-chevron-right arrow-icon"></i>
+                                            </div>
+                                            <div id="gcsSubmenu" class="collapse product-submenu">
+                                                <p>Integrated system for efficient golf course management and
+                                                    operations.</p>
+                                                <a href="#" class="discover-link">Discover GCS ›</a>
+                                                <h3 class="modules-heading">MODULES</h3>
+                                                <ul class="modules-list">
+                                                    <li>
+                                                        <strong>Tee Time Management</strong>
+                                                        <span>Optimize scheduling and bookings</span>
+                                                    </li>
+                                                    <li>
+                                                        <strong>Member Management</strong>
+                                                        <span>Streamline membership processes</span>
+                                                    </li>
+                                                    <li>
+                                                        <strong>Pro Shop Management</strong>
+                                                        <span>Inventory and sales management</span>
+                                                    </li>
+                                                    <li>
+                                                        <strong>Tournament Management</strong>
+                                                        <span>Organize and manage events</span>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="product-header" data-bs-toggle="collapse"
+                                                data-bs-target="#hrSystemSubmenu" aria-expanded="false"
+                                                style="font-size: 1rem; font-weight: 400;">
+                                                HR System <i class="fas fa-chevron-right arrow-icon"></i>
+                                            </div>
+                                            <div id="hrSystemSubmenu" class="collapse product-submenu">
+                                                <p>Comprehensive human resource management solution for businesses of
+                                                    all sizes.</p>
+                                                <a href="#" class <div id="container-header"
+                                                    class="container py-5">discover-link">Discover HR System ›</a>
+                                                <h3 class="modules-heading">MODULES</h3>
+                                                <ul class="modules-list">
+                                                    <li>
+                                                        <strong>Employee Management</strong>
+                                                        <span>Centralize employee data and records</span>
+                                                    </li>
+                                                    <li>
+                                                        <strong>Payroll Processing</strong>
+                                                        <span>Automate salary calculations and payments</span>
+                                                    </li>
+                                                    <li>
+                                                        <strong>Time and Attendance</strong>
+                                                        <span>Track employee work hours and absences</span>
+                                                    </li>
+                                                    <li>
+                                                        <strong>Performance Management</strong>
+                                                        <span>Set goals and conduct evaluations</span>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="product-header" data-bs-toggle="collapse"
+                                                data-bs-target="#propertyTenantSubmenu" aria-expanded="false"
+                                                style="font-size: 1rem; font-weight: 400;">
+                                                Property and Tenant System <i
+                                                    class="fas fa-chevron-right arrow-icon"></i>
+                                            </div>
+                                            <div id="propertyTenantSubmenu" class="collapse product-submenu">
+                                                <p>Efficient management solution for property owners and landlords.</p>
+                                                <a href="#" class="discover-link">Discover Property and Tenant System
+                                                    ›</a>
+                                                <h3 class="modules-heading">MODULES</h3>
+                                                <ul class="modules-list">
+                                                    <li>
+                                                        <strong>Property Management</strong>
+                                                        <span>Organize and track property details</span>
+                                                    </li>
+                                                    <li>
+                                                        <strong>Tenant Management</strong>
+                                                        <span>Manage tenant information and leases</span>
+                                                    </li>
+                                                    <li>
+                                                        <strong>Rent Collection</strong>
+                                                        <span>Automate rent payments and tracking</span>
+                                                    </li>
+                                                    <li>
+                                                        <strong>Maintenance Requests</strong>
+                                                        <span>Handle and track property maintenance</span>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="product-header" data-bs-toggle="collapse"
+                                                data-bs-target="#itsmSubmenu" aria-expanded="false"
+                                                style="font-size: 1rem; font-weight: 400;">
+                                                ITSM, ITAM & Unified Endpoint Management <i
+                                                    class="fas fa-chevron-right arrow-icon"></i>
+                                            </div>
+                                            <div id="itsmSubmenu" class="collapse product-submenu">
+                                                <p>Comprehensive IT Service Management solution for streamlined IT
+                                                    operations.</p>
+                                                <a href="#" class="discover-link">Discover ITSM, ITAM & Unified Endpoint
+                                                    Management ›</a>
+                                                <h3 class="modules-heading">MODULES</h3>
+                                                <ul class="modules-list">
+                                                    <li>
+                                                        <strong>Incident Management</strong>
+                                                        <span>Efficiently handle and resolve IT issues</span>
+                                                    </li>
+                                                    <li>
+                                                        <strong>Change Management</strong>
+                                                        <span>Control and implement IT changes</span>
+                                                    </li>
+                                                    <li>
+                                                        <strong>Asset Management</strong>
+                                                        <span>Track and manage IT assets</span>
+                                                    </li>
+                                                    <li>
+                                                        <strong>Service Catalog</strong>
+                                                        <span>Organize and offer IT services</span>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="product-header" data-bs-toggle="collapse"
+                                                data-bs-target="#erpSubmenu" aria-expanded="false"
+                                                style="font-size: 1rem; font-weight: 400;">
+                                                ERP & EAM <i class="fas fa-chevron-right arrow-icon"></i>
+                                            </div>
+                                            <div id="erpSubmenu" class="collapse product-submenu">
+                                                <p>Integrated Enterprise Resource Planning solution for business
+                                                    management.</p>
+                                                <a href="#" class="discover-link">Discover ERP & EAM ›</a>
+                                                <h3 class="modules-heading">MODULES</h3>
+                                                <ul class="modules-list">
+                                                    <li>
+                                                        <strong>Financial Management</strong>
+                                                        <span>Manage accounting and finances</span>
+                                                    </li>
+                                                    <li>
+                                                        <strong>Supply Chain Management</strong>
+                                                        <span>Optimize procurement and logistics</span>
+                                                    </li>
+                                                    <li>
+                                                        <strong>Manufacturing</strong>
+                                                        <span>Streamline production processes</span>
+                                                    </li>
+                                                    <li>
+                                                        <strong>Customer Relationship Management</strong>
+                                                        <span>Enhance customer interactions</span>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="sidebar-item">
+                                <h2 class="product-header" data-bs-toggle="collapse" data-bs-target="#resourcesSubmenu"
+                                    aria-expanded="false style=" font-size: 1.1rem;"">
+                                    Resources <i class="fas fa-chevron-right arrow-icon"></i>
+                                </h2>
+                                <div id="resourcesSubmenu" class="collapse">
+                                    <ul class="submenu-list">
+                                        <li><a href="#">Blog</a></li>
+                                        <li><a href="#">Webinars</a></li>
+                                        <li><a href="#">White Papers</a></li>
+                                        <li><a href="#">Case Studies</a></li>
+                                        <li><a href="#">eBooks</a></li>
+                                        <li><a href="#">Product Videos</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="sidebar-item">
+                                <h2 class="product-header" data-bs-toggle="collapse" data-bs-target="#partnersSubmenu"
+                                    aria-expanded="false">
+                                    Partners <i class="fas fa-chevron-right arrow-icon"></i>
+                                </h2>
+                                <div id="partnersSubmenu" class="collapse">
+                                    <!-- Add partners submenu content here -->
+                                </div>
+                            </div>
+                            <div class="sidebar-item">
+                                <h2 class="product-header" data-bs-toggle="collapse" data-bs-target="#companySubmenu"
+                                    aria-expanded="false">
+                                    Company <i class="fas fa-chevron-right arrow-icon"></i>
+                                </h2>
+                                <div id="companySubmenu" class="collapse">
+                                    <ul class="submenu-list">
+                                        <li><a href="#">About Us</a></li>
+                                        <li><a href="#">Our Team</a></li>
+                                        <li><a href="#" onclick="navigateWithLoading('career.html'); return false;"
+                                                style="text-decoration: none; color: inherit;">Career</a></li>
+                                        <li><a href="#">News</a></li>
+                                        <li><a href="#">Contact</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="sidebar-item">
+                                <h2 class="product-header">
+                                    <a href="#" onclick="navigateWithLoading('blog.html'); return false;"
+                                        style="text-decoration: none; color: inherit;">Blog</a>
+                                </h2>
+                            </div>
+                        </div>
+                        <div class="get-started-container" style="margin-top: -10px !important;">
+                            <!-- Adjusted margin-top to move slightly to the top -->
+
+                            <a href="https://api.whatsapp.com/send?phone=628111221789&text=Hallo%20PT%20Realta..."
+                                target="_blank" rel="noopener noreferrer" class="btn btn-success btn-block"
+                                style="width: 100%; margin-top: 50px;">
+                                <i class="fab fa-whatsapp"></i> Contact Us
+                            </a>
+                            <div class="d-flex justify-content-between align-items-center"
+                                style="padding: 20px 0; margin-top: 20px;">
+                                <h2 class="text-left mb-0" style="margin-right: 20px; font-size: 1.5rem;">Get in Touch
+                                </h2>
+                                <div class="social-icons" style="display: flex; justify-content: flex-end;">
+                                    <a href="#" target="_blank" rel="noopener noreferrer"
+                                        style="margin-right: 10px; display: inline-flex; justify-content: center; align-items: center; background-color: black; border-radius: 50%; width: 30px; height: 30px;"><i
+                                            class="fab fa-facebook-f" style="color: white;"></i></a>
+                                    <a href="#" target="_blank" rel="noopener noreferrer"
+                                        style="margin-right: 10px; display: inline-flex; justify-content: center; align-items: center; background-color: black; border-radius: 50%; width: 30px; height: 30px;"><i
+                                            class="fab fa-twitter" style="color: white;"></i></a>
+                                    <a href="#" target="_blank" rel="noopener noreferrer"
+                                        style="margin-right: 10px; display: inline-flex; justify-content: center; align-items: center; background-color: black; border-radius: 50%; width: 30px; height: 30px;"><i
+                                            class="fab fa-instagram" style="color: white;"></i></a>
+                                    <a href="#" target="_blank" rel="noopener noreferrer"
+                                        style="display: inline-flex; justify-content: center; align-items: center; background-color: black; border-radius: 50%; width: 30px; height: 30px;"><i
+                                            class="fab fa-linkedin-in" style="color: white;"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <style>
+                    @media (min-width: 992px) {
+                        #sidebar {
+                            display: none !important;
+                            z-index: 2031;
+                        }
+
+                        .offcanvas-backdrop {
+                            display: none !important;
+                        }
+
+                        body {
+                            overflow: auto !important;
+                            padding-right: 0 !important;
+                        }
+                    }
+                </style>
+
+
+                <style>
+                    .custom-dropdown {
+                        position: relative;
+                        display: inline-block;
+                    }
+
+                    .custom-dropdown-menu {
+                        display: none;
+                        position: absolute;
+                        top: 69%;
+                        right: 5%;
+                        /* Changed from -10% to -5% to move slightly to the left */
+                        background: rgba(179, 179, 179, 0.137);
+                        backdrop-filter: blur(10px);
+                        border-radius: 10px;
+                        width: 80px;
+                        /* Further reduced width for an even smaller dropdown */
+                        z-index: 1000;
+                        list-style-type: none;
+                        padding: 0.25rem 0;
+                        /* Reduced padding for a smaller dropdown */
+                        margin: 0.5rem 0 0 0;
+                        border: 1px solid rgba(255, 255, 255, 0.18);
+                    }
+
+                    .custom-dropdown-menu li {
+                        padding: 0.2rem 0;
+                        /* Reduced padding for smaller items */
+                        text-align: center;
+                        /* Centered text */
+                    }
+
+                    .custom-dropdown-menu li a {
+                        color: #333;
+                        padding: 0.3rem 0.3rem;
+                        /* Adjusted padding for better alignment */
+                        text-decoration: none;
+                        display: block;
+                        font-size: 0.8rem;
+                        /* Reduced font size for smaller dropdown */
+                        transition: background-color 0.3s ease;
+                    }
+
+                    .custom-dropdown-menu li a:hover {
+                        background-color: rgba(126, 126, 126, 0.5);
+                        color: #fff;
+                        /* Change text color on hover */
+                        transform: scale(1.05);
+                        /* Slightly enlarge the item */
+                        border-radius: 10px;
+                        /* Added border radius for hover background */
+                        transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
+                        /* Smooth transition */
+                    }
+
+                    .custom-dropdown:hover .custom-dropdown-menu {
+                        display: block;
+
+                    }
+                </style>
+                <div class="full-screen-sidebar">
+                    <style>
+                        @media (min-width: 992px) {
+                            .full-screen-sidebar {
+                                margin-right: -45px;
+                            }
+                        }
+
+                        @media (max-width: 768px) {
+                            .full-screen-sidebar {
+                                margin-right: 0;
+                            }
+                        }
+                    </style>
+                    <ul class="sidebar-nav justify-content-end align-items-center"
+                        style="padding: 0; margin: 0; margin-top: 8px; list-style-type: none;">
+                        <!-- Solutions dropdown -->
+                        <li class="me-1"><a class="nav-link dropdown-toggle" href="#" id="solutionsDropdown"
+                                role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Solution <i class="fas fa-chevron-down ms-1 fa-xs"></i>
+                            </a></li>
+
+                        <!-- Industry dropdown -->
+                        <li class="me-1">
+                            <a href="hospitality.html" class="nav-link"
+                                onclick="navigateWithLoading('hospitality.html')">Industry</a>
+                        </li>
+
+                        <!-- Partner dropdown -->
+                        <li class="me-1">
+                            <a href="index.html#partners" class="nav-link"
+                                onclick="navigateWithLoading('index.html#partners')">Partners</a>
+                        </li>
+                        <!-- Contact dropdown -->
+                        <li class="me-1">
+                            <a href="index.html#contact" class="nav-link"
+                                onclick="navigateWithLoading('index.html#contact')">Contact</a>
+                        </li>
+
+                        <!-- Career dropdown -->
+                        <li class="me-1">
+                            <a href="career.html" class="nav-link"
+                                onclick="navigateWithLoading('career.html')">Career</a>
+                        </li>
+
+                        <!-- Blog link -->
+                        <li class="me-1">
+                            <a href="blog.html" class="nav-link" onclick="navigateWithLoading('blog.html')">Blog</a>
+                        </li>
+
+                        <!-- About Realta dropdown -->
+                        <li>
+                            <a href="about.html" class="nav-link" onclick="navigateWithLoading('about.html')">About
+                                Us</a>
+                        </li>
+
+                    </ul>
+                    <div class="sidebar-actions d-flex justify-content-end align-items-center"
+                        style="margin-bottom: 0.5rem;">
+                       
+                        <button id="darkModeToggleSidebar" class="btn-custom ms-2">
+                            <i class="fas fa-moon"></i>
+                        </button>
+                        <div class="custom-dropdown">
+                            <button id="languageSwitch" class="btn-custom download-btn ms-1" type="button"
+                                style="border: none; min-width: fit-content; margin-right: 1.4rem;">
+                                <i class="fas fa-globe"></i>
+                            </button>
+                            <ul class="custom-dropdown-menu">
+                                <li><a href="#" data-lang="en">EN</a></li>
+                                <li><a href="#" data-lang="id">ID</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="mega-dropdown" id="solutionsDropdownContent">
+                <div class="dropdown-content">
+                    <div class="product-categories">
+                        <div class="product-category" data-product="gcs">Golf Course System</div>
+                        <div class="product-category" data-product="hrs">HR System</div>
+                        <div class="product-category " data-product="hms">Hotel Management System</div>
+                        <div class="product-category" data-product="itm">ITSM, ITAM & Unified Endpoint Management</div>
+                        <div class="product-category" data-product="pts">Property & Tenancy System</div>
+                        <div class="product-category" data-product="erp">Network & System Integration</div>
+                        <div
+                            style="background: linear-gradient(90deg, transparent 0%, rgba(133, 22, 188, 0.582) 50%, transparent 100%); height: 1px; margin: 10px 0; pointer-events: none;">
+                        </div>
+                    </div>
+                    <div class="product-details" id="product-details">
+                        <!-- Content will be dynamically updated here -->
+                    </div>
+                </div>
+            </div>
+            <div class="mega-dropdown" id="industriDropdownContent">
+                <div class="dropdown-content">
+                    <div class="product-categories">
+                        <div class="product-category active" data-product="hospitality">Hospitality</div>
+                        <div class="product-category" data-product="property">Property</div>
+                        <div class="product-category" data-product="manufacturing">Manufacturing</div>
+                        <div class="product-category" data-product="fsi">FSI</div>
+                    </div>
+                    <div class="product-details" id="industri-details">
+                        <!-- Content will be dynamically updated here -->
+                    </div>
+                </div>
+            </div>
+            <div class="mega-dropdown" id="partnerDropdownContent">
+                <div class="dropdown-content">
+                    <div class="product-categories">
+                        <div class="product-category active" data-product="reseller">Reseller Program</div>
+                        <div class="product-category" data-product="technology">Technology Partners</div>
+                    </div>
+                    <div class="product-details" id="partner-details">
+                        <!-- Content will be dynamically updated here -->
+                    </div>
+                </div>
+            </div>
+            <div class="mega-dropdown" id="contactDropdownContent">
+                <div class="dropdown-content">
+                    <div class="product-categories">
+                        <div class="product-category active" data-product="business">Business Consultation</div>
+                        <div class="product-category" data-product="technical">Technical Consultation</div>
+                    </div>
+                    <div class="product-details" id="contact-details">
+                        <!-- Content will be dynamically updated here -->
+                    </div>
+                </div>
+            </div>
+            <div class="mega-dropdown" id="careerDropdownContent">
+                <div class="dropdown-content">
+                    <div class="product-categories">
+                        <div class="product-category active" data-product="openings">Job Openings</div>
+                        <div class="product-category" data-product="internships">Internship Programs</div>
+                        <div class="product-category" data-product="culture">Company Culture</div>
+                    </div>
+                    <div class="product-details" id="career-details">
+                        <!-- Content will be dynamically updated here -->
+                    </div>
+                </div>
+            </div>
+            <div class="mega-dropdown" id="tentangRealtaDropdownContent">
+                <div class="dropdown-content">
+                    <div class="product-categories">
+                        <div class="product-category active" data-product="about">About Realta</div>
+                    </div>
+                    <div class="product-details" id="tentangRealta-details">
+                        <!-- Content will be dynamically updated here -->
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+      
+
+        <style>
+            /* Base announcement bar */
+            .top-announcement-bar {
+                background-color: rgb(248, 248, 248);
+                position: fixed;
+                top: 66px;
+                left: 0;
+                right: 0;
+                z-index: 1029;
+                height: 44px;
+                border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+                box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            }
+
+            /* Content container */
+            .announcement-content {
+                display: flex;
+                justify-content: space-between;
+                /* Push items to edges */
+                align-items: center;
+                width: 100%;
+                height: 100%;
+                padding: 0 4.5%;
+                /* Match container-fluid padding */
+            }
+
+            /* Logo styling */
+            .announcement-logo {
+                flex: 0 0 auto;
+                margin-top: -2px;
+            }
+
+            .announcement-logo-img {
+                height: 33px;
+                width: auto;
+            }
+
+            /* Navigation styling */
+            .announcement-nav {
+                display: flex;
+                align-items: center;
+                gap: 30px;
+            }
+
+            .announcement-nav-item {
+                color: #464646c0;
+                text-decoration: none;
+                font-size: 13px;
+                font-weight: bold;
+                transition: color 0.3s ease;
+                display: flex;
+                align-items: center;
+                transition: all 0.3s ease;
+                gap: 5px;
+            }
+
+            .announcement-nav-item:hover {
+                color: #9054d0;
+                transform: scale(1.05);
+            }
+
+            /* Dropdown styling */
+            .announcement-dropdown {
+                position: relative;
+            }
+
+            .announcement-dropdown-content {
+                position: absolute;
+                top: calc(100% + 10px);
+                right: 0;
+                background: #ffffff;
+                min-width: 200px;
+                box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+                border-radius: 8px;
+                opacity: 0;
+                visibility: hidden;
+                transform: translateY(-10px);
+                transition: all 0.3s ease;
+            }
+
+            .announcement-dropdown:hover .announcement-dropdown-content {
+                opacity: 1;
+                visibility: visible;
+                transform: translateY(0);
+            }
+
+            .announcement-dropdown-item {
+                display: block;
+                padding: 12px 20px;
+                color: #333;
+                text-decoration: none;
+                font-size: 13px;
+                transition: all 0.2s ease;
+            }
+
+            .announcement-dropdown-item:hover {
+                background-color: #f5f5f5;
+                color: #9054d0;
+            }
+
+            /* Dark mode */
+            body.dark-mode .top-announcement-bar {
+                background-color: rgba(30, 30, 30, 0.95);
+                border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            }
+
+            body.dark-mode .announcement-nav-item,
+            body.dark-mode .announcement-dropdown-item {
+                color: #fff;
+            }
+
+            body.dark-mode .announcement-dropdown-content {
+                background: #1a1a1a;
+            }
+
+            body.dark-mode .announcement-dropdown-item:hover {
+                background-color: #2d2d2d;
+                color: #bb86fc;
+            }
+
+            /* Mobile hide */
+            @media (max-width: 768px) {
+                .top-announcement-bar {
+                    display: none;
+                }
+
+                body {
+                    padding-top: 66px;
+                    /* Only navbar height on mobile */
+                }
+            }
+        </style>
+
+        <div class="navbar-banner__blur navbar-banner__blur--1"></div>
+        <div class="navbar-banner__blur navbar-banner__blur--2"></div>
+
+
+    </header>
+
+<body>
+    <!-- Add WhatsApp floating button -->
+    <a href="https://api.whatsapp.com/send?phone=628111221789&text=Hallo%20PT%20Realta..." target="_blank" rel="noopener noreferrer" class="whatsapp-float">
+        <i class="fab fa-whatsapp"></i>
+        <div class="text-content">
+            <span class="click-text">Click here</span>
+            <span class="sub-text">To arrange meeting and demo with us</span>
+        </div>
+    </a>
+    <!-- LOADING -->
+    <div id="loading-overlay" class="loading-overlay">
+        <div class="loading-container">
+            <div class="loading-text">Loading...</div>
+            <div class="spinner">
+                <div class="spinner-inner"></div>
+            </div>
+        </div>
+    </div>
+    <script>
+        function navigateWithLoading(url) {
+            const loadingOverlay = document.getElementById('loading-overlay');
+            loadingOverlay.style.display = 'flex'; // Show the loading overlay
+            document.body.style.overflow = 'hidden'; // Prevent scrolling
+
+            // Wait for the animation to complete before navigating
+            setTimeout(function () {
+                window.location.href = url;
+            }, 2000); // Adjust the delay as needed (in milliseconds)
+        }
+
+        document.addEventListener('DOMContentLoaded', function () {
+            // This script block can contain other page initialization code
+        });
+    </script>
+    <style>
+        .loading-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(5px);
+            display: none;
+            /* Initially hidden */
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+        }
+
+        .loading-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .loading-text {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 20px;
+            color: #9054d0;
+            opacity: 0;
+            animation: fade-in 0.5s ease-in-out forwards;
+            animation-delay: 0.5s;
+            /* Add a delay to the fade-in animation */
+        }
+
+        .spinner {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            border: 4px solid rgba(52, 152, 219, 0.2);
+            border-top-color: #9054d0;
+            animation: spin 1s ease-in-out infinite;
+        }
+
+        @keyframes spin {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        @keyframes fade-in {
+            0% {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .product-banner {
+            cursor: pointer;
+        }
+    </style>
+    <!-- LOADING -->
+     
+<section class="carousel-header">
+    <div id="headerCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="5000">
+        <div class="carousel-inner">
+            <div class="carousel-item active" style="background-image: url('assets/img/bimasakti/bimasakti-wallpaper-web-min.jpg');">
+                <div class="carousel-overlay"></div>
+                <div class="dot-pattern-overlay"></div>
+                <div class="carousel-container">
+                    <div class="carousel-content-left">
+                        <h1>Digital Transformation For Your Property Management with BIMASAKTI</h1>
+                        <div class="badge">Property Management Innovation</div>
+                        <p>Using an Integrated System to reduce costs and improve service efficiency through better business processes.</p>
+                        <button class="erp-learn-btn">Learn More</button>
+                    </div>
+                    <div class="carousel-content-right">
+                        <div class="floating-cards-container">
+                            <div class="floating-card card-top">
+                                <div class="card-icon">
+                                    <i class="fas fa-building"></i>
+                                </div>
+                                <h3>Property Management</h3>
+                                <p>Streamlined operations and control</p>
+                            </div>
+                            <img src="assets/img/bimasakti/product-overview.png" alt="Property Management" class="center-image">
+                            <div class="floating-card card-bottom">
+                                <div class="card-icon">
+                                    <i class="fas fa-chart-line"></i>
+                                </div>
+                                <h3>Business Efficiency</h3>
+                                <p>Optimize costs and improve service</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-item" style="background-image: url('assets/img/bimasakti/bimasakti-wallpaper-web-min.jpg');">
+                <div class="carousel-overlay"></div>
+                <div class="dot-pattern-overlay"></div>
+                <div class="carousel-container">
+                    <div class="carousel-content-left">
+                        <h1>Transform Your Property Management</h1>
+                        <div class="badge">Property Management Innovation</div>
+                        <p>Using an Integrated System to reduce costs and improve service efficiency through better business processes.</p>
+                        <button class="erp-learn-btn">Discover More</button>
+                    </div>
+                    <div class="carousel-content-right">
+                        <div class="floating-card card-top">
+                            <div class="card-icon">
+                                <i class="fas fa-cogs"></i>
+                            </div>
+                            <h3>Process Automation</h3>
+                            <p>Streamline workflows and reduce manual tasks</p>
+                        </div>
+                        <div class="floating-card card-bottom">
+                            <div class="card-icon">
+                                <i class="fas fa-chart-pie"></i>
+                            </div>
+                            <h3>Business Analytics</h3>
+                            <p>Data-driven property management</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <button class="carousel-control-prev" type="button" data-bs-target="#headerCarousel" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#headerCarousel" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+
+    <style>
+        .carousel-header {
+            position: relative;
+            height: 100vh;
+            width: 100%;
+            overflow: hidden;
+        }
+
+        /* Add carousel arrow styles */
+        .carousel-control-prev,
+        .carousel-control-next {
+            width: 5%;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            background: none;
+        }
+
+        .carousel-header:hover .carousel-control-prev,
+        .carousel-header:hover .carousel-control-next {
+            opacity: 0.8;
+        }
+
+        .carousel-control-prev-icon,
+        .carousel-control-next-icon {
+            width: 40px;
+            height: 40px;
+            filter: drop-shadow(0 0 2px rgba(0, 0, 0, 0.3));
+        }
+
+        @media (max-width: 768px) {
+
+            .carousel-control-prev,
+            .carousel-control-next {
+                width: 10%;
+            }
+        }
+
+        .carousel-item {
+            height: 100vh;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            position: relative;
+            transition: transform 1.2s cubic-bezier(0.4, 0, 0.2, 1);
+            will-change: transform;
+        }
+
+        .carousel-fade .carousel-item {
+            opacity: 0;
+            transition: opacity 1s cubic-bezier(0.4, 0, 0.2, 1);
+            will-change: opacity;
+            backface-visibility: hidden;
+            perspective: 1000px;
+        }
+
+        .carousel-fade .carousel-item.active {
+            opacity: 1;
+        }
+
+        .carousel-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 1;
+        }
+
+        .dot-pattern-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: radial-gradient(rgba(255, 255, 255, 0.2) 1px, transparent 1px);
+            background-size: 20px 20px;
+            z-index: 2;
+            opacity: 0.3;
+        }
+
+        .carousel-container {
+            position: relative;
+            display: flex;
+            height: 100%;
+            z-index: 3;
+            max-width: 1755px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            gap: 4rem;
+        }
+
+        .carousel-content-left {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;
+            padding-right: 4rem;
+            color: #fff;
+            text-align: left;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+            max-width: 50%;
+        }
+
+        .carousel-item.active .carousel-content-left {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .carousel-content-left h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+            line-height: 1.2;
+            transform: translateY(20px);
+            transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1) 0.2s;
+        }
+
+        .carousel-content-left .badge {
+            display: inline-block;
+            background: rgba(84, 173, 208, 0.432);
+            padding: 8px 16px;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: 500;
+            margin: 1rem 0;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+            transform: translateY(20px);
+            transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1) 0.3s;
+            width: auto;
+            max-width: fit-content;
+            backdrop-filter: blur(5px);
+        }
+
+        .carousel-content-left p {
+            font-size: 20px !important;
+            margin-bottom: 2rem;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+            line-height: 1.6;
+            transform: translateY(20px);
+            transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1) 0.4s;
+            max-width: 90%;
+        }
+
+        .carousel-content-right {
+            flex: 1;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding-left: 2rem;
+        }
+
+        .floating-card {
+            position: absolute;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            width: 300px;
+            transition: all 0.3s ease;
+            z-index: 4;
+            opacity: 0;
+            transform: translateY(30px);
+            border: 2px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .carousel-item.active .floating-card {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .card-top {
+            top: 25%;
+            left: 0;
+            transition-delay: 0.3s;
+            z-index: 5;
+        }
+
+        .card-bottom {
+            bottom: 25%;
+            right: 0;
+            transition-delay: 0.6s;
+            z-index: 4;
+        }
+
+        .floating-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        .floating-card .card-icon {
+            font-size: 2rem;
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: 1rem;
+        }
+
+        .floating-card h3 {
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .floating-card p {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 1rem;
+            margin: 0;
+        }
+
+        .floating-cards-container {
+            position: relative;
+            width: 100%;
+            height: 100%;
+        }
+
+        .center-image {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 200px;
+            height: 200px;
+            z-index: 3;
+            box-shadow: 0 0 30px rgba(0, 0, 0, 0.2);
+            border: 3px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .erp-learn-btn {
+            width: fit-content;
+            font-size: 1rem;
+            padding: 10px 20px;
+                background: linear-gradient(287deg, #026097, #026897, #32a7ca);
+            color: #fff;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            box-shadow: 0 4px 15px rgba(2, 39, 151, 0.3);
+            transform: translateY(20px);
+            opacity: 0;
+            margin: 0;
+            align-self: flex-start;
+            transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1) 0.5s,
+                opacity 0.6s cubic-bezier(0.4, 0, 0.2, 1) 0.5s,
+                background 0.3s ease;
+        }
+
+        .carousel-item.active .erp-learn-btn {
+            transform: translateY(0);
+            margin-top: 25px;
+            opacity: 1;
+        }
+
+        .erp-learn-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(84, 183, 208, 0.4);
+            background: linear-gradient(287deg, #026097, #026897, #32a7ca);
+        }
+
+        @media (max-width: 991px) {
+            .carousel-content-left h1 {
+                font-size: 2.5rem;
+            }
+
+            .carousel-container {
+                flex-direction: column;
+                gap: 2rem;
+                max-width: 100%;
+                height: 100vh;
+                padding-bottom: 8rem;
+            }
+
+            .carousel-content-left {
+                padding-right: 0;
+                align-items: center;
+                text-align: center;
+                padding-top: 4rem;
+                max-width: 100%;
+            }
+
+            .carousel-content-right {
+                display: none;
+            }
+
+            .erp-learn-btn {
+                margin: 0 auto;
+                align-self: center;
+            }
+
+            .floating-card {
+                position: relative;
+                width: 100%;
+                max-width: 300px;
+                margin: 1rem auto;
+            }
+
+            .card-top,
+            .card-bottom {
+                position: static;
+                transition-delay: 0s;
+            }
+
+            .center-image {
+                position: static;
+                transform: none;
+                margin: 2rem auto;
+                display: block;
+            }
+        }
+    </style>
+</section>
+
+    <style>
+        .parallax-header {
+            position: relative;
+            height: 100vh;
+            width: 100%;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-image: url('assets/img/siap/siap.jpg');
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        .parallax-content {
+            text-align: center;
+            color: #fff;
+            padding: 20px;
+            max-width: 1300px;
+            z-index: 2;
+            animation: fadeIn 1s ease-in;
+        }
+
+        .parallax-content h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+            line-height: 1.2;
+        }
+
+        .parallax-content .badge {
+            display: inline-block;
+            background: rgba(208, 84, 177, 0.432);
+            padding: 8px 16px;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: 500;
+            margin: 1rem 0;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+        }
+
+        .parallax-content p {
+            font-size: 20px !important;
+            margin-bottom: 2rem;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+            line-height: 1.6;
+        }
+
+        .parallax-header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.4);
+            z-index: 1;
+        }
+
+        @media (max-width: 768px) {
+            .parallax-content h1 {
+                font-size: 2.5rem;
+            }
+
+            .parallax-content p {
+                font-size: 1rem !important;
+            }
+
+            .parallax-content .badge {
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+    <style>
+        @keyframes slideIn {
+            from {
+                transform: translateY(50px);
+                opacity: 0;
+            }
+
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        .slide-in {
+            animation: slideIn 1s ease-out forwards;
+            opacity: 0;
+        }
+
+        .slide-in:nth-child(1) {
+            animation-delay: 0.2s;
+        }
+
+        .slide-in:nth-child(2) {
+            animation-delay: 0.4s;
+        }
+
+        .slide-in:nth-child(3) {
+            animation-delay: 0.6s;
+        }
+    </style>
+    <style>
+        .parallax-section {
+            position: relative;
+            overflow: hidden;
+            min-height: 700px;
+            display: flex;
+            font-family: 'proxima-nova', sans-serif;
+            align-items: center;
+            color: #fff;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        .parallax-background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            z-index: -1;
+            filter: brightness(0.7);
+        }
+
+        .parallax-background::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(128, 0, 128, 0.2);
+            /* Slight purple opacity */
+            z-index: 1;
+        }
+
+        /* Mobile responsive styles */
+        @media (max-width: 768px) {
+            .parallax-section {
+                min-height: 400px;
+
+            }
+
+            .parallax-background {
+                background-attachment: scroll;
+            }
+
+            h1.display-3 {
+                font-size: 2rem;
+            }
+
+            p.lead {
+                font-size: 1rem;
+            }
+
+            .btn-lg {
+                font-size: 1rem;
+                padding: 0.5rem 1rem;
+                width: auto;
+                display: inline-block;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .parallax-section {
+                min-height: 500px;
+            }
+
+            h1.display-3 {
+                font-size: 1.5rem;
+            }
+
+            p.lead {
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+
+    <style>
+        .advanced-section {
+            position: relative;
+            overflow: visible;
+            background-color: transparent;
+            margin-top: -90px;
+            /* Increased negative margin for more overlap */
+            z-index: 2;
+        }
+
+        .card-container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 30px;
+            margin: 0 auto;
+            max-width: 1200px;
+            /* Adjust this value as needed */
+            padding: 0 15px;
+        }
+
+        .card {
+            width: 320px;
+            height: 100%;
+            background-color: #fff;
+            border-radius: 12px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.048) !important;
+            padding: 0px;
+            margin: 10px;
+            opacity: 0;
+            transform: translateY(50px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .card h3 {
+            margin-top: 0;
+            color: #333;
+            font-size: 1.5rem;
+            padding: 20px 20px 0;
+        }
+
+        .card p {
+            margin-bottom: 15px;
+            color: #666;
+            padding: 0 20px;
+            flex-grow: 1;
+        }
+
+        .card-icon {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            color: #007bff;
+            padding: 0 20px;
+        }
+
+        .card-img {
+            width: 120%;
+            height: 450px;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+
+        @media (max-width: 768px) {
+            .advanced-section {
+                margin-top: -100px;
+                /* Adjusted for mobile to maintain some overlap */
+                padding: 0 15px;
+                /* Add padding to ensure content doesn't touch screen edges */
+            }
+
+            .card-container {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .card {
+                width: 100%;
+                max-width: 320px;
+                margin: 15px 0;
+            }
+
+            .card-img {
+                width: 100%;
+                height: auto;
+                max-height: 300px;
+                object-fit: cover;
+            }
+        }
+    </style>
+
+
+    <section class="advanced-section">
+        <div class="container-fluid p-0">
+            <div class="card-container">
+                <div class="card">
+                    <img src="assets/img/hotel/1.jpg" alt="Advanced Feature 1" class="card-img">
+                </div>
+                <div class="card">
+                    <img src="assets/img/hotel/2.png" alt="Advanced Feature 2" class="card-img">
+                </div>
+                <div class="card">
+                    <img src="assets/img/hotel/3.png" alt="Advanced Feature 3" class="card-img">
+                </div>
+            </div>
+            <!-- <div class="text-center mt-4">
+                <a href="#" class="btn custom-btn btn-lg px-4 py-3 cta-button">
+                    Contact Us
+                </a>
+            </div> -->
+            <style>
+                .custom-btn {
+                    background-color: #9e44b4;
+                    color: white;
+                    border: 2px solid #9e44b4;
+                    padding: 12px 24px;
+                    font-weight: 600;
+                    font-size: 1.1rem;
+                    text-transform: uppercase;
+                    letter-spacing: 0.5px;
+                    border-radius: 10px;
+                    transition: all 0.3s ease;
+                    box-shadow: 0 4px 6px rgba(114, 9, 212, 0.2);
+                }
+
+                .custom-btn:hover {
+                    background-color: #9e44b4b5;
+                    color: #ffffff;
+                    box-shadow: 0 6px 10px rgba(114, 9, 212, 0.3);
+                }
+
+                .custom-btn:active {
+                    transform: translateY(0);
+                    box-shadow: 0 2px 4px rgba(114, 9, 212, 0.2);
+                }
+            </style>
+        </div>
+    </section>
+
+    <script>
+        function isElementInViewport(el) {
+            var rect = el.getBoundingClientRect();
+            return (
+                rect.top <= (window.innerHeight || document.documentElement.clientHeight) &&
+                rect.bottom >= 0 &&
+                rect.left <= (window.innerWidth || document.documentElement.clientWidth) &&
+                rect.right >= 0
+            );
+        }
+
+        function handleScroll() {
+            var cards = document.querySelectorAll('.card');
+            cards.forEach((card, index) => {
+                if (isElementInViewport(card)) {
+                    setTimeout(() => {
+                        card.classList.add('visible');
+                    }, index * 200); // Stagger the animation
+                }
+            });
+        }
+
+        window.addEventListener('scroll', handleScroll);
+        window.addEventListener('load', handleScroll);
+        // Trigger the handleScroll function immediately after page load
+        setTimeout(handleScroll, 100);
+    </script>
+
+
+    <section id="ict-one-solution" class="ict-one-solution py-5" style="margin-top: 5%;">
+        <div class="container-fluid">
+            <div class="row align-items-center">
+                <div class="col-md-6 fade-in-left">
+                    <img src="assets/img/bimasakti/bimasakti_01.png" alt="ICT One Solution" class="img-fluid"
+                        style="width: 80%; height: auto;">
+                </div>
+                <div class="col-md-6 text-center fade-in-right">
+                    <h2 class="mb-4 gradient-text fw-bold"
+                        style="background: linear-gradient(287deg, #625dfa, #5ebcfa, #40777a); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">
+                        Property and Building Management System with ICT One Solution
+                    </h2>
+                    <div class="mb-4" style="max-width: 90%; margin: 0 auto;">
+                        <p style="line-height: 1.6; font-size: 20px; margin-bottom: 1rem; text-align: left;">
+                            BIMASAKTI enables you to keep track and monitor every financial aspect of your business.
+                            With all financial information at your fingertips, you can make the forecasting with less
+                            risk. Processing and printing monthly invoices with Value-Added Tax (VAT) forms can be
+                            automatically added using BIMASAKTI and for tax reporting purposes, BIMASAKTI can be linked
+                            to e-Faktur PPN. </p>
+                        <div class="key-features">
+                            <!-- Feature 1 -->
+                            <div class="feature">
+                                <div class="feature-icon">
+                                    <i class="fas fa-star fa-2x"></i>
+                                </div>
+                                <div class="feature-text">
+                                    <h3>9.5/10 Satisfaction</h3>
+                                    <p>Implementation & Service</p>
+                                </div>
+                            </div>
+
+                            <!-- Feature 2 -->
+                            <div class="feature">
+                                <div class="feature-icon">
+                                    <i class="fas fa-history fa-2x"></i>
+                                </div>
+                                <div class="feature-text">
+                                    <h3>25+ Years</h3>
+                                    <p>of Experience</p>
+                                </div>
+                            </div>
+
+                            <!-- Feature 3 -->
+                            <div class="feature">
+                                <div class="feature-icon">
+                                    <i class="fas fa-users fa-2x"></i>
+                                </div>
+                                <div class="feature-text">
+                                    <h3>200+ Customers</h3>
+                                    <p>Across Indonesia</p>
+                                </div>
+                            </div>
+
+                            <!-- Feature 4 -->
+                            <div class="feature">
+                                <div class="feature-icon">
+                                    <i class="fas fa-certificate fa-2x"></i>
+                                </div>
+                                <div class="feature-text">
+                                    <h3>ISO Certified</h3>
+                                    <p>9001 : 2015</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <style>
+                            /* Key Features Styles */
+                            .key-features {
+                                margin-top: 2rem;
+                                display: flex;
+                                flex-wrap: wrap;
+                                justify-content: center;
+                            }
+
+                            .feature {
+                                flex: 1 1 200px;
+                                max-width: 250px;
+                                margin: 1rem;
+                                padding: 1.5rem;
+                                border: 1px solid rgba(37, 98, 148, 0.18);
+                                background: white !important;
+                                border-radius: 10px;
+                                transition: all 0.3s ease;
+                            }
+
+
+                            .feature-icon {
+                                margin-bottom: 1rem;
+                                color: #625dfa;
+                            }
+
+                            .feature-text {
+                                text-align: center;
+                            }
+
+                            .feature-text h3 {
+                                font-size: 1.2rem;
+                                margin-bottom: 0.5rem;
+                                color: #333;
+                            }
+
+                            .feature-text p {
+                                font-size: 0.9rem;
+                                line-height: 1.4;
+                                margin-bottom: 0;
+                                color: #666;
+                            }
+
+                            /* Dark Mode Styles */
+                            body.dark-mode .feature {
+                                background: rgba(255, 255, 255, 0.05) !important;
+                            }
+
+                            body.dark-mode .feature-text h3 {
+                                color: #ffffff;
+                            }
+
+                            body.dark-mode .feature-text p {
+                                color: #cccccc;
+                            }
+
+                            body.dark-mode .feature-icon {
+                                color: #5ebcfa;
+                            }
+
+                            /* Responsive Design */
+                            @media (max-width: 768px) {
+                                .feature {
+                                    flex: 1 1 100%;
+                                    max-width: 100%;
+                                }
+                            }
+                        </style>
+                    </div>
+                    <!-- Schedule Meeting button with slightly larger size -->
+                    <a href="#" class="btn-outline-secondary d-inline-block mx-auto"
+                        style="max-width: 220px; font-size: 1.1rem; padding: 0.4rem 0.8rem;">Schedule Meeting</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features py-5">
+        <div class="container-fluid">
+            <!-- Section Title -->
+            <h2 class="text-center mb-5"
+                style="background: linear-gradient(287deg, #625dfa, #5ebcfa, #40777a); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">
+                BIMASAKTI is the ideal application for:</h2>
+            <!-- Added H3 for COMMERCIAL PROPERTIES -->
+            <h3 class="text-center mb-5">COMMERCIAL PROPERTIES</h3>
+            <div class="row text-center justify-content-center">
+                <!-- Feature Item 1: Shopping Center -->
+                <div class="col-md-2 col-sm-4 mb-4 feature-item">
+                    <img src="assets/img/bimasakti/system-for-shopping-center---bimasakti.gif" alt="Shopping Center"
+                        class="img-fluid mb-3" style="max-width: 80px;">
+                    <p style="font-size: 20px;">Shopping Center</p>
+                </div>
+                <!-- Feature Item 2: Office -->
+                <div class="col-md-2 col-sm-4 mb-4 feature-item">
+                    <img src="assets/img/bimasakti/system-for-office---bimasakti1.gif" alt="Office"
+                        class="img-fluid mb-3" style="max-width: 80px;">
+                    <p style="font-size: 20px;">Office</p>
+                </div>
+                <!-- Feature Item 3: Industrial Estate -->
+                <div class="col-md-2 col-sm-4 mb-4 feature-item">
+                    <img src="assets/img/bimasakti/system-for-industrial-estate---bimasakti.gif" alt="Industrial Estate"
+                        class="img-fluid mb-3" style="max-width: 80px;">
+                    <p style="font-size: 20px;">Industrial Estate</p>
+                </div>
+                <!-- Feature Item 4: Warehouse -->
+                <div class="col-md-2 col-sm-4 mb-4 feature-item">
+                    <img src="assets/img/bimasakti/system-for-warehouse---bimasakti.gif" alt="Warehouse"
+                        class="img-fluid mb-3" style="max-width: 80px;">
+                    <p style="font-size: 20px;">Warehouse</p>
+                </div>
+                <!-- Feature Item 5: Data Center -->
+                <div class="col-md-2 col-sm-4 mb-4 feature-item">
+                    <img src="assets/img/bimasakti/system-for-data-center---bimasakti.gif" alt="Data Center"
+                        class="img-fluid mb-3" style="max-width: 80px;">
+                    <p style="font-size: 20px;">Data Center</p>
+                </div>
+            </div>
+            <!-- Added H3 for RESIDENTIAL PROPERTIES -->
+            <h3 class="text-center mb-5 mt-5">RESIDENTIAL PROPERTIES</h3>
+            <div class="row text-center justify-content-center">
+                <!-- Feature Item 6: Apartment -->
+                <div class="col-md-2 col-sm-4 mb-4 feature-item">
+                    <img src="assets/img/bimasakti/system-for-apartment---bimasakti.gif" alt="Apartment"
+                        class="img-fluid mb-3" style="max-width: 80px;">
+                    <p style="font-size: 20px;">Apartment</p>
+                </div>
+                <!-- Feature Item 7: Landed House -->
+                <div class="col-md-2 col-sm-4 mb-4 feature-item">
+                    <img src="assets/img/bimasakti/system-for-landed-house---bimasakti.gif" alt="Landed House"
+                        class="img-fluid mb-3" style="max-width: 80px;">
+                    <p style="font-size: 20px;">Landed House</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <style>
+        .fade-in-left,
+        .fade-in-right {
+            opacity: 0;
+            transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+        }
+
+        .fade-in-left {
+            transform: translateX(-50px);
+        }
+
+        .fade-in-right {
+            transform: translateX(50px);
+        }
+
+        .fade-in-left.visible,
+        .fade-in-right.visible {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .feature-item {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+        }
+
+        .feature-item.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+
+    <script>
+        function isElementInViewport(el) {
+            var rect = el.getBoundingClientRect();
+            return (
+                rect.top <= (window.innerHeight || document.documentElement.clientHeight) &&
+                rect.bottom >= 0 &&
+                rect.left <= (window.innerWidth || document.documentElement.clientWidth) &&
+                rect.right >= 0
+            );
+        }
+
+        function handleScroll() {
+            var fadeElements = document.querySelectorAll('.fade-in-left, .fade-in-right, .feature-item');
+            fadeElements.forEach((el, index) => {
+                if (isElementInViewport(el)) {
+                    setTimeout(() => {
+                        el.classList.add('visible');
+                    }, index * 100);
+                }
+            });
+        }
+
+        window.addEventListener('scroll', handleScroll);
+        window.addEventListener('load', handleScroll);
+        // Trigger the handleScroll function immediately after page load
+        setTimeout(handleScroll, 100);
+    </script>
+
+
+    <style>
+        .why-rhapsody-section h2 {
+            font-size: 2.5rem;
+            color: #333;
+            margin-bottom: 50px;
+            position: relative;
+        }
+
+        .why-rhapsody-section h2::after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, #93bada, #93bada, #93bada, transparent);
+        }
+
+        .why-rhapsody-section h2::before {
+            content: '';
+            position: absolute;
+            top: -30px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 1.5rem;
+            color: #7209d4;
+        }
+
+        .why-rhapsody-item {
+            transition: all 0.3s ease;
+            border: none;
+            border-radius: 10px;
+            background: #fff;
+            border: 2px solid rgba(221, 221, 221, 0.753);
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+
+        /* .why-rhapsody-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+        } */
+        .why-rhapsody-item .card-body {
+            padding: 10px;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+        }
+
+        .why-rhapsody-item img {
+            width: 80px;
+            height: 80px;
+            margin-bottom: 20px;
+            transition: transform 0.3s ease;
+            align-self: center;
+        }
+
+        .why-rhapsody-item h3 {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 15px;
+            color: #7c5e85;
+            flex-grow: 0;
+            height: 3em;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .why-rhapsody-item p {
+            font-size: 1rem;
+            color: #666;
+            line-height: 1.6;
+            flex-grow: 1;
+            display: flex;
+            align-items: center;
+            text-align: center;
+            margin-bottom: 0;
+            padding: 0 10px;
+        }
+
+        .rhapsody-feature-card {
+            padding: 0 10px;
+            width: 28.333333%;
+        }
+    </style>
+
+
+    <section id="why-rhapsody" class="bimasakti-solutions-grid">
+        <div class="container-fluid">
+            <h2 class="bimasakti-title">BIMASAKTI's Key Features</h2>
+            <p class="bimasakti-description">Building Management can operate more efficiently and effectively by
+                implementing a system. To get optimum efficiency, BIMASAKTI has a complete integrated system that could
+                cater to all Building Management business processes, from Lease & Billing Management to Logistics and
+                Accounting.</p>
+            <div class="bimasakti-button-wrapper mb-5 mt-5">
+                <a href="#" class="bimasakti-btn">Explore more</a>
+            </div>
+            <div class="bimasakti-features">
+                <article class="bimasakti-solution-item lease-management">
+                    <h4>
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-5 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z"
+                                fill="url(#paint0_linear_lease)" />
+                            <defs>
+                                <linearGradient id="paint0_linear_lease" x1="3" y1="3" x2="21" y2="21"
+                                    gradientUnits="userSpaceOnUse">
+                                    <stop stop-color="#504be6" />
+                                    <stop offset="0.5" stop-color="#5e9cfa" />
+                                    <stop offset="1" stop-color="#40777a" />
+                                </linearGradient>
+                            </defs>
+                        </svg>
+                        LEASE MANAGEMENT
+                    </h4>
+                    <ul>
+                        <li>Pro Rate / Non-Pro Rate</li>
+                        <li>Unit Occupancy</li>
+                        <li>Payment Scheme</li>
+                        <li>Penalty Policy</li>
+                        <li>Revenue Sharing</li>
+                        <li>Reminder Lease Renewal</li>
+                    </ul>
+                </article>
+                <article class="bimasakti-solution-item tenancy-management">
+                    <h4>
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M12 7V3H2v18h20V7H12zM6 19H4v-2h2v2zm0-4H4v-2h2v2zm0-4H4V9h2v2zm0-4H4V5h2v2zm4 12H8v-2h2v2zm0-4H8v-2h2v2zm0-4H8V9h2v2zm0-4H8V5h2v2zm10 12h-8v-2h2v-2h-2v-2h2v-2h-2V9h8v10zm-2-8h-2v2h2v-2zm0 4h-2v2h2v-2z"
+                                fill="url(#paint0_linear_tenancy)" />
+                            <defs>
+                                <linearGradient id="paint0_linear_tenancy" x1="2" y1="3" x2="22" y2="21"
+                                    gradientUnits="userSpaceOnUse">
+                                    <stop stop-color="#504be6" />
+                                    <stop offset="0.5" stop-color="#5e9cfa" />
+                                    <stop offset="1" stop-color="#40777a" />
+                                </linearGradient>
+                            </defs>
+                        </svg>
+                        TENANCY MANAGEMENT
+                    </h4>
+                    <ul>
+                        <li>Service Charge</li>
+                        <li>Utility Usage:
+                            <ul>
+                                <li>Electricity</li>
+                                <li>Water</li>
+                                <li>Gas</li>
+                            </ul>
+                        </li>
+                        <li>Others Charge</li>
+                    </ul>
+                </article>
+                <article class="bimasakti-solution-item customer-service">
+                    <h4>
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M21 12.22C21 6.73 16.74 3 12 3c-4.69 0-9 3.65-9 9.28-.6.34-1 .98-1 1.72v2c0 1.1.9 2 2 2h1v-6.1c0-3.87 3.13-7 7-7s7 3.13 7 7V19h-8v2h8c1.1 0 2-.9 2-2v-1.22c.59-.31 1-.92 1-1.64v-2.3c0-.7-.41-1.31-1-1.62z"
+                                fill="url(#paint0_linear_customer)" />
+                            <defs>
+                                <linearGradient id="paint0_linear_customer" x1="2" y1="3" x2="22" y2="21"
+                                    gradientUnits="userSpaceOnUse">
+                                    <stop stop-color="#504be6" />
+                                    <stop offset="0.5" stop-color="#5e9cfa" />
+                                    <stop offset="1" stop-color="#40777a" />
+                                </linearGradient>
+                            </defs>
+                        </svg>
+                        CUSTOMER SERVICE
+                    </h4>
+                    <ul>
+                        <li>Digital News</li>
+                        <li>Notification Ticket from Tenant</li>
+                        <li>Process Request and Complaint thru Mobile App</li>
+                        <li>Tenant History</li>
+                        <li>e-Form*</li>
+                    </ul>
+                </article>
+                <article class="bimasakti-solution-item accounting">
+                    <h4>
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M21 18v1c0 1.1-.9 2-2 2H5c-1.11 0-2-.9-2-2V5c0-1.1.89-2 2-2h14c1.1 0 2 .9 2 2v1h-9c-1.11 0-2 .9-2 2v8c0 1.1.89 2 2 2h9zm-9-2h10V8H12v8zm4-2.5c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5z"
+                                fill="url(#paint0_linear_accounting)" />
+                            <defs>
+                                <linearGradient id="paint0_linear_accounting" x1="3" y1="3" x2="21" y2="21"
+                                    gradientUnits="userSpaceOnUse">
+                                    <stop stop-color="#504be6" />
+                                    <stop offset="0.5" stop-color="#5e9cfa" />
+                                    <stop offset="1" stop-color="#40777a" />
+                                </linearGradient>
+                            </defs>
+                        </svg>
+                        ACCOUNTING
+                    </h4>
+                    <ul>
+                        <li>Automatic Journal</li>
+                        <li>Revenue Recognition</li>
+                        <li>Budget</li>
+                        <li>Balance Sheet</li>
+                        <li>Income Statement</li>
+                    </ul>
+                </article>
+                <article class="bimasakti-solution-item engineering">
+                    <h4>
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M22.7 19l-9.1-9.1c.9-2.3.4-5-1.5-6.9-2-2-5-2.4-7.4-1.3L9 6 6 9 1.6 4.7C.4 7.1.9 10.1 2.9 12.1c1.9 1.9 4.6 2.4 6.9 1.5l9.1 9.1c.4.4 1 .4 1.4 0l2.3-2.3c.5-.4.5-1.1.1-1.4z"
+                                fill="url(#paint0_linear_engineering)" />
+                            <defs>
+                                <linearGradient id="paint0_linear_engineering" x1="1" y1="1" x2="23" y2="23"
+                                    gradientUnits="userSpaceOnUse">
+                                    <stop stop-color="#504be6" />
+                                    <stop offset="0.5" stop-color="#5e9cfa" />
+                                    <stop offset="1" stop-color="#40777a" />
+                                </linearGradient>
+                            </defs>
+                        </svg>
+                        ENGINEERING
+                    </h4>
+                    <ul>
+                        <li>Meter Record Utility
+                            <ul>
+                                <li>Integrated with BAS</li>
+                                <li>Capture with smartphone</li>
+                            </ul>
+                        </li>
+                        <li>Auto Maintenance Notification</li>
+                        <li>Auto Assignment Notification</li>
+                        <li>Mobile Work Order</li>
+                    </ul>
+                </article>
+                <article class="bimasakti-solution-item purchasing-inventory">
+                    <h4>
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M7 18c-1.1 0-1.99.9-1.99 2S5.9 22 7 22s2-.9 2-2-.9-2-2-2zM1 2v2h2l3.6 7.59-1.35 2.45c-.16.28-.25.61-.25.96 0 1.1.9 2 2 2h12v-2H7.42c-.14 0-.25-.11-.25-.25l.03-.12.9-1.63h7.45c.75 0 1.41-.41 1.75-1.03l3.58-6.49c.08-.14.12-.31.12-.48 0-.55-.45-1-1-1H5.21l-.94-2H1zm16 16c-1.1 0-1.99.9-1.99 2s.89 2 1.99 2 2-.9 2-2-.9-2-2-2z"
+                                fill="url(#paint0_linear_purchasing)" />
+                            <defs>
+                                <linearGradient id="paint0_linear_purchasing" x1="1" y1="2" x2="23" y2="22"
+                                    gradientUnits="userSpaceOnUse">
+                                    <stop stop-color="#504be6" />
+                                    <stop offset="0.5" stop-color="#5e9cfa" />
+                                    <stop offset="1" stop-color="#40777a" />
+                                </linearGradient>
+                            </defs>
+                        </svg>
+                        PURCHASING & INVENTORY
+                    </h4>
+                    <ul>
+                        <li>Multi PR in 1 PO</li>
+                        <li>System Approval</li>
+                        <li>Multi Goods Receipt</li>
+                        <li>Stock Control</li>
+                        <li>Cost Analysis</li>
+                        <li>Link with Work Order</li>
+                    </ul>
+                </article>
+                <article class="bimasakti-solution-item finance">
+                    <h4>
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M11.8 10.9c-2.27-.59-3-1.2-3-2.15 0-1.09 1.01-1.85 2.7-1.85 1.78 0 2.44.85 2.5 2.1h2.21c-.07-1.72-1.12-3.3-3.21-3.81V3h-3v2.16c-1.94.42-3.5 1.68-3.5 3.61 0 2.31 1.91 3.46 4.7 4.13 2.5.6 3 1.48 3 2.41 0 .69-.49 1.79-2.7 1.79-2.06 0-2.87-.92-2.98-2.1h-2.2c.12 2.19 1.76 3.42 3.68 3.83V21h3v-2.15c1.95-.37 3.5-1.5 3.5-3.55 0-2.84-2.43-3.81-4.7-4.4z"
+                                fill="url(#paint0_linear_finance)" />
+                            <defs>
+                                <linearGradient id="paint0_linear_finance" x1="6" y1="3" x2="18" y2="21"
+                                    gradientUnits="userSpaceOnUse">
+                                    <stop stop-color="#504be6" />
+                                    <stop offset="0.5" stop-color="#5e9cfa" />
+                                    <stop offset="1" stop-color="#40777a" />
+                                </linearGradient>
+                            </defs>
+                        </svg>
+                        FINANCE
+                    </h4>
+                    <ul>
+                        <li>Digital Billing</li>
+                        <li>Billing Notification</li>
+                        <li>Reminder Late Payment</li>
+                        <li>Deposit Management</li>
+                        <li>Penalty Process</li>
+                        <li>Integrated with VA Bank</li>
+                    </ul>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <style>
+        /* BIMASAKTI Solutions Grid Styles */
+        .bimasakti-solutions-grid {
+            display: grid;
+            grid-template-areas:
+                "title"
+                "description"
+                "button"
+                "features";
+            gap: 15px;
+            border-radius: 15px;
+            margin: 0 auto;
+        }
+
+        /* BIMASAKTI Solution Item Styles */
+        .bimasakti-solution-item {
+            border-radius: 10px;
+            padding: 15px;
+            transition: all 0.3s ease;
+            background: #ffffff !important;
+            border: 2px solid rgba(221, 221, 221, 0.753);
+        }
+
+        /* BIMASAKTI Solution Item Header Styles */
+        .bimasakti-solution-item h4 {
+            font-size: 1.1rem;
+            margin-bottom: 10px;
+            background: linear-gradient(287deg, #504be6, #5e9cfa, #40777a);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            font-weight: 600;
+            position: relative;
+            padding-bottom: 5px;
+            display: flex;
+            align-items: center;
+        }
+
+        .bimasakti-solution-item h4::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: linear-gradient(287deg, rgba(255, 255, 255, 0.1), #504be6, #5e9cfa, #40777a, rgba(255, 255, 255, 0.1));
+            width: 100%;
+        }
+
+        /* BIMASAKTI Solution Item List Styles */
+        .bimasakti-solution-item ul {
+            padding-left: 0;
+            list-style-type: none;
+        }
+
+        .bimasakti-solution-item li {
+            margin-bottom: 0.4rem;
+            position: relative;
+            padding-left: 1.2em;
+        }
+
+        .bimasakti-solution-item li::before {
+            content: "•";
+            background: linear-gradient(287deg, #504be6, #5e9cfa, #40777a);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+
+        /* BIMASAKTI Title Styles */
+        .bimasakti-title {
+            grid-area: title;
+            text-align: center;
+            font-size: 2rem;
+            background: linear-gradient(287deg, #504be6, #5e9cfa, #40777a);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            margin-bottom: 15px;
+            font-weight: bold;
+        }
+
+        /* BIMASAKTI Description Styles */
+        .bimasakti-description {
+            grid-area: description;
+            text-align: center;
+            max-width: 80%;
+            margin: 0 auto;
+            margin-bottom: 15px;
+            color: #666;
+            font-size: 20px;
+        }
+
+        /* BIMASAKTI Button Wrapper Styles */
+        .bimasakti-button-wrapper {
+            grid-area: button;
+            text-align: center;
+            margin-top: 10px;
+            margin-bottom: 20px;
+        }
+
+        /* BIMASAKTI Features Styles */
+        .bimasakti-features {
+            grid-area: features;
+            display: flex;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+            justify-content: center;
+        }
+
+        /* BIMASAKTI Features Styles */
+        .bimasakti-features {
+            grid-area: features;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        .bimasakti-solution-item {
+            /* ... existing styles ... */
+            flex-basis: calc(33.333% - 10px);
+            max-width: calc(33.333% - 10px);
+        }
+
+        /* BIMASAKTI Button Styles */
+        .bimasakti-btn {
+            background: linear-gradient(to right, #619fd1, #619fd1) !important;
+            color: #ffffff;
+            padding: 10px 20px;
+            border-radius: 10px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: background 0.3s ease;
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            .bimasakti-solutions-grid {
+                padding: 10px;
+                max-width: 95%;
+            }
+
+            .bimasakti-description {
+                max-width: 100%;
+            }
+
+            .bimasakti-features {
+                grid-template-columns: 1fr;
+            }
+
+            .bimasakti-solution-item {
+                padding: 10px;
+            }
+
+            .bimasakti-solution-item h4 {
+                font-size: 1rem;
+            }
+
+            .bimasakti-title {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+
+
+
+    <section id="cta" class="py-5 mt-5">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-10">
+                    <div class="bg-light p-5 rounded-3 shadow-sm cta-card">
+                        <div class="row align-items-center">
+                            <div class="col-lg-8 mb-4 mb-lg-0">
+                                <h2 class="mb-3 fw-bold"
+                                    style="background: linear-gradient(287deg, #625dfa, #5e68fa); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">
+                                    Interested to find out more about BIMASAKTI?
+                                </h2>
+                                <p class="mb-0 text-muted lead">Let's discuss how Rhapsody can elevate your operations.
+                                </p>
+                            </div>
+                            <div class="col-lg-4 text-lg-end text-center">
+                                <a href="#" class="btn btn-lg px-4 py-3 cta-button"
+                                    style="background: linear-gradient(to right, #619fd1, #619fd1); color: #ffffff; border: none;">Request
+                                    Demo</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <style>
+        #cta .cta-card {
+            background-color: #f8f9fa;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(0, 0, 0, 0.125);
+        }
+
+
+        body.dark-mode #cta .cta-card {
+            background: linear-gradient(135deg,
+                    rgba(50, 50, 50, 0.4) 0%,
+                    rgba(100, 50, 150, 0.493) 100%) !important;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        #cta h2 {
+            font-size: 2.5rem;
+            line-height: 1.2;
+        }
+
+        #cta p {
+            font-size: 1.25rem;
+            color: #6c757d;
+        }
+
+        #cta .cta-button {
+            background-color: #7209d4;
+            border: none;
+            color: #ffffff;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        #cta .cta-button:hover {
+            background-color: #5a07a8;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+
+
+        @media (max-width: 991px) {
+            #cta h2 {
+                font-size: 2rem;
+            }
+
+            #cta p {
+                font-size: 1.1rem;
+            }
+
+            #cta .cta-button {
+                width: 100%;
+                margin-top: 1rem;
+            }
+        }
+    </style>
+    <section id="stats-feature-section" class="py-5 mt-4">
+        <div class="container-fluid">
+            <div class="row align-items-center">
+                <div class="col-lg-4 mb-4 mb-lg-0">
+                    <h2 class="section-title mb-3">Mobile Solution : BIMASAKTI TENANT</h2>
+                    <p class="section-description lead">This application can help you achieve 100% tenant satisfaction,
+                        provide 100% on-time bill payments, and quickly resolve all tenant issues.</p>
+                </div>
+                <div class="col-lg-8">
+                    <div class="row mt-4">
+                        <div class="col-md-6">
+                            <div class="stats-item">
+                                <h3 class="stats-number mb-2">Multi-Channel Payment Gateway</h3>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="stats-item">
+                                <h3 class="stats-number mb-2">Contract Renewal Notification</h3>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="stats-separator-container text-center">
+                        <div class="stats-horizontal-separator"></div>
+                        <img src="assets/img/bimasakti/bimasakti.png" alt="Company Logo"
+                            class="stats-separator-logo mx-auto d-block"
+                            style="width: 30%; max-width: 500px; height: auto;">
+                        <div class="stats-horizontal-separator"></div>
+                    </div>
+                    <div class="row mt-5">
+                        <div class="col-md-6">
+                            <div class="stats-item text-center">
+                                <h3 class="stats-number mb-2">Billing Due Date Notification</h3>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="stats-item text-center">
+                                <h3 class="stats-number mb-2">Integration between tenant's billing report & access card
+                                </h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <style>
+        #stats-feature-section {
+            border: 2px solid rgba(221, 221, 221, 0.753);
+            background-color: #f8f9fa;
+            padding: 80px 0;
+            margin: 0 auto;
+        }
+
+        body.dark-mode #stats-feature-section {
+            background-color: rgba(33, 23, 52, 0.7);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.18);
+        }
+
+        .stats-row {
+            display: flex;
+            justify-content: space-between;
+            position: relative;
+        }
+
+
+        .stats-col {
+            width: 48%;
+        }
+
+        .stats-item {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .stats-number {
+            font-size: 3.5rem;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .stats-text {
+            font-size: 1.1rem;
+            color: #6c757d;
+        }
+
+        .stats-separator-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: -15px 0;
+        }
+
+        .stats-horizontal-separator {
+            flex-grow: 1;
+            height: 2px;
+            background-color: #dee2e6;
+        }
+
+        .stats-separator-logo {
+            width: 60px;
+            height: 60px;
+            margin: 0 20px;
+        }
+
+        @media (max-width: 768px) {
+            .stats-row {
+                flex-direction: column;
+            }
+
+            .stats-row::after {
+                display: none;
+            }
+
+            .stats-col {
+                width: 100%;
+            }
+        }
+    </style>
+
+
+
+
+
+    <section class="hospitality-companies py-5 mt-5">
+        <div class="container-fluid">
+            <h2 class="text-center mb-3 bimasakti-title rhapsody-title-2023-new" data-aos="fade-up"
+                data-aos-delay="100">
+                These Various Properties already Used BIMASAKTI
+            </h2>
+            <h3 class="text-center mb-2 mt-5" data-aos="fade-up" data-aos-delay="200"
+                style="font-size: 1.8rem !important;">
+                Apartment
+            </h3>
+            <div class="ict-separator" data-aos="fade-in" data-aos-delay="200"></div>
+            <div class="attractive-separator">
+                <div class="separator-line"></div>
+                <div class="separator-icon"><i class="fas fa-building"></i></div>
+                <div class="separator-line"></div>
+            </div>
+            <div class="full-image-container" data-aos="fade-up" data-aos-delay="300">
+                <img src="assets/img/bimasakti/Logo_Apartemen_-_Bimasakti_-_Property_Management_System.png"
+                    alt="Hospitality Companies" class="img-fluid">
+            </div>
+
+            <h3 class="text-center mb-2 mt-5" data-aos="fade-up" data-aos-delay="200"
+                style="font-size: 1.8rem !important;">
+                Malls
+            </h3>
+            <div class="ict-separator" data-aos="fade-in" data-aos-delay="200"></div>
+            <div class="attractive-separator">
+                <div class="separator-line"></div>
+                <div class="separator-icon"><i class="fas fa-shopping-cart"></i></div>
+                <div class="separator-line"></div>
+            </div>
+            <div class="full-image-container" data-aos="fade-up" data-aos-delay="300">
+                <img src="assets/img/bimasakti/Logo_Apartemen_-_Bimasakti_-_Property_Management_2.png"
+                    alt="Hospitality Companies" class="img-fluid">
+            </div>
+
+            <h3 class="text-center mb-2 mt-5" data-aos="fade-up" data-aos-delay="200"
+                style="font-size: 1.8rem !important;">
+                Other Properties
+            </h3>
+            <div class="ict-separator" data-aos="fade-in" data-aos-delay="200"></div>
+            <div class="attractive-separator">
+                <div class="separator-line"></div>
+                <div class="separator-icon"><i class="fas fa-city"></i></div>
+                <div class="separator-line"></div>
+            </div>
+            <div class="full-image-container" data-aos="fade-up" data-aos-delay="300">
+                <img src="assets/img/bimasakti/Logo_Office_Mixed_Use_Residence_-_Bimasakti_-_Building_Management_System.png"
+                    alt="Hospitality Companies" class="img-fluid">
+            </div>
+        </div>
+
+        <style>
+            .attractive-separator {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                margin: 20px 0;
+            }
+
+            .separator-line {
+                flex-grow: 1;
+                height: 2px;
+                background: linear-gradient(to right, transparent, #007bff, transparent);
+            }
+
+            .separator-icon {
+                font-size: 24px;
+                margin: 0 15px;
+                color: #205996;
+            }
+        </style>
+    </section>
+
+    <style>
+        .hospitality-companies h2 {
+            font-size: 2.2rem;
+            font-weight: bold;
+        }
+
+        .full-image-container {
+            max-width: 100%;
+            overflow: hidden;
+            border-radius: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .full-image-container img {
+            width: 90%;
+            height: auto;
+            transition: transform 0.3s ease-in-out;
+            display: block;
+            margin: 0 auto;
+        }
+
+        @media (max-width: 768px) {
+            .hospitality-companies h2 {
+                font-size: 1.8rem;
+            }
+        }
+    </style>
+
+
+
+    <section id="separator" class="py-5" style="background-color: #efecff;">
+        <div class="container-fluid">
+            <div class="row justify-content-between">
+                <div class="col-lg-12">
+                    <div class="banner p-5">
+                        <div class="banner-content">
+                            <h2>Unlock superior coverage for your team</h2>
+                            <p>Build a culture of employee delight by taking the first step towards Benefits</p>
+                            <button class="btn-custom" onclick="scheduleCall()"
+                                style="background: linear-gradient(to bottom, #9054d0, #7a4bd7);">Schedule a
+                                call</button>
+                        </div>
+                        <img src="assets/img/handshake.png" alt="Business Handshake" class="banner-image">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+<section id="contact" class="pb-5">
+    <div class="container-fluid ">
+        <div class="row justify-content-between">
+            <div id="contact-info" class="col-lg-5 left-column >
+
+                <p class="text-muted mb-4 contact-text" >
+                   
+                </p>
+
+                <div class="company-info" style="border-radius: 10px;">
+                    <h3 class="h5 fw-bold mb-3 company-name custom-text"
+                        style="color: #333; padding-bottom: 10px; display: inline-block; border-bottom: 1px solid transparent; background-image: linear-gradient(to right, transparent, #333, transparent); background-position: bottom; background-size: 100% 1px; background-repeat: no-repeat;">
+                        PT Realta Chakradarma </h3>
+                    <h3 class="headquarter-title custom-text" style="margin-bottom: 10px;">
+                        Address:</h3>
+                    <div class="address-wrapper">
+                        <p class="address-details custom-text">
+                            Jl. Petojo Melintang No. 25A<br>
+                            Petojo Selatan - Gambir<br>
+                            Jakarta 10160<br>
+                            <span class="country custom-text">Indonesia</span>
+                        </p>
+                    </div>
+
+                    
+                </div>
+                <style>
+                    /* Remove the media query and adjust the selectors */
+                    body.dark-mode .company-info {
+                        color: #ffffff !important;
+                    }
+
+                    body.dark-mode .company-name {
+                        color: #ffffff !important;
+                        background-image: linear-gradient(to right, transparent, #ffffff, transparent) !important;
+                    }
+
+                    body.dark-mode .headquarter-title {
+                        color: #ffffff !important;
+                    }
+
+                    body.dark-mode .address-details {
+                        color: #e0e0e0 !important;
+                    }
+
+                    body.dark-mode #contact .contact-heading {
+                        color: #ffffff !important;
+                    }
+                </style>
+
+                <div class="map-wrapper mb-4" style="width: 85%;">
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.3279995766406!2d106.8142527!3d-6.172364!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f67f4f44dc2f%3A0x124b0a0f4cb7e845!2sPT%20Realta%20Chakradarma!5e0!3m2!1sen!2sid!4v1653668623967"
+                        frameborder="0" style="border:0" allowfullscreen="">
+                    </iframe>
+                </div>
+
+                <div class="contact-info mb-4">
+                    <style>
+                        .contact-item {
+                            display: flex;
+                            align-items: flex-start;
+                            margin-bottom: 10px;
+                        }
+
+                        .contact-icon {
+                            font-size: 14px;
+                            margin-right: 10px;
+                            margin-top: 3px;
+                        }
+                    </style>
+                    <div class="contact-item">
+                        <i class="fas fa-phone contact-icon"></i>
+                        <a href="tel:+62213861772" class="text-decoration-none fw-bold">+62 21 - 386 1772</a>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-envelope contact-icon"></i>
+                        <a href="mailto:info@realta.co.id" class="text-decoration-none fw-bold">info@realta.co.id</a>
+                    </div>
+                    <div class="contact-item">
+                        <p class="mb-0">
+                            For sales and marketing, contact our Official WhatsApp:<br>
+                            <a href="https://wa.me/628111221789" class="text-decoration-none fw-bold"
+                                style="color: #3bc05a;">+62 811 1221 789 (Chat Only)</a>
+                        </p>
+                    </div>
+                    </div>
+
+
+                <div class="social-icons-container">
+                    <h4 class="mb-3" style="font-size: 0.9rem; text-align: left; margin-left: 10px;"> Connect With
+                        Us Through Social Media</h4>
+                    <div class="social-icons d-flex gap-3">
+                        <a href="https://www.facebook.com/yourpage" class="social-icon" aria-label="Facebook">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="https://www.linkedin.com/yourpage" class="social-icon" aria-label="LinkedIn">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="https://www.twitter.com/yourpage" class="social-icon" aria-label="Twitter">
+                            <i class="fab fa-x-twitter"></i>
+                        </a>
+                        <a href="https://www.instagram.com/yourpage" class="social-icon" aria-label="Instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="https://www.youtube.com/yourchannel" class="social-icon" aria-label="YouTube">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <style>
+                .social-icons {
+                    display: flex;
+                    align-items: center;
+                }
+
+                .social-icon {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    width: 40px;
+                    height: 40px;
+                    border-radius: 50%;
+                    color: white;
+                    text-decoration: none;
+                    transition: all 0.3s ease;
+                }
+
+                .social-icon:hover {
+                    transform: translateY(-3px);
+                    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+                    background-image: none !important;
+                    background-color: #f0f0f0 !important;
+                    color: #333 !important;
+                }
+
+                .social-icon i {
+                    font-size: 18px;
+                }
+
+                .social-icon[aria-label="Facebook"] {
+                    background-color: #3b5998;
+                }
+
+                .social-icon[aria-label="LinkedIn"] {
+                    background-color: #0077b5;
+                }
+
+                .social-icon[aria-label="Twitter"] {
+                    background-color: #475258;
+                }
+
+                .social-icon[aria-label="Instagram"] {
+                    background-color: #a19551;
+                }
+
+                .social-icon[aria-label="YouTube"] {
+                    background-color: #e62e2e;
+                }
+            </style>
+            <div id="contact-form" class="col-lg-5  right-column right-column-custom p-4 p-md-5 order-1 order-lg-2">
+                <form class="needs-validation" id="microContactForm" novalidate>
+                    <div class="mb-3">
+                        <label for="fullname" class="form-label">Name</label>
+                        <input type="text" class="form-control" id="fullname" placeholder="Name" required>
+                        <div class="invalid-feedback">
+                            Please enter your full name.
+                        </div>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="company" class="form-label">Company Name</label>
+                        <input type="text" class="form-control" id="company" placeholder="Company" required>
+                        <div class="invalid-feedback">
+                            Please enter your company name.
+                        </div>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="jobTitle" class="form-label">Job Title</label>
+                        <input type="text" class="form-control" id="jobTitle" placeholder="Job Title" required>
+                        <div class="invalid-feedback">
+                            Please enter your job title.
+                        </div>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="phone" class="form-label">Mobile Phone</label>
+                        <input type="tel" class="form-control" id="phone" placeholder="Mobile Phone" required
+                            pattern="^\+?\d{0,13}">
+                        <div class="invalid-feedback">
+                            Please enter a valid mobile phone number.
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="email" class="form-label">Email</label>
+                        <input type="email" class="form-control" id="email" placeholder="Email" required>
+                        <div class="invalid-feedback">
+                            Please enter a valid email address.
+                        </div>
+                    </div>
+
+
+                    <div class="mb-3">
+                        <label for="message" class="form-label">How we can help you? </label>
+                        <textarea id="message" class="form-control" rows="4" placeholder="Message" required></textarea>
+                        <div class="invalid-feedback">
+                            Please enter a message.
+                        </div>
+                    </div>
+
+                    <div class="mb-3 form-check ">
+                        <div class="d-inline-block text-start">
+                            <input type="checkbox" class="form-check-input" id="terms" required>
+                            <label class="form-check-label" for="terms">
+                                Before submitting please read our <br>
+                                <a href="#" class="text-decoration-none">Term and Condition</a> &
+                                <a href="#" class="text-decoration-none">Privacy Policy</a>
+                            </label>
+                            <div class="invalid-feedback">
+                                You must agree to the terms and conditions.
+                            </div>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="btn submit-btn w-100">
+                        <i class="fas fa-paper-plane icon"></i>
+                        <span class="text">Submit</span>
+                    </button>
+
+                    <style>
+                        .submit-btn {
+                            position: relative;
+                            overflow: hidden;
+                            display: inline-flex;
+                            align-items: center;
+                            justify-content: center;
+                            width: 100%;
+                            height: 60px;
+                            font-size: 1.2rem;
+                            letter-spacing: 1px;
+                            text-transform: uppercase;
+                            border: none;
+                            border-radius: 10px;
+                            background: linear-gradient(to bottom, #9054d0, #7a4bd7);
+                            color: #ffffff;
+                            cursor: pointer;
+                            transition: all 0.3s ease-in-out;
+                            margin: 20px auto 0;
+                            /* Added top margin to move the button slightly down */
+                        }
+
+                        .submit-btn .icon {
+                            margin-right: 10px;
+                            font-size: 1.5rem;
+                            transition: all 0.5s ease-in-out;
+                            color: #ffffff;
+                        }
+
+                        .submit-btn .text {
+                            transition: all 0.5s ease-in-out;
+                            color: #ffffff;
+
+                        }
+
+                        .submit-btn:hover {
+                            background: linear-gradient(to bottom, #4CAF50, #45a049);
+                        }
+
+                        .submit-btn:hover .text {
+                            transform: translateX(420px);
+                            color: #ffffff;
+                        }
+
+                        .submit-btn:hover .icon {
+                            transform: translateX(45px);
+                            /* Adjusted to move to the middle */
+                            color: #ffffff;
+                        }
+
+                        @media (max-width: 768px) {
+                            .submit-btn:hover .icon {
+                                transform: translateX(40px);
+                                /* Reduced movement for smaller screens */
+                            }
+                        }
+
+                        .submit-btn:active {
+                            transform: translateY(3px);
+                            box-shadow:
+                                inset 0 15px 15px -15px rgba(0, 0, 0, 0.3),
+                                inset 0 0 0 1px rgba(255, 255, 255, 0.1),
+                                0 2px 5px rgba(0, 0, 0, 0.1),
+                                0 5px 10px rgba(0, 0, 0, 0.1);
+                        }
+                    </style>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+<style>
+    @media (max-width: 991px) {
+        #contact .row {
+            display: flex;
+            flex-direction: column;
+        }
+
+        #contact-form {
+            order: 2;
+        }
+
+        #contact-info {
+            order: 1;
+        }
+    }
+</style>
+
+<section id="newsletter-cta" class="py-4 mb-0">
+    <div class="container-fluid ">
+        <div class="row align-items-center">
+            <div class="col-md-7 text-start">
+                <h2 class="mb-3 fw-bold gradient-text">Stay Informed, Stay Ahead</h2>
+                <p class="mb-4">Join our newsletter for exclusive insights and expert tips.</p>
+                <form class="mb-3">
+                    <div class="input-group input-group-lg" style="max-width: 500px;">
+                        <input type="email" class="form-control" placeholder="Email address" aria-label="Email address"
+                            required style="border-radius: 10px 0 0 10px;">
+                        <button class="btn btn-primary" type="submit"
+                            style="border-radius: 0 10px 10px 0;">Subscribe</button>
+                    </div>
+                </form>
+                <p class="text-muted small">By subscribing, you agree to our <a href="#"
+                        class="text-decoration-none">Privacy Policy</a> and <a href="#"
+                        class="text-decoration-none">Terms of Service</a>.</p>
+            </div>
+            <div class="col-md-5">
+                <div class="d-flex justify-content-md-end align-items-center mb-3">
+                    <img src="assets/img/footer1.png" alt="Logo 1" class="footer-logo me-3"
+                        style="max-height: 90px; width: auto;">
+                    <img src="assets/sticker.png" alt="Logo 2" class="footer-logo dark-mode-image"
+                        style="max-height: 90px; width: auto;">
+                    <style>
+                        .dark-mode-image {
+                            content: url('assets/sticker.png');
+                        }
+
+                        body.dark-mode .dark-mode-image {
+                            content: url('assets/img/footer2.png');
+                        }
+                    </style>
+                </div>
+                <div class="text-md-end">
+                    <p class="mb-2 text-muted small" style="font-size: 0.9rem;">&copy; 2024 Realta. All rights
+                        reserved.</p>
+                    <a href="https://www.realta.co.id/site/privacy-policy.html" class="text-muted small me-3"
+                        style="font-size: 0.9rem;">Privacy Policy</a>
+                    <span class="text-muted small me-3" style="font-size: 0.9rem;">|</span>
+                    <a href="https://www.realta.co.id/site/privacy-policy.html" class="text-muted small"
+                        style="font-size: 0.9rem;">Terms</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+<style>
+    #newsletter-cta {
+        background: linear-gradient(135deg, #f5f7fa 0%, #a588bd 100%);
+        transition: background 0.3s ease;
+    }
+
+    #newsletter-cta .gradient-text {
+        background: linear-gradient(90deg, #7209d4, #2832d4 33%, #00a5b2);
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+        font-size: 2rem;
+    }
+
+    #newsletter-cta .btn-primary {
+        background: linear-gradient(to bottom, #9054d0, #7a4bd7);
+        border: none;
+        transition: all 0.3s ease;
+    }
+
+    #newsletter-cta .form-control {
+        border: 2px solid #e0e0e0;
+        transition: all 0.3s ease;
+    }
+
+    #newsletter-cta .form-control:focus {
+        border-color: #7209d4;
+        box-shadow: 0 0 0 0.2rem rgba(114, 9, 212, 0.25);
+    }
+
+    body.dark-mode #newsletter-cta {
+        background: #282828;
+    }
+
+    body.dark-mode #newsletter-cta .gradient-text {
+        background: linear-gradient(90deg, #a742ff, #4b5eff 33%, #00d5e6);
+        -webkit-background-clip: text;
+        background-clip: text;
+    }
+
+    body.dark-mode #newsletter-cta .btn-primary {
+        background: linear-gradient(90deg, #a742ff, #4b5eff);
+    }
+
+    body.dark-mode #newsletter-cta .form-control {
+        border-color: #4a5568;
+        color: #fff;
+    }
+
+    body.dark-mode #newsletter-cta .form-control::placeholder {
+        color: #a0aec0;
+    }
+
+    body.dark-mode #newsletter-cta .text-muted {
+        color: #a0aec0 !important;
+    }
+
+    body.dark-mode #newsletter-cta a {
+        color: #00d5e6;
+    }
+
+    @media (max-width: 767px) {
+        #newsletter-cta .gradient-text {
+            font-size: 1.5rem;
+        }
+
+        #newsletter-cta .row {
+            text-align: center;
+        }
+
+        #newsletter-cta .col-md-7 {
+            text-align: center;
+        }
+
+        #newsletter-cta .col-md-5 {
+            margin-top: 2rem;
+        }
+
+        #newsletter-cta .d-flex {
+            justify-content: center !important;
+        }
+
+        #newsletter-cta .text-md-end {
+            text-align: center !important;
+        }
+
+        #newsletter-cta .form-control {
+            font-size: 0.8rem;
+        }
+    }
+</style>s
+    <!-- END -->
+
+    <script>
+        window.addEventListener('scroll', function () {
+            var scrolled = window.pageYOffset;
+            var parallax = document.querySelector('.parallax-background');
+            parallax.style.transform = 'translateY(' + (scrolled * 0.4) + 'px)';
+        });
+    </script>
+    <script src="assets/js/navbar.js"></script>
+    <script src="assets/js/mobilenav.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/contact-valid-micro.js" data-service-type="Property & Tenancy System"></script>
+
+
+</body>
+
+</html>

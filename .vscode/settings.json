@@ -1,0 +1,6 @@
+{
+    "liveServer.settings.port": 5502,
+    "CodeGPT.apiKey": "CodeGPT Plus Beta",
+    "traycer.enableAutoAnalysis": false,
+    "livePreview.defaultPreviewPath": "/Assets/index.html"
+}
