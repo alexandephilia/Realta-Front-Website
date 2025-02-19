@@ -685,23 +685,17 @@ pts: `
         <style>
             .membership-module i {
                 margin-right: 10px;
-                 background:  linear-gradient(45deg, #33CC33, #99FF33);
-                -webkit-background-clip: text;
-                -webkit-text-fill-color: transparent;
+                color: rgb(51, 204, 51);
             }
 
             .operations-module i {
                 margin-right: 10px;
-                 background:  linear-gradient(45deg, #33CC33, #99FF33);
-                -webkit-background-clip: text;
-                -webkit-text-fill-color: transparent;
+                color: rgb(51, 204, 51);
             }
 
             .tournament-module i {
                 margin-right: 10px;
-                background:  linear-gradient(45deg, #33CC33, #99FF33);
-                -webkit-background-clip: text;
-                -webkit-text-fill-color: transparent;
+                color: rgb(51, 204, 51);
             }
 
             .feature-list li {

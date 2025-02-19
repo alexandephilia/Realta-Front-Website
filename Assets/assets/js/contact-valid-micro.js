@@ -45,11 +45,10 @@ document.addEventListener('DOMContentLoaded', function() {
             type: 'select',
             options: [
                 { value: '', text: 'Choose...' },
-                { value: '1-50', text: '1-50 rooms' },
+                { value: '1-20', text: '1-20 rooms' },
+                { value: '21-50', text: '21-50 rooms' },
                 { value: '51-100', text: '51-100 rooms' },
-                { value: '101-200', text: '101-200 rooms' },
-                { value: '201-500', text: '201-500 rooms' },
-                { value: '500+', text: 'More than 500 rooms' }
+                { value: '100+', text: 'More than 100 rooms' }
             ]
         },
         'Golf Course System': {
@@ -71,11 +70,13 @@ document.addEventListener('DOMContentLoaded', function() {
             type: 'select',
             options: [
                 { value: '', text: 'Choose...' },
-                { value: 'residential', text: 'Residential' },
-                { value: 'commercial', text: 'Commercial' },
+                { value: 'apartment', text: 'Apartment' },
+                { value: 'mall', text: 'Mall' },
+                { value: 'office', text: 'Office' },
                 { value: 'mixed', text: 'Mixed Use' },
-                { value: 'industrial', text: 'Industrial' },
-                { value: 'retail', text: 'Retail' }
+                { value: 'datacenter', text: 'Data Center' },
+                { value: 'industrial', text: 'Industrial Estate' },
+                { value: 'others', text: 'Others' }
             ]
         }
     };

@@ -84,7 +84,7 @@
         }
 
         #contact .row {
-            max-width: 1200px; /* Constrain the entire contact section */
+            width: 100%; /* Constrain the entire contact section */
             margin: 0 auto;
         }
 
@@ -192,15 +192,15 @@
         -webkit-background-clip: text;
         background-clip: text;
         color: transparent;
-        font-size: 2.5rem;
+        font-size: 3.5rem;
         margin-bottom: 2rem;
     }
 
     @media (max-width: 768px) {
-        #contact .gradient-text {
-            font-size: 2rem;
+            .gradient-text {
+                font-size: 3.5rem !important;
+            }
         }
-    }
 
     /* Update the dark mode styles */
     body.dark-mode #contact .gradient-text {
@@ -668,14 +668,14 @@
 
                     <!-- Partner dropdown -->
                     <li class="me-1">
-                        <a href="index.html#partners" class="nav-link"
-                            onclick="navigateWithLoading('index.html#partners')">Partners</a>
+                        <a href="partners.html" class="nav-link"
+                            onclick="navigateWithLoading('partners.html')">Partners</a>
                     </li>
 
                     <!-- Contact dropdown -->
                     <li class="me-1">
-                        <a href="index.html#contact" class="nav-link"
-                            onclick="navigateWithLoading('index.html#contact')">Contact</a>
+                        <a href="contacts.html" class="nav-link active"
+                            onclick="navigateWithLoading('contacts.html')">Contact</a>
                     </li>
 
                     <!-- Career dropdown -->
@@ -1184,9 +1184,7 @@
                <span class="sub-text">To arrange meeting and demo with us</span>
            </div>
        </a>
-    <div id="loading-screen">
-        <img src="assets/img/loading.jpg" alt="Loading..." class="loading-logo">
-    </div>
+   
 
     <!-- Rest of your existing body content -->
 
@@ -1333,8 +1331,8 @@
     <section id="contact" class="pb-5">
         <div class="container-fluid">
             <h2 class="text-center mb-5 fw-bold gradient-text">Contact Us</h2>
-            <div class="row justify-content-center">
-                <div id="contact-info" class="col-lg-5 left-column">
+            <div class="row justify-content-center" style="gap: 1rem; max-width: 1200px; margin: 0 auto;">
+                <div id="contact-info" class="col-lg-5 left-column" style="padding: 0 1rem;">
                    
 
                     <div class="company-info" style="border-radius: 10px;">
@@ -1494,7 +1492,7 @@
                         background-color: #e62e2e;
                     }
                 </style>
-                <div id="contact-form" class="col-lg-5 right-column right-column-custom p-4 p-md-5 order-1 order-lg-2">
+                <div id="contact-form" class="col-lg-5 right-column right-column-custom p-4" style="padding: 1.5rem !important;">
                     <form class="needs-validation" novalidate>
                         <div class="form-floating mb-4">
                             <input type="text" class="form-control custom-input" id="fullname" placeholder="Name" required>
@@ -1655,15 +1653,33 @@
             #contact .row {
                 display: flex;
                 flex-direction: column;
+                gap: 1.5rem;
+                padding: 0 1rem;
             }
 
             #contact-form {
-                order: 2;
+                padding: 1.25rem !important;
             }
 
             #contact-info {
-                order: 1;
+                padding: 0 0.5rem !important;
             }
+        }
+
+        @media (min-width: 992px) {
+            #contact .row {
+                gap: 1rem;
+            }
+            
+            #contact .container-fluid {
+                padding: 0 2rem;
+            }
+        }
+
+        /* Update container max-width */
+        #contact .container-fluid {
+            max-width: 1200px;
+            margin: 0 auto;
         }
     </style>
 

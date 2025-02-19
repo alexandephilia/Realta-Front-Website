@@ -588,8 +588,8 @@
                     }
                 </style>
                 <ul class="sidebar-nav justify-content-end align-items-center"
-                style="padding: 0; margin: 0; margin-top: 8px; list-style-type: none;">
-                <!-- Solutions dropdown -->
+                    style="padding: 0; margin: 0; margin-top: 8px; list-style-type: none;">
+                    <!-- Solutions dropdown -->
                     <li class="me-1"><a class="nav-link dropdown-toggle" href="#" id="solutionsDropdown" role="button"
                             data-bs-toggle="dropdown" aria-expanded="false">
                             Solution <i class="fas fa-chevron-down ms-1 fa-xs"></i>
@@ -597,18 +597,22 @@
 
                     <!-- Industry dropdown -->
                     <li class="me-1">
-                        <a href="hospitality.html" class="nav-link" onclick="navigateWithLoading('hospitality.html')">Industry</a>
+                        <a href="hospitality.html" class="nav-link active"
+                            onclick="navigateWithLoading('hospitality.html')">Industry</a>
                     </li>
 
                     <!-- Partner dropdown -->
                     <li class="me-1">
-                        <a href="index.html#partners" class="nav-link" onclick="navigateWithLoading('index.html#partners')">Partners</a>
+                        <a href="partners.html" class="nav-link scroll-link"
+                            onclick="navigateWithLoading('partners.html')">Partners</a>
                     </li>
 
                     <!-- Contact dropdown -->
                     <li class="me-1">
-                        <a href="contacts.html" class="nav-link" onclick="navigateWithLoading('contacts.html')">Contact</a>
+                        <a href="contacts.html" class="nav-link scroll-link"
+                            onclick="navigateWithLoading('contacts.html')">Contact</a>
                     </li>
+
 
                     <!-- Career dropdown -->
                     <li class="me-1">
@@ -672,7 +676,7 @@
         <div class="mega-dropdown" id="industriDropdownContent">
             <div class="dropdown-content">
                 <div class="product-categories">
-                    <div class="product-category active" data-product="hospitality">Hospitality</div>
+                    <div class="product-category" data-product="hospitality">Hospitality</div>
                     <div class="product-category" data-product="property">Property</div>
                     <div class="product-category" data-product="manufacturing">Manufacturing</div>
                     <div class="product-category" data-product="fsi">FSI</div>
@@ -756,9 +760,12 @@
             backdrop-filter: blur(0px);
             opacity: 1;
             background-color: rgba(240, 240, 240, 0.845);
-            display: none !important; /* Force hide the banner */
-            pointer-events: none; /* Prevent any interaction */
-            visibility: hidden; /* Ensure it's completely hidden */
+            display: none !important;
+            /* Force hide the banner */
+            pointer-events: none;
+            /* Prevent any interaction */
+            visibility: hidden;
+            /* Ensure it's completely hidden */
         }
 
         /* Ensure banner doesn't affect layout */
@@ -1071,48 +1078,46 @@
         });
     </script>
 
-<script>
-    document.addEventListener('DOMContentLoaded', function() {
-        // Get all scroll links
-        const scrollLinks = document.querySelectorAll('.scroll-link');
-        
-        scrollLinks.forEach(link => {
-            link.addEventListener('click', function(e) {
-                e.preventDefault();
-                
-                // Get the target section id from href
-                const targetId = this.getAttribute('href');
-                const targetSection = document.querySelector(targetId);
-                
-                if (targetSection) {
-                    // Get header height for offset
-                    const headerHeight = document.querySelector('#mainNav').offsetHeight;
-                    
-                    // Calculate scroll position
-                    const scrollPosition = targetSection.offsetTop - headerHeight;
-                    
-                    // Smooth scroll to target
-                    window.scrollTo({
-                        top: scrollPosition,
-                        behavior: 'smooth'
-                    });
-                    
-                    // Close mobile menu if open
-                    const navbarCollapse = document.querySelector('.navbar-collapse');
-                    if (navbarCollapse.classList.contains('show')) {
-                        navbarCollapse.classList.remove('show');
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Get all scroll links
+            const scrollLinks = document.querySelectorAll('.scroll-link');
+
+            scrollLinks.forEach(link => {
+                link.addEventListener('click', function (e) {
+                    e.preventDefault();
+
+                    // Get the target section id from href
+                    const targetId = this.getAttribute('href');
+                    const targetSection = document.querySelector(targetId);
+
+                    if (targetSection) {
+                        // Get header height for offset
+                        const headerHeight = document.querySelector('#mainNav').offsetHeight;
+
+                        // Calculate scroll position
+                        const scrollPosition = targetSection.offsetTop - headerHeight;
+
+                        // Smooth scroll to target
+                        window.scrollTo({
+                            top: scrollPosition,
+                            behavior: 'smooth'
+                        });
+
+                        // Close mobile menu if open
+                        const navbarCollapse = document.querySelector('.navbar-collapse');
+                        if (navbarCollapse.classList.contains('show')) {
+                            navbarCollapse.classList.remove('show');
+                        }
                     }
-                }
+                });
             });
         });
-    });
     </script>
 </header>
 
 <body>
-    <div id="loading-screen">
-        <img src="assets/img/loading.jpg" alt="Loading..." class="loading-logo">
-    </div>
+ 
 
     <!-- Rest of your existing body content -->
 
@@ -1254,7 +1259,7 @@
     <!-- LOADING -->
 
 
-    
+
     <!-- Add this section before the newsletter-cta section -->
     <section id="industry" class="industry-section py-5">
         <div class="container-fluid px-5">
@@ -1268,11 +1273,12 @@
                         </div>
                         <div class="industry-content">
                             <h3>Hospitality</h3>
-                            <p>Comprehensive solutions for hotels, resorts, and hospitality businesses. Streamline operations, enhance guest experiences, and maximize revenue.</p>
+                            <p>Comprehensive solutions for hotels, resorts, and hospitality businesses. Streamline
+                                operations, enhance guest experiences, and maximize revenue.</p>
                         </div>
                     </div>
                 </div>
-                
+
                 <!-- Second Card -->
                 <div class="col-lg-4 col-md-6 mb-4">
                     <div class="industry-card">
@@ -1281,11 +1287,12 @@
                         </div>
                         <div class="industry-content">
                             <h3>Manufacturing</h3>
-                            <p>End-to-end solutions for manufacturing enterprises. Optimize production, manage inventory, and improve supply chain efficiency.</p>
+                            <p>End-to-end solutions for manufacturing enterprises. Optimize production, manage
+                                inventory, and improve supply chain efficiency.</p>
                         </div>
                     </div>
                 </div>
-                
+
                 <!-- Third Card (Centered Below) -->
                 <div class="col-lg-4 col-md-6 mb-4">
                     <div class="industry-card">
@@ -1294,7 +1301,8 @@
                         </div>
                         <div class="industry-content">
                             <h3>Property Management</h3>
-                            <p>Innovative solutions for property managers and real estate businesses. Simplify tenant management, maintenance, and financial operations.</p>
+                            <p>Innovative solutions for property managers and real estate businesses. Simplify tenant
+                                management, maintenance, and financial operations.</p>
                         </div>
                     </div>
                 </div>
@@ -1303,9 +1311,10 @@
     </section>
 
     <style>
-        section{
+        section {
             margin-bottom: 0px !important;
         }
+
         .industry-section {
             background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
             overflow: hidden;
@@ -1316,6 +1325,7 @@
             -webkit-background-clip: text;
             background-clip: text;
             color: transparent;
+            font-size: 3.5rem;
             /* font-size: 2.5rem; */
             margin-bottom: 2rem;
         }
@@ -1389,7 +1399,7 @@
         /* Responsive styles */
         @media (max-width: 768px) {
             .industry-section .gradient-text {
-                font-size: 2rem;
+                font-size: 2.5rem;
             }
 
             .industry-image {
@@ -1985,92 +1995,92 @@
     </script>
 
     <script>
-    document.addEventListener('DOMContentLoaded', function() {
-        // Get all scroll links
-        const scrollLinks = document.querySelectorAll('.scroll-link');
-        
-        scrollLinks.forEach(link => {
-            link.addEventListener('click', function(e) {
-                e.preventDefault();
-                
-                // Get the target section id from href
-                const targetId = this.getAttribute('href');
-                const targetSection = document.querySelector(targetId);
-                
-                if (targetSection) {
-                    // Get header height for offset
-                    const headerHeight = document.querySelector('#mainNav').offsetHeight;
-                    
-                    // Calculate scroll position
-                    const scrollPosition = targetSection.offsetTop - headerHeight;
-                    
-                    // Smooth scroll to target
-                    window.scrollTo({
-                        top: scrollPosition,
-                        behavior: 'smooth'
-                    });
-                    
-                    // Close mobile menu if open
-                    const navbarCollapse = document.querySelector('.navbar-collapse');
-                    if (navbarCollapse.classList.contains('show')) {
-                        navbarCollapse.classList.remove('show');
+        document.addEventListener('DOMContentLoaded', function () {
+            // Get all scroll links
+            const scrollLinks = document.querySelectorAll('.scroll-link');
+
+            scrollLinks.forEach(link => {
+                link.addEventListener('click', function (e) {
+                    e.preventDefault();
+
+                    // Get the target section id from href
+                    const targetId = this.getAttribute('href');
+                    const targetSection = document.querySelector(targetId);
+
+                    if (targetSection) {
+                        // Get header height for offset
+                        const headerHeight = document.querySelector('#mainNav').offsetHeight;
+
+                        // Calculate scroll position
+                        const scrollPosition = targetSection.offsetTop - headerHeight;
+
+                        // Smooth scroll to target
+                        window.scrollTo({
+                            top: scrollPosition,
+                            behavior: 'smooth'
+                        });
+
+                        // Close mobile menu if open
+                        const navbarCollapse = document.querySelector('.navbar-collapse');
+                        if (navbarCollapse.classList.contains('show')) {
+                            navbarCollapse.classList.remove('show');
+                        }
                     }
-                }
+                });
             });
         });
-    });
     </script>
 
     <script>
-    document.addEventListener('DOMContentLoaded', function() {
-        // Check if we have a stored section to scroll to
-        const scrollToSection = localStorage.getItem('scrollToSection');
-        
-        if (scrollToSection) {
-            // Clear the stored section
-            localStorage.removeItem('scrollToSection');
-            
-            // Find the target element
-            const targetElement = document.getElementById(scrollToSection);
-            
-            if (targetElement) {
-                // Get header height for offset
-                const headerHeight = document.querySelector('#mainNav').offsetHeight;
-                
-                // Calculate scroll position
-                const scrollPosition = targetElement.offsetTop - headerHeight;
-                
-                // Add a slight delay to ensure proper scrolling after page load
-                setTimeout(() => {
-                    window.scrollTo({
-                        top: scrollPosition,
-                        behavior: 'smooth'
-                    });
-                }, 100);
-            }
-        }
-    });
-    </script>
-
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
+        document.addEventListener('DOMContentLoaded', function () {
             // Check if we have a stored section to scroll to
             const scrollToSection = localStorage.getItem('scrollToSection');
-            
+
             if (scrollToSection) {
                 // Clear the stored section
                 localStorage.removeItem('scrollToSection');
-                
+
                 // Find the target element
                 const targetElement = document.getElementById(scrollToSection);
-                
+
                 if (targetElement) {
                     // Get header height for offset
                     const headerHeight = document.querySelector('#mainNav').offsetHeight;
-                    
+
                     // Calculate scroll position
                     const scrollPosition = targetElement.offsetTop - headerHeight;
-                    
+
+                    // Add a slight delay to ensure proper scrolling after page load
+                    setTimeout(() => {
+                        window.scrollTo({
+                            top: scrollPosition,
+                            behavior: 'smooth'
+                        });
+                    }, 100);
+                }
+            }
+        });
+    </script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Check if we have a stored section to scroll to
+            const scrollToSection = localStorage.getItem('scrollToSection');
+
+            if (scrollToSection) {
+                // Clear the stored section
+                localStorage.removeItem('scrollToSection');
+
+                // Find the target element
+                const targetElement = document.getElementById(scrollToSection);
+
+                if (targetElement) {
+                    // Get header height for offset
+                    const headerHeight = document.querySelector('#mainNav').offsetHeight;
+
+                    // Calculate scroll position
+                    const scrollPosition = targetElement.offsetTop - headerHeight;
+
                     // Add a slight delay to ensure proper scrolling after page load
                     setTimeout(() => {
                         window.scrollTo({
@@ -2085,13 +2095,13 @@
         function navigateToSection(sectionId) {
             // Store the target section in localStorage
             localStorage.setItem('scrollToSection', sectionId);
-            
+
             // Navigate to index.html
             window.location.href = 'index.html#' + sectionId;
         }
 
         // Handle hash navigation when coming from other pages
-        document.addEventListener('DOMContentLoaded', function() {
+        document.addEventListener('DOMContentLoaded', function () {
             if (window.location.hash) {
                 const targetId = window.location.hash;
                 const targetElement = document.querySelector(targetId);

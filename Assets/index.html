@@ -596,7 +596,7 @@
 
                     <!-- Partner dropdown -->
                     <li class="me-1">
-                        <a href="#partners" class="nav-link scroll-link">Partners</a>
+                        <a href="partners.html" class="nav-link scroll-link" onclick="navigateWithLoading('partners.html')">Partners</a>
                     </li>
 
                     <!-- Contact dropdown -->
@@ -2174,7 +2174,7 @@
     </section>
 
     
-    <section id="blog" class="py-5">
+    <section id="stats" class="py-5">
         <div class="container-fluid">
             <div class="card-body">
                 <div class="row">
@@ -2185,7 +2185,7 @@
                     </div>
                     <!-- Statistics Section -->
                     <div class="col-12">
-                        <div class="row row-cols-1 row-cols-md-5 text-center">
+                        <div class="row row-cols-2 row-cols-md-5 text-center g-3">
                             <div class="col d-flex flex-column mb-3 mb-md-0">
                                 <h2 class="stat-number" data-target="25">0</h2>
                                 <h2 class="stat-description">Industries</h2>
@@ -2202,11 +2202,35 @@
                                 <h2 class="stat-number" data-target="30">0</h2>
                                 <h2 class="stat-description">Million End users</h2>
                             </div>
-                            <div class="col d-flex flex-column">
+                            <div class="col d-flex flex-column last-stat">
                                 <h2 class="stat-number" data-target="50000">0</h2>
                                 <h2 class="stat-description">Tickets per day</h2>
                             </div>
                         </div>
+                        
+                        <style>
+                            @media (max-width: 767.98px) {
+                                .row-cols-2 .col {
+                                    margin-bottom: 1rem !important;
+                                }
+                                
+                                /* Center the last item when odd number of items */
+                                .row-cols-2 .last-stat {
+                                    margin-left: auto;
+                                    margin-right: auto;
+                                    width: 50%;
+                                }
+                                
+                                /* Adjust stat text size for mobile */
+                                .stat-number {
+                                    font-size: 1.75rem;
+                                }
+                                
+                                .stat-description {
+                                    font-size: 1rem;
+                                }
+                            }
+                        </style>
                         <script>
                             // Function to animate a single number
                             function animateNumber(element, target) {
@@ -3420,9 +3444,9 @@
         /* Mobile responsiveness */
         @media (max-width: 768px) {
             .rt-testimonial-wrapper {
-                width: 90%;
-                max-width: 355px;
-                padding: 0;
+                /* width: 90%; */
+                max-width: 395px;
+                padding: 10px 10px 10px 25px;
                 overflow: visible;
                 margin: 0 auto;
                 position: relative;
@@ -3519,7 +3543,6 @@
                 width: clamp(32px, 8vw, 40px);
                 height: clamp(32px, 8vw, 40px);
             }
-
             .play-button i {
                 font-size: clamp(14px, 4vw, 16px);
             }
@@ -3533,6 +3556,12 @@
             gap: clamp(10px, 3vw, 15px);
             width: 100%;
             padding: 0 20px;
+        }
+
+        @media (max-width: 768px) {
+            .rt-pagination {
+                justify-content: end;
+            }
         }
 
         .rt-nav-btn {
