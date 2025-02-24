@@ -1220,14 +1220,13 @@ body.dark-mode .glass-dropdown .dropdown-item:hover {
 
 .nav-link {
   color: var(--text-color);
-  font-size: 1rem; /* Changed from 0.9rem if needed */
+  font-size: 1rem;
   text-decoration: none;
   transition: all var(--transition-speed) ease;
   position: relative;
-  padding: 0.5rem 0.5rem; /* Adjusted padding */
+  padding: 0.5rem 0.5rem;
   border-radius: 15px;
 }
-
 
 .nav-link::after {
   content: '';
@@ -1243,6 +1242,20 @@ body.dark-mode .glass-dropdown .dropdown-item:hover {
 .nav-link:hover::after,
 .nav-link.active::after {
   width: 100%;
+}
+
+/* Additional styles for dropdown-toggle consistency */
+.nav-link.dropdown-toggle.show::after,
+.nav-link.dropdown-toggle.active::after {
+  width: 100%;
+}
+
+/* Ensure consistent hover color for all nav-links including dropdown */
+.nav-link.dropdown-toggle:hover,
+.nav-link.dropdown-toggle.active,
+.nav-link.dropdown-toggle.show {
+  color: #8454d0 !important;
+  text-shadow: 0 0 1px rgba(132, 84, 208, 0.5) !important;
 }
 
 /* Hide dropdown toggle arrows */
@@ -1898,6 +1911,38 @@ section:target {
 @keyframes highlight {
     0% { background-color: rgba(144, 84, 208, 0.1); }
     100% { background-color: transparent; }
+}
+
+/* Hide ONLY Bootstrap's default dropdown arrows */
+.dropdown-toggle.nav-link:not(:after) {
+    display: none !important;
+}
+
+/* Override the hiding for our custom underline */
+.nav-link.dropdown-toggle::after {
+    content: '' !important;
+    display: block !important;
+    position: absolute !important;
+    height: 2px !important; /* MAKE IT THICC LIKE THE OTHERS */
+    bottom: 0px !important;
+    left: 0 !important;
+    border-top: .2em solid;
+    background-color: #9054d0 !important;
+    transition: width var(--transition-speed) ease !important;
+}
+
+.nav-link.dropdown-toggle:hover::after,
+.nav-link.dropdown-toggle.active::after,
+.nav-link.dropdown-toggle.show::after {
+    width: 85% !important;
+}
+
+/* Ensure consistent hover color for all nav-links including dropdown */
+.nav-link.dropdown-toggle:hover,
+.nav-link.dropdown-toggle.active,
+.nav-link.dropdown-toggle.show {
+    color: #8454d0 !important;
+    text-shadow: 0 0 1px rgba(132, 84, 208, 0.5) !important;
 }
 
 /* 
