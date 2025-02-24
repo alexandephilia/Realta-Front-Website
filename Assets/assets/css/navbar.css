@@ -1234,7 +1234,7 @@ body.dark-mode .glass-dropdown .dropdown-item:hover {
   position: absolute;
   width: 0;
   height: 2px;
-  bottom: 0px;
+  bottom: 0px !important;
   left: 0;
   background-color: #9054d0;
   transition: width var(--transition-speed) ease;
@@ -1308,17 +1308,6 @@ body.dark-mode .dropdown-toggle::after {
   position: relative;
   padding: 0.5rem 0.25rem;
   border-radius: 15px;
-}
-
-.nav-link::after {
-  content: '';
-  position: absolute;
-  width: 0;
-  height: 2px;
-  bottom: -5px;
-  left: 0;
-  background-color: #9054d0;
-  transition: width var(--transition-speed) ease;
 }
 
 
