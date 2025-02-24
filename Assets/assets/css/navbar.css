@@ -1234,7 +1234,7 @@ body.dark-mode .glass-dropdown .dropdown-item:hover {
   position: absolute;
   width: 0;
   height: 2px;
-  bottom: -5px;
+  bottom: 0px;
   left: 0;
   background-color: #9054d0;
   transition: width var(--transition-speed) ease;
