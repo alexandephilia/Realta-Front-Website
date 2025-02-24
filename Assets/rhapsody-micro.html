@@ -626,8 +626,30 @@
                     </style>
                     <ul class="sidebar-nav justify-content-end align-items-center"
                         style="padding: 0; margin: 0; margin-top: 8px; list-style-type: none;">
+                          <style>
+                    .nav-link.active {
+                        color: #8454d0 !important; /* Using the green color from your theme */
+                        font-weight: 600;
+                        position: relative;
+                    }
+
+                    .nav-link.active::after {
+                        content: '';
+                        position: absolute;
+                        bottom: -2px;
+                        left: 0;
+                        width: 100%;
+                        height: 2px;
+                        background-color: #8454d0;
+                    }
+
+                    /* For dropdown toggle when active */
+                    .nav-link.dropdown-toggle.active {
+                        color: #8454d0 !important;
+                    }
+                </style>
                         <!-- Solutions dropdown -->
-                        <li class="me-1"><a class="nav-link dropdown-toggle" href="#" id="solutionsDropdown"
+                        <li class="me-1"><a class="nav-link dropdown-toggle active" href="#" id="solutionsDropdown"
                                 role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                 Solution <i class="fas fa-chevron-down ms-1 fa-xs"></i>
                             </a></li>
@@ -690,7 +712,7 @@
                     <div class="product-categories">
                         <div class="product-category" data-product="gcs">Golf Course System</div>
                         <div class="product-category" data-product="hrs">HR System</div>
-                        <div class="product-category " data-product="hms">Hotel Management System</div>
+                        <div class="product-category active" data-product="hms">Hotel Management System</div>
                         <div class="product-category" data-product="itm">ITSM, ITAM & Unified Endpoint Management</div>
                         <div class="product-category" data-product="pts">Property & Tenancy System</div>
                         <div class="product-category" data-product="erp">Network & System Integration</div>

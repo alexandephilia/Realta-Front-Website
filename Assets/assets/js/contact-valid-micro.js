@@ -74,8 +74,6 @@ document.addEventListener('DOMContentLoaded', function() {
                 { value: 'mall', text: 'Mall' },
                 { value: 'office', text: 'Office' },
                 { value: 'mixed', text: 'Mixed Use' },
-                { value: 'datacenter', text: 'Data Center' },
-                { value: 'industrial', text: 'Industrial Estate' },
                 { value: 'others', text: 'Others' }
             ]
         }
