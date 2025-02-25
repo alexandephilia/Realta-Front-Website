@@ -94,7 +94,7 @@ function injectStyles() {
             font-weight: 500 !important;
             color: var(--text-color-primary) !important;
             background: linear-gradient(145deg, var(--bg-color), rgba(var(--brand-color-rgb), 0.02)) !important;
-            transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1) !important;
+            transition: color 0.25s cubic-bezier(0.4, 0, 0.2, 1), background 0.25s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.25s cubic-bezier(0.4, 0, 0.2, 1) !important;
             transform: translateY(-4px) !important;
             backface-visibility: hidden !important;
             will-change: transform, box-shadow, border-color !important;
@@ -119,10 +119,10 @@ function injectStyles() {
         .tag-item.active {
             font-weight: var(--font-weight-semibold) !important;
             transform: translateY(6px) !important;
-            background: linear-gradient(145deg, var(--bg-color), #fafafa) !important;
+       
             border-color: rgba(var(--brand-color-rgb), 0.8) !important;
             color: rgba(var(--brand-color-rgb), 0.9) !important;
-            box-shadow: 0 2px 4px rgba(var(--brand-color-rgb), 0.06) !important;
+            transition: none !important;
         }
 
         /* Active underline animation */
@@ -130,7 +130,6 @@ function injectStyles() {
         /* Click state */
         .tag-item:active {
             transform: translateY(1px) !important;
-            transition: all 0.1s cubic-bezier(0.4, 0, 0.2, 1) !important;
             border-color: rgba(var(--brand-color-rgb), 0.4) !important;
         }
 
@@ -1279,7 +1278,7 @@ function toggleCard(element, contentKey) {
         // Create card content with dynamic colors
         contentCards.innerHTML = `
             <div class="card content-card mt-0" style="
-                width: 95% !important;
+                width: 99% !important;
                 margin: 0 auto !important;
                 border-radius: 25px 25px 25px 25px !important;
                 border: 2px solid ${sectionStyle.borderColor} !important;
@@ -1327,7 +1326,7 @@ function toggleCard(element, contentKey) {
                         color: ${sectionStyle.borderColor} !important;
                         font-weight: var(--font-weight-semibold) !important;
                         transform: translateY(6px) !important;
-                        background: linear-gradient(145deg, var(--bg-color), #fafafa) !important;
+                      
                     }
                     .tag-item.active::after {
                         background: ${sectionStyle.borderColor} !important;

@@ -133,27 +133,6 @@
         }
     }
 
-    /* Add this style block in the <head> section or in your CSS file */
-    .container-fluid {
-        width: 100%;
-        /* Change from 95% to 100% */
-        padding-left: 3.1%;
-        /* Add consistent padding */
-        padding-right: 3.1%;
-        /* Add consistent padding */
-        margin-left: auto;
-        margin-right: auto;
-    }
-
-    @media (max-width: 768px) {
-        .container-fluid {
-            width: 100%;
-            padding-left: 0.5%;
-            /* Add consistent padding */
-            padding-right: 0.5%;
-            /* Add consistent padding */
-        }
-    }
 </style>
 
 <header>
@@ -632,12 +611,12 @@
                 </ul>
                 <div class="sidebar-actions d-flex justify-content-end align-items-center"
                     style="margin-bottom: 0.5rem;">
-                    <a class="btn-custom whatsapp-btn me-2"
+                    <!-- <a class="btn-custom whatsapp-btn me-2"
                         href="https://api.whatsapp.com/send?phone=628111221789&text=Hallo%20PT%20Realta..."
                         target="_blank" rel="noopener noreferrer" style="font-size: 0.8em;">
                         <i class="fab fa-whatsapp"></i>
                         <span><strong>Whatsapp</strong></span>
-                    </a>
+                    </a> -->
                     <button id="darkModeToggleSidebar" class="btn-custom ms-2">
                         <i class="fas fa-moon"></i>
                     </button>
@@ -1117,7 +1096,15 @@
 </header>
 
 <body>
- 
+<!-- ADD WHATSAPP FLOATING BUTTON -->
+<a href="https://api.whatsapp.com/send?phone=628111221789&text=Hallo%20PT%20Realta..." target="_blank"
+    rel="noopener noreferrer" class="whatsapp-float">
+    <i class="fab fa-whatsapp"></i>
+    <div class="text-content">
+        <span class="click-text">Click here</span>
+        <span class="sub-text">To arrange meeting and demo with us</span>
+    </div>
+</a>
 
     <!-- Rest of your existing body content -->
 
@@ -1262,7 +1249,7 @@
 
     <!-- Add this section before the newsletter-cta section -->
     <section id="industry" class="industry-section py-5">
-        <div class="container-fluid px-5">
+        <div class="container-fluid ">
             <h2 class="text-center mb-5 fw-bold gradient-text">Industries We Serve</h2>
             <div class="row justify-content-center">
                 <!-- First Card -->
@@ -1420,15 +1407,15 @@
 
 
     <section id="newsletter-cta" class="py-4 mb-0">
-        <div class="container-fluid px-5">
+        <div class="container-fluid">
             <div class="row align-items-center">
                 <div class="col-md-7 text-start">
                     <h2 class="mb-3 fw-bold gradient-text">Stay Informed, Stay Ahead</h2>
                     <p class="mb-4">Join our newsletter for exclusive insights and expert tips.</p>
                     <form class="mb-3">
                         <div class="input-group input-group-lg" style="max-width: 500px;">
-                            <input type="email" class="form-control" placeholder="Email address"
-                                aria-label="Email address" required style="border-radius: 10px 0 0 10px;">
+                            <input type="email" class="form-control" placeholder="Email address" aria-label="Email address"
+                                required style="border-radius: 10px 0 0 10px;">
                             <button class="btn btn-primary" type="submit"
                                 style="border-radius: 0 10px 10px 0;">Subscribe</button>
                         </div>
@@ -1447,20 +1434,21 @@
                             .dark-mode-image {
                                 content: url('assets/sticker.png');
                             }
-
+    
                             body.dark-mode .dark-mode-image {
                                 content: url('assets/img/footer2.png');
                             }
                         </style>
                     </div>
                     <div class="text-md-end">
-                        <p class="mb-2 text-muted small" style="font-size: 0.9rem;">&copy; 2024 Realta. All rights
+                        <p class="mb-2 text-muted small" style="font-size: 0.9rem;">&copy; 2025 PT. Realta Chakradarma. All
+                            rights
                             reserved.</p>
                         <a href="https://www.realta.co.id/site/privacy-policy.html" class="text-muted small me-3"
-                            style="font-size: 0.9rem;">Privacy Policy</a>
+                            style="font-size: 0.9rem; text-decoration: underline;">Privacy Policy</a>
                         <span class="text-muted small me-3" style="font-size: 0.9rem;">|</span>
                         <a href="https://www.realta.co.id/site/privacy-policy.html" class="text-muted small"
-                            style="font-size: 0.9rem;">Terms</a>
+                            style="font-size: 0.9rem; text-decoration: underline;">Terms</a>
                     </div>
                 </div>
             </div>

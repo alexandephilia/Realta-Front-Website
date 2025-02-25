@@ -219,15 +219,9 @@ function handleCategories(containerSelector, detailsId, content) {
                 transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
                 width: 90%;
                 max-width: 250px;
-                cursor: pointer;
                 box-shadow: 0 1px 2px rgba(0,0,0,0.02);
             }
 
-            .feature-list li:hover {
-                background: rgba(255,255,255,0.08);
-                transform: translateY(-1px);
-                box-shadow: 0 4px 8px rgba(0,0,0,0.05);
-            }
 
             .feature-list li:active {
                 transform: translateY(0);
@@ -255,11 +249,7 @@ function handleCategories(containerSelector, detailsId, content) {
                 font-size: 16px;
                 transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
             }
-
-            .feature-list li:hover i {
-                transform: rotate(-8deg) scale(1.15);
-            }
-
+]
             .feature-list li span {
                 font-size: 16px;
                 text-align: left;

@@ -26,7 +26,7 @@ html, body {
     /* Colors */
     --text-color-primary: #333333;
     --text-color-secondary: #666666;
-    --text-color-muted: #757575;
+    --text-color-muted: #333333;
     --text-color-dark: #ffffff;
     --bg-color: #ffffff;
     --bg-dark: #261a3c;
@@ -74,6 +74,11 @@ body {
     line-height: var(--line-height-base);
     color: var(--text-color-primary);
     background-color: var(--bg-color);
+}
+
+.text-decoration-none{
+  color: var(--text-color-muted) !important;
+  text-decoration: underline !important; 
 }
 
 /* Headings */
@@ -1588,7 +1593,7 @@ video {
 
 .tags-container {
   background-color: #fff;
-  border-radius: 25px;
+  border-radius: 25px !important;
   padding: 1px 1px 10px;
   /* box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); */
   overflow: hidden;
@@ -1614,7 +1619,7 @@ video {
 .tag-item {
   padding: 3px 20px !important; /* Compact height */
   margin-right: 10px;
-  border-radius: 5px !important; /* Even border radius by default */
+  border-radius: 25px !important; /* Even border radius by default */
   white-space: nowrap;
   font-size: 14px;
   cursor: pointer;
@@ -1641,7 +1646,7 @@ video {
   position: relative !important;
   z-index: 3 !important;  /* Above card when active */
   padding: 8px 20px !important; /* Taller height when active */
-  border-radius: 6px 6px 0 0 !important; /* Tab shape when active */
+  border-radius: 25px 25px 0 0 !important; /* Tab shape when active */
   transform: translateY(0) !important; /* Connect with card */
 }
 
@@ -3692,17 +3697,15 @@ h4, h2 {
 }
 
 .container-fluid,
-.container {
-  padding-left: 5rem !important;
-  padding-right: 5rem !important;
+.container {  padding-right:  10rem !important;
   margin: auto !important;
-}
+  }
 
 @media (min-width: 901px) {
   .container-fluid,
   .container {
-    padding-left: 4rem;
-    padding-right: 4rem;
+    padding-left: 10rem;
+    padding-right: 10rem;
   }
 }
 
@@ -3724,7 +3727,7 @@ h4, h2 {
 
   .tag-item.active {
     padding: 3px 20px !important;  /* Keep default height */
-    border-radius: 5px !important;  /* Keep default radius */
+    border-radius: 25px !important;  /* Keep default radius */
     margin-bottom: 4px !important;
     transform: translateY(-2px) !important;
     border-bottom: 2px solid !important;  /* Keep full border */
@@ -3751,9 +3754,9 @@ h4, h2 {
     border-bottom: none !important;
     position: relative !important;
     z-index: 3 !important;
-    margin-bottom: -2px !important;
+    margin-bottom: -1px !important;
     padding: 8px 20px !important;
-    border-radius: 6px 6px 0 0 !important;
+    border-radius: 10px 10px 0 0 !important;
     transform: translateY(0) !important;
   }
 
