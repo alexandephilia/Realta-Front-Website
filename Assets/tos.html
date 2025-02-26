@@ -1340,6 +1340,18 @@
         </div>
 
         <!-- Privacy Terms Section -->
+        <div id="privacy-section-loading" class="col-md-10 mb-5" style="display: none;">
+          <h3 class="text-center mb-4 loading-placeholder">Privacy Policy</h3>
+          <div class="card">
+            <div class="card-body">
+              <div class="loading-placeholder mb-4" style="height: 100px;"></div>
+              <h5 class="loading-placeholder mt-4 mb-3"></h5>
+              <div class="loading-placeholder mb-4" style="height: 80px;"></div>
+              <h5 class="loading-placeholder mt-4 mb-3"></h5>
+              <div class="loading-placeholder mb-4" style="height: 120px;"></div>
+            </div>
+          </div>
+        </div>
         <div id="privacy-section" class="col-md-10 mb-5" style="display: none;">
           <h3 class="text-center mb-4">Privacy Policy</h3>
           <div class="card">
@@ -1390,6 +1402,20 @@
         </div>
 
         <!-- EULA Section -->
+        <div id="eula-section-loading" class="col-md-10 mb-5" style="display: none;">
+          <h3 class="text-center mb-4 loading-placeholder">End User License Agreement</h3>
+          <div class="card">
+            <div class="card-body">
+              <div class="legal-content">
+                <div class="legal-section loading-placeholder mb-4" style="height: 30px;"></div>
+                <div class="legal-section loading-placeholder mb-4" style="height: 30px;"></div>
+                <div class="legal-section loading-placeholder mb-4" style="height: 30px;"></div>
+                <div class="legal-section subsection loading-placeholder mb-4" style="height: 30px;"></div>
+                <div class="legal-section subsection loading-placeholder mb-4" style="height: 30px;"></div>
+              </div>
+            </div>
+          </div>
+        </div>
         <div id="eula-section" class="col-md-10 mb-5" style="display: none;">
           <h3 class="text-center mb-4">End User License Agreement</h3>
           <div class="card">
@@ -1558,23 +1584,86 @@
               min-width: 3rem;
             }
           }
+
+          /* Add loading placeholder animation */
+          .loading-placeholder {
+            background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+            background-size: 200% 100%;
+            animation: loading 1.5s infinite;
+            border-radius: 4px;
+          }
+
+          @keyframes loading {
+            0% {
+              background-position: 200% 0;
+            }
+            100% {
+              background-position: -200% 0;
+            }
+          }
+
+          /* Dark mode styles for loading placeholders */
+          body.dark-mode .loading-placeholder {
+            background: linear-gradient(90deg, #2a2a2a 25%, #333333 50%, #2a2a2a 75%);
+            background-size: 200% 100%;
+          }
+
+          h5.loading-placeholder {
+            height: 24px;
+            width: 200px;
+          }
         </style>
 
         <script>
           // Function to show the appropriate section based on URL hash
           function showSection() {
+            const overlay = document.getElementById('loading-overlay');
+            
+            // Show loading overlay first
+            if (overlay) {
+              overlay.style.display = 'flex';
+              overlay.style.opacity = '1';
+              overlay.style.visibility = 'visible';
+            }
+
             // Hide all sections first
             document.getElementById('privacy-section').style.display = 'none';
+            document.getElementById('privacy-section-loading').style.display = 'none';
             document.getElementById('eula-section').style.display = 'none';
+            document.getElementById('eula-section-loading').style.display = 'none';
 
             // Get the hash from URL (remove the # symbol)
             const hash = window.location.hash.slice(1);
 
-            // Show the appropriate section based on hash
-            if (hash === 'privacy') {
-              document.getElementById('privacy-section').style.display = 'block';
-            } else if (hash === 'eula') {
-              document.getElementById('eula-section').style.display = 'block';
+            if (hash === 'privacy' || hash === 'eula') {
+              const targetSection = document.getElementById(`${hash}-section`);
+              const targetLoading = document.getElementById(`${hash}-section-loading`);
+
+              if (targetLoading) targetLoading.style.display = 'block';
+
+              // Simulate loading delay
+              setTimeout(() => {
+                if (targetLoading) targetLoading.style.display = 'none';
+                if (targetSection) targetSection.style.display = 'block';
+                
+                // Hide loading overlay with fade effect
+                if (overlay) {
+                  overlay.style.opacity = '0';
+                  setTimeout(() => {
+                    overlay.style.visibility = 'hidden';
+                    overlay.style.display = 'none';
+                  }, 300);
+                }
+              }, 800);
+            } else {
+              // If no valid hash, hide loading overlay
+              if (overlay) {
+                overlay.style.opacity = '0';
+                setTimeout(() => {
+                  overlay.style.visibility = 'hidden';
+                  overlay.style.display = 'none';
+                }, 300);
+              }
             }
           }
 
@@ -1583,6 +1672,69 @@
           // Call showSection when hash changes
           window.addEventListener('hashchange', showSection);
         </script>
+
+        <!-- Loading Overlay -->
+        <div id="loading-overlay" class="loading-overlay" style="display: none;">
+          <div class="loading-content">
+            <div class="loading-placeholder loading-circle"></div>
+            <div class="loading-text">Loading...</div>
+          </div>
+        </div>
+
+        <style>
+          .loading-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: #ffffff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+            opacity: 1;
+            visibility: visible;
+            transition: opacity 0.3s ease-out;
+          }
+
+          body.dark-mode .loading-overlay {
+            background: #121212;
+          }
+
+          .loading-content {
+            text-align: center;
+          }
+
+          .loading-text {
+            margin-top: 20px;
+            font-size: 1.2rem;
+            color: #333;
+          }
+
+          body.dark-mode .loading-text {
+            color: #fff;
+          }
+
+          .loading-circle {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            margin: 0 auto;
+          }
+
+          /* Remove the old spinner styles and use existing loading-placeholder animation */
+          .loading-circle.loading-placeholder {
+            background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+            background-size: 200% 100%;
+            animation: loading 1.5s infinite;
+          }
+
+          body.dark-mode .loading-circle.loading-placeholder {
+            background: linear-gradient(90deg, #2a2a2a 25%, #333333 50%, #2a2a2a 75%);
+            background-size: 200% 100%;
+          }
+        </style>
       </div>
     </div>
   </section>
