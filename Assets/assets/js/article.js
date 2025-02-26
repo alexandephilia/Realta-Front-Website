@@ -298,6 +298,7 @@ function renderLatestPosts() {
           object-fit: cover;
         }
 
+
         .latest-post-content {
           padding: 1rem;
         }
