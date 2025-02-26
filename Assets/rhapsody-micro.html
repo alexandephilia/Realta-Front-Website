@@ -703,12 +703,18 @@
             <div class="mega-dropdown" id="solutionsDropdownContent">
                 <div class="dropdown-content">
                     <div class="product-categories">
-                        <div class="product-category" data-product="gcs">Golf Course System</div>
-                        <div class="product-category" data-product="hrs">HR System</div>
-                        <div class="product-category active" data-product="hms">Hotel Management System</div>
-                        <div class="product-category" data-product="itm">ITSM, ITAM & Unified Endpoint Management</div>
-                        <div class="product-category" data-product="pts">Property & Tenancy System</div>
-                        <div class="product-category" data-product="erp">Network & System Integration</div>
+                        <a href="golf-micro.html" class="product-category" data-product="gcs"
+                            onclick="navigateWithLoading('golf-micro.html')">Golf Course System</a>
+                        <a href="hr-micro.html" class="product-category" data-product="hrs" onclick="navigateWithLoading('hr-micro.html')">HR
+                            System</a>
+                        <a href="rhapsody-micro.html" class="product-category" data-product="hms"
+                            onclick="navigateWithLoading('rhapsody-micro.html')">Hotel Management System</a>
+                        <a href="itsm-micro.html" class="product-category" data-product="itm"
+                            onclick="navigateWithLoading('itsm-micro.html')">ITSM, ITAM & Unified Endpoint Management</a>
+                        <a href="bimasakti-micro.html" class="product-category" data-product="pts"
+                            onclick="navigateWithLoading('bimasakti-micro.html')">Property & Tenancy System</a>
+                        <a href="realnet-micro.html" class="product-category" data-product="erp"
+                            onclick="navigateWithLoading('realnet-micro.html')">Network & System Integration</a>
                         <div
                             style="background: linear-gradient(90deg, transparent 0%, rgba(133, 22, 188, 0.582) 50%, transparent 100%); height: 1px; margin: 10px 0; pointer-events: none;">
                         </div>
@@ -777,10 +783,166 @@
             </div>
         </nav>
        
+        <!-- Secondary Navbar -->
+        <nav class="navbar navbar-expand-lg secondary-navbar" id="secondaryNav">
+            <div class="container-fluid d-flex justify-content-end">
+                <ul class="navbar-nav secondary-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#home">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#ict-one-solution">Solution</a>
+                    </li>
+                    <li>
+                        <a class="nav-link" href="#stats-feature-section">Why Rhapsody</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="productOverviewDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Product Overview
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="productOverviewDropdown">
+                        <li><a class="dropdown-item" href="#rhapsody-features-2023" onclick="activateTab('front-office'); return false;">Front
+                                Office</a></li>
+                        <li><a class="dropdown-item" href="#rhapsody-features-2023" onclick="activateTab('back-office'); return false;">Back
+                                Office</a></li>
+                        <li><a class="dropdown-item" href="#rhapsody-features-2023"
+                                onclick="activateTab('logistic-system'); return false;">Logistic System</a></li>
+                        <li><a class="dropdown-item" href="#ict_solution">ICT One Solution</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        
+        <style>
+            .navbar-nav {
+                justify-content: flex-end;
+            }
+        
+            .nav-item {
+                padding: 0px;
+            }
+        
+            .secondary-navbar .dropdown-menu {
+                background: rgba(255, 255, 255, 0.95);
+                backdrop-filter: blur(10px);
+                border: 1px solid rgba(0, 0, 0, 0.1);
+                box-shadow: 0 2px 10px rgba(51, 51, 51, 0.1);
+                padding-top: 0px;
+                padding-bottom: 0px;
+            }
+        
+            .secondary-navbar .dropdown-item {
+                font-size: 0.9rem;
+                padding: 0.5rem 1rem;
+                transition: color 0.3s ease;
+            }
+        
+            .secondary-navbar .dropdown-item:hover {
+                color: #9054d0;
+                background-color: rgba(144, 84, 208, 0.1);
+            }
+        
+            .secondary-navbar {
+                position: fixed;
+                top: 66px;
+                left: 0;
+                right: 0;
+                z-index: 1029;
+                height: 40px;
+                background: rgba(255, 255, 255, 0.95);
+                backdrop-filter: blur(10px);
+                border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+                box-shadow: 0 2px 10px rgba(51, 51, 51, 0.1);
+                transition: all 0.3s ease;
+                padding: 0;
+            }
+        
+            .secondary-navbar .container-fluid {
+                padding-right: 10rem;
+                height: 100%;
+            }
+        
+            .secondary-nav {
+                display: flex;
+                align-items: center;
+                height: 100%;
+                margin: 40px;
+                padding: 0;
+            }
+        
+            .secondary-navbar .nav-link {
+                font-size: 0.9rem;
+                padding: 0.5rem 1rem;
+                font-weight: 600;
+                transition: color 0.3s ease;
+                height: 100%;
+                display: flex;
+                align-items: center;
+            }
+        
+            .secondary-navbar .nav-link:hover {
+                color: #9054d0;
+            }
+        
+            .secondary-navbar .nav-link.active {
+                color: #9054d0;
+                font-weight: 600;
+            }
+        
+            /* Dark mode styles */
+            body.dark-mode .secondary-navbar {
+                background: rgba(33, 33, 33, 0.95);
+                border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            }
+        
+            body.dark-mode .secondary-navbar .nav-link {
+                color: #fff;
+            }
+        
+            body.dark-mode .secondary-navbar .nav-link:hover,
+            body.dark-mode .secondary-navbar .nav-link.active {
+                color: #bb86fc;
+            }
+        
+            /* Mobile styles */
+            @media (max-width: 991px) {
+                .secondary-navbar {
+                    display: none;
+                }
+            }
+        
+            @media (max-width: 1200px) {
+                .secondary-navbar .container-fluid {
+                    padding-right: 2rem;
+                }
+            }
+        </style>
 
         <div class="navbar-banner__blur navbar-banner__blur--1"></div>
         <div class="navbar-banner__blur navbar-banner__blur--2"></div>
+<script>
+    function activateTab(tabId) {
+        // Scroll to the features section
+        document.getElementById('rhapsody-features-2023').scrollIntoView({ behavior: 'smooth' });
 
+        // Find and click the corresponding tab button after scrolling
+        setTimeout(() => {
+            const tabButton = document.querySelector(`.rhapsody-tab-2023-new[data-tab="${tabId}"]`);
+            if (tabButton) {
+                tabButton.click();
+            }
+        }, 500); // Small delay to ensure smooth scrolling completes
+    }
+
+    // Optional: Handle direct hash links
+    window.addEventListener('hashchange', function () {
+        const hash = window.location.hash;
+        if (hash === '#front-office' || hash === '#back-office' || hash === '#logistic-system') {
+            activateTab(hash.substring(1));
+        }
+    });
+</script>
 
     </header>
 
@@ -3127,7 +3289,7 @@
 
 
 
-    <div class="scroll-animation-container">
+    <div class="scroll-animation-container" id="ict_solution">
         <h2 class="text-center mb-3 bimasakti-title rhapsody-title-2023-new" data-aos="fade-up">ICT ONE Solution For
             Hospitality</h2>
         <h3 class="ict-solution-title mt-2" data-aos="fade-up" data-aos-delay="100">With Standardized and Proven
@@ -3178,16 +3340,17 @@
         AOS.init({
             duration: 800,
             once: true,
-            offset: 150
+            offset: 50 // Reduced offset to trigger animations sooner
         });
 
         // Function to check if an element is in viewport
         function isInViewport(element) {
             const rect = element.getBoundingClientRect();
+            const buffer = 100; // Add buffer zone above viewport
             return (
-                rect.top >= 0 &&
+                rect.top <= buffer && // Element is within buffer zone above viewport
                 rect.left >= 0 &&
-                rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+                rect.bottom >= 0 && // Element hasn't scrolled past viewport
                 rect.right <= (window.innerWidth || document.documentElement.clientWidth)
             );
         }
@@ -4471,21 +4634,26 @@
                        <h4 class="mb-3" style="font-size: 0.9rem; text-align: left; margin-left: 10px;"> Connect With
                            Us Through Social Media</h4>
                        <div class="social-icons d-flex gap-3">
-                           <a href="https://www.facebook.com/yourpage" class="social-icon" aria-label="Facebook">
-                               <i class="fab fa-facebook-f"></i>
-                           </a>
-                           <a href="https://www.linkedin.com/yourpage" class="social-icon" aria-label="LinkedIn">
-                               <i class="fab fa-linkedin-in"></i>
-                           </a>
-                           <a href="https://www.twitter.com/yourpage" class="social-icon" aria-label="Twitter">
-                               <i class="fab fa-x-twitter"></i>
-                           </a>
-                           <a href="https://www.instagram.com/yourpage" class="social-icon" aria-label="Instagram">
-                               <i class="fab fa-instagram"></i>
-                           </a>
-                           <a href="https://www.youtube.com/yourchannel" class="social-icon" aria-label="YouTube">
-                               <i class="fab fa-youtube"></i>
-                           </a>
+                            <a href="https://www.facebook.com/realtachakradarma/" class="social-icon" aria-label="Facebook" target="_blank"
+                                rel="noopener noreferrer">
+                                <i class="fab fa-facebook-f"></i>
+                            </a>
+                            <a href="https://id.linkedin.com/company/pt-realta-chakradarma/" class="social-icon" aria-label="LinkedIn"
+                                target="_blank" rel="noopener noreferrer">
+                                <i class="fab fa-linkedin-in"></i>
+                            </a>
+                            <a href="https://x.com/Realta_OneSol" class="social-icon" aria-label="Twitter" target="_blank"
+                                rel="noopener noreferrer">
+                                <i class="fab fa-x-twitter"></i>
+                            </a>
+                            <a href="https://www.instagram.com/realta.id/" class="social-icon" aria-label="Instagram" target="_blank"
+                                rel="noopener noreferrer">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                            <a href="https://www.youtube.com/@ptrealtachakradarma3127" class="social-icon" aria-label="YouTube" target="_blank"
+                                rel="noopener noreferrer">
+                                <i class="fab fa-youtube"></i>
+                            </a>
                        </div>
                    </div>
                </div>
@@ -4713,9 +4881,10 @@
                             style="border-radius: 0 10px 10px 0;">Subscribe</button>
                     </div>
                 </form>
-                <p class="text-muted small">By subscribing, you agree to our <a href="#"
-                        class="text-decoration-none">Privacy Policy</a> and <a href="#"
-                        class="text-decoration-none">Terms of Service</a>.</p>
+                <p class="text-muted small">By subscribing, you agree to our <a href="#" class="text-decoration-none"
+                        onclick="navigateWithLoading('tos.html#privacy'); return false;">Privacy
+                        Policy</a> and <a href="#" class="text-decoration-none"
+                        onclick="navigateWithLoading('tos.html#eula'); return false;">Terms of Service</a>.</p>
             </div>
             <div class="col-md-5">
                 <div class="d-flex justify-content-md-end align-items-center mb-3">
@@ -4737,10 +4906,11 @@
                     <p class="mb-2 text-muted small" style="font-size: 0.9rem;">&copy; 2025 PT. Realta Chakradarma. All
                         rights
                         reserved.</p>
-                    <a href="https://www.realta.co.id/site/privacy-policy.html" class="text-muted small me-3"
-                        style="font-size: 0.9rem; text-decoration: underline;">Privacy Policy</a>
+                    <a href="#" onclick="navigateWithLoading('tos.html#privacy'); return false;"
+                        class="text-muted small me-3" style="font-size: 0.9rem; text-decoration: underline;">Privacy
+                        Policy</a>
                     <span class="text-muted small me-3" style="font-size: 0.9rem;">|</span>
-                    <a href="https://www.realta.co.id/site/privacy-policy.html" class="text-muted small"
+                    <a href="#" onclick="navigateWithLoading('tos.html#eula'); return false;" class="text-muted small"
                         style="font-size: 0.9rem; text-decoration: underline;">Terms</a>
                 </div>
             </div>
