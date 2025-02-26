@@ -3375,7 +3375,6 @@ h4, h2 {
   display: flex;
   align-items: center;
   position: relative;
-  color: #333;
   text-decoration: none !important;
   /* Force override text decoration */
 }
