@@ -770,7 +770,7 @@ body {
     width: 60px;
     height: 60px;
     border-radius: 50px;
-    overflow: visible;
+    overflow: hidden;
     transform-origin: right center;
     transition: all 0.3s ease-out;
 }
@@ -838,20 +838,33 @@ body {
     border-top-width: 12px;
 }
 
+.whatsapp-float:hover i {
+    /* Add delay for icon transform on hover */
+    transition: all 0.3s ease-out 0.2s !important;
+}
+
 .whatsapp-float:hover .text-content {
     opacity: 1;
     visibility: visible;
     transform: translateX(0);
     position: static;
     margin-left: 15px;
-    transition: opacity 0.2s ease-out 0.15s, visibility 0.3s ease-out 0.15s, transform 0.1s ease-out;
+    /* Add delay for content to appear after hover */
+    transition: 
+        opacity 0.2s ease-out 0.3s, /* Delay opacity */
+        visibility 0.1s ease-out 0.3s, /* Delay visibility */
+        transform 0.3s ease-out 0.15s; /* Delay transform */
 }
 
 .whatsapp-float:not(:hover) .text-content {
     opacity: 0;
     visibility: hidden;
     transform: translateX(-20px);
-    transition: opacity 0.1s ease-out, visibility 0.1s ease-out, transform 0.3s ease-out;
+    /* Content fades out first before transform on exit */
+    transition:
+        opacity 0.1s ease-out, /* Fade out first */
+        visibility 0.1s ease-out,
+        transform 0.3s ease-out 0.1s; /* Transform after fade out */
 }
 
 @media screen and (max-width: 768px) {
