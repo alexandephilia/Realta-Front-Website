@@ -791,8 +791,8 @@ body {
 
 .whatsapp-float i {
     font-size: 29px;
-        transition: all 0.3s ease-out;
-        margin-bottom: 3px;
+    transition: all 0.3s ease-out;
+    margin-bottom: 3px;
     transition: all 0.3s ease-out;
 }
 
@@ -803,7 +803,7 @@ body {
     position: absolute;
     left: 60px;
     transform: translateX(-20px);
-    transition: all 0.3s ease-out;
+    transition: opacity 0.15s ease-out, visibility 0.15s ease-out, transform 0.3s ease-out;
 }
 
 .whatsapp-float .click-text,
@@ -838,30 +838,25 @@ body {
     border-top-width: 12px;
 }
 
-
 .whatsapp-float:hover .text-content {
     opacity: 1;
     visibility: visible;
     transform: translateX(0);
     position: static;
     margin-left: 15px;
+    transition: opacity 0.2s ease-out 0.15s, visibility 0.3s ease-out 0.15s, transform 0.1s ease-out;
+}
+
+.whatsapp-float:not(:hover) .text-content {
+    opacity: 0;
+    visibility: hidden;
+    transform: translateX(-20px);
+    transition: opacity 0.1s ease-out, visibility 0.1s ease-out, transform 0.3s ease-out;
 }
 
 @media screen and (max-width: 768px) {
     .whatsapp-float {
-        width: 50px;
-        height: 50px;
-        bottom: 20px;
-        right: 20px;
-    }
-
-    .whatsapp-float i {
-        font-size: 20px;
-    }
-
-    .whatsapp-float:hover {
-        width: 220px;
-        padding: 12px 20px;
+        display: none;
     }
 }
 
