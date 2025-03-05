@@ -1601,21 +1601,98 @@ video {
   max-width: 800px;
 }
 .tags-wrapper {
-  display: flex;
-  overflow-x: auto;
-  scrollbar-width: none;
-  -ms-overflow-style: none;
-  padding: 10px 0;
-  scroll-behavior: smooth;
-  scroll-snap-type: x mandatory;
-  position: relative;
-  z-index: 1;  /* Behind card by default */
+  display: flex !important;
+  overflow-x: auto !important;
+  overflow-y: hidden !important;
+  scroll-behavior: smooth !important;
+  -webkit-overflow-scrolling: touch !important;
+  scrollbar-width: none !important;
+  -ms-overflow-style: none !important;
+  padding: 10px 0 !important;
+  scroll-snap-type: x mandatory !important;
+  position: relative !important;
+  z-index: 1 !important;
   background: transparent !important;
   margin-bottom: -1px !important;
+  gap: 8px !important;
+  touch-action: pan-x !important;
+  user-select: none !important;
+  -webkit-user-select: none !important;
+  cursor: grab !important;
 }
+
+@media (max-width: 768px) {
+    .tags-wrapper {
+        padding: 10px 10px !important;
+        gap: 8px !important;
+        margin: 0 -15px !important;
+        width: calc(100% + 30px) !important;
+        justify-content: flex-start !important;
+        overflow-x: scroll !important;
+        scroll-padding: 0 !important;
+    }
+
+    .tag-item {
+        flex: 0 0 auto !important;
+        white-space: nowrap !important;
+        scroll-snap-align: center !important;
+        margin-right: 8px !important;
+    }
+
+    .tags-container {
+        padding: 0 !important;
+        overflow: visible !important;
+        width: 100% !important;
+        max-width: none !important;
+        border-radius: 0 !important;
+        background: transparent !important;
+    }
+
+    .tags-container-wrapper {
+        margin: 0 !important;
+        padding: 0 !important;
+        width: 100% !important;
+        overflow: visible !important;
+    }
+
+    .scroll-indicator {
+        display: none !important;
+    }
+
+    #contentCards {
+        margin-top: 10px !important;
+    }
+
+    .content-card {
+        border-radius: 10px !important;
+        margin: 0 15px !important;
+    }
+}
+
 .tags-wrapper::-webkit-scrollbar {
-  display: none;
+    display: none !important;
+    width: 0 !important;
+    height: 0 !important;
 }
+
+.tags-wrapper:active {
+    cursor: grabbing !important;
+}
+
+/* Ensure proper touch handling */
+.tags-wrapper {
+    touch-action: pan-x pinch-zoom !important;
+}
+
+/* Remove any conflicting styles */
+.tags-wrapper {
+    transform: none !important;
+    backface-visibility: hidden !important;
+    -webkit-backface-visibility: hidden !important;
+    -webkit-transform: translateZ(0) !important;
+    transform: translateZ(0) !important;
+}
+
 .tag-item {
   padding: 3px 20px !important; /* Compact height */
   margin-right: 10px;
@@ -3712,8 +3789,8 @@ h4, h2 {
 @media (max-width: 768px) {
   .container-fluid,
   .container {
-    padding-left: 1rem !important;
-    padding-right: 1rem !important;
+    padding-left: 1.5rem !important;
+    padding-right: 1.5rem !important;
   }
 }
 
@@ -3845,5 +3922,58 @@ body.dark-mode .tag-item[data-content="finance"].active {
 @media (min-width: 992px) {
     .tag-item.active {
         border-bottom-width: 3px !important;
+    }
+}
+
+.scroll-indicator {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    z-index: 2;
+    transition: background-color 0.3s ease;
+}
+
+/* Hide scroll indicators on mobile */
+@media (max-width: 768px) {
+    .scroll-indicator {
+        display: none !important;
+    }
+
+    .tags-container-wrapper {
+        margin: 0 -15px !important; /* Negative margin to extend width */
+        padding: 0 !important;
+        width: calc(100% + 30px) !important; /* Compensate for container padding */
+        overflow: visible !important;
+    }
+
+    .tags-container {
+        padding: 0 !important;
+        max-width: none !important;
+        border-radius: 0 !important;
+        width: 100% !important;
+    }
+
+    .tags-wrapper {
+        padding: 10px 5px !important; /* Reduced side padding */
+        margin: 0 !important;
+        width: 100% !important;
+        overflow-x: scroll !important;
+        scroll-padding: 0 10px !important;
+    }
+
+    .tag-item {
+        margin-right: 8px !important;
+        padding: 8px 16px !important;
+    }
+
+    .tag-item:last-child {
+        margin-right: 5px !important; /* Add some padding at the end */
     }
 }

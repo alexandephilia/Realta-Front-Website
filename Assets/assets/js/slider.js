@@ -12,6 +12,70 @@ function injectStyles() {
             overflow: hidden;
         }
 
+        @media (max-width: 768px) {
+    .hospitality-grid,
+    .manufacturing-grid,
+    .property-grid,
+    .finance-grid {
+        padding: 10px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .description {
+        max-width: 100%;
+        text-align: center;
+    }
+
+    .title {
+        width: 100%;
+        text-align: center;
+        padding-left: 15px;
+    }
+
+    .properties, 
+    .solutions,
+    .features {
+        grid-template-columns: 1fr;
+        width: 100%;
+        padding: 0 15px;
+    }
+
+    .hospitality-item,
+    .manufacturing-item,
+    .property-item,
+    .finance-item {
+        padding: 15px;
+        width: 100%;
+    }
+
+    .card-text {
+        text-align: center;
+    }
+    /* Remove font size modifications */
+    .card-title,
+    .card-text,
+    .card-body ul,
+    .hospitality-item h3,
+    .manufacturing-item h3,
+    .property-item h3,
+    .finance-item h3,
+    .hospitality-item li,
+    .manufacturing-item li,
+    .property-item li,
+    .finance-item li {
+        font-size: inherit;
+    }
+
+   
+}
+
+
+
+
+
+
         .video-industry::before {
             content: '';
             position: absolute;
@@ -219,10 +283,65 @@ function injectStyles() {
             perspective: 1000px !important;
             position: relative !important;
             z-index: 1 !important;
+            /* Enhanced mobile scrolling */
+            scroll-snap-type: x mandatory !important;
+            -webkit-overflow-scrolling: touch !important;
+            flex-wrap: nowrap !important;
+            -webkit-user-select: none !important;
+            user-select: none !important;
+            cursor: grab !important;
+        }
+
+        /* Improved mobile touch scrolling */
+        @media (max-width: 768px) {
+            .tags-wrapper {
+                padding: 10px 15px !important;
+                gap: 8px !important;
+                scroll-padding: 0 15px !important;
+                margin: 0 !important;
+            }
+
+            .tag-item {
+                scroll-snap-align: center !important;
+                flex: 0 0 auto !important;
+                white-space: nowrap !important;
+                padding: 8px 16px !important;
+                font-size: 14px !important;
+            }
         }
 
         .tags-wrapper::-webkit-scrollbar {
             display: none !important;
+            width: 0 !important;
+            height: 0 !important;
+        }
+
+        .tags-wrapper:active {
+            cursor: grabbing !important;
+        }
+
+        /* Improved touch feedback */
+        .tag-item:active {
+            transform: scale(0.95) !important;
+            transition: transform 0.2s ease !important;
+        }
+
+        /* Momentum scrolling for iOS */
+        .tags-wrapper {
+            -webkit-overflow-scrolling: touch !important;
+            overflow-x: scroll !important;
+            overflow-y: hidden !important;
+            overscroll-behavior-x: contain !important;
+        }
+
+        /* Hide scrollbar for Firefox */
+        .tags-wrapper {
+            scrollbar-width: none !important;
+        }
+
+        /* Hide scrollbar for IE/Edge */
+        .tags-wrapper {
+            -ms-overflow-style: none !important;
         }
     `;
   document.head.appendChild(styleElement);
@@ -1918,7 +2037,3 @@ function createRipple(event) {
         ripple.remove();
     });
 }
-
-
-
-

@@ -28,15 +28,38 @@ document.addEventListener('DOMContentLoaded', function() {
             ]
         },
         'Hotel Management System': {
-            id: 'roomCount',
-            label: 'Number of Rooms', 
-            type: 'select',
-            options: [
-                { value: '', text: 'Choose...' },
-                { value: '1-20', text: '1-20 rooms' },
-                { value: '21-50', text: '21-50 rooms' },
-                { value: '51-100', text: '51-100 rooms' },
-                { value: '100+', text: 'More than 100 rooms' }
+            fields: [
+                {
+                    id: 'roomCount',
+                    label: 'Number of Rooms', 
+                    type: 'select',
+                    options: [
+                        { value: '', text: 'Choose...' },
+                        { value: '1-20', text: '1-20 rooms' },
+                        { value: '21-50', text: '21-50 rooms' },
+                        { value: '51-100', text: '51-100 rooms' },
+                        { value: '100+', text: 'More than 100 rooms' }
+                    ]
+                },
+                {
+                    id: 'hotelStars',
+                    label: 'Hotel Classification',
+                    type: 'select',
+                    options: [
+                        { value: '', text: 'Choose...' },
+                        { value: '6-star', text: '6 Star' },
+                        { value: '5-star', text: '5 Star' },
+                        { value: '4-star', text: '4 Star' },
+                        { value: '3-star', text: '3 Star' },
+                        { value: '2-star', text: '2 Star' },
+                        { value: '1-star', text: '1 Star' },
+                        { value: 'non-stars', text: 'Non Stars' },
+                        { value: 'boutique', text: 'Boutique' },
+                        { value: 'villa', text: 'Villa' },
+                        { value: 'budget', text: 'Budget' },
+                        { value: 'melati', text: 'Melati' }
+                    ]
+                }
             ]
         },
         'Golf Course System': {
@@ -50,7 +73,15 @@ document.addEventListener('DOMContentLoaded', function() {
                 { value: '27', text: '27 holes' },
                 { value: '36', text: '36 holes' },
                 { value: 'other', text: 'Other' }
-            ]
+            ],
+            customField: {
+                id: 'customHoleCount',
+                label: 'Specify Number of Holes',
+                type: 'number',
+                placeholder: 'Enter number of holes',
+                min: 1,
+                max: 100
+            }
         },
         'Property & Tenancy System': {
             id: 'propertyType',
@@ -87,18 +118,79 @@ document.addEventListener('DOMContentLoaded', function() {
                 optionElement.textContent = option.text;
                 input.appendChild(optionElement);
             });
+
+            // Add change event listener for Golf Course System
+            if (fieldData.id === 'holeCount') {
+                input.addEventListener('change', function() {
+                    const customFieldContainer = document.getElementById('customHoleCountContainer');
+                    if (this.value === 'other') {
+                        if (!customFieldContainer) {
+                            const customField = fieldData.customField;
+                            const customDiv = document.createElement('div');
+                            customDiv.id = 'customHoleCountContainer';
+                            customDiv.className = 'mb-3 mt-2';
+                            
+                            const customLabel = document.createElement('label');
+                            customLabel.className = 'form-label';
+                            customLabel.setAttribute('for', customField.id);
+                            customLabel.textContent = customField.label;
+                            
+                            const customInput = document.createElement('input');
+                            customInput.type = customField.type;
+                            customInput.className = 'form-control';
+                            customInput.id = customField.id;
+                            customInput.name = customField.id;
+                            customInput.required = true;
+                            customInput.placeholder = customField.placeholder;
+                            customInput.min = customField.min;
+                            customInput.max = customField.max;
+                            
+                            const invalidFeedback = document.createElement('div');
+                            invalidFeedback.className = 'invalid-feedback';
+                            invalidFeedback.textContent = `Please enter a valid number of holes (1-100).`;
+                            
+                            customDiv.appendChild(customLabel);
+                            customDiv.appendChild(customInput);
+                            customDiv.appendChild(invalidFeedback);
+                            
+                            // Add animation classes
+                            customDiv.style.opacity = '0';
+                            customDiv.style.transform = 'translateY(-20px)';
+                            
+                            div.insertAdjacentElement('afterend', customDiv);
+                            
+                            // Trigger animation
+                            setTimeout(() => {
+                                customDiv.style.transition = 'all 0.3s ease-out';
+                                customDiv.style.opacity = '1';
+                                customDiv.style.transform = 'translateY(0)';
+                            }, 50);
+                        }
+                    } else if (customFieldContainer) {
+                        customFieldContainer.style.opacity = '0';
+                        customFieldContainer.style.transform = 'translateY(-20px)';
+                        setTimeout(() => {
+                            customFieldContainer.remove();
+                        }, 300);
+                    }
+                });
+            }
         } else {
             input = document.createElement('input');
             input.type = fieldData.type;
+            if (fieldData.placeholder) input.placeholder = fieldData.placeholder;
+            if (fieldData.min !== undefined) input.min = fieldData.min;
+            if (fieldData.max !== undefined) input.max = fieldData.max;
         }
         
         input.className = 'form-control';
         input.id = fieldData.id;
+        input.name = fieldData.id;
         input.required = true;
         
         const invalidFeedback = document.createElement('div');
         invalidFeedback.className = 'invalid-feedback';
-        invalidFeedback.textContent = `Please select ${fieldData.label.toLowerCase()}.`;
+        invalidFeedback.textContent = `Please ${fieldData.type === 'select' ? 'select' : 'enter'} ${fieldData.label.toLowerCase()}.`;
         
         div.appendChild(label);
         div.appendChild(input);
@@ -117,19 +209,23 @@ document.addEventListener('DOMContentLoaded', function() {
         
         // If there's a matching field configuration, create and show it
         if (dynamicFields[selectedInterest]) {
-            const field = createFormField(dynamicFields[selectedInterest]);
-            dynamicFieldsContainer.appendChild(field);
+            const fields = dynamicFields[selectedInterest].fields || [dynamicFields[selectedInterest]];
             
-            // Add animation classes
-            field.style.opacity = '0';
-            field.style.transform = 'translateY(-20px)';
-            
-            // Trigger animation
-            setTimeout(() => {
-                field.style.transition = 'all 0.3s ease-out';
-                field.style.opacity = '1';
-                field.style.transform = 'translateY(0)';
-            }, 50);
+            fields.forEach((fieldData, index) => {
+                const field = createFormField(fieldData);
+                dynamicFieldsContainer.appendChild(field);
+                
+                // Add animation classes
+                field.style.opacity = '0';
+                field.style.transform = 'translateY(-20px)';
+                
+                // Trigger animation with staggered delay
+                setTimeout(() => {
+                    field.style.transition = 'all 0.3s ease-out';
+                    field.style.opacity = '1';
+                    field.style.transform = 'translateY(0)';
+                }, 50 * (index + 1));
+            });
         }
     });
 

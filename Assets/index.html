@@ -3456,7 +3456,7 @@
             .rt-testimonial-wrapper {
                 /* width: 90%; */
                 max-width: 395px;
-                padding: 10px 10px 10px 25px;
+                padding: 0px 0px 3px 10px;
                 overflow: visible;
                 margin: 0 auto;
                 position: relative;
@@ -5046,75 +5046,168 @@
     <script>
         const slider = document.querySelector('.tags-wrapper');
         const tags = document.querySelectorAll('.tag-item');
-        const leftScroll = document.querySelector('.scroll-left');
-        const rightScroll = document.querySelector('.scroll-right');
         let isDown = false;
         let startX;
         let scrollLeft;
+        let momentumID;
+        let velocity = 0;
+        let lastX;
+        let timestamp;
+        let isTouchScrolling = false;
 
-        // Draggable functionality
+        // Prevent default touch behavior to enable smooth scrolling
+        slider.addEventListener('touchstart', (e) => {
+            isTouchScrolling = true;
+            isDown = true;
+            startX = e.touches[0].pageX - slider.offsetLeft;
+            scrollLeft = slider.scrollLeft;
+            lastX = e.touches[0].pageX;
+            timestamp = Date.now();
+            cancelMomentumTracking();
+            
+            // Prevent default only if needed
+            if (Math.abs(slider.scrollWidth - slider.clientWidth) > 1) {
+                e.preventDefault();
+            }
+        }, { passive: false });
+
+        slider.addEventListener('touchmove', (e) => {
+            if (!isDown) return;
+            
+            const x = e.touches[0].pageX - slider.offsetLeft;
+            const walk = (x - startX) * 1.5; // Increased sensitivity
+            const currentX = e.touches[0].pageX;
+            const currentTimestamp = Date.now();
+            const timeDelta = currentTimestamp - timestamp;
+            
+            if (timeDelta > 0) {
+                velocity = (currentX - lastX) / timeDelta;
+            }
+            
+            lastX = currentX;
+            timestamp = currentTimestamp;
+            
+            slider.scrollLeft = scrollLeft - walk;
+            
+            // Prevent default only during actual scroll
+            if (Math.abs(walk) > 5) {
+                e.preventDefault();
+            }
+        }, { passive: false });
+
+        slider.addEventListener('touchend', (e) => {
+            isDown = false;
+            isTouchScrolling = false;
+            beginMomentumTracking();
+        });
+
+        // Mouse events
         slider.addEventListener('mousedown', (e) => {
             isDown = true;
             slider.style.cursor = 'grabbing';
             startX = e.pageX - slider.offsetLeft;
             scrollLeft = slider.scrollLeft;
-        });
-
-        slider.addEventListener('mouseleave', () => {
-            isDown = false;
-            slider.style.cursor = 'grab';
-        });
-
-        slider.addEventListener('mouseup', () => {
-            isDown = false;
-            slider.style.cursor = 'grab';
+            lastX = e.pageX;
+            timestamp = Date.now();
+            cancelMomentumTracking();
         });
 
         slider.addEventListener('mousemove', (e) => {
             if (!isDown) return;
             e.preventDefault();
             const x = e.pageX - slider.offsetLeft;
-            const walk = (x - startX) * 2;
+            const walk = (x - startX) * 1.5;
+            const currentX = e.pageX;
+            const currentTimestamp = Date.now();
+            const timeDelta = currentTimestamp - timestamp;
+            
+            if (timeDelta > 0) {
+                velocity = (currentX - lastX) / timeDelta;
+            }
+            
+            lastX = currentX;
+            timestamp = currentTimestamp;
+            
             slider.scrollLeft = scrollLeft - walk;
         });
 
-        // Scroll buttons functionality with fading effect
-        function scrollWithFade(direction) {
-            tags.forEach(tag => tag.classList.add('fading'));
+        slider.addEventListener('mouseup', () => {
+            isDown = false;
+            slider.style.cursor = 'grab';
+            beginMomentumTracking();
+        });
 
-            setTimeout(() => {
-                slider.scrollBy({
-                    left: direction * 100,
-                    behavior: 'smooth'
-                });
+        slider.addEventListener('mouseleave', () => {
+            if (isDown) {
+                isDown = false;
+                slider.style.cursor = 'grab';
+                beginMomentumTracking();
+            }
+        });
 
-                setTimeout(() => {
-                    tags.forEach(tag => tag.classList.remove('fading'));
-                }, 300);
-            }, 300);
+        function beginMomentumTracking() {
+            cancelMomentumTracking();
+            momentumID = requestAnimationFrame(momentumLoop);
         }
 
-        leftScroll.addEventListener('click', () => scrollWithFade(-1));
-        rightScroll.addEventListener('click', () => scrollWithFade(1));
+        function cancelMomentumTracking() {
+            cancelAnimationFrame(momentumID);
+        }
 
-        // Tag selection functionality
-        tags.forEach(tag => {
-            tag.addEventListener('click', () => {
-                tags.forEach(t => t.classList.remove('active'));
-                tag.classList.add('active');
+        function momentumLoop() {
+            slider.scrollLeft += velocity * 16;
+            velocity *= 0.95;
+            if (Math.abs(velocity) > 0.5) {
+                momentumID = requestAnimationFrame(momentumLoop);
+            }
+        }
+
+        // Prevent click events during scroll/drag
+        slider.addEventListener('click', (e) => {
+            if (Math.abs(velocity) > 0.5) {
+                e.preventDefault();
+                e.stopPropagation();
+            }
+        });
+
+        // Handle scroll snap points
+        let isScrolling;
+        slider.addEventListener('scroll', () => {
+            window.clearTimeout(isScrolling);
+            isScrolling = setTimeout(() => {
+                if (!isDown && !isTouchScrolling) {
+                    const snapPoints = Array.from(tags).map(tag => {
+                        const rect = tag.getBoundingClientRect();
+                        return {
+                            left: rect.left + slider.scrollLeft,
+                            element: tag
+                        };
+                    });
+                    
+                    const currentScrollLeft = slider.scrollLeft;
+                    const closest = snapPoints.reduce((prev, curr) => {
+                        return (Math.abs(curr.left - currentScrollLeft) < Math.abs(prev.left - currentScrollLeft) ? curr : prev);
+                    });
+                    
+                    slider.scrollTo({
+                        left: closest.left,
+                        behavior: 'smooth'
+                    });
+                }
+            }, 150);
+        });
+
+        // Update scroll snap points on resize
+        window.addEventListener('resize', () => {
+            slider.style.scrollSnapType = 'none';
+            requestAnimationFrame(() => {
+                slider.style.scrollSnapType = 'x mandatory';
             });
         });
 
-        // Show/hide scroll indicators based on scroll position
-        function updateScrollIndicators() {
-            leftScroll.style.display = slider.scrollLeft > 0 ? 'flex' : 'none';
-            rightScroll.style.display =
-                slider.scrollLeft < slider.scrollWidth - slider.clientWidth ? 'flex' : 'none';
-        }
-
-        slider.addEventListener('scroll', updateScrollIndicators);
-        window.addEventListener('resize', updateScrollIndicators);
-        updateScrollIndicators();
+        // Initialize touch behavior
+        slider.style.webkitOverflowScrolling = 'touch';
+        slider.style.overscrollBehaviorX = 'contain';
     </script>
 
     <!-- CARD EFFECTS -->
