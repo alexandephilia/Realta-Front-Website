@@ -5042,7 +5042,6 @@
             });
         });
     </script>
-
     <script>
         const slider = document.querySelector('.tags-wrapper');
         const tags = document.querySelectorAll('.tag-item');
@@ -5054,8 +5053,10 @@
         let lastX;
         let timestamp;
         let isTouchScrolling = false;
+        let touchStartTime;
+        let touchStartPos;
 
-        // Prevent default touch behavior to enable smooth scrolling
+        // Touch events
         slider.addEventListener('touchstart', (e) => {
             isTouchScrolling = true;
             isDown = true;
@@ -5063,19 +5064,16 @@
             scrollLeft = slider.scrollLeft;
             lastX = e.touches[0].pageX;
             timestamp = Date.now();
+            touchStartTime = Date.now();
+            touchStartPos = e.touches[0].pageX;
             cancelMomentumTracking();
-            
-            // Prevent default only if needed
-            if (Math.abs(slider.scrollWidth - slider.clientWidth) > 1) {
-                e.preventDefault();
-            }
-        }, { passive: false });
+        });
 
         slider.addEventListener('touchmove', (e) => {
             if (!isDown) return;
             
             const x = e.touches[0].pageX - slider.offsetLeft;
-            const walk = (x - startX) * 1.5; // Increased sensitivity
+            const walk = (x - startX);
             const currentX = e.touches[0].pageX;
             const currentTimestamp = Date.now();
             const timeDelta = currentTimestamp - timestamp;
@@ -5088,14 +5086,21 @@
             timestamp = currentTimestamp;
             
             slider.scrollLeft = scrollLeft - walk;
-            
-            // Prevent default only during actual scroll
-            if (Math.abs(walk) > 5) {
-                e.preventDefault();
-            }
-        }, { passive: false });
+        });
 
         slider.addEventListener('touchend', (e) => {
+            const touchEndTime = Date.now();
+            const touchDuration = touchEndTime - touchStartTime;
+            const touchEndPos = lastX;
+            const touchDistance = Math.abs(touchEndPos - touchStartPos);
+
+            // If touch duration < 200ms and distance < 10px, treat as click
+            if (touchDuration < 200 && touchDistance < 10) {
+                isTouchScrolling = false;
+                isDown = false;
+                return; // Allow click event to propagate
+            }
+
             isDown = false;
             isTouchScrolling = false;
             beginMomentumTracking();
@@ -5116,7 +5121,7 @@
             if (!isDown) return;
             e.preventDefault();
             const x = e.pageX - slider.offsetLeft;
-            const walk = (x - startX) * 1.5;
+            const walk = (x - startX);
             const currentX = e.pageX;
             const currentTimestamp = Date.now();
             const timeDelta = currentTimestamp - timestamp;
@@ -5162,15 +5167,15 @@
             }
         }
 
-        // Prevent click events during scroll/drag
+        // Only prevent click if actually scrolling
         slider.addEventListener('click', (e) => {
-            if (Math.abs(velocity) > 0.5) {
+            if (isTouchScrolling || Math.abs(velocity) > 0.5) {
                 e.preventDefault();
                 e.stopPropagation();
             }
-        });
+        }, true);
 
-        // Handle scroll snap points
+        // Smooth snap scrolling
         let isScrolling;
         slider.addEventListener('scroll', () => {
             window.clearTimeout(isScrolling);
@@ -5197,7 +5202,7 @@
             }, 150);
         });
 
-        // Update scroll snap points on resize
+        // Handle resize
         window.addEventListener('resize', () => {
             slider.style.scrollSnapType = 'none';
             requestAnimationFrame(() => {
@@ -5205,9 +5210,10 @@
             });
         });
 
-        // Initialize touch behavior
+        // Mobile optimization
         slider.style.webkitOverflowScrolling = 'touch';
         slider.style.overscrollBehaviorX = 'contain';
+        slider.style.touchAction = 'pan-x pinch-zoom';
     </script>
 
     <!-- CARD EFFECTS -->
