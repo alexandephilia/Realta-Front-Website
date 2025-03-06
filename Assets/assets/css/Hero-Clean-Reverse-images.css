@@ -1719,7 +1719,6 @@ video {
 }
 .tag-item.active {
   background-color: #ffffff !important;
-  border-bottom: none !important;
   position: relative !important;
   z-index: 3 !important;  /* Above card when active */
   padding: 8px 20px !important; /* Taller height when active */
@@ -1776,12 +1775,12 @@ body.dark-mode .content-card {
   margin-right: 5px;
 }
 .scroll-indicator {
+  display: none !important; /* Hide scroll indicators completely */
   position: absolute;
   width: 40px;
   height: 40px;
   background-color: rgba(255, 255, 255, 0.8);
   border-radius: 50%;
-  display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
@@ -1789,19 +1788,9 @@ body.dark-mode .content-card {
   z-index: 2;
   transition: background-color 0.3s ease;
 }
-.scroll-indicator:hover {
-  background-color: rgba(255, 255, 255, 1);
-}
-.scroll-left {
-  left: -20px;
-}
-.scroll-right {
-  right: -20px;
-}
-.scroll-indicator svg {
-  width: 24px;
-  height: 24px;
-  color: #333;
+
+.scroll-left, .scroll-right {
+  display: none !important; /* Hide scroll left and right buttons */
 }
 
 /* Media query for desktop screens */
@@ -3797,30 +3786,19 @@ h4, h2 {
 /* Mobile and Tablet Styles */
 @media (max-width: 991px) {
   .tag-item {
-    padding: 3px 20px !important;
-    border-radius: 5px !important;
-    margin-bottom: 4px !important;
+    transition: all 0.3s ease !important;
   }
 
   .tag-item.active {
-    padding: 3px 20px !important;  /* Keep default height */
-    border-radius: 25px !important;  /* Keep default radius */
-    margin-bottom: 4px !important;
-    transform: translateY(-2px) !important;
-    border-bottom: 2px solid !important;  /* Keep full border */
+    background-color: rgba(var(--brand-color-rgb), 0.1) !important;
+    border-color: rgba(var(--brand-color-rgb), 0.8) !important;
+    color: rgba(var(--brand-color-rgb), 0.9) !important;
   }
 
-  .tags-wrapper {
-    padding: 10px !important;
-    margin-bottom: 10px !important;
-  }
-
-  #contentCards {
-    margin-top: 0 !important;
-  }
-
-  .content-card {
-    border-radius: 6px !important;  /* Even radius all around */
+  .tag-item:hover:not(.active) {
+    background-color: rgba(99, 50, 155, 0.1) !important;
+    border-color: rgb(99, 50, 155) !important;
+    color: rgb(99, 50, 155) !important;
   }
 }
 
@@ -3975,5 +3953,65 @@ body.dark-mode .tag-item[data-content="finance"].active {
 
     .tag-item:last-child {
         margin-right: 5px !important; /* Add some padding at the end */
+    }
+}
+
+/* Base tag styles - override transforms */
+.tag-item {
+    all: unset;
+    box-sizing: border-box;
+    position: relative !important;
+    z-index: 1 !important;
+    padding: 8px 20px !important;
+    border-radius: 25px !important;
+    border: 2px solid #3333336e !important;
+    transform: none !important; /* Force no transform */
+}
+
+/* Mobile and Tablet Styles */
+@media (max-width: 991px) {
+    .tag-item {
+        transform: none !important; /* Force no transform */
+        transition: color 0.3s ease, background-color 0.3s ease, border-color 0.3s ease !important;
+    }
+
+    .tag-item:hover {
+        transform: none !important; /* Force no transform on hover */
+    }
+
+    .tag-item.active {
+        transform: none !important; /* Force no transform on active */
+        background-color: rgba(var(--brand-color-rgb), 0.1) !important;
+        border-color: rgba(var(--brand-color-rgb), 0.8) !important;
+        color: rgba(var(--brand-color-rgb), 0.9) !important;
+    }
+
+    .tag-item:hover:not(.active) {
+        transform: none !important; /* Force no transform on hover when not active */
+        background-color: rgba(99, 50, 155, 0.1) !important;
+        border-color: rgb(99, 50, 155) !important;
+        color: rgb(99, 50, 155) !important;
+    }
+}
+
+/* Override any inherited transforms for mobile */
+@media (max-width: 991px) {
+    .tags-wrapper .tag-item {
+        transform: none !important;
+    }
+    
+    .tags-wrapper .tag-item:hover,
+    .tags-wrapper .tag-item.active,
+    .tags-wrapper .tag-item:active {
+        transform: none !important;
+    }
+}
+
+@media (max-width: 768px) {
+    .tag-item,
+    .tag-item.active,
+    .tag-item:hover,
+    .tag-item:active {
+        border-radius: 25px !important;
     }
 }

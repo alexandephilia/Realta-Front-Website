@@ -151,11 +151,11 @@ function injectStyles() {
             // padding: 8px 18px !important; /* Reduced padding */
             margin: 0 6px !important; /* Tighter margins */
             border: 1.5px solid rgba(var(--brand-color-rgb), 0.3) !important;
-            border-radius: 12px !important; /* Slightly increased for modern look */
             cursor: pointer !important;
             font-family: var(--font-family-base) !important;
-            font-size: 25px !important; /* Slightly smaller */
+            font-size: 18px !important; /* Slightly smaller */
             font-weight: 500 !important;
+            border-radius: 25px !important;
             color: var(--text-color-primary) !important;
             background: linear-gradient(145deg, var(--bg-color), rgba(var(--brand-color-rgb), 0.02)) !important;
             transition: color 0.25s cubic-bezier(0.4, 0, 0.2, 1), background 0.25s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.25s cubic-bezier(0.4, 0, 0.2, 1) !important;
