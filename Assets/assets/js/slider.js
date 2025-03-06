@@ -53,6 +53,31 @@ function injectStyles() {
     .card-text {
         text-align: center;
     }
+
+    .button-wrapper {
+        font-size: 0.9rem;
+        padding: 8px 15px;
+        margin: 5px auto;
+        max-width: 200px;
+        transform: scale(0.95);
+    }
+
+    .button-wrapper a {
+        padding: 8px 20px;
+        min-height: 36px;
+        font-size: 0.9rem;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        max-width: 180px;
+        border-radius: 20px;
+    }
+
+    .button-wrapper.fade-in {
+        transform: scale(0.95);
+        transition: transform 0.3s ease;
+    }
     /* Remove font size modifications */
     .card-title,
     .card-text,
@@ -68,7 +93,9 @@ function injectStyles() {
         font-size: inherit;
     }
 
-   
+    .button-wrapper {
+        font-size: 0.9rem;
+    }
 }
 
 
@@ -296,7 +323,7 @@ function injectStyles() {
         @media (max-width: 768px) {
             .tags-wrapper {
                 padding: 10px 15px !important;
-                gap: 8px !important;
+                gap: 3px !important;
                 scroll-padding: 0 15px !important;
                 margin: 0 !important;
             }
@@ -376,7 +403,6 @@ const cardContents = {
                 -webkit-filter: blur(10);
             }
             .hospitality-item h3 {
-                font-size: 1.3rem;
                 margin-bottom: 15px;
                 color: #333;
                 font-weight: 600;
@@ -457,9 +483,7 @@ const cardContents = {
                 .hospitality-item {
                     padding: 15px;
                 }
-                .hospitality-item h3 {
-                    font-size: 1.1rem;
-                }
+             
             }
             .hospitality-item i {
                 font-size: 1.8rem;
@@ -515,9 +539,7 @@ const cardContents = {
                 font-size: 1.1rem;
             }
             @media (max-width: 768px) {
-                .hospitality-item h3 {
-                    font-size: 1.1rem;
-                }
+             
                 .hospitality-item li {
                     font-size: 16px;
                     margin-bottom: 0.5rem;
@@ -609,7 +631,6 @@ const cardContents = {
             transition: all 0.3s ease;
         }
         .manufacturing-item h3 {
-            font-size: 1.3rem;
             margin-bottom: 15px;
             color: #333;
             font-weight: 600;
@@ -680,9 +701,7 @@ const cardContents = {
         .manufacturing-item {
             padding: 15px;
         }
-        .manufacturing-item h3 {
-            font-size: 1.1rem;
-        }
+     
         .manufacturing-item li {
             font-size: 16px;
             margin-bottom: 0.5rem;
@@ -743,9 +762,7 @@ const cardContents = {
         font-size: 1.1rem;
     }
     @media (max-width: 768px) {
-        .manufacturing-item h3 {
-            font-size: 1.1rem;
-        }
+       
         .manufacturing-item li {
             font-size: 16px;
             margin-bottom: 0.5rem;
@@ -977,9 +994,7 @@ const cardContents = {
         .property-item {
             padding: 15px;
         }
-        .property-item h3 {
-            font-size: 1.1rem;
-        }
+     
         .property-item li {
             font-size: 16px;
             margin-bottom: 0.5rem;
@@ -1187,9 +1202,7 @@ const cardContents = {
         .finance-item {
             padding: 15px;
         }
-        .finance-item h3 {
-            font-size: 1.1rem;
-        }
+    
         .finance-item li {
             font-size: 16px;
             margin-bottom: 0.5rem;
@@ -1505,30 +1518,75 @@ document.addEventListener("DOMContentLoaded", function() {
     
     try {
         // Initialize the first tab
-  const firstTab = document.querySelector(".tag-item");
+        const firstTab = document.querySelector(".tag-item");
         if (firstTab) {
             const contentKey = firstTab.getAttribute('data-content') || 'hospitality';
             console.log('Initializing first tab with:', contentKey); // Debug log
             toggleCard(firstTab, contentKey);
         }
 
+        // Add navigation arrows to the tags container
+        const tagsWrapper = document.querySelector('.tags-container-wrapper');
+        if (tagsWrapper) {
+            // Create left arrow
+            const leftArrow = document.createElement('div');
+            leftArrow.className = 'scroll-indicator scroll-left';
+            leftArrow.innerHTML = '<i class="fas fa-chevron-left"></i>';
+            
+            // Create right arrow
+            const rightArrow = document.createElement('div');
+            rightArrow.className = 'scroll-indicator scroll-right';
+            rightArrow.innerHTML = '<i class="fas fa-chevron-right"></i>';
+            
+            // Add arrows to container
+            tagsWrapper.appendChild(leftArrow);
+            tagsWrapper.appendChild(rightArrow);
+
+            // Get the tags wrapper for scrolling
+            const tagsContainer = document.querySelector('.tags-wrapper');
+            
+            // Scroll left
+            leftArrow.addEventListener('click', () => {
+                tagsContainer.scrollBy({
+                    left: -100,
+                    behavior: 'smooth'
+                });
+            });
+            
+            // Scroll right
+            rightArrow.addEventListener('click', () => {
+                tagsContainer.scrollBy({
+                    left: 100,
+                    behavior: 'smooth'
+                });
+            });
+
+            // Show/hide arrows based on scroll position
+            const updateArrowVisibility = () => {
+                const isAtStart = tagsContainer.scrollLeft <= 0;
+                const isAtEnd = tagsContainer.scrollLeft >= (tagsContainer.scrollWidth - tagsContainer.clientWidth);
+                
+                leftArrow.style.opacity = isAtStart ? '0.3' : '1';
+                rightArrow.style.opacity = isAtEnd ? '0.3' : '1';
+                
+                leftArrow.style.pointerEvents = isAtStart ? 'none' : 'auto';
+                rightArrow.style.pointerEvents = isAtEnd ? 'none' : 'auto';
+            };
+
+            tagsContainer.addEventListener('scroll', updateArrowVisibility);
+            window.addEventListener('resize', updateArrowVisibility);
+            
+            // Initial check
+            updateArrowVisibility();
+        }
+
         // Add click listeners to all tags
-  const tags = document.getElementsByClassName("tag-item");
+        const tags = document.getElementsByClassName("tag-item");
         Array.from(tags).forEach(tag => {
             tag.addEventListener("click", function(e) {
                 createRipple(e);
                 const contentKey = this.getAttribute('data-content');
                 toggleCard(this, contentKey);
-            });
-
-            tag.addEventListener('mouseenter', function() {
-                this.style.transform = 'translateY(-2px)';
-            });
-
-            tag.addEventListener('mouseleave', function() {
-                if (!this.classList.contains('active')) {
-                    this.style.transform = 'translateY(0)';
-                }
             });
         });
 

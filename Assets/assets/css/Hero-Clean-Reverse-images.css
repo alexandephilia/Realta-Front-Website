@@ -649,9 +649,16 @@ h6 {
   text-decoration: none;
 }
 
-h3 {
-  font-size: 1.3rem !important;
+h3{
+  font-size: 20px !important;
 }
+
+@media (max-width: 768px) {
+  h3 {
+    font-size: 16px !important;
+  }
+}
+
 
 
 .text-blue {
@@ -1337,7 +1344,7 @@ body.dark-mode .btn-custom.whatsapp-btn i {
 
 @media (max-width: 768px) {
   .custom-carousel .carousel-indicators {
-    bottom: 35px;
+    bottom: 155px;
   }
 }
 
@@ -1660,7 +1667,10 @@ video {
     }
 
     #contentCards {
-        margin-top: 10px !important;
+        margin-top: 10px !important; /* More overlap on larger screens */
+        width: 96% !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
     }
 
     .content-card {
@@ -3907,68 +3917,65 @@ body.dark-mode .tag-item[data-content="finance"].active {
     position: absolute;
     width: 40px;
     height: 40px;
-    background-color: rgba(255, 255, 255, 0.8);
+    background-color: rgba(255, 255, 255, 0.9);
     border-radius: 50%;
-    display: flex;
+    display: none; /* Hidden by default */
     align-items: center;
     justify-content: center;
     cursor: pointer;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     z-index: 2;
-    transition: background-color 0.3s ease;
+    transition: all 0.3s ease;
+    top: 50%;
+    transform: translateY(-50%);
 }
 
-/* Hide scroll indicators on mobile */
+.scroll-left {
+    left: 5px;
+}
+
+.scroll-right {
+    right: 5px;
+}
+
+/* Show scroll indicators on mobile */
 @media (max-width: 768px) {
     .scroll-indicator {
-        display: none !important;
+        display: flex !important;
+        width: 32px !important;
+        height: 32px !important;
+        background: rgba(255, 255, 255, 0.95) !important;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15) !important;
+    }
+
+    .scroll-indicator:active {
+        transform: translateY(-50%) scale(0.95);
     }
 
     .tags-container-wrapper {
-        margin: 0 -15px !important; /* Negative margin to extend width */
-        padding: 0 !important;
-        width: calc(100% + 30px) !important; /* Compensate for container padding */
-        overflow: visible !important;
-    }
-
-    .tags-container {
-        padding: 0 !important;
-        max-width: none !important;
-        border-radius: 0 !important;
-        width: 100% !important;
+        position: relative !important;
+        padding: 0 40px !important; /* Make space for arrows */
     }
 
     .tags-wrapper {
-        padding: 10px 5px !important; /* Reduced side padding */
-        margin: 0 !important;
-        width: 100% !important;
-        overflow-x: scroll !important;
-        scroll-padding: 0 10px !important;
+        scroll-behavior: smooth !important;
+        -webkit-overflow-scrolling: touch !important;
+        scrollbar-width: none !important;
+        -ms-overflow-style: none !important;
     }
 
-    .tag-item {
-        margin-right: 8px !important;
-        padding: 8px 16px !important;
+    /* Dark mode styles for scroll indicators */
+    body.dark-mode .scroll-indicator {
+        background: rgba(60, 60, 60, 0.95) !important;
+        color: #fff !important;
     }
 
-    .tag-item:last-child {
-        margin-right: 5px !important; /* Add some padding at the end */
+    body.dark-mode .scroll-indicator:hover {
+        background: rgba(80, 80, 80, 0.95) !important;
     }
 }
 
-/* Base tag styles - override transforms */
-.tag-item {
-    all: unset;
-    box-sizing: border-box;
-    position: relative !important;
-    z-index: 1 !important;
-    padding: 8px 20px !important;
-    border-radius: 25px !important;
-    border: 2px solid #3333336e !important;
-    transform: none !important; /* Force no transform */
-}
-
-/* Mobile and Tablet Styles */
+/* Ensure active tag styling remains unchanged on mobile */
 @media (max-width: 991px) {
     .tag-item {
         transform: none !important; /* Force no transform */
@@ -4015,3 +4022,4 @@ body.dark-mode .tag-item[data-content="finance"].active {
         border-radius: 25px !important;
     }
 }
+
