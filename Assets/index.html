@@ -5048,13 +5048,8 @@
         let isDown = false;
         let startX;
         let scrollLeft;
-        let momentumID;
-        let velocity = 0;
         let lastX;
-        let timestamp;
         let isTouchScrolling = false;
-        let touchStartTime;
-        let touchStartPos;
 
         // Touch events
         slider.addEventListener('touchstart', (e) => {
@@ -5063,10 +5058,6 @@
             startX = e.touches[0].pageX - slider.offsetLeft;
             scrollLeft = slider.scrollLeft;
             lastX = e.touches[0].pageX;
-            timestamp = Date.now();
-            touchStartTime = Date.now();
-            touchStartPos = e.touches[0].pageX;
-            cancelMomentumTracking();
         });
 
         slider.addEventListener('touchmove', (e) => {
@@ -5074,47 +5065,23 @@
             
             const x = e.touches[0].pageX - slider.offsetLeft;
             const walk = (x - startX);
-            const currentX = e.touches[0].pageX;
-            const currentTimestamp = Date.now();
-            const timeDelta = currentTimestamp - timestamp;
-            
-            if (timeDelta > 0) {
-                velocity = (currentX - lastX) / timeDelta;
-            }
-            
-            lastX = currentX;
-            timestamp = currentTimestamp;
+            lastX = e.touches[0].pageX;
             
             slider.scrollLeft = scrollLeft - walk;
         });
 
-        slider.addEventListener('touchend', (e) => {
-            const touchEndTime = Date.now();
-            const touchDuration = touchEndTime - touchStartTime;
-            const touchEndPos = lastX;
-            const touchDistance = Math.abs(touchEndPos - touchStartPos);
-
-            // If touch duration < 200ms and distance < 10px, treat as click
-            if (touchDuration < 200 && touchDistance < 10) {
-                isTouchScrolling = false;
-                isDown = false;
-                return; // Allow click event to propagate
-            }
-
+        slider.addEventListener('touchend', () => {
             isDown = false;
             isTouchScrolling = false;
-            beginMomentumTracking();
         });
 
-        // Mouse events
+        // Mouse events  
         slider.addEventListener('mousedown', (e) => {
             isDown = true;
             slider.style.cursor = 'grabbing';
             startX = e.pageX - slider.offsetLeft;
             scrollLeft = slider.scrollLeft;
             lastX = e.pageX;
-            timestamp = Date.now();
-            cancelMomentumTracking();
         });
 
         slider.addEventListener('mousemove', (e) => {
@@ -5122,16 +5089,7 @@
             e.preventDefault();
             const x = e.pageX - slider.offsetLeft;
             const walk = (x - startX);
-            const currentX = e.pageX;
-            const currentTimestamp = Date.now();
-            const timeDelta = currentTimestamp - timestamp;
-            
-            if (timeDelta > 0) {
-                velocity = (currentX - lastX) / timeDelta;
-            }
-            
-            lastX = currentX;
-            timestamp = currentTimestamp;
+            lastX = e.pageX;
             
             slider.scrollLeft = scrollLeft - walk;
         });
@@ -5139,81 +5097,28 @@
         slider.addEventListener('mouseup', () => {
             isDown = false;
             slider.style.cursor = 'grab';
-            beginMomentumTracking();
         });
 
         slider.addEventListener('mouseleave', () => {
             if (isDown) {
                 isDown = false;
                 slider.style.cursor = 'grab';
-                beginMomentumTracking();
             }
         });
 
-        function beginMomentumTracking() {
-            cancelMomentumTracking();
-            momentumID = requestAnimationFrame(momentumLoop);
-        }
-
-        function cancelMomentumTracking() {
-            cancelAnimationFrame(momentumID);
-        }
-
-        function momentumLoop() {
-            slider.scrollLeft += velocity * 16;
-            velocity *= 0.95;
-            if (Math.abs(velocity) > 0.5) {
-                momentumID = requestAnimationFrame(momentumLoop);
-            }
-        }
-
         // Only prevent click if actually scrolling
         slider.addEventListener('click', (e) => {
-            if (isTouchScrolling || Math.abs(velocity) > 0.5) {
+            if (isTouchScrolling) {
                 e.preventDefault();
                 e.stopPropagation();
             }
         }, true);
 
-        // Smooth snap scrolling
-        let isScrolling;
-        slider.addEventListener('scroll', () => {
-            window.clearTimeout(isScrolling);
-            isScrolling = setTimeout(() => {
-                if (!isDown && !isTouchScrolling) {
-                    const snapPoints = Array.from(tags).map(tag => {
-                        const rect = tag.getBoundingClientRect();
-                        return {
-                            left: rect.left + slider.scrollLeft,
-                            element: tag
-                        };
-                    });
-                    
-                    const currentScrollLeft = slider.scrollLeft;
-                    const closest = snapPoints.reduce((prev, curr) => {
-                        return (Math.abs(curr.left - currentScrollLeft) < Math.abs(prev.left - currentScrollLeft) ? curr : prev);
-                    });
-                    
-                    slider.scrollTo({
-                        left: closest.left,
-                        behavior: 'smooth'
-                    });
-                }
-            }, 150);
-        });
-
-        // Handle resize
-        window.addEventListener('resize', () => {
-            slider.style.scrollSnapType = 'none';
-            requestAnimationFrame(() => {
-                slider.style.scrollSnapType = 'x mandatory';
-            });
-        });
-
         // Mobile optimization
         slider.style.webkitOverflowScrolling = 'touch';
         slider.style.overscrollBehaviorX = 'contain';
         slider.style.touchAction = 'pan-x pinch-zoom';
+        slider.style.scrollSnapType = 'none'; // Disable snap scrolling
     </script>
 
     <!-- CARD EFFECTS -->
