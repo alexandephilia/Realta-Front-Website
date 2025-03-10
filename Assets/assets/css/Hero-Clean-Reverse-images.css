@@ -21,7 +21,6 @@ html, body {
   overflow-x: hidden;
   width: 100%;
 }
-
 :root {
     /* Colors */
     --text-color-primary: #333333;
@@ -37,13 +36,13 @@ html, body {
     
     /* Typography */
     --font-family-base: 'Proxima Nova', sans-serif;
-    --font-size-base: 1rem;      /* 16px */
-    --font-size-sm: 0.875rem;    /* 14px */
-    --font-size-lg: 1.125rem;    /* 18px */
-    --font-size-xl: 1.25rem;     /* 20px */
-    --font-size-2xl: 1.5rem;     /* 24px */
-    --font-size-3xl: 1.875rem;   /* 30px */
-    --font-size-4xl: 2.25rem;    /* 36px */
+    --font-size-base: 16px;
+    --font-size-sm: 14px;
+    --font-size-lg: 18px;
+    --font-size-xl: 20px;
+    --font-size-2xl: 24px;
+    --font-size-3xl: 30px;
+    --font-size-4xl: 36px;
     
     /* Font Weights */
     --font-weight-normal: 400;
@@ -3773,17 +3772,18 @@ h4, h2 {
 }
 
 .container-fluid,
-.container {  padding-right:  10rem !important;
+.container {  
+  /* padding-right:  10rem !important; */
   margin: auto !important;
   }
-
-@media (min-width: 901px) {
-  .container-fluid,
-  .container {
-    padding-left: 10rem;
-    padding-right: 10rem;
-  }
-}
+/*  */
+/* @media (min-width: 901px) { */
+  /* .container-fluid, */
+  /* .container { */
+    /* padding-left: 10rem; */
+    /* padding-right: 10rem; */
+  /* } */
+/* } */
 
 @media (max-width: 768px) {
   .container-fluid,

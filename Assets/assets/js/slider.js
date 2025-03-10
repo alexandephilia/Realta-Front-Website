@@ -1076,7 +1076,7 @@ const cardContents = {
                         <li>Office</li>
                         <li>Industrial Estate</li>
                         <li>Warehouse</li>
-                        <li>Datacenter</li>
+                        <li>Data Center</li>
                     </ul>
                 </div>
                 <div class="property-item residential">
@@ -1335,7 +1335,7 @@ const cardContents = {
                 <ul>
                     <li>Centrally manage, monitor, and secure to each endpoint across your organization</li>
                     <li>Manage mobile devices, laptops, desktops, servers, and IoT devices</li>
-                    <li>Windows 11 Manage every endpoint</li>
+                    <li>Windows 11 manage every endpoint</li>
                 </ul>
             </div>
         </div>
@@ -1635,13 +1635,13 @@ document.addEventListener("DOMContentLoaded", function () {
       "assets/img/logos/azure.png",
       "assets/img/logos/biz.png",
       "assets/img/logos/google.png",
-      "assets/img/logos/hp.png",
     ],
     tech: [
       "assets/img/logos/aruba.png",
       "assets/img/logos/comms.png",
       "assets/img/logos/enterprise.png",
       "assets/img/logos/micro.png",
+      "assets/img/logos/hp.png",
       "assets/img/logos/oracle.png",
     ],
   };
