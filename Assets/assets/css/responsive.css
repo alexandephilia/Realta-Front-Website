@@ -2,11 +2,87 @@ body{
     zoom: 96% !important;
 }
 /* Paragraph text */
+
+
+
+:root {
+    /* Colors */
+    --text-color-primary: #333333;
+    --text-color-secondary: #666666;
+    --text-color-muted: #333333;
+    --text-color-dark: #ffffff;
+    --bg-color: #ffffff;
+    --bg-dark: #261a3c;
+    --bg-dark-hover: #33244a;
+    --bg-dark-active: #412e63;
+    --brand-color: #7641b0;
+    --brand-color-rgb: 118, 65, 176;
+    
+    /* Typography */
+    --font-family-base: 'Proxima Nova', sans-serif;
+    --font-size-base: 16px;
+    --font-size-sm: 14px;
+    --font-size-lg: 18px;
+    --font-size-xl: 20px;
+    --font-size-2xl: 24px;
+    --font-size-3xl: 30px;
+    --font-size-4xl: 36px;
+    
+    /* Font Weights */
+    --font-weight-normal: 400;
+    --font-weight-medium: 500;
+    --font-weight-semibold: 600;
+    --font-weight-bold: 700;
+    
+    /* Line Heights */
+    --line-height-base: 1.5;
+    --line-height-sm: 1.25;
+    --line-height-lg: 1.75;
+    
+    /* Letter Spacing */
+    --letter-spacing-base: 0;
+    --letter-spacing-wide: 0.025em;
+    --letter-spacing-wider: 0.05em;
+    --letter-spacing-widest: 0.1em;
+    
+    /* Transitions */
+    --transition-base: all 0.3s ease;
+    --transition-smooth: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+/* Base text styles */
+body {
+    font-family: var(--font-family-base);
+    font-size: var(--font-size-base);
+    line-height: var(--line-height-base);
+    color: var(--text-color-primary);
+    background-color: var(--bg-color);
+}
+
+.text-decoration-none{
+  color: var(--text-color-muted) !important;
+  text-decoration: underline !important; 
+}
+
+/* Headings */
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-family-base);
+    font-weight: var(--font-weight-bold);
+    color: var(--text-color-primary);
+    line-height: var(--line-height-sm);
+}
+
+/* Paragraph text */
 p {
     color: var(--text-color-primary);
     font-size: var(--font-size-base);
     line-height: var(--line-height-base);
-    margin-bottom: var(--font-size-base);
+    margin-bottom: 1rem;
+}
+
+/* Muted text */
+.text-muted {
+    color: var(--text-color-muted) !important;
 }
 
 /* Form check input styling */
@@ -25,7 +101,6 @@ p {
     border-color: var(--primary-color);
     box-shadow: 0 0 0 2px rgba(var(--primary-rgb), 0.25);
 }
-
 
 /* Muted text */
 .text-muted {
@@ -773,89 +848,88 @@ body {
 }
 
 /* whatapp comment */
-/* WhatsApp Floating Button Styles */
 .whatsapp-float {
-    position: fixed;
-    bottom: 30px;
-    right: 10px;
-    background: #4ECB71;
-    color: white;
-    font-size: var(--font-size-base);
-    z-index: 999;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
-    text-decoration: none;
-    width: 60px;
-    height: 60px;
-    border-radius: 50px;
-    overflow: hidden;
-    transform-origin: right center;
-    transition: all 0.3s ease-out;
+    position: fixed !important;
+    bottom: 30px !important;
+    right: 10px !important;
+    background: #4ECB71 !important;
+    color: white !important;
+    font-size: var(--font-size-base) !important;
+    z-index: 999 !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15) !important;
+    text-decoration: none !important;
+    width: 60px !important;
+    height: 60px !important;
+    border-radius: 50px !important;
+    overflow: hidden !important;
+    transform-origin: right center !important;
+    transition: all 0.3s ease-out !important;
 }
 
 .whatsapp-float::after {
-    content: '';
-    position: absolute;
-    bottom: -8px;
-    left: 80%;
-    transform: translateX(-50%);
-    width: 0;
-    height: 0;
-    border-left: 8px solid transparent;
-    border-right: 8px solid transparent;
-    border-top: 10px solid #4ecb7100;
-    transition: all 0.3s ease-out;
+    content: '' !important;
+    position: absolute !important;
+    bottom: -8px !important;
+    left: 80% !important;
+    transform: translateX(-50%) !important;
+    width: 0 !important;
+    height: 0 !important;
+    border-left: 8px solid transparent !important;
+    border-right: 8px solid transparent !important;
+    border-top: 10px solid #4ecb7100 !important;
+    transition: all 0.3s ease-out !important;
 }
 
 .whatsapp-float i {
-    font-size: calc(var(--font-size-base) * 1.8125);
-    transition: all 0.3s ease-out;
-    margin-bottom: 3px;
-    transition: all 0.3s ease-out;
+    font-size: calc(var(--font-size-base) * 1.8125) !important;
+    transition: all 0.3s ease-out !important;
+    margin-bottom: 3px !important;
+    transition: all 0.3s ease-out !important;
 }
 
 .whatsapp-float .text-content {
-    opacity: 0;
-    visibility: hidden;
-    white-space: nowrap;
-    position: absolute;
-    left: 60px;
-    transform: translateX(-20px);
-    transition: opacity 0.15s ease-out, visibility 0.15s ease-out, transform 0.3s ease-out;
+    opacity: 0 !important;
+    visibility: hidden !important;
+    white-space: nowrap !important;
+    position: absolute !important;
+    left: 60px !important;
+    transform: translateX(-20px) !important;
+    transition: opacity 0.15s ease-out, visibility 0.15s ease-out, transform 0.3s ease-out !important;
 }
 
 .whatsapp-float .click-text,
 .whatsapp-float .sub-text {
-    display: block;
-    line-height: 1.2;
+    display: block !important;
+    line-height: 1.2 !important;
 }
 
 .whatsapp-float .click-text {
-    font-weight: 600;
-    font-size: var(--font-size-base);
-    margin-bottom: 2px;
+    font-weight: 600 !important;
+    font-size: var(--font-size-base) !important;
+    margin-bottom: 2px !important;
 }
 
 .whatsapp-float .sub-text {
-    font-size: var(--font-size-sm);
-    opacity: 0.95;
+    font-size: var(--font-size-sm) !important;
+    opacity: 0.95 !important;
 }
 
 .whatsapp-float:hover {
-    width: 280px;
-    border-radius: 30px;
-    background: #42AB5F;
-    padding: 16px 25px;
+    width: 300px !important; /* Increased from 280px */
+    border-radius: 30px !important;
+    background: #42AB5F !important;
+    padding: 16px 25px !important;
 }
 
 .whatsapp-float:hover::after {
-    border-top-color: #42AB5F;
-    bottom: -10px;
-    border-left-width: 10px;
-    border-right-width: 10px;
-    border-top-width: 12px;
+    border-top-color: #42AB5F !important;
+    bottom: -10px !important;
+    border-left-width: 10px !important;
+    border-right-width: 10px !important;
+    border-top-width: 12px !important;
 }
 
 .whatsapp-float:hover i {
@@ -864,27 +938,27 @@ body {
 }
 
 .whatsapp-float:hover .text-content {
-    opacity: 1;
-    visibility: visible;
-    transform: translateX(0);
-    position: static;
-    margin-left: 15px;
+    opacity: 1 !important;
+    visibility: visible !important;
+    transform: translateX(0) !important;
+    position: static !important;
+    margin-left: 15px !important;
     /* Add delay for content to appear after hover */
     transition: 
         opacity 0.2s ease-out 0.3s, /* Delay opacity */
         visibility 0.1s ease-out 0.3s, /* Delay visibility */
-        transform 0.3s ease-out 0.15s; /* Delay transform */
+        transform 0.3s ease-out 0.15s !important; /* Delay transform */
 }
 
 .whatsapp-float:not(:hover) .text-content {
-    opacity: 0;
-    visibility: hidden;
-    transform: translateX(-20px);
+    opacity: 0 !important;
+    visibility: hidden !important;
+    transform: translateX(-20px) !important;
     /* Content fades out first before transform on exit */
     transition:
         opacity 0.1s ease-out, /* Fade out first */
         visibility 0.1s ease-out,
-        transform 0.3s ease-out 0.1s; /* Transform after fade out */
+        transform 0.3s ease-out 0.1s !important; /* Transform after fade out */
 }
 
 @media screen and (max-width: 768px) {
