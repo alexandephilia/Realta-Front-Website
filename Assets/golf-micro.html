@@ -4046,7 +4046,7 @@
                            <a href="mailto:info@realta.co.id" class="text-decoration-none fw-bold">info@realta.co.id</a>
                        </div>
                        <div class="contact-item">
-                        <i class="fab fa-whatsapp contact-icon" style="font-size: 18px; color: #000000;"></i>
+                        <img src="/Assets/assets/pngwing.com.png" class="contact-icon" style="width: 18px; height: 18px;">
                         <p class="mb-0">
                             For sales and marketing, contact our Official WhatsApp:<br>
                             <a href="https://wa.me/628111221789" class="text-decoration-none fw-bold" target="_blank" rel="noopener noreferrer"
@@ -4339,13 +4339,89 @@
                         Policy</a>
                     <span class="text-muted small me-3" style="font-size: 0.9rem;">|</span>
                     <a href="#" onclick="navigateWithLoading('tos.html#eula'); return false;" class="text-muted small"
-                        style="font-size: 0.9rem; text-decoration: underline;">Terms</a>
+                        style="font-size: 0.9rem; text-decoration: underline;"> Terms of Service</a>
                 </div>
             </div>
         </div>
     </div>
 </section>
 
+
+<!-- Modal Overlay Structure -->
+<div class="realta-icare-modal-overlay" id="realtaICareModal">
+    <div class="realta-icare-modal-container">
+      <div class="realta-icare-modal-header">
+        <h2 class="realta-icare-modal-title">Welcome to iCare</h2>
+        <button class="realta-icare-modal-close">&times;</button>
+      </div>
+      <div class="realta-icare-modal-body">
+        <p class="realta-icare-modal-text text-left">
+          To care or not to care, is NEVER a question! Realta iCare, our commitment to your satisfaction! 
+          We give the very best to satisfy your needs every step of the way.
+        </p>
+        
+        <div class="row justify-content-between mt-4">
+          <div class="col-md-5 text-left mb-3">
+            <h3 class="realta-icare-icon-title fs-5">Customer Support</h3>
+            <a href="https://icare.cloud.co.id/HEAT" target="_blank">
+              <img src="assets/img/icare-customer.png" alt="Customer Support" class="realta-icare-modal-icon img-fluid">
+            </a>
+          </div>
+  
+          <div class="col-md-5 text-left mb-3">
+            <h3 class="realta-icare-icon-title fs-5">Product Manual</h3>
+            <a href="https://realta.co.id/site/pdf/Manual%20Guide%20Aplikasi%20iCARE-Customer%20Self%20Service(1.0).pdf" target="_blank">
+              <img src="assets/img/icare-manual.png" alt="Product Manual" class="realta-icare-modal-icon img-fluid">
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<!-- JavaScript for Modal Functionality -->
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // Get modal elements
+      const footerLogo = document.querySelector('.footer-logo'); // Target the existing footer logo
+      const modalOverlay = document.querySelector('.realta-icare-modal-overlay');
+      const modalClose = document.querySelector('.realta-icare-modal-close');
+      
+      // Move the modal overlay to be a direct child of the body
+      // This helps avoid stacking context issues
+      document.body.appendChild(modalOverlay);
+      
+      // Open modal function
+      function openModal() {
+        modalOverlay.classList.add('realta-icare-modal-show');
+        document.body.style.overflow = 'hidden'; // Prevent scrolling when modal is open
+      }
+      
+      // Close modal function
+      function closeModal() {
+        modalOverlay.classList.remove('realta-icare-modal-show');
+        document.body.style.overflow = ''; // Restore scrolling
+      }
+      
+      // Event listeners
+      footerLogo.addEventListener('click', openModal); // Make the footer logo open the modal
+      modalClose.addEventListener('click', closeModal);
+      
+      // Close modal when clicking outside
+      modalOverlay.addEventListener('click', function(event) {
+        if (event.target === modalOverlay) {
+          closeModal();
+        }
+      });
+      
+      // Close modal with Escape key
+      document.addEventListener('keydown', function(event) {
+        if (event.key === 'Escape' && modalOverlay.classList.contains('realta-icare-modal-show')) {
+          closeModal();
+        }
+      });
+    });
+  </script>
 
     <style>
         #newsletter-cta {
