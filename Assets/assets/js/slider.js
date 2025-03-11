@@ -1640,8 +1640,8 @@ document.addEventListener("DOMContentLoaded", function () {
       "assets/img/logos/aruba.png",
       "assets/img/logos/comms.png",
       "assets/img/logos/enterprise.png",
-      "assets/img/logos/micro.png",
       "assets/img/logos/hp.png",
+      "assets/img/logos/micro.png",
       "assets/img/logos/oracle.png",
     ],
   };

@@ -464,8 +464,8 @@ handleCategories('#solutionsDropdownContent', 'product-details', {
     <div class="product-banner" style="background-image: url('assets/img/hr.jpg');" onclick="navigateWithLoading('hr-micro.html')">                
         <div class="glare"></div>
         <div class="product-banner-content">
-            <h2 class="product-title">HR System</h2>
-            <p class="product-banner-description">Effectively Manage Human Resources</p>
+                <img src="assets/img/probes3.png" class="product-title" style="width: 130px;">
+            <p class="product-banner-description"><b>Human Resource Management System</b></p>
         </div>
     </div>
 
@@ -551,8 +551,8 @@ pts: `
 <div class="product-banner" style="background-image: url('assets/img/property.jpg');" onclick="navigateWithLoading('bimasakti-micro.html');">                
     <div class="glare"></div>
     <div class="product-banner-content">
-        <h2 class="product-title">Property & Tenancy System</h2>
-        <p class="product-banner-description">Efficient Building Management Solutions</p>
+        <img src="assets/img/probes4.png" class="product-title" style="width: 160px;">
+        <p class="product-banner-description"><b>Property & Tenancy System</b></p>
     </div>
 </div>
 
@@ -667,8 +667,8 @@ pts: `
         <div class="product-banner" style="background-image: url('assets/img/gold.jpg');" onclick="navigateWithLoading('golf-micro.html');">                
             <div class="glare"></div>
             <div class="product-banner-content">
-                <h2 class="product-title">Golf Course System</h2>
-                <p class="product-banner-description">Complete Golf Operations Management</p>
+                <img src="assets/img/golf.png" class="product-title" style="width: 120px;">
+                <p class="product-banner-description"><b>Golf Course Management System</b></p>
             </div>
         </div>
 
@@ -782,8 +782,8 @@ pts: `
         <div class="product-banner" style="background-image: url('assets/img/hotel.jpg');" onclick="navigateWithLoading('rhapsody-micro.html');">                
             <div class="glare"></div>
             <div class="product-banner-content">
-                <h2 class="product-title">Hotel Management System</h2>
-                <p class="product-banner-description">Complete Hotel Operations Management</p>
+                <img src="assets/img/probes1.png" class="product-title" style="width: 160px;">
+                <p class="product-banner-description"><b>Hotel Management System</b></p>
             </div>
         </div>
 
@@ -919,8 +919,8 @@ pts: `
         <div class="product-banner" style="background-image: url('assets/img/it-management.jpg');" onclick="navigateWithLoading('itsm-micro.html')">                
             <div class="glare"></div>
             <div class="product-banner-content">
-                <h2 class="product-title">ITSM, ITAM & Unified Endpoint Management</h2>
-                <p class="product-banner-description">Comprehensive IT management solutions for your organization.</p>
+                <img src="assets/img/probes5.png" class="product-title" style="width: 160px;">
+                <p class="product-banner-description"><b>ITSM, ITAM & Unified Endpoint Management</b></p>
             </div>
         </div>
         <div class="modules-title">KEY FEATURES</div>
@@ -943,8 +943,8 @@ pts: `
         <div class="product-banner" style="background-image: url('assets/img/erp.jpg');" onclick="navigateWithLoading('realnet-micro.html')">
             <div class="glare"></div>
             <div class="product-banner-content">
-                <h2 class="product-title">Network & System Integration</h2>
-                <p class="product-banner-description">A strategic approach integrating IT elements into an efficient framework customized for your needs.</p>
+                <img src="assets/img/RealNET.png" class="product-title" style="width: 160px;">
+                <p class="product-banner-description"><b>Network & System Integration</b></p>
             </div>
         </div>
         <div class="modules-title">KEY FEATURES</div>
@@ -995,8 +995,8 @@ handleCategories('#industriDropdownContent', 'industri-details', {
         <div class="product-banner" style="background-image: url('assets/img/property.jpg');">   
             <div class="glare"></div>
             <div class="product-banner-content">
-                <h2 class="product-title">Property Management Solutions</h2>
-                <p class="product-banner-description">Optimize property operations and tenant satisfaction with our advanced systems.</p>
+                <img src="assets/img/probes4.png" class="product-title" style="width: 160px;">
+                <p class="product-banner-description"><b>Property Management Solutions</b></p>
             </div>
         </div>
         <div class="modules-title">KEY FEATURES</div>

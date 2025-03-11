@@ -643,10 +643,11 @@
                 <div class="product-categories">
                     <a href="golf-micro.html" class="product-category" data-product="gcs"
                         onclick="navigateWithLoading('golf-micro.html')">Golf Course System</a>
-                    <a href="hr-micro.html" class="product-category" data-product="hrs"
-                        onclick="navigateWithLoading('hr-micro.html')">HR System</a>
+                    
                     <a href="rhapsody-micro.html" class="product-category" data-product="hms"
                         onclick="navigateWithLoading('rhapsody-micro.html')">Hotel Management System</a>
+                        <a href="hr-micro.html" class="product-category" data-product="hrs"
+                        onclick="navigateWithLoading('hr-micro.html')">HR System</a>
                     <a href="itsm-micro.html" class="product-category" data-product="itm"
                         onclick="navigateWithLoading('itsm-micro.html')">ITSM, ITAM & Unified Endpoint Management</a>
                     <a href="bimasakti-micro.html" class="product-category" data-product="pts"
@@ -1644,14 +1645,14 @@
                 </div>
                 <div class="tags-container" style="background: none;">
                     <div class="tags-wrapper">
-                        <span class="tag-item" data-content="hospitality" onclick="toggleCard(this, 'hospitality')">
-                            Hospitality
-                        </span>
                         <span class="tag-item" data-content="property" onclick="toggleCard(this, 'property')">
                             Property
                         </span>
                         <span class="tag-item" data-content="manufacturing" onclick="toggleCard(this, 'manufacturing')">
                             Manufacturing
+                        </span>
+                        <span class="tag-item" data-content="hospitality" onclick="toggleCard(this, 'hospitality')">
+                            Hospitality
                         </span>
                         <span class="tag-item" data-content="finance" onclick="toggleCard(this, 'finance')">
                             FSI
@@ -3525,7 +3526,7 @@
                 position: relative;
             }
 
-            .rt-testimonial-text::before {
+            /* .rt-testimonial-text::before {
                 content: '❝';
                 font-size: 60px;
                 color: #9054d0;
@@ -3533,7 +3534,7 @@
                 left: -15px;
                 top: -40px;
                 opacity: 0.2;
-            }
+            } */
 
             .rt-author-info {
                 margin-top: clamp(10px, 3vw, 15px);

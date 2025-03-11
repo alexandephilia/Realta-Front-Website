@@ -314,7 +314,6 @@ body.dark-mode .product-banner:hover::before {
       transform: translateY(110%);
   }
 }
-
 .product-banner-content {
   position: relative;
   z-index: 2;
@@ -324,6 +323,7 @@ body.dark-mode .product-banner:hover::before {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  background: rgba(0, 0, 0, 0.349); /* Added slight dark overlay */
 }
 
 .product-title {
@@ -1903,7 +1903,7 @@ section:target {
     left: 0 !important;
     border-right: 0 solid transparent !important;
     border-left: 0 solid transparent !important;
-    border-top: .2em solid;
+    border-top: .15em solid;
     background-color: #9054d0 !important;
     transition: width var(--transition-speed) ease !important;
 }
