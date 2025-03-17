@@ -959,7 +959,7 @@ body {
 
 @media screen and (max-width: 768px) {
     .whatsapp-float {
-        display: none;
+        display: none !important;
     }
 }
 

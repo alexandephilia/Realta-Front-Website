@@ -170,7 +170,7 @@ body.dark-mode .text-muted {
   background-image: linear-gradient(132deg, #8A2BE2 27%, #4169E1 50%, #5486a6 79%);
   opacity: 0.77;
   filter: blur(64px);
-  z-index: 0;
+  z-index: -1;
 }
 
 
