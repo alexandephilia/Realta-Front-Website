@@ -262,7 +262,7 @@ body.dark-mode .product-details {
   left: 0;
   right: 0;
   bottom: 0;
-  background: rgba(0, 0, 0, 0.35);
+  background: rgba(43, 43, 43, 0.219);
   transition: background 0.3s ease;
 }
 
@@ -323,7 +323,7 @@ body.dark-mode .product-banner:hover::before {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  background: rgba(0, 0, 0, 0.349); /* Added slight dark overlay */
+  background: rgba(0, 0, 0, 0.178); /* Added slight dark overlay */
 }
 
 .product-title {
