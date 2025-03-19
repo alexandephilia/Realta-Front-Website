@@ -1837,11 +1837,12 @@ body.dark-mode .content-card {
 .partner-row {
     display: flex;
     align-items: stretch;
-    border-bottom: 3px dotted rgba(90, 89, 89, 0.5) !important;
     transition: all 0.3s ease;
     position: relative;
     z-index: 1;
 }
+
+
 
 /* Dark mode adjustment */
 body.dark-mode .partner-row {
@@ -1858,7 +1859,6 @@ body.dark-mode .partner-row {
     display: flex;
     align-items: center;
     justify-content: center;
-    border-right: 3px dotted rgba(0, 0, 0, 0.3) !important;
 }
 
 .partner-title h5 {
@@ -4021,4 +4021,3 @@ body.dark-mode .tag-item[data-content="finance"].active {
         border-radius: 25px !important;
     }
 }
-
