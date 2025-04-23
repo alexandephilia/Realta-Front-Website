@@ -697,20 +697,20 @@ pts: `
         <p>Streamlined management of property upkeep and repairs.</p>
         <ul class="feature-list" style="list-style: none; padding: 0; margin-top: 15px;">
             <li>
-                <i class="fas fa-tools"></i>
-                <span>Work Orders</span>
+                <i class="fas fa-database"></i>
+                <span>Assets Master</span>
             </li>
             <li>
-                <i class="fas fa-calendar-check"></i>
-                <span>Preventive Maintenance</span>
+                <i class="fas fa-calendar-alt"></i>
+                <span>Maintenance Schedule</span>
             </li>
             <li>
-                <i class="fas fa-clipboard-list"></i>
-                <span>Inspection Management</span>
+                <i class="fas fa-comment-dots"></i>
+                <span>Complaint & Request</span>
             </li>
             <li>
-                <i class="fas fa-history"></i>
-                <span>Maintenance History</span>
+                <i class="fas fa-tasks"></i>
+                <span>Work Order</span>
             </li>
         </ul>
     </div>
@@ -719,32 +719,32 @@ pts: `
         <p>Comprehensive administrative and financial management tools.</p>
         <ul class="feature-list" style="list-style: none; padding: 0; margin-top: 15px;">
             <li>
+                <i class="fas fa-shopping-cart"></i>
+                <span>Purchasing</span>
+            </li>
+            <li>
                 <i class="fas fa-file-invoice-dollar"></i>
-                <span>Accounts Receivable</span>
+                <span>Account Receivable</span>
             </li>
             <li>
                 <i class="fas fa-file-invoice"></i>
-                <span>Accounts Payable</span>
-            </li>
-            <li>
-                <i class="fas fa-calculator"></i>
-                <span>General Ledger</span>
-            </li>
-            <li>
-                <i class="fas fa-chart-line"></i>
-                <span>Financial Reporting</span>
+                <span>Account Payable</span>
             </li>
             <li>
                 <i class="fas fa-university"></i>
-                <span>Banking</span>
+                <span>Cash & Bank</span>
             </li>
             <li>
-                <i class="fas fa-project-diagram"></i>
-                <span>Budget Management</span>
+                <i class="fas fa-book"></i>
+                <span>General Ledger</span>
             </li>
             <li>
-                <i class="fas fa-user-shield"></i>
-                <span>User Access Control</span>
+                <i class="fas fa-boxes"></i>
+                <span>Inventory</span>
+            </li>
+            <li>
+                <i class="fas fa-building"></i>
+                <span>Fixed Asset</span>
             </li>
         </ul>
     </div>
