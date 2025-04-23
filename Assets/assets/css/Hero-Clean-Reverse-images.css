@@ -156,8 +156,9 @@ body.dark-mode .text-muted {
 #home {
   position: relative;
   overflow: hidden;
+  /* background-image: linear-gradient(180deg, #e4e1ff, #fff 100%, #f8f8fe) !important; */
+  z-index: 1;
 }
-
 
 .circle-blur {
   position: absolute;
@@ -170,9 +171,13 @@ body.dark-mode .text-muted {
   background-image: linear-gradient(132deg, #8A2BE2 27%, #4169E1 50%, #5486a6 79%);
   opacity: 0.77;
   filter: blur(64px);
-  z-index: -1;
+  z-index: 0;
 }
 
+/* Dark mode override */
+body.dark-mode #home {
+  background-image: linear-gradient(180deg, var(--dark-background), var(--dark-background) 100%) !important;
+}
 
 @media (max-width: 991px) {
   .circle-blur {

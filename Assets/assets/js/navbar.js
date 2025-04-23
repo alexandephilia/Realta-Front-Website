@@ -249,7 +249,7 @@ function handleCategories(containerSelector, detailsId, content) {
                 font-size: 16px;
                 transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
             }
-]
+
             .feature-list li span {
                 font-size: 16px;
                 text-align: left;
@@ -290,6 +290,58 @@ function handleCategories(containerSelector, detailsId, content) {
 
                 body.dark-mode .feature-list li:hover {
                     box-shadow: 0 3px 6px rgba(0,0,0,0.12);
+                }
+            }
+
+            /* Add scrolling to menu container */
+            .mega-dropdown .dropdown-content {
+                max-height: 75vh; /* Limit height to 75% of viewport height */
+                overflow-y: auto; /* Enable vertical scrolling */
+                overflow-x: hidden; /* Prevent horizontal scrolling */
+                scrollbar-width: thin; /* For Firefox */
+                scrollbar-color: rgba(155, 69, 197, 0.6) transparent; /* For Firefox */
+            }
+            
+            /* Scrollbar styling for Webkit browsers */
+            .mega-dropdown .dropdown-content::-webkit-scrollbar {
+                width: 6px;
+            }
+            
+            .mega-dropdown .dropdown-content::-webkit-scrollbar-track {
+                background: transparent;
+            }
+            
+            .mega-dropdown .dropdown-content::-webkit-scrollbar-thumb {
+                background-color: rgba(155, 69, 197, 0.6);
+                border-radius: 6px;
+            }
+            
+            /* Bottom modules container styling */
+            .bottom-modules {
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                gap: 20px;
+                width: 65%;
+                margin: 20px auto 0;
+            }
+            
+            /* Responsive adjustments */
+            @media (max-width: 992px) {
+                .bottom-modules {
+                    width: 95%;
+                }
+            }
+            
+            @media (max-width: 768px) {
+                .bottom-modules {
+                    grid-template-columns: repeat(2, 1fr);
+                    width: 95%;
+                }
+            }
+            
+            @media (max-width: 576px) {
+                .bottom-modules {
+                    grid-template-columns: 1fr;
                 }
             }
         </style>
@@ -391,72 +443,14 @@ handleCategories('#solutionsDropdownContent', 'product-details', {
             <div class="module">
                 <h4>Enterprise Planning</h4>
                 <p>Integrate and optimize core business processes</p>
-                <ul class="feature-list">
-                    <li>
-                        <i class="fas fa-money-bill-wave"></i>
-                        <span>Finance</span>
-                    </li>
-                    <li>
-                        <i class="fas fa-cogs"></i>
-                        <span>Manufacturing</span>
-                    </li>
-                    <li>
-                        <i class="fas fa-project-diagram"></i>
-                        <span>Project Management</span>
-                    </li>
-                    <li>
-                        <i class="fas fa-truck"></i>
-                        <span>Supply Chain</span>
-                    </li>
-                </ul>
             </div>
             <div class="module">
                 <h4>Asset & Warehouse Management</h4>
                 <p>Optimize your resources and inventory</p>
-                <ul class="feature-list">
-                    <li>
-                        <i class="fas fa-wrench"></i>
-                        <span>Maintenance</span>
-                    </li>
-                    <li>
-                        <i class="fas fa-box"></i>
-                        <span>Inventory</span>
-                    </li>
-                    <li>
-                        <i class="fas fa-warehouse"></i>
-                        <span>Warehouse</span>
-                    </li>
-                    <li>
-                        <i class="fas fa-clipboard-list"></i>
-                        <span>Procurement</span>
-                    </li>
-                </ul>
             </div>
             <div class="module">
                 <h4>Business Intelligence</h4>
                 <p>Make data-driven decisions</p>
-                <ul class="feature-list">
-                    <li>
-                        <i class="fas fa-chart-pie"></i>
-                        <span>Data Visualization</span>
-                    </li>
-                    <li>
-                        <i class="fas fa-database"></i>
-                        <span>Data Warehousing</span>
-                    </li>
-                    <li>
-                        <i class="fas fa-brain"></i>
-                        <span>Predictive Analytics</span>
-                    </li>
-                    <li>
-                        <i class="fas fa-tachometer-alt"></i>
-                        <span>KPI Dashboards</span>
-                    </li>
-                    <li>
-                        <i class="fas fa-file-alt"></i>
-                        <span>Custom Reports</span>
-                    </li>
-                </ul>
             </div>
         </div>
     `,
@@ -465,7 +459,9 @@ handleCategories('#solutionsDropdownContent', 'product-details', {
         <div class="glare"></div>
         <div class="product-banner-content">
                 <img src="assets/img/probes3.png" class="product-title" style="width: 130px;">
-            <p class="product-banner-description"><b>Human Resource Management System</b></p>
+            <p class="product-banner-description"><b>Human Resource Information System</b></p>
+            <p class="product-banner-description">To Effectively Manage Human Resource</p>
+
         </div>
     </div>
 
@@ -483,17 +479,20 @@ handleCategories('#solutionsDropdownContent', 'product-details', {
                     <i class="fas fa-clock"></i>
                     <span>Attendance</span>
                 </li>
+
                 <li>
-                    <i class="fas fa-hand-holding-usd"></i>
-                    <span>Loan</span>
+                    <i class="fas fa-file-invoice-dollar"></i>
+                    <span>Payroll</span>
                 </li>
                 <li>
                     <i class="fas fa-heartbeat"></i>
                     <span>Medical</span>
                 </li>
+                
+
                 <li>
-                    <i class="fas fa-file-invoice-dollar"></i>
-                    <span>Payroll</span>
+                    <i class="fas fa-hand-holding-usd"></i>
+                    <span>Loan</span>
                 </li>
             </ul>
         </div>
@@ -515,7 +514,7 @@ handleCategories('#solutionsDropdownContent', 'product-details', {
                 </li>
                 <li>
                     <i class="fas fa-chart-line"></i>
-                    <span>Performance</span>
+                    <span>Performance Management</span>
                 </li>
             </ul>
         </div>
@@ -523,25 +522,10 @@ handleCategories('#solutionsDropdownContent', 'product-details', {
             <h4>HR Mobile</h4>
             <p>Empower and manage HR with our ESS app with ease.</p>
             <ul class="feature-list">
-                <li>
-                    <i class="fas fa-map-marker-alt"></i>
-                    <span>Locations</span>
-                </li>
+              
                 <li>
                     <i class="fas fa-eye"></i>
-                    <span>Monitoring</span>
-                </li>
-                <li>
-                    <i class="fas fa-file-alt"></i>
-                    <span>Request</span>
-                </li>
-                <li>
-                    <i class="fas fa-bell"></i>
-                    <span>Reminder</span>
-                </li>
-                <li>
-                    <i class="fas fa-exclamation-circle"></i>
-                    <span>Notification</span>
+                    <span>Employee Self Service App</span>
                 </li>
             </ul>
         </div>
@@ -552,7 +536,8 @@ pts: `
     <div class="glare"></div>
     <div class="product-banner-content">
         <img src="assets/img/probes4.png" class="product-title" style="width: 160px;">
-        <p class="product-banner-description"><b>Property & Tenancy System</b></p>
+        <p class="product-banner-description"><b>Property and Tenancy Management System</b></p>
+         <p class="product-banner-description" style="margin-top: -6px;">Design specifically to help today's Building Management work more efficiently and effectively</p>
     </div>
 </div>
 
@@ -577,6 +562,20 @@ pts: `
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
     }
+    
+    .maintenance-module i {
+        margin-right: 10px;
+        background: linear-gradient(45deg, #0000FF, #87CEEB);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+    
+    .back-office-module i {
+        margin-right: 10px;
+        background: linear-gradient(45deg, #0000FF, #87CEEB);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
 
     .feature-list li {
         display: flex;
@@ -590,6 +589,35 @@ pts: `
 
     .feature-list li span {
         font-size: 0.9em;
+    }
+    
+    /* Bottom modules container styling */
+    .bottom-modules {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+        width: 65%;
+        margin: 20px auto 0;
+    }
+    
+    /* Responsive adjustments */
+    @media (max-width: 992px) {
+        .bottom-modules {
+            width: 95%;
+        }
+    }
+    
+    @media (max-width: 768px) {
+        .bottom-modules {
+            grid-template-columns: repeat(2, 1fr);
+            width: 95%;
+        }
+    }
+    
+    @media (max-width: 576px) {
+        .bottom-modules {
+            grid-template-columns: 1fr;
+        }
     }
 </style>
 
@@ -662,13 +690,73 @@ pts: `
         </ul>
     </div>
 </div>
+
+<div class="bottom-modules">
+    <div class="module maintenance-module">
+        <h4>Maintenance</h4>
+        <p>Streamlined management of property upkeep and repairs.</p>
+        <ul class="feature-list" style="list-style: none; padding: 0; margin-top: 15px;">
+            <li>
+                <i class="fas fa-tools"></i>
+                <span>Work Orders</span>
+            </li>
+            <li>
+                <i class="fas fa-calendar-check"></i>
+                <span>Preventive Maintenance</span>
+            </li>
+            <li>
+                <i class="fas fa-clipboard-list"></i>
+                <span>Inspection Management</span>
+            </li>
+            <li>
+                <i class="fas fa-history"></i>
+                <span>Maintenance History</span>
+            </li>
+        </ul>
+    </div>
+    <div class="module back-office-module">
+        <h4>Back Office</h4>
+        <p>Comprehensive administrative and financial management tools.</p>
+        <ul class="feature-list" style="list-style: none; padding: 0; margin-top: 15px;">
+            <li>
+                <i class="fas fa-file-invoice-dollar"></i>
+                <span>Accounts Receivable</span>
+            </li>
+            <li>
+                <i class="fas fa-file-invoice"></i>
+                <span>Accounts Payable</span>
+            </li>
+            <li>
+                <i class="fas fa-calculator"></i>
+                <span>General Ledger</span>
+            </li>
+            <li>
+                <i class="fas fa-chart-line"></i>
+                <span>Financial Reporting</span>
+            </li>
+            <li>
+                <i class="fas fa-university"></i>
+                <span>Banking</span>
+            </li>
+            <li>
+                <i class="fas fa-project-diagram"></i>
+                <span>Budget Management</span>
+            </li>
+            <li>
+                <i class="fas fa-user-shield"></i>
+                <span>User Access Control</span>
+            </li>
+        </ul>
+    </div>
+</div>
 `,
     gcs: `
         <div class="product-banner" style="background-image: url('assets/img/gold.jpg');" onclick="navigateWithLoading('golf-micro.html');">                
             <div class="glare"></div>
             <div class="product-banner-content">
                 <img src="assets/img/golf.png" class="product-title" style="width: 120px;">
-                <p class="product-banner-description"><b>Golf Course Management System</b></p>
+                <p class="product-banner-description" style="margin-top: -6px;"><b>Golf Course Management System</b></p>
+                <p class="product-banner-description" style="margin-top: -6px;">Supporting The Golfer's Journey On and Off The Course</p>
             </div>
         </div>
 
@@ -711,23 +799,27 @@ pts: `
                 <ul class="feature-list" style="list-style: none; padding: 0; margin-top: 15px;">
                     <li>
                         <i class="fas fa-id-card"></i>
-                        <span>Member Profile</span>
+                        <span>Comprehensive Member's Profile</span>
                     </li>
                     <li>
                         <i class="fas fa-file-invoice-dollar"></i>
-                        <span>Invoicing</span>
+                        <span>Member Invoicing</span>
                     </li>
                     <li>
                         <i class="fas fa-chart-line"></i>
-                        <span>Activity Tracking</span>
+                        <span>Member's Playing and Spending Activity</span>
                     </li>
                     <li>
                         <i class="fas fa-tag"></i>
-                        <span>Class & Category</span>
+                        <span>Membership Class & Category</span>
                     </li>
                     <li>
                         <i class="fas fa-user-check"></i>
-                        <span>Member Status</span>
+                        <span>Monitoring Member's Payment Status</span>
+                    </li>
+                    <li>
+                        <i class="fas fa-user-tie"></i>
+                        <span>Member Manager</span>
                     </li>
                 </ul>
             </div>
@@ -755,23 +847,19 @@ pts: `
                 <ul class="feature-list" style="list-style: none; padding: 0; margin-top: 15px;">
                     <li>
                         <i class="fas fa-trophy"></i>
-                        <span>Leaderboard</span>
+                        <span>Tournament Leaderboard</span>
                     </li>
                     <li>
                         <i class="fas fa-users"></i>
-                        <span>Pairing</span>
+                        <span>Handicap Pairing</span>
                     </li>
                     <li>
                         <i class="fas fa-golf-ball"></i>
-                        <span>Handicap</span>
+                        <span>Tournament Pairing</span>
                     </li>
                     <li>
                         <i class="fas fa-clipboard"></i>
-                        <span>Scoring Method</span>
-                    </li>
-                    <li>
-                        <i class="fas fa-chart-line"></i>
-                        <span>Analytics</span>
+                        <span>Tournament Scoring Method</span>
                     </li>
                 </ul>
             </div>
@@ -784,6 +872,8 @@ pts: `
             <div class="product-banner-content">
                 <img src="assets/img/probes1.png" class="product-title" style="width: 160px;">
                 <p class="product-banner-description"><b>Hotel Management System</b></p>
+                   <p class = "product-banner-description"
+                   style = "margin-top: -6px;"> To Orchestrate Your Entire Hotel Operation </p>
             </div>
         </div>
 
@@ -945,6 +1035,7 @@ pts: `
             <div class="product-banner-content">
                 <img src="assets/img/RealNET.png" class="product-title" style="width: 160px;">
                 <p class="product-banner-description"><b>Network & System Integration</b></p>
+                <p class="product-banner-description" style="margin-top: -6px;">One Solution concept, a strategic approach that skillfully blends various IT elements into a streamlined and efficient framework that is precisely tailored to each client's specific needs.</p>
             </div>
         </div>
         <div class="modules-title">KEY FEATURES</div>
@@ -997,6 +1088,7 @@ handleCategories('#industriDropdownContent', 'industri-details', {
             <div class="product-banner-content">
                 <img src="assets/img/probes4.png" class="product-title" style="width: 160px;">
                 <p class="product-banner-description"><b>Property Management Solutions</b></p>
+               
             </div>
         </div>
         <div class="modules-title">KEY FEATURES</div>

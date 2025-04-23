@@ -23,8 +23,11 @@
     background-color 0.4s cubic-bezier(0.16, 1, 0.3, 1),
     box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1);
   will-change: transform, opacity, background-color;
+  max-height: 80vh;
+  overflow-y: auto;
+  scrollbar-width: thin !important; /* For Firefox */
+  scrollbar-color: rgba(155, 69, 197, 0.6) transparent !important; /* For Firefox */
 }
-
 
 .mega-dropdown::before {
   content: '';
@@ -194,12 +197,15 @@ body.dark-mode .product-category.active {
   border-top-right-radius: 0;
   height: auto;
   overflow-y: auto;
-      /* Prevent horizontal overflow */
+  /* Prevent horizontal overflow */
+  overflow-x: hidden;
   padding-right: 25px; /* Increase right padding to accommodate scrollbar */
+  scrollbar-width: thin; /* For Firefox */
+  scrollbar-color: rgba(155, 69, 197, 0.6) transparent; /* For Firefox */
 }
 
 .product-details::-webkit-scrollbar {
-  width: 6px;
+  width: 3px !important; /* Thinner scrollbar */
   z-index: 1009;
 }
 
@@ -210,9 +216,9 @@ body.dark-mode .product-category.active {
 }
 
 .product-details::-webkit-scrollbar-thumb {
-  background-color: rgb(133, 22, 188);
+  background-color: rgba(155, 69, 197, 0.6) !important;
   border-radius: 3px;
-  border: 1px solid rgb(255, 255, 255);
+  border: none; /* Remove border for a cleaner look */
 }
 
 .product-details {
@@ -239,7 +245,7 @@ body.dark-mode .product-details {
 }
 
 .product-banner {
-  height: 166px;
+  height: 180px;
   width: 95%;
   margin: 0 auto 20px;
   background-size: cover;
@@ -624,463 +630,6 @@ body.dark-mode .glass-dropdown .dropdown-item:hover {
 
 .nav-toggle.open span:nth-child(1) { top: 10px; width: 0%; left: 50%; }
 
-
-
-
-body.dark-mode .mega-dropdown {
-  background-color: rgba(69, 69, 69, 0.219);
-  box-shadow: 0 5px 6px rgba(255, 255, 255, 0.1);
-}
-
-.mega-dropdown-inner {
-  width: 100%;
-  margin: 0 auto;
-  overflow: visible;
-  backdrop-filter: blur(10px);
-  background-color: rgba(255, 255, 255, 0.9);
-  -webkit-backdrop-filter: blur(10px);
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  height: auto;
-}
-
-body.dark-mode .mega-dropdown-inner {
-  background-color: rgba(18, 18, 18, 0.95);
-  box-shadow: 0 4px 6px rgba(255, 255, 255, 0.1);
-}
-
-
-
-
-body.dark-mode .product-categories {
-  background-color: rgba(255, 255, 255, 0.08);
-  border-right-color: rgba(255, 255, 255, 0.2);
-}
-
-
-
-body.dark-mode .product-category {
-  color: #e0e0e0;
-}
-
-
-
-
-body.dark-mode .product-details {
-  background-color: rgba(61, 60, 60, 0.3);
-}
-
-.product-banner:hover {
-  filter: blur(0.3px);
-}
-
-.product-banner::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: rgba(0, 0, 0, 0.335);
-  transition: background 0.3s ease;
-}
-
-body.dark-mode .product-banner::before {
-  background: rgba(0, 0, 0, 0.094);
-}
-
-.product-banner .glare {
-  position: absolute;
-  top: -200%;
-  left: -50%;
-  right: -50%;
-  bottom: -200%;
-  transform: rotate(35deg);
-  pointer-events: none;
-}
-
-.product-banner .glare::before,
-.product-banner .glare::after {
-  content: '';
-
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: linear-gradient(90deg,
-          rgba(255, 255, 255, 0) 0%,
-          rgba(255, 255, 255, 0.03) 50%,
-          rgba(255, 255, 255, 0) 100%);
-  animation: glareAnimation 8s infinite linear;
-}
-
-.product-banner .glare::after {
-  animation-duration: 12s;
-  animation-delay: -4s;
-  opacity: 0.5;
-}
-
-@keyframes glareAnimation {
-  0% {
-      transform: translateY(-100%);
-  }
-
-  100% {
-      transform: translateY(100%);
-  }
-}
-
-
-.product-title {
-  font-size: 36px; /* Increased from 32px */
-  font-weight: bold;
-  margin: 0 0 15px 0;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-}
-
-.product-banner-description {
-  font-size: 20px; /* Increased from 18px */
-  margin: 0;
-  color: rgba(255, 255, 255, 0.9);
-  max-width: 85%; /* Increased from 80% */
-  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
-}
-
-.product-banner:hover {
-  transform: scale(1.02);
-}
-
-
-
-.product-banner:hover::before {
-  background: rgba(0, 0, 0, 0.178);
-  /* Lighten on hover */
-
-}
-
-
-.product-title {
-  font-size: 36px; /* Increased from 32px */
-  font-weight: bold;
-  color: white;
-  margin: 0 0 15px 0;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-}
-
-.product-banner-description {
-  font-size: 20px; /* Increased from 18px */
-  margin: 0;
-  color: rgba(255, 255, 255, 0.9);
-  max-width: 85%; /* Increased from 80% */
-  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
-}
-
-.product-banner:hover {
-  transform: scale(1.02);
-}
-
-body.dark-mode .product-banner:hover::before {
-  background: rgba(0, 0, 0, 0.3);
-}
-
-.product-banner:hover .product-banner-icon {
-  transform: rotate(0deg) scale(1.1);
-}
-
-.module {
-  padding: 6px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-}
-
-.modules-title {
-  font-size: 18px;
-  font-weight: bold;
-  color: rgba(133, 22, 188, 0.8);
-  margin-bottom: 20px;
-  padding-bottom: 10px;
-  border-bottom: 2px solid transparent;
-  background-image: linear-gradient(to right, 
-      rgba(255, 255, 255, 1) 0%, 
-      rgba(155, 69, 197, 0.644) 50%, 
-      rgba(255, 255, 255, 1) 100%
-  );
-  background-clip: padding-box;
-  background-position: 0 100%;
-  background-size: 100% 2px;
-  background-repeat: no-repeat;
-  /* Center the element */
-  text-align: center;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-body.dark-mode .modules-title {
-  color: rgba(133, 22, 188, 0.6);
-  border-bottom-color: rgba(133, 22, 188, 0.6);
-}
-
-
-
-
-/* .module:hover {
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-  transform: translateY(-5px);
-} */
-
-body.dark-mode .module {
-  background-color: rgba(98, 98, 98, 0.192);
-}
-
-
-
-.all-products {
-  color: rgba(133, 22, 188, 0.8);
-  font-size: 16px;
-  margin-top: 25px;
-  cursor: pointer;
-  font-weight: 500;
-  padding: 12px 18px !important;
-}
-
-/* Media query for responsiveness */
-@media (max-width: 992px) {
-  .dropdown-content {
-      flex-direction: column;
-  }
-
-  .product-categories,
-  .product-details {
-      width: 100%;
-  }
-
-  .product-categories {
-      border-right: none;
-      border-bottom: 1px solid rgba(224, 224, 224, 0.5);
-  }
-
-  .product-category.active {
-      border-radius: 25px !important;
-      margin-right: 0;
-  }
-
-  .product-banner-content {
-      flex-direction: column;
-      align-items: flex-start;
-  }
-
-  .discover-link {
-      margin-top: 10px;
-  }
-}
-
-/* Ensure the dropdown parent has a relative position */
-.nav-item {
-  position: relative;
-}
-
-/* BUTTON */
-
-/* Add this to your existing styles */
-#darkModeToggleSidebar,
-#darkModeToggleNav {
-  background-color: transparent;
-  border: none;
-  padding: 6px 11px;
-  min-width: auto;
-}
-
-#darkModeToggleSidebar i,
-#darkModeToggleNav i {
-  transition: color 0.3s ease;
-}
-
-body:not(.dark-mode) #darkModeToggleSidebar i,
-body:not(.dark-mode) #darkModeToggleNav i {
-  color: #000000;
-  /* Icon color for light mode */
-}
-
-body.dark-mode #darkModeToggleSidebar i,
-body.dark-mode #darkModeToggleNav i {
-  color: #ffffff;
-  /* Icon color for dark mode */
-}
-
-
-/* Language Switch Button Styles */
-#languageSwitch {
-  background-color: transparent;
-  border: none;
-  padding: 6px 11px;
-  min-width: auto;
-  opacity: 0; /* Start with 0 opacity */
-  animation: fadeIn 0.5s ease-in-out forwards; /* Add fade-in animation */
-}
-
-#languageSwitch i {
-  transition: color 0.3s ease;
-}
-
-body:not(.dark-mode) #languageSwitch i {
-  color: #000000;
-  /* Icon color for light mode */
-}
-
-body.dark-mode #languageSwitch i {
-  color: #ffffff;
-  /* Icon color for dark mode */
-}
-
-/* Fade-in animation keyframes */
-@keyframes fadeIn {
-  from {
-      opacity: 0;
-  }
-  to {
-      opacity: 1;
-  }
-}
-
-/* Apply the same animation to the dark mode toggle for consistency */
-#darkModeToggleSidebar,
-#darkModeToggleNav {
-  opacity: 0;
-  animation: fadeIn 0.5s ease-in-out forwards;
-}
-
-
-/* DROP DROP */
-.glass-dropdown {
-  background: rgba(207, 207, 207, 0.049);
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.164);
-  border-radius: 10px;
-  padding: 0.5rem 0;
-}
-
-.glass-dropdown .dropdown-item {
-  color: #333;
-  padding: 0.5rem 1rem;
-  transition: background-color 0.3s ease;
-}
-
-.glass-dropdown .dropdown-item:hover {
-  background-color: rgba(255, 255, 255, 0.3);
-}
-
-body.dark-mode .glass-dropdown {
-  background: rgba(0, 0, 0, 0.2);
-  border-color: rgba(255, 255, 255, 0.1);
-}
-
-body.dark-mode .glass-dropdown .dropdown-item {
-  color: #fff;
-}
-
-body.dark-mode .glass-dropdown .dropdown-item:hover {
-  background-color: rgba(255, 255, 255, 0.1);
-}
-
-/* Add these new styles to make the dropdown smaller */
-.dropdown-menu.glass-dropdown {
-  min-width: auto;
-  width: auto;
-}
-
-.glass-dropdown .dropdown-item {
-  font-size: 0.9rem;
-  padding: 0.25rem 1rem;
-}
-
-
-
-/* ADDITIONAL */
-/* Improved Navbar Styles */
-:root {
-  --transition-speed: 0.3s;
-  --primary-color: #007bff;
-  --text-color: #333;
-  --background-color: #fff;
-  font-family: 'Proxima Nova' !important;
-}
-
-.navbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0.5rem 1rem;
-  top: 0;
-  z-index: 1000;
-}
-
-
-
-.navbar-logo {
-  flex: 0 0 auto;
-}
-
-.navbar-nav {
-  display: flex;
-  justify-content: center;
-  flex: 1 1 auto;
-}
-
-.nav-item {
-  padding: 0 1rem;
-}
-
-.navbar-actions {
-  display: flex;
-  align-items: center;
-  flex: 0 0 auto;
-}
-
-.navbar-actions > * {
-  margin-left: 0.5rem;
-}
-
-.navbar-mobile-actions {
-  display: none;
-}
-
-.dropdown-menu .dropdown-item {
-  font-size: 0.875rem !important;
-}
-
-.nav-toggle {
-  width: 30px;
-  height: 24px;
-  position: relative;
-  cursor: pointer;
-  z-index: 1002;
-  display: none;
-}
-
-.nav-toggle span {
-  display: block;
-  position: absolute;
-  height: 3px;
-  width: 100%;
-  background: var(--text-color);
-  border-radius: 3px;
-  opacity: 1;
-  left: 0;
-  transform: rotate(0deg);
-  transition: all var(--transition-speed) ease;
-}
-
-.nav-toggle span:nth-child(1) { top: 0; }
-.nav-toggle span:nth-child(2), .nav-toggle span:nth-child(3) { top: 10px; }
-.nav-toggle span:nth-child(4) { top: 20px; }
-
-.nav-toggle.open span:nth-child(1) { top: 10px; width: 0%; left: 50%; }
-.nav-toggle.open span:nth-child(2) { transform: rotate(45deg); }
-.nav-toggle.open span:nth-child(3) { transform: rotate(-45deg); }
-.nav-toggle.open span:nth-child(4) { top: 10px; width: 0%; left: 50%; }
-
 .full-screen-sidebar {
   display: flex;
   align-items: center;
@@ -1322,8 +871,6 @@ body.dark-mode .dropdown-toggle::after {
   border-radius: 15px;
 }
 
-
-
 @media (max-width: 991.98px) {
   .full-screen-sidebar {
     position: fixed;
@@ -1479,8 +1026,6 @@ body.dark-mode .dropdown-toggle::after {
   min-width: auto;
 }
 
-
-
 /* Dark mode toggle button */
 #darkModeToggleNav, #darkModeToggleSidebar {
   background: none;
@@ -1494,9 +1039,6 @@ body.dark-mode .dropdown-toggle::after {
   border: none;
   cursor: pointer;
 }
-
-
-
 
 .btn-custom {
   --bg: rgb(99, 50, 155);
@@ -1529,8 +1071,6 @@ body.dark-mode .dropdown-toggle::after {
   }
 }
 
-
-
 .btn-custom:active {
   background-color: rgb(56, 53, 217); /* Slightly darker shade for active state */
 }
@@ -1547,7 +1087,6 @@ body.dark-mode .dropdown-toggle::after {
     opacity: 1;
   }
 }
-
 
 /* NAVLINK ANIMATION */
 
@@ -1961,6 +1500,88 @@ section:target {
     height: auto;
     max-height: calc(100vh - 100px);
   }
+}
+
+/* Add comprehensive responsive styles for product-banner-description */
+@media (max-width: 1500px) {
+  .product-banner-description {
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 1200px) {
+  .product-banner-description {
+    font-size: 16px;
+    max-width: 90%;
+  }
+}
+
+@media (max-width: 992px) {
+  .product-banner-description {
+    font-size: 15px;
+    max-width: 95%;
+  }
+}
+
+@media (max-width: 768px) {
+  .product-banner-description {
+    font-size: 14px;
+    max-width: 100%;
+    line-height: 1.4;
+  }
+}
+
+@media (max-width: 576px) {
+  .product-banner-description {
+    font-size: 13px;
+    line-height: 1.3;
+  }
+}
+
+/* Existing responsive style */
+@media (max-width: 1368px) and (max-height: 768px) {
+  .product-banner-description {
+    font-size: 16px;
+    max-width: 90%;
+  }
+}
+
+/* Add scrolling to menu container */
+.mega-dropdown .dropdown-content {
+    max-height: 75vh; /* Limit height to 75% of viewport height */
+    overflow-y: auto; /* Enable vertical scrolling */
+    overflow-x: hidden; /* Prevent horizontal scrolling */
+    scrollbar-width: thin; /* For Firefox */
+    scrollbar-color: rgba(155, 69, 197, 0.6) transparent; /* For Firefox */
+}
+
+/* Scrollbar styling for Webkit browsers */
+.mega-dropdown .dropdown-content::-webkit-scrollbar {
+    width: 3px !important; /* Added !important to ensure this takes precedence */
+}
+
+.mega-dropdown .dropdown-content::-webkit-scrollbar-track {
+    background: transparent !important;
+}
+
+.mega-dropdown .dropdown-content::-webkit-scrollbar-thumb {
+    background-color: rgba(155, 69, 197, 0.6) !important;
+    border-radius: 6px !important;
+    border: none !important; /* Remove border for a cleaner look */
+}
+
+.mega-dropdown::-webkit-scrollbar {
+    width: 3px !important; /* Thinner scrollbar */
+}
+
+.mega-dropdown::-webkit-scrollbar-track {
+    background: transparent !important;
+}
+
+.mega-dropdown::-webkit-scrollbar-thumb {
+    background-color: rgba(155, 69, 197, 0.6) !important;
+    border-radius: 6px !important;
+    border: none !important; /* Remove border for a cleaner look */
 }
 
 /* 
