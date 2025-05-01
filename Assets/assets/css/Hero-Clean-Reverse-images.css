@@ -4026,13 +4026,13 @@ body.dark-mode .tag-item[data-content="finance"].active {
         border-radius: 25px !important;
     }
 }
+@media (max-width: 768px) {
+    .industry-section {
+        padding-top: 0;
+        padding-bottom: 0;
+    }
 
-
-.industry-section {
-    padding-top: 0;
-    padding-bottom: 0;
-}
-
-#home {
-    padding-bottom: 0;
+    #home {
+        padding-bottom: 0;
+    }
 }
