@@ -510,7 +510,7 @@ const cardContents = {
                 box-shadow: 0 5px 15px rgba(144, 84, 208, 0.2);
             }
             .hospitality-btn {
-                border: 2px solid #9054d0;
+                /* border: 2px solid #9054d0; */ /* REMOVED */
                 color: #9054d0;
                 background: transparent;
                 padding: 12px 32px;
@@ -554,7 +554,7 @@ const cardContents = {
             <h2 class="card-title fw-bold mb-3 title">Hospitality Solutions</h2>
             <p class="card-text mb-3 description">Comprehensive solutions for managing multi-brand properties, enhancing guest experiences, and optimizing hotel operations with seamless integration and automation.</p>
             <div class="button-wrapper">
-                <a href="#" class="hospitality-btn btn-sm">Learn More</a>
+                <a href="#" class="hospitality-btn btn-sm styled-button-convex">Learn More</a>
             </div>
             <div class="properties">
                 <div class="hospitality-item business-clarity">
@@ -733,7 +733,7 @@ const cardContents = {
         box-shadow: 0 5px 15px rgba(0, 0, 255, 0.2);
     }
     .manufacturing-btn {
-        border: 2px solid #0000FF;
+        /* border: 2px solid #0000FF; */ /* REMOVED */
         color: #0000FF;
         background: transparent;
         padding: 12px 32px;
@@ -777,7 +777,7 @@ const cardContents = {
         <h2 class="card-title fw-bold mb-3 title">Manufacturing Excellence</h2>
         <p class="card-text mb-3 description">Comprehensive solutions to optimize production, streamline supply chains, and ensure quality control across all manufacturing processes. Our integrated platform offers advanced tools for every aspect of manufacturing.</p>
         <div class="button-wrapper">
-            <a href="#" class="manufacturing-btn btn-sm">Learn More</a>
+            <a href="#" class="manufacturing-btn btn-sm styled-button-convex">Learn More</a>
         </div>
         <div class="solutions">
             <div class="manufacturing-item production">
@@ -1036,7 +1036,7 @@ const cardContents = {
         box-shadow: 0 5px 15px rgba(0, 0, 139, 0.2);
     }
     .property-btn {
-        border: 2px solid #00008B;
+        /* border: 2px solid #00008B; */ /* REMOVED */
         color: #00008B;
         background: transparent;
         padding: 12px 32px;
@@ -1066,7 +1066,7 @@ const cardContents = {
             <h2 class="card-title fw-bold mb-3 title">Property & High-Rise Building Solutions</h2>
             <p class="card-text mb-3 description">Integrated solutions for efficient management of property portfolios, tenant services, and building operations with real-time monitoring and control.</p>
             <div class="button-wrapper">
-                <a href="#" class="property-btn btn-sm">Learn More</a>
+                <a href="#" class="property-btn btn-sm styled-button-convex">Learn More</a>
             </div>
             <div class="properties">
                 <div class="property-item commercial">
@@ -1248,7 +1248,7 @@ const cardContents = {
         box-shadow: 0 5px 15px rgba(255, 0, 0, 0.2);
     }
     .finance-btn {
-        border: 2px solid #FF0000;
+        /* border: 2px solid #FF0000; */ /* REMOVED */
         color: #FF0000;
         background: transparent;
         padding: 12px 32px;
@@ -1295,7 +1295,7 @@ const cardContents = {
         <h2 class="card-title fw-bold mb-3 title">Financial Services Solutions</h2>
         <p class="card-text mb-3 description">Tailored solutions for enhancing security, compliance, and operational efficiency in banking, insurance, and financial services. Our comprehensive approach addresses the unique challenges faced by the financial sector.</p>
         <div class="button-wrapper">
-            <a href="#" class="finance-btn btn-sm">Learn More</a>
+            <a href="#" class="finance-btn btn-sm styled-button-convex">Learn More</a>
         </div>
         <div class="solutions">
             <div class="finance-item banking">

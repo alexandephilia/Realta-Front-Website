@@ -266,6 +266,54 @@
         .business-carousel-control-next-icon.styled-button-convex:hover::before {
             background-color: #ffffff !important; /* Keep original icon hover color */
         }
+
+        /* Overrides for Industry Card Buttons */
+        .hospitality-btn.styled-button-convex,
+        .manufacturing-btn.styled-button-convex,
+        .property-btn.styled-button-convex,
+        .finance-btn.styled-button-convex {
+            border: none !important; /* Remove original border */
+            border-radius: 25px !important; /* Keep original radius */
+            text-shadow: 0 -1px 1px rgba(0,0,0,0.6) !important; /* Apply convex text shadow */
+            box-shadow:
+                0 6px 12px rgba(0, 0, 0, 0.35),
+                inset 0 2px 0px rgba(255, 255, 255, 0.25), /* Standard convex highlight */
+                inset 0 -1px 1px rgba(0,0,0,0.4) !important; /* Apply convex shadow */
+            /* Keep original padding/font-size/font-weight implicitly */
+        }
+
+        /* Keep original colors */
+        .hospitality-btn.styled-button-convex { background: transparent !important; color: #9054d0 !important; }
+        .manufacturing-btn.styled-button-convex { background: transparent !important; color: #0000FF !important; }
+        .property-btn.styled-button-convex { background: transparent !important; color: #00008B !important; }
+        .finance-btn.styled-button-convex { background: transparent !important; color: #FF0000 !important; }
+
+        /* Keep original hover states */
+        .hospitality-btn.styled-button-convex:hover { background-color: rgba(144, 84, 208, 0.05) !important; transform: translateY(-2px) !important; }
+        .manufacturing-btn.styled-button-convex:hover { background-color: rgba(0, 0, 255, 0.05) !important; transform: translateY(-2px) !important; }
+        .property-btn.styled-button-convex:hover { background-color: rgba(0, 0, 139, 0.05) !important; transform: translateY(-2px) !important; }
+        .finance-btn.styled-button-convex:hover { background-color: rgba(255, 0, 0, 0.05) !important; transform: translateY(-2px) !important; }
+
+        /* Re-apply convex shadow on hover (needed because transform changes stacking context) */
+         .hospitality-btn.styled-button-convex:hover,
+         .manufacturing-btn.styled-button-convex:hover,
+         .property-btn.styled-button-convex:hover,
+         .finance-btn.styled-button-convex:hover {
+             box-shadow:
+                 0 6px 12px rgba(0, 0, 0, 0.35),
+                 inset 0 2px 0px rgba(255, 255, 255, 0.25),
+                 inset 0 -1px 1px rgba(0,0,0,0.4) !important;
+         }
+
+        /* Style the ::before pseudo-element */
+        .hospitality-btn.styled-button-convex::before,
+        .manufacturing-btn.styled-button-convex::before,
+        .property-btn.styled-button-convex::before,
+        .finance-btn.styled-button-convex::before {
+            border-radius: 26px !important; /* Match parent radius + 1px */
+            box-shadow: inset 0 0 2px rgba(0,0,0,0.3) !important; /* Apply convex pseudo shadow */
+        }
+
     </style>
 
 </head>
@@ -1524,7 +1572,7 @@
                         <div class="row gy-5 align-items-center">
                             <!-- Left Column -->
                             <div
-                                class="col-lg-7 d-flex flex-column justify-content-center align-items-start text-lg-start">
+                                class="col-lg-7 d-flex flex-column justify-content-center align-items-start text-lg-start" style="overflow: visible !important;">
                                 <style>
                                     @media (max-width: 768px) {
                                         .col-lg-7 {
@@ -1586,7 +1634,7 @@
                     <div class="carousel-item">
                         <div class="row gy-5 align-items-center">
                             <div
-                                class="col-lg-7 d-flex flex-column justify-content-center align-items-start text-lg-start">
+                                class="col-lg-7 d-flex flex-column justify-content-center align-items-start text-lg-start" style="overflow: visible !important;">
                                 <div class="mb-4">
                                     <!-- <div class="logo-text">
                                                 <p>
@@ -2329,6 +2377,7 @@
                                         } else {
                                             element.textContent = target + "+";
                                         }
+                                        element.classList.remove('scrambling'); // Remove class when animation ends
                                     }
                                 }
 
@@ -2352,6 +2401,7 @@
                                 statNumbers.forEach(number => {
                                     if (isInViewport(number) && !number.classList.contains('animated')) {
                                         const target = parseInt(number.getAttribute('data-target'));
+                                        number.classList.add('scrambling'); // Add class when starting animation
                                         animateNumber(number, target);
                                         number.classList.add('animated');
                                     }

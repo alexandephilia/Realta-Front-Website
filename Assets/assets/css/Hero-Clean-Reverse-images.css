@@ -17,6 +17,11 @@ img, iframe, video, object {
 }
 
 
+.carousel-inner{
+  overflow: visible;
+}
+
+
 html, body {
   overflow-x: hidden;
   width: 100%;
@@ -2850,7 +2855,15 @@ section {
   font-size: 1.1rem;
   color: #333;
   font-family: 'Proxima Nova', sans-serif;
+  transition: filter 0.3s ease-out, opacity 0.3s ease-out; /* Added base transition */
+  filter: blur(0px);
+  opacity: 1;
+}
 
+/* Add this rule for the scrambling effect */
+.stat-number.scrambling {
+    filter: blur(5px); /* Adjust blur amount as needed */
+    opacity: 0.6;      /* Adjust opacity as needed */
 }
 
 @media (max-width: 767px) {
