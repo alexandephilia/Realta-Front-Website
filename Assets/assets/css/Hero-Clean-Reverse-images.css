@@ -168,15 +168,6 @@ body.dark-mode .text-muted {
   z-index: 1;
 }
 
-    #industry {
-      background-image: url('../img/header2.png');
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
-      position: relative; /* Add relative positioning if needed for child absolute elements, seems safer */
-      z-index: 0; /* Ensure it's behind content */
-    }
-
 .circle-blur {
   position: absolute;
   top: 50%;
