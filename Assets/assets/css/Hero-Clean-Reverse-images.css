@@ -1003,8 +1003,8 @@ body.dark-mode .btn-custom.whatsapp-btn i {
 .tilt-container {
     width: 85%;
     height: auto;
-    padding: 20px;  /* Add padding to account for tilt movement */
-    margin: 0 auto;
+    padding: 20px;  
+    margin: 0 0 0 auto; /* Changed from margin: 0 auto to push it right */
     position: relative;
     transform-style: preserve-3d;
 }
