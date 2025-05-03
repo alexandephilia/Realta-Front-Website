@@ -3075,8 +3075,11 @@
             background-color: #fbfbfbf9; /* Changed from transparent */
             color: #333; /* Changed from #9054d0 */
             text-shadow: 0 1px 0px rgba(255, 255, 255, 0.7); /* Added */
-            border: 3px solid rgba(191, 191, 191, 0.5); /* Changed from original border */
-            box-shadow: 0 3px 5px rgba(0, 0, 0, 0.1), inset 0 1px 1px rgba(255, 255, 255, 0.8), inset 0 -1px 1px rgba(0,0,0,0.1); /* Added */
+            border: 1px solid rgba(191, 191, 191, 0.5); /* Changed from original border */
+            box-shadow:
+                0 6px 12px rgba(0, 0, 0, 0.15),
+                inset 0 2px 0px rgba(255, 255, 255, 0.25), /* Standard convex highlight */
+                inset 0 -1px 1px rgba(0,0,0,0.4) !important; /* Apply convex shadow */
         }
 
         /* Added ::before for convex rim effect */
