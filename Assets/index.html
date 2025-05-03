@@ -228,7 +228,7 @@
                 inset 0 2px 0px rgba(0, 0, 0, 0.15), /* Darken inner highlight for white bg */
                 inset 0 -1px 1px rgba(0,0,0,0.4) !important; /* Use convex box shadow */
             /* Ensure flex properties are maintained for centering */
-            display: flex !important; 
+            display: flex !important;
             align-items: center !important;
             justify-content: center !important;
         }
@@ -244,11 +244,11 @@
             -webkit-mask-size: 100% !important;
             mask-repeat: no-repeat !important;
             -webkit-mask-repeat: no-repeat !important;
-            mask-position: center !important; 
+            mask-position: center !important;
             -webkit-mask-position: center !important;
             /* Remove potentially conflicting convex pseudo styles */
             border-radius: 0 !important; /* Override convex pseudo radius */
-            box-shadow: none !important; 
+            box-shadow: none !important;
             position: static !important; /* Override convex pseudo position */
             z-index: auto !important; /* Override convex pseudo z-index */
             filter: none !important; /* Override convex pseudo filter */
@@ -273,7 +273,6 @@
         .property-btn.styled-button-convex,
         .finance-btn.styled-button-convex {
             border: none !important; /* Remove original border */
-            border-radius: 25px !important; /* Keep original radius */
             text-shadow: 0 -1px 1px rgba(0,0,0,0.6) !important; /* Apply convex text shadow */
             box-shadow:
                 0 6px 12px rgba(0, 0, 0, 0.35),
@@ -2999,30 +2998,46 @@
 
         /* Modern and Minimalist Business Button Styles */
         .business-btn {
+            /* Keep existing */
             display: inline-block;
             padding: 0.45rem 0.9rem;
             font-size: 20px;
-            font-weight: 500;
+            font-weight: 600;
             text-align: center;
             text-decoration: none;
             cursor: pointer;
             user-select: none;
-            border: none;
             border-radius: 10px;
             transition: all 0.3s ease, opacity 0.3s ease;
-            /* Added opacity transition */
-            color: #9054d0;
-            background: transparent;
-            border: 2px solid #9054d0ab;
-            font-weight: 600;
             width: auto;
             max-width: 150px;
             margin: 0 auto;
             opacity: 0;
-            /* Start with 0 opacity */
             animation: fadeIn 0.5s ease-in-out forwards;
-            /* Fade in animation */
+
+            /* Added/Modified for convex style */
+            position: relative; /* Added */
+            overflow: visible; /* Added */
+            -webkit-tap-highlight-color: transparent; /* Added */
+            background-color: #fbfbfbe9; /* Changed from transparent */
+            color: #333; /* Changed from #9054d0 */
+            text-shadow: 0 1px 0px rgba(255, 255, 255, 0.7); /* Added */
+            border: 3px solid rgba(191, 191, 191, 0.5); /* Changed from original border */
+            box-shadow: 0 3px 5px rgba(0, 0, 0, 0.1), inset 0 1px 1px rgba(255, 255, 255, 0.8), inset 0 -1px 1px rgba(0,0,0,0.1); /* Added */
         }
+
+        /* Added ::before for convex rim effect */
+        .business-btn::before {
+            content: "";
+            position: absolute;
+            top: -1px; right: -1px; bottom: -1px; left: -1px;
+            z-index: -1;
+            border-radius: 11px; /* button radius + border width */
+            background: linear-gradient(to bottom, rgba(0,0,0,0.02), rgba(0,0,0,0.08));
+            box-shadow: inset 0 0.5px 0 rgba(255,255,255,0.3);
+            transition: all 0.15s ease-out;
+        }
+
 
         @media (max-width: 768px) {
             .business-btn {
@@ -3039,8 +3054,9 @@
         }
 
         .business-btn:active {
-            transform: translateY(1px);
-            box-shadow: 0 1px 4px rgba(144, 84, 208, 0.2);
+            transform: translateY(1px); /* Kept original active transform */
+            box-shadow: inset 0 1px 3px rgba(0,0,0,0.2); /* Changed */
+            background-color: #dee2e6; /* Added */
         }
 
         /* Keyframes for fade in animation */

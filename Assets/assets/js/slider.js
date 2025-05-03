@@ -510,19 +510,45 @@ const cardContents = {
                 box-shadow: 0 5px 15px rgba(144, 84, 208, 0.2);
             }
             .hospitality-btn {
-                /* border: 2px solid #9054d0; */ /* REMOVED */
-                color: #9054d0;
-                background: transparent;
                 padding: 12px 32px;
-                border-radius: 25px;
+                border-radius: 10px;
                 text-decoration: none;
                 font-weight: 600;
                 font-size: 1.1rem;
                 transition: all 0.3s ease;
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+                position: relative;
+                overflow: visible;
+                -webkit-tap-highlight-color: transparent;
+                color: #9054d0;
+                background-color: #fbfbfbe9;
+                border: 3px solid rgba(191, 191, 191, 0.5);
+                box-shadow: 0 3px 5px rgba(0, 0, 0, 0.1), inset 0 1px 1px rgba(255, 255, 255, 0.8), inset 0 -1px 1px rgba(0,0,0,0.1);
+                text-shadow: 0 1px 0px rgba(255, 255, 255, 0.7);
+            }
+            .hospitality-btn::before {
+                 content: "";
+                 position: absolute;
+                 top: -1px; right: -1px; bottom: -1px; left: -1px;
+                 z-index: -1;
+                 border-radius: 13px;
+                 background: linear-gradient(to bottom, rgba(0,0,0,0.02), rgba(0,0,0,0.08));
+                 box-shadow: inset 0 0.5px 0 rgba(255,255,255,0.3);
+                 transition: all 0.15s ease-out;
             }
             .hospitality-btn:hover {
-                background-color: rgba(144, 84, 208, 0.05);
-                transform: translateY(-2px);
+                color: #fff;
+                background: linear-gradient(135deg, #7b4fc9, #6a3eb8);
+                transform: translateY(-1px);
+                box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.267), 0 1px 4px rgba(0, 0, 0, 0.2) !important;
+                border: 3px solid rgba(191, 191, 191, 0.5);
+            }
+            .hospitality-btn:active {
+                 transform: translateY(1px);
+                 box-shadow: inset 0 1px 3px rgba(0,0,0,0.2);
+                 background: linear-gradient(135deg, #6a3eb8, #5a2fa6);
             }
             @media (max-width: 768px) {
                 .hospitality-btn {
@@ -533,6 +559,8 @@ const cardContents = {
                     align-items: center;
                     justify-content: center;
                     min-width: 140px;
+                    transform: translateY(-5px);
+                    box-shadow: 0 5px 15px rgba(0, 0, 255, 0.2);
                 }
             }
             .card-text {
@@ -733,19 +761,45 @@ const cardContents = {
         box-shadow: 0 5px 15px rgba(0, 0, 255, 0.2);
     }
     .manufacturing-btn {
-        /* border: 2px solid #0000FF; */ /* REMOVED */
-        color: #0000FF;
-        background: transparent;
         padding: 12px 32px;
-        border-radius: 25px;
+        border-radius: 10px;
         text-decoration: none;
         font-weight: 600;
         font-size: 1.1rem;
         transition: all 0.3s ease;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        overflow: visible;
+        -webkit-tap-highlight-color: transparent;
+        color: #0000FF;
+        background-color: #fbfbfbe9;
+        border: 3px solid rgba(191, 191, 191, 0.5);
+        box-shadow: 0 3px 5px rgba(0, 0, 0, 0.1), inset 0 1px 1px rgba(255, 255, 255, 0.8), inset 0 -1px 1px rgba(0,0,0,0.1);
+        text-shadow: 0 1px 0px rgba(255, 255, 255, 0.7);
+    }
+    .manufacturing-btn::before {
+         content: "";
+         position: absolute;
+         top: -1px; right: -1px; bottom: -1px; left: -1px;
+         z-index: -1;
+         border-radius: 13px;
+         background: linear-gradient(to bottom, rgba(0,0,0,0.02), rgba(0,0,0,0.08));
+         box-shadow: inset 0 0.5px 0 rgba(255,255,255,0.3);
+         transition: all 0.15s ease-out;
     }
     .manufacturing-btn:hover {
-        background-color: rgba(0, 0, 255, 0.05);
-        transform: translateY(-2px);
+        color: #fff;
+        background: linear-gradient(135deg, #7b4fc9, #6a3eb8);
+        transform: translateY(-1px);
+        box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.267), 0 1px 4px rgba(0, 0, 0, 0.2) !important;
+        border: 3px solid rgba(191, 191, 191, 0.5);
+    }
+    .manufacturing-btn:active {
+         transform: translateY(1px);
+         box-shadow: inset 0 1px 3px rgba(0,0,0,0.2);
+         background: linear-gradient(135deg, #6a3eb8, #5a2fa6);
     }
     @media (max-width: 768px) {
         .manufacturing-btn {
@@ -756,6 +810,8 @@ const cardContents = {
             align-items: center;
             justify-content: center;
             min-width: 140px;
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0, 0, 139, 0.2);
         }
     }
     .card-text {
@@ -1036,19 +1092,45 @@ const cardContents = {
         box-shadow: 0 5px 15px rgba(0, 0, 139, 0.2);
     }
     .property-btn {
-        /* border: 2px solid #00008B; */ /* REMOVED */
-        color: #00008B;
-        background: transparent;
         padding: 12px 32px;
-        border-radius: 25px;
+        border-radius: 10px;
         text-decoration: none;
         font-weight: 600;
         font-size: 1.1rem;
         transition: all 0.3s ease;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        overflow: visible;
+        -webkit-tap-highlight-color: transparent;
+        color: #00008B;
+        background-color: #fbfbfbe9;
+        border: 3px solid rgba(191, 191, 191, 0.5);
+        box-shadow: 0 3px 5px rgba(0, 0, 0, 0.1), inset 0 1px 1px rgba(255, 255, 255, 0.8), inset 0 -1px 1px rgba(0,0,0,0.1);
+        text-shadow: 0 1px 0px rgba(255, 255, 255, 0.7);
+    }
+    .property-btn::before {
+         content: "";
+         position: absolute;
+         top: -1px; right: -1px; bottom: -1px; left: -1px;
+         z-index: -1;
+         border-radius: 13px;
+         background: linear-gradient(to bottom, rgba(0,0,0,0.02), rgba(0,0,0,0.08));
+         box-shadow: inset 0 0.5px 0 rgba(255,255,255,0.3);
+         transition: all 0.15s ease-out;
     }
     .property-btn:hover {
-        background-color: rgba(0, 0, 139, 0.05);
-        transform: translateY(-2px);
+        color: #fff;
+        background: linear-gradient(135deg, #7b4fc9, #6a3eb8);
+        transform: translateY(-1px);
+        box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.267), 0 1px 4px rgba(0, 0, 0, 0.2) !important;
+        border: 3px solid rgba(191, 191, 191, 0.5);
+    }
+    .property-btn:active {
+         transform: translateY(1px);
+         box-shadow: inset 0 1px 3px rgba(0,0,0,0.2);
+         background: linear-gradient(135deg, #6a3eb8, #5a2fa6);
     }
     @media (max-width: 768px) {
         .property-btn {
@@ -1059,6 +1141,8 @@ const cardContents = {
             align-items: center;
             justify-content: center;
             min-width: 140px;
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(255, 0, 0, 0.2);
         }
     }
         </style>
@@ -1248,19 +1332,46 @@ const cardContents = {
         box-shadow: 0 5px 15px rgba(255, 0, 0, 0.2);
     }
     .finance-btn {
-        /* border: 2px solid #FF0000; */ /* REMOVED */
-        color: #FF0000;
-        background: transparent;
         padding: 12px 32px;
-        border-radius: 25px;
+        border-radius: 10px;
         text-decoration: none;
         font-weight: 600;
         font-size: 1.1rem;
         transition: all 0.3s ease;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        overflow: visible;
+        -webkit-tap-highlight-color: transparent;
+        color: #FF0000;
+        background-color: #fbfbfbe9;
+        border: 3px solid rgba(191, 191, 191, 0.5);
+        box-shadow: 0 3px 5px rgba(0, 0, 0, 0.1), inset 0 1px 1px rgba(255, 255, 255, 0.8), inset 0 -1px 1px rgba(0,0,0,0.1);
+        text-shadow: 0 1px 0px rgba(255, 255, 255, 0.7);
+    }
+    .finance-btn::before {
+         content: "";
+         position: absolute;
+         top: -1px; right: -1px; bottom: -1px; left: -1px;
+         z-index: -1;
+         border-radius: 13px;
+         background: linear-gradient(to bottom, rgba(0,0,0,0.02), rgba(0,0,0,0.08));
+         box-shadow: inset 0 0.5px 0 rgba(255,255,255,0.3);
+         transition: all 0.15s ease-out;
     }
     .finance-btn:hover {
-        background-color: rgba(255, 0, 0, 0.05);
-        transform: translateY(-2px);
+        color: #fff;
+        background: linear-gradient(135deg, #7b4fc9, #6a3eb8);
+        transform: translateY(-1px);
+        box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.267), 0 1px 4px rgba(0, 0, 0, 0.2) !important;
+        border: 3px solid rgba(191, 191, 191, 0.5);
+    }
+     /* Added :active state */
+    .finance-btn:active {
+         transform: translateY(1px);
+         box-shadow: inset 0 1px 3px rgba(0,0,0,0.2);
+         background: linear-gradient(135deg, #6a3eb8, #5a2fa6);
     }
     @media (max-width: 768px) {
         .finance-btn {
@@ -1271,6 +1382,8 @@ const cardContents = {
             align-items: center;
             justify-content: center;
             min-width: 140px;
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(255, 0, 0, 0.2);
         }
     }
     .card-text {
