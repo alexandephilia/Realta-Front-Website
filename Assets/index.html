@@ -144,7 +144,7 @@
             }
         }
 
-        
+
 
         /* Add margin to cookie consent to prevent overlap */
         .cookie-consent {
@@ -156,7 +156,7 @@
             position: relative;
             font-weight: bold;
             color: #e0e0e0;
-            text-shadow: 0 -1px 1px rgba(0,0,0,0.6);
+            text-shadow: 0 -1px 1px rgba(0, 0, 0, 0.6);
             cursor: pointer;
             transition: all 0.15s ease-out;
             display: inline-flex;
@@ -168,9 +168,11 @@
             -webkit-tap-highlight-color: transparent;
             /* Base shadow with slightly more noticeable highlight */
             box-shadow:
-                0 6px 12px rgba(0, 0, 0, 0.35), /* Slightly stronger outer shadow */
-                inset 0 2px 0px rgba(255, 255, 255, 0.25), /* Restored subtle highlight */
-                inset 0 -1px 1px rgba(0,0,0,0.4);
+                0 6px 12px rgba(0, 0, 0, 0.35),
+                /* Slightly stronger outer shadow */
+                inset 0 2px 0px rgba(255, 255, 255, 0.25),
+                /* Restored subtle highlight */
+                inset 0 -1px 1px rgba(0, 0, 0, 0.4);
         }
 
 
@@ -188,29 +190,37 @@
             transition: all 0.15s ease-out;
             opacity: 1;
             /* Rim gets its own subtle shadow */
-            box-shadow: inset 0 0 2px rgba(0,0,0,0.3);
+            box-shadow: inset 0 0 2px rgba(0, 0, 0, 0.3);
             /* Keep blur for softness, adjust per button if needed */
-             filter: blur(0.5px);
+            filter: blur(0.5px);
         }
 
         /* Override for rt-nav-btn to keep it circular but apply convex look */
         .rt-nav-btn.styled-button-convex {
             border-radius: 50% !important;
-            background: #9054d0 !important; /* Keep original purple background */
-            color: #e0e0e0 !important; /* Use convex text color */
-            text-shadow: 0 -1px 1px rgba(0,0,0,0.6) !important; /* Use convex text shadow */
+            background: #9054d0 !important;
+            /* Keep original purple background */
+            color: #e0e0e0 !important;
+            /* Use convex text color */
+            text-shadow: 0 -1px 1px rgba(0, 0, 0, 0.6) !important;
+            /* Use convex text shadow */
             box-shadow:
                 0 6px 12px rgba(0, 0, 0, 0.35),
                 inset 0 2px 0px rgba(255, 255, 255, 0.25),
-                inset 0 -1px 1px rgba(0,0,0,0.4) !important; /* Use convex box shadow */
+                inset 0 -1px 1px rgba(0, 0, 0, 0.4) !important;
+            /* Use convex box shadow */
             /* Keep original width/height implicitly from .rt-nav-btn */
         }
+
         .rt-nav-btn.styled-button-convex i {
-            color: #e0e0e0 !important; /* Match icon color */
+            color: #e0e0e0 !important;
+            /* Match icon color */
         }
+
         .rt-nav-btn.styled-button-convex::before {
             border-radius: 50% !important;
-            box-shadow: inset 0 0 2px rgba(0,0,0,0.3) !important; /* Match convex shadow */
+            box-shadow: inset 0 0 2px rgba(0, 0, 0, 0.3) !important;
+            /* Match convex shadow */
         }
 
         /* Override for business-carousel controls */
@@ -219,19 +229,26 @@
             border-radius: 50% !important;
             width: 30px !important;
             height: 30px !important;
-            background: #ffffff !important; /* Keep original white background */
-            border: 1px solid #0000008a !important; /* Keep original border */
-            color: inherit !important; /* Let icon color be handled by ::before */
-            text-shadow: none !important; /* Remove convex text shadow */
+            background: #ffffff !important;
+            /* Keep original white background */
+            border: 1px solid #0000008a !important;
+            /* Keep original border */
+            color: inherit !important;
+            /* Let icon color be handled by ::before */
+            text-shadow: none !important;
+            /* Remove convex text shadow */
             box-shadow:
                 0 6px 12px rgba(0, 0, 0, 0.35),
-                inset 0 2px 0px rgba(0, 0, 0, 0.15), /* Darken inner highlight for white bg */
-                inset 0 -1px 1px rgba(0,0,0,0.4) !important; /* Use convex box shadow */
+                inset 0 2px 0px rgba(0, 0, 0, 0.15),
+                /* Darken inner highlight for white bg */
+                inset 0 -1px 1px rgba(0, 0, 0, 0.4) !important;
+            /* Use convex box shadow */
             /* Ensure flex properties are maintained for centering */
             display: flex !important;
             align-items: center !important;
             justify-content: center !important;
         }
+
         .business-carousel-control-prev-icon.styled-button-convex::before,
         .business-carousel-control-next-icon.styled-button-convex::before {
             /* Keep original icon styles */
@@ -239,7 +256,8 @@
             display: block !important;
             width: 18px !important;
             height: 18px !important;
-            background-color: #000000 !important; /* Keep original icon color */
+            background-color: #000000 !important;
+            /* Keep original icon color */
             mask-size: 100% !important;
             -webkit-mask-size: 100% !important;
             mask-repeat: no-repeat !important;
@@ -247,24 +265,32 @@
             mask-position: center !important;
             -webkit-mask-position: center !important;
             /* Remove potentially conflicting convex pseudo styles */
-            border-radius: 0 !important; /* Override convex pseudo radius */
+            border-radius: 0 !important;
+            /* Override convex pseudo radius */
             box-shadow: none !important;
-            position: static !important; /* Override convex pseudo position */
-            z-index: auto !important; /* Override convex pseudo z-index */
-            filter: none !important; /* Override convex pseudo filter */
+            position: static !important;
+            /* Override convex pseudo position */
+            z-index: auto !important;
+            /* Override convex pseudo z-index */
+            filter: none !important;
+            /* Override convex pseudo filter */
         }
+
         .business-carousel-control-prev-icon.styled-button-convex:hover,
         .business-carousel-control-next-icon.styled-button-convex:hover {
-            background-color: #474747 !important; /* Keep original hover background */
+            background-color: #474747 !important;
+            /* Keep original hover background */
             /* Keep convex shadow on hover */
             box-shadow:
                 0 6px 12px rgba(0, 0, 0, 0.35),
                 inset 0 2px 0px rgba(0, 0, 0, 0.15),
-                inset 0 -1px 1px rgba(0,0,0,0.4) !important;
+                inset 0 -1px 1px rgba(0, 0, 0, 0.4) !important;
         }
+
         .business-carousel-control-prev-icon.styled-button-convex:hover::before,
         .business-carousel-control-next-icon.styled-button-convex:hover::before {
-            background-color: #ffffff !important; /* Keep original icon hover color */
+            background-color: #ffffff !important;
+            /* Keep original icon hover color */
         }
 
         /* Overrides for Industry Card Buttons */
@@ -272,28 +298,64 @@
         .manufacturing-btn.styled-button-convex,
         .property-btn.styled-button-convex,
         .finance-btn.styled-button-convex {
-            border: none !important; /* Remove original border */
-            border-radius: 15px !important; /* Keep original radius */
-            text-shadow: 0 -1px 1px rgba(0,0,0,0.6) !important; /* Apply convex text shadow */
+            border: none !important;
+            /* Remove original border */
+            border-radius: 15px !important;
+            /* Keep original radius */
+            text-shadow: 0 -1px 1px rgba(0, 0, 0, 0.6) !important;
+            /* Apply convex text shadow */
             box-shadow:
                 0 6px 12px rgba(0, 0, 0, 0.15),
-                inset 0 2px 0px rgba(255, 255, 255, 0.25), /* Standard convex highlight */
-                inset 0 -1px 1px rgba(0,0,0,0.4) !important; /* Apply convex shadow */
-            transition: transform 0.2s, box-shadow 0.2s !important; /* Add transition for smooth animation */
+                inset 0 2px 0px rgba(255, 255, 255, 0.25),
+                /* Standard convex highlight */
+                inset 0 -1px 1px rgba(0, 0, 0, 0.4) !important;
+            /* Apply convex shadow */
+            transition: transform 0.2s, box-shadow 0.2s !important;
+            /* Add transition for smooth animation */
             /* Keep original padding/font-size/font-weight implicitly */
         }
 
         /* Keep original colors */
-        .hospitality-btn.styled-button-convex { background: transparent !important; color: #9054d0 !important; }
-        .manufacturing-btn.styled-button-convex { background: transparent !important; color: #0000FF !important; }
-        .property-btn.styled-button-convex { background: transparent !important; color: #00008B !important; }
-        .finance-btn.styled-button-convex { background: transparent !important; color: #FF0000 !important; }
+        .hospitality-btn.styled-button-convex {
+            background: transparent !important;
+            color: #9054d0 !important;
+        }
+
+        .manufacturing-btn.styled-button-convex {
+            background: transparent !important;
+            color: #0000FF !important;
+        }
+
+        .property-btn.styled-button-convex {
+            background: transparent !important;
+            color: #00008B !important;
+        }
+
+        .finance-btn.styled-button-convex {
+            background: transparent !important;
+            color: #FF0000 !important;
+        }
 
         /* Keep original hover states */
-        .hospitality-btn.styled-button-convex:hover { background-color: rgba(144, 84, 208, 0.05) !important; transform: translateY(-2px) !important; }
-        .manufacturing-btn.styled-button-convex:hover { background-color: rgba(0, 0, 255, 0.05) !important; transform: translateY(-2px) !important; }
-        .property-btn.styled-button-convex:hover { background-color: rgba(0, 0, 139, 0.05) !important; transform: translateY(-2px) !important; }
-        .finance-btn.styled-button-convex:hover { background-color: rgba(255, 0, 0, 0.05) !important; transform: translateY(-2px) !important; }
+        .hospitality-btn.styled-button-convex:hover {
+            background-color: rgba(144, 84, 208, 0.05) !important;
+            transform: translateY(-2px) !important;
+        }
+
+        .manufacturing-btn.styled-button-convex:hover {
+            background-color: rgba(0, 0, 255, 0.05) !important;
+            transform: translateY(-2px) !important;
+        }
+
+        .property-btn.styled-button-convex:hover {
+            background-color: rgba(0, 0, 139, 0.05) !important;
+            transform: translateY(-2px) !important;
+        }
+
+        .finance-btn.styled-button-convex:hover {
+            background-color: rgba(255, 0, 0, 0.05) !important;
+            transform: translateY(-2px) !important;
+        }
 
         /* Add pressed state animations */
         .hospitality-btn.styled-button-convex:active,
@@ -304,29 +366,30 @@
             box-shadow:
                 0 2px 4px rgba(0, 0, 0, 0.35),
                 inset 0 1px 0px rgba(255, 255, 255, 0.15),
-                inset 0 -1px 1px rgba(0,0,0,0.4) !important;
+                inset 0 -1px 1px rgba(0, 0, 0, 0.4) !important;
         }
 
         /* Re-apply convex shadow on hover (needed because transform changes stacking context) */
-         .hospitality-btn.styled-button-convex:hover,
-         .manufacturing-btn.styled-button-convex:hover,
-         .property-btn.styled-button-convex:hover,
-         .finance-btn.styled-button-convex:hover {
-             box-shadow:
-                 0 6px 12px rgba(0, 0, 0, 0.35),
-                 inset 0 2px 0px rgba(255, 255, 255, 0.25),
-                 inset 0 -1px 1px rgba(0,0,0,0.4) !important;
-         }
+        .hospitality-btn.styled-button-convex:hover,
+        .manufacturing-btn.styled-button-convex:hover,
+        .property-btn.styled-button-convex:hover,
+        .finance-btn.styled-button-convex:hover {
+            box-shadow:
+                0 6px 12px rgba(0, 0, 0, 0.35),
+                inset 0 2px 0px rgba(255, 255, 255, 0.25),
+                inset 0 -1px 1px rgba(0, 0, 0, 0.4) !important;
+        }
 
         /* Style the ::before pseudo-element */
         .hospitality-btn.styled-button-convex::before,
         .manufacturing-btn.styled-button-convex::before,
         .property-btn.styled-button-convex::before,
         .finance-btn.styled-button-convex::before {
-            border-radius: 15px !important; /* Match parent radius + 1px */
-            box-shadow: inset 0 0 2px rgba(0,0,0,0.3) !important; /* Apply convex pseudo shadow */
+            border-radius: 15px !important;
+            /* Match parent radius + 1px */
+            box-shadow: inset 0 0 2px rgba(0, 0, 0, 0.3) !important;
+            /* Apply convex pseudo shadow */
         }
-
     </style>
 
     <style>
@@ -336,13 +399,15 @@
             opacity: 0.5;
             pointer-events: none;
             cursor: not-allowed !important;
-            background-color: #e0e0e0 !important; /* Greyish background for the button */
+            background-color: #e0e0e0 !important;
+            /* Greyish background for the button */
         }
 
         /* Style the icon inside the disabled button */
         .business-carousel-control-prev:disabled::before,
         .business-carousel-control-next:disabled::before {
-            background-color: #888888 !important; /* Greyish background for the icon, overriding default */
+            background-color: #888888 !important;
+            /* Greyish background for the icon, overriding default */
         }
     </style>
 
@@ -358,13 +423,15 @@
         .business-carousel-control-prev:disabled .business-carousel-control-prev-icon,
         .business-carousel-control-next:disabled .business-carousel-control-next-icon {
             cursor: not-allowed !important;
-            background-color: #e0e0e0 !important; /* Greyish background for the button */
+            background-color: #e0e0e0 !important;
+            /* Greyish background for the button */
         }
 
         /* Style the icon's before element */
         .business-carousel-control-prev:disabled .business-carousel-control-prev-icon::before,
         .business-carousel-control-next:disabled .business-carousel-control-next-icon::before {
-            background-color: #888888 !important; /* Greyish background for the icon */
+            background-color: #888888 !important;
+            /* Greyish background for the icon */
         }
     </style>
 </head>
@@ -440,20 +507,24 @@
                                             Golf Course Management System<i class="fas fa-chevron-right arrow-icon"></i>
                                         </div>
                                         <div id="gcsSubmenu" class="collapse product-submenu">
-                                            <a href="golf-micro.html" class="discover-link" onclick="navigateWithLoading('golf-micro.html')">Discover GCS ›</a>
+                                            <a href="golf-micro.html" class="discover-link"
+                                                onclick="navigateWithLoading('golf-micro.html')">Discover GCS ›</a>
                                             <h3 class="modules-heading">MODULES</h3>
                                             <ul class="modules-list">
                                                 <li>
                                                     <strong>Membership Management</strong>
-                                                    <span>Manage and track member information and activities with our integrated solution</span>
+                                                    <span>Manage and track member information and activities with our
+                                                        integrated solution</span>
                                                 </li>
                                                 <li>
                                                     <strong>Golf Operation</strong>
-                                                    <span>Streamline golf operations with our integrated system and unified platform</span>
+                                                    <span>Streamline golf operations with our integrated system and
+                                                        unified platform</span>
                                                 </li>
                                                 <li>
                                                     <strong>Tournament Management</strong>
-                                                    <span>Your all-in-one golf event solution and golf management system</span>
+                                                    <span>Your all-in-one golf event solution and golf management
+                                                        system</span>
                                                 </li>
                                             </ul>
                                         </div>
@@ -467,12 +538,14 @@
                                         <div id="hmsSubmenu" class="collapse product-submenu">
                                             <!-- <p>Comprehensive solution for efficient hotel operations and guest
                                                 management.</p> -->
-                                            <a href="rhapsody-micro.html" class="discover-link" onclick="navigateWithLoading('rhapsody-micro.html')">Discover HMS ›</a>
+                                            <a href="rhapsody-micro.html" class="discover-link"
+                                                onclick="navigateWithLoading('rhapsody-micro.html')">Discover HMS ›</a>
                                             <h3 class="modules-heading">MODULES</h3>
                                             <ul class="modules-list">
                                                 <li>
                                                     <strong>Front Office</strong>
-                                                    <span>Simplify guest services and reception tasks with our optimized solution</span>
+                                                    <span>Simplify guest services and reception tasks with our optimized
+                                                        solution</span>
                                                 </li>
                                                 <li>
                                                     <strong>Logistic</strong>
@@ -494,12 +567,14 @@
                                         <div id="hrSystemSubmenu" class="collapse product-submenu">
                                             <!-- <p>Comprehensive human resource management solution for businesses of
                                                 all sizes.</p> -->
-                                            <a href="hr-micro.html" class="discover-link" onclick="navigateWithLoading('hr-micro.html')">Discover HR System ›</a>
+                                            <a href="hr-micro.html" class="discover-link"
+                                                onclick="navigateWithLoading('hr-micro.html')">Discover HR System ›</a>
                                             <h3 class="modules-heading">MODULES</h3>
                                             <ul class="modules-list">
                                                 <li>
                                                     <strong>HR Core</strong>
-                                                    <span>HR Operation with our integrated solution and unified platform.</span>
+                                                    <span>HR Operation with our integrated solution and unified
+                                                        platform.</span>
                                                 </li>
                                                 <li>
                                                     <strong>HR Advance</strong>
@@ -512,7 +587,7 @@
                                             </ul>
                                         </div>
                                     </li>
-                                     <li>
+                                    <li>
                                         <div class="product-header" data-bs-toggle="collapse"
                                             data-bs-target="#itsmSubmenu" aria-expanded="false"
                                             style="font-size: 1rem; font-weight: 400;">
@@ -522,7 +597,9 @@
                                         <div id="itsmSubmenu" class="collapse product-submenu">
                                             <!-- <p>Comprehensive IT Service Management solution for streamlined IT
                                                 aoperations.</p> -->
-                                            <a href="itsm-micro.html" class="discover-link" onclick="navigateWithLoading('itsm-micro.html')">Discover ITSM, ITAM & Unified Endpoint
+                                            <a href="itsm-micro.html" class="discover-link"
+                                                onclick="navigateWithLoading('itsm-micro.html')">Discover ITSM, ITAM &
+                                                Unified Endpoint
                                                 Management ›</a>
                                             <h3 class="modules-heading">MODULES</h3>
                                             <ul class="modules-list">
@@ -549,13 +626,16 @@
                                         </div>
                                         <div id="propertyTenantSubmenu" class="collapse product-submenu">
                                             <!-- <p>Efficient management solution for property owners and landlords.</p> -->
-                                            <a href="#" class="discover-link" onclick="navigateWithLoading('bimasakti-micro.html')">Discover Property and Tenant System
+                                            <a href="#" class="discover-link"
+                                                onclick="navigateWithLoading('bimasakti-micro.html')">Discover Property
+                                                and Tenant System
                                                 ›</a>
                                             <h3 class="modules-heading">MODULES</h3>
                                             <ul class="modules-list">
                                                 <li>
                                                     <strong>Sales & Marketing</strong>
-                                                    <span>Boost Your Sales with our comprehensive, integrated solution.</span>
+                                                    <span>Boost Your Sales with our comprehensive, integrated
+                                                        solution.</span>
                                                 </li>
                                                 <li>
                                                     <strong>Tenancy Management</strong>
@@ -568,7 +648,7 @@
                                             </ul>
                                         </div>
                                     </li>
-                                   
+
                                     <li>
                                         <div class="product-header" data-bs-toggle="collapse"
                                             data-bs-target="#erpSubmenu" aria-expanded="false"
@@ -578,20 +658,27 @@
                                         <div id="erpSubmenu" class="collapse product-submenu">
                                             <!-- <p>Integrated Enterprise Resource Planning solution for business
                                                 management.</p> -->
-                                            <a href="#" class="discover-link" onclick="navigateWithLoading('realnet-micro.html')">Discover Network & System Integration ›</a>
+                                            <a href="#" class="discover-link"
+                                                onclick="navigateWithLoading('realnet-micro.html')">Discover Network &
+                                                System Integration ›</a>
                                             <h3 class="modules-heading">MODULES</h3>
                                             <ul class="modules-list">
                                                 <li>
                                                     <strong>Hardware & Software</strong>
-                                                    <span>Comprehensive solutions for selecting, deploying, and managing IT hardware and software tailored to your business needs</span>
+                                                    <span>Comprehensive solutions for selecting, deploying, and managing
+                                                        IT hardware and software tailored to your business needs</span>
                                                 </li>
                                                 <li>
                                                     <strong>Network</strong>
-                                                    <span>Robust network solutions designed to ensure seamless connectivity, performance, and security across your entire business ecosystem</span>
+                                                    <span>Robust network solutions designed to ensure seamless
+                                                        connectivity, performance, and security across your entire
+                                                        business ecosystem</span>
                                                 </li>
                                                 <li>
                                                     <strong>Cloud Infrastructure</strong>
-                                                    <span>Scalable cloud solutions that provide secure and flexible environments for hosting and managing your applications and data</span>
+                                                    <span>Scalable cloud solutions that provide secure and flexible
+                                                        environments for hosting and managing your applications and
+                                                        data</span>
                                                 </li>
                                             </ul>
                                         </div>
@@ -601,25 +688,29 @@
                         </div>
                         <div class="sidebar-item">
                             <h2 class="product-header">
-                                <a href="#" onclick="navigateWithLoading('hospitality.html'); return false;"style="text-decoration: none; color: inherit;">Industry</a>
+                                <a href="#" onclick="navigateWithLoading('hospitality.html'); return false;"
+                                    style="text-decoration: none; color: inherit;">Industry</a>
                             </h2>
                         </div>
                         <div class="sidebar-item">
                             <h2 class="product-header">
-                                <a href="#" onclick="navigateWithLoading('partners.html'); return false;" style="text-decoration: none; color: inherit;">Partners</a>
+                                <a href="#" onclick="navigateWithLoading('partners.html'); return false;"
+                                    style="text-decoration: none; color: inherit;">Partners</a>
                             </h2>
                         </div>
                         <div class="sidebar-item">
                             <h2 class="product-header">
-                                <a href="#" onclick="navigateWithLoading('contacts.html'); return false;" style="text-decoration: none; color: inherit;">Contact</a>
+                                <a href="#" onclick="navigateWithLoading('contacts.html'); return false;"
+                                    style="text-decoration: none; color: inherit;">Contact</a>
                             </h2>
                         </div>
                         <div class="sidebar-item">
                             <h2 class="product-header">
-                                <a href="#" onclick="navigateWithLoading('career.html'); return false;" style="text-decoration: none; color: inherit;">Career</a>
+                                <a href="#" onclick="navigateWithLoading('career.html'); return false;"
+                                    style="text-decoration: none; color: inherit;">Career</a>
                             </h2>
                         </div>
-                        
+
                         <div class="sidebar-item">
                             <h2 class="product-header">
                                 <a href="#" onclick="navigateWithLoading('blog.html'); return false;"
@@ -628,19 +719,20 @@
                         </div>
                         <div class="sidebar-item">
                             <h2 class="product-header">
-                                <a href="#" onclick="navigateWithLoading('about.html'); return false;" style="text-decoration: none; color: inherit;">About Us</a>
+                                <a href="#" onclick="navigateWithLoading('about.html'); return false;"
+                                    style="text-decoration: none; color: inherit;">About Us</a>
                             </h2>
                         </div>
                     </div>
                     <div class="get-started-container" style="margin-top: -10px !important;">
                         <!-- Adjusted margin-top to move slightly to the top -->
 
-                     
-                        </div>
+
                     </div>
                 </div>
-       
-            
+            </div>
+
+
 
             <style>
                 @media (min-width: 992px) {
@@ -723,8 +815,6 @@
             </style>
             <div class="full-screen-sidebar">
                 <style>
-                 
-
                     @media (max-width: 768px) {
                         .full-screen-sidebar {
                             margin-right: 0;
@@ -747,12 +837,14 @@
 
                     <!-- Partner dropdown -->
                     <li class="me-1">
-                        <a href="partners.html" class="nav-link scroll-link" onclick="navigateWithLoading('partners.html')">Partners</a>
+                        <a href="partners.html" class="nav-link scroll-link"
+                            onclick="navigateWithLoading('partners.html')">Partners</a>
                     </li>
 
                     <!-- Contact dropdown -->
                     <li class="me-1">
-                        <a href="contacts.html" class="nav-link scroll-link" onclick="navigateWithLoading('contacts.html')">Contact</a>
+                        <a href="contacts.html" class="nav-link scroll-link"
+                            onclick="navigateWithLoading('contacts.html')">Contact</a>
                     </li>
 
                     <!-- Career dropdown -->
@@ -771,8 +863,7 @@
                     </li>
 
                 </ul>
-                <div class="sidebar-actions d-flex justify-content-end align-items-center"
-                    >
+                <div class="sidebar-actions d-flex justify-content-end align-items-center">
                     <button id="darkModeToggleSidebar" class="btn-custom ms-2">
                         <i class="fas fa-moon"></i>
                     </button>
@@ -794,10 +885,10 @@
                 <div class="product-categories">
                     <a href="golf-micro.html" class="product-category" data-product="gcs"
                         onclick="navigateWithLoading('golf-micro.html')">Golf Course System</a>
-                    
+
                     <a href="rhapsody-micro.html" class="product-category" data-product="hms"
                         onclick="navigateWithLoading('rhapsody-micro.html')">Hotel Management System</a>
-                        <a href="hr-micro.html" class="product-category" data-product="hrs"
+                    <a href="hr-micro.html" class="product-category" data-product="hrs"
                         onclick="navigateWithLoading('hr-micro.html')">HR System</a>
                     <a href="itsm-micro.html" class="product-category" data-product="itm"
                         onclick="navigateWithLoading('itsm-micro.html')">ITSM, ITAM & Unified Endpoint Management</a>
@@ -1071,27 +1162,27 @@
         }
 
         /* Responsive styles */
-       @media (max-width: 768px) {
-    .navbar-banner {
-        font-size: 14px;
-        padding: 15px 0;
-        position: relative;
-        top: auto;
-        transform: none !important;
-        z-index: 2;
-        -webkit-mask-image: linear-gradient(to bottom,
-            black 70%, /* Start fading earlier (adjust % as needed) */
-            transparent 100%
-        );
-        mask-image: linear-gradient(to bottom,
-            black 70%, /* Start fading earlier (adjust % as needed) */
-            transparent 100%
-        );
-    }
+        @media (max-width: 768px) {
+            .navbar-banner {
+                font-size: 14px;
+                padding: 15px 0;
+                position: relative;
+                top: auto;
+                transform: none !important;
+                z-index: 2;
+                -webkit-mask-image: linear-gradient(to bottom,
+                        black 70%,
+                        /* Start fading earlier (adjust % as needed) */
+                        transparent 100%);
+                mask-image: linear-gradient(to bottom,
+                        black 70%,
+                        /* Start fading earlier (adjust % as needed) */
+                        transparent 100%);
+            }
 
-    .navbar-banner__icon {
-        display: none;
-    }
+            .navbar-banner__icon {
+                display: none;
+            }
 
 
             .navbar-banner__content {
@@ -1240,7 +1331,8 @@
 
 <body>
     <!-- Add WhatsApp floating button -->
-    <a href="https://api.whatsapp.com/send?phone=628111221789&text=Hallo%20PT%20Realta..." target="_blank" rel="noopener noreferrer" class="whatsapp-float">
+    <a href="https://api.whatsapp.com/send?phone=628111221789&text=Hallo%20PT%20Realta..." target="_blank"
+        rel="noopener noreferrer" class="whatsapp-float">
         <i class="fab fa-whatsapp"></i>
         <div class="text-content">
             <span class="click-text">Click here</span>
@@ -1414,7 +1506,7 @@
                     margin-left: 25%;
                 }
 
-                   .carousel-indicators [data-bs-target] {
+                .carousel-indicators [data-bs-target] {
                     width: 12px;
                     height: 12px;
                     border-radius: 50%;
@@ -1425,13 +1517,13 @@
                     opacity: 0.5;
                     transition: opacity 0.3s ease;
                 }
-                
+
                 .carousel-indicators .active {
                     opacity: 1;
                     background-color: #272727 !important;
                 }
-               
-               
+
+
 
                 @media (max-width: 768px) {
                     #businessCarousel {
@@ -1496,7 +1588,8 @@
                     overflow: visible;
                     padding: 0 0px;
                     /* Added padding to make room for controls */
-                    min-height: 700px; /* Added minimum height for desktop */
+                    min-height: 630px;
+                    /* Added minimum height for desktop */
                 }
 
                 .business-carousel-control-prev {
@@ -1624,13 +1717,15 @@
                     <button type="button" data-bs-target="#businessCarousel" data-bs-slide-to="0"
                         class="active business-carousel-control-prev" aria-current="true" aria-label="Slide 1"
                         data-bs-slide="prev">
-                        <span class="business-carousel-control-prev-icon styled-button-convex" aria-hidden="true"></span>
+                        <span class="business-carousel-control-prev-icon styled-button-convex"
+                            aria-hidden="true"></span>
                         <span class="visually-hidden">Previous</span>
                     </button>
 
                     <button type="button" data-bs-target="#businessCarousel" data-bs-slide-to="1"
                         class="business-carousel-control-next" aria-label="Slide 2" data-bs-slide="next">
-                        <span class="business-carousel-control-next-icon styled-button-convex" aria-hidden="true"></span>
+                        <span class="business-carousel-control-next-icon styled-button-convex"
+                            aria-hidden="true"></span>
                         <span class="visually-hidden">Next</span>
                     </button>
                 </div>
@@ -1640,8 +1735,8 @@
                     <div class="carousel-item active">
                         <div class="row gy-5 align-items-center">
                             <!-- Left Column -->
-                            <div
-                                class="col-lg-7 d-flex flex-column justify-content-center align-items-start text-lg-start" style="overflow: visible !important;">
+                            <div class="col-lg-7 d-flex flex-column justify-content-center align-items-start text-lg-start"
+                                style="overflow: visible !important;">
                                 <style>
                                     @media (max-width: 768px) {
                                         .col-lg-7 {
@@ -1659,7 +1754,8 @@
                                                     <span class="online-indicator"></span>
                                                 </p>
                                             </div> -->
-                                    <h1 class="display-3 fw-bold mb-0">Driving Technology Excellence for Your Entire Ecosystem</h1>
+                                    <h1 class="display-3 fw-bold mb-0">Driving Technology Excellence for Your Entire
+                                        Ecosystem</h1>
                                     <h3 class="lead mb-3">Empowering medium and large enterprises with innovative
                                         technology solutions since 1983. <span class="fw-bold">Realta
                                             Chakradarma</span> helps businesses reach their full potential through
@@ -1669,7 +1765,8 @@
                                             informed decisions, and drive sustainable growth</span> in a rapidly
                                         evolving market.</h3>
 
-                                    <a class="btn-custom img-animate mobile-responsive styled-button-convex" role="button" href="#contact">
+                                    <a class="btn-custom img-animate mobile-responsive styled-button-convex"
+                                        role="button" href="#contact">
                                         Contact Us
                                     </a>
                                 </div>
@@ -1678,7 +1775,7 @@
 
                             </div>
 
-                            
+
                             <!-- Right Column -->
                             <div class="col-lg-5 d-flex justify-content-center align-items-center mobile-center">
                                 <style>
@@ -1702,8 +1799,8 @@
                     <!-- Slide 2 -->
                     <div class="carousel-item">
                         <div class="row gy-5 align-items-center">
-                            <div
-                                class="col-lg-7 d-flex flex-column justify-content-center align-items-start text-lg-start" style="overflow: visible !important;">
+                            <div class="col-lg-7 d-flex flex-column justify-content-center align-items-start text-lg-start"
+                                style="overflow: visible !important;">
                                 <div class="mb-4">
                                     <!-- <div class="logo-text">
                                                 <p>
@@ -1716,16 +1813,19 @@
                                         cutting-edge technology and innovative solutions that drive transformation.
                                         <br> <br>
                                         Our comprehensive
-                                        suite of tools and expert guidance empower organizations to achieve <span class="fw-bold">enhanced efficiency,
-                                        sustainable growth, and long-term success</span> while staying ahead of industry trends and
+                                        suite of tools and expert guidance empower organizations to achieve <span
+                                            class="fw-bold">enhanced efficiency,
+                                            sustainable growth, and long-term success</span> while staying ahead of
+                                        industry trends and
                                         maintaining a competitive edge in today's dynamic business landscape.</h3>
 
 
                                 </div>
-                                <a class="btn-custom img-animate mobile-responsive styled-button-convex" role="button" href="#contact">
+                                <a class="btn-custom img-animate mobile-responsive styled-button-convex" role="button"
+                                    href="#contact">
                                     <i class="fa-brands fa-whatsapp me-2"></i>Get Started
                                 </a>
-                             
+
                             </div>
                             <div class="col-lg-5 d-flex justify-content-center align-items-center">
                                 <style>
@@ -1779,77 +1879,77 @@
 
 
     <section id="industry" class="industry-section" ">
-        <div class="container-fluid ">
-            <div class="text-center">
-                <div class="text-center">
-                    <h1 class="industry-title gradient-text">A Solution Based on Your Industry</h1>
-                    <h3 class="mb-5 industry-subtitle">Tailored solutions to meet your specific industry needs</h3>
-                </div>
+        <div class=" container-fluid ">
+            <div class=" text-center">
+        <div class="text-center">
+            <h1 class="industry-title gradient-text">A Solution Based on Your Industry</h1>
+            <h3 class="mb-5 industry-subtitle">Tailored solutions to meet your specific industry needs</h3>
+        </div>
 
-                <style>
-                    .industry-title {
-                        font-weight: bolder;
-                        font-size: 48px;
-                        line-height: 1.2;
-                    }
+        <style>
+            .industry-title {
+                font-weight: bolder;
+                font-size: 48px;
+                line-height: 1.2;
+            }
 
 
-                    .industry-subtitle {
-                        font-size: 24px;
-                        line-height: 1.4;
-                    }
+            .industry-subtitle {
+                font-size: 24px;
+                line-height: 1.4;
+            }
 
-                    @media (max-width: 768px) {
-                        .industry-title {
-                            font-size: 36px;
-                        }
+            @media (max-width: 768px) {
+                .industry-title {
+                    font-size: 36px;
+                }
 
-                        .industry-subtitle {
-                            font-size: 16px !important;
-                        }
-                    }
+                .industry-subtitle {
+                    font-size: 16px !important;
+                }
+            }
 
-                    @media (max-width: 480px) {
-                        .industry-title {
-                            font-size: 28px;
-                        }
+            @media (max-width: 480px) {
+                .industry-title {
+                    font-size: 28px;
+                }
 
-                        .industry-subtitle {
-                            font-size: 18px;
-                        }
-                    }
-                </style>
+                .industry-subtitle {
+                    font-size: 18px;
+                }
+            }
+        </style>
 
-                <div class="tags-container-wrapper mb-4"">
+        <div class="tags-container-wrapper mb-4"">
                     <div class=" scroll-indicator scroll-left">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <polyline points="15 18 9 12 15 6"></polyline>
-                    </svg>
-                </div>
-                <div class="tags-container" style="background: none;">
-                    <div class="tags-wrapper">
-                        <span class="tag-item" data-content="property" onclick="toggleCard(this, 'property')">
-                            Property
-                        </span>
-                        <span class="tag-item" data-content="manufacturing" onclick="toggleCard(this, 'manufacturing')">
-                            Manufacturing
-                        </span>
-                        <span class="tag-item" data-content="hospitality" onclick="toggleCard(this, 'hospitality')">
-                            Hospitality
-                        </span>
-                        <span class="tag-item" data-content="finance" onclick="toggleCard(this, 'finance')">
-                            FSI
-                        </span>
-                    </div>
-                </div>
-                <div class="scroll-indicator scroll-right">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <polyline points="9 18 15 12 9 6"></polyline>
-                    </svg>
-                </div>
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="15 18 9 12 15 6"></polyline>
+            </svg>
+        </div>
+        <div class="tags-container" style="background: none;">
+            <div class="tags-wrapper">
+                <span class="tag-item" data-content="property" onclick="toggleCard(this, 'property')">
+                    Property
+                </span>
+                <span class="tag-item" data-content="manufacturing" onclick="toggleCard(this, 'manufacturing')">
+                    Manufacturing
+                </span>
+                <span class="tag-item" data-content="hospitality" onclick="toggleCard(this, 'hospitality')">
+                    Hospitality
+                </span>
+                <span class="tag-item" data-content="finance" onclick="toggleCard(this, 'finance')">
+                    FSI
+                </span>
             </div>
+        </div>
+        <div class="scroll-indicator scroll-right">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="9 18 15 12 9 6"></polyline>
+            </svg>
+        </div>
+        </div>
         </div>
         <div id="contentCards" class="row justify-content-center" style="position: relative; z-index: 1;">
             <!-- Cards will be dynamically inserted here -->
@@ -1861,18 +1961,18 @@
                 border-width: 2px !important;
                 border-style: solid !important;
             }
-            
+
             #contentCards .card.content-card {
                 border: 2px solid !important;
                 border-radius: 25px !important;
                 transition: all 0.3s ease !important;
             }
-            
+
             #contentCards .card.content-card[style*="border"] {
                 border-width: 2px !important;
                 border-style: solid !important;
             }
-            
+
             /* Active tag styling */
             .tag-item.active {
                 background-color: rgba(144, 84, 208, 0.1);
@@ -2366,7 +2466,7 @@
         <div class="circle-blur2"></div>
     </section>
 
-    
+
     <section id="stats" class="py-5">
         <div class="container-fluid">
             <div class="card-body">
@@ -2400,25 +2500,25 @@
                                 <h2 class="stat-description">Tickets per day</h2>
                             </div>
                         </div>
-                        
+
                         <style>
                             @media (max-width: 767.98px) {
                                 .row-cols-2 .col {
                                     margin-bottom: 1rem !important;
                                 }
-                                
+
                                 /* Center the last item when odd number of items */
                                 .row-cols-2 .last-stat {
                                     margin-left: auto;
                                     margin-right: auto;
                                     width: 50%;
                                 }
-                                
+
                                 /* Adjust stat text size for mobile */
                                 .stat-number {
                                     font-size: 1.75rem;
                                 }
-                                
+
                                 .stat-description {
                                     font-size: 1rem;
                                 }
@@ -2625,7 +2725,9 @@
                             business. This
                             allows you to make informed decisions with clear insights and a full understanding of your
                             operations.</p>
-                        <a href="#" class="btn-custom img-animate me-2 d-inline-block fade-in-blur styled-button-convex">Learn More</a>
+                        <a href="#"
+                            class="btn-custom img-animate me-2 d-inline-block fade-in-blur styled-button-convex">Learn
+                            More</a>
                     </div>
                 </div>
             </div>
@@ -2693,7 +2795,9 @@
                             less manual
                             effort. This boosts accuracy, scalability, and frees up your team to focus on strategic
                             initiatives.</p>
-                        <a href="#" class="btn-custom img-animate me-2 d-inline-block fade-in-blur styled-button-convex">Learn More</a>
+                        <a href="#"
+                            class="btn-custom img-animate me-2 d-inline-block fade-in-blur styled-button-convex">Learn
+                            More</a>
                     </div>
                 </div>
             </div>
@@ -2736,6 +2840,7 @@
                 }
             }
         </style>
+
     </section>
 
     <script>
@@ -2760,7 +2865,7 @@
 
 
 
-    
+
 
 
 
@@ -2869,13 +2974,13 @@
     </section>
 
     <!-- Cards Section -->
-    <section id="solutions" class="py-5" >
+    <section id="solutions" class="py-5">
         <div class="container-fluid">
             <h1 class="solution-title text-center mb-2 gradient-text">Solution for Each Business</h1>
             <h3 class="solution-subtitle text-center mb-5">Real Partnership To Deliver A Reliable Solution.</h3>
 
             <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-4 justify-content-center align-items-stretch">
-               <!-- Property & Tenancy System -->
+                <!-- Property & Tenancy System -->
                 <div class="col">
                     <div class="card h-100 solution-card blur-card">
                         <div class="card-body d-flex flex-column">
@@ -2892,7 +2997,7 @@
                         </div>
                     </div>
                 </div>
-              
+
                 <!-- Hotel Management System -->
                 <div class="col">
                     <div class="card h-100 solution-card blur-card">
@@ -2964,7 +3069,7 @@
                     </div>
                 </div>
 
-               
+
 
                 <!-- ITSM, ITAM & Unified Endpoint Management -->
                 <div class="col">
@@ -3086,28 +3191,41 @@
             animation: fadeIn 0.5s ease-in-out forwards;
 
             /* Added/Modified for convex style */
-            position: relative; /* Added */
-            overflow: visible; /* Added */
-            -webkit-tap-highlight-color: transparent; /* Added */
-            background-color: #fbfbfbf9; /* Changed from transparent */
-            color: #333; /* Changed from #9054d0 */
-            text-shadow: 0 1px 0px rgba(255, 255, 255, 0.7); /* Added */
-            border: 1px solid rgba(191, 191, 191, 0.5); /* Changed from original border */
+            position: relative;
+            /* Added */
+            overflow: visible;
+            /* Added */
+            -webkit-tap-highlight-color: transparent;
+            /* Added */
+            background-color: #fbfbfbf9;
+            /* Changed from transparent */
+            color: #333;
+            /* Changed from #9054d0 */
+            text-shadow: 0 1px 0px rgba(255, 255, 255, 0.7);
+            /* Added */
+            border: 1px solid rgba(191, 191, 191, 0.5);
+            /* Changed from original border */
             box-shadow:
                 0 6px 12px rgba(0, 0, 0, 0.15),
-                inset 0 2px 0px rgba(255, 255, 255, 0.25), /* Standard convex highlight */
-                inset 0 -1px 1px rgba(0,0,0,0.4) !important; /* Apply convex shadow */
+                inset 0 2px 0px rgba(255, 255, 255, 0.25),
+                /* Standard convex highlight */
+                inset 0 -1px 1px rgba(0, 0, 0, 0.4) !important;
+            /* Apply convex shadow */
         }
 
         /* Added ::before for convex rim effect */
         .business-btn::before {
             content: "";
             position: absolute;
-            top: -1px; right: -1px; bottom: -1px; left: -1px;
+            top: -1px;
+            right: -1px;
+            bottom: -1px;
+            left: -1px;
             z-index: -1;
-            border-radius: 11px; /* button radius + border width */
-            background: linear-gradient(to bottom, rgba(0,0,0,0.02), rgba(0,0,0,0.08));
-            box-shadow: inset 0 0.5px 0 rgba(255,255,255,0.3);
+            border-radius: 11px;
+            /* button radius + border width */
+            background: linear-gradient(to bottom, rgba(0, 0, 0, 0.02), rgba(0, 0, 0, 0.08));
+            box-shadow: inset 0 0.5px 0 rgba(255, 255, 255, 0.3);
             transition: all 0.15s ease-out;
         }
 
@@ -3127,9 +3245,12 @@
         }
 
         .business-btn:active {
-            transform: translateY(1px); /* Kept original active transform */
-            box-shadow: inset 0 1px 3px rgba(0,0,0,0.2); /* Changed */
-            background-color: #dee2e6; /* Added */
+            transform: translateY(1px);
+            /* Kept original active transform */
+            box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.2);
+            /* Changed */
+            background-color: #dee2e6;
+            /* Added */
         }
 
         /* Keyframes for fade in animation */
@@ -3338,7 +3459,8 @@
                                 <div class="rt-content-section">
                                     <div class="rt-quote-wrapper">
                                         <blockquote class="rt-testimonial-text">
-                                            <i class="fas fa-quote-left" style="color: #9054d0; margin-right: 10px;"></i>
+                                            <i class="fas fa-quote-left"
+                                                style="color: #9054d0; margin-right: 10px;"></i>
                                             PT Realta Chakradrama has transformed our IT infrastructure completely.
                                             Their solutions are cutting-edge and their team's expertise in implementing
                                             enterprise systems is outstanding. They've helped us achieve operational
@@ -3367,7 +3489,8 @@
                                 <div class="rt-content-section">
                                     <div class="rt-quote-wrapper">
                                         <blockquote class="rt-testimonial-text">
-                                            <i class="fas fa-quote-left" style="color: #9054d0; margin-right: 10px;"></i>
+                                            <i class="fas fa-quote-left"
+                                                style="color: #9054d0; margin-right: 10px;"></i>
                                             Working with PT Realta Chakradrama has been a game-changer for our business.
                                             Their IT solutions have streamlined our processes and their support team is
                                             always responsive. We've seen significant improvements in efficiency since
@@ -3401,7 +3524,8 @@
                                 <div class="rt-content-section">
                                     <div class="rt-quote-wrapper">
                                         <blockquote class="rt-testimonial-text">
-                                            <i class="fas fa-quote-left" style="color: #9054d0; margin-right: 10px;"></i>
+                                            <i class="fas fa-quote-left"
+                                                style="color: #9054d0; margin-right: 10px;"></i>
                                             PT Realta Chakradrama's commitment to delivering innovative IT solutions is
                                             unmatched. Their deep understanding of business needs and technical
                                             expertise has helped us modernize our entire digital infrastructure. They're
@@ -3471,14 +3595,16 @@
             transition: transform 0.5s ease-in-out;
             gap: 50px;
             justify-content: center;
-            align-items: stretch; /* Changed to stretch to maintain equal heights */
+            align-items: stretch;
+            /* Changed to stretch to maintain equal heights */
         }
 
         .rt-testimonial-card {
             min-width: 100%;
             padding: 0 5px;
             box-sizing: border-box;
-            display: flex; /* Added flex display */
+            display: flex;
+            /* Added flex display */
         }
 
         .rt-testimonial-inner {
@@ -3489,8 +3615,10 @@
             flex-direction: column;
             border: 1px solid #e0e0e0;
             transition: box-shadow 0.3s ease;
-            width: 100%; /* Ensure full width */
-            height: 600px; /* Fixed height for consistency */
+            width: 100%;
+            /* Ensure full width */
+            height: 600px;
+            /* Fixed height for consistency */
         }
 
         .rt-testimonial-inner:hover {
@@ -3499,10 +3627,12 @@
 
         .rt-image-section {
             width: 100%;
-            height: 195px; /* Fixed height */
+            height: 195px;
+            /* Fixed height */
             position: relative;
             overflow: hidden;
-            flex: 0 0 auto; /* Prevent image section from growing/shrinking */
+            flex: 0 0 auto;
+            /* Prevent image section from growing/shrinking */
         }
 
         .rt-image-section img {
@@ -3525,8 +3655,10 @@
         }
 
         .rt-quote-wrapper {
-            flex: 1; /* Allow quote wrapper to take remaining space */
-            overflow: hidden; /* Hide overflow content */
+            flex: 1;
+            /* Allow quote wrapper to take remaining space */
+            overflow: hidden;
+            /* Hide overflow content */
             position: relative;
             margin-bottom: 20px;
         }
@@ -3541,7 +3673,8 @@
             position: relative;
             text-align: left;
             display: -webkit-box;
-            -webkit-line-clamp: 8; /* Limit to 8 lines */
+            -webkit-line-clamp: 8;
+            /* Limit to 8 lines */
             -webkit-box-orient: vertical;
             overflow: hidden;
             text-overflow: ellipsis;
@@ -3554,8 +3687,10 @@
             display: flex;
             justify-content: space-between;
             align-items: flex-end;
-            margin-top: auto; /* Push to bottom */
-            flex: 0 0 auto; /* Prevent growing/shrinking */
+            margin-top: auto;
+            /* Push to bottom */
+            flex: 0 0 auto;
+            /* Prevent growing/shrinking */
         }
 
         .rt-author-details {
@@ -3760,6 +3895,7 @@
                 width: clamp(32px, 8vw, 40px);
                 height: clamp(32px, 8vw, 40px);
             }
+
             .play-button i {
                 font-size: clamp(14px, 4vw, 16px);
             }
@@ -4248,7 +4384,8 @@
                 <div class="banner-content">
                     <h2>Unlock superior coverage for your team</h2>
                     <p>Build a culture of employee delight by taking the first step towards Benefits</p>
-                    <button class="btn-custom styled-button-convex" onclick="navigateWithLoading('contacts.html'); return false;">Schedule a call</button>
+                    <button class="btn-custom styled-button-convex"
+                        onclick="navigateWithLoading('contacts.html'); return false;">Schedule a call</button>
                 </div>
                 <img src="assets/img/handshake.png" alt="Business Handshake" class="banner-image">
             </div>
@@ -4256,7 +4393,7 @@
     </section>
 
     <!-- BLOG -->
-    <section id="blog" class="" >
+    <section id="blog" class="">
         <div class="container-fluid">
             <div class="blog-header text-center">
                 <h1 class="gradient-text" style="font-weight: bolder; font-size: 48px;">Blog</h1>
@@ -4373,7 +4510,8 @@
             padding: 0;
             aspect-ratio: 1;
             transition: all 0.3s ease;
-            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.35), inset 0 2px 0px rgba(255, 255, 255, 0.25), inset 0 -1px 1px rgba(0,0,0,0.4); /* Added shadow */
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.35), inset 0 2px 0px rgba(255, 255, 255, 0.25), inset 0 -1px 1px rgba(0, 0, 0, 0.4);
+            /* Added shadow */
         }
 
         .blog-arrow:hover {
@@ -4545,6 +4683,7 @@
         .icon-container {
             margin-right: 10px;
         }
+
         .explore-more-faq {
             display: inline-flex;
             align-items: center;
@@ -4634,9 +4773,9 @@
     <section id="contact" class="pb-5">
         <div class="container-fluid">
             <div class="row justify-content-between">
-               <div id="contact-info" class="col-lg-4 left-column >
+                <div id="contact-info" class="col-lg-4 left-column >
     <!-- Removed " What are you waiting for" heading -->
-                  
+
                     <div class="company-info" style="border-radius: 10px;">
                         <h3 class="h5 fw-bold mb-3 company-name custom-text"
                             style="color: #333; padding-bottom: 10px; display: inline-block; border-bottom: 1px solid transparent; background-image: linear-gradient(to right, transparent, #333, transparent); background-position: bottom; background-size: 100% 1px; background-repeat: no-repeat;">
@@ -4652,7 +4791,7 @@
                             </p>
                         </div>
 
-                       
+
                     </div>
                     <style>
                         /* Remove the media query and adjust the selectors */
@@ -4703,6 +4842,7 @@
                                 .contact-item {
                                     text-align: left;
                                 }
+
                                 .contact-item p,
                                 .contact-item a {
                                     text-align: left;
@@ -4715,14 +4855,17 @@
                         </div>
                         <div class="contact-item">
                             <i class="fas fa-envelope contact-icon"></i>
-                            <a href="mailto:info@realta.co.id" class="text-decoration-none fw-bold">info@realta.co.id</a>
+                            <a href="mailto:info@realta.co.id"
+                                class="text-decoration-none fw-bold">info@realta.co.id</a>
                         </div>
                         <div class="contact-item">
-                            <img src="/Assets/assets/pngwing.com.png" class="contact-icon" style="width: 18px; height: 18px;">
+                            <img src="/Assets/assets/pngwing.com.png" class="contact-icon"
+                                style="width: 18px; height: 18px;">
                             <p class="mb-0">
                                 For sales and marketing, contact our Official WhatsApp:<br>
-                                <a href="https://wa.me/628111221789" class="text-decoration-none fw-bold" target="_blank" rel="noopener noreferrer"
-                                    style="color: #3bc05a;">+62 811 1221 789 (Chat Only)</a>
+                                <a href="https://wa.me/628111221789" class="text-decoration-none fw-bold"
+                                    target="_blank" rel="noopener noreferrer" style="color: #3bc05a;">+62 811 1221 789
+                                    (Chat Only)</a>
                             </p>
                         </div>
                     </div>
@@ -4731,19 +4874,24 @@
                         <h4 class="mb-3" style="font-size: 0.9rem; text-align: left; margin-left: 10px;"> Connect With
                             Us Through Social Media</h4>
                         <div class="social-icons d-flex gap-3">
-                            <a href="https://www.facebook.com/realtachakradarma/" class="social-icon" aria-label="Facebook" target="_blank" rel="noopener noreferrer">
+                            <a href="https://www.facebook.com/realtachakradarma/" class="social-icon"
+                                aria-label="Facebook" target="_blank" rel="noopener noreferrer">
                                 <i class="fab fa-facebook-f"></i>
                             </a>
-                            <a href="https://id.linkedin.com/company/pt-realta-chakradarma/" class="social-icon" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer">
+                            <a href="https://id.linkedin.com/company/pt-realta-chakradarma/" class="social-icon"
+                                aria-label="LinkedIn" target="_blank" rel="noopener noreferrer">
                                 <i class="fab fa-linkedin-in"></i>
                             </a>
-                            <a href="https://x.com/Realta_OneSol" class="social-icon" aria-label="Twitter" target="_blank" rel="noopener noreferrer">
+                            <a href="https://x.com/Realta_OneSol" class="social-icon" aria-label="Twitter"
+                                target="_blank" rel="noopener noreferrer">
                                 <i class="fab fa-x-twitter"></i>
                             </a>
-                            <a href="https://www.instagram.com/realta.id/" class="social-icon" aria-label="Instagram" target="_blank" rel="noopener noreferrer">
+                            <a href="https://www.instagram.com/realta.id/" class="social-icon" aria-label="Instagram"
+                                target="_blank" rel="noopener noreferrer">
                                 <i class="fab fa-instagram"></i>
                             </a>
-                            <a href="https://www.youtube.com/@ptrealtachakradarma3127" class="social-icon" aria-label="YouTube" target="_blank" rel="noopener noreferrer">
+                            <a href="https://www.youtube.com/@ptrealtachakradarma3127" class="social-icon"
+                                aria-label="YouTube" target="_blank" rel="noopener noreferrer">
                                 <i class="fab fa-youtube"></i>
                             </a>
                         </div>
@@ -4856,7 +5004,7 @@
                             </div>
                         </div>
 
-                       
+
 
                         <div class="mb-3">
                             <label for="message" class="form-label">How we can help you? </label>
@@ -4872,8 +5020,12 @@
                                 <input type="checkbox" class="form-check-input" id="terms" required>
                                 <label class="form-check-label" for="terms">
                                     Before submitting please read our <br>
-                                    <a href="#" class="text-decoration-none" onclick="window.open('tos.html#eula', '_blank'); return false;">Term and Condition</a> &
-                                    <a href="#" class="text-decoration-none" onclick="window.open('tos.html#privacy', '_blank'); return false;">Privacy Policy</a>
+                                    <a href="#" class="text-decoration-none"
+                                        onclick="window.open('tos.html#eula', '_blank'); return false;">Term and
+                                        Condition</a> &
+                                    <a href="#" class="text-decoration-none"
+                                        onclick="window.open('tos.html#privacy', '_blank'); return false;">Privacy
+                                        Policy</a>
                                 </label>
                                 <div class="invalid-feedback">
                                     You must agree to the terms and conditions.
@@ -4977,89 +5129,95 @@
 
 
 
-<section id="newsletter-cta" class="py-4 mb-0">
-    <div class="container-fluid">
-        <div class="row align-items-center">
-            <div class="col-md-7 text-start">
-                <h2 class="mb-3 fw-bold gradient-text">Stay Informed, Stay Ahead</h2>
-                <p class="mb-4">Join our newsletter for exclusive insights and expert tips.</p>
-                <form class="mb-3">
-                    <div class="input-group input-group-lg" style="max-width: 500px;">
-                        <input type="email" class="form-control" placeholder="Email address" aria-label="Email address"
-                            required style="border-radius: 10px 0 0 10px;">
-                        <button class="btn btn-primary" type="submit"
-                            style="border-radius: 0 10px 10px 0;">Subscribe</button>
+    <section id="newsletter-cta" class="py-4 mb-0">
+        <div class="container-fluid">
+            <div class="row align-items-center">
+                <div class="col-md-7 text-start">
+                    <h2 class="mb-3 fw-bold gradient-text">Stay Informed, Stay Ahead</h2>
+                    <p class="mb-4">Join our newsletter for exclusive insights and expert tips.</p>
+                    <form class="mb-3">
+                        <div class="input-group input-group-lg" style="max-width: 500px;">
+                            <input type="email" class="form-control" placeholder="Email address"
+                                aria-label="Email address" required style="border-radius: 10px 0 0 10px;">
+                            <button class="btn btn-primary" type="submit"
+                                style="border-radius: 0 10px 10px 0;">Subscribe</button>
+                        </div>
+                    </form>
+                    <p class="text-muted small">By subscribing, you agree to our <a href="#"
+                            class="text-decoration-none"
+                            onclick="window.open('tos.html#privacy', '_blank'); return false;">Privacy
+                            Policy</a> and <a href="#" class="text-decoration-none"
+                            onclick="window.open('tos.html#eula', '_blank'); return false;">Terms of Service</a>.</p>
+                </div>
+                <div class="col-md-5">
+                    <div class="d-flex justify-content-md-end align-items-center mb-3">
+                        <img src="assets/img/footer1.png" alt="Logo 1" class="footer-logo me-3"
+                            style="max-height: 90px; width: auto;">
+                        <img src="assets/sticker.png" alt="Logo 2" class="footer-logo dark-mode-image"
+                            style="max-height: 90px; width: auto;">
+                        <style>
+                            .dark-mode-image {
+                                content: url('assets/sticker.png');
+                            }
+
+                            body.dark-mode .dark-mode-image {
+                                content: url('assets/img/footer2.png');
+                            }
+                        </style>
                     </div>
-                </form>
-                <p class="text-muted small">By subscribing, you agree to our <a href="#" class="text-decoration-none" 
-                        onclick="window.open('tos.html#privacy', '_blank'); return false;">Privacy
-                        Policy</a> and <a href="#" class="text-decoration-none"
-                        onclick="window.open('tos.html#eula', '_blank'); return false;">Terms of Service</a>.</p>
-            </div>
-            <div class="col-md-5">
-                <div class="d-flex justify-content-md-end align-items-center mb-3">
-                    <img src="assets/img/footer1.png" alt="Logo 1" class="footer-logo me-3"
-                        style="max-height: 90px; width: auto;">
-                    <img src="assets/sticker.png" alt="Logo 2" class="footer-logo dark-mode-image"
-                        style="max-height: 90px; width: auto;">
-                    <style>
-                        .dark-mode-image {
-                            content: url('assets/sticker.png');
-                        }
-
-                        body.dark-mode .dark-mode-image {
-                            content: url('assets/img/footer2.png');
-                        }
-                    </style>
-                </div>
-                <div class="text-md-end">
-                    <p class="mb-2 text-muted small" style="font-size: 0.9rem;">&copy; 2025 PT. Realta Chakradarma. All
-                        rights
-                        reserved.</p>
-                    <a href="#" onclick="window.open('tos.html#privacy', '_blank'); return false;"
-                        class="text-muted small me-3" style="font-size: 0.9rem; text-decoration: underline;">Privacy
-                        Policy</a>
-                    <span class="text-muted small me-3" style="font-size: 0.9rem;">|</span>
-                    <a href="#" onclick="window.open('tos.html#eula', '_blank'); return false;" class="text-muted small"
-                        style="font-size: 0.9rem; text-decoration: underline;">Terms of Service</a>
+                    <div class="text-md-end">
+                        <p class="mb-2 text-muted small" style="font-size: 0.9rem;">&copy; 2025 PT. Realta Chakradarma.
+                            All
+                            rights
+                            reserved.</p>
+                        <a href="#" onclick="window.open('tos.html#privacy', '_blank'); return false;"
+                            class="text-muted small me-3" style="font-size: 0.9rem; text-decoration: underline;">Privacy
+                            Policy</a>
+                        <span class="text-muted small me-3" style="font-size: 0.9rem;">|</span>
+                        <a href="#" onclick="window.open('tos.html#eula', '_blank'); return false;"
+                            class="text-muted small" style="font-size: 0.9rem; text-decoration: underline;">Terms of
+                            Service</a>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-</section>
+    </section>
 
 
-<!-- Modal Overlay Structure -->
-<div class="realta-icare-modal-overlay" id="realtaICareModal">
-  <div class="realta-icare-modal-container">
-    <div class="realta-icare-modal-header">
-      <h2 class="realta-icare-modal-title">Welcome to iCare</h2>
-      <button class="realta-icare-modal-close">&times;</button>
-    </div>
-    <div class="realta-icare-modal-body">
-      <p class="realta-icare-modal-text text-left">
-        To care or not to care, is NEVER a question! Realta iCare, our commitment to your satisfaction! 
-        We give the very best to satisfy your needs every step of the way.
-      </p>
-      
-      <div class="row justify-content-between mt-4">
-        <div class="col-md-5 text-left mb-3">
-          <h3 class="realta-icare-icon-title fs-5">Customer Support</h3>
-          <a href="https://icare.cloud.co.id/HEAT" target="_blank">
-            <img src="assets/img/icare-customer.png" alt="Customer Support" class="realta-icare-modal-icon img-fluid">
-          </a>
+    <!-- Modal Overlay Structure -->
+    <div class="realta-icare-modal-overlay" id="realtaICareModal">
+        <div class="realta-icare-modal-container">
+            <div class="realta-icare-modal-header">
+                <h2 class="realta-icare-modal-title">Welcome to iCare</h2>
+                <button class="realta-icare-modal-close">&times;</button>
+            </div>
+            <div class="realta-icare-modal-body">
+                <p class="realta-icare-modal-text text-left">
+                    To care or not to care, is NEVER a question! Realta iCare, our commitment to your satisfaction!
+                    We give the very best to satisfy your needs every step of the way.
+                </p>
+
+                <div class="row justify-content-between mt-4">
+                    <div class="col-md-5 text-left mb-3">
+                        <h3 class="realta-icare-icon-title fs-5">Customer Support</h3>
+                        <a href="https://icare.cloud.co.id/HEAT" target="_blank">
+                            <img src="assets/img/icare-customer.png" alt="Customer Support"
+                                class="realta-icare-modal-icon img-fluid">
+                        </a>
+                    </div>
+
+                    <div class="col-md-5 text-left mb-3">
+                        <h3 class="realta-icare-icon-title fs-5">Product Manual</h3>
+                        <a href="https://realta.co.id/site/pdf/Manual%20Guide%20Aplikasi%20iCARE-Customer%20Self%20Service(1.0).pdf"
+                            target="_blank">
+                            <img src="assets/img/icare-manual.png" alt="Product Manual"
+                                class="realta-icare-modal-icon img-fluid">
+                        </a>
+                    </div>
+                </div>
+            </div>
         </div>
-
-        <div class="col-md-5 text-left mb-3">
-          <h3 class="realta-icare-icon-title fs-5">Product Manual</h3>
-          <a href="https://realta.co.id/site/pdf/Manual%20Guide%20Aplikasi%20iCARE-Customer%20Self%20Service(1.0).pdf" target="_blank">
-            <img src="assets/img/icare-manual.png" alt="Product Manual" class="realta-icare-modal-icon img-fluid">
-          </a>
-        </div>
-      </div>
     </div>
-  </div>
-</div>
 
     <style>
         #newsletter-cta {
@@ -5242,49 +5400,50 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.1.3/js/bootstrap.min.js"></script>
 
 
-<!-- JavaScript for Modal Functionality -->
-<script>
-    document.addEventListener('DOMContentLoaded', function() {
-      // Get modal elements
-      const footerLogo = document.querySelector('.footer-logo'); // Target the existing footer logo
-      const modalOverlay = document.querySelector('.realta-icare-modal-overlay');
-      const modalClose = document.querySelector('.realta-icare-modal-close');
-      
-      // Move the modal overlay to be a direct child of the body
-      // This helps avoid stacking context issues
-      document.body.appendChild(modalOverlay);
-      
-      // Open modal function
-      function openModal() {
-        modalOverlay.classList.add('realta-icare-modal-show');
-        document.body.style.overflow = 'hidden'; // Prevent scrolling when modal is open
-      }
-      
-      // Close modal function
-      function closeModal() {
-        modalOverlay.classList.remove('realta-icare-modal-show');
-        document.body.style.overflow = ''; // Restore scrolling
-      }
-      
-      // Event listeners
-      footerLogo.addEventListener('click', openModal); // Make the footer logo open the modal
-      modalClose.addEventListener('click', closeModal);
-      
-      // Close modal when clicking outside
-      modalOverlay.addEventListener('click', function(event) {
-        if (event.target === modalOverlay) {
-          closeModal();
-        }
-      });
-      
-      // Close modal with Escape key
-      document.addEventListener('keydown', function(event) {
-        if (event.key === 'Escape' && modalOverlay.classList.contains('realta-icare-modal-show')) {
-          closeModal();
-        }
-      });
-    });
-  </script>
+    <!-- JavaScript for Modal Functionality -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Get modal elements
+            const footerLogo = document.querySelector('.footer-logo'); // Target the existing footer logo
+            const modalOverlay = document.querySelector('.realta-icare-modal-overlay');
+            const modalClose = document.querySelector('.realta-icare-modal-close');
+
+            // Move the modal overlay to be a direct child of the body
+            // This helps avoid stacking context issues
+            document.body.appendChild(modalOverlay);
+
+            // Open modal function
+            function openModal() {
+                modalOverlay.classList.add('realta-icare-modal-show');
+                document.body.style.overflow = 'hidden'; // Prevent scrolling when modal is open
+            }
+
+            // Close modal function
+            function closeModal() {
+                modalOverlay.classList.remove('realta-icare-modal-show');
+                document.body.style.overflow = ''; // Restore scrolling
+            }
+
+            // Event listeners
+            footerLogo.addEventListener('click', openModal); // Make the footer logo open the modal
+            modalClose.addEventListener('click', closeModal);
+
+            // Close modal when clicking outside
+            modalOverlay.addEventListener('click', function (event) {
+                if (event.target === modalOverlay) {
+                    closeModal();
+                }
+            });
+
+            // Close modal with Escape key
+            document.addEventListener('keydown', function (event) {
+                if (event.key === 'Escape' && modalOverlay.classList.contains(
+                        'realta-icare-modal-show')) {
+                    closeModal();
+                }
+            });
+        });
+    </script>
 
     <!-- <script>
         document.addEventListener('DOMContentLoaded', function () {
@@ -5352,11 +5511,11 @@
 
         slider.addEventListener('touchmove', (e) => {
             if (!isDown) return;
-            
+
             const x = e.touches[0].pageX - slider.offsetLeft;
             const walk = (x - startX);
             lastX = e.touches[0].pageX;
-            
+
             slider.scrollLeft = scrollLeft - walk;
         });
 
@@ -5380,7 +5539,7 @@
             const x = e.pageX - slider.offsetLeft;
             const walk = (x - startX);
             lastX = e.pageX;
-            
+
             slider.scrollLeft = scrollLeft - walk;
         });
 
@@ -5443,7 +5602,7 @@
                 "enabled": true,
                 "chatButtonSetting": {
                     "backgroundColor": "#00e785",
-                    "borderRadius": "25", 
+                    "borderRadius": "25",
                     "marginLeft": "0",
                     "marginRight": "25",
                     "marginBottom": "25",
@@ -5499,6 +5658,7 @@
                 height: 30px;
             }
         }
+
         .wa-widget-send-button {
             margin: 0 -10px 18px 0 !important;
             background-color: #00e785d9 !important;
@@ -5531,7 +5691,8 @@
                 </div>
                 <div class="cookie-actions">
                     <div class="cookie-links">
-                            <a href="#" class="cookie-link text-decoration-none" onclick="navigateWithLoading('tos.html#privacy'); return false;">Privacy policy</a>
+                        <a href="#" class="cookie-link text-decoration-none"
+                            onclick="navigateWithLoading('tos.html#privacy'); return false;">Privacy policy</a>
                         <a href="#" class="cookie-link text-decoration-none"
                             onclick="navigateWithLoading('tos.html#privacy'); return false;">Cookie policy</a>
                     </div>
@@ -5782,88 +5943,88 @@
                 max-width: none;
                 width: 100%;
             }
+        }
+    </style>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const COOKIE_PREFERENCES_KEY = 'cookiePreferences';
+            const CONSENT_EXPIRY_DAYS = 365;
+
+            const elements = {
+                cookieConsent: document.getElementById('cookie-consent'),
+                acceptButton: document.getElementById('accept-cookies'),
+                saveButton: document.getElementById('save-cookies'),
+                statisticalCheckbox: document.getElementById('statistical'),
+                marketingCheckbox: document.getElementById('marketing')
+            };
+
+            // Validate elements
+            for (const [key, element] of Object.entries(elements)) {
+                if (!element) {
+                    console.error(`Cookie consent: Required element "${key}" not found`);
+                    return;
+                }
             }
-        </style>
 
-        <script>
-            document.addEventListener('DOMContentLoaded', function () {
-                const COOKIE_PREFERENCES_KEY = 'cookiePreferences';
-                const CONSENT_EXPIRY_DAYS = 365;
-
-                const elements = {
-                    cookieConsent: document.getElementById('cookie-consent'),
-                    acceptButton: document.getElementById('accept-cookies'),
-                    saveButton: document.getElementById('save-cookies'),
-                    statisticalCheckbox: document.getElementById('statistical'),
-                    marketingCheckbox: document.getElementById('marketing')
-                };
-
-                // Validate elements
-                for (const [key, element] of Object.entries(elements)) {
-                    if (!element) {
-                        console.error(`Cookie consent: Required element "${key}" not found`);
-                        return;
-                    }
+            function getPreferences() {
+                try {
+                    const saved = localStorage.getItem(COOKIE_PREFERENCES_KEY);
+                    return saved ? JSON.parse(saved) : null;
+                } catch (error) {
+                    console.error('Error reading cookie preferences:', error);
+                    return null;
                 }
+            }
 
-                function getPreferences() {
-                    try {
-                        const saved = localStorage.getItem(COOKIE_PREFERENCES_KEY);
-                        return saved ? JSON.parse(saved) : null;
-                    } catch (error) {
-                        console.error('Error reading cookie preferences:', error);
-                        return null;
-                    }
+            function setPreferences(preferences) {
+                try {
+                    preferences.timestamp = new Date().toISOString();
+                    preferences.expiresAt = new Date(Date.now() + CONSENT_EXPIRY_DAYS * 24 * 60 * 60 * 1000)
+                        .toISOString();
+                    localStorage.setItem(COOKIE_PREFERENCES_KEY, JSON.stringify(preferences));
+                    return true;
+                } catch (error) {
+                    console.error('Error saving cookie preferences:', error);
+                    return false;
                 }
+            }
 
-                function setPreferences(preferences) {
-                    try {
-                        preferences.timestamp = new Date().toISOString();
-                        preferences.expiresAt = new Date(Date.now() + CONSENT_EXPIRY_DAYS * 24 * 60 * 60 * 1000)
-                            .toISOString();
-                        localStorage.setItem(COOKIE_PREFERENCES_KEY, JSON.stringify(preferences));
-                        return true;
-                    } catch (error) {
-                        console.error('Error saving cookie preferences:', error);
-                        return false;
-                    }
+            function isPreferencesExpired(preferences) {
+                if (!preferences || !preferences.expiresAt) return true;
+                try {
+                    return new Date(preferences.expiresAt) < new Date();
+                } catch (error) {
+                    console.error('Error checking preferences expiry:', error);
+                    return true;
                 }
+            }
 
-                function isPreferencesExpired(preferences) {
-                    if (!preferences || !preferences.expiresAt) return true;
-                    try {
-                        return new Date(preferences.expiresAt) < new Date();
-                    } catch (error) {
-                        console.error('Error checking preferences expiry:', error);
-                        return true;
-                    }
+            function updateAnalyticsConsent(preferences) {
+                if (typeof gtag !== 'function') return;
+
+                try {
+                    gtag('consent', 'update', {
+                        'analytics_storage': preferences.statistical ? 'granted' : 'denied',
+                        'ad_storage': preferences.marketing ? 'granted' : 'denied',
+                        'personalization_storage': preferences.marketing ? 'granted' : 'denied',
+                        'functionality_storage': 'granted' // Always allow functional
+                    });
+                } catch (error) {
+                    console.error('Error updating consent:', error);
                 }
+            }
 
-                function updateAnalyticsConsent(preferences) {
-                    if (typeof gtag !== 'function') return;
+            function setDefaultConsent() {
+                if (typeof gtag !== 'function') return;
 
-                    try {
-                        gtag('consent', 'update', {
-                            'analytics_storage': preferences.statistical ? 'granted' : 'denied',
-                            'ad_storage': preferences.marketing ? 'granted' : 'denied',
-                            'personalization_storage': preferences.marketing ? 'granted' : 'denied',
-                            'functionality_storage': 'granted' // Always allow functional
-                        });
-                    } catch (error) {
-                        console.error('Error updating consent:', error);
-                    }
-                }
-
-                function setDefaultConsent() {
-                    if (typeof gtag !== 'function') return;
-
-                    try {
-                        gtag('consent', 'default', {
-                            'analytics_storage': 'denied',
-                            'ad_storage': 'denied',
-                            'personalization_storage': 'denied',
-                            'functionality_storage': 'granted'
-                        });
+                try {
+                    gtag('consent', 'default', {
+                        'analytics_storage': 'denied',
+                        'ad_storage': 'denied',
+                        'personalization_storage': 'denied',
+                        'functionality_storage': 'granted'
+                    });
                 } catch (error) {
                     console.error('Error setting default consent:', error);
                 }
