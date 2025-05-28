@@ -61,6 +61,101 @@
 
 
     <style>
+        /* --- Typography Standards --- */
+        h2 {
+            font-size: 33px;
+        }
+
+        p {
+            font-size: 16px;
+        }
+
+        .gradient-text {
+            background: linear-gradient(287deg, #625dfa, #5ebcfa, #40777a);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .content-paragraph {
+            line-height: 1.6;
+            margin-bottom: 1rem;
+            text-align: left;
+        }
+
+        .menu-title {
+            margin-left: 33px;
+            margin-bottom: 20px;
+            font-size: 30px;
+            color: white;
+        }
+
+        .feature-image {
+            max-width: 100px;
+        }
+
+        .schedule-button {
+            max-width: 220px;
+            padding: 0.4rem 0.8rem;
+            transform: none;
+            transition: all 0.15s ease-out;
+        }
+
+        /* --- Base Convex Styles (Common properties) --- */
+        .styled-button-convex {
+            position: relative;
+            font-weight: bold;
+            color: #e0e0e0;
+            text-shadow: 0 -1px 1px rgba(0, 0, 0, 0.6);
+            cursor: pointer;
+            transition: all 0.15s ease-out;
+            /* Core convex effect with layered shadows */
+            box-shadow:
+                /* Outer edge highlight */
+                inset 0 1px 1px rgba(255, 255, 255, 0.6),
+                /* Inner edge shadow */
+                inset 0 -1px 1px rgba(0, 0, 0, 0.6),
+                /* Outer drop shadow */
+                0 2px 3px rgba(0, 0, 0, 0.4);
+        }
+
+        /* Pseudo-element for the 3D rim effect */
+        .styled-button-convex::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            border-radius: inherit;
+            /* Subtle gradient overlay for depth */
+            background: linear-gradient(to bottom,
+                    rgba(255, 255, 255, 0.2) 0%,
+                    rgba(255, 255, 255, 0.05) 40%,
+                    rgba(0, 0, 0, 0.05) 60%,
+                    rgba(0, 0, 0, 0.1) 100%);
+            z-index: 1;
+            opacity: 1;
+            /* Rim gets its own subtle shadow */
+            box-shadow: inset 0 0 2px rgba(0, 0, 0, 0.3);
+            /* Keep blur for softness, adjust per button if needed */
+            filter: blur(0.5px);
+        }
+
+        /* Active/pressed state */
+        .styled-button-convex:active {
+            transform: translateY(1px);
+            box-shadow:
+                inset 0 1px 1px rgba(255, 255, 255, 0.4),
+                inset 0 -1px 1px rgba(0, 0, 0, 0.4),
+                0 1px 1px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Hover state */
+        .styled-button-convex:hover {
+            filter: brightness(1.05);
+        }
+
         .btn-outline-secondary {
             color: #ffffff !important;
             border-color: none !important;
@@ -162,15 +257,14 @@
         }
 
 
-@media (min-width: 901px) {
-  .container-fluid,
-  .container {
-    padding-left: 10rem;
-    padding-right: 10rem;
-  }
-}
+        @media (min-width: 901px) {
 
-
+            .container-fluid,
+            .container {
+                padding-left: 10rem;
+                padding-right: 10rem;
+            }
+        }
     </style>
 
     <header>
@@ -196,15 +290,15 @@
                     }
                 </style>
                 <div class="navbar-mobile-actions">
-                    <button id="darkModeToggleNav" class="btn-custom download-btn ms-1"
+                    <button id="darkModeToggleNav" class="btn-custom download-btn ms-1 styled-button-convex"
                         style="border: none; min-width: fit-content; margin-right: 0.4rem;">
                         <i class="fas fa-moon"></i>
                     </button>
                     <!-- Language switch button -->
                     <!-- Language switch dropdown -->
                     <div class="custom-dropdown">
-                        <button id="languageSwitch" class="btn-custom download-btn ms-1" type="button"
-                            style="border: none; min-width: fit-content; margin-right: 1.4rem;">
+                        <button id="languageSwitch" class="btn-custom download-btn ms-1 styled-button-convex"
+                            type="button" style="border: none; min-width: fit-content; margin-right: 1.4rem;">
                             <i class="fas fa-globe"></i>
                         </button>
                         <ul class="custom-dropdown-menu">
@@ -217,234 +311,266 @@
                         <i class="fas fa-bars" style="font-size: 1.7rem;"></i>
                     </div>
                 </div>
-           <!-- Mobile responsive navigation menu -->
-           <div class="offcanvas offcanvas-end" tabindex="-1" id="sidebar" aria-labelledby="sidebarLabel">
-            <div class="offcanvas-header">
-                <div>
-                    <h5 class="offcanvas-title" id="sidebarLabel"
-                        style="margin-left: 33px; margin-bottom: 20px; font-size: 30px; color: white;">Menu</h5>
-                </div>
-                <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas"
-                    aria-label="Close"></button>
-            </div>
-            <div class="offcanvas-body">
-                <div class="sidebar-menu">
-                    <div class="sidebar-item">
-                        <h2 style="font-size: 2.1rem;">Realta Chakradarma</h2>
-                        <hr>
-                        <h2 class="product-header" data-bs-toggle="collapse" data-bs-target="#productsSubmenu"
-                            aria-expanded="false">
-                            Solutions <i class="fas fa-chevron-right arrow-icon"></i>
-                        </h2>
-                        <div id="productsSubmenu" class="collapse">
-                            <ul class="product-list">
-                                <li>
-                                    <div class="product-header" data-bs-toggle="collapse"
-                                        data-bs-target="#gcsSubmenu" aria-expanded="false"
-                                        style="font-size: 1rem; font-weight: 400;">
-                                        Golf Course Management System<i class="fas fa-chevron-right arrow-icon"></i>
-                                    </div>
-                                    <div id="gcsSubmenu" class="collapse product-submenu">
-                                        <a href="golf-micro.html" class="discover-link" onclick="navigateWithLoading('golf-micro.html')">Discover GCS ›</a>
-                                        <h3 class="modules-heading">MODULES</h3>
-                                        <ul class="modules-list">
-                                            <li>
-                                                <strong>Membership Management</strong>
-                                                <span>Manage and track member information and activities with our integrated solution</span>
-                                            </li>
-                                            <li>
-                                                <strong>Golf Operation</strong>
-                                                <span>Streamline golf operations with our integrated system and unified platform</span>
-                                            </li>
-                                            <li>
-                                                <strong>Tournament Management</strong>
-                                                <span>Your all-in-one golf event solution and golf management system</span>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="product-header" data-bs-toggle="collapse"
-                                        data-bs-target="#hmsSubmenu" aria-expanded="false"
-                                        style="font-size: 1rem; font-weight: 400;">
-                                        Hotel Management System <i class="fas fa-chevron-right arrow-icon"></i>
-                                    </div>
-                                    <div id="hmsSubmenu" class="collapse product-submenu">
-                                        <!-- <p>Comprehensive solution for efficient hotel operations and guest
+                <!-- Mobile responsive navigation menu -->
+                <div class="offcanvas offcanvas-end" tabindex="-1" id="sidebar" aria-labelledby="sidebarLabel">
+                    <div class="offcanvas-header">
+                        <div>
+                            <h5 class="offcanvas-title menu-title" id="sidebarLabel">Menu</h5>
+                        </div>
+                        <button type="button" class="btn-close text-reset styled-button-convex"
+                            data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                    </div>
+                    <div class="offcanvas-body">
+                        <div class="sidebar-menu">
+                            <div class="sidebar-item">
+                                <h2>Realta Chakradarma</h2>
+                                <hr>
+                                <h2 class="product-header" data-bs-toggle="collapse" data-bs-target="#productsSubmenu"
+                                    aria-expanded="false">
+                                    Solutions <i class="fas fa-chevron-right arrow-icon"></i>
+                                </h2>
+                                <div id="productsSubmenu" class="collapse">
+                                    <ul class="product-list">
+                                        <li>
+                                            <div class="product-header" data-bs-toggle="collapse"
+                                                data-bs-target="#gcsSubmenu" aria-expanded="false"
+                                                style="font-size: 1rem; font-weight: 400;">
+                                                Golf Course Management System<i
+                                                    class="fas fa-chevron-right arrow-icon"></i>
+                                            </div>
+                                            <div id="gcsSubmenu" class="collapse product-submenu">
+                                                <a href="golf-micro.html" class="discover-link"
+                                                    onclick="navigateWithLoading('golf-micro.html')">Discover GCS ›</a>
+                                                <h3 class="modules-heading">MODULES</h3>
+                                                <ul class="modules-list">
+                                                    <li>
+                                                        <strong>Membership Management</strong>
+                                                        <span>Manage and track member information and activities with
+                                                            our integrated solution</span>
+                                                    </li>
+                                                    <li>
+                                                        <strong>Golf Operation</strong>
+                                                        <span>Streamline golf operations with our integrated system and
+                                                            unified platform</span>
+                                                    </li>
+                                                    <li>
+                                                        <strong>Tournament Management</strong>
+                                                        <span>Your all-in-one golf event solution and golf management
+                                                            system</span>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="product-header" data-bs-toggle="collapse"
+                                                data-bs-target="#hmsSubmenu" aria-expanded="false"
+                                                style="font-size: 1rem; font-weight: 400;">
+                                                Hotel Management System <i class="fas fa-chevron-right arrow-icon"></i>
+                                            </div>
+                                            <div id="hmsSubmenu" class="collapse product-submenu">
+                                                <!-- <p>Comprehensive solution for efficient hotel operations and guest
                                             management.</p> -->
-                                        <a href="rhapsody-micro.html" class="discover-link" onclick="navigateWithLoading('rhapsody-micro.html')">Discover HMS ›</a>
-                                        <h3 class="modules-heading">MODULES</h3>
-                                        <ul class="modules-list">
-                                            <li>
-                                                <strong>Front Office</strong>
-                                                <span>Simplify guest services and reception tasks with our optimized solution</span>
-                                            </li>
-                                            <li>
-                                                <strong>Logistic</strong>
-                                                <span>Optimize inventory and supply chain management</span>
-                                            </li>
-                                            <li>
-                                                <strong>Back Office</strong>
-                                                <span>Improve operations and financial management</span>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="product-header" data-bs-toggle="collapse"
-                                        data-bs-target="#hrSystemSubmenu" aria-expanded="false"
-                                        style="font-size: 1rem; font-weight: 400;">
-                                        HR System <i class="fas fa-chevron-right arrow-icon"></i>
-                                    </div>
-                                    <div id="hrSystemSubmenu" class="collapse product-submenu">
-                                        <!-- <p>Comprehensive human resource management solution for businesses of
+                                                <a href="rhapsody-micro.html" class="discover-link"
+                                                    onclick="navigateWithLoading('rhapsody-micro.html')">Discover HMS
+                                                    ›</a>
+                                                <h3 class="modules-heading">MODULES</h3>
+                                                <ul class="modules-list">
+                                                    <li>
+                                                        <strong>Front Office</strong>
+                                                        <span>Simplify guest services and reception tasks with our
+                                                            optimized solution</span>
+                                                    </li>
+                                                    <li>
+                                                        <strong>Logistic</strong>
+                                                        <span>Optimize inventory and supply chain management</span>
+                                                    </li>
+                                                    <li>
+                                                        <strong>Back Office</strong>
+                                                        <span>Improve operations and financial management</span>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="product-header" data-bs-toggle="collapse"
+                                                data-bs-target="#hrSystemSubmenu" aria-expanded="false"
+                                                style="font-size: 1rem; font-weight: 400;">
+                                                HR System <i class="fas fa-chevron-right arrow-icon"></i>
+                                            </div>
+                                            <div id="hrSystemSubmenu" class="collapse product-submenu">
+                                                <!-- <p>Comprehensive human resource management solution for businesses of
                                             all sizes.</p> -->
-                                        <a href="hr-micro.html" class="discover-link" onclick="navigateWithLoading('hr-micro.html')">Discover HR System ›</a>
-                                        <h3 class="modules-heading">MODULES</h3>
-                                        <ul class="modules-list">
-                                            <li>
-                                                <strong>HR Core</strong>
-                                                <span>HR Operation with our integrated solution and unified platform.</span>
-                                            </li>
-                                            <li>
-                                                <strong>HR Advance</strong>
-                                                <span>Integrate and optimize core business processes</span>
-                                            </li>
-                                            <li>
-                                                <strong>HR Mobile</strong>
-                                                <span>Empower and manage HR with our ESS app with ease.</span>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </li>
-                                 <li>
-                                    <div class="product-header" data-bs-toggle="collapse"
-                                        data-bs-target="#itsmSubmenu" aria-expanded="false"
-                                        style="font-size: 1rem; font-weight: 400;">
-                                        ITSM, ITAM & Unified Endpoint Management <i
-                                            class="fas fa-chevron-right arrow-icon"></i>
-                                    </div>
-                                    <div id="itsmSubmenu" class="collapse product-submenu">
-                                        <!-- <p>Comprehensive IT Service Management solution for streamlined IT
+                                                <a href="hr-micro.html" class="discover-link"
+                                                    onclick="navigateWithLoading('hr-micro.html')">Discover HR System
+                                                    ›</a>
+                                                <h3 class="modules-heading">MODULES</h3>
+                                                <ul class="modules-list">
+                                                    <li>
+                                                        <strong>HR Core</strong>
+                                                        <span>HR Operation with our integrated solution and unified
+                                                            platform.</span>
+                                                    </li>
+                                                    <li>
+                                                        <strong>HR Advance</strong>
+                                                        <span>Integrate and optimize core business processes</span>
+                                                    </li>
+                                                    <li>
+                                                        <strong>HR Mobile</strong>
+                                                        <span>Empower and manage HR with our ESS app with ease.</span>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="product-header" data-bs-toggle="collapse"
+                                                data-bs-target="#itsmSubmenu" aria-expanded="false"
+                                                style="font-size: 1rem; font-weight: 400;">
+                                                ITSM, ITAM & Unified Endpoint Management <i
+                                                    class="fas fa-chevron-right arrow-icon"></i>
+                                            </div>
+                                            <div id="itsmSubmenu" class="collapse product-submenu">
+                                                <!-- <p>Comprehensive IT Service Management solution for streamlined IT
                                             aoperations.</p> -->
-                                        <a href="itsm-micro.html" class="discover-link" onclick="navigateWithLoading('itsm-micro.html')">Discover ITSM, ITAM & Unified Endpoint
-                                            Management ›</a>
-                                        <h3 class="modules-heading">MODULES</h3>
-                                        <ul class="modules-list">
-                                            <li>
-                                                <strong>Service Management</strong>
-                                                <span>Streamline IT service delivery and support</span>
-                                            </li>
-                                            <li>
-                                                <strong>Asset Management</strong>
-                                                <span>Track and manage IT assets throughout their lifecycle</span>
-                                            </li>
-                                            <li>
-                                                <strong>Endpoint Management</strong>
-                                                <span>Centrally manage and secure all your endpoints</span>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="product-header" data-bs-toggle="collapse"
-                                        data-bs-target="#propertyTenantSubmenu" aria-expanded="false"
-                                        style="font-size: 1rem; font-weight: 400;">
-                                        Property and Tenant System <i class="fas fa-chevron-right arrow-icon"></i>
-                                    </div>
-                                    <div id="propertyTenantSubmenu" class="collapse product-submenu">
-                                        <!-- <p>Efficient management solution for property owners and landlords.</p> -->
-                                        <a href="#" class="discover-link" onclick="navigateWithLoading('bimasakti-micro.html')">Discover Property and Tenant System
-                                            ›</a>
-                                        <h3 class="modules-heading">MODULES</h3>
-                                        <ul class="modules-list">
-                                            <li>
-                                                <strong>Sales & Marketing</strong>
-                                                <span>Boost Your Sales with our comprehensive, integrated solution.</span>
-                                            </li>
-                                            <li>
-                                                <strong>Tenancy Management</strong>
-                                                <span>With our comprehensive, user-friendly platform.</span>
-                                            </li>
-                                            <li>
-                                                <strong>Billing Management</strong>
-                                                <span>With our efficient handling of billing and payments.</span>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </li>
-                               
-                                <li>
-                                    <div class="product-header" data-bs-toggle="collapse"
-                                        data-bs-target="#erpSubmenu" aria-expanded="false"
-                                        style="font-size: 1rem; font-weight: 400;">
-                                        Network & System Integration <i class="fas fa-chevron-right arrow-icon"></i>
-                                    </div>
-                                    <div id="erpSubmenu" class="collapse product-submenu">
-                                        <!-- <p>Integrated Enterprise Resource Planning solution for business
+                                                <a href="itsm-micro.html" class="discover-link"
+                                                    onclick="navigateWithLoading('itsm-micro.html')">Discover ITSM, ITAM
+                                                    & Unified Endpoint
+                                                    Management ›</a>
+                                                <h3 class="modules-heading">MODULES</h3>
+                                                <ul class="modules-list">
+                                                    <li>
+                                                        <strong>Service Management</strong>
+                                                        <span>Streamline IT service delivery and support</span>
+                                                    </li>
+                                                    <li>
+                                                        <strong>Asset Management</strong>
+                                                        <span>Track and manage IT assets throughout their
+                                                            lifecycle</span>
+                                                    </li>
+                                                    <li>
+                                                        <strong>Endpoint Management</strong>
+                                                        <span>Centrally manage and secure all your endpoints</span>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="product-header" data-bs-toggle="collapse"
+                                                data-bs-target="#propertyTenantSubmenu" aria-expanded="false"
+                                                style="font-size: 1rem; font-weight: 400;">
+                                                Property and Tenant System <i
+                                                    class="fas fa-chevron-right arrow-icon"></i>
+                                            </div>
+                                            <div id="propertyTenantSubmenu" class="collapse product-submenu">
+                                                <!-- <p>Efficient management solution for property owners and landlords.</p> -->
+                                                <a href="#" class="discover-link"
+                                                    onclick="navigateWithLoading('bimasakti-micro.html')">Discover
+                                                    Property and Tenant System
+                                                    ›</a>
+                                                <h3 class="modules-heading">MODULES</h3>
+                                                <ul class="modules-list">
+                                                    <li>
+                                                        <strong>Sales & Marketing</strong>
+                                                        <span>Boost Your Sales with our comprehensive, integrated
+                                                            solution.</span>
+                                                    </li>
+                                                    <li>
+                                                        <strong>Tenancy Management</strong>
+                                                        <span>With our comprehensive, user-friendly platform.</span>
+                                                    </li>
+                                                    <li>
+                                                        <strong>Billing Management</strong>
+                                                        <span>With our efficient handling of billing and
+                                                            payments.</span>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </li>
+
+                                        <li>
+                                            <div class="product-header" data-bs-toggle="collapse"
+                                                data-bs-target="#erpSubmenu" aria-expanded="false"
+                                                style="font-size: 1rem; font-weight: 400;">
+                                                Network & System Integration <i
+                                                    class="fas fa-chevron-right arrow-icon"></i>
+                                            </div>
+                                            <div id="erpSubmenu" class="collapse product-submenu">
+                                                <!-- <p>Integrated Enterprise Resource Planning solution for business
                                             management.</p> -->
-                                        <a href="#" class="discover-link" onclick="navigateWithLoading('realnet-micro.html')">Discover Network & System Integration ›</a>
-                                        <h3 class="modules-heading">MODULES</h3>
-                                        <ul class="modules-list">
-                                            <li>
-                                                <strong>Hardware & Software</strong>
-                                                <span>Comprehensive solutions for selecting, deploying, and managing IT hardware and software tailored to your business needs</span>
-                                            </li>
-                                            <li>
-                                                <strong>Network</strong>
-                                                <span>Robust network solutions designed to ensure seamless connectivity, performance, and security across your entire business ecosystem</span>
-                                            </li>
-                                            <li>
-                                                <strong>Cloud Infrastructure</strong>
-                                                <span>Scalable cloud solutions that provide secure and flexible environments for hosting and managing your applications and data</span>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </li>
-                            </ul>
+                                                <a href="#" class="discover-link"
+                                                    onclick="navigateWithLoading('realnet-micro.html')">Discover Network
+                                                    & System Integration ›</a>
+                                                <h3 class="modules-heading">MODULES</h3>
+                                                <ul class="modules-list">
+                                                    <li>
+                                                        <strong>Hardware & Software</strong>
+                                                        <span>Comprehensive solutions for selecting, deploying, and
+                                                            managing IT hardware and software tailored to your business
+                                                            needs</span>
+                                                    </li>
+                                                    <li>
+                                                        <strong>Network</strong>
+                                                        <span>Robust network solutions designed to ensure seamless
+                                                            connectivity, performance, and security across your entire
+                                                            business ecosystem</span>
+                                                    </li>
+                                                    <li>
+                                                        <strong>Cloud Infrastructure</strong>
+                                                        <span>Scalable cloud solutions that provide secure and flexible
+                                                            environments for hosting and managing your applications and
+                                                            data</span>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="sidebar-item">
+                                <h2 class="product-header">
+                                    <a href="#" onclick="navigateWithLoading('hospitality.html'); return false;"
+                                        style="text-decoration: none; color: inherit;">Industry</a>
+                                </h2>
+                            </div>
+                            <div class="sidebar-item">
+                                <h2 class="product-header">
+                                    <a href="#" onclick="navigateWithLoading('partners.html'); return false;"
+                                        style="text-decoration: none; color: inherit;">Partners</a>
+                                </h2>
+                            </div>
+                            <div class="sidebar-item">
+                                <h2 class="product-header">
+                                    <a href="#" onclick="navigateWithLoading('contacts.html'); return false;"
+                                        style="text-decoration: none; color: inherit;">Contact</a>
+                                </h2>
+                            </div>
+                            <div class="sidebar-item">
+                                <h2 class="product-header">
+                                    <a href="#" onclick="navigateWithLoading('career.html'); return false;"
+                                        style="text-decoration: none; color: inherit;">Career</a>
+                                </h2>
+                            </div>
+
+                            <div class="sidebar-item">
+                                <h2 class="product-header">
+                                    <a href="#" onclick="navigateWithLoading('blog.html'); return false;"
+                                        style="text-decoration: none; color: inherit;">Blog</a>
+                                </h2>
+                            </div>
+                            <div class="sidebar-item">
+                                <h2 class="product-header">
+                                    <a href="#" onclick="navigateWithLoading('about.html'); return false;"
+                                        style="text-decoration: none; color: inherit;">About Us</a>
+                                </h2>
+                            </div>
+                        </div>
+                        <div class="get-started-container" style="margin-top: -10px !important;">
+                            <!-- Adjusted margin-top to move slightly to the top -->
+
+
                         </div>
                     </div>
-                    <div class="sidebar-item">
-                        <h2 class="product-header">
-                            <a href="#" onclick="navigateWithLoading('hospitality.html'); return false;"style="text-decoration: none; color: inherit;">Industry</a>
-                        </h2>
-                    </div>
-                    <div class="sidebar-item">
-                        <h2 class="product-header">
-                            <a href="#" onclick="navigateWithLoading('partners.html'); return false;" style="text-decoration: none; color: inherit;">Partners</a>
-                        </h2>
-                    </div>
-                    <div class="sidebar-item">
-                        <h2 class="product-header">
-                            <a href="#" onclick="navigateWithLoading('contacts.html'); return false;" style="text-decoration: none; color: inherit;">Contact</a>
-                        </h2>
-                    </div>
-                    <div class="sidebar-item">
-                        <h2 class="product-header">
-                            <a href="#" onclick="navigateWithLoading('career.html'); return false;" style="text-decoration: none; color: inherit;">Career</a>
-                        </h2>
-                    </div>
-                    
-                    <div class="sidebar-item">
-                        <h2 class="product-header">
-                            <a href="#" onclick="navigateWithLoading('blog.html'); return false;"
-                                style="text-decoration: none; color: inherit;">Blog</a>
-                        </h2>
-                    </div>
-                    <div class="sidebar-item">
-                        <h2 class="product-header">
-                            <a href="#" onclick="navigateWithLoading('about.html'); return false;" style="text-decoration: none; color: inherit;">About Us</a>
-                        </h2>
-                    </div>
                 </div>
-                <div class="get-started-container" style="margin-top: -10px !important;">
-                    <!-- Adjusted margin-top to move slightly to the top -->
 
-                 
-                    </div>
-                </div>
-            </div>
-   
 
                 <style>
                     @media (min-width: 992px) {
@@ -539,28 +665,29 @@
                             }
                         }
                     </style>
-                      <style>
-                    .nav-link.active {
-                        color: #8454d0 !important; /* Using the green color from your theme */
-                        font-weight: 600;
-                        position: relative;
-                    }
+                    <style>
+                        .nav-link.active {
+                            color: #8454d0 !important;
+                            /* Using the green color from your theme */
+                            font-weight: 600;
+                            position: relative;
+                        }
 
-                    .nav-link.active::after {
-                        content: '';
-                        position: absolute;
-                        bottom: -2px;
-                        left: 0;
-                        width: 100%;
-                        height: 2px;
-                        background-color: #8454d0;
-                    }
+                        .nav-link.active::after {
+                            content: '';
+                            position: absolute;
+                            bottom: -2px;
+                            left: 0;
+                            width: 100%;
+                            height: 2px;
+                            background-color: #8454d0;
+                        }
 
-                    /* For dropdown toggle when active */
-                    .nav-link.dropdown-toggle.active {
-                        color: #8454d0 !important;
-                    }
-                </style>
+                        /* For dropdown toggle when active */
+                        .nav-link.dropdown-toggle.active {
+                            color: #8454d0 !important;
+                        }
+                    </style>
                     <ul class="sidebar-nav justify-content-end align-items-center"
                         style="padding: 0; margin: 0; margin-top: 8px; list-style-type: none;">
                         <!-- Solutions dropdown -->
@@ -605,7 +732,7 @@
                     </ul>
                     <div class="sidebar-actions d-flex justify-content-end align-items-center"
                         style="margin-bottom: 0.5rem;">
-                      
+
                         <button id="darkModeToggleSidebar" class="btn-custom ms-2">
                             <i class="fas fa-moon"></i>
                         </button>
@@ -627,16 +754,18 @@
                     <div class="product-categories">
                         <a href="golf-micro.html" class="product-category" data-product="gcs"
                             onclick="navigateWithLoading('golf-micro.html')">Golf Course System</a>
-                        <a href="hr-micro.html" class="product-category" data-product="hrs" onclick="navigateWithLoading('hr-micro.html')">HR
+                        <a href="hr-micro.html" class="product-category" data-product="hrs"
+                            onclick="navigateWithLoading('hr-micro.html')">HR
                             System</a>
                         <a href="rhapsody-micro.html" class="product-category" data-product="hms"
                             onclick="navigateWithLoading('rhapsody-micro.html')">Hotel Management System</a>
                         <a href="itsm-micro.html" class="product-category" data-product="itm"
-                            onclick="navigateWithLoading('itsm-micro.html')">ITSM, ITAM & Unified Endpoint Management</a>
-                        <a href="bimasakti-micro.html" class="product-category" data-product="pts"
-                            onclick="navigateWithLoading('bimasakti-micro.html')">Property & Tenancy System</a>
+                            onclick="navigateWithLoading('itsm-micro.html')">ITSM, ITAM & Unified Endpoint
+                            Management</a>
                         <a href="realnet-micro.html" class="product-category" data-product="erp"
                             onclick="navigateWithLoading('realnet-micro.html')">Network & System Integration</a>
+                        <a href="bimasakti-micro.html" class="product-category" data-product="pts"
+                            onclick="navigateWithLoading('bimasakti-micro.html')">Property & Tenancy System</a>
                         <div
                             style="background: linear-gradient(90deg, transparent 0%, rgba(133, 22, 188, 0.582) 50%, transparent 100%); height: 1px; margin: 10px 0; pointer-events: none;">
                         </div>
@@ -705,7 +834,7 @@
             </div>
         </nav>
 
-   
+
         <style>
             /* Base announcement bar */
             .top-announcement-bar {
@@ -858,16 +987,16 @@
                 </ul>
             </div>
         </nav>
-        
+
         <style>
             .navbar-nav {
                 justify-content: flex-end;
             }
-        
+
             .nav-item {
                 padding: 0px;
             }
-        
+
             .secondary-navbar .dropdown-menu {
                 background: rgba(255, 255, 255, 0.95);
                 backdrop-filter: blur(10px);
@@ -876,18 +1005,18 @@
                 padding-top: 0px;
                 padding-bottom: 0px;
             }
-        
+
             .secondary-navbar .dropdown-item {
                 font-size: 0.9rem;
                 padding: 0.5rem 1rem;
                 transition: color 0.3s ease;
             }
-        
+
             .secondary-navbar .dropdown-item:hover {
                 color: #9054d0;
                 background-color: rgba(144, 84, 208, 0.1);
             }
-        
+
             .secondary-navbar {
                 position: fixed;
                 top: 66px;
@@ -902,12 +1031,12 @@
                 transition: all 0.3s ease;
                 padding: 0;
             }
-        
+
             .secondary-navbar .container-fluid {
                 padding-right: 10rem;
                 height: 100%;
             }
-        
+
             .secondary-nav {
                 display: flex;
                 align-items: center;
@@ -915,7 +1044,7 @@
                 margin: 40px;
                 padding: 0;
             }
-        
+
             .secondary-navbar .nav-link {
                 font-size: 0.9rem;
                 padding: 0.5rem 1rem;
@@ -925,38 +1054,38 @@
                 display: flex;
                 align-items: center;
             }
-        
+
             .secondary-navbar .nav-link:hover {
                 color: #9054d0;
             }
-        
+
             .secondary-navbar .nav-link.active {
                 color: #9054d0;
                 font-weight: 600;
             }
-        
+
             /* Dark mode styles */
             body.dark-mode .secondary-navbar {
                 background: rgba(33, 33, 33, 0.95);
                 border-bottom: 1px solid rgba(255, 255, 255, 0.1);
             }
-        
+
             body.dark-mode .secondary-navbar .nav-link {
                 color: #fff;
             }
-        
+
             body.dark-mode .secondary-navbar .nav-link:hover,
             body.dark-mode .secondary-navbar .nav-link.active {
                 color: #bb86fc;
             }
-        
+
             /* Mobile styles */
             @media (max-width: 991px) {
                 .secondary-navbar {
                     display: none;
                 }
             }
-        
+
             @media (max-width: 1200px) {
                 .secondary-navbar .container-fluid {
                     padding-right: 2rem;
@@ -973,7 +1102,8 @@
 
 <body>
     <!-- ADD WHATSAPP FLOATING BUTTON -->
-    <a href="https://api.whatsapp.com/send?phone=628111221789&text=Hallo%20PT%20Realta..." target="_blank" rel="noopener noreferrer" class="whatsapp-float">
+    <a href="https://api.whatsapp.com/send?phone=628111221789&text=Hallo%20PT%20Realta..." target="_blank"
+        rel="noopener noreferrer" class="whatsapp-float">
         <i class="fab fa-whatsapp"></i>
         <div class="text-content">
             <span class="click-text">Click here</span>
@@ -1077,14 +1207,17 @@
     <section class="carousel-header">
         <div id="headerCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="5000">
             <div class="carousel-inner">
-                <div class="carousel-item active" style="background-image: url('assets/img/realnet/A_1826_1027_202104_pietro-jeng-n6B49lTx7NM-unsplash.jpg');">
+                <div class="carousel-item active"
+                    style="background-image: url('assets/img/realnet/A_1826_1027_202104_pietro-jeng-n6B49lTx7NM-unsplash.jpg');">
                     <div class="carousel-overlay"></div>
                     <div class="dot-pattern-overlay"></div>
                     <div class="carousel-container">
                         <div class="carousel-content-left">
                             <h1>RealNet Network & System Integration</h1>
                             <div class="badge">One Solution Concept</div>
-                            <p>One Solution concept, a strategic approach that skillfully blends various IT elements into a streamlined and efficient framework that is precisely tailored to each client's specific needs.</p>
+                            <p>One Solution concept, a strategic approach that skillfully blends various IT elements
+                                into a streamlined and efficient framework that is precisely tailored to each client's
+                                specific needs.</p>
                             <!-- <button class="erp-learn-btn">Learn More</button> -->
                         </div>
                         <div class="carousel-content-right">
@@ -1108,14 +1241,17 @@
                         </div>
                     </div>
                 </div>
-                <div class="carousel-item" style="background-image: url('assets/img/realnet/A_1826_1027_202104_pietro-jeng-n6B49lTx7NM-unsplash.jpg');">
+                <div class="carousel-item"
+                    style="background-image: url('assets/img/realnet/A_1826_1027_202104_pietro-jeng-n6B49lTx7NM-unsplash.jpg');">
                     <div class="carousel-overlay"></div>
                     <div class="dot-pattern-overlay"></div>
                     <div class="carousel-container">
                         <div class="carousel-content-left">
                             <h1>Comprehensive IT Solutions</h1>
                             <div class="badge">One Solution Concept</div>
-                            <p>One Solution concept, a strategic approach that skillfully blends various IT elements into a streamlined and efficient framework that is precisely tailored to each client's specific needs.</p>
+                            <p>One Solution concept, a strategic approach that skillfully blends various IT elements
+                                into a streamlined and efficient framework that is precisely tailored to each client's
+                                specific needs.</p>
                             <!-- <button class="erp-learn-btn">Discover More</button> -->
                         </div>
                         <div class="carousel-content-right">
@@ -1382,6 +1518,7 @@
             }
 
             .erp-learn-btn {
+                display: inline-block;
                 width: fit-content;
                 font-size: 1rem;
                 padding: 10px 20px;
@@ -1403,6 +1540,7 @@
             }
 
             .carousel-item.active .erp-learn-btn {
+                display: inline-block;
                 transform: translateY(0);
                 margin-top: 25px;
                 opacity: 1;
@@ -1440,6 +1578,7 @@
                 }
 
                 .erp-learn-btn {
+                    display: inline-block;
                     margin: 0 auto;
                     align-self: center;
                 }
@@ -1467,7 +1606,7 @@
         </style>
     </section>
 
-   
+
 
     <style>
         .parallax-header {
@@ -1768,12 +1907,12 @@
                 </div>
             </div>
             <!-- <div class="text-center mt-4">
-                <a href="#" class="btn custom-btn btn-lg px-4 py-3 cta-button">
+                <a href="#" class="btn custom-btn btn-lg px-4 py-3 cta-button styled-button-convex">
                     Contact Us
                 </a>
             </div> -->
             <style>
-                .custom-btn {
+                .custom-btn.styled-button-convex {
                     background-color: #9e44b4;
                     color: white;
                     border: 2px solid #9e44b4;
@@ -1838,7 +1977,7 @@
                         style="width: 80%; height: auto;">
                 </div>
                 <div class="col-md-6  text-center fade-in-right">
-                    <div class="medusa-btn mb-4">
+                    <div class="medusa-btn mb-4 styled-button-convex">
                         <span class="online-indicator"></span>
                         RealNET
                     </div>
@@ -1900,12 +2039,12 @@
                     </style>
 
                     <h2 class="mb-4 gradient-text fw-bold"
-                        style="background: linear-gradient(287deg, #e49e44, #6d488b); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">
+                        style="background: linear-gradient(287deg, #e49e44, #6d488b); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;">
                         UNIFIED IT MANAGEMENT SOFTWARE SOLUTIONS
                     </h2>
                     <div class="mb-4" style="max-width: 100%; margin: 0 auto;">
                         <!-- Paragraph 1: The Problem -->
-                        <p style="line-height: 1.6; font-size: 20px; margin-bottom: 1rem; text-align: left;">
+                        <p class="content-paragraph">
                             RealNET, a division of REALTA, excels at providing expert network, hardware, software and
                             cloud infrastructure solutions that meet the unique needs of a various of industries,
                             including real estate, hospitality and manufacturing. We pride ourselves on our innovative
@@ -1915,7 +2054,7 @@
                         </p>
 
                         <!-- Paragraph 2: Ivanti's Solution -->
-                        <p style="line-height: 1.6; font-size: 20px; margin-bottom: 1rem; text-align: left;">
+                        <p class="content-paragraph">
                             With over 40 years of technical experience and expertise in IT, consulting, and systems
                             integration, RealNET is at the forefront of technology, offering versatile IT solutions that
                             can be adapted to the diverse needs of various industries. Our commitment is firmly rooted
@@ -1924,7 +2063,7 @@
                         </p>
 
                         <!-- Paragraph 3: The Result -->
-                        <p style="line-height: 1.6; font-size: 20px; margin-bottom: 1rem; text-align: left;">
+                        <p class="content-paragraph">
                             Specializing in both on-premises and cloud infrastructure solutions, we focus on delivering
                             flexible and scalable IT solutions that optimize operational efficiency and technological
                             capabilities. Our solutions are designed to deliver maximum uptime, the best network,
@@ -1946,12 +2085,12 @@
             <div class="row align-items-center">
                 <div class="col-md-6 text-center fade-in-left">
                     <h2 class="mb-4 gradient-text fw-bold"
-                        style="background: linear-gradient(287deg, #6d488b, #e49e44); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">
+                        style="background: linear-gradient(287deg, #6d488b, #e49e44); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;">
                         WHY REALNET
                     </h2>
                     <div style="max-width: 100%; margin: 0 auto;">
                         <!-- Paragraph 1: The Challenge and Problem -->
-                        <p style="line-height: 1.6; font-size: 20px; margin-bottom: 1rem; text-align: left;">
+                        <p class="content-paragraph">
                             In the dynamic world of business, the approach to IT implementation is often oversimplified.
                             Many companies mistakenly believe that the path to an effective IT infrastructure is simply
                             to invest in high-end computers and premium software. However, the true key to a successful
@@ -1963,7 +2102,7 @@
                         </p>
 
                         <!-- Paragraph 2: RealNET's Solution -->
-                        <p style="line-height: 1.6; font-size: 20px; margin-bottom: 1rem; text-align: left;">
+                        <p class="content-paragraph">
                             RealNET stands out as a solution to these challenges. Our expertise is in creating network
                             and system installations that not only enhance software performance, but are also
                             custom-built to harmonize with your unique business landscape. At RealNET, we understand
@@ -2262,7 +2401,7 @@
         .bimasakti-title {
             grid-area: title;
             text-align: center;
-            font-size: 48px;
+            font-size: 33px;
             background: linear-gradient(90deg, #783ea8, #e49144, #783ea8);
             -webkit-background-clip: text;
             background-clip: text;
@@ -2359,13 +2498,15 @@
                         <div class="row align-items-center">
                             <div class="col-lg-8 mb-4 mb-lg-0">
                                 <h2 class="mb-3 fw-bold"
-                                    style="  background: linear-gradient(90deg, #783ea8, #e4ac44); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">
+                                    style="  background: linear-gradient(90deg, #783ea8, #e4ac44); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;">
                                     Request for Pricing, Demo or Meeting Schedule</h2>
                                 <p class="mb-0 text-muted lead">Let's discuss how RealNet can elevate your operations.
                                 </p>
                             </div>
                             <div class="col-lg-4 text-lg-end text-center">
-                                <a href="#" class="btn btn-primary btn-lg px-4 py-3 cta-button">Schedule a Demo</a>
+                                <a href="#"
+                                    class="btn btn-primary btn-lg px-4 py-3 cta-button styled-button-convex">Schedule a
+                                    Demo</a>
                             </div>
                         </div>
                     </div>
@@ -2390,12 +2531,12 @@
         }
 
         #cta h2 {
-            font-size: 2.5rem;
+            font-size: 33px;
             line-height: 1.2;
         }
 
         #cta p {
-            font-size: 1.25rem;
+            font-size: 16px;
             color: #6c757d;
         }
 
@@ -2404,7 +2545,9 @@
             border: none;
             color: #ffffff;
             font-weight: 600;
+            font-size: 16px;
             transition: all 0.3s ease;
+            border-radius: 10px;
         }
 
         #cta .cta-button:hover {
@@ -2450,18 +2593,17 @@
                     <div class="pulse-ring"></div>
                 </div>
             </div>
-
             <div class="row justify-content-center">
                 <div class="col-lg-10">
                     <!-- Testimonial Content -->
                     <div class="realnet-testimonial-container text-center p-5 mb-1 position-relative">
-                        <h2 class="mb-4 fw-bold bimasakti-title" style="font-size: 3rem; line-height: 1.2;">What They
-                            Say</h2>
+                        <h2 class="mb-4 fw-bold bimasakti-title">What They Say</h2>
                         <div class="realnet-testimonial-carousel">
                             <div class="realnet-testimonial-item">
-                                <h3 class="lead mb-4" style="font-size: 2rem; line-height: 1.2;">RealNet's solutions
+                                <h3 class="lead mb-4 testimonial-text">RealNet's solutions
                                     have transformed our IT infrastructure. Their expertise and customization
                                     capabilities are unmatched in the industry.</h3>
+                                ```
                             </div>
                         </div>
                     </div>
@@ -2515,6 +2657,7 @@
         .tech-icon-container i {
             background: linear-gradient(to right, #783ea8, #e4ac44);
             -webkit-background-clip: text;
+            background-clip: text;
             -webkit-text-fill-color: transparent;
         }
 
@@ -2756,7 +2899,8 @@
             <div class="row justify-content-center">
 
                 <div class="text-center">
-                    <h2 class="mb-2 glass-text gradient-text">
+                    <h2 class="mb-2 glass-text gradient-text"
+                        style="background: linear-gradient(287deg, #e49e44, #6d488b); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;">
                         Delivering Technology for
                         <br>
                         Leading Organizations
@@ -2898,7 +3042,7 @@
                         transition: all 0.3s ease;
                     }
 
-           
+
 
 
                     /* Large devices (desktops) */
@@ -2983,9 +3127,9 @@
                     }
                 </style>
                 <div class="col-lg-6 partners-section">
-                    <h2 class="display-4 fw-bold mb-4 bimasakti-title" style="text-align: center;">Our Partners</h2>
+                    <h2 class="display-4 fw-bold mb-4 bimasakti-title text-center">Our Partners</h2>
                     <p class="lead mb-3"
-                        style="max-width: 90%; font-size: 20px; text-align: left; margin-left: auto; margin-right: auto;">
+                        style="max-width: 90%; font-size: 16px; text-align: left; margin-left: auto; margin-right: auto;">
                         RealNET's strategic partnerships
                         empower us to deliver comprehensive ONE SOLUTION business implementations. By leveraging our
                         partners' expertise, we provide seamless integration and unparalleled value to our customers
@@ -2994,20 +3138,7 @@
                 <div class="col-lg-6  mt-lg-0">
 
                     <div class="online-indicator-container">
-                        <div class="online-status">
-                            <svg class="cable-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                                <defs>
-                                    <linearGradient id="cableGradient" x1="0%" y1="0%" x2="100%" y2="0%">
-                                        <stop offset="0%" style="stop-color:#783ea8;stop-opacity:1" />
-                                        <stop offset="100%" style="stop-color:#e4ac44;stop-opacity:1" />
-                                    </linearGradient>
-                                </defs>
-                                <path
-                                    d="M20 5V4c0-.55-.45-1-1-1h-2c-.55 0-1 .45-1 1v1h-1v4c0 .55.45 1 1 1h1v7c0 1.1-.9 2-2 2s-2-.9-2-2V7c0-2.21-1.79-4-4-4S5 4.79 5 7v7H4c-.55 0-1 .45-1 1v4h1v1c0 .55.45 1 1 1h2c.55 0 1-.45 1-1v-1h1v-4c0-.55-.45-1-1-1H7V7c0-1.1.9-2 2-2s2 .9 2 2v10c0 2.21 1.79 4 4 4s4-1.79 4-4v-7h1c.55 0 1-.45 1-1V5h-1z"
-                                    fill="url(#cableGradient)" />
-                            </svg>
-                            <span class="online-text">Structured Cabling</span>
-                        </div>
+
                     </div>
                     <div class="integration-grid">
                         <img src="assets/img/realnet/logo/commscope.png" alt="Commscope" class="integration-icon">
@@ -3034,7 +3165,7 @@
             display: grid;
             grid-template-columns: repeat(3, 1fr);
             grid-template-rows: auto auto;
-            gap: 2rem;
+            gap: 0.5rem;
             justify-content: center;
             align-items: center;
         }
@@ -3234,7 +3365,7 @@
                     <div class="row justify-content-center align-items-center">
                         <h3 class="mb-4 mt-5 bimasakti-title" style="text-align: center;">Hardware & Network Solutions
                         </h3>
-                        <p style="text-align: end; width: 90%; font-size: 20px">At RealNET, our comprehensive hardware
+                        <p class="content-paragraph text-end" style="width: 90%;">At RealNET, our comprehensive hardware
                             and network solutions cater to businesses
                             of all sizes, providing robust infrastructure for modern digital environments. We offer a
                             wide range of products and services
@@ -3242,21 +3373,7 @@
                     </div>
                 </div>
                 <div class="col-lg-6 order-lg-1">
-                    <div class="online-indicator-container">
-                        <div class="online-status">
-                            <svg class="wireless-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                                <path
-                                    d="M1 9l2 2c4.97-4.97 13.03-4.97 18 0l2-2C16.93 2.93 7.08 2.93 1 9zm8 8l3 3 3-3c-1.65-1.66-4.34-1.66-6 0zm-4-4l2 2c2.76-2.76 7.24-2.76 10 0l2-2C15.14 9.14 8.87 9.14 5 13z"
-                                    fill="url(#wireless-gradient)" />
-                                <defs>
-                                    <linearGradient id="wireless-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                                        <stop offset="0%" style="stop-color:#783ea8;stop-opacity:1" />
-                                        <stop offset="100%" style="stop-color:#e4ac44;stop-opacity:1" />
-                                    </linearGradient>
-                                </defs>
-                                <span class="online-text">Wireless Networking</span>
-                        </div>
-                    </div>
+
                     <div class="integration-grid">
                         <img src="assets/img/realnet/logo/aruba.png" alt="Aruba" class="integration-icon">
                         <img src="assets/img/realnet/logo/apc.png" alt="Cisco" class="integration-icon">
@@ -3297,7 +3414,7 @@
             <div class="row align-items-center">
                 <div class="col-lg-6 description-section">
                     <h3 class="mb-4 mt-5 bimasakti-title" style="text-align: center">Data Center Solutions</h3>
-                    <p class="lead mb-3" style="max-width: 90%; font-size: 20px;">
+                    <p class="lead mb-3" style="max-width: 90%; font-size: 16px;">
                         At RealNET, we specialize in cutting-edge data center solutions. Our comprehensive services
                         encompass design, implementation, and management of state-of-the-art data centers. We offer
                         scalable infrastructure, efficient cooling systems, and advanced power management to ensure
@@ -3305,25 +3422,7 @@
                     </p>
                 </div>
                 <div class="col-lg-6 mt-lg-0">
-                    <div class="online-indicator-container">
-                        <div class="online-status">
-                            <svg class="data-center-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
-                                width="24" height="24">
-                                <defs>
-                                    <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="100%">
-                                        <stop offset="0%" style="stop-color:#783ea8;stop-opacity:1" />
-                                        <stop offset="100%" style="stop-color:#e4ac44;stop-opacity:1" />
-                                    </linearGradient>
-                                </defs>
-                                <path fill="url(#grad1)"
-                                    d="M4 1h16a1 1 0 0 1 1 1v4a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1zm0 8h16a1 1 0 0 1 1 1v4a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1v-4a1 1 0 0 1 1-1zm0 8h16a1 1 0 0 1 1 1v4a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1v-4a1 1 0 0 1 1-1z" />
-                                <circle cx="7" cy="4" r="1" fill="#fff" />
-                                <circle cx="7" cy="12" r="1" fill="#fff" />
-                                <circle cx="7" cy="20" r="1" fill="#fff" />
-                            </svg>
-                            <span class="online-text">Data Center</span>
-                        </div>
-                    </div>
+
                     <div class="integration-grid">
                         <img src="assets/img/realnet/logo/aten_logo.png" alt="Fortinet" class="integration-icon">
                         <img src="assets/img/realnet/logo/dtc.png" alt="Cisco" class="integration-icon">
@@ -3388,29 +3487,14 @@
                 <div class="col-lg-6 order-lg-2">
                     <div class="row justify-content-center align-items-center">
                         <h3 class="mb-4 mt-5 bimasakti-title" style="text-align: center;">License Solutions</h3>
-                        <p style="text-align: right; width: 90%; font-size: 20px">At RealNET, we offer comprehensive
+                        <p class="content-paragraph text-end" style="width: 90%;">At RealNET, we offer comprehensive
                             licensing solutions to meet the software needs of businesses of all sizes. Our partnerships
                             with industry-leading brands ensure you have access to the latest and most efficient
                             software licenses, optimizing your digital infrastructure and ensuring compliance.</p>
                     </div>
                 </div>
                 <div class="col-lg-6 order-lg-1">
-                    <div class="online-indicator-container">
-                        <div class="online-status">
-                            <svg class="wireless-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                                <path
-                                    d="M20 3H4c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H4V5h16v14zm-10-7h9v2h-9v-2zm0-4h9v2h-9V8zm-3 0h2v2H7V8zm0 4h2v2H7v-2zm0 4h2v2H7v-2z"
-                                    fill="url(#license-gradient)" />
-                                <defs>
-                                    <linearGradient id="license-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                                        <stop offset="0%" style="stop-color:#783ea8;stop-opacity:1" />
-                                        <stop offset="100%" style="stop-color:#e4ac44;stop-opacity:1" />
-                                    </linearGradient>
-                                </defs>
-                            </svg>
-                            <span class="online-text">License </span>
-                        </div>
-                    </div>
+
                     <div class="integration-grid">
                         <div class="centered-icons">
                             <img src="assets/img/realnet/logo/mirosoft-partner.png" alt="Aruba"
@@ -3432,29 +3516,15 @@
             <div class="row justify-content-center text-center mb-5">
                 <div class="col-lg-8">
                     <h3 class="mb-4 bimasakti-title">Cloud Infrastructure Solutions</h3>
-                    <p style="font-size: 20px">At RealNET, we offer cutting-edge cloud infrastructure solutions to power
+                    <p class="content-paragraph">At RealNET, we offer cutting-edge cloud infrastructure solutions to
+                        power
                         your business. Our scalable and flexible cloud services enable you to optimize operations,
                         enhance collaboration, and drive innovation while reducing IT costs and complexity.</p>
                 </div>
             </div>
 
             <!-- Grid of Partners -->
-            <div class="online-indicator-container">
-                <div class="online-status">
-                    <svg class="wireless-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                        <path
-                            d="M19.35 10.04C18.67 6.59 15.64 4 12 4 9.11 4 6.6 5.64 5.35 8.04 2.34 8.36 0 10.91 0 14c0 3.31 2.69 6 6 6h13c2.76 0 5-2.24 5-5 0-2.64-2.05-4.78-4.65-4.96zM19 18H6c-2.21 0-4-1.79-4-4s1.79-4 4-4h.71C7.37 7.69 9.48 6 12 6c3.04 0 5.5 2.46 5.5 5.5v.5H19c1.66 0 3 1.34 3 3s-1.34 3-3 3z"
-                            fill="url(#cloud-gradient)" />
-                        <defs>
-                            <linearGradient id="cloud-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                                <stop offset="0%" style="stop-color:#783ea8;stop-opacity:1" />
-                                <stop offset="100%" style="stop-color:#e4ac44;stop-opacity:1" />
-                            </linearGradient>
-                        </defs>
-                    </svg>
-                    <span class="online-text">Cloud Infrastructure</span>
-                </div>
-            </div>
+
             <div class="integration-grid mt-4 d-flex justify-content-center">
                 <div class="row justify-content-center">
                     <div class="col-md-4 col-sm-6 text-center mb-4">
@@ -3502,11 +3572,12 @@
     </style>
 
 
-    <section class="rt-testimonial-section py-5">
+    <section class="rt-testimonial-section py-5" style="display: none;">
         <div class="container-fluid">
             <div class="rt-testimonial-container position-relative" style="max-width: 1000px; margin: 0 auto;">
                 <div class="text-center mb-5">
-                    <h1 class="gradient-text bimasakti-title" style="font-weight: bolder; font-size: 48px;">Testimonials</h1>
+                    <h1 class="gradient-text bimasakti-title" style="font-weight: bolder; font-size: 48px;">Testimonials
+                    </h1>
                     <p class="" style="font-weight: bold;">Stay informed and inspired with our testimonials from clients
                         who have experienced our services firsthand.</p>
                 </div>
@@ -3521,7 +3592,8 @@
                                 <div class="rt-content-section">
                                     <div class="rt-quote-wrapper">
                                         <blockquote class="rt-testimonial-text">
-                                            <i class="fas fa-quote-left" style="color: #9054d0; margin-right: 10px;"></i>
+                                            <i class="fas fa-quote-left"
+                                                style="color: #9054d0; margin-right: 10px;"></i>
                                             PT Realta Chakradrama has transformed our IT infrastructure completely.
                                             Their solutions are cutting-edge and their team's expertise in implementing
                                             enterprise systems is outstanding. They've helped us achieve operational
@@ -3550,7 +3622,8 @@
                                 <div class="rt-content-section">
                                     <div class="rt-quote-wrapper">
                                         <blockquote class="rt-testimonial-text">
-                                            <i class="fas fa-quote-left" style="color: #9054d0; margin-right: 10px;"></i>
+                                            <i class="fas fa-quote-left"
+                                                style="color: #9054d0; margin-right: 10px;"></i>
                                             Working with PT Realta Chakradrama has been a game-changer for our business.
                                             Their IT solutions have streamlined our processes and their support team is
                                             always responsive. We've seen significant improvements in efficiency since
@@ -3584,7 +3657,8 @@
                                 <div class="rt-content-section">
                                     <div class="rt-quote-wrapper">
                                         <blockquote class="rt-testimonial-text">
-                                            <i class="fas fa-quote-left" style="color: #9054d0; margin-right: 10px;"></i>
+                                            <i class="fas fa-quote-left"
+                                                style="color: #9054d0; margin-right: 10px;"></i>
                                             PT Realta Chakradrama's commitment to delivering innovative IT solutions is
                                             unmatched. Their deep understanding of business needs and technical
                                             expertise has helped us modernize our entire digital infrastructure. They're
@@ -3619,11 +3693,11 @@
 
                     <!-- Pagination Dots with Navigation Arrows -->
                     <div class="rt-pagination" id="rt-pagination">
-                        <button class="rt-nav-btn rt-prev" id="rt-prev">
+                        <button class="rt-nav-btn rt-prev styled-button-convex" id="rt-prev">
                             <i class="fas fa-chevron-left"></i>
                         </button>
                         <!-- Dots will be inserted here by JavaScript -->
-                        <button class="rt-nav-btn rt-next" id="rt-next">
+                        <button class="rt-nav-btn rt-next styled-button-convex" id="rt-next">
                             <i class="fas fa-chevron-right"></i>
                         </button>
                     </div>
@@ -3654,14 +3728,16 @@
             transition: transform 0.5s ease-in-out;
             gap: 50px;
             justify-content: center;
-            align-items: stretch; /* Changed to stretch to maintain equal heights */
+            align-items: stretch;
+            /* Changed to stretch to maintain equal heights */
         }
 
         .rt-testimonial-card {
             min-width: 100%;
             padding: 0 5px;
             box-sizing: border-box;
-            display: flex; /* Added flex display */
+            display: flex;
+            /* Added flex display */
         }
 
         .rt-testimonial-inner {
@@ -3672,8 +3748,10 @@
             flex-direction: column;
             border: 1px solid #e0e0e0;
             transition: box-shadow 0.3s ease;
-            width: 100%; /* Ensure full width */
-            height: 600px; /* Fixed height for consistency */
+            width: 100%;
+            /* Ensure full width */
+            height: 600px;
+            /* Fixed height for consistency */
         }
 
         .rt-testimonial-inner:hover {
@@ -3682,10 +3760,12 @@
 
         .rt-image-section {
             width: 100%;
-            height: 195px; /* Fixed height */
+            height: 195px;
+            /* Fixed height */
             position: relative;
             overflow: hidden;
-            flex: 0 0 auto; /* Prevent image section from growing/shrinking */
+            flex: 0 0 auto;
+            /* Prevent image section from growing/shrinking */
         }
 
         .rt-image-section img {
@@ -3708,8 +3788,10 @@
         }
 
         .rt-quote-wrapper {
-            flex: 1; /* Allow quote wrapper to take remaining space */
-            overflow: hidden; /* Hide overflow content */
+            flex: 1;
+            /* Allow quote wrapper to take remaining space */
+            overflow: hidden;
+            /* Hide overflow content */
             position: relative;
             margin-bottom: 20px;
         }
@@ -3724,7 +3806,8 @@
             position: relative;
             text-align: left;
             display: -webkit-box;
-            -webkit-line-clamp: 8; /* Limit to 8 lines */
+            -webkit-line-clamp: 8;
+            /* Limit to 8 lines */
             -webkit-box-orient: vertical;
             overflow: hidden;
             text-overflow: ellipsis;
@@ -3737,8 +3820,10 @@
             display: flex;
             justify-content: space-between;
             align-items: flex-end;
-            margin-top: auto; /* Push to bottom */
-            flex: 0 0 auto; /* Prevent growing/shrinking */
+            margin-top: auto;
+            /* Push to bottom */
+            flex: 0 0 auto;
+            /* Prevent growing/shrinking */
         }
 
         .rt-author-details {
@@ -3943,6 +4028,7 @@
                 width: clamp(32px, 8vw, 40px);
                 height: clamp(32px, 8vw, 40px);
             }
+
             .play-button i {
                 font-size: clamp(14px, 4vw, 16px);
             }
@@ -3976,7 +4062,6 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            box-shadow: 0 4px 15px rgba(144, 84, 208, 0.2);
             z-index: 2;
         }
 
@@ -4431,9 +4516,10 @@
                         <div class="banner-content">
                             <h2>Unlock superior coverage for your team</h2>
                             <p>Build a culture of employee delight by taking the first step towards Benefits</p>
-                            <button class="btn-custom" onclick="navigateWithLoading('contacts.html'); return false;"
-                                style="background: linear-gradient(to bottom, #9054d0, #7a4bd7);">Schedule a
-                                call</button>
+                            <button class="btn-custom styled-button-convex"
+                                onclick="navigateWithLoading('contacts.html'); return false;">
+                                Schedule a Call
+                            </button>
                         </div>
                         <img src="assets/img/handshake.png" alt="Business Handshake" class="banner-image">
                     </div>
@@ -4447,7 +4533,8 @@
             <div class="row justify-content-between">
                 <div id="contact-info" class="col-lg-5 left-column >
 
-                    <p class="text-muted mb-4 contact-text" ></p>
+                    <p class=" text-muted mb-4 contact-text">
+                    </p>
 
                     <div class="company-info" style="border-radius: 10px;">
                         <h3 class="h5 fw-bold mb-3 company-name custom-text"
@@ -4464,7 +4551,7 @@
                             </p>
                         </div>
 
-                      
+
                     </div>
                     <style>
                         /* Remove the media query and adjust the selectors */
@@ -4511,22 +4598,25 @@
                                 margin-top: 3px;
                             }
                         </style>
-                    <div class="contact-item">
-                        <i class="fas fa-phone contact-icon"></i>
-                        <a href="tel:+62213861772" class="text-decoration-none fw-bold">+62 21 - 386 1772</a>
-                    </div>
-                    <div class="contact-item">
-                        <i class="fas fa-envelope contact-icon"></i>
-                        <a href="mailto:info@realta.co.id" class="text-decoration-none fw-bold">info@realta.co.id</a>
-                    </div>
-                    <div class="contact-item">
-                        <img src="/Assets/assets/pngwing.com.png" class="contact-icon" style="width: 18px; height: 18px;">
-                        <p class="mb-0">
-                            For sales and marketing, contact our Official WhatsApp:<br>
-                            <a href="https://wa.me/628111221789" class="text-decoration-none fw-bold" target="_blank" rel="noopener noreferrer"
-                                style="color: #3bc05a;">+62 811 1221 789 (Chat Only)</a>
-                        </p>
-                    </div>
+                        <div class="contact-item">
+                            <i class="fas fa-phone contact-icon"></i>
+                            <a href="tel:+62213861772" class="text-decoration-none fw-bold">+62 21 - 386 1772</a>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-envelope contact-icon"></i>
+                            <a href="mailto:info@realta.co.id"
+                                class="text-decoration-none fw-bold">info@realta.co.id</a>
+                        </div>
+                        <div class="contact-item">
+                            <img src="/Assets/assets/pngwing.com.png" class="contact-icon"
+                                style="width: 18px; height: 18px;">
+                            <p class="mb-0">
+                                For sales and marketing, contact our Official WhatsApp:<br>
+                                <a href="https://wa.me/628111221789" class="text-decoration-none fw-bold"
+                                    target="_blank" rel="noopener noreferrer" style="color: #3bc05a;">+62 811 1221 789
+                                    (Chat Only)</a>
+                            </p>
+                        </div>
                     </div>
 
 
@@ -4534,24 +4624,24 @@
                         <h4 class="mb-3" style="font-size: 0.9rem; text-align: left; margin-left: 10px;"> Connect With
                             Us Through Social Media</h4>
                         <div class="social-icons d-flex gap-3">
-                            <a href="https://www.facebook.com/realtachakradarma/" class="social-icon" aria-label="Facebook" target="_blank"
-                                rel="noopener noreferrer">
+                            <a href="https://www.facebook.com/realtachakradarma/" class="social-icon"
+                                aria-label="Facebook" target="_blank" rel="noopener noreferrer">
                                 <i class="fab fa-facebook-f"></i>
                             </a>
-                            <a href="https://id.linkedin.com/company/pt-realta-chakradarma/" class="social-icon" aria-label="LinkedIn"
-                                target="_blank" rel="noopener noreferrer">
+                            <a href="https://id.linkedin.com/company/pt-realta-chakradarma/" class="social-icon"
+                                aria-label="LinkedIn" target="_blank" rel="noopener noreferrer">
                                 <i class="fab fa-linkedin-in"></i>
                             </a>
-                            <a href="https://x.com/Realta_OneSol" class="social-icon" aria-label="Twitter" target="_blank"
-                                rel="noopener noreferrer">
+                            <a href="https://x.com/Realta_OneSol" class="social-icon" aria-label="Twitter"
+                                target="_blank" rel="noopener noreferrer">
                                 <i class="fab fa-x-twitter"></i>
                             </a>
-                            <a href="https://www.instagram.com/realta.id/" class="social-icon" aria-label="Instagram" target="_blank"
-                                rel="noopener noreferrer">
+                            <a href="https://www.instagram.com/realta.id/" class="social-icon" aria-label="Instagram"
+                                target="_blank" rel="noopener noreferrer">
                                 <i class="fab fa-instagram"></i>
                             </a>
-                            <a href="https://www.youtube.com/@ptrealtachakradarma3127" class="social-icon" aria-label="YouTube" target="_blank"
-                                rel="noopener noreferrer">
+                            <a href="https://www.youtube.com/@ptrealtachakradarma3127" class="social-icon"
+                                aria-label="YouTube" target="_blank" rel="noopener noreferrer">
                                 <i class="fab fa-youtube"></i>
                             </a>
                         </div>
@@ -4662,13 +4752,15 @@
                         <div class="mb-3 form-check ">
                             <div class="d-inline-block text-start">
                                 <input type="checkbox" class="form-check-input" id="terms" required>
-                            <label class="form-check-label" for="terms">
-                                Before submitting please read our <br>
-                                <a href="#" class="text-decoration-none" onclick="navigateWithLoading('tos.html#eula'); return false;">Term and
-                                    Condition</a> &
-                                <a href="#" class="text-decoration-none" onclick="navigateWithLoading('tos.html#privacy'); return false;">Privacy
-                                    Policy</a>
-                            </label>
+                                <label class="form-check-label" for="terms">
+                                    Before submitting please read our <br>
+                                    <a href="#" class="text-decoration-none"
+                                        onclick="navigateWithLoading('tos.html#eula'); return false;">Term and
+                                        Condition</a> &
+                                    <a href="#" class="text-decoration-none"
+                                        onclick="navigateWithLoading('tos.html#privacy'); return false;">Privacy
+                                        Policy</a>
+                                </label>
                                 <div class="invalid-feedback">
                                     You must agree to the terms and conditions.
                                 </div>
@@ -4769,134 +4861,140 @@
         }
     </style>
 
-<section id="newsletter-cta" class="py-4 mb-0">
-<section id="newsletter-cta" class="py-4 mb-0">
-    <div class="container-fluid">
-        <div class="row align-items-center">
-            <div class="col-md-7 text-start">
-                <h2 class="mb-3 fw-bold gradient-text">Stay Informed, Stay Ahead</h2>
-                <p class="mb-4">Join our newsletter for exclusive insights and expert tips.</p>
-                <form class="mb-3">
-                    <div class="input-group input-group-lg" style="max-width: 500px;">
-                        <input type="email" class="form-control" placeholder="Email address" aria-label="Email address"
-                            required style="border-radius: 10px 0 0 10px;">
-                        <button class="btn btn-primary" type="submit"
-                            style="border-radius: 0 10px 10px 0;">Subscribe</button>
+    <section id="newsletter-cta" class="py-4 mb-0">
+        <div class="container-fluid">
+            <div class="row align-items-center">
+                <div class="col-md-7 text-start">
+                    <h2 class="mb-3 fw-bold gradient-text">Stay Informed, Stay Ahead</h2>
+                    <p class="mb-4">Join our newsletter for exclusive insights and expert tips.</p>
+                    <form class="mb-3">
+                        <div class="input-group input-group-lg" style="max-width: 500px;">
+                            <input type="email" class="form-control" placeholder="Email address"
+                                aria-label="Email address" required style="border-radius: 10px 0 0 10px;">
+                            <button class="btn btn-primary" type="submit"
+                                style="border-radius: 0 10px 10px 0;">Subscribe</button>
+                        </div>
+                    </form>
+                    <p class="text-muted small">By subscribing, you agree to our <a href="#"
+                            class="text-decoration-none"
+                            onclick="window.open('tos.html#privacy', '_blank'); return false;">Privacy
+                            Policy</a> and <a href="#" class="text-decoration-none"
+                            onclick="window.open('tos.html#eula', '_blank'); return false;">Terms of Service</a></p>
+                </div>
+                <div class="col-md-5">
+                    <div class="d-flex justify-content-md-end align-items-center mb-3">
+                        <img src="assets/img/footer1.png" alt="Logo 1" class="footer-logo me-3"
+                            style="max-height: 90px; width: auto;">
+                        <img src="assets/sticker.png" alt="Logo 2" class="footer-logo dark-mode-image"
+                            style="max-height: 90px; width: auto;">
+                        <style>
+                            .dark-mode-image {
+                                content: url('assets/sticker.png');
+                            }
+
+                            body.dark-mode .dark-mode-image {
+                                content: url('assets/img/footer2.png');
+                            }
+                        </style>
                     </div>
-                </form>
-                <p class="text-muted small">By subscribing, you agree to our <a href="#" class="text-decoration-none"
-                        onclick="navigateWithLoading('tos.html#privacy'); return false;">Privacy
-                        Policy</a> and <a href="#" class="text-decoration-none"
-                        onclick="navigateWithLoading('tos.html#eula'); return false;">Terms of Service</a>.</p>
-            </div>
-            <div class="col-md-5">
-                <div class="d-flex justify-content-md-end align-items-center mb-3">
-                    <img src="assets/img/footer1.png" alt="Logo 1" class="footer-logo me-3"
-                        style="max-height: 90px; width: auto;">
-                    <img src="assets/sticker.png" alt="Logo 2" class="footer-logo dark-mode-image"
-                        style="max-height: 90px; width: auto;">
-                    <style>
-                        .dark-mode-image {
-                            content: url('assets/sticker.png');
-                        }
-
-                        body.dark-mode .dark-mode-image {
-                            content: url('assets/img/footer2.png');
-                        }
-                    </style>
+                    <div class="text-md-end">
+                        <p class="mb-2 text-muted small" style="font-size: 0.9rem;">&copy; 2025 PT. Realta Chakradarma.
+                            All
+                            rights
+                            reserved.</p>
+                        <a href="#" onclick="window.open('tos.html#privacy', '_blank'); return false;"
+                            class="text-muted small me-3" style="font-size: 0.9rem; text-decoration: underline;">Privacy
+                            Policy</a>
+                        <span class="text-muted small me-3" style="font-size: 0.9rem;">|</span>
+                        <a href="#" onclick="window.open('tos.html#eula', '_blank'); return false;"
+                            class="text-muted small" style="font-size: 0.9rem; text-decoration: underline;">Terms of
+                            Service</a>
+                    </div>
                 </div>
-                <div class="text-md-end">
-                    <p class="mb-2 text-muted small" style="font-size: 0.9rem;">&copy; 2025 PT. Realta Chakradarma. All
-                        rights
-                        reserved.</p>
-                    <a href="#" onclick="navigateWithLoading('tos.html#privacy'); return false;"
-                        class="text-muted small me-3" style="font-size: 0.9rem; text-decoration: underline;">Privacy
-                        Policy</a>
-                    <span class="text-muted small me-3" style="font-size: 0.9rem;">|</span>
-                    <a href="#" onclick="navigateWithLoading('tos.html#eula'); return false;" class="text-muted small"
-                        style="font-size: 0.9rem; text-decoration: underline;">Terms of Service</a>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Modal Overlay Structure -->
+    <div class="realta-icare-modal-overlay" id="realtaICareModal">
+        <div class="realta-icare-modal-container">
+            <div class="realta-icare-modal-header">
+                <h2 class="realta-icare-modal-title">Welcome to iCare</h2>
+                <button class="realta-icare-modal-close">&times;</button>
+            </div>
+            <div class="realta-icare-modal-body">
+                <p class="realta-icare-modal-text text-left">
+                    To care or not to care, is NEVER a question! Realta iCare, our commitment to your satisfaction!
+                    We give the very best to satisfy your needs every step of the way.
+                </p>
+
+                <div class="row justify-content-between mt-4">
+                    <div class="col-md-5 text-left mb-3">
+                        <h3 class="realta-icare-icon-title fs-5">Customer Support</h3>
+                        <a href="https://icare.cloud.co.id/HEAT" target="_blank">
+                            <img src="assets/img/icare-customer.png" alt="Customer Support"
+                                class="realta-icare-modal-icon img-fluid">
+                        </a>
+                    </div>
+
+                    <div class="col-md-5 text-left mb-3">
+                        <h3 class="realta-icare-icon-title fs-5">Product Manual</h3>
+                        <a href="https://realta.co.id/site/pdf/Manual%20Guide%20Aplikasi%20iCARE-Customer%20Self%20Service(1.0).pdf"
+                            target="_blank">
+                            <img src="assets/img/icare-manual.png" alt="Product Manual"
+                                class="realta-icare-modal-icon img-fluid">
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-</section>
 
+    <!-- JavaScript for Modal Functionality -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Get modal elements
+            const footerLogo = document.querySelector('.footer-logo'); // Target the existing footer logo
+            const modalOverlay = document.querySelector('.realta-icare-modal-overlay');
+            const modalClose = document.querySelector('.realta-icare-modal-close');
 
-<!-- Modal Overlay Structure -->
-<div class="realta-icare-modal-overlay" id="realtaICareModal">
-    <div class="realta-icare-modal-container">
-      <div class="realta-icare-modal-header">
-        <h2 class="realta-icare-modal-title">Welcome to iCare</h2>
-        <button class="realta-icare-modal-close">&times;</button>
-      </div>
-      <div class="realta-icare-modal-body">
-        <p class="realta-icare-modal-text text-left">
-          To care or not to care, is NEVER a question! Realta iCare, our commitment to your satisfaction! 
-          We give the very best to satisfy your needs every step of the way.
-        </p>
-        
-        <div class="row justify-content-between mt-4">
-          <div class="col-md-5 text-left mb-3">
-            <h3 class="realta-icare-icon-title fs-5">Customer Support</h3>
-            <a href="https://icare.cloud.co.id/HEAT" target="_blank">
-              <img src="assets/img/icare-customer.png" alt="Customer Support" class="realta-icare-modal-icon img-fluid">
-            </a>
-          </div>
-  
-          <div class="col-md-5 text-left mb-3">
-            <h3 class="realta-icare-icon-title fs-5">Product Manual</h3>
-            <a href="https://realta.co.id/site/pdf/Manual%20Guide%20Aplikasi%20iCARE-Customer%20Self%20Service(1.0).pdf" target="_blank">
-              <img src="assets/img/icare-manual.png" alt="Product Manual" class="realta-icare-modal-icon img-fluid">
-            </a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
+            // Move the modal overlay to be a direct child of the body
+            // This helps avoid stacking context issues
+            document.body.appendChild(modalOverlay);
 
-<!-- JavaScript for Modal Functionality -->
-<script>
-    document.addEventListener('DOMContentLoaded', function() {
-      // Get modal elements
-      const footerLogo = document.querySelector('.footer-logo'); // Target the existing footer logo
-      const modalOverlay = document.querySelector('.realta-icare-modal-overlay');
-      const modalClose = document.querySelector('.realta-icare-modal-close');
-      
-      // Move the modal overlay to be a direct child of the body
-      // This helps avoid stacking context issues
-      document.body.appendChild(modalOverlay);
-      
-      // Open modal function
-      function openModal() {
-        modalOverlay.classList.add('realta-icare-modal-show');
-        document.body.style.overflow = 'hidden'; // Prevent scrolling when modal is open
-      }
-      
-      // Close modal function
-      function closeModal() {
-        modalOverlay.classList.remove('realta-icare-modal-show');
-        document.body.style.overflow = ''; // Restore scrolling
-      }
-      
-      // Event listeners
-      footerLogo.addEventListener('click', openModal); // Make the footer logo open the modal
-      modalClose.addEventListener('click', closeModal);
-      
-      // Close modal when clicking outside
-      modalOverlay.addEventListener('click', function(event) {
-        if (event.target === modalOverlay) {
-          closeModal();
-        }
-      });
-      
-      // Close modal with Escape key
-      document.addEventListener('keydown', function(event) {
-        if (event.key === 'Escape' && modalOverlay.classList.contains('realta-icare-modal-show')) {
-          closeModal();
-        }
-      });
-    });
-  </script>
+            // Open modal function
+            function openModal() {
+                modalOverlay.classList.add('realta-icare-modal-show');
+                document.body.style.overflow = 'hidden'; // Prevent scrolling when modal is open
+            }
+
+            // Close modal function
+            function closeModal() {
+                modalOverlay.classList.remove('realta-icare-modal-show');
+                document.body.style.overflow = ''; // Restore scrolling
+            }
+
+            // Event listeners
+            footerLogo.addEventListener('click', openModal); // Make the footer logo open the modal
+            modalClose.addEventListener('click', closeModal);
+
+            // Close modal when clicking outside
+            modalOverlay.addEventListener('click', function (event) {
+                if (event.target === modalOverlay) {
+                    closeModal();
+                }
+            });
+
+            // Close modal with Escape key
+            document.addEventListener('keydown', function (event) {
+                if (event.key === 'Escape' && modalOverlay.classList.contains(
+                        'realta-icare-modal-show')) {
+                    closeModal();
+                }
+            });
+        });
+    </script>
 
     <style>
         #newsletter-cta {

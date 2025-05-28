@@ -251,14 +251,18 @@ body.dark-mode .product-details {
   background-size: cover;
   background-position: center;
   position: relative;
-  border-radius: 25px;
+  border-radius: 20px;
   overflow: hidden !important;
   transition: transform 0.3s ease;
 }
 
 .product-banner:hover {
-  filter: blur(0.2px);
   transform: scale(1.03);
+}
+
+.product-banner:hover::before {
+  backdrop-filter: blur(0.5px);
+  -webkit-backdrop-filter: blur(0.5px);
 }
 
 .product-banner::before {
@@ -268,8 +272,9 @@ body.dark-mode .product-details {
   left: 0;
   right: 0;
   bottom: 0;
-  background: rgba(43, 43, 43, 0.219);
-  transition: background 0.3s ease;
+  backdrop-filter: blur(1.1px);
+  -webkit-backdrop-filter: blur(1.1px);
+  transition: background 0.3s ease, backdrop-filter 0.3s ease;
 }
 
 body.dark-mode .product-banner::before {
@@ -326,10 +331,12 @@ body.dark-mode .product-banner:hover::before {
   color: white;
   padding: 28px;
   height: 99%;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.6);
+  font-weight: 500;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  background: rgba(0, 0, 0, 0.178); /* Added slight dark overlay */
+  background: rgba(92, 92, 92, 0.151); /* Added slight dark overlay */
 }
 
 .product-title {
@@ -341,10 +348,11 @@ body.dark-mode .product-banner:hover::before {
 
 .product-banner-description {
   font-size: 19px;
-  margin: 0;
+  line-height: 23px;
+  margin: 0px 0px 8px;
   color: rgba(255, 255, 255, 0.95);
   max-width: 85%;
-  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.25);
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 1.25);
 }
 
 .product-banner:hover .product-banner-icon {

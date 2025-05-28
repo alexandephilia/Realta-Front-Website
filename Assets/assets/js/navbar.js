@@ -794,7 +794,7 @@ pts: `
         <div class="modules-title">KEY FEATURES</div>
         <div class="modules-grid">
             <div class="module membership-module">
-                <h4>Membership Management</h4>
+                <h4>Membership</h4>
                 <p>Manage and track member information and activities with our integrated solution.</p>
                 <ul class="feature-list" style="list-style: none; padding: 0; margin-top: 15px;">
                     <li>
@@ -807,7 +807,7 @@ pts: `
                     </li>
                     <li>
                         <i class="fas fa-chart-line"></i>
-                        <span>Member's Playing and Spending Activity</span>
+                        <span>Member Playing and Spending Activity</span>
                     </li>
                     <li>
                         <i class="fas fa-tag"></i>
@@ -833,7 +833,7 @@ pts: `
                     </li>
                     <li>
                         <i class="fas fa-leaf"></i>
-                        <span>Lawn Operations</span>
+                        <span>Logistics</span>
                     </li>
                     <li>
                         <i class="fas fa-chart-bar"></i>
@@ -842,7 +842,7 @@ pts: `
                 </ul>
             </div>
             <div class="module tournament-module">
-                <h4>Tournament Management</h4>
+                <h4>Tournament</h4>
                 <p>Your all-in-one golf event solution and golf management system.</p>
                 <ul class="feature-list" style="list-style: none; padding: 0; margin-top: 15px;">
                     <li>
@@ -851,7 +851,7 @@ pts: `
                     </li>
                     <li>
                         <i class="fas fa-users"></i>
-                        <span>Handicap Pairing</span>
+                        <span>Handicap Parameter</span>
                     </li>
                     <li>
                         <i class="fas fa-golf-ball"></i>
@@ -934,7 +934,7 @@ pts: `
                     </li>
                     <li>
                         <i class="fas fa-tags"></i>
-                        <span>Dynamic Pricing</span>
+                        <span>Dynamic Auto Pricing</span>
                     </li>
                     <li>
                         <i class="fas fa-cash-register"></i>
@@ -978,12 +978,9 @@ pts: `
                 <ul class="feature-list" style="list-style: none; padding: 0; margin-top: 15px;">
                     <li>
                         <i class="fas fa-file-invoice-dollar"></i>
-                        <span>Accounts</span>
+                        <span>Accounts Receivable</span>
                     </li>
-                    <li>
-                        <i class="fas fa-file-alt"></i>
-                        <span>Receivable</span>
-                    </li>
+                   
                     <li>
                         <i class="fas fa-file-invoice"></i>
                         <span>Accounts Payable</span>

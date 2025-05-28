@@ -2678,9 +2678,6 @@ body.dark-mode .clipped-section::before {
   padding: 0 !important;
 }
 
-#technology-delivery .container-fluid {
-  padding: 0 !important;
-}
 
 /* Dark mode styles */
 body.dark-mode .glass-card {

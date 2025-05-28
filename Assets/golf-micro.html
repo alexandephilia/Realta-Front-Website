@@ -58,9 +58,6 @@
     <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <style>
-
-
-        
         .btn-outline-secondary {
             color: #ffffff;
             border-color: #35743f;
@@ -69,7 +66,7 @@
             transition: all 0.3s ease;
             padding: 10px 25px;
             font-weight: 500;
-            font-size: 18px;
+            font-size: 16px;
         }
 
         .btn-outline-secondary:hover {
@@ -95,9 +92,72 @@
             }
         }
 
+        /* Button Custom Styles for consistency with index.html */
+        .btn-custom {
+            margin-top: 1.1vh;
+            font-size: 15px;
+            padding: 0.9vh 1.8vw;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bolder;
+            min-height: 3.6vh;
+
+            color: white;
+            border: none;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+        }
+
+        .btn-custom i {
+            margin-right: 0.4vw;
+        }
+
+        /* --- Base Convex Styles (Common properties) --- */
+        .styled-button-convex {
+            position: relative;
+            font-weight: bold;
+            color: #e0e0e0;
+            text-shadow: 0 -1px 1px rgba(0, 0, 0, 0.6);
+            cursor: pointer;
+            transition: all 0.15s ease-out;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            overflow: visible;
+            border-radius: 10px;
+            -webkit-tap-highlight-color: transparent;
+            /* Base shadow with slightly more noticeable highlight */
+            box-shadow:
+                0 6px 12px rgba(0, 0, 0, 0.35),
+                /* Slightly stronger outer shadow */
+                inset 0 2px 0px rgba(255, 255, 255, 0.25),
+                /* Restored subtle highlight */
+                inset 0 -1px 1px rgba(0, 0, 0, 0.4);
+        }
+
+        /* Shared ::before styles for the rim structure */
+        .styled-button-convex::before {
+            content: "";
+            position: absolute;
+            top: -1px;
+            right: -1px;
+            bottom: -1px;
+            left: -1px;
+            z-index: -1;
+            border-radius: 23px;
+            transition: all 0.15s ease-out;
+            opacity: 1;
+            /* Rim gets its own subtle shadow */
+            box-shadow: inset 0 0 2px rgba(0, 0, 0, 0.3);
+            /* Keep blur for softness, adjust per button if needed */
+            filter: blur(0.5px);
+        }
+
         /* Fix section spacing */
         section {
-            overflow: hidden !important;
+            overflow: visible !important;
             width: 100% !important;
             position: relative !important;
         }
@@ -161,16 +221,15 @@
             height: 60px;
         }
 
-       
-@media (min-width: 901px) {
-  .container-fluid,
-  .container {
-    padding-left: 10rem;
-    padding-right: 10rem;
-  }
-}
 
-        
+        @media (min-width: 901px) {
+
+            .container-fluid,
+            .container {
+                padding-left: 10rem;
+                padding-right: 10rem;
+            }
+        }
     </style>
 
     <header>
@@ -217,234 +276,274 @@
                         <i class="fas fa-bars" style="font-size: 1.7rem;"></i>
                     </div>
                 </div>
-               <!-- Mobile responsive navigation menu -->
-            <div class="offcanvas offcanvas-end" tabindex="-1" id="sidebar" aria-labelledby="sidebarLabel">
-                <div class="offcanvas-header">
-                    <div>
-                        <h5 class="offcanvas-title" id="sidebarLabel"
-                            style="margin-left: 33px; margin-bottom: 20px; font-size: 30px; color: white;">Menu</h5>
+                <!-- Mobile responsive navigation menu -->
+                <div class="offcanvas offcanvas-end" tabindex="-1" id="sidebar" aria-labelledby="sidebarLabel">
+                    <div class="offcanvas-header">
+                        <div>
+                            <h5 class="offcanvas-title" id="sidebarLabel"
+                                style="margin-left: 33px; margin-bottom: 20px; font-size: 30px; color: white;">Menu</h5>
+                        </div>
+                        <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas"
+                            aria-label="Close"></button>
                     </div>
-                    <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas"
-                        aria-label="Close"></button>
-                </div>
-                <div class="offcanvas-body">
-                    <div class="sidebar-menu">
-                        <div class="sidebar-item">
-                            <h2 style="font-size: 2.1rem;">Realta Chakradarma</h2>
-                            <hr>
-                            <h2 class="product-header" data-bs-toggle="collapse" data-bs-target="#productsSubmenu"
-                                aria-expanded="false">
-                                Solutions <i class="fas fa-chevron-right arrow-icon"></i>
-                            </h2>
-                            <div id="productsSubmenu" class="collapse">
-                                <ul class="product-list">
-                                    <li>
-                                        <div class="product-header" data-bs-toggle="collapse"
-                                            data-bs-target="#gcsSubmenu" aria-expanded="false"
-                                            style="font-size: 1rem; font-weight: 400;">
-                                            Golf Course Management System<i class="fas fa-chevron-right arrow-icon"></i>
-                                        </div>
-                                        <div id="gcsSubmenu" class="collapse product-submenu">
-                                            <a href="golf-micro.html" class="discover-link" onclick="navigateWithLoading('golf-micro.html')">Discover GCS ›</a>
-                                            <h3 class="modules-heading">MODULES</h3>
-                                            <ul class="modules-list">
-                                                <li>
-                                                    <strong>Membership Management</strong>
-                                                    <span>Manage and track member information and activities with our integrated solution</span>
-                                                </li>
-                                                <li>
-                                                    <strong>Golf Operation</strong>
-                                                    <span>Streamline golf operations with our integrated system and unified platform</span>
-                                                </li>
-                                                <li>
-                                                    <strong>Tournament Management</strong>
-                                                    <span>Your all-in-one golf event solution and golf management system</span>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="product-header" data-bs-toggle="collapse"
-                                            data-bs-target="#hmsSubmenu" aria-expanded="false"
-                                            style="font-size: 1rem; font-weight: 400;">
-                                            Hotel Management System <i class="fas fa-chevron-right arrow-icon"></i>
-                                        </div>
-                                        <div id="hmsSubmenu" class="collapse product-submenu">
-                                            <!-- <p>Comprehensive solution for efficient hotel operations and guest
+                    <div class="offcanvas-body">
+                        <div class="sidebar-menu">
+                            <div class="sidebar-item">
+                                <h2 style="font-size: 2.1rem;">Realta Chakradarma</h2>
+                                <hr>
+                                <h2 class="product-header" data-bs-toggle="collapse" data-bs-target="#productsSubmenu"
+                                    aria-expanded="false">
+                                    Solutions <i class="fas fa-chevron-right arrow-icon"></i>
+                                </h2>
+                                <div id="productsSubmenu" class="collapse">
+                                    <ul class="product-list">
+                                        <li>
+                                            <div class="product-header" data-bs-toggle="collapse"
+                                                data-bs-target="#gcsSubmenu" aria-expanded="false"
+                                                style="font-size: 1rem; font-weight: 400;">
+                                                Golf Course Management System<i
+                                                    class="fas fa-chevron-right arrow-icon"></i>
+                                            </div>
+                                            <div id="gcsSubmenu" class="collapse product-submenu">
+                                                <a href="golf-micro.html" class="discover-link"
+                                                    onclick="navigateWithLoading('golf-micro.html')">Discover GCS ›</a>
+                                                <h3 class="modules-heading">MODULES</h3>
+                                                <ul class="modules-list">
+                                                    <li>
+                                                        <strong>Membership Management</strong>
+                                                        <span>Manage and track member information and activities with
+                                                            our
+                                                            integrated solution</span>
+                                                    </li>
+                                                    <li>
+                                                        <strong>Golf Operation</strong>
+                                                        <span>Streamline golf operations with our integrated system and
+                                                            unified platform</span>
+                                                    </li>
+                                                    <li>
+                                                        <strong>Tournament Management</strong>
+                                                        <span>Your all-in-one golf event solution and golf management
+                                                            system</span>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="product-header" data-bs-toggle="collapse"
+                                                data-bs-target="#hmsSubmenu" aria-expanded="false"
+                                                style="font-size: 1rem; font-weight: 400;">
+                                                Hotel Management System <i class="fas fa-chevron-right arrow-icon"></i>
+                                            </div>
+                                            <div id="hmsSubmenu" class="collapse product-submenu">
+                                                <!-- <p>Comprehensive solution for efficient hotel operations and guest
                                                 management.</p> -->
-                                            <a href="rhapsody-micro.html" class="discover-link" onclick="navigateWithLoading('rhapsody-micro.html')">Discover HMS ›</a>
-                                            <h3 class="modules-heading">MODULES</h3>
-                                            <ul class="modules-list">
-                                                <li>
-                                                    <strong>Front Office</strong>
-                                                    <span>Simplify guest services and reception tasks with our optimized solution</span>
-                                                </li>
-                                                <li>
-                                                    <strong>Logistic</strong>
-                                                    <span>Optimize inventory and supply chain management</span>
-                                                </li>
-                                                <li>
-                                                    <strong>Back Office</strong>
-                                                    <span>Improve operations and financial management</span>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="product-header" data-bs-toggle="collapse"
-                                            data-bs-target="#hrSystemSubmenu" aria-expanded="false"
-                                            style="font-size: 1rem; font-weight: 400;">
-                                            HR System <i class="fas fa-chevron-right arrow-icon"></i>
-                                        </div>
-                                        <div id="hrSystemSubmenu" class="collapse product-submenu">
-                                            <!-- <p>Comprehensive human resource management solution for businesses of
+                                                <a href="rhapsody-micro.html" class="discover-link"
+                                                    onclick="navigateWithLoading('rhapsody-micro.html')">Discover HMS
+                                                    ›</a>
+                                                <h3 class="modules-heading">MODULES</h3>
+                                                <ul class="modules-list">
+                                                    <li>
+                                                        <strong>Front Office</strong>
+                                                        <span>Simplify guest services and reception tasks with our
+                                                            optimized
+                                                            solution</span>
+                                                    </li>
+                                                    <li>
+                                                        <strong>Logistic</strong>
+                                                        <span>Optimize inventory and supply chain management</span>
+                                                    </li>
+                                                    <li>
+                                                        <strong>Back Office</strong>
+                                                        <span>Improve operations and financial management</span>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="product-header" data-bs-toggle="collapse"
+                                                data-bs-target="#hrSystemSubmenu" aria-expanded="false"
+                                                style="font-size: 1rem; font-weight: 400;">
+                                                HR System <i class="fas fa-chevron-right arrow-icon"></i>
+                                            </div>
+                                            <div id="hrSystemSubmenu" class="collapse product-submenu">
+                                                <!-- <p>Comprehensive human resource management solution for businesses of
                                                 all sizes.</p> -->
-                                            <a href="hr-micro.html" class="discover-link" onclick="navigateWithLoading('hr-micro.html')">Discover HR System ›</a>
-                                            <h3 class="modules-heading">MODULES</h3>
-                                            <ul class="modules-list">
-                                                <li>
-                                                    <strong>HR Core</strong>
-                                                    <span>HR Operation with our integrated solution and unified platform.</span>
-                                                </li>
-                                                <li>
-                                                    <strong>HR Advance</strong>
-                                                    <span>Integrate and optimize core business processes</span>
-                                                </li>
-                                                <li>
-                                                    <strong>HR Mobile</strong>
-                                                    <span>Empower and manage HR with our ESS app with ease.</span>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </li>
-                                     <li>
-                                        <div class="product-header" data-bs-toggle="collapse"
-                                            data-bs-target="#itsmSubmenu" aria-expanded="false"
-                                            style="font-size: 1rem; font-weight: 400;">
-                                            ITSM, ITAM & Unified Endpoint Management <i
-                                                class="fas fa-chevron-right arrow-icon"></i>
-                                        </div>
-                                        <div id="itsmSubmenu" class="collapse product-submenu">
-                                            <!-- <p>Comprehensive IT Service Management solution for streamlined IT
+                                                <a href="hr-micro.html" class="discover-link"
+                                                    onclick="navigateWithLoading('hr-micro.html')">Discover HR System
+                                                    ›</a>
+                                                <h3 class="modules-heading">MODULES</h3>
+                                                <ul class="modules-list">
+                                                    <li>
+                                                        <strong>HR Core</strong>
+                                                        <span>HR Operation with our integrated solution and unified
+                                                            platform.</span>
+                                                    </li>
+                                                    <li>
+                                                        <strong>HR Advance</strong>
+                                                        <span>Integrate and optimize core business processes</span>
+                                                    </li>
+                                                    <li>
+                                                        <strong>HR Mobile</strong>
+                                                        <span>Empower and manage HR with our ESS app with ease.</span>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="product-header" data-bs-toggle="collapse"
+                                                data-bs-target="#itsmSubmenu" aria-expanded="false"
+                                                style="font-size: 1rem; font-weight: 400;">
+                                                ITSM, ITAM & Unified Endpoint Management <i
+                                                    class="fas fa-chevron-right arrow-icon"></i>
+                                            </div>
+                                            <div id="itsmSubmenu" class="collapse product-submenu">
+                                                <!-- <p>Comprehensive IT Service Management solution for streamlined IT
                                                 aoperations.</p> -->
-                                            <a href="itsm-micro.html" class="discover-link" onclick="navigateWithLoading('itsm-micro.html')">Discover ITSM, ITAM & Unified Endpoint
-                                                Management ›</a>
-                                            <h3 class="modules-heading">MODULES</h3>
-                                            <ul class="modules-list">
-                                                <li>
-                                                    <strong>Service Management</strong>
-                                                    <span>Streamline IT service delivery and support</span>
-                                                </li>
-                                                <li>
-                                                    <strong>Asset Management</strong>
-                                                    <span>Track and manage IT assets throughout their lifecycle</span>
-                                                </li>
-                                                <li>
-                                                    <strong>Endpoint Management</strong>
-                                                    <span>Centrally manage and secure all your endpoints</span>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="product-header" data-bs-toggle="collapse"
-                                            data-bs-target="#propertyTenantSubmenu" aria-expanded="false"
-                                            style="font-size: 1rem; font-weight: 400;">
-                                            Property and Tenant System <i class="fas fa-chevron-right arrow-icon"></i>
-                                        </div>
-                                        <div id="propertyTenantSubmenu" class="collapse product-submenu">
-                                            <!-- <p>Efficient management solution for property owners and landlords.</p> -->
-                                            <a href="#" class="discover-link" onclick="navigateWithLoading('bimasakti-micro.html')">Discover Property and Tenant System
-                                                ›</a>
-                                            <h3 class="modules-heading">MODULES</h3>
-                                            <ul class="modules-list">
-                                                <li>
-                                                    <strong>Sales & Marketing</strong>
-                                                    <span>Boost Your Sales with our comprehensive, integrated solution.</span>
-                                                </li>
-                                                <li>
-                                                    <strong>Tenancy Management</strong>
-                                                    <span>With our comprehensive, user-friendly platform.</span>
-                                                </li>
-                                                <li>
-                                                    <strong>Billing Management</strong>
-                                                    <span>With our efficient handling of billing and payments.</span>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </li>
-                                   
-                                    <li>
-                                        <div class="product-header" data-bs-toggle="collapse"
-                                            data-bs-target="#erpSubmenu" aria-expanded="false"
-                                            style="font-size: 1rem; font-weight: 400;">
-                                            Network & System Integration <i class="fas fa-chevron-right arrow-icon"></i>
-                                        </div>
-                                        <div id="erpSubmenu" class="collapse product-submenu">
-                                            <!-- <p>Integrated Enterprise Resource Planning solution for business
+                                                <a href="itsm-micro.html" class="discover-link"
+                                                    onclick="navigateWithLoading('itsm-micro.html')">Discover ITSM, ITAM
+                                                    &
+                                                    Unified Endpoint
+                                                    Management ›</a>
+                                                <h3 class="modules-heading">MODULES</h3>
+                                                <ul class="modules-list">
+                                                    <li>
+                                                        <strong>Service Management</strong>
+                                                        <span>Streamline IT service delivery and support</span>
+                                                    </li>
+                                                    <li>
+                                                        <strong>Asset Management</strong>
+                                                        <span>Track and manage IT assets throughout their
+                                                            lifecycle</span>
+                                                    </li>
+                                                    <li>
+                                                        <strong>Endpoint Management</strong>
+                                                        <span>Centrally manage and secure all your endpoints</span>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="product-header" data-bs-toggle="collapse"
+                                                data-bs-target="#propertyTenantSubmenu" aria-expanded="false"
+                                                style="font-size: 1rem; font-weight: 400;">
+                                                Property and Tenant System <i
+                                                    class="fas fa-chevron-right arrow-icon"></i>
+                                            </div>
+                                            <div id="propertyTenantSubmenu" class="collapse product-submenu">
+                                                <!-- <p>Efficient management solution for property owners and landlords.</p> -->
+                                                <a href="#" class="discover-link"
+                                                    onclick="navigateWithLoading('bimasakti-micro.html')">Discover
+                                                    Property
+                                                    and Tenant System
+                                                    ›</a>
+                                                <h3 class="modules-heading">MODULES</h3>
+                                                <ul class="modules-list">
+                                                    <li>
+                                                        <strong>Sales & Marketing</strong>
+                                                        <span>Boost Your Sales with our comprehensive, integrated
+                                                            solution.</span>
+                                                    </li>
+                                                    <li>
+                                                        <strong>Tenancy Management</strong>
+                                                        <span>With our comprehensive, user-friendly platform.</span>
+                                                    </li>
+                                                    <li>
+                                                        <strong>Billing Management</strong>
+                                                        <span>With our efficient handling of billing and
+                                                            payments.</span>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </li>
+
+                                        <li>
+                                            <div class="product-header" data-bs-toggle="collapse"
+                                                data-bs-target="#erpSubmenu" aria-expanded="false"
+                                                style="font-size: 1rem; font-weight: 400;">
+                                                Network & System Integration <i
+                                                    class="fas fa-chevron-right arrow-icon"></i>
+                                            </div>
+                                            <div id="erpSubmenu" class="collapse product-submenu">
+                                                <!-- <p>Integrated Enterprise Resource Planning solution for business
                                                 management.</p> -->
-                                            <a href="#" class="discover-link" onclick="navigateWithLoading('realnet-micro.html')">Discover Network & System Integration ›</a>
-                                            <h3 class="modules-heading">MODULES</h3>
-                                            <ul class="modules-list">
-                                                <li>
-                                                    <strong>Hardware & Software</strong>
-                                                    <span>Comprehensive solutions for selecting, deploying, and managing IT hardware and software tailored to your business needs</span>
-                                                </li>
-                                                <li>
-                                                    <strong>Network</strong>
-                                                    <span>Robust network solutions designed to ensure seamless connectivity, performance, and security across your entire business ecosystem</span>
-                                                </li>
-                                                <li>
-                                                    <strong>Cloud Infrastructure</strong>
-                                                    <span>Scalable cloud solutions that provide secure and flexible environments for hosting and managing your applications and data</span>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </li>
-                                </ul>
+                                                <a href="#" class="discover-link"
+                                                    onclick="navigateWithLoading('realnet-micro.html')">Discover Network
+                                                    &
+                                                    System Integration ›</a>
+                                                <h3 class="modules-heading">MODULES</h3>
+                                                <ul class="modules-list">
+                                                    <li>
+                                                        <strong>Hardware & Software</strong>
+                                                        <span>Comprehensive solutions for selecting, deploying, and
+                                                            managing
+                                                            IT hardware and software tailored to your business
+                                                            needs</span>
+                                                    </li>
+                                                    <li>
+                                                        <strong>Network</strong>
+                                                        <span>Robust network solutions designed to ensure seamless
+                                                            connectivity, performance, and security across your entire
+                                                            business ecosystem</span>
+                                                    </li>
+                                                    <li>
+                                                        <strong>Cloud Infrastructure</strong>
+                                                        <span>Scalable cloud solutions that provide secure and flexible
+                                                            environments for hosting and managing your applications and
+                                                            data</span>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="sidebar-item">
+                                <h2 class="product-header">
+                                    <a href="#" onclick="navigateWithLoading('hospitality.html'); return false;"
+                                        style="text-decoration: none; color: inherit;">Industry</a>
+                                </h2>
+                            </div>
+                            <div class="sidebar-item">
+                                <h2 class="product-header">
+                                    <a href="#" onclick="navigateWithLoading('partners.html'); return false;"
+                                        style="text-decoration: none; color: inherit;">Partners</a>
+                                </h2>
+                            </div>
+                            <div class="sidebar-item">
+                                <h2 class="product-header">
+                                    <a href="#" onclick="navigateWithLoading('contacts.html'); return false;"
+                                        style="text-decoration: none; color: inherit;">Contact</a>
+                                </h2>
+                            </div>
+                            <div class="sidebar-item">
+                                <h2 class="product-header">
+                                    <a href="#" onclick="navigateWithLoading('career.html'); return false;"
+                                        style="text-decoration: none; color: inherit;">Career</a>
+                                </h2>
+                            </div>
+
+                            <div class="sidebar-item">
+                                <h2 class="product-header">
+                                    <a href="#" onclick="navigateWithLoading('blog.html'); return false;"
+                                        style="text-decoration: none; color: inherit;">Blog</a>
+                                </h2>
+                            </div>
+                            <div class="sidebar-item">
+                                <h2 class="product-header">
+                                    <a href="#" onclick="navigateWithLoading('about.html'); return false;"
+                                        style="text-decoration: none; color: inherit;">About Us</a>
+                                </h2>
                             </div>
                         </div>
-                        <div class="sidebar-item">
-                            <h2 class="product-header">
-                                <a href="#" onclick="navigateWithLoading('hospitality.html'); return false;"style="text-decoration: none; color: inherit;">Industry</a>
-                            </h2>
-                        </div>
-                        <div class="sidebar-item">
-                            <h2 class="product-header">
-                                <a href="#" onclick="navigateWithLoading('partners.html'); return false;" style="text-decoration: none; color: inherit;">Partners</a>
-                            </h2>
-                        </div>
-                        <div class="sidebar-item">
-                            <h2 class="product-header">
-                                <a href="#" onclick="navigateWithLoading('contacts.html'); return false;" style="text-decoration: none; color: inherit;">Contact</a>
-                            </h2>
-                        </div>
-                        <div class="sidebar-item">
-                            <h2 class="product-header">
-                                <a href="#" onclick="navigateWithLoading('career.html'); return false;" style="text-decoration: none; color: inherit;">Career</a>
-                            </h2>
-                        </div>
-                        
-                        <div class="sidebar-item">
-                            <h2 class="product-header">
-                                <a href="#" onclick="navigateWithLoading('blog.html'); return false;"
-                                    style="text-decoration: none; color: inherit;">Blog</a>
-                            </h2>
-                        </div>
-                        <div class="sidebar-item">
-                            <h2 class="product-header">
-                                <a href="#" onclick="navigateWithLoading('about.html'); return false;" style="text-decoration: none; color: inherit;">About Us</a>
-                            </h2>
-                        </div>
-                    </div>
-                    <div class="get-started-container" style="margin-top: -10px !important;">
-                        <!-- Adjusted margin-top to move slightly to the top -->
+                        <div class="get-started-container" style="margin-top: -10px !important;">
+                            <!-- Adjusted margin-top to move slightly to the top -->
 
-                     
+
                         </div>
                     </div>
                 </div>
-       
+
+
 
                 <style>
                     @media (min-width: 992px) {
@@ -527,48 +626,21 @@
                 </style>
                 <div class="full-screen-sidebar">
                     <style>
-                        @media (min-width: 992px) {
-                            .full-screen-sidebar {
-                                margin-right: -45px;
-                            }
-                        }
-
                         @media (max-width: 768px) {
                             .full-screen-sidebar {
                                 margin-right: 0;
                             }
                         }
                     </style>
-                    <style>
-                    .nav-link.active {
-                        color: #8454d0 !important; /* Using the green color from your theme */
-                        font-weight: 600;
-                        position: relative;
-                    }
-
-                    .nav-link.active::after {
-                        content: '';
-                        position: absolute;
-                        bottom: -2px;
-                        left: 0;
-                        width: 100%;
-                        height: 2px;
-                        background-color: #8454d0;
-                    }
-
-                    /* For dropdown toggle when active */
-                    .nav-link.dropdown-toggle.active {
-                        color: #8454d0 !important;
-                    }
-                </style>
                     <ul class="sidebar-nav justify-content-end align-items-center"
                         style="padding: 0; margin: 0; margin-top: 8px; list-style-type: none;">
                         <!-- Solutions dropdown -->
-                        <li class="me-1"><a class="nav-link dropdown-toggle active" href="#" id="solutionsDropdown"
+                        <li class="me-1"><a class="nav-link dropdown-toggle" href="#" id="solutionsDropdown"
                                 role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                 Solution <i class="fas fa-chevron-down ms-1 fa-xs"></i>
                             </a></li>
 
+                        <!-- Industry dropdown -->
                         <li class="me-1">
                             <a href="hospitality.html" class="nav-link"
                                 onclick="navigateWithLoading('hospitality.html')">Industry</a>
@@ -576,12 +648,13 @@
 
                         <!-- Partner dropdown -->
                         <li class="me-1">
-                            <a href="partners.html" class="nav-link"
+                            <a href="partners.html" class="nav-link scroll-link"
                                 onclick="navigateWithLoading('partners.html')">Partners</a>
                         </li>
+
                         <!-- Contact dropdown -->
                         <li class="me-1">
-                            <a href="contacts.html" class="nav-link"
+                            <a href="contacts.html" class="nav-link scroll-link"
                                 onclick="navigateWithLoading('contacts.html')">Contact</a>
                         </li>
 
@@ -603,9 +676,7 @@
                         </li>
 
                     </ul>
-                    <div class="sidebar-actions d-flex justify-content-end align-items-center"
-                        style="margin-bottom: 0.5rem;">
-                       
+                    <div class="sidebar-actions d-flex justify-content-end align-items-center">
                         <button id="darkModeToggleSidebar" class="btn-custom ms-2">
                             <i class="fas fa-moon"></i>
                         </button>
@@ -627,34 +698,23 @@
                     <div class="product-categories">
                         <a href="golf-micro.html" class="product-category" data-product="gcs"
                             onclick="navigateWithLoading('golf-micro.html')">Golf Course System</a>
-                        <a href="hr-micro.html" class="product-category" data-product="hrs" onclick="navigateWithLoading('hr-micro.html')">HR
-                            System</a>
+
                         <a href="rhapsody-micro.html" class="product-category" data-product="hms"
                             onclick="navigateWithLoading('rhapsody-micro.html')">Hotel Management System</a>
+                        <a href="hr-micro.html" class="product-category" data-product="hrs"
+                            onclick="navigateWithLoading('hr-micro.html')">HR System</a>
                         <a href="itsm-micro.html" class="product-category" data-product="itm"
-                            onclick="navigateWithLoading('itsm-micro.html')">ITSM, ITAM & Unified Endpoint Management</a>
-                        <a href="bimasakti-micro.html" class="product-category" data-product="pts"
-                            onclick="navigateWithLoading('bimasakti-micro.html')">Property & Tenancy System</a>
+                            onclick="navigateWithLoading('itsm-micro.html')">ITSM, ITAM & Unified Endpoint
+                            Management</a>
                         <a href="realnet-micro.html" class="product-category" data-product="erp"
                             onclick="navigateWithLoading('realnet-micro.html')">Network & System Integration</a>
+                        <a href="bimasakti-micro.html" class="product-category" data-product="pts"
+                            onclick="navigateWithLoading('bimasakti-micro.html')">Property & Tenancy System</a>
                         <div
                             style="background: linear-gradient(90deg, transparent 0%, rgba(133, 22, 188, 0.582) 50%, transparent 100%); height: 1px; margin: 10px 0; pointer-events: none;">
                         </div>
                     </div>
                     <div class="product-details" id="product-details">
-                        <!-- Content will be dynamically updated here -->
-                    </div>
-                </div>
-            </div>
-            <div class="mega-dropdown" id="industriDropdownContent">
-                <div class="dropdown-content">
-                    <div class="product-categories">
-                        <div class="product-category active" data-product="hospitality">Hospitality</div>
-                        <div class="product-category" data-product="property">Property</div>
-                        <div class="product-category" data-product="manufacturing">Manufacturing</div>
-                        <div class="product-category" data-product="fsi">FSI</div>
-                    </div>
-                    <div class="product-details" id="industri-details">
                         <!-- Content will be dynamically updated here -->
                     </div>
                 </div>
@@ -712,7 +772,7 @@
                     <li class="nav-item">
                         <a class="nav-link" href="#headerCarousel">Home</a>
                     </li>
-                 
+
                     <li>
                         <a class="nav-link" href="#why-rhapsody">Why Rhapsody Golf</a>
                     </li>
@@ -725,20 +785,20 @@
                     <li class="nav-item">
                         <a class="nav-link" href="#integrations-partners">Our Partners</a>
                     </li>
-                   
+
                 </ul>
             </div>
         </nav>
-        
+
         <style>
             .navbar-nav {
                 justify-content: flex-end;
             }
-        
+
             .nav-item {
                 padding: 0px;
             }
-        
+
             .secondary-navbar .dropdown-menu {
                 background: rgba(255, 255, 255, 0.95);
                 backdrop-filter: blur(10px);
@@ -747,18 +807,18 @@
                 padding-top: 0px;
                 padding-bottom: 0px;
             }
-        
+
             .secondary-navbar .dropdown-item {
                 font-size: 0.9rem;
                 padding: 0.5rem 1rem;
                 transition: color 0.3s ease;
             }
-        
+
             .secondary-navbar .dropdown-item:hover {
                 color: #9054d0;
                 background-color: rgba(144, 84, 208, 0.1);
             }
-        
+
             .secondary-navbar {
                 position: fixed;
                 top: 66px;
@@ -773,12 +833,12 @@
                 transition: all 0.3s ease;
                 padding: 0;
             }
-        
+
             .secondary-navbar .container-fluid {
                 padding-right: 10rem;
                 height: 100%;
             }
-        
+
             .secondary-nav {
                 display: flex;
                 align-items: center;
@@ -786,7 +846,7 @@
                 margin: 40px;
                 padding: 0;
             }
-        
+
             .secondary-navbar .nav-link {
                 font-size: 0.9rem;
                 padding: 0.5rem 1rem;
@@ -796,38 +856,38 @@
                 display: flex;
                 align-items: center;
             }
-        
+
             .secondary-navbar .nav-link:hover {
                 color: #9054d0;
             }
-        
+
             .secondary-navbar .nav-link.active {
                 color: #9054d0;
                 font-weight: 600;
             }
-        
+
             /* Dark mode styles */
             body.dark-mode .secondary-navbar {
                 background: rgba(33, 33, 33, 0.95);
                 border-bottom: 1px solid rgba(255, 255, 255, 0.1);
             }
-        
+
             body.dark-mode .secondary-navbar .nav-link {
                 color: #fff;
             }
-        
+
             body.dark-mode .secondary-navbar .nav-link:hover,
             body.dark-mode .secondary-navbar .nav-link.active {
                 color: #bb86fc;
             }
-        
+
             /* Mobile styles */
             @media (max-width: 991px) {
                 .secondary-navbar {
                     display: none;
                 }
             }
-        
+
             @media (max-width: 1200px) {
                 .secondary-navbar .container-fluid {
                     padding-right: 2rem;
@@ -842,15 +902,15 @@
     </header>
 
 <body>
-     <!-- Add WhatsApp floating button -->
-     <a href="https://api.whatsapp.com/send?phone=628111221789&text=Hallo%20PT%20Realta..." target="_blank"
-         rel="noopener noreferrer" class="whatsapp-float">
-         <i class="fab fa-whatsapp"></i>
-         <div class="text-content">
-             <span class="click-text">Click here</span>
-             <span class="sub-text">To arrange meeting and demo with us</span>
-         </div>
-     </a>
+    <!-- Add WhatsApp floating button -->
+    <a href="https://api.whatsapp.com/send?phone=628111221789&text=Hallo%20PT%20Realta..." target="_blank"
+        rel="noopener noreferrer" class="whatsapp-float">
+        <i class="fab fa-whatsapp"></i>
+        <div class="text-content">
+            <span class="click-text">Click here</span>
+            <span class="sub-text">To arrange meeting and demo with us</span>
+        </div>
+    </a>
 
     <!-- LOADING -->
     <div id="loading-overlay" class="loading-overlay">
@@ -958,7 +1018,8 @@
                         <div class="carousel-content-left">
                             <h1>Rhapsody Golf To Orchestrate Your Entire Golf Club Operation </h1>
                             <div class="badge">Elite Golf Operations</div>
-                            <p>Rhapsody Golf is a proven, feature-rich set of golf course system that raises the level of
+                            <p>Rhapsody Golf is a proven, feature-rich set of golf course system that raises the level
+                                of
                                 professionalism and service to your members and guests. Rhapsody Golf has helped many
                                 prestigious reputable golf clubs streamline their business processes, drive revenues and
                                 increase member satisfaction.</p>
@@ -993,7 +1054,8 @@
                             <h1>Indonesian Golf Courses A Spectrum of Challenge and Beauty for Every Golfer </h1>
                             <div class="badge">Diverse Greens in Paradise</div>
                             <p>Indonesian golf courses appeal to every caliber of player from beginner/recreational,
-                                amateur, to professional players because of the quality of the courses and the spectacular
+                                amateur, to professional players because of the quality of the courses and the
+                                spectacular
                                 settings of the location.</p>
                             <!-- <button class="erp-learn-btn">Discover More</button> -->
                         </div>
@@ -1029,6 +1091,108 @@
         </div>
 
         <style>
+            /* Override for carousel controls */
+            .carousel-control-prev-icon.styled-button-convex,
+            .carousel-control-next-icon.styled-button-convex {
+                border-radius: 50% !important;
+                width: 30px !important;
+                height: 30px !important;
+                background: #ffffff9f !important;
+                /* Keep original white background */
+                border: 1px solid #0000008a !important;
+                /* Keep original border */
+                color: inherit !important;
+                /* Let icon color be handled by ::before */
+                text-shadow: none !important;
+                /* Remove convex text shadow */
+                box-shadow:
+                    0 6px 12px rgba(0, 0, 0, 0.35),
+                    inset 0 2px 0px rgba(0, 0, 0, 0.15),
+                    /* Darken inner highlight for white bg */
+                    inset 0 -1px 1px rgba(0, 0, 0, 0.4) !important;
+                /* Use convex box shadow */
+                /* Ensure flex properties are maintained for centering */
+                display: flex !important;
+                align-items: center !important;
+                justify-content: center !important;
+            }
+
+            .carousel-control-prev-icon.styled-button-convex::before,
+            .carousel-control-next-icon.styled-button-convex::before {
+                /* Keep original icon styles */
+                content: "" !important;
+                display: block !important;
+                width: 18px !important;
+                height: 18px !important;
+                background-color: #000000 !important;
+                /* Keep original icon color */
+                mask-size: 100% !important;
+                -webkit-mask-size: 100% !important;
+                mask-repeat: no-repeat !important;
+                -webkit-mask-repeat: no-repeat !important;
+                mask-position: center !important;
+                -webkit-mask-position: center !important;
+                /* Remove potentially conflicting convex pseudo styles */
+                border-radius: 0 !important;
+                /* Override convex pseudo radius */
+                box-shadow: none !important;
+                position: static !important;
+                /* Override convex pseudo position */
+                z-index: auto !important;
+                /* Override convex pseudo z-index */
+                filter: none !important;
+                /* Override convex pseudo filter */
+            }
+
+            .carousel-control-prev-icon.styled-button-convex::before {
+                mask-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23000'%3e%3cpath d='M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z' stroke='black' stroke-width='1'/%3e%3c/svg%3e");
+                -webkit-mask-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23000'%3e%3cpath d='M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z' stroke='black' stroke-width='1'/%3e%3c/svg%3e");
+            }
+
+            .carousel-control-next-icon.styled-button-convex::before {
+                mask-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23000'%3e%3cpath d='M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z' stroke='black' stroke-width='1'/%3e%3c/svg%3e");
+                -webkit-mask-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23000'%3e%3cpath d='M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z' stroke='black' stroke-width='1'/%3e%3c/svg%3e");
+            }
+
+            .carousel-control-prev-icon.styled-button-convex:hover,
+            .carousel-control-next-icon.styled-button-convex:hover {
+                background-color: #35743f !important;
+                /* Golf green color for hover */
+                /* Keep convex shadow on hover */
+                box-shadow:
+                    0 6px 12px rgba(0, 0, 0, 0.35),
+                    inset 0 2px 0px rgba(0, 0, 0, 0.15),
+                    inset 0 -1px 1px rgba(0, 0, 0, 0.4) !important;
+            }
+
+            .carousel-control-prev-icon.styled-button-convex:hover::before,
+            .carousel-control-next-icon.styled-button-convex:hover::before {
+                background-color: #ffffff !important;
+                /* Keep original icon hover color */
+            }
+
+            /* Override for rt-nav-btn to keep it circular but apply convex look */
+            .rt-nav-btn.styled-button-convex {
+                border-radius: 50% !important;
+                background: #35743f !important;
+                /* Golf green color */
+                color: #e0e0e0 !important;
+                text-shadow: 0 -1px 1px rgba(0, 0, 0, 0.6) !important;
+                box-shadow:
+                    0 6px 12px rgba(0, 0, 0, 0.35),
+                    inset 0 2px 0px rgba(255, 255, 255, 0.25),
+                    inset 0 -1px 1px rgba(0, 0, 0, 0.4) !important;
+            }
+
+            .rt-nav-btn.styled-button-convex i {
+                color: #e0e0e0 !important;
+            }
+
+            .rt-nav-btn.styled-button-convex::before {
+                border-radius: 50% !important;
+                box-shadow: inset 0 0 2px rgba(0, 0, 0, 0.3) !important;
+            }
+
             .carousel-header {
                 position: relative;
                 height: 100vh;
@@ -1096,7 +1260,8 @@
                 display: flex;
                 flex-direction: column;
                 justify-content: center;
-                align-items: flex-start;  /* Align items to the left */
+                align-items: flex-start;
+                /* Align items to the left */
                 padding-right: 4rem;
                 color: #fff;
                 text-align: left;
@@ -1249,8 +1414,10 @@
                 box-shadow: 0 4px 15px rgba(84, 208, 105, 0.192) !important;
                 transform: translateY(20px);
                 opacity: 0;
-                margin: 0;  /* Reset margin */
-                align-self: flex-start;  /* Keep left alignment */
+                margin: 0;
+                /* Reset margin */
+                align-self: flex-start;
+                /* Keep left alignment */
                 transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1) 0.5s,
                     opacity 0.6s cubic-bezier(0.4, 0, 0.2, 1) 0.5s,
                     background 0.3s ease;
@@ -1278,7 +1445,8 @@
                     flex-direction: column;
                     gap: 2rem;
                     max-width: 100%;
-                    height: 100vh; /* Adjusted height since we're hiding right content */
+                    height: 100vh;
+                    /* Adjusted height since we're hiding right content */
                     padding-bottom: 8rem;
                 }
 
@@ -1291,11 +1459,13 @@
                 }
 
                 .carousel-content-right {
-                    display: none; /* Hide right content on mobile */
+                    display: none;
+                    /* Hide right content on mobile */
                 }
 
                 .erp-learn-btn {
-                    margin: 0 auto;  /* Center button on mobile */
+                    margin: 0 auto;
+                    /* Center button on mobile */
                     align-self: center;
                 }
 
@@ -1306,7 +1476,8 @@
                     margin: 1rem auto;
                 }
 
-                .card-top, .card-bottom {
+                .card-top,
+                .card-bottom {
                     position: static;
                     transition-delay: 0s;
                 }
@@ -1460,6 +1631,7 @@
             background: linear-gradient(287deg, #2ecc71, #27ae60, #106617)
         }
 
+        /* Add carousel arrow styles */
         .carousel-control-prev,
         .carousel-control-next {
             width: 5%;
@@ -1481,6 +1653,14 @@
         }
 
         @media (max-width: 768px) {
+
+            .carousel-control-prev,
+            .carousel-control-next {
+                width: 10%;
+            }
+        }
+
+        @media (max-width: 768px) {
             .carousel-content h1 {
                 font-size: 2.5rem;
             }
@@ -1496,11 +1676,6 @@
             .erp-learn-btn {
                 max-width: 240px;
                 font-size: 0.9rem;
-            }
-
-            .carousel-control-prev,
-            .carousel-control-next {
-                width: 10%;
             }
 
         }
@@ -1646,7 +1821,7 @@
                 </div>
             </div>
             <!-- <div class="text-center mt-4">
-                <a href="#" class="btn custom-btn btn-lg px-4 py-3 cta-button">
+                <a href="#" class="btn custom-btn btn-lg px-4 py-3 cta-button styled-button-convex">
                     Contact Us
                 </a>
             </div> -->
@@ -1663,6 +1838,28 @@
                     border-radius: 10px;
                     transition: all 0.3s ease;
                     box-shadow: 0 4px 6px rgba(114, 9, 212, 0.2);
+                }
+
+                .custom-btn.styled-button-convex {
+                    border: none !important;
+                    border-radius: 15px !important;
+                    text-shadow: 0 -1px 1px rgba(0, 0, 0, 0.6) !important;
+                    background: #9e44b4 !important;
+                    color: #e0e0e0 !important;
+                    box-shadow:
+                        0 6px 12px rgba(0, 0, 0, 0.35),
+                        inset 0 2px 0px rgba(255, 255, 255, 0.25),
+                        inset 0 -1px 1px rgba(0, 0, 0, 0.4) !important;
+                    transition: transform 0.2s, box-shadow 0.2s !important;
+                }
+
+                .custom-btn.styled-button-convex:hover {
+                    background-color: #b44fd0 !important;
+                    transform: translateY(-2px) !important;
+                    box-shadow:
+                        0 8px 15px rgba(0, 0, 0, 0.4),
+                        inset 0 2px 0px rgba(255, 255, 255, 0.25),
+                        inset 0 -1px 1px rgba(0, 0, 0, 0.4) !important;
                 }
 
                 .custom-btn:hover {
@@ -1721,37 +1918,54 @@
                         Orchestrate Your Entire Golf Club Operation
                     </h2>
                     <h3 class="mb-3">Rhapsody Golf</h3>
-                    <div class="mb-4" style="max-width: 90%; margin: 0 auto; text-align: left;">
-                        <p style="line-height: 1.6; font-size: 20px; margin-bottom: 1rem;">
+                    <div class="golf-description mb-4">
+                        <p>
                             Rhapsody Golf is a proven, feature-rich set of golf course system that raises the level of
                             professionalism and service to your members and guests.
                         </p>
-                        <p style="line-height: 1.6; font-size: 20px; margin-bottom: 1rem;">
+                        <p>
                             Rhapsody Golf has helped many prestigious reputable golf clubs streamline their business
                             processes, drive revenues and increase member satisfaction. By fully integrating all key
                             aspects of golf course operation, Rhapsody Golf sets the standard for golf course system in
                             Indonesia.
                         </p>
-                        <p style="line-height: 1.6; font-size: 20px; margin-bottom: 1rem;">
+                        <p>
                             Indonesian golf courses appeal to every caliber of player from beginner/recreational,
                             amateur, to professional players because of the quality of the courses and the spectacular
                             settings of the location.
                         </p>
-                        <p style="line-height: 1.6; font-size: 20px; margin-bottom: 1rem;">
+                        <p>
                             Of Course, with many VIP executives as club members, the golf course alone is not enough to
                             attract members. Golf course owners and operators have to link a bit more outside the box
                             than ever. They need to have the right tools to administer the entire operation of the golf
                             course.
                         </p>
-                        <p style="line-height: 1.6; font-size: 20px;">
+                        <p>
                             As a result of accumulated experience and knowledge since 1983, we have gained a profound
                             understanding and insight of what the golf courses really need. With our experience,
                             knowledge and technology, we have been able to deliver a solution, rich with features that
                             are unique to the golf industry, and this is Golf Course System Indonesia.
                         </p>
                     </div>
-                    <a href="#" class="btn btn-outline-secondary btn-sm d-inline-block mx-auto"
-                        style="max-width: 200px;">Learn More</a>
+                    <style>
+                        .golf-description {
+                            max-width: 90%;
+                            margin: 0 auto;
+                            text-align: left;
+                        }
+
+                        .golf-description p {
+                            line-height: 1.6;
+                            font-size: 16px;
+                            margin-bottom: 1rem;
+                        }
+
+                        .golf-description p:last-child {
+                            margin-bottom: 0;
+                        }
+                    </style>
+                    <a href="#" class="btn btn-outline-secondary btn-sm d-inline-block mx-auto styled-button-convex"
+                        style="max-width: 200px; font-size: 14px; padding: 6px 12px;">Learn More</a>
                 </div>
             </div>
         </div>
@@ -2071,10 +2285,11 @@
     <section class="hr-solutions-grid" id="why-rhapsody">
         <div class="container-fluid">
             <h2 class="hr-title">Why Rhapsody Golf</h2>
-            <p class="hr-description" style="font-size: 20px;">Streamline your golf operations with our comprehensive
+            <p class="hr-description" style="font-size: 16px;">Streamline your golf operations with our comprehensive
                 solutions designed to enhance player experience, course management, and organizational efficiency.</p>
             <div class="hr-button-wrapper">
-                <a href="#" class="btn btn-outline-secondary">Explore Rhapsody Golf Solutions</a>
+                <a href="#" class="btn btn-outline-secondary styled-button-convex"
+                    style="font-size: 14px; padding: 8px 16px;">Explore Rhapsody Golf Solutions</a>
             </div>
             <div class="hr-features">
 
@@ -2229,14 +2444,15 @@
                         <div class="row align-items-center">
                             <div class="col-lg-8 mb-4 mb-lg-0">
                                 <h2 class="mb-3 fw-bold"
-                                    style="background: linear-gradient(287deg, #5dfa91, rgb(53, 116, 63)); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">
+                                    style="font-size: 30px; background: linear-gradient(287deg, #5dfa91, rgb(53, 116, 63)); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">
                                     Ready to Transform Your Golf Operation?</h2>
-                                <p class="mb-0 text-muted lead">Let's discuss how Rhapsody can elevate your operations.
+                                <p class="mb-0 text-muted lead">Let's discuss how Rhapsody Golf can elevate your
+                                    operations.
                                 </p>
                             </div>
                             <div class="col-lg-4 text-lg-end text-center">
-                                <a href="#" class="btn btn-primary btn-lg px-4 py-3 cta-button"
-                                    style="background: linear-gradient(to bottom, #4caf4fb6, #45a0499f); color: white;">Schedule
+                                <a href="#" class="btn btn-primary btn-lg px-4 py-3 cta-button styled-button-convex"
+                                    style="font-size: 16px; background: #35743f !important; color: white;">Schedule
                                     a Demo</a>
                             </div>
                         </div>
@@ -2267,7 +2483,7 @@
         }
 
         #cta p {
-            font-size: 1.25rem;
+            font-size: 16px;
             color: #6c757d;
         }
 
@@ -2276,6 +2492,7 @@
             border: none;
             color: #ffffff;
             font-weight: 600;
+            font-size: 16px;
             transition: all 0.3s ease;
         }
 
@@ -2314,13 +2531,13 @@
                                 <div class="col-12">
                                     <div class="text-center">
                                         <h2 class="mb-2 mt-4 glass-text"
-                                            style="background: linear-gradient(287deg, #2ecc71, #27ae60, #106617); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">
+                                            style="background: linear-gradient(287deg, #2ecc71, #27ae60, #106617); -webkit-background-clip: text; -webkit-text-fill-color: transparent; font-size: 56px; font-weight: 700; line-height: 1.2;">
                                             Our Solutions
                                         </h2>
-                                        <h3 class="mb-4 glass-subtext">
+                                        <h3 class="mb-4 glass-subtext" style="font-size: 24px; font-weight: 600;">
                                             Streamlined Solutions for Modern Golf Courses
                                         </h3>
-                                        <p class="mb-5 glass-description">
+                                        <p class="mb-5 glass-description" style="font-size: 16px; line-height: 1.6;">
                                             Rhapsody Golf consists of 3 main modules that are fully integrated with each
                                             other: Front Office, Back Office, and Logistic.
                                             These modules cater to the entire operation of the golf club, from
@@ -2498,114 +2715,121 @@
     </section>
 
 
-<section id="integrations-clients" class="py-4 p-3">
-    <div class="container-fluid">
-        <div class="row align-items-center">
-            <style>
-                /* Online indicator styles */
-                .online-indicator-container {
-                    display: flex;
-                    justify-content: center;
-                    align-items: center;
-                    margin-bottom: 20px;
-                }
-
-                .online-status {
-                    display: inline-flex;
-                    align-items: center;
-                    background-color: #f8f9fa;
-                    border: 1px solid #eff0f1;
-                    border-radius: 20px;
-                    padding: 8px 15px;
-                    font-weight: bold;
-                }
-
-                .online-text {
-                    font-size: 14px;
-                    color: #495057;
-                    margin-left: 8px;
-                }
-
-                .cable-icon {
-                    width: 20px;
-                    height: 20px;
-                    fill: #495057;
-                }
-
-                @media (max-width: 768px) {
-                    .partners-section {
-                        text-align: center;
+    <section id="integrations-clients" class="py-4 p-3">
+        <div class="container-fluid">
+            <div class="row align-items-center">
+                <style>
+                    /* Online indicator styles */
+                    .online-indicator-container {
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        margin-bottom: 20px;
                     }
 
-                    .partners-section h2 {
-                        text-align: center !important;
+                    .online-status {
+                        display: inline-flex;
+                        align-items: center;
+                        background-color: #f8f9fa;
+                        border: 1px solid #eff0f1;
+                        border-radius: 20px;
+                        padding: 8px 15px;
+                        font-weight: bold;
                     }
 
-                    .partners-section p {
-                        margin-left: auto;
-                        margin-right: auto;
-                        text-align: center;
-                        width: 96%;
+                    .online-text {
+                        font-size: 14px;
+                        color: #495057;
+                        margin-left: 8px;
                     }
 
-                }
-            </style>
+                    .cable-icon {
+                        width: 20px;
+                        height: 20px;
+                        fill: #495057;
+                    }
 
-            <div class="col-lg-6 order-2 order-lg-1 mt-lg-0" style="align-self: baseline;">
-                <div class="online-indicator-container">
-                    <div class="online-status">
-                        <svg class="cable-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                            <defs>
-                                <linearGradient id="clientGradient" x1="0%" y1="0%" x2="100%" y2="0%">
-                                    <stop offset="0%" style="stop-color:#006400;stop-opacity:1" />
-                                    <stop offset="100%" style="stop-color:#90EE90;stop-opacity:1" />
-                                </linearGradient>
-                            </defs>
-                            <path
-                                d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4zm8-1h-3v3h-2v-3h-3v-2h3v-3h2v3h3v2z"
-                                fill="url(#clientGradient)" />
-                        </svg>
-                        <span class="online-text">Our Trusted Clients</span>
+                    @media (max-width: 768px) {
+                        .partners-section {
+                            text-align: center;
+                        }
+
+                        .partners-section h2 {
+                            text-align: center !important;
+                        }
+
+                        .partners-section p {
+                            margin-left: auto;
+                            margin-right: auto;
+                            text-align: center;
+                            width: 96%;
+                        }
+
+                    }
+                </style>
+
+                <div class="col-lg-6 order-2 order-lg-1 mt-lg-0" style="align-self: baseline;">
+                    <div class="online-indicator-container">
+
+                    </div>
+                    <div class="integration-grid">
+                        <img src="assets/img/golf/Clients/aomori.png" alt="Aomori" class="integration-icon">
+                        <img src="assets/img/golf/Clients/Bali.png" alt="Bali" class="integration-icon">
+
+                        <img src="assets/img/golf/Clients/Batam Hills.png" alt="Batam Hills" class="integration-icon">
+                        <img src="assets/img/golf/Clients/Borobudur Golf Club.png" alt="Borobudur Golf Club"
+                            class="integration-icon">
+                        <img src="assets/img/golf/Clients/Bukit Darmo Surabaya.png" alt="Bukit Darmo Surabaya"
+                            class="integration-icon">
+                        <img src="assets/img/golf/Clients/Cengkareng Golf Club.png" alt="Cengkareng Golf Club"
+                            class="integration-icon">
+                        <img src="assets/img/golf/Clients/Ciputra Golf Club Resto Surabaya.png"
+                            alt="Ciputra Golf Club Resto Surabaya" class="integration-icon">
+                        <img src="assets/img/golf/Clients/Damai Indah Golf.png" alt="Damai Indah Golf"
+                            class="integration-icon">
+                        <img src="assets/img/golf/Clients/Gunung Geulis.png" alt="Gunung Geulis"
+                            class="integration-icon">
+                        <img src="assets/img/golf/Clients/Handara Golf Resort Senayan Avenue.png"
+                            alt="Handara Golf Resort" class="integration-icon">
+                        <img src="assets/img/golf/Clients/Imperial Golf Club.png" alt="Imperial Golf Club"
+                            class="integration-icon">
+                        <img src="assets/img/golf/Clients/Jababeka Golf.png" alt="Jababeka Golf"
+                            class="integration-icon">
+                        <img src="assets/img/golf/Clients/Jatinangor National Golf Resort.png"
+                            alt="Jatinangor National Golf Resort" class="integration-icon">
+                        <img src="assets/img/golf/Clients/Lotus Lake Golf.png" alt="Lotus Lake Golf"
+                            class="integration-icon">
+                        <img src="assets/img/golf/Clients/Mountain View Golf Club.png" alt="Mountain View Golf Club"
+                            class="integration-icon">
+                        <img src="assets/img/golf/Clients/Padang Golf Modern-2.png" alt="Padang Golf Modern"
+                            class="integration-icon">
+                        <img src="assets/img/golf/Clients/Palm Springs karawang.png" alt="Palm Springs Karawang"
+                            class="integration-icon">
+                        <img src="assets/img/golf/Clients/Pondok Indah Golf.png" alt="Pondok Indah Golf"
+                            class="integration-icon">
+                        <img src="assets/img/golf/Clients/Sedayu Indo Golf.png" alt="Sedayu Indo Golf"
+                            class="integration-icon">
+                        <img src="assets/img/golf/Clients/Senayan Avenue by Ottolima.png" alt="Senayan Avenue"
+                            class="integration-icon">
+                        <img src="assets/img/golf/Clients/Southlinks.png" alt="Southlinks" class="integration-icon">
+                        <img src="assets/img/golf/Clients/Suvarna Jakarta.png" alt="Suvarna Jakarta"
+                            class="integration-icon">
                     </div>
                 </div>
-                <div class="integration-grid">
-                    <img src="assets/img/golf/Clients/aomori.png" alt="Aomori" class="integration-icon">
-                    <img src="assets/img/golf/Clients/Bali.png" alt="Bali" class="integration-icon">
-
-                    <img src="assets/img/golf/Clients/Batam Hills.png" alt="Batam Hills" class="integration-icon">
-                    <img src="assets/img/golf/Clients/Borobudur Golf Club.png" alt="Borobudur Golf Club" class="integration-icon">
-                    <img src="assets/img/golf/Clients/Bukit Darmo Surabaya.png" alt="Bukit Darmo Surabaya" class="integration-icon">
-                    <img src="assets/img/golf/Clients/Cengkareng Golf Club.png" alt="Cengkareng Golf Club" class="integration-icon">
-                    <img src="assets/img/golf/Clients/Ciputra Golf Club Resto Surabaya.png" alt="Ciputra Golf Club Resto Surabaya" class="integration-icon">
-                    <img src="assets/img/golf/Clients/Damai Indah Golf.png" alt="Damai Indah Golf" class="integration-icon">
-                    <img src="assets/img/golf/Clients/Gunung Geulis.png" alt="Gunung Geulis" class="integration-icon">
-                    <img src="assets/img/golf/Clients/Handara Golf Resort Senayan Avenue.png" alt="Handara Golf Resort" class="integration-icon">
-                    <img src="assets/img/golf/Clients/Imperial Golf Club.png" alt="Imperial Golf Club" class="integration-icon">
-                    <img src="assets/img/golf/Clients/Jababeka Golf.png" alt="Jababeka Golf" class="integration-icon">
-                    <img src="assets/img/golf/Clients/Jatinangor National Golf Resort.png" alt="Jatinangor National Golf Resort" class="integration-icon">
-                    <img src="assets/img/golf/Clients/Lotus Lake Golf.png" alt="Lotus Lake Golf" class="integration-icon">
-                    <img src="assets/img/golf/Clients/Mountain View Golf Club.png" alt="Mountain View Golf Club" class="integration-icon">
-                    <img src="assets/img/golf/Clients/Padang Golf Modern-2.png" alt="Padang Golf Modern" class="integration-icon">
-                    <img src="assets/img/golf/Clients/Palm Springs karawang.png" alt="Palm Springs Karawang" class="integration-icon">
-                    <img src="assets/img/golf/Clients/Pondok Indah Golf.png" alt="Pondok Indah Golf" class="integration-icon">
-                    <img src="assets/img/golf/Clients/Sedayu Indo Golf.png" alt="Sedayu Indo Golf" class="integration-icon">
-                    <img src="assets/img/golf/Clients/Senayan Avenue by Ottolima.png" alt="Senayan Avenue" class="integration-icon">
-                    <img src="assets/img/golf/Clients/Southlinks.png" alt="Southlinks" class="integration-icon">
-                    <img src="assets/img/golf/Clients/Suvarna Jakarta.png" alt="Suvarna Jakarta" class="integration-icon">
+                <div class="col-lg-6 partners-section text-end order-1 order-lg-2" style="align-self: baseline;">
+                    <h2 class="mb-2 mt-4 glass-text"
+                        style="background: linear-gradient(287deg, #2ecc71, #27ae60, #106617); -webkit-background-clip: text; -webkit-text-fill-color: transparent; font-size: 56px; font-weight: 700; line-height: 1.2;">
+                        Our Clients</h2>
+                    <p class="lead mb-3" style="max-width: 90%; font-size: 16px; line-height: 1.6; margin-left: auto;">
+                        Rhapsody Golf is
+                        deeply committed to
+                        delivering excellence and innovation that will drive our clients' success. To enhance our
+                        solutions and provide real value for our clients, Rhapsody Golf has sought like-minded
+                        partners who deliver nothing but the best of the technology.</p>
                 </div>
             </div>
-            <div class="col-lg-6 partners-section text-end order-1 order-lg-2" style="align-self: baseline;">
-                <h2 class="mb-2 mt-4 glass-text"
-                    style="background: linear-gradient(287deg, #2ecc71, #27ae60, #106617); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">
-                    Our Clients</h2>
-                <p class="lead mb-3" style="max-width: 90%; font-size: 20px; margin-left: auto;">Rhapsody Golf is deeply committed to
-                    delivering excellence and innovation that will drive our clients' success. To enhance our
-                    solutions and provide real value for our clients, Rhapsody Golf has sought like-minded
-                    partners who deliver nothing but the best of the technology.</p>
-            </div>
         </div>
-    </div>
-</section>
+    </section>
 
 
 
@@ -2666,9 +2890,10 @@
 
                 <div class="col-lg-6 partners-section">
                     <h2 class="mb-2 mt-4 glass-text"
-                        style="background: linear-gradient(287deg, #2ecc71, #27ae60, #106617); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">
+                        style="background: linear-gradient(287deg, #2ecc71, #27ae60, #106617); -webkit-background-clip: text; -webkit-text-fill-color: transparent; font-size: 56px; font-weight: 700; line-height: 1.2;">
                         Our Partners</h2>
-                    <p class="lead mb-3" style="max-width: 90%; font-size: 20px;">Rhapsody Golf is deeply committed to
+                    <p class="lead mb-3" style="max-width: 90%; font-size: 16px; line-height: 1.6;">Rhapsody Golf is
+                        deeply committed to
                         marketing excellence and innovation that will drive our customers' success. To enhance our
                         solutions and provide real value for our customers, Rhapsody Golf has sought like-minded
                         partners who deliver nothing but the best of the technology.</p>
@@ -2676,20 +2901,7 @@
                 <div class="col-lg-6  mt-lg-0">
 
                     <div class="online-indicator-container">
-                        <div class="online-status">
-                            <svg class="cable-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                                <defs>
-                                    <linearGradient id="cableGradient" x1="0%" y1="0%" x2="100%" y2="0%">
-                                        <stop offset="0%" style="stop-color:#006400;stop-opacity:1" />
-                                        <stop offset="100%" style="stop-color:#90EE90;stop-opacity:1" />
-                                    </linearGradient>
-                                </defs>
-                                <path
-                                    d="M20 5V4c0-.55-.45-1-1-1h-2c-.55 0-1 .45-1 1v1h-1v4c0 .55.45 1 1 1h1v7c0 1.1-.9 2-2 2s-2-.9-2-2V7c0-2.21-1.79-4-4-4S5 4.79 5 7v7H4c-.55 0-1 .45-1 1v4h1v1c0 .55.45 1 1 1h2c.55 0 1-.45 1-1v-1h1v-4c0-.55-.45-1-1-1H7V7c0-1.1.9-2 2-2s2 .9 2 2v10c0 2.21 1.79 4 4 4s4-1.79 4-4v-7h1c.55 0 1-.45 1-1V5h-1z"
-                                    fill="url(#cableGradient)" />
-                            </svg>
-                            <span class="online-text">Proudly Partner with</span>
-                        </div>
+
                     </div>
                     <div class="integration-grid">
                         <img src="assets/img/golf/Partners/mirosoft-partner.png" alt="D-Link" class="integration-icon">
@@ -2713,11 +2925,12 @@
         #integrations {
             padding: 4rem 0;
         }
+
         .integration-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
             grid-template-rows: auto auto;
-            gap: 2rem;
+            gap: 0.5rem;
             justify-content: center;
             align-items: center;
             margin: 0 auto !important;
@@ -2726,7 +2939,7 @@
         }
 
         /* Center the last item if it's alone in its row */
-        .integration-grid > *:last-child:nth-child(3n-2) {
+        .integration-grid>*:last-child:nth-child(3n-2) {
             grid-column: 2;
         }
 
@@ -2816,8 +3029,7 @@
         }
 
         @media (max-width: 575px) {
-            .integration-grid {
-            }
+            .integration-grid {}
 
             .integration-icon,
             .centered-icons .integration-icon {
@@ -2868,6 +3080,7 @@
             position: relative;
             left: 50%;
         }
+
         @media (max-width: 992px) {
             .integration-grid {
                 grid-template-columns: repeat(2, 1fr);
@@ -2889,7 +3102,7 @@
                 left: 0;
             }
 
-            .integration-grid > *:last-child {
+            .integration-grid>*:last-child {
                 grid-column: 1 / -1;
                 justify-self: center;
             }
@@ -2915,7 +3128,7 @@
                 width: 100%;
             }
 
-            .integration-grid > *:last-child {
+            .integration-grid>*:last-child {
                 grid-column: 1 / -1;
                 justify-self: center;
             }
@@ -2939,934 +3152,951 @@
                 width: 100%;
             }
 
-            .integration-grid > *:last-child {
+            .integration-grid>*:last-child {
                 grid-column: 1 / -1;
                 justify-self: center;
             }
         }
     </style>
 
-
-<section class="rt-testimonial-section py-5">
-    <div class="container-fluid">
-        <div class="rt-testimonial-container position-relative" style="max-width: 1000px; margin: 0 auto;">
-            <div class="text-center mb-5">
-                <h1 class="gradient-text glass-text" style="font-weight: bolder; font-size: 48px; background: linear-gradient(287deg, #2ecc71, #27ae60, #106617); background-clip: border-box; -webkit-background-clip: text; -webkit-text-fill-color: transparent;">Testimonials</h1>
-                <p class="" style="font-weight: bold;">Stay informed and inspired with our testimonials from clients
-                    who have experienced our services firsthand.</p>
-            </div>
-            <div class="rt-testimonial-wrapper">
-                <div class="rt-slider-track" id="rt-slider-track">
-                    <!-- Testimonial 1 -->
-                    <div class="rt-testimonial-card">
-                        <div class="rt-testimonial-inner">
-                            <div class="rt-image-section">
-                                <img src="assets/img/team/real-3.gif" alt="John Doe">
-                            </div>
-                            <div class="rt-content-section">
-                                <div class="rt-quote-wrapper">
-                                    <blockquote class="rt-testimonial-text">
-                                        <i class="fas fa-quote-left" style="color: #9054d0; margin-right: 10px;"></i>
-                                        PT Realta Chakradrama has transformed our IT infrastructure completely.
-                                        Their solutions are cutting-edge and their team's expertise in implementing
-                                        enterprise systems is outstanding. They've helped us achieve operational
-                                        excellence.
-                                    </blockquote>
-                                </div>
-                                <div class="rt-author-info">
-                                    <div class="rt-author-details">
-                                        <h3 class="rt-author-name">John Doe</h3>
-                                        <p class="rt-author-title">CEO, Tech Innovations</p>
-                                    </div>
-                                    <div class="rt-company-logo">
-                                        <img src="assets/img/logos/azure.png" alt="Tech Innovations Logo">
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Testimonial 2 -->
-                    <div class="rt-testimonial-card">
-                        <div class="rt-testimonial-inner">
-                            <div class="rt-image-section">
-                                <img src="assets/img/team/avatar2.jpg" alt="Sarah Wilson">
-                            </div>
-                            <div class="rt-content-section">
-                                <div class="rt-quote-wrapper">
-                                    <blockquote class="rt-testimonial-text">
-                                        <i class="fas fa-quote-left" style="color: #9054d0; margin-right: 10px;"></i>
-                                        Working with PT Realta Chakradrama has been a game-changer for our business.
-                                        Their IT solutions have streamlined our processes and their support team is
-                                        always responsive. We've seen significant improvements in efficiency since
-                                        partnering with them.
-                                    </blockquote>
-                                </div>
-                                <div class="rt-author-info">
-                                    <div class="rt-author-details">
-                                        <h3 class="rt-author-name">Sarah Wilson</h3>
-                                        <p class="rt-author-title">COO, Growth Dynamics</p>
-                                    </div>
-                                    <div class="rt-company-logo">
-                                        <img src="assets/img/logos/comms.png" alt="Growth Dynamics Logo">
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Testimonial 3 -->
-                    <div class="rt-testimonial-card">
-                        <div class="rt-testimonial-inner">
-                            <div class="rt-image-section">
-                                <img src="assets/img/team/real2.jpg" alt="Mark Thompson">
-                                <div class="play-overlay" onclick="openVideoPopup()">
-                                    <div class="play-button">
-                                        <i class="fas fa-play"></i>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="rt-content-section">
-                                <div class="rt-quote-wrapper">
-                                    <blockquote class="rt-testimonial-text">
-                                        <i class="fas fa-quote-left" style="color: #9054d0; margin-right: 10px;"></i>
-                                        PT Realta Chakradrama's commitment to delivering innovative IT solutions is
-                                        unmatched. Their deep understanding of business needs and technical
-                                        expertise has helped us modernize our entire digital infrastructure. They're
-                                        truly a reliable technology partner.
-                                    </blockquote>
-                                </div>
-                                <div class="rt-author-info">
-                                    <div class="rt-author-details">
-                                        <h3 class="rt-author-name">Mark Thompson</h3>
-                                        <p class="rt-author-title">Director, Oracle</p>
-                                    </div>
-                                    <div class="rt-company-logo">
-                                        <img src="assets/img/logos/oracle.png" alt="Strategic Solutions Logo">
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+    <!-- Testimonial -->
+    <section class="rt-testimonial-section py-5" style="display: none;">
+        <div class="container-fluid">
+            <div class="rt-testimonial-container position-relative" style="max-width: 1000px; margin: 0 auto;">
+                <div class="text-center mb-5">
+                    <h1 class="gradient-text glass-text"
+                        style="font-weight: bolder; font-size: 48px; background: linear-gradient(287deg, #2ecc71, #27ae60, #106617); background-clip: border-box; -webkit-background-clip: text; -webkit-text-fill-color: transparent;">
+                        Testimonials</h1>
+                    <p class="" style="font-weight: bold;">Stay informed and inspired with our testimonials from clients
+                        who have experienced our services firsthand.</p>
                 </div>
+                <div class="rt-testimonial-wrapper">
+                    <div class="rt-slider-track" id="rt-slider-track">
+                        <!-- Testimonial 1 -->
+                        <div class="rt-testimonial-card">
+                            <div class="rt-testimonial-inner">
+                                <div class="rt-image-section">
+                                    <img src="assets/img/team/real-3.gif" alt="John Doe">
+                                </div>
+                                <div class="rt-content-section">
+                                    <div class="rt-quote-wrapper">
+                                        <blockquote class="rt-testimonial-text">
+                                            <i class="fas fa-quote-left"
+                                                style="color: #9054d0; margin-right: 10px;"></i>
+                                            PT Realta Chakradrama has transformed our IT infrastructure completely.
+                                            Their solutions are cutting-edge and their team's expertise in implementing
+                                            enterprise systems is outstanding. They've helped us achieve operational
+                                            excellence.
+                                        </blockquote>
+                                    </div>
+                                    <div class="rt-author-info">
+                                        <div class="rt-author-details">
+                                            <h3 class="rt-author-name">John Doe</h3>
+                                            <p class="rt-author-title">CEO, Tech Innovations</p>
+                                        </div>
+                                        <div class="rt-company-logo">
+                                            <img src="assets/img/logos/azure.png" alt="Tech Innovations Logo">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
 
-                <!-- Video Popup Overlay -->
-                <div class="video-popup-overlay" id="videoPopupOverlay">
-                    <div class="video-popup-content">
-                        <button class="video-popup-close" onclick="closeVideoPopup()">
-                            <i class="fas fa-times"></i>
+                        <!-- Testimonial 2 -->
+                        <div class="rt-testimonial-card">
+                            <div class="rt-testimonial-inner">
+                                <div class="rt-image-section">
+                                    <img src="assets/img/team/avatar2.jpg" alt="Sarah Wilson">
+                                </div>
+                                <div class="rt-content-section">
+                                    <div class="rt-quote-wrapper">
+                                        <blockquote class="rt-testimonial-text">
+                                            <i class="fas fa-quote-left"
+                                                style="color: #9054d0; margin-right: 10px;"></i>
+                                            Working with PT Realta Chakradrama has been a game-changer for our business.
+                                            Their IT solutions have streamlined our processes and their support team is
+                                            always responsive. We've seen significant improvements in efficiency since
+                                            partnering with them.
+                                        </blockquote>
+                                    </div>
+                                    <div class="rt-author-info">
+                                        <div class="rt-author-details">
+                                            <h3 class="rt-author-name">Sarah Wilson</h3>
+                                            <p class="rt-author-title">COO, Growth Dynamics</p>
+                                        </div>
+                                        <div class="rt-company-logo">
+                                            <img src="assets/img/logos/comms.png" alt="Growth Dynamics Logo">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Testimonial 3 -->
+                        <div class="rt-testimonial-card">
+                            <div class="rt-testimonial-inner">
+                                <div class="rt-image-section">
+                                    <img src="assets/img/team/real2.jpg" alt="Mark Thompson">
+                                    <div class="play-overlay" onclick="openVideoPopup()">
+                                        <div class="play-button">
+                                            <i class="fas fa-play"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="rt-content-section">
+                                    <div class="rt-quote-wrapper">
+                                        <blockquote class="rt-testimonial-text">
+                                            <i class="fas fa-quote-left"
+                                                style="color: #9054d0; margin-right: 10px;"></i>
+                                            PT Realta Chakradrama's commitment to delivering innovative IT solutions is
+                                            unmatched. Their deep understanding of business needs and technical
+                                            expertise has helped us modernize our entire digital infrastructure. They're
+                                            truly a reliable technology partner.
+                                        </blockquote>
+                                    </div>
+                                    <div class="rt-author-info">
+                                        <div class="rt-author-details">
+                                            <h3 class="rt-author-name">Mark Thompson</h3>
+                                            <p class="rt-author-title">Director, Oracle</p>
+                                        </div>
+                                        <div class="rt-company-logo">
+                                            <img src="assets/img/logos/oracle.png" alt="Strategic Solutions Logo">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Video Popup Overlay -->
+                    <div class="video-popup-overlay" id="videoPopupOverlay">
+                        <div class="video-popup-content">
+                            <button class="video-popup-close" onclick="closeVideoPopup()">
+                                <i class="fas fa-times"></i>
+                            </button>
+                            <div class="video-wrapper">
+                                <iframe id="videoIframe" src="" frameborder="0" allowfullscreen></iframe>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Pagination Dots with Navigation Arrows -->
+                    <div class="rt-pagination" id="rt-pagination">
+                        <button class="rt-nav-btn rt-prev styled-button-convex" id="rt-prev">
+                            <i class="fas fa-chevron-left"></i>
                         </button>
-                        <div class="video-wrapper">
-                            <iframe id="videoIframe" src="" frameborder="0" allowfullscreen></iframe>
-                        </div>
+                        <!-- Dots will be inserted here by JavaScript -->
+                        <button class="rt-nav-btn rt-next styled-button-convex" id="rt-next">
+                            <i class="fas fa-chevron-right"></i>
+                        </button>
                     </div>
-                </div>
-
-                <!-- Pagination Dots with Navigation Arrows -->
-                <div class="rt-pagination" id="rt-pagination">
-                    <button class="rt-nav-btn rt-prev" id="rt-prev">
-                        <i class="fas fa-chevron-left"></i>
-                    </button>
-                    <!-- Dots will be inserted here by JavaScript -->
-                    <button class="rt-nav-btn rt-next" id="rt-next">
-                        <i class="fas fa-chevron-right"></i>
-                    </button>
                 </div>
             </div>
         </div>
-    </div>
-</section>
-<style>
-    .rt-testimonial-section {
-        overflow: hidden;
-        padding: 40px 0;
-    }
-
-    .rt-testimonial-wrapper {
-        position: relative;
-        overflow: visible;
-        cursor: grab;
-        max-width: 400px;
-        margin: 0 auto;
-    }
-
-    .rt-testimonial-wrapper:active {
-        cursor: grabbing;
-    }
-
-    .rt-slider-track {
-        display: flex;
-        transition: transform 0.5s ease-in-out;
-        gap: 50px;
-        justify-content: center;
-        align-items: stretch; /* Changed to stretch to maintain equal heights */
-    }
-
-    .rt-testimonial-card {
-        min-width: 100%;
-        padding: 0 5px;
-        box-sizing: border-box;
-        display: flex; /* Added flex display */
-    }
-
-    .rt-testimonial-inner {
-        background: white;
-        border-radius: 20px;
-        overflow: hidden;
-        display: flex;
-        flex-direction: column;
-        border: 1px solid #e0e0e0;
-        transition: box-shadow 0.3s ease;
-        width: 100%; /* Ensure full width */
-        height: 600px; /* Fixed height for consistency */
-    }
-
-    .rt-testimonial-inner:hover {
-        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-    }
-
-    .rt-image-section {
-        width: 100%;
-        height: 195px; /* Fixed height */
-        position: relative;
-        overflow: hidden;
-        flex: 0 0 auto; /* Prevent image section from growing/shrinking */
-    }
-
-    .rt-image-section img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        transition: transform 0.3s ease;
-    }
-
-    .rt-image-section:hover img {
-        transform: scale(1.05);
-    }
-
-    .rt-content-section {
-        padding: 30px;
-        flex: 1;
-        display: flex;
-        flex-direction: column;
-        background: linear-gradient(180deg, #ffffff 0%, #f8f9fa 100%);
-    }
-
-    .rt-quote-wrapper {
-        flex: 1; /* Allow quote wrapper to take remaining space */
-        overflow: hidden; /* Hide overflow content */
-        position: relative;
-        margin-bottom: 20px;
-    }
-
-    .rt-testimonial-text {
-        font-size: 18px;
-        line-height: 1.7;
-        color: #2c3e50;
-        margin: 0;
-        padding: 0;
-        font-weight: 500;
-        position: relative;
-        text-align: left;
-        display: -webkit-box;
-        -webkit-line-clamp: 8; /* Limit to 8 lines */
-        -webkit-box-orient: vertical;
-        overflow: hidden;
-        text-overflow: ellipsis;
-    }
-
-    .rt-author-info {
-        text-align: left;
-        padding-top: 20px;
-        border-top: 2px solid rgba(144, 84, 208, 0.1);
-        display: flex;
-        justify-content: space-between;
-        align-items: flex-end;
-        margin-top: auto; /* Push to bottom */
-        flex: 0 0 auto; /* Prevent growing/shrinking */
-    }
-
-    .rt-author-details {
-        flex: 1;
-    }
-
-    .rt-company-logo {
-        width: 80px;
-        height: 40px;
-        margin-left: 15px;
-    }
-
-    .rt-company-logo img {
-        width: 100%;
-        height: 100%;
-        object-fit: contain;
-    }
-
-    .rt-author-name {
-        font-size: 22px;
-        color: #1a1a1a;
-        margin: 0;
-        font-weight: 700;
-    }
-
-    .rt-author-title {
-        font-size: 14px;
-        color: #9054d0;
-        margin: 5px 0 0;
-        text-transform: uppercase;
-        letter-spacing: 1px;
-    }
-
-    .play-overlay {
-        position: absolute;
-        bottom: 20px;
-        right: 20px;
-        cursor: pointer;
-    }
-
-    .play-button {
-        width: 40px;
-        height: 40px;
-        background-color: #e62e2e;
-        border-radius: 50%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        box-shadow: 0 4px 15px rgba(144, 84, 208, 0.3);
-        position: relative;
-        animation: scale_pulse 2s infinite;
-    }
-
-    /* Add the pulse animation overlay */
-    .play-button::before {
-        content: '';
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        border-radius: 50%;
-        background: rgba(208, 84, 84, 0.4);
-        animation: testimonial_pulse 2s infinite;
-        z-index: -1;
-    }
-
-    @keyframes testimonial_pulse {
-        0% {
-            transform: scale(1);
-            opacity: 0.8;
+    </section>
+    <style>
+        .rt-testimonial-section {
+            overflow: hidden;
+            padding: 40px 0;
         }
 
-        70% {
-            transform: scale(1.5);
-            opacity: 0;
-        }
-
-        100% {
-            transform: scale(1.5);
-            opacity: 0;
-        }
-    }
-
-    @keyframes scale_pulse {
-        0% {
-            transform: scale(1);
-        }
-
-        50% {
-            transform: scale(1.1);
-        }
-
-        100% {
-            transform: scale(1);
-        }
-    }
-
-    .play-button i {
-        color: white;
-        font-size: 20px;
-        margin-left: 4px;
-    }
-
-    /* Mobile responsiveness */
-    @media (max-width: 768px) {
         .rt-testimonial-wrapper {
-            /* width: 90%; */
-            max-width: 395px;
-            padding: 10px 10px 10px 25px;
-            overflow: visible;
-            margin: 0 auto;
             position: relative;
+            overflow: visible;
+            cursor: grab;
+            max-width: 400px;
+            margin: 0 auto;
+        }
+
+        .rt-testimonial-wrapper:active {
+            cursor: grabbing;
         }
 
         .rt-slider-track {
-            justify-content: flex-start;
+            display: flex;
+            transition: transform 0.5s ease-in-out;
             gap: 50px;
-            /* Add padding to ensure last slide centers properly */
-            padding-right: calc(50% - 165px);
-            /* Half wrapper width minus half card width */
-            padding-left: 0;
-            margin: 0;
-            /* Ensure track can show full last slide */
-            width: calc(100% + (50% - 165px));
-            scroll-snap-type: x mandatory;
-            -webkit-overflow-scrolling: touch;
+            justify-content: center;
+            align-items: stretch;
+            /* Changed to stretch to maintain equal heights */
         }
 
         .rt-testimonial-card {
-            scroll-snap-align: center;
-            scroll-snap-stop: always;
-            min-width: 330px;
-            /* Match wrapper max-width */
-            /* Ensure consistent card width */
-            flex: 0 0 330px;
+            min-width: 100%;
+            padding: 0 5px;
+            box-sizing: border-box;
+            display: flex;
+            /* Added flex display */
         }
 
         .rt-testimonial-inner {
-            min-height: auto;
-            width: 100%;
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
             display: flex;
             flex-direction: column;
-            aspect-ratio: 3/4;
-            /* Prevent card from being cut off */
-            margin-right: 0;
+            border: 1px solid #e0e0e0;
+            transition: box-shadow 0.3s ease;
+            width: 100%;
+            /* Ensure full width */
+            height: 600px;
+            /* Fixed height for consistency */
+        }
+
+        .rt-testimonial-inner:hover {
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
         }
 
         .rt-image-section {
-            height: 40%;
+            width: 100%;
+            height: 195px;
+            /* Fixed height */
+            position: relative;
+            overflow: hidden;
             flex: 0 0 auto;
-            min-height: 200px;
+            /* Prevent image section from growing/shrinking */
+        }
+
+        .rt-image-section img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .rt-image-section:hover img {
+            transform: scale(1.05);
         }
 
         .rt-content-section {
-            height: 60%;
-            padding: clamp(15px, 5vw, 25px);
+            padding: 30px;
+            flex: 1;
             display: flex;
             flex-direction: column;
-            justify-content: space-between;
+            background: linear-gradient(180deg, #ffffff 0%, #f8f9fa 100%);
         }
 
         .rt-quote-wrapper {
+            flex: 1;
+            /* Allow quote wrapper to take remaining space */
+            overflow: hidden;
+            /* Hide overflow content */
             position: relative;
-            flex: 0 1 auto;
-            /* Allow shrinking */
-            display: flex;
-            align-items: flex-start;
-            padding-top: 10px;
+            margin-bottom: 20px;
         }
 
         .rt-testimonial-text {
-            font-size: 16px;
-            width: 100%;
+            font-size: 18px;
+            line-height: 1.7;
+            color: #2c3e50;
             margin: 0;
+            padding: 0;
+            font-weight: 500;
             position: relative;
-        }
-
-        .rt-testimonial-text::before {
-            content: '❝';
-            font-size: 60px;
-            color: #9054d0;
-            position: absolute;
-            left: -15px;
-            top: -40px;
-            opacity: 0.2;
+            text-align: left;
+            display: -webkit-box;
+            -webkit-line-clamp: 8;
+            /* Limit to 8 lines */
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            text-overflow: ellipsis;
         }
 
         .rt-author-info {
-            margin-top: clamp(10px, 3vw, 15px);
-            padding-top: clamp(8px, 2vw, 10px);
+            text-align: left;
+            padding-top: 20px;
+            border-top: 2px solid rgba(144, 84, 208, 0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            margin-top: auto;
+            /* Push to bottom */
+            flex: 0 0 auto;
+            /* Prevent growing/shrinking */
+        }
+
+        .rt-author-details {
+            flex: 1;
         }
 
         .rt-company-logo {
-            width: 60px;
-            height: 30px;
+            width: 80px;
+            height: 40px;
+            margin-left: 15px;
+        }
+
+        .rt-company-logo img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
         }
 
         .rt-author-name {
-            font-size: clamp(16px, 5vw, 18px);
+            font-size: 22px;
+            color: #1a1a1a;
+            margin: 0;
+            font-weight: 700;
+        }
+
+        .rt-author-title {
+            font-size: 14px;
+            color: #9054d0;
+            margin: 5px 0 0;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .play-overlay {
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
+            cursor: pointer;
         }
 
         .play-button {
-            width: clamp(32px, 8vw, 40px);
-            height: clamp(32px, 8vw, 40px);
+            width: 40px;
+            height: 40px;
+            background-color: #e62e2e;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 15px rgba(144, 84, 208, 0.3);
+            position: relative;
+            animation: scale_pulse 2s infinite;
         }
+
+        /* Add the pulse animation overlay */
+        .play-button::before {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            background: rgba(208, 84, 84, 0.4);
+            animation: testimonial_pulse 2s infinite;
+            z-index: -1;
+        }
+
+        @keyframes testimonial_pulse {
+            0% {
+                transform: scale(1);
+                opacity: 0.8;
+            }
+
+            70% {
+                transform: scale(1.5);
+                opacity: 0;
+            }
+
+            100% {
+                transform: scale(1.5);
+                opacity: 0;
+            }
+        }
+
+        @keyframes scale_pulse {
+            0% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.1);
+            }
+
+            100% {
+                transform: scale(1);
+            }
+        }
+
         .play-button i {
-            font-size: clamp(14px, 4vw, 16px);
+            color: white;
+            font-size: 20px;
+            margin-left: 4px;
         }
-    }
 
-    .rt-pagination {
-        margin-top: clamp(20px, 5vw, 30px);
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        gap: clamp(10px, 3vw, 15px);
-        width: 100%;
-        padding: 0 20px;
-    }
+        /* Mobile responsiveness */
+        @media (max-width: 768px) {
+            .rt-testimonial-wrapper {
+                /* width: 90%; */
+                max-width: 395px;
+                padding: 10px 10px 10px 25px;
+                overflow: visible;
+                margin: 0 auto;
+                position: relative;
+            }
 
-    @media (max-width: 768px) {
+            .rt-slider-track {
+                justify-content: flex-start;
+                gap: 50px;
+                /* Add padding to ensure last slide centers properly */
+                padding-right: calc(50% - 165px);
+                /* Half wrapper width minus half card width */
+                padding-left: 0;
+                margin: 0;
+                /* Ensure track can show full last slide */
+                width: calc(100% + (50% - 165px));
+                scroll-snap-type: x mandatory;
+                -webkit-overflow-scrolling: touch;
+            }
+
+            .rt-testimonial-card {
+                scroll-snap-align: center;
+                scroll-snap-stop: always;
+                min-width: 330px;
+                /* Match wrapper max-width */
+                /* Ensure consistent card width */
+                flex: 0 0 330px;
+            }
+
+            .rt-testimonial-inner {
+                min-height: auto;
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+                aspect-ratio: 3/4;
+                /* Prevent card from being cut off */
+                margin-right: 0;
+            }
+
+            .rt-image-section {
+                height: 40%;
+                flex: 0 0 auto;
+                min-height: 200px;
+            }
+
+            .rt-content-section {
+                height: 60%;
+                padding: clamp(15px, 5vw, 25px);
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+            }
+
+            .rt-quote-wrapper {
+                position: relative;
+                flex: 0 1 auto;
+                /* Allow shrinking */
+                display: flex;
+                align-items: flex-start;
+                padding-top: 10px;
+            }
+
+            .rt-testimonial-text {
+                font-size: 16px;
+                width: 100%;
+                margin: 0;
+                position: relative;
+            }
+
+            .rt-testimonial-text::before {
+                content: '❝';
+                font-size: 60px;
+                color: #9054d0;
+                position: absolute;
+                left: -15px;
+                top: -40px;
+                opacity: 0.2;
+            }
+
+            .rt-author-info {
+                margin-top: clamp(10px, 3vw, 15px);
+                padding-top: clamp(8px, 2vw, 10px);
+            }
+
+            .rt-company-logo {
+                width: 60px;
+                height: 30px;
+            }
+
+            .rt-author-name {
+                font-size: clamp(16px, 5vw, 18px);
+            }
+
+            .play-button {
+                width: clamp(32px, 8vw, 40px);
+                height: clamp(32px, 8vw, 40px);
+            }
+
+            .play-button i {
+                font-size: clamp(14px, 4vw, 16px);
+            }
+        }
+
         .rt-pagination {
-            justify-content: end;
-        }
-    }
-
-    .rt-nav-btn {
-        width: clamp(35px, 10vw, 45px);
-        height: clamp(35px, 10vw, 45px);
-        border-radius: 50%;
-        background: #9054d0;
-        border: none;
-        color: white;
-        cursor: pointer;
-        transition: all 0.3s ease;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        box-shadow: 0 4px 15px rgba(144, 84, 208, 0.2);
-        z-index: 2;
-    }
-
-    .rt-nav-btn:hover {
-        background: #7a4bd7;
-        transform: scale(1.1);
-    }
-</style>
-
-<script>
-    document.addEventListener('DOMContentLoaded', function () {
-        const track = document.getElementById('rt-slider-track');
-        const slides = track.getElementsByClassName('rt-testimonial-card');
-        const prevBtn = document.getElementById('rt-prev');
-        const nextBtn = document.getElementById('rt-next');
-        const pagination = document.getElementById('rt-pagination');
-        const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
-
-        let currentIndex = 0;
-        const slideCount = slides.length;
-        let isDragging = false;
-        let startPos = 0;
-        let currentTranslate = 0;
-        let prevTranslate = 0;
-        let touchStartX = 0;
-        let touchEndX = 0;
-        let animationID = null;
-
-        // Create pagination dots
-        for (let i = 0; i < slideCount; i++) {
-            const dot = document.createElement('div');
-            dot.classList.add('rt-dot');
-            if (i === 0) dot.classList.add('active');
-            dot.addEventListener('click', () => goToSlide(i));
-            pagination.insertBefore(dot, nextBtn);
+            margin-top: clamp(20px, 5vw, 30px);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: clamp(10px, 3vw, 15px);
+            width: 100%;
+            padding: 0 20px;
         }
 
-        function updateSlidePosition(translate = null) {
-            cancelAnimationFrame(animationID);
-            if (translate !== null) {
-                track.style.transform = `translateX(${translate}px)`;
-            } else {
-                track.style.transform = `translateX(-${currentIndex * 100}%)`;
+        @media (max-width: 768px) {
+            .rt-pagination {
+                justify-content: end;
             }
-            updateDots();
-            updateButtons();
         }
 
-        function updateDots() {
-            const dots = pagination.getElementsByClassName('rt-dot');
-            Array.from(dots).forEach((dot, index) => {
-                dot.classList.toggle('active', index === currentIndex);
-            });
+        .rt-nav-btn {
+            width: clamp(35px, 10vw, 45px);
+            height: clamp(35px, 10vw, 45px);
+            border-radius: 50%;
+            background: #9054d0;
+            border: none;
+            color: white;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 15px rgba(144, 84, 208, 0.2);
+            z-index: 2;
         }
 
-        function updateButtons() {
-            prevBtn.style.opacity = currentIndex === 0 ? '0.5' : '1';
-            nextBtn.style.opacity = currentIndex === slideCount - 1 ? '0.5' : '1';
+        .rt-nav-btn:hover {
+            background: #7a4bd7;
+            transform: scale(1.1);
         }
+    </style>
 
-        function goToSlide(index) {
-            currentIndex = index;
-            updateSlidePosition();
-        }
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const track = document.getElementById('rt-slider-track');
+            const slides = track.getElementsByClassName('rt-testimonial-card');
+            const prevBtn = document.getElementById('rt-prev');
+            const nextBtn = document.getElementById('rt-next');
+            const pagination = document.getElementById('rt-pagination');
+            const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
 
-        // Desktop drag functionality
-        if (!isMobile) {
-            track.addEventListener('mousedown', dragStart);
-            track.addEventListener('mousemove', drag);
-            track.addEventListener('mouseup', dragEnd);
-            track.addEventListener('mouseleave', dragEnd);
-        }
+            let currentIndex = 0;
+            const slideCount = slides.length;
+            let isDragging = false;
+            let startPos = 0;
+            let currentTranslate = 0;
+            let prevTranslate = 0;
+            let touchStartX = 0;
+            let touchEndX = 0;
+            let animationID = null;
 
-        // Enhanced mobile touch functionality
-        if (isMobile) {
-            // Add touch events to each slide for better mobile response
-            Array.from(slides).forEach(slide => {
-                slide.addEventListener('touchstart', touchStart, {
-                    passive: false
+            // Create pagination dots
+            for (let i = 0; i < slideCount; i++) {
+                const dot = document.createElement('div');
+                dot.classList.add('rt-dot');
+                if (i === 0) dot.classList.add('active');
+                dot.addEventListener('click', () => goToSlide(i));
+                pagination.insertBefore(dot, nextBtn);
+            }
+
+            function updateSlidePosition(translate = null) {
+                cancelAnimationFrame(animationID);
+                if (translate !== null) {
+                    track.style.transform = `translateX(${translate}px)`;
+                } else {
+                    track.style.transform = `translateX(-${currentIndex * 100}%)`;
+                }
+                updateDots();
+                updateButtons();
+            }
+
+            function updateDots() {
+                const dots = pagination.getElementsByClassName('rt-dot');
+                Array.from(dots).forEach((dot, index) => {
+                    dot.classList.toggle('active', index === currentIndex);
                 });
-                slide.addEventListener('touchmove', touchMove, {
-                    passive: false
+            }
+
+            function updateButtons() {
+                prevBtn.style.opacity = currentIndex === 0 ? '0.5' : '1';
+                nextBtn.style.opacity = currentIndex === slideCount - 1 ? '0.5' : '1';
+            }
+
+            function goToSlide(index) {
+                currentIndex = index;
+                updateSlidePosition();
+            }
+
+            // Desktop drag functionality
+            if (!isMobile) {
+                track.addEventListener('mousedown', dragStart);
+                track.addEventListener('mousemove', drag);
+                track.addEventListener('mouseup', dragEnd);
+                track.addEventListener('mouseleave', dragEnd);
+            }
+
+            // Enhanced mobile touch functionality
+            if (isMobile) {
+                // Add touch events to each slide for better mobile response
+                Array.from(slides).forEach(slide => {
+                    slide.addEventListener('touchstart', touchStart, {
+                        passive: false
+                    });
+                    slide.addEventListener('touchmove', touchMove, {
+                        passive: false
+                    });
+                    slide.addEventListener('touchend', touchEnd);
                 });
-                slide.addEventListener('touchend', touchEnd);
-            });
-        }
-
-        function touchStart(e) {
-            // Prevent default only for horizontal swipes
-            const touch = e.touches[0];
-            touchStartX = touch.clientX;
-
-            isDragging = true;
-            startPos = touchStartX;
-            currentTranslate = prevTranslate;
-            track.style.transition = 'none';
-
-            // Stop any ongoing animations
-            cancelAnimationFrame(animationID);
-            animationID = requestAnimationFrame(animation);
-        }
-
-        function touchMove(e) {
-            if (!isDragging) return;
-
-            const touch = e.touches[0];
-            const currentX = touch.clientX;
-            const diffX = currentX - touchStartX;
-            const diffY = touch.clientY - e.touches[0].clientY;
-
-            // If horizontal movement is greater than vertical, prevent scrolling
-            if (Math.abs(diffX) > Math.abs(diffY)) {
-                e.preventDefault();
             }
 
-            const diff = currentX - startPos;
-            currentTranslate = prevTranslate + diff;
+            function touchStart(e) {
+                // Prevent default only for horizontal swipes
+                const touch = e.touches[0];
+                touchStartX = touch.clientX;
 
-            // Add resistance at edges
-            if (currentTranslate > 0) {
-                currentTranslate = currentTranslate * 0.3;
-            } else if (currentTranslate < -(slideCount - 1) * track.offsetWidth) {
-                const overflowTranslate = currentTranslate + (slideCount - 1) * track.offsetWidth;
-                currentTranslate = -(slideCount - 1) * track.offsetWidth + (overflowTranslate * 0.3);
+                isDragging = true;
+                startPos = touchStartX;
+                currentTranslate = prevTranslate;
+                track.style.transition = 'none';
+
+                // Stop any ongoing animations
+                cancelAnimationFrame(animationID);
+                animationID = requestAnimationFrame(animation);
             }
-        }
 
-        function touchEnd(e) {
-            isDragging = false;
-            cancelAnimationFrame(animationID);
+            function touchMove(e) {
+                if (!isDragging) return;
 
-            const movedBy = currentTranslate - prevTranslate;
-            const threshold = track.offsetWidth * 0.2;
+                const touch = e.touches[0];
+                const currentX = touch.clientX;
+                const diffX = currentX - touchStartX;
+                const diffY = touch.clientY - e.touches[0].clientY;
 
-            track.style.transition = 'transform 0.3s ease-out';
+                // If horizontal movement is greater than vertical, prevent scrolling
+                if (Math.abs(diffX) > Math.abs(diffY)) {
+                    e.preventDefault();
+                }
 
-            if (Math.abs(movedBy) > threshold) {
-                if (movedBy < 0 && currentIndex < slideCount - 1) {
-                    currentIndex++;
-                } else if (movedBy > 0 && currentIndex > 0) {
-                    currentIndex--;
+                const diff = currentX - startPos;
+                currentTranslate = prevTranslate + diff;
+
+                // Add resistance at edges
+                if (currentTranslate > 0) {
+                    currentTranslate = currentTranslate * 0.3;
+                } else if (currentTranslate < -(slideCount - 1) * track.offsetWidth) {
+                    const overflowTranslate = currentTranslate + (slideCount - 1) * track.offsetWidth;
+                    currentTranslate = -(slideCount - 1) * track.offsetWidth + (overflowTranslate * 0.3);
                 }
             }
 
-            prevTranslate = -currentIndex * track.offsetWidth;
-            currentTranslate = prevTranslate;
-            updateSlidePosition();
-        }
+            function touchEnd(e) {
+                isDragging = false;
+                cancelAnimationFrame(animationID);
 
-        function animation() {
-            updateSlidePosition(currentTranslate);
-            if (isDragging) requestAnimationFrame(animation);
-        }
+                const movedBy = currentTranslate - prevTranslate;
+                const threshold = track.offsetWidth * 0.2;
 
-        function dragStart(e) {
-            isDragging = true;
-            startPos = e.clientX;
-            currentTranslate = prevTranslate;
-            track.style.transition = 'none';
+                track.style.transition = 'transform 0.3s ease-out';
 
-            animationID = requestAnimationFrame(animation);
-        }
-
-        function drag(e) {
-            if (!isDragging) return;
-            const currentPosition = e.clientX;
-            const diff = currentPosition - startPos;
-            currentTranslate = prevTranslate + diff;
-        }
-
-        function dragEnd() {
-            isDragging = false;
-            cancelAnimationFrame(animationID);
-
-            const movedBy = currentTranslate - prevTranslate;
-            const threshold = track.offsetWidth * 0.2;
-
-            track.style.transition = 'transform 0.3s ease-out';
-
-            if (Math.abs(movedBy) > threshold) {
-                if (movedBy < 0 && currentIndex < slideCount - 1) {
-                    currentIndex++;
-                } else if (movedBy > 0 && currentIndex > 0) {
-                    currentIndex--;
-                }
-            }
-
-            prevTranslate = -currentIndex * track.offsetWidth;
-            currentTranslate = prevTranslate;
-            updateSlidePosition();
-        }
-
-        prevBtn.addEventListener('click', () => {
-            if (currentIndex > 0) {
-                currentIndex--;
-            } else {
-                // Reset to last slide if at beginning
-                currentIndex = slideCount - 1;
-            }
-            updateSlidePosition();
-        });
-
-        nextBtn.addEventListener('click', () => {
-            if (currentIndex < slideCount - 1) {
-                currentIndex++;
-            } else {
-                // Reset to first slide if at end
-                currentIndex = 0;
-            }
-            updateSlidePosition();
-        });
-
-        // Auto-play functionality only if more than 4 slides
-        let autoplayInterval;
-
-        function startAutoplay() {
-            if (slideCount > 4 && !isDragging) {
-                autoplayInterval = setInterval(() => {
-                    if (currentIndex < slideCount - 1) {
+                if (Math.abs(movedBy) > threshold) {
+                    if (movedBy < 0 && currentIndex < slideCount - 1) {
                         currentIndex++;
-                    } else {
-                        // Reset to first slide when reaching the end
-                        currentIndex = 0;
+                    } else if (movedBy > 0 && currentIndex > 0) {
+                        currentIndex--;
                     }
-                    updateSlidePosition();
-                }, 5000);
+                }
+
+                prevTranslate = -currentIndex * track.offsetWidth;
+                currentTranslate = prevTranslate;
+                updateSlidePosition();
+            }
+
+            function animation() {
+                updateSlidePosition(currentTranslate);
+                if (isDragging) requestAnimationFrame(animation);
+            }
+
+            function dragStart(e) {
+                isDragging = true;
+                startPos = e.clientX;
+                currentTranslate = prevTranslate;
+                track.style.transition = 'none';
+
+                animationID = requestAnimationFrame(animation);
+            }
+
+            function drag(e) {
+                if (!isDragging) return;
+                const currentPosition = e.clientX;
+                const diff = currentPosition - startPos;
+                currentTranslate = prevTranslate + diff;
+            }
+
+            function dragEnd() {
+                isDragging = false;
+                cancelAnimationFrame(animationID);
+
+                const movedBy = currentTranslate - prevTranslate;
+                const threshold = track.offsetWidth * 0.2;
+
+                track.style.transition = 'transform 0.3s ease-out';
+
+                if (Math.abs(movedBy) > threshold) {
+                    if (movedBy < 0 && currentIndex < slideCount - 1) {
+                        currentIndex++;
+                    } else if (movedBy > 0 && currentIndex > 0) {
+                        currentIndex--;
+                    }
+                }
+
+                prevTranslate = -currentIndex * track.offsetWidth;
+                currentTranslate = prevTranslate;
+                updateSlidePosition();
+            }
+
+            prevBtn.addEventListener('click', () => {
+                if (currentIndex > 0) {
+                    currentIndex--;
+                } else {
+                    // Reset to last slide if at beginning
+                    currentIndex = slideCount - 1;
+                }
+                updateSlidePosition();
+            });
+
+            nextBtn.addEventListener('click', () => {
+                if (currentIndex < slideCount - 1) {
+                    currentIndex++;
+                } else {
+                    // Reset to first slide if at end
+                    currentIndex = 0;
+                }
+                updateSlidePosition();
+            });
+
+            // Auto-play functionality only if more than 4 slides
+            let autoplayInterval;
+
+            function startAutoplay() {
+                if (slideCount > 4 && !isDragging) {
+                    autoplayInterval = setInterval(() => {
+                        if (currentIndex < slideCount - 1) {
+                            currentIndex++;
+                        } else {
+                            // Reset to first slide when reaching the end
+                            currentIndex = 0;
+                        }
+                        updateSlidePosition();
+                    }, 5000);
+                }
+            }
+
+            function stopAutoplay() {
+                clearInterval(autoplayInterval);
+            }
+
+            // Start autoplay initially if enough slides
+            if (slideCount > 4) {
+                startAutoplay();
+            }
+
+            // Pause auto-play on hover or drag
+            track.addEventListener('mouseenter', stopAutoplay);
+            track.addEventListener('mouseleave', startAutoplay);
+
+            // Stop autoplay during dragging
+            track.addEventListener('mousedown', stopAutoplay);
+            track.addEventListener('touchstart', stopAutoplay);
+
+            // Video popup functionality
+            function openVideoPopup() {
+                const overlay = document.getElementById('video-popup-overlay');
+                const iframe = document.getElementById('popup-video-iframe');
+
+                // Set video URL (replace with your video URL)
+                iframe.src = 'https://www.youtube.com/embed/YOUR_VIDEO_ID?autoplay=1';
+
+                // Show overlay with animation
+                overlay.classList.add('active');
+                document.body.style.overflow = 'hidden'; // Prevent scrolling
+            }
+
+            // Add close functionality
+            document.querySelector('.video-popup-close').addEventListener('click', () => {
+                const overlay = document.getElementById('video-popup-overlay');
+                const iframe = document.getElementById('popup-video-iframe');
+
+                overlay.classList.remove('active');
+                setTimeout(() => {
+                    overlay.style.display = 'none';
+                    iframe.src = ''; // Clear iframe source
+                }, 300);
+                document.body.style.overflow = ''; // Restore scrolling
+            });
+
+            // Close on overlay click
+            document.getElementById('video-popup-overlay').addEventListener('click', (e) => {
+                if (e.target === e.currentTarget) {
+                    document.querySelector('.video-popup-close').click();
+                }
+            });
+
+            // Close on escape key
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape') {
+                    document.querySelector('.video-popup-close').click();
+                }
+            });
+
+            // Initial setup
+            updateSlidePosition();
+        });
+    </script>
+
+
+
+
+    <style>
+        /* Video popup styles */
+        .video-popup-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.85);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+            opacity: 0;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .video-popup-content {
+            position: relative;
+            width: 90%;
+            max-width: 800px;
+            background: transparent;
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            border-radius: 15px;
+            padding: 20px;
+            transform: scale(0.8);
+            transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.15);
+        }
+
+        .video-popup-close {
+            position: absolute;
+            top: -9px;
+            right: -9px;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            background: #9054d0;
+            border: none;
+            color: white;
+            font-size: 20px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+            z-index: 1000000;
+        }
+
+        @media screen and (max-width: 768px) {
+            .video-popup-close {
+                right: -9px;
+                top: -9px;
+                width: 20px;
+                height: 20px;
+                font-size: 13px;
             }
         }
 
-        function stopAutoplay() {
-            clearInterval(autoplayInterval);
+        .video-popup-close:hover {
+            background: #7a4bd7;
+            transform: scale(1.1) rotate(90deg);
         }
 
-        // Start autoplay initially if enough slides
-        if (slideCount > 4) {
-            startAutoplay();
+        .video-wrapper {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.3);
         }
 
-        // Pause auto-play on hover or drag
-        track.addEventListener('mouseenter', stopAutoplay);
-        track.addEventListener('mouseleave', startAutoplay);
+        .video-wrapper iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border-radius: 10px;
+            border: none;
+        }
 
-        // Stop autoplay during dragging
-        track.addEventListener('mousedown', stopAutoplay);
-        track.addEventListener('touchstart', stopAutoplay);
 
-        // Video popup functionality
+        /* Show popup with animation */
+        .video-popup-overlay.active {
+            display: flex;
+            opacity: 1;
+        }
+
+        .video-popup-overlay.active .video-popup-content {
+            transform: scale(1);
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+    </style>
+
+    <script>
         function openVideoPopup() {
-            const overlay = document.getElementById('video-popup-overlay');
-            const iframe = document.getElementById('popup-video-iframe');
+            const overlay = document.getElementById('videoPopupOverlay');
+            const iframe = document.getElementById('videoIframe');
 
-            // Set video URL (replace with your video URL)
-            iframe.src = 'https://www.youtube.com/embed/YOUR_VIDEO_ID?autoplay=1';
+            // Set your video URL here
+            iframe.src = 'https://www.youtube.com/embed/YOUR_VIDEO_ID?autoplay=1&rel=0';
 
-            // Show overlay with animation
+            overlay.style.display = 'flex';
+            document.body.style.overflow = 'hidden';
+
+            // Trigger reflow
+            overlay.offsetHeight;
+
             overlay.classList.add('active');
-            document.body.style.overflow = 'hidden'; // Prevent scrolling
         }
 
-        // Add close functionality
-        document.querySelector('.video-popup-close').addEventListener('click', () => {
-            const overlay = document.getElementById('video-popup-overlay');
-            const iframe = document.getElementById('popup-video-iframe');
+        function closeVideoPopup() {
+            const overlay = document.getElementById('videoPopupOverlay');
+            const iframe = document.getElementById('videoIframe');
 
             overlay.classList.remove('active');
+            document.body.style.overflow = '';
+
             setTimeout(() => {
                 overlay.style.display = 'none';
-                iframe.src = ''; // Clear iframe source
-            }, 300);
-            document.body.style.overflow = ''; // Restore scrolling
-        });
+                iframe.src = '';
+            }, 400);
+        }
 
         // Close on overlay click
-        document.getElementById('video-popup-overlay').addEventListener('click', (e) => {
+        document.getElementById('videoPopupOverlay').addEventListener('click', (e) => {
             if (e.target === e.currentTarget) {
-                document.querySelector('.video-popup-close').click();
+                closeVideoPopup();
             }
         });
 
         // Close on escape key
         document.addEventListener('keydown', (e) => {
             if (e.key === 'Escape') {
-                document.querySelector('.video-popup-close').click();
+                closeVideoPopup();
             }
         });
+    </script>
 
-        // Initial setup
-        updateSlidePosition();
-    });
-</script>
-
-
-
-
-<style>
-    /* Video popup styles */
-    .video-popup-overlay {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: rgba(0, 0, 0, 0.85);
-        display: none;
-        justify-content: center;
-        align-items: center;
-        z-index: 9999;
-        opacity: 0;
-        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-    }
-
-    .video-popup-content {
-        position: relative;
-        width: 90%;
-        max-width: 800px;
-        background: transparent;
-        border: 2px solid rgba(255, 255, 255, 0.2);
-        border-radius: 15px;
-        padding: 20px;
-        transform: scale(0.8);
-        transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-        box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.15);
-    }
-
-    .video-popup-close {
-        position: absolute;
-        top: -9px;
-        right: -9px;
-        width: 30px;
-        height: 30px;
-        border-radius: 50%;
-        background: #9054d0;
-        border: none;
-        color: white;
-        font-size: 20px;
-        cursor: pointer;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        transition: all 0.3s ease;
-        z-index: 1000000;
-    }
-
-    @media screen and (max-width: 768px) {
-        .video-popup-close {
-            right: -9px;
-            top: -9px;
-            width: 20px;
-            height: 20px;
-            font-size: 13px;
-        }
-    }
-
-    .video-popup-close:hover {
-        background: #7a4bd7;
-        transform: scale(1.1) rotate(90deg);
-    }
-
-    .video-wrapper {
-        position: relative;
-        padding-bottom: 56.25%;
-        height: 0;
-        overflow: hidden;
-        border-radius: 10px;
-        box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.3);
-    }
-
-    .video-wrapper iframe {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        border-radius: 10px;
-        border: none;
-    }
-
-
-    /* Show popup with animation */
-    .video-popup-overlay.active {
-        display: flex;
-        opacity: 1;
-    }
-
-    .video-popup-overlay.active .video-popup-content {
-        transform: scale(1);
-    }
-
-    @keyframes fadeIn {
-        from {
-            opacity: 0;
-        }
-
-        to {
-            opacity: 1;
-        }
-    }
-</style>
-
-<script>
-    function openVideoPopup() {
-        const overlay = document.getElementById('videoPopupOverlay');
-        const iframe = document.getElementById('videoIframe');
-
-        // Set your video URL here
-        iframe.src = 'https://www.youtube.com/embed/YOUR_VIDEO_ID?autoplay=1&rel=0';
-
-        overlay.style.display = 'flex';
-        document.body.style.overflow = 'hidden';
-
-        // Trigger reflow
-        overlay.offsetHeight;
-
-        overlay.classList.add('active');
-    }
-
-    function closeVideoPopup() {
-        const overlay = document.getElementById('videoPopupOverlay');
-        const iframe = document.getElementById('videoIframe');
-
-        overlay.classList.remove('active');
-        document.body.style.overflow = '';
-
-        setTimeout(() => {
-            overlay.style.display = 'none';
-            iframe.src = '';
-        }, 400);
-    }
-
-    // Close on overlay click
-    document.getElementById('videoPopupOverlay').addEventListener('click', (e) => {
-        if (e.target === e.currentTarget) {
-            closeVideoPopup();
-        }
-    });
-
-    // Close on escape key
-    document.addEventListener('keydown', (e) => {
-        if (e.key === 'Escape') {
-            closeVideoPopup();
-        }
-    });
-</script>
-
-</section>
+    </section>
 
 
     <section id="separator" class="py-5" style="background-color: #efecff;">
@@ -3877,9 +4107,8 @@
                         <div class="banner-content">
                             <h2>Unlock superior coverage for your team</h2>
                             <p>Build a culture of employee delight by taking the first step towards Benefits</p>
-                            <button class="btn-custom" onclick="navigateWithLoading('contacts.html'); return false;"
-                                style="background: linear-gradient(to bottom, #9054d0, #7a4bd7);">Schedule a
-                                call</button>
+                            <button class="btn-custom styled-button-convex" style="background: #35743f !important;"
+                                onclick="navigateWithLoading('contacts.html'); return false;">Schedule a call</button>
                         </div>
                         <img src="assets/img/handshake.png" alt="Business Handshake" class="banner-image">
                     </div>
@@ -3893,7 +4122,7 @@
             <div class="row justify-content-between">
                 <div id="contact-info" class="col-lg-5 left-column >
                     
-                    <p class="text-muted mb-4 contact-text" ;">
+                    <p class=" text-muted mb-4 contact-text" ;">
                     </p>
 
                     <div class="company-info" style="border-radius: 10px;">
@@ -3911,7 +4140,7 @@
                             </p>
                         </div>
 
-                       
+
                     </div>
                     <style>
                         /* Remove the media query and adjust the selectors */
@@ -3957,47 +4186,50 @@
                                 margin-top: 3px;
                             }
                         </style>
-                       <div class="contact-item">
-                           <i class="fas fa-phone contact-icon"></i>
-                           <a href="tel:+62213861772" class="text-decoration-none fw-bold">+62 21 - 386 1772</a>
-                       </div>
-                       <div class="contact-item">
-                           <i class="fas fa-envelope contact-icon"></i>
-                           <a href="mailto:info@realta.co.id" class="text-decoration-none fw-bold">info@realta.co.id</a>
-                       </div>
-                       <div class="contact-item">
-                        <img src="/Assets/assets/pngwing.com.png" class="contact-icon" style="width: 18px; height: 18px;">
-                        <p class="mb-0">
-                            For sales and marketing, contact our Official WhatsApp:<br>
-                            <a href="https://wa.me/628111221789" class="text-decoration-none fw-bold" target="_blank" rel="noopener noreferrer"
-                                style="color: #3bc05a;">+62 811 1221 789 (Chat Only)</a>
-                        </p>
+                        <div class="contact-item">
+                            <i class="fas fa-phone contact-icon"></i>
+                            <a href="tel:+62213861772" class="text-decoration-none fw-bold">+62 21 - 386 1772</a>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-envelope contact-icon"></i>
+                            <a href="mailto:info@realta.co.id"
+                                class="text-decoration-none fw-bold">info@realta.co.id</a>
+                        </div>
+                        <div class="contact-item">
+                            <img src="/Assets/assets/pngwing.com.png" class="contact-icon"
+                                style="width: 18px; height: 18px;">
+                            <p class="mb-0">
+                                For sales and marketing, contact our Official WhatsApp:<br>
+                                <a href="https://wa.me/628111221789" class="text-decoration-none fw-bold"
+                                    target="_blank" rel="noopener noreferrer" style="color: #3bc05a;">+62 811 1221 789
+                                    (Chat Only)</a>
+                            </p>
+                        </div>
                     </div>
-                       </div>
 
 
                     <div class="social-icons-container">
                         <h4 class="mb-3" style="font-size: 0.9rem; text-align: left; margin-left: 10px;"> Connect With
                             Us Through Social Media</h4>
                         <div class="social-icons d-flex gap-3">
-                            <a href="https://www.facebook.com/realtachakradarma/" class="social-icon" aria-label="Facebook" target="_blank"
-                                rel="noopener noreferrer">
+                            <a href="https://www.facebook.com/realtachakradarma/" class="social-icon"
+                                aria-label="Facebook" target="_blank" rel="noopener noreferrer">
                                 <i class="fab fa-facebook-f"></i>
                             </a>
-                            <a href="https://id.linkedin.com/company/pt-realta-chakradarma/" class="social-icon" aria-label="LinkedIn"
-                                target="_blank" rel="noopener noreferrer">
+                            <a href="https://id.linkedin.com/company/pt-realta-chakradarma/" class="social-icon"
+                                aria-label="LinkedIn" target="_blank" rel="noopener noreferrer">
                                 <i class="fab fa-linkedin-in"></i>
                             </a>
-                            <a href="https://x.com/Realta_OneSol" class="social-icon" aria-label="Twitter" target="_blank"
-                                rel="noopener noreferrer">
+                            <a href="https://x.com/Realta_OneSol" class="social-icon" aria-label="Twitter"
+                                target="_blank" rel="noopener noreferrer">
                                 <i class="fab fa-x-twitter"></i>
                             </a>
-                            <a href="https://www.instagram.com/realta.id/" class="social-icon" aria-label="Instagram" target="_blank"
-                                rel="noopener noreferrer">
+                            <a href="https://www.instagram.com/realta.id/" class="social-icon" aria-label="Instagram"
+                                target="_blank" rel="noopener noreferrer">
                                 <i class="fab fa-instagram"></i>
                             </a>
-                            <a href="https://www.youtube.com/@ptrealtachakradarma3127" class="social-icon" aria-label="YouTube" target="_blank"
-                                rel="noopener noreferrer">
+                            <a href="https://www.youtube.com/@ptrealtachakradarma3127" class="social-icon"
+                                aria-label="YouTube" target="_blank" rel="noopener noreferrer">
                                 <i class="fab fa-youtube"></i>
                             </a>
                         </div>
@@ -4110,9 +4342,11 @@
                                 <input type="checkbox" class="form-check-input" id="terms" required>
                                 <label class="form-check-label" for="terms">
                                     Before submitting please read our <br>
-                                    <a href="#" class="text-decoration-none" onclick="navigateWithLoading('tos.html#eula'); return false;">Term and
+                                    <a href="#" class="text-decoration-none"
+                                        onclick="navigateWithLoading('tos.html#eula'); return false;">Term and
                                         Condition</a> &
-                                    <a href="#" class="text-decoration-none" onclick="navigateWithLoading('tos.html#privacy'); return false;">Privacy
+                                    <a href="#" class="text-decoration-none"
+                                        onclick="navigateWithLoading('tos.html#privacy'); return false;">Privacy
                                         Policy</a>
                                 </label>
                                 <div class="invalid-feedback">
@@ -4215,133 +4449,140 @@
         }
     </style>
 
-<section id="newsletter-cta" class="py-4 mb-0">
-    <div class="container-fluid">
-        <div class="row align-items-center">
-            <div class="col-md-7 text-start">
-                <h2 class="mb-3 fw-bold gradient-text">Stay Informed, Stay Ahead</h2>
-                <p class="mb-4">Join our newsletter for exclusive insights and expert tips.</p>
-                <form class="mb-3">
-                    <div class="input-group input-group-lg" style="max-width: 500px;">
-                        <input type="email" class="form-control" placeholder="Email address" aria-label="Email address"
-                            required style="border-radius: 10px 0 0 10px;">
-                        <button class="btn btn-primary" type="submit"
-                            style="border-radius: 0 10px 10px 0;">Subscribe</button>
+    <section id="newsletter-cta" class="py-4 mb-0">
+        <div class="container-fluid">
+            <div class="row align-items-center">
+                <div class="col-md-7 text-start">
+                    <h2 class="mb-3 fw-bold gradient-text">Stay Informed, Stay Ahead</h2>
+                    <p class="mb-4">Join our newsletter for exclusive insights and expert tips.</p>
+                    <form class="mb-3">
+                        <div class="input-group input-group-lg" style="max-width: 500px;">
+                            <input type="email" class="form-control" placeholder="Email address"
+                                aria-label="Email address" required style="border-radius: 10px 0 0 10px;">
+                            <button class="btn btn-primary" type="submit"
+                                style="border-radius: 0 10px 10px 0;">Subscribe</button>
+                        </div>
+                    </form>
+                    <p class="text-muted small">By subscribing, you agree to our <a href="#"
+                            class="text-decoration-none"
+                            onclick="window.open('tos.html#privacy', '_blank'); return false;">Privacy
+                            Policy</a> and <a href="#" class="text-decoration-none"
+                            onclick="window.open('tos.html#eula', '_blank'); return false;">Terms of Service</a></p>
+                </div>
+                <div class="col-md-5">
+                    <div class="d-flex justify-content-md-end align-items-center mb-3">
+                        <img src="assets/img/footer1.png" alt="Logo 1" class="footer-logo me-3"
+                            style="max-height: 90px; width: auto;">
+                        <img src="assets/sticker.png" alt="Logo 2" class="footer-logo dark-mode-image"
+                            style="max-height: 90px; width: auto;">
+                        <style>
+                            .dark-mode-image {
+                                content: url('assets/sticker.png');
+                            }
+
+                            body.dark-mode .dark-mode-image {
+                                content: url('assets/img/footer2.png');
+                            }
+                        </style>
                     </div>
-                </form>
-                <p class="text-muted small">By subscribing, you agree to our <a href="#" class="text-decoration-none"
-                        onclick="navigateWithLoading('tos.html#privacy'); return false;">Privacy
-                        Policy</a> and <a href="#" class="text-decoration-none"
-                        onclick="navigateWithLoading('tos.html#eula'); return false;">Terms of Service</a>.</p>
-            </div>
-            <div class="col-md-5">
-                <div class="d-flex justify-content-md-end align-items-center mb-3">
-                    <img src="assets/img/footer1.png" alt="Logo 1" class="footer-logo me-3"
-                        style="max-height: 90px; width: auto;">
-                    <img src="assets/sticker.png" alt="Logo 2" class="footer-logo dark-mode-image"
-                        style="max-height: 90px; width: auto;">
-                    <style>
-                        .dark-mode-image {
-                            content: url('assets/sticker.png');
-                        }
-
-                        body.dark-mode .dark-mode-image {
-                            content: url('assets/img/footer2.png');
-                        }
-                    </style>
+                    <div class="text-md-end">
+                        <p class="mb-2 text-muted small" style="font-size: 0.9rem;">&copy; 2025 PT. Realta Chakradarma.
+                            All
+                            rights
+                            reserved.</p>
+                        <a href="#" onclick="window.open('tos.html#privacy', '_blank'); return false;"
+                            class="text-muted small me-3" style="font-size: 0.9rem; text-decoration: underline;">Privacy
+                            Policy</a>
+                        <span class="text-muted small me-3" style="font-size: 0.9rem;">|</span>
+                        <a href="#" onclick="window.open('tos.html#eula', '_blank'); return false;"
+                            class="text-muted small" style="font-size: 0.9rem; text-decoration: underline;">Terms of
+                            Service</a>
+                    </div>
                 </div>
-                <div class="text-md-end">
-                    <p class="mb-2 text-muted small" style="font-size: 0.9rem;">&copy; 2025 PT. Realta Chakradarma. All
-                        rights
-                        reserved.</p>
-                    <a href="#" onclick="navigateWithLoading('tos.html#privacy'); return false;"
-                        class="text-muted small me-3" style="font-size: 0.9rem; text-decoration: underline;">Privacy
-                        Policy</a>
-                    <span class="text-muted small me-3" style="font-size: 0.9rem;">|</span>
-                    <a href="#" onclick="navigateWithLoading('tos.html#eula'); return false;" class="text-muted small"
-                        style="font-size: 0.9rem; text-decoration: underline;"> Terms of Service</a>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Modal Overlay Structure -->
+    <div class="realta-icare-modal-overlay" id="realtaICareModal">
+        <div class="realta-icare-modal-container">
+            <div class="realta-icare-modal-header">
+                <h2 class="realta-icare-modal-title">Welcome to iCare</h2>
+                <button class="realta-icare-modal-close">&times;</button>
+            </div>
+            <div class="realta-icare-modal-body">
+                <p class="realta-icare-modal-text text-left">
+                    To care or not to care, is NEVER a question! Realta iCare, our commitment to your satisfaction!
+                    We give the very best to satisfy your needs every step of the way.
+                </p>
+
+                <div class="row justify-content-between mt-4">
+                    <div class="col-md-5 text-left mb-3">
+                        <h3 class="realta-icare-icon-title fs-5">Customer Support</h3>
+                        <a href="https://icare.cloud.co.id/HEAT" target="_blank">
+                            <img src="assets/img/icare-customer.png" alt="Customer Support"
+                                class="realta-icare-modal-icon img-fluid">
+                        </a>
+                    </div>
+
+                    <div class="col-md-5 text-left mb-3">
+                        <h3 class="realta-icare-icon-title fs-5">Product Manual</h3>
+                        <a href="https://realta.co.id/site/pdf/Manual%20Guide%20Aplikasi%20iCARE-Customer%20Self%20Service(1.0).pdf"
+                            target="_blank">
+                            <img src="assets/img/icare-manual.png" alt="Product Manual"
+                                class="realta-icare-modal-icon img-fluid">
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-</section>
 
+    <!-- JavaScript for Modal Functionality -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Get modal elements
+            const footerLogo = document.querySelector('.footer-logo'); // Target the existing footer logo
+            const modalOverlay = document.querySelector('.realta-icare-modal-overlay');
+            const modalClose = document.querySelector('.realta-icare-modal-close');
 
-<!-- Modal Overlay Structure -->
-<div class="realta-icare-modal-overlay" id="realtaICareModal">
-    <div class="realta-icare-modal-container">
-      <div class="realta-icare-modal-header">
-        <h2 class="realta-icare-modal-title">Welcome to iCare</h2>
-        <button class="realta-icare-modal-close">&times;</button>
-      </div>
-      <div class="realta-icare-modal-body">
-        <p class="realta-icare-modal-text text-left">
-          To care or not to care, is NEVER a question! Realta iCare, our commitment to your satisfaction! 
-          We give the very best to satisfy your needs every step of the way.
-        </p>
-        
-        <div class="row justify-content-between mt-4">
-          <div class="col-md-5 text-left mb-3">
-            <h3 class="realta-icare-icon-title fs-5">Customer Support</h3>
-            <a href="https://icare.cloud.co.id/HEAT" target="_blank">
-              <img src="assets/img/icare-customer.png" alt="Customer Support" class="realta-icare-modal-icon img-fluid">
-            </a>
-          </div>
-  
-          <div class="col-md-5 text-left mb-3">
-            <h3 class="realta-icare-icon-title fs-5">Product Manual</h3>
-            <a href="https://realta.co.id/site/pdf/Manual%20Guide%20Aplikasi%20iCARE-Customer%20Self%20Service(1.0).pdf" target="_blank">
-              <img src="assets/img/icare-manual.png" alt="Product Manual" class="realta-icare-modal-icon img-fluid">
-            </a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
+            // Move the modal overlay to be a direct child of the body
+            // This helps avoid stacking context issues
+            document.body.appendChild(modalOverlay);
 
-<!-- JavaScript for Modal Functionality -->
-<script>
-    document.addEventListener('DOMContentLoaded', function() {
-      // Get modal elements
-      const footerLogo = document.querySelector('.footer-logo'); // Target the existing footer logo
-      const modalOverlay = document.querySelector('.realta-icare-modal-overlay');
-      const modalClose = document.querySelector('.realta-icare-modal-close');
-      
-      // Move the modal overlay to be a direct child of the body
-      // This helps avoid stacking context issues
-      document.body.appendChild(modalOverlay);
-      
-      // Open modal function
-      function openModal() {
-        modalOverlay.classList.add('realta-icare-modal-show');
-        document.body.style.overflow = 'hidden'; // Prevent scrolling when modal is open
-      }
-      
-      // Close modal function
-      function closeModal() {
-        modalOverlay.classList.remove('realta-icare-modal-show');
-        document.body.style.overflow = ''; // Restore scrolling
-      }
-      
-      // Event listeners
-      footerLogo.addEventListener('click', openModal); // Make the footer logo open the modal
-      modalClose.addEventListener('click', closeModal);
-      
-      // Close modal when clicking outside
-      modalOverlay.addEventListener('click', function(event) {
-        if (event.target === modalOverlay) {
-          closeModal();
-        }
-      });
-      
-      // Close modal with Escape key
-      document.addEventListener('keydown', function(event) {
-        if (event.key === 'Escape' && modalOverlay.classList.contains('realta-icare-modal-show')) {
-          closeModal();
-        }
-      });
-    });
-  </script>
+            // Open modal function
+            function openModal() {
+                modalOverlay.classList.add('realta-icare-modal-show');
+                document.body.style.overflow = 'hidden'; // Prevent scrolling when modal is open
+            }
+
+            // Close modal function
+            function closeModal() {
+                modalOverlay.classList.remove('realta-icare-modal-show');
+                document.body.style.overflow = ''; // Restore scrolling
+            }
+
+            // Event listeners
+            footerLogo.addEventListener('click', openModal); // Make the footer logo open the modal
+            modalClose.addEventListener('click', closeModal);
+
+            // Close modal when clicking outside
+            modalOverlay.addEventListener('click', function (event) {
+                if (event.target === modalOverlay) {
+                    closeModal();
+                }
+            });
+
+            // Close modal with Escape key
+            document.addEventListener('keydown', function (event) {
+                if (event.key === 'Escape' && modalOverlay.classList.contains(
+                        'realta-icare-modal-show')) {
+                    closeModal();
+                }
+            });
+        });
+    </script>
 
     <style>
         #newsletter-cta {
