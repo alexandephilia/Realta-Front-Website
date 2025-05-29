@@ -811,7 +811,7 @@ pts: `
                     </li>
                     <li>
                         <i class="fas fa-tag"></i>
-                        <span>Membership Class & Category</span>
+                        <span>Membership Class and Category</span>
                     </li>
                     <li>
                         <i class="fas fa-user-check"></i>
