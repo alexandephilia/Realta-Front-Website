@@ -2543,7 +2543,7 @@
                             </div>
                             <div class="col-lg-4 text-lg-end text-center">
                                 <a href="#" class="btn btn-primary btn-lg px-4 py-3 cta-button styled-button-convex"
-                                    style="font-size: 16px; background: #fa5df2 !important; color: white;">Request Demo</a>
+                                    style="font-size: 16px; color: white;">Request Demo</a>
                             </div>
                         </div>
                     </div>
@@ -2578,17 +2578,28 @@
         }
 
         #cta .cta-button {
-            background-color: #eb23a8c4;
-            border: none;
+            border-color: #eb23a8c4;
             color: #ffffff;
             font-weight: 600;
             transition: all 0.3s ease;
+            background: linear-gradient(287deg, #fa5df2, #c74b93);
+            box-shadow: 
+                0 6px 12px rgba(0, 0, 0, 0.35),
+                inset 0 2px 0px rgba(255, 255, 255, 0.25),
+                inset 0 -1px 1px rgba(0, 0, 0, 0.4);
         }
 
         #cta .cta-button:hover {
-            background-color: #a8078d;
-            transform: translateY(-2px);
+            background: linear-gradient(287deg, #fa5df2, #a546a0);
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+
+          
+        }
+
+        #cta .cta-button:active {
+            transform: translateY(1px);
+          
+            background: linear-gradient(287deg, #e252d9, #9c3c76);
         }
 
 
