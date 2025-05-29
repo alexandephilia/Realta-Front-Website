@@ -4,8 +4,7 @@
   position: absolute;
   top: 100%; /* Position relative to navbar instead of fixed pixels */
   left: 50%;
-  transform: translateX(-50%) perspective(1000px) rotateX(-90deg);
-  transform-origin: top center;
+  transform: translateX(-50%) translateY(-20px); /* Slide up effect starting position */
   width: 100%;
   max-width: 90vw;
   background: rgba(255, 255, 255, 0.01);
@@ -17,11 +16,11 @@
   opacity: 0;
   visibility: hidden;
   transition: 
-    transform 0.4s cubic-bezier(0.16, 1, 0.3, 1),
-    opacity 0.4s cubic-bezier(0.16, 1, 0.3, 1),
-    visibility 0.4s cubic-bezier(0.16, 1, 0.3, 1),
-    background-color 0.4s cubic-bezier(0.16, 1, 0.3, 1),
-    box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    transform 0.3s ease,
+    opacity 0.3s ease,
+    visibility 0.3s ease,
+    background-color 0.3s ease,
+    box-shadow 0.3s ease;
   will-change: transform, opacity, background-color;
   max-height: 80vh;
   overflow-y: auto;
@@ -44,7 +43,7 @@
   position: absolute; /* Keep consistent with base state */
   opacity: 1;
   visibility: visible;
-  transform: translateX(-50%) perspective(1000px) rotateX(0deg);
+  transform: translateX(-50%) translateY(0); /* Slide down to normal position */
   background: rgba(255, 255, 255, 0.05);
   box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2);
 }
@@ -57,15 +56,15 @@
 .mega-dropdown.hide {
   opacity: 0;
   visibility: hidden;
-  transform: translateX(-50%) perspective(1000px) rotateX(-90deg);
+  transform: translateX(-50%) translateY(-20px); /* Slide back up when hiding */
   background: rgba(255, 255, 255, 0.01);
   box-shadow: 0 10px 15px rgba(0, 0, 0, 0);
   transition: 
-    transform 0.2s cubic-bezier(0.16, 1, 0.3, 1),
-    opacity 0.2s cubic-bezier(0.16, 1, 0.3, 1),
-    visibility 0.2s cubic-bezier(0.16, 1, 0.3, 1),
-    background-color 0.2s cubic-bezier(0.16, 1, 0.3, 1),
-    box-shadow 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+    transform 0.2s ease,
+    opacity 0.2s ease,
+    visibility 0.2s ease,
+    background-color 0.2s ease,
+    box-shadow 0.2s ease;
 }
 
 .mega-dropdown.hide::before {
