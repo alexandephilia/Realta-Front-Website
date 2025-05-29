@@ -108,9 +108,9 @@
             border-color: none !important;
             background: linear-gradient(to right, #619fd1, #619fd1) !important;
             transition: all 0.3s ease !important;
-            padding: 10px 18px !important;
+            padding: 10px 25px !important;
             font-weight: 500 !important;
-            font-size: 16px !important;
+            font-size: 18px !important;
             border-radius: 10px !important;
             /* Add convex effect */
             position: relative !important;
@@ -136,7 +136,16 @@
             background: linear-gradient(to right, #619fd1, #619fd1) !important;
         }
 
-
+        .btn-outline-secondary:hover {
+            color: #fff !important;
+            background-color: linear-gradient(to right, #619fd1, #619fd1) !important;
+            border-color: none !important;
+            transform: translateY(-2px) !important;
+            box-shadow:
+                0 8px 15px rgba(0, 0, 0, 0.4),
+                inset 0 2px 0px rgba(255, 255, 255, 0.3),
+                inset 0 -1px 1px rgba(0, 0, 0, 0.5) !important;
+        }
 
         .btn-outline-secondary:focus {
             box-shadow: 0 0 0 0.25rem rgba(97, 159, 209, 0.25) !important;
@@ -1244,7 +1253,7 @@
                     style="background-image: url('assets/img/bimasakti/bimasakti-wallpaper-web-min.jpg');">
                     <div class="carousel-overlay"></div>
                     <div class="dot-pattern-overlay"></div>
-                    <div class="container-fluid carousel-container">
+                    <div class="carousel-container">
                         <div class="carousel-content-left">
                             <h1>Digital Transformation For Your Property Management with Bimasakti</h1>
                             <div class="badge">Property Management Innovation</div>
@@ -1277,7 +1286,7 @@
                     style="background-image: url('assets/img/bimasakti/bimasakti-wallpaper-web-min.jpg');">
                     <div class="carousel-overlay"></div>
                     <div class="dot-pattern-overlay"></div>
-                    <div class="container-fluid carousel-container">
+                    <div class="carousel-container">
                         <div class="carousel-content-left">
                             <h1>Transform Your Property Management</h1>
                             <div class="badge">Property Management Innovation</div>
@@ -1393,29 +1402,10 @@
                 display: flex;
                 height: 100%;
                 z-index: 3;
+                max-width: 1755px;
                 margin: 0 auto;
                 padding: 0 2rem;
                 gap: 4rem;
-            }
-
-            .container-fluid.carousel-container {
-                max-width: 100%;
-                padding-left: 10rem;
-                padding-right: 10rem;
-            }
-
-            @media (max-width: 1200px) {
-                .container-fluid.carousel-container {
-                    padding-left: 5rem;
-                    padding-right: 5rem;
-                }
-            }
-
-            @media (max-width: 768px) {
-                .container-fluid.carousel-container {
-                    padding-left: 1rem;
-                    padding-right: 1rem;
-                }
             }
 
             .carousel-content-left {
@@ -2372,7 +2362,7 @@
                 cater to all Building Management business processes, from Lease & Billing Management to Logistics and
                 Accounting.</p>
             <div class="bimasakti-button-wrapper mb-5 mt-3">
-                <a href="#" class="bimasakti-btn styled-button-convex">Explore more</a>
+                <a href="#" class="bimasakti-btn">Explore more</a>
             </div>
             <div class="bimasakti-features">
                 <article class="bimasakti-solution-item lease-management">
@@ -2654,7 +2644,6 @@
         /* Bimasakti Description Styles */
         .bimasakti-description {
             grid-area: description;
-            font-weight: bold;
             text-align: center;
             max-width: 80%;
             margin: 0 auto;
@@ -2691,10 +2680,9 @@
         .bimasakti-btn {
             background: linear-gradient(to right, #619fd1, #619fd1) !important;
             color: #ffffff;
-            padding: 10px 18px;
+            padding: 10px 20px;
             border-radius: 10px;
             font-weight: 600;
-            font-size: 16px !important;
             text-decoration: none;
             transition: all 0.15s ease-out;
             position: relative;
@@ -2702,6 +2690,13 @@
             overflow: visible;
             display: inline-block;
             -webkit-tap-highlight-color: transparent;
+            /* Base shadow with slightly more noticeable highlight */
+            box-shadow:
+                0 6px 12px rgba(0, 0, 0, 0.35),
+                /* Slightly stronger outer shadow */
+                inset 0 2px 0px rgba(255, 255, 255, 0.25),
+                /* Restored subtle highlight */
+                inset 0 -1px 1px rgba(0, 0, 0, 0.4);
         }
 
         .bimasakti-btn::before {

@@ -99,7 +99,6 @@
         .styled-button-convex {
             position: relative;
             font-weight: bold;
-            color: #e0e0e0;
             text-shadow: 0 -1px 1px rgba(0, 0, 0, 0.6);
             cursor: pointer;
             transition: all 0.15s ease-out;
@@ -196,7 +195,7 @@
             background: #bb39f7c4 !important;
             transition: all 0.3s ease !important;
             padding: 10px 18px !important;
-            font-weight: 500 !important;
+            font-weight: 600 !important;
             font-size: 16x !important;
             border-radius: 10px !important;
         }
@@ -1165,7 +1164,7 @@
                     style="background-image: url('assets/img/hotel/female-worker-receptionist.jpg');">
                     <div class="carousel-overlay"></div>
                     <div class="dot-pattern-overlay"></div>
-                    <div class="carousel-container">
+                    <div class="container-fluid carousel-container">
                         <div class="carousel-content-left">
                             <h1>Rhapsody Hotel Management System</h1>
                             <div class="badge">Premier Hospitality Management</div>
@@ -1199,7 +1198,7 @@
             <div class="carousel-item" style="background-image: url('assets/img/hotel/hotel.jpg');">
                 <div class="carousel-overlay"></div>
                 <div class="dot-pattern-overlay"></div>
-                <div class="carousel-container">
+                <div class="container-fluid carousel-container">
                     <div class="carousel-content-left">
                         <h1>Transform Your Hotel Operations</h1>
                         <div class="badge">Integrated Hospitality Excellence</div>
@@ -1330,6 +1329,26 @@
                 margin: 0 auto;
                 padding: 0 2rem;
                 gap: 4rem;
+            }
+
+            .container-fluid.carousel-container {
+                max-width: 100%;
+                padding-left: 10rem;
+                padding-right: 10rem;
+            }
+
+            @media (max-width: 1200px) {
+                .container-fluid.carousel-container {
+                    padding-left: 5rem;
+                    padding-right: 5rem;
+                }
+            }
+
+            @media (max-width: 768px) {
+                .container-fluid.carousel-container {
+                    padding-left: 1rem;
+                    padding-right: 1rem;
+                }
             }
 
             .carousel-content-left {

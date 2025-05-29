@@ -1014,7 +1014,7 @@
                 <div class="carousel-item active" data-bg-image="assets/img/golf/Banner1.jpg">
                     <div class="carousel-overlay"></div>
                     <div class="dot-pattern-overlay"></div>
-                    <div class="carousel-container">
+                    <div class="container-fluid carousel-container">
                         <div class="carousel-content-left">
                             <h1>Rhapsody Golf To Orchestrate Your Entire Golf Club Operation </h1>
                             <div class="badge">Elite Golf Operations</div>
@@ -1049,7 +1049,7 @@
                 <div class="carousel-item" data-bg-image="assets/img/golf/Banner2.jpg">
                     <div class="carousel-overlay"></div>
                     <div class="dot-pattern-overlay"></div>
-                    <div class="carousel-container">
+                    <div class="container-fluid carousel-container">
                         <div class="carousel-content-left">
                             <h1>Indonesian Golf Courses A Spectrum of Challenge and Beauty for Every Golfer </h1>
                             <div class="badge">Diverse Greens in Paradise</div>
@@ -1253,6 +1253,26 @@
                 margin: 0 auto;
                 padding: 0 2rem;
                 gap: 4rem;
+            }
+
+            .container-fluid.carousel-container {
+                max-width: 100%;
+                padding-left: 10rem;
+                padding-right: 10rem;
+            }
+
+            @media (max-width: 1200px) {
+                .container-fluid.carousel-container {
+                    padding-left: 5rem;
+                    padding-right: 5rem;
+                }
+            }
+
+            @media (max-width: 768px) {
+                .container-fluid.carousel-container {
+                    padding-left: 1rem;
+                    padding-right: 1rem;
+                }
             }
 
             .carousel-content-left {
