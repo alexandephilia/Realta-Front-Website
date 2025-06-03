@@ -59,16 +59,18 @@
 
     <style>
         /* Add this style block in the <head> section or in your CSS file */
-   
+
 
         /* Update the contact form styles */
         #contact-form {
-            max-width: 500px; /* Constrain form width */
+            max-width: 500px;
+            /* Constrain form width */
             width: 100%;
         }
 
         #contact .row {
-            width: 100%; /* Constrain the entire contact section */
+            width: 100%;
+            /* Constrain the entire contact section */
             margin: 0 auto;
         }
 
@@ -88,7 +90,7 @@
                 gap: 2rem;
                 padding: 0 15px;
             }
-            
+
             #contact-form {
                 padding: 1.5rem !important;
             }
@@ -181,10 +183,10 @@
     }
 
     @media (max-width: 768px) {
-            .gradient-text {
-                font-size: 3.5rem !important;
-            }
+        .gradient-text {
+            font-size: 3.5rem !important;
         }
+    }
 
     /* Update the dark mode styles */
     body.dark-mode #contact .gradient-text {
@@ -197,7 +199,7 @@
     #contact .row {
         gap: 2rem;
     }
-    
+
     @media (max-width: 991px) {
         #contact .row {
             gap: 3rem;
@@ -248,234 +250,259 @@
                     <i class="fas fa-bars" style="font-size: 1.7rem;"></i>
                 </div>
             </div>
-           <!-- Mobile responsive navigation menu -->
-           <div class="offcanvas offcanvas-end" tabindex="-1" id="sidebar" aria-labelledby="sidebarLabel">
-            <div class="offcanvas-header">
-                <div>
-                    <h5 class="offcanvas-title" id="sidebarLabel"
-                        style="margin-left: 33px; margin-bottom: 20px; font-size: 30px; color: white;">Menu</h5>
+            <!-- Mobile responsive navigation menu -->
+            <div class="offcanvas offcanvas-end" tabindex="-1" id="sidebar" aria-labelledby="sidebarLabel">
+                <div class="offcanvas-header">
+                    <div>
+                        <h5 class="offcanvas-title" id="sidebarLabel"
+                            style="margin-left: 33px; margin-bottom: 20px; font-size: 30px; color: white;">Menu</h5>
+                    </div>
+                    <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas"
+                        aria-label="Close"></button>
                 </div>
-                <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas"
-                    aria-label="Close"></button>
-            </div>
-            <div class="offcanvas-body">
-                <div class="sidebar-menu">
-                    <div class="sidebar-item">
-                        <h2 style="font-size: 2.1rem;">Realta Chakradarma</h2>
-                        <hr>
-                        <h2 class="product-header" data-bs-toggle="collapse" data-bs-target="#productsSubmenu"
-                            aria-expanded="false">
-                            Solutions <i class="fas fa-chevron-right arrow-icon"></i>
-                        </h2>
-                        <div id="productsSubmenu" class="collapse">
-                            <ul class="product-list">
-                                <li>
-                                    <div class="product-header" data-bs-toggle="collapse"
-                                        data-bs-target="#gcsSubmenu" aria-expanded="false"
-                                        style="font-size: 1rem; font-weight: 400;">
-                                        Golf Course Management System<i class="fas fa-chevron-right arrow-icon"></i>
-                                    </div>
-                                    <div id="gcsSubmenu" class="collapse product-submenu">
-                                        <a href="golf-micro.html" class="discover-link" onclick="navigateWithLoading('golf-micro.html')">Discover GCS ›</a>
-                                        <h3 class="modules-heading">MODULES</h3>
-                                        <ul class="modules-list">
-                                            <li>
-                                                <strong>Membership Management</strong>
-                                                <span>Manage and track member information and activities with our integrated solution</span>
-                                            </li>
-                                            <li>
-                                                <strong>Golf Operation</strong>
-                                                <span>Streamline golf operations with our integrated system and unified platform</span>
-                                            </li>
-                                            <li>
-                                                <strong>Tournament Management</strong>
-                                                <span>Your all-in-one golf event solution and golf management system</span>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="product-header" data-bs-toggle="collapse"
-                                        data-bs-target="#hmsSubmenu" aria-expanded="false"
-                                        style="font-size: 1rem; font-weight: 400;">
-                                        Hotel Management System <i class="fas fa-chevron-right arrow-icon"></i>
-                                    </div>
-                                    <div id="hmsSubmenu" class="collapse product-submenu">
-                                        <!-- <p>Comprehensive solution for efficient hotel operations and guest
+                <div class="offcanvas-body">
+                    <div class="sidebar-menu">
+                        <div class="sidebar-item">
+                            <h2 style="font-size: 2.1rem;">Realta Chakradarma</h2>
+                            <hr>
+                            <h2 class="product-header" data-bs-toggle="collapse" data-bs-target="#productsSubmenu"
+                                aria-expanded="false">
+                                Solutions <i class="fas fa-chevron-right arrow-icon"></i>
+                            </h2>
+                            <div id="productsSubmenu" class="collapse">
+                                <ul class="product-list">
+                                    <li>
+                                        <div class="product-header" data-bs-toggle="collapse"
+                                            data-bs-target="#gcsSubmenu" aria-expanded="false"
+                                            style="font-size: 1rem; font-weight: 400;">
+                                            Golf Course Management System<i class="fas fa-chevron-right arrow-icon"></i>
+                                        </div>
+                                        <div id="gcsSubmenu" class="collapse product-submenu">
+                                            <a href="golf-micro.html" class="discover-link"
+                                                onclick="navigateWithLoading('golf-micro.html')">Discover GCS ›</a>
+                                            <h3 class="modules-heading">MODULES</h3>
+                                            <ul class="modules-list">
+                                                <li>
+                                                    <strong>Membership Management</strong>
+                                                    <span>Manage and track member information and activities with our
+                                                        integrated solution</span>
+                                                </li>
+                                                <li>
+                                                    <strong>Golf Operation</strong>
+                                                    <span>Streamline golf operations with our integrated system and
+                                                        unified platform</span>
+                                                </li>
+                                                <li>
+                                                    <strong>Tournament Management</strong>
+                                                    <span>Your all-in-one golf event solution and golf management
+                                                        system</span>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="product-header" data-bs-toggle="collapse"
+                                            data-bs-target="#hmsSubmenu" aria-expanded="false"
+                                            style="font-size: 1rem; font-weight: 400;">
+                                            Hotel Management System <i class="fas fa-chevron-right arrow-icon"></i>
+                                        </div>
+                                        <div id="hmsSubmenu" class="collapse product-submenu">
+                                            <!-- <p>Comprehensive solution for efficient hotel operations and guest
                                             management.</p> -->
-                                        <a href="rhapsody-micro.html" class="discover-link" onclick="navigateWithLoading('rhapsody-micro.html')">Discover HMS ›</a>
-                                        <h3 class="modules-heading">MODULES</h3>
-                                        <ul class="modules-list">
-                                            <li>
-                                                <strong>Front Office</strong>
-                                                <span>Simplify guest services and reception tasks with our optimized solution</span>
-                                            </li>
-                                            <li>
-                                                <strong>Logistic</strong>
-                                                <span>Optimize inventory and supply chain management</span>
-                                            </li>
-                                            <li>
-                                                <strong>Back Office</strong>
-                                                <span>Improve operations and financial management</span>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="product-header" data-bs-toggle="collapse"
-                                        data-bs-target="#hrSystemSubmenu" aria-expanded="false"
-                                        style="font-size: 1rem; font-weight: 400;">
-                                        HR System <i class="fas fa-chevron-right arrow-icon"></i>
-                                    </div>
-                                    <div id="hrSystemSubmenu" class="collapse product-submenu">
-                                        <!-- <p>Comprehensive human resource management solution for businesses of
+                                            <a href="rhapsody-micro.html" class="discover-link"
+                                                onclick="navigateWithLoading('rhapsody-micro.html')">Discover HMS ›</a>
+                                            <h3 class="modules-heading">MODULES</h3>
+                                            <ul class="modules-list">
+                                                <li>
+                                                    <strong>Front Office</strong>
+                                                    <span>Simplify guest services and reception tasks with our optimized
+                                                        solution</span>
+                                                </li>
+                                                <li>
+                                                    <strong>Logistic</strong>
+                                                    <span>Optimize inventory and supply chain management</span>
+                                                </li>
+                                                <li>
+                                                    <strong>Back Office</strong>
+                                                    <span>Improve operations and financial management</span>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="product-header" data-bs-toggle="collapse"
+                                            data-bs-target="#hrSystemSubmenu" aria-expanded="false"
+                                            style="font-size: 1rem; font-weight: 400;">
+                                            HR System <i class="fas fa-chevron-right arrow-icon"></i>
+                                        </div>
+                                        <div id="hrSystemSubmenu" class="collapse product-submenu">
+                                            <!-- <p>Comprehensive human resource management solution for businesses of
                                             all sizes.</p> -->
-                                        <a href="hr-micro.html" class="discover-link" onclick="navigateWithLoading('hr-micro.html')">Discover HR System ›</a>
-                                        <h3 class="modules-heading">MODULES</h3>
-                                        <ul class="modules-list">
-                                            <li>
-                                                <strong>HR Core</strong>
-                                                <span>HR Operation with our integrated solution and unified platform.</span>
-                                            </li>
-                                            <li>
-                                                <strong>HR Advance</strong>
-                                                <span>Integrate and optimize core business processes</span>
-                                            </li>
-                                            <li>
-                                                <strong>HR Mobile</strong>
-                                                <span>Empower and manage HR with our ESS app with ease.</span>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </li>
-                                 <li>
-                                    <div class="product-header" data-bs-toggle="collapse"
-                                        data-bs-target="#itsmSubmenu" aria-expanded="false"
-                                        style="font-size: 1rem; font-weight: 400;">
-                                        ITSM, ITAM & Unified Endpoint Management <i
-                                            class="fas fa-chevron-right arrow-icon"></i>
-                                    </div>
-                                    <div id="itsmSubmenu" class="collapse product-submenu">
-                                        <!-- <p>Comprehensive IT Service Management solution for streamlined IT
+                                            <a href="hr-micro.html" class="discover-link"
+                                                onclick="navigateWithLoading('hr-micro.html')">Discover HR System ›</a>
+                                            <h3 class="modules-heading">MODULES</h3>
+                                            <ul class="modules-list">
+                                                <li>
+                                                    <strong>HR Core</strong>
+                                                    <span>HR Operation with our integrated solution and unified
+                                                        platform.</span>
+                                                </li>
+                                                <li>
+                                                    <strong>HR Advance</strong>
+                                                    <span>Integrate and optimize core business processes</span>
+                                                </li>
+                                                <li>
+                                                    <strong>HR Mobile</strong>
+                                                    <span>Empower and manage HR with our ESS app with ease.</span>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="product-header" data-bs-toggle="collapse"
+                                            data-bs-target="#itsmSubmenu" aria-expanded="false"
+                                            style="font-size: 1rem; font-weight: 400;">
+                                            ITSM, ITAM & Unified Endpoint Management <i
+                                                class="fas fa-chevron-right arrow-icon"></i>
+                                        </div>
+                                        <div id="itsmSubmenu" class="collapse product-submenu">
+                                            <!-- <p>Comprehensive IT Service Management solution for streamlined IT
                                             aoperations.</p> -->
-                                        <a href="itsm-micro.html" class="discover-link" onclick="navigateWithLoading('itsm-micro.html')">Discover ITSM, ITAM & Unified Endpoint
-                                            Management ›</a>
-                                        <h3 class="modules-heading">MODULES</h3>
-                                        <ul class="modules-list">
-                                            <li>
-                                                <strong>Service Management</strong>
-                                                <span>Streamline IT service delivery and support</span>
-                                            </li>
-                                            <li>
-                                                <strong>Asset Management</strong>
-                                                <span>Track and manage IT assets throughout their lifecycle</span>
-                                            </li>
-                                            <li>
-                                                <strong>Endpoint Management</strong>
-                                                <span>Centrally manage and secure all your endpoints</span>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="product-header" data-bs-toggle="collapse"
-                                        data-bs-target="#propertyTenantSubmenu" aria-expanded="false"
-                                        style="font-size: 1rem; font-weight: 400;">
-                                        Property and Tenant System <i class="fas fa-chevron-right arrow-icon"></i>
-                                    </div>
-                                    <div id="propertyTenantSubmenu" class="collapse product-submenu">
-                                        <!-- <p>Efficient management solution for property owners and landlords.</p> -->
-                                        <a href="#" class="discover-link" onclick="navigateWithLoading('bimasakti-micro.html')">Discover Property and Tenant System
-                                            ›</a>
-                                        <h3 class="modules-heading">MODULES</h3>
-                                        <ul class="modules-list">
-                                            <li>
-                                                <strong>Sales & Marketing</strong>
-                                                <span>Boost Your Sales with our comprehensive, integrated solution.</span>
-                                            </li>
-                                            <li>
-                                                <strong>Tenancy Management</strong>
-                                                <span>With our comprehensive, user-friendly platform.</span>
-                                            </li>
-                                            <li>
-                                                <strong>Billing Management</strong>
-                                                <span>With our efficient handling of billing and payments.</span>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </li>
-                               
-                                <li>
-                                    <div class="product-header" data-bs-toggle="collapse"
-                                        data-bs-target="#erpSubmenu" aria-expanded="false"
-                                        style="font-size: 1rem; font-weight: 400;">
-                                        Network & System Integration <i class="fas fa-chevron-right arrow-icon"></i>
-                                    </div>
-                                    <div id="erpSubmenu" class="collapse product-submenu">
-                                        <!-- <p>Integrated Enterprise Resource Planning solution for business
+                                            <a href="itsm-micro.html" class="discover-link"
+                                                onclick="navigateWithLoading('itsm-micro.html')">Discover ITSM, ITAM &
+                                                Unified Endpoint
+                                                Management ›</a>
+                                            <h3 class="modules-heading">MODULES</h3>
+                                            <ul class="modules-list">
+                                                <li>
+                                                    <strong>Service Management</strong>
+                                                    <span>Streamline IT service delivery and support</span>
+                                                </li>
+                                                <li>
+                                                    <strong>Asset Management</strong>
+                                                    <span>Track and manage IT assets throughout their lifecycle</span>
+                                                </li>
+                                                <li>
+                                                    <strong>Endpoint Management</strong>
+                                                    <span>Centrally manage and secure all your endpoints</span>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="product-header" data-bs-toggle="collapse"
+                                            data-bs-target="#propertyTenantSubmenu" aria-expanded="false"
+                                            style="font-size: 1rem; font-weight: 400;">
+                                            Property and Tenant System <i class="fas fa-chevron-right arrow-icon"></i>
+                                        </div>
+                                        <div id="propertyTenantSubmenu" class="collapse product-submenu">
+                                            <!-- <p>Efficient management solution for property owners and landlords.</p> -->
+                                            <a href="#" class="discover-link"
+                                                onclick="navigateWithLoading('bimasakti-micro.html')">Discover Property
+                                                and Tenant System
+                                                ›</a>
+                                            <h3 class="modules-heading">MODULES</h3>
+                                            <ul class="modules-list">
+                                                <li>
+                                                    <strong>Sales & Marketing</strong>
+                                                    <span>Boost Your Sales with our comprehensive, integrated
+                                                        solution.</span>
+                                                </li>
+                                                <li>
+                                                    <strong>Tenancy Management</strong>
+                                                    <span>With our comprehensive, user-friendly platform.</span>
+                                                </li>
+                                                <li>
+                                                    <strong>Billing Management</strong>
+                                                    <span>With our efficient handling of billing and payments.</span>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </li>
+
+                                    <li>
+                                        <div class="product-header" data-bs-toggle="collapse"
+                                            data-bs-target="#erpSubmenu" aria-expanded="false"
+                                            style="font-size: 1rem; font-weight: 400;">
+                                            Network & System Integration <i class="fas fa-chevron-right arrow-icon"></i>
+                                        </div>
+                                        <div id="erpSubmenu" class="collapse product-submenu">
+                                            <!-- <p>Integrated Enterprise Resource Planning solution for business
                                             management.</p> -->
-                                        <a href="#" class="discover-link" onclick="navigateWithLoading('realnet-micro.html')">Discover Network & System Integration ›</a>
-                                        <h3 class="modules-heading">MODULES</h3>
-                                        <ul class="modules-list">
-                                            <li>
-                                                <strong>Hardware & Software</strong>
-                                                <span>Comprehensive solutions for selecting, deploying, and managing IT hardware and software tailored to your business needs</span>
-                                            </li>
-                                            <li>
-                                                <strong>Network</strong>
-                                                <span>Robust network solutions designed to ensure seamless connectivity, performance, and security across your entire business ecosystem</span>
-                                            </li>
-                                            <li>
-                                                <strong>Cloud Infrastructure</strong>
-                                                <span>Scalable cloud solutions that provide secure and flexible environments for hosting and managing your applications and data</span>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </li>
-                            </ul>
+                                            <a href="#" class="discover-link"
+                                                onclick="navigateWithLoading('realnet-micro.html')">Discover Network &
+                                                System Integration ›</a>
+                                            <h3 class="modules-heading">MODULES</h3>
+                                            <ul class="modules-list">
+                                                <li>
+                                                    <strong>Hardware & Software</strong>
+                                                    <span>Comprehensive solutions for selecting, deploying, and managing
+                                                        IT hardware and software tailored to your business needs</span>
+                                                </li>
+                                                <li>
+                                                    <strong>Network</strong>
+                                                    <span>Robust network solutions designed to ensure seamless
+                                                        connectivity, performance, and security across your entire
+                                                        business ecosystem</span>
+                                                </li>
+                                                <li>
+                                                    <strong>Cloud Infrastructure</strong>
+                                                    <span>Scalable cloud solutions that provide secure and flexible
+                                                        environments for hosting and managing your applications and
+                                                        data</span>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="sidebar-item">
+                            <h2 class="product-header">
+                                <a href="#" onclick="navigateWithLoading('hospitality.html'); return false;"
+                                    style="text-decoration: none; color: inherit;">Industry</a>
+                            </h2>
+                        </div>
+                        <div class="sidebar-item">
+                            <h2 class="product-header">
+                                <a href="#" onclick="navigateWithLoading('partners.html'); return false;"
+                                    style="text-decoration: none; color: inherit;">Partners</a>
+                            </h2>
+                        </div>
+                        <div class="sidebar-item">
+                            <h2 class="product-header">
+                                <a href="#" onclick="navigateWithLoading('contacts.html'); return false;"
+                                    style="text-decoration: none; color: inherit;">Contact</a>
+                            </h2>
+                        </div>
+                        <div class="sidebar-item">
+                            <h2 class="product-header">
+                                <a href="#" onclick="navigateWithLoading('career.html'); return false;"
+                                    style="text-decoration: none; color: inherit;">Career</a>
+                            </h2>
+                        </div>
+
+                        <div class="sidebar-item">
+                            <h2 class="product-header">
+                                <a href="#" onclick="navigateWithLoading('blog.html'); return false;"
+                                    style="text-decoration: none; color: inherit;">Blog</a>
+                            </h2>
+                        </div>
+                        <div class="sidebar-item">
+                            <h2 class="product-header">
+                                <a href="#" onclick="navigateWithLoading('about.html'); return false;"
+                                    style="text-decoration: none; color: inherit;">About Us</a>
+                            </h2>
                         </div>
                     </div>
-                    <div class="sidebar-item">
-                        <h2 class="product-header">
-                            <a href="#" onclick="navigateWithLoading('hospitality.html'); return false;"style="text-decoration: none; color: inherit;">Industry</a>
-                        </h2>
-                    </div>
-                    <div class="sidebar-item">
-                        <h2 class="product-header">
-                            <a href="#" onclick="navigateWithLoading('partners.html'); return false;" style="text-decoration: none; color: inherit;">Partners</a>
-                        </h2>
-                    </div>
-                    <div class="sidebar-item">
-                        <h2 class="product-header">
-                            <a href="#" onclick="navigateWithLoading('contacts.html'); return false;" style="text-decoration: none; color: inherit;">Contact</a>
-                        </h2>
-                    </div>
-                    <div class="sidebar-item">
-                        <h2 class="product-header">
-                            <a href="#" onclick="navigateWithLoading('career.html'); return false;" style="text-decoration: none; color: inherit;">Career</a>
-                        </h2>
-                    </div>
-                    
-                    <div class="sidebar-item">
-                        <h2 class="product-header">
-                            <a href="#" onclick="navigateWithLoading('blog.html'); return false;"
-                                style="text-decoration: none; color: inherit;">Blog</a>
-                        </h2>
-                    </div>
-                    <div class="sidebar-item">
-                        <h2 class="product-header">
-                            <a href="#" onclick="navigateWithLoading('about.html'); return false;" style="text-decoration: none; color: inherit;">About Us</a>
-                        </h2>
-                    </div>
-                </div>
-                <div class="get-started-container" style="margin-top: -10px !important;">
-                    <!-- Adjusted margin-top to move slightly to the top -->
+                    <div class="get-started-container" style="margin-top: -10px !important;">
+                        <!-- Adjusted margin-top to move slightly to the top -->
 
-                 
+
                     </div>
                 </div>
             </div>
-   
+
 
             <style>
                 @media (min-width: 992px) {
@@ -614,7 +641,7 @@
                 </ul>
                 <div class="sidebar-actions d-flex justify-content-end align-items-center"
                     style="margin-bottom: 0.5rem;">
-                    
+
                     <button id="darkModeToggleSidebar" class="btn-custom ms-2">
                         <i class="fas fa-moon"></i>
                     </button>
@@ -634,7 +661,7 @@
         <div class="mega-dropdown" id="solutionsDropdownContent">
             <div class="dropdown-content">
                 <div class="product-categories">
-                      <a href="golf-micro.html" class="product-category" data-product="gcs"
+                    <a href="golf-micro.html" class="product-category" data-product="gcs"
                         onclick="navigateWithLoading('golf-micro.html')">Golf Course System</a>
                     <a href="hr-micro.html" class="product-category" data-product="hrs"
                         onclick="navigateWithLoading('hr-micro.html')">HR System</a>
@@ -642,10 +669,10 @@
                         onclick="navigateWithLoading('rhapsody-micro.html')">Hotel Management System</a>
                     <a href="itsm-micro.html" class="product-category" data-product="itm"
                         onclick="navigateWithLoading('itsm-micro.html')">ITSM, ITAM & Unified Endpoint Management</a>
-                    <a href="bimasakti-micro.html" class="product-category" data-product="pts"
-                        onclick="navigateWithLoading('bimasakti-micro.html')">Property & Tenancy System</a>
                     <a href="realnet-micro.html" class="product-category" data-product="erp"
                         onclick="navigateWithLoading('realnet-micro.html')">Network & System Integration</a>
+                    <a href="bimasakti-micro.html" class="product-category" data-product="pts"
+                        onclick="navigateWithLoading('bimasakti-micro.html')">Property & Tenancy System</a>
                     <div
                         style="background: linear-gradient(90deg, transparent 0%, rgba(133, 22, 188, 0.582) 50%, transparent 100%); height: 1px; margin: 10px 0; pointer-events: none;">
                     </div>
@@ -1099,16 +1126,16 @@
 </header>
 
 <body>
-       <!-- ADD WHATSAPP FLOATING BUTTON -->
-       <a href="https://api.whatsapp.com/send?phone=628111221789&text=Hallo%20PT%20Realta..." target="_blank"
-           rel="noopener noreferrer" class="whatsapp-float">
-           <i class="fab fa-whatsapp"></i>
-           <div class="text-content">
-               <span class="click-text">Click here</span>
-               <span class="sub-text">To arrange meeting and demo with us</span>
-           </div>
-       </a>
-   
+    <!-- ADD WHATSAPP FLOATING BUTTON -->
+    <a href="https://api.whatsapp.com/send?phone=628111221789&text=Hallo%20PT%20Realta..." target="_blank"
+        rel="noopener noreferrer" class="whatsapp-float">
+        <i class="fab fa-whatsapp"></i>
+        <div class="text-content">
+            <span class="click-text">Click here</span>
+            <span class="sub-text">To arrange meeting and demo with us</span>
+        </div>
+    </a>
+
 
     <!-- Rest of your existing body content -->
 
@@ -1252,381 +1279,395 @@
 
 
     <!-- Add this section before the newsletter-cta section -->
-<section id="contact" class="pb-3">
-    <div class="container-fluid">
-        <div class="row justify-content-center mb-5">
-            <div class="col-lg-6 text-center">
-                <h2 class="section-title text-center mt-0 mb-5 fw-bold gradient-text">Contact Us</h2>
+    <section id="contact" class="pb-3">
+        <div class="container-fluid">
+            <div class="row justify-content-center mb-5">
+                <div class="col-lg-6 text-center">
+                    <h2 class="section-title text-center mt-0 mb-5 fw-bold gradient-text">Contact Us</h2>
+                </div>
             </div>
-        </div>
-        <div class="row justify-content-between">
-            <div id="contact-info" class="col-lg-4 left-column >
+            <div class="row justify-content-between">
+                <div id="contact-info" class="col-lg-4 left-column >
     <!-- Removed " What are you waiting for" heading -->
 
-                <div class="company-info" style="border-radius: 10px;">
-                    <h3 class="h5 fw-bold mb-3 company-name custom-text"
-                        style="color: #333; padding-bottom: 10px; display: inline-block; border-bottom: 1px solid transparent; background-image: linear-gradient(to right, transparent, #333, transparent); background-position: bottom; background-size: 100% 1px; background-repeat: no-repeat;">
-                        PT Realta Chakradarma </h3>
-                    <h3 class="headquarter-title custom-text" style="margin-bottom: 10px;">
-                        Address:</h3>
-                    <div class="address-wrapper">
-                        <p class="address-details custom-text">
-                            Jl. Petojo Melintang No. 25A<br>
-                            Petojo Selatan - Gambir<br>
-                            Jakarta 10160<br>
-                            <span class="country custom-text">Indonesia</span>
-                        </p>
+                    <div class="company-info" style="border-radius: 10px;">
+                        <h3 class="h5 fw-bold mb-3 company-name custom-text"
+                            style="color: #333; padding-bottom: 10px; display: inline-block; border-bottom: 1px solid transparent; background-image: linear-gradient(to right, transparent, #333, transparent); background-position: bottom; background-size: 100% 1px; background-repeat: no-repeat;">
+                            PT Realta Chakradarma </h3>
+                        <h3 class="headquarter-title custom-text" style="margin-bottom: 10px;">
+                            Address:</h3>
+                        <div class="address-wrapper">
+                            <p class="address-details custom-text">
+                                Jl. Petojo Melintang No. 25A<br>
+                                Petojo Selatan - Gambir<br>
+                                Jakarta 10160<br>
+                                <span class="country custom-text">Indonesia</span>
+                            </p>
+                        </div>
+
+
                     </div>
-
-
-                </div>
-                <style>
-                    /* Remove the media query and adjust the selectors */
-                    body.dark-mode .company-info {
-                        color: #ffffff !important;
-                    }
-
-                    body.dark-mode .company-name {
-                        color: #ffffff !important;
-                        background-image: linear-gradient(to right, transparent, #ffffff, transparent) !important;
-                    }
-
-                    body.dark-mode .headquarter-title {
-                        color: #ffffff !important;
-                    }
-
-                    body.dark-mode .address-details {
-                        color: #e0e0e0 !important;
-                    }
-
-                    body.dark-mode #contact .contact-heading {
-                        color: #ffffff !important;
-                    }
-                </style>
-
-                <div class="map-wrapper mb-4" style="width: 95%;">
-                    <iframe
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.3279995766406!2d106.8142527!3d-6.172364!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f67f4f44dc2f%3A0x124b0a0f4cb7e845!2sPT%20Realta%20Chakradarma!5e0!3m2!1sen!2sid!4v1653668623967"
-                        frameborder="0" style="border:0" allowfullscreen="">
-                    </iframe>
-                </div>
-
-                <div class="contact-info mb-4">
                     <style>
-                        .contact-item {
-                            display: flex;
-                            align-items: flex-start;
-                            margin-bottom: 10px;
+                        /* Remove the media query and adjust the selectors */
+                        body.dark-mode .company-info {
+                            color: #ffffff !important;
                         }
 
-                        .contact-icon {
-                            font-size: 14px;
-                            margin-right: 10px;
-                            margin-top: 3px;
+                        body.dark-mode .company-name {
+                            color: #ffffff !important;
+                            background-image: linear-gradient(to right, transparent, #ffffff, transparent) !important;
+                        }
+
+                        body.dark-mode .headquarter-title {
+                            color: #ffffff !important;
+                        }
+
+                        body.dark-mode .address-details {
+                            color: #e0e0e0 !important;
+                        }
+
+                        body.dark-mode #contact .contact-heading {
+                            color: #ffffff !important;
                         }
                     </style>
-                    <div class="contact-item">
-                        <i class="fas fa-phone contact-icon"></i>
-                        <a href="tel:+62213861772" class="text-decoration-none fw-bold">+62 21 - 386 1772</a>
-                    </div>
-                    <div class="contact-item">
-                        <i class="fas fa-envelope contact-icon"></i>
-                        <a href="mailto:info@realta.co.id" class="text-decoration-none fw-bold">info@realta.co.id</a>
-                    </div>
-                    <div class="contact-item">
-                        <img src="/Assets/assets/pngwing.com.png" class="contact-icon" style="width: 18px; height: 18px;">
-                        <p class="mb-0">
-                            For sales and marketing, contact our Official WhatsApp:<br>
-                            <a href="https://wa.me/628111221789" class="text-decoration-none fw-bold" target="_blank" rel="noopener noreferrer"
-                                style="color: #3bc05a;">+62 811 1221 789 (Chat Only)</a>
-                        </p>
-                    </div>
-                </div>
 
-                <div class="social-icons-container">
-                    <h4 class="mb-3" style="font-size: 0.9rem; text-align: left; margin-left: 10px;"> Connect With
-                        Us Through Social Media</h4>
-                    <div class="social-icons d-flex gap-3">
-                          <a href="https://www.facebook.com/realtachakradarma/" class="social-icon" aria-label="Facebook" target="_blank" rel="noopener noreferrer">
+                    <div class="map-wrapper mb-4" style="width: 95%;">
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.3279995766406!2d106.8142527!3d-6.172364!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f67f4f44dc2f%3A0x124b0a0f4cb7e845!2sPT%20Realta%20Chakradarma!5e0!3m2!1sen!2sid!4v1653668623967"
+                            frameborder="0" style="border:0" allowfullscreen="">
+                        </iframe>
+                    </div>
+
+                    <div class="contact-info mb-4">
+                        <style>
+                            .contact-item {
+                                display: flex;
+                                align-items: flex-start;
+                                margin-bottom: 10px;
+                            }
+
+                            .contact-icon {
+                                font-size: 14px;
+                                margin-right: 10px;
+                                margin-top: 3px;
+                            }
+                        </style>
+                        <div class="contact-item">
+                            <i class="fas fa-phone contact-icon"></i>
+                            <a href="tel:+62213861772" class="text-decoration-none fw-bold">+62 21 - 386 1772</a>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-envelope contact-icon"></i>
+                            <a href="mailto:info@realta.co.id"
+                                class="text-decoration-none fw-bold">info@realta.co.id</a>
+                        </div>
+                        <div class="contact-item">
+                            <img src="/Assets/assets/pngwing.com.png" class="contact-icon"
+                                style="width: 18px; height: 18px;">
+                            <p class="mb-0">
+                                For sales and marketing, contact our Official WhatsApp:<br>
+                                <a href="https://wa.me/628111221789" class="text-decoration-none fw-bold"
+                                    target="_blank" rel="noopener noreferrer" style="color: #3bc05a;">+62 811 1221 789
+                                    (Chat Only)</a>
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="social-icons-container">
+                        <h4 class="mb-3" style="font-size: 0.9rem; text-align: left; margin-left: 10px;"> Connect With
+                            Us Through Social Media</h4>
+                        <div class="social-icons d-flex gap-3">
+                            <a href="https://www.facebook.com/realtachakradarma/" class="social-icon"
+                                aria-label="Facebook" target="_blank" rel="noopener noreferrer">
                                 <i class="fab fa-facebook-f"></i>
                             </a>
-                            <a href="https://id.linkedin.com/company/pt-realta-chakradarma/" class="social-icon" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer">
+                            <a href="https://id.linkedin.com/company/pt-realta-chakradarma/" class="social-icon"
+                                aria-label="LinkedIn" target="_blank" rel="noopener noreferrer">
                                 <i class="fab fa-linkedin-in"></i>
                             </a>
-                            <a href="https://x.com/Realta_OneSol" class="social-icon" aria-label="Twitter" target="_blank" rel="noopener noreferrer">
+                            <a href="https://x.com/Realta_OneSol" class="social-icon" aria-label="Twitter"
+                                target="_blank" rel="noopener noreferrer">
                                 <i class="fab fa-x-twitter"></i>
                             </a>
-                            <a href="https://www.instagram.com/realta.id/" class="social-icon" aria-label="Instagram" target="_blank" rel="noopener noreferrer">
+                            <a href="https://www.instagram.com/realta.id/" class="social-icon" aria-label="Instagram"
+                                target="_blank" rel="noopener noreferrer">
                                 <i class="fab fa-instagram"></i>
                             </a>
-                            <a href="https://www.youtube.com/@ptrealtachakradarma3127" class="social-icon" aria-label="YouTube" target="_blank" rel="noopener noreferrer">
+                            <a href="https://www.youtube.com/@ptrealtachakradarma3127" class="social-icon"
+                                aria-label="YouTube" target="_blank" rel="noopener noreferrer">
                                 <i class="fab fa-youtube"></i>
                             </a>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <style>
-                .social-icons {
-                    display: flex;
-                    align-items: center;
-                }
+                <style>
+                    .social-icons {
+                        display: flex;
+                        align-items: center;
+                    }
 
-                .social-icon {
-                    display: flex;
-                    align-items: center;
-                    justify-content: center;
-                    width: 40px;
-                    height: 40px;
-                    border-radius: 50%;
-                    color: white;
-                    text-decoration: none;
-                    transition: all 0.3s ease;
-                }
+                    .social-icon {
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        width: 40px;
+                        height: 40px;
+                        border-radius: 50%;
+                        color: white;
+                        text-decoration: none;
+                        transition: all 0.3s ease;
+                    }
 
-                .social-icon:hover {
-                    transform: translateY(-3px);
-                    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-                    background-image: none !important;
-                    background-color: #f0f0f0 !important;
-                    color: #333 !important;
-                }
+                    .social-icon:hover {
+                        transform: translateY(-3px);
+                        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+                        background-image: none !important;
+                        background-color: #f0f0f0 !important;
+                        color: #333 !important;
+                    }
 
-                .social-icon i {
-                    font-size: 18px;
-                }
+                    .social-icon i {
+                        font-size: 18px;
+                    }
 
-                .social-icon[aria-label="Facebook"] {
-                    background-color: #3b5998;
-                }
+                    .social-icon[aria-label="Facebook"] {
+                        background-color: #3b5998;
+                    }
 
-                .social-icon[aria-label="LinkedIn"] {
-                    background-color: #0077b5;
-                }
+                    .social-icon[aria-label="LinkedIn"] {
+                        background-color: #0077b5;
+                    }
 
-                .social-icon[aria-label="Twitter"] {
-                    background-color: #475258;
-                }
+                    .social-icon[aria-label="Twitter"] {
+                        background-color: #475258;
+                    }
 
-                .social-icon[aria-label="Instagram"] {
-                    background-color: #a19551;
-                }
+                    .social-icon[aria-label="Instagram"] {
+                        background-color: #a19551;
+                    }
 
-                .social-icon[aria-label="YouTube"] {
-                    background-color: #e62e2e;
-                }
-            </style>
-            <div id="contact-form" class="col-lg-5  right-column right-column-custom p-4 p-md-5 order-1 order-lg-2">
-                <form class="needs-validation" novalidate>
-                    <div class="mb-3">
-                        <label for="fullname" class="form-label">Name</label>
-                        <input type="text" class="form-control" id="fullname" placeholder="Name" required>
-                        <div class="invalid-feedback">
-                            Please enter your full name.
-                        </div>
-                    </div>
-
-                    <div class="mb-3">
-                        <label for="company" class="form-label">Company Name</label>
-                        <input type="text" class="form-control" id="company" placeholder="Company" required>
-                        <div class="invalid-feedback">
-                            Please enter your company name.
-                        </div>
-                    </div>
-
-                    <div class="mb-3">
-                        <label for="jobTitle" class="form-label">Job Title</label>
-                        <input type="text" class="form-control" id="jobTitle" placeholder="Job Title" required>
-                        <div class="invalid-feedback">
-                            Please enter your job title.
-                        </div>
-                    </div>
-
-                    <div class="mb-3">
-                        <label for="service" class="form-label">Please indicate your area of interest</label>
-                        <select id="service" class="form-select" required>
-                            <option value="">Choose...</option>
-                            <option>Golf Course System</option>
-                            <option>HR System</option>
-                            <option>Hotel Management System</option>
-                            <option>Property & Tenancy System</option>
-                            <option>Network & System Integration</option>
-                            <option>ITSM, ITAM & Unified Endpoint Management</option>
-                        </select>
-                        <div class="invalid-feedback">
-                            Please select a service.
-                        </div>
-                    </div>
-                    <div class="mb-3">
-                        <label for="phone" class="form-label">Mobile Phone</label>
-                        <input type="tel" class="form-control" id="phone" placeholder="Mobile Phone" required
-                            pattern="^\+?\d{0,13}">
-                        <div class="invalid-feedback">
-                            Please enter a valid mobile phone number.
-                        </div>
-                    </div>
-                    <div class="mb-3">
-                        <label for="email" class="form-label">Email</label>
-                        <input type="email" class="form-control" id="email" placeholder="Email" required>
-                        <div class="invalid-feedback">
-                            Please enter a valid email address.
-                        </div>
-                    </div>
-
-
-
-                    <div class="mb-3">
-                        <label for="message" class="form-label">How we can help you? </label>
-                        <textarea id="message" class="form-control" rows="4" placeholder="Message" required></textarea>
-                        <div class="invalid-feedback">
-                            Please enter a message.
-                        </div>
-                    </div>
-
-                    <div class="mb-3 form-check">
-                        <div class="d-inline-block text-start">
-                            <input type="checkbox" class="form-check-input" id="terms" required>
-                            <label class="form-check-label" for="terms">
-                                Before submitting please read our <br>
-                                <a href="#" class="text-decoration-none" onclick="navigateWithLoading('tos.html#eula'); return false;">Term and
-                                    Condition</a> &
-                                <a href="#" class="text-decoration-none" onclick="navigateWithLoading('tos.html#privacy'); return false;">Privacy
-                                    Policy</a>
-                            </label>
+                    .social-icon[aria-label="YouTube"] {
+                        background-color: #e62e2e;
+                    }
+                </style>
+                <div id="contact-form" class="col-lg-5  right-column right-column-custom p-4 p-md-5 order-1 order-lg-2">
+                    <form class="needs-validation" novalidate>
+                        <div class="mb-3">
+                            <label for="fullname" class="form-label">Name</label>
+                            <input type="text" class="form-control" id="fullname" placeholder="Name" required>
                             <div class="invalid-feedback">
-                                You must agree to the terms and conditions.
+                                Please enter your full name.
                             </div>
                         </div>
-                    </div>
 
-                    <button type="submit" class="btn submit-btn w-100">
-                        <i class="fas fa-paper-plane icon"></i>
-                        <span class="text">Submit</span>
-                    </button>
+                        <div class="mb-3">
+                            <label for="company" class="form-label">Company Name</label>
+                            <input type="text" class="form-control" id="company" placeholder="Company" required>
+                            <div class="invalid-feedback">
+                                Please enter your company name.
+                            </div>
+                        </div>
 
-                    <style>
-                        .submit-btn {
-                            position: relative;
-                            overflow: hidden;
-                            display: inline-flex;
-                            align-items: center;
-                            justify-content: center;
-                            width: 100%;
-                            height: 60px;
-                            font-size: 1.2rem;
-                            letter-spacing: 1px;
-                            text-transform: uppercase;
-                            border: none;
-                            border-radius: 10px;
-                            background: linear-gradient(to bottom, #9054d0, #7a4bd7);
-                            color: #ffffff;
-                            cursor: pointer;
-                            transition: all 0.3s ease-in-out;
-                            margin: 20px auto 0;
-                            /* Added top margin to move the button slightly down */
-                        }
+                        <div class="mb-3">
+                            <label for="jobTitle" class="form-label">Job Title</label>
+                            <input type="text" class="form-control" id="jobTitle" placeholder="Job Title" required>
+                            <div class="invalid-feedback">
+                                Please enter your job title.
+                            </div>
+                        </div>
 
-                        .submit-btn .icon {
-                            margin-right: 10px;
-                            font-size: 1.5rem;
-                            transition: all 0.5s ease-in-out;
-                            color: #ffffff;
-                        }
+                        <div class="mb-3">
+                            <label for="service" class="form-label">Please indicate your area of interest</label>
+                            <select id="service" class="form-select" required>
+                                <option value="">Choose...</option>
+                                <option>Golf Course System</option>
+                                <option>HR System</option>
+                                <option>Hotel Management System</option>
+                                <option>Property & Tenancy System</option>
+                                <option>Network & System Integration</option>
+                                <option>ITSM, ITAM & Unified Endpoint Management</option>
+                            </select>
+                            <div class="invalid-feedback">
+                                Please select a service.
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="phone" class="form-label">Mobile Phone</label>
+                            <input type="tel" class="form-control" id="phone" placeholder="Mobile Phone" required
+                                pattern="^\+?\d{0,13}">
+                            <div class="invalid-feedback">
+                                Please enter a valid mobile phone number.
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="email" class="form-label">Email</label>
+                            <input type="email" class="form-control" id="email" placeholder="Email" required>
+                            <div class="invalid-feedback">
+                                Please enter a valid email address.
+                            </div>
+                        </div>
 
-                        .submit-btn .text {
-                            transition: all 0.5s ease-in-out;
-                            color: #ffffff;
 
-                        }
 
-                        .submit-btn:hover {
-                            background: linear-gradient(to bottom, #4CAF50, #45a049);
-                        }
+                        <div class="mb-3">
+                            <label for="message" class="form-label">How we can help you? </label>
+                            <textarea id="message" class="form-control" rows="4" placeholder="Message"
+                                required></textarea>
+                            <div class="invalid-feedback">
+                                Please enter a message.
+                            </div>
+                        </div>
 
-                        .submit-btn:hover .text {
-                            transform: translateX(420px);
-                            color: #ffffff;
-                        }
+                        <div class="mb-3 form-check">
+                            <div class="d-inline-block text-start">
+                                <input type="checkbox" class="form-check-input" id="terms" required>
+                                <label class="form-check-label" for="terms">
+                                    Before submitting please read our <br>
+                                    <a href="#" class="text-decoration-none"
+                                        onclick="navigateWithLoading('tos.html#eula'); return false;">Term and
+                                        Condition</a> &
+                                    <a href="#" class="text-decoration-none"
+                                        onclick="navigateWithLoading('tos.html#privacy'); return false;">Privacy
+                                        Policy</a>
+                                </label>
+                                <div class="invalid-feedback">
+                                    You must agree to the terms and conditions.
+                                </div>
+                            </div>
+                        </div>
 
-                        .submit-btn:hover .icon {
-                            transform: translateX(45px);
-                            /* Adjusted to move to the middle */
-                            color: #ffffff;
-                        }
+                        <button type="submit" class="btn submit-btn w-100">
+                            <i class="fas fa-paper-plane icon"></i>
+                            <span class="text">Submit</span>
+                        </button>
 
-                        @media (max-width: 768px) {
-                            .submit-btn:hover .icon {
-                                transform: translateX(40px);
-                                /* Reduced movement for smaller screens */
+                        <style>
+                            .submit-btn {
+                                position: relative;
+                                overflow: hidden;
+                                display: inline-flex;
+                                align-items: center;
+                                justify-content: center;
+                                width: 100%;
+                                height: 60px;
+                                font-size: 1.2rem;
+                                letter-spacing: 1px;
+                                text-transform: uppercase;
+                                border: none;
+                                border-radius: 10px;
+                                background: linear-gradient(to bottom, #9054d0, #7a4bd7);
+                                color: #ffffff;
+                                cursor: pointer;
+                                transition: all 0.3s ease-in-out;
+                                margin: 20px auto 0;
+                                /* Added top margin to move the button slightly down */
                             }
-                        }
 
-                        .submit-btn:active {
-                            transform: translateY(3px);
-                            box-shadow:
-                                inset 0 15px 15px -15px rgba(0, 0, 0, 0.3),
-                                inset 0 0 0 1px rgba(255, 255, 255, 0.1),
-                                0 2px 5px rgba(0, 0, 0, 0.1),
-                                0 5px 10px rgba(0, 0, 0, 0.1);
-                        }
-                    </style>
-                </form>
+                            .submit-btn .icon {
+                                margin-right: 10px;
+                                font-size: 1.5rem;
+                                transition: all 0.5s ease-in-out;
+                                color: #ffffff;
+                            }
+
+                            .submit-btn .text {
+                                transition: all 0.5s ease-in-out;
+                                color: #ffffff;
+
+                            }
+
+                            .submit-btn:hover {
+                                background: linear-gradient(to bottom, #4CAF50, #45a049);
+                            }
+
+                            .submit-btn:hover .text {
+                                transform: translateX(420px);
+                                color: #ffffff;
+                            }
+
+                            .submit-btn:hover .icon {
+                                transform: translateX(45px);
+                                /* Adjusted to move to the middle */
+                                color: #ffffff;
+                            }
+
+                            @media (max-width: 768px) {
+                                .submit-btn:hover .icon {
+                                    transform: translateX(40px);
+                                    /* Reduced movement for smaller screens */
+                                }
+                            }
+
+                            .submit-btn:active {
+                                transform: translateY(3px);
+                                box-shadow:
+                                    inset 0 15px 15px -15px rgba(0, 0, 0, 0.3),
+                                    inset 0 0 0 1px rgba(255, 255, 255, 0.1),
+                                    0 2px 5px rgba(0, 0, 0, 0.1),
+                                    0 5px 10px rgba(0, 0, 0, 0.1);
+                            }
+                        </style>
+                    </form>
+                </div>
             </div>
         </div>
-    </div>
-</section>
+    </section>
 
-  
 
-<section id="newsletter-cta" class="py-4 mb-0">
-    <div class="container-fluid">
-        <div class="row align-items-center">
-            <div class="col-md-7 text-start">
-                <h2 class="mb-3 fw-bold gradient-text">Stay Informed, Stay Ahead</h2>
-                <p class="mb-4">Join our newsletter for exclusive insights and expert tips.</p>
-                <form class="mb-3">
-                    <div class="input-group input-group-lg" style="max-width: 500px;">
-                        <input type="email" class="form-control" placeholder="Email address" aria-label="Email address"
-                            required style="border-radius: 10px 0 0 10px;">
-                        <button class="btn btn-primary" type="submit"
-                            style="border-radius: 0 10px 10px 0;">Subscribe</button>
+
+    <section id="newsletter-cta" class="py-4 mb-0">
+        <div class="container-fluid">
+            <div class="row align-items-center">
+                <div class="col-md-7 text-start">
+                    <h2 class="mb-3 fw-bold gradient-text">Stay Informed, Stay Ahead</h2>
+                    <p class="mb-4">Join our newsletter for exclusive insights and expert tips.</p>
+                    <form class="mb-3">
+                        <div class="input-group input-group-lg" style="max-width: 500px;">
+                            <input type="email" class="form-control" placeholder="Email address"
+                                aria-label="Email address" required style="border-radius: 10px 0 0 10px;">
+                            <button class="btn btn-primary" type="submit"
+                                style="border-radius: 0 10px 10px 0;">Subscribe</button>
+                        </div>
+                    </form>
+                    <p class="text-muted small">By subscribing, you agree to our <a href="#"
+                            class="text-decoration-none"
+                            onclick="window.open('tos.html#privacy', '_blank'); return false;">Privacy
+                            Policy</a> and <a href="#" class="text-decoration-none"
+                            onclick="window.open('tos.html#eula', '_blank'); return false;">Terms of Service</a>.</p>
+                </div>
+                <div class="col-md-5">
+                    <div class="d-flex justify-content-md-end align-items-center mb-3">
+                        <img src="assets/img/footer1.png" alt="Logo 1" class="footer-logo me-3"
+                            style="max-height: 90px; width: auto;">
+                        <img src="assets/sticker.png" alt="Logo 2" class="footer-logo dark-mode-image"
+                            style="max-height: 90px; width: auto;">
+                        <style>
+                            .dark-mode-image {
+                                content: url('assets/sticker.png');
+                            }
+
+                            body.dark-mode .dark-mode-image {
+                                content: url('assets/img/footer2.png');
+                            }
+                        </style>
                     </div>
-                </form>
-                <p class="text-muted small">By subscribing, you agree to our <a href="#" class="text-decoration-none" 
-                        onclick="window.open('tos.html#privacy', '_blank'); return false;">Privacy
-                        Policy</a> and <a href="#" class="text-decoration-none"
-                        onclick="window.open('tos.html#eula', '_blank'); return false;">Terms of Service</a>.</p>
-            </div>
-            <div class="col-md-5">
-                <div class="d-flex justify-content-md-end align-items-center mb-3">
-                    <img src="assets/img/footer1.png" alt="Logo 1" class="footer-logo me-3"
-                        style="max-height: 90px; width: auto;">
-                    <img src="assets/sticker.png" alt="Logo 2" class="footer-logo dark-mode-image"
-                        style="max-height: 90px; width: auto;">
-                    <style>
-                        .dark-mode-image {
-                            content: url('assets/sticker.png');
-                        }
-
-                        body.dark-mode .dark-mode-image {
-                            content: url('assets/img/footer2.png');
-                        }
-                    </style>
-                </div>
-                <div class="text-md-end">
-                    <p class="mb-2 text-muted small" style="font-size: 0.9rem;">&copy; 2025 PT. Realta Chakradarma. All
-                        rights
-                        reserved.</p>
-                    <a href="#" onclick="window.open('tos.html#privacy', '_blank'); return false;"
-                        class="text-muted small me-3" style="font-size: 0.9rem; text-decoration: underline;">Privacy
-                        Policy</a>
-                    <span class="text-muted small me-3" style="font-size: 0.9rem;">|</span>
-                    <a href="#" onclick="window.open('tos.html#eula', '_blank'); return false;" class="text-muted small"
-                        style="font-size: 0.9rem; text-decoration: underline;">Terms of Service</a>
+                    <div class="text-md-end">
+                        <p class="mb-2 text-muted small" style="font-size: 0.9rem;">&copy; 2025 PT. Realta Chakradarma.
+                            All
+                            rights
+                            reserved.</p>
+                        <a href="#" onclick="window.open('tos.html#privacy', '_blank'); return false;"
+                            class="text-muted small me-3" style="font-size: 0.9rem; text-decoration: underline;">Privacy
+                            Policy</a>
+                        <span class="text-muted small me-3" style="font-size: 0.9rem;">|</span>
+                        <a href="#" onclick="window.open('tos.html#eula', '_blank'); return false;"
+                            class="text-muted small" style="font-size: 0.9rem; text-decoration: underline;">Terms of
+                            Service</a>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-</section>
+    </section>
 
 
     <style>
@@ -1722,81 +1763,85 @@
     </style>
 
 
-<!-- Modal Overlay Structure -->
-<div class="realta-icare-modal-overlay" id="realtaICareModal">
-    <div class="realta-icare-modal-container">
-      <div class="realta-icare-modal-header">
-        <h2 class="realta-icare-modal-title">Welcome to iCare</h2>
-        <button class="realta-icare-modal-close">&times;</button>
-      </div>
-      <div class="realta-icare-modal-body">
-        <p class="realta-icare-modal-text text-left">
-          To care or not to care, is NEVER a question! Realta iCare, our commitment to your satisfaction! 
-          We give the very best to satisfy your needs every step of the way.
-        </p>
-        
-        <div class="row justify-content-between mt-4">
-          <div class="col-md-5 text-left mb-3">
-            <h3 class="realta-icare-icon-title fs-5">Customer Support</h3>
-            <a href="https://icare.cloud.co.id/HEAT" target="_blank">
-              <img src="assets/img/icare-customer.png" alt="Customer Support" class="realta-icare-modal-icon img-fluid">
-            </a>
-          </div>
-  
-          <div class="col-md-5 text-left mb-3">
-            <h3 class="realta-icare-icon-title fs-5">Product Manual</h3>
-            <a href="https://realta.co.id/site/pdf/Manual%20Guide%20Aplikasi%20iCARE-Customer%20Self%20Service(1.0).pdf" target="_blank">
-              <img src="assets/img/icare-manual.png" alt="Product Manual" class="realta-icare-modal-icon img-fluid">
-            </a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
+    <!-- Modal Overlay Structure -->
+    <div class="realta-icare-modal-overlay" id="realtaICareModal">
+        <div class="realta-icare-modal-container">
+            <div class="realta-icare-modal-header">
+                <h2 class="realta-icare-modal-title">Welcome to iCare</h2>
+                <button class="realta-icare-modal-close">&times;</button>
+            </div>
+            <div class="realta-icare-modal-body">
+                <p class="realta-icare-modal-text text-left">
+                    To care or not to care, is NEVER a question! Realta iCare, our commitment to your satisfaction!
+                    We give the very best to satisfy your needs every step of the way.
+                </p>
 
-<!-- JavaScript for Modal Functionality -->
-<script>
-    document.addEventListener('DOMContentLoaded', function() {
-      // Get modal elements
-      const footerLogo = document.querySelector('.footer-logo'); // Target the existing footer logo
-      const modalOverlay = document.querySelector('.realta-icare-modal-overlay');
-      const modalClose = document.querySelector('.realta-icare-modal-close');
-      
-      // Move the modal overlay to be a direct child of the body
-      // This helps avoid stacking context issues
-      document.body.appendChild(modalOverlay);
-      
-      // Open modal function
-      function openModal() {
-        modalOverlay.classList.add('realta-icare-modal-show');
-        document.body.style.overflow = 'hidden'; // Prevent scrolling when modal is open
-      }
-      
-      // Close modal function
-      function closeModal() {
-        modalOverlay.classList.remove('realta-icare-modal-show');
-        document.body.style.overflow = ''; // Restore scrolling
-      }
-      
-      // Event listeners
-      footerLogo.addEventListener('click', openModal); // Make the footer logo open the modal
-      modalClose.addEventListener('click', closeModal);
-      
-      // Close modal when clicking outside
-      modalOverlay.addEventListener('click', function(event) {
-        if (event.target === modalOverlay) {
-          closeModal();
-        }
-      });
-      
-      // Close modal with Escape key
-      document.addEventListener('keydown', function(event) {
-        if (event.key === 'Escape' && modalOverlay.classList.contains('realta-icare-modal-show')) {
-          closeModal();
-        }
-      });
-    });
-  </script>
+                <div class="row justify-content-between mt-4">
+                    <div class="col-md-5 text-left mb-3">
+                        <h3 class="realta-icare-icon-title fs-5">Customer Support</h3>
+                        <a href="https://icare.cloud.co.id/HEAT" target="_blank">
+                            <img src="assets/img/icare-customer.png" alt="Customer Support"
+                                class="realta-icare-modal-icon img-fluid">
+                        </a>
+                    </div>
+
+                    <div class="col-md-5 text-left mb-3">
+                        <h3 class="realta-icare-icon-title fs-5">Product Manual</h3>
+                        <a href="https://realta.co.id/site/pdf/Manual%20Guide%20Aplikasi%20iCARE-Customer%20Self%20Service(1.0).pdf"
+                            target="_blank">
+                            <img src="assets/img/icare-manual.png" alt="Product Manual"
+                                class="realta-icare-modal-icon img-fluid">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript for Modal Functionality -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Get modal elements
+            const footerLogo = document.querySelector('.footer-logo'); // Target the existing footer logo
+            const modalOverlay = document.querySelector('.realta-icare-modal-overlay');
+            const modalClose = document.querySelector('.realta-icare-modal-close');
+
+            // Move the modal overlay to be a direct child of the body
+            // This helps avoid stacking context issues
+            document.body.appendChild(modalOverlay);
+
+            // Open modal function
+            function openModal() {
+                modalOverlay.classList.add('realta-icare-modal-show');
+                document.body.style.overflow = 'hidden'; // Prevent scrolling when modal is open
+            }
+
+            // Close modal function
+            function closeModal() {
+                modalOverlay.classList.remove('realta-icare-modal-show');
+                document.body.style.overflow = ''; // Restore scrolling
+            }
+
+            // Event listeners
+            footerLogo.addEventListener('click', openModal); // Make the footer logo open the modal
+            modalClose.addEventListener('click', closeModal);
+
+            // Close modal when clicking outside
+            modalOverlay.addEventListener('click', function (event) {
+                if (event.target === modalOverlay) {
+                    closeModal();
+                }
+            });
+
+            // Close modal with Escape key
+            document.addEventListener('keydown', function (event) {
+                if (event.key === 'Escape' && modalOverlay.classList.contains(
+                        'realta-icare-modal-show')) {
+                    closeModal();
+                }
+            });
+        });
+    </script>
     <!-- <footer class="bg-primary-gradient">
         <div class="container py-4 py-lg-5">
             <div class="row justify-content-center">
@@ -1883,7 +1928,7 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.1.3/js/bootstrap.min.js"></script>
-    <script src="assets/js/contact-valid.js"></script>  <!-- Added contact validation script -->
+    <script src="assets/js/contact-valid.js"></script> <!-- Added contact validation script -->
 
     <!-- <script>
         document.addEventListener('DOMContentLoaded', function () {
