@@ -58,16 +58,17 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
     <style>
-     
         /* Update the contact form styles */
         #contact-form {
-            max-width: 500px; /* Constrain form width */
+            max-width: 500px;
+            /* Constrain form width */
             width: 100%;
             margin: 0 auto;
         }
 
         #contact .row {
-            width: 100%; /* Constrain the entire contact section */
+            width: 100%;
+            /* Constrain the entire contact section */
             margin: 0 auto;
         }
 
@@ -87,7 +88,7 @@
                 gap: 2rem;
                 padding: 0 15px;
             }
-            
+
             #contact-form {
                 padding: 1.5rem !important;
             }
@@ -196,7 +197,7 @@
     #contact .row {
         gap: 2rem;
     }
-    
+
     @media (max-width: 991px) {
         #contact .row {
             gap: 3rem;
@@ -247,235 +248,260 @@
                     <i class="fas fa-bars" style="font-size: 1.7rem;"></i>
                 </div>
             </div>
-          <!-- Mobile responsive navigation menu -->
-          <div class="offcanvas offcanvas-end" tabindex="-1" id="sidebar" aria-labelledby="sidebarLabel">
-            <div class="offcanvas-header">
-                <div>
-                    <h5 class="offcanvas-title" id="sidebarLabel"
-                        style="margin-left: 33px; margin-bottom: 20px; font-size: 30px; color: white;">Menu</h5>
+            <!-- Mobile responsive navigation menu -->
+            <div class="offcanvas offcanvas-end" tabindex="-1" id="sidebar" aria-labelledby="sidebarLabel">
+                <div class="offcanvas-header">
+                    <div>
+                        <h5 class="offcanvas-title" id="sidebarLabel"
+                            style="margin-left: 33px; margin-bottom: 20px; font-size: 30px; color: white;">Menu</h5>
+                    </div>
+                    <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas"
+                        aria-label="Close"></button>
                 </div>
-                <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas"
-                    aria-label="Close"></button>
-            </div>
-            <div class="offcanvas-body">
-                <div class="sidebar-menu">
-                    <div class="sidebar-item">
-                        <h2 style="font-size: 2.1rem;">Realta Chakradarma</h2>
-                        <hr>
-                        <h2 class="product-header" data-bs-toggle="collapse" data-bs-target="#productsSubmenu"
-                            aria-expanded="false">
-                            Solutions <i class="fas fa-chevron-right arrow-icon"></i>
-                        </h2>
-                        <div id="productsSubmenu" class="collapse">
-                            <ul class="product-list">
-                                <li>
-                                    <div class="product-header" data-bs-toggle="collapse"
-                                        data-bs-target="#gcsSubmenu" aria-expanded="false"
-                                        style="font-size: 1rem; font-weight: 400;">
-                                        Golf Course Management System<i class="fas fa-chevron-right arrow-icon"></i>
-                                    </div>
-                                    <div id="gcsSubmenu" class="collapse product-submenu">
-                                        <a href="golf-micro.html" class="discover-link" onclick="navigateWithLoading('golf-micro.html')">Discover GCS ›</a>
-                                        <h3 class="modules-heading">MODULES</h3>
-                                        <ul class="modules-list">
-                                            <li>
-                                                <strong>Membership Management</strong>
-                                                <span>Manage and track member information and activities with our integrated solution</span>
-                                            </li>
-                                            <li>
-                                                <strong>Golf Operation</strong>
-                                                <span>Streamline golf operations with our integrated system and unified platform</span>
-                                            </li>
-                                            <li>
-                                                <strong>Tournament Management</strong>
-                                                <span>Your all-in-one golf event solution and golf management system</span>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="product-header" data-bs-toggle="collapse"
-                                        data-bs-target="#hmsSubmenu" aria-expanded="false"
-                                        style="font-size: 1rem; font-weight: 400;">
-                                        Hotel Management System <i class="fas fa-chevron-right arrow-icon"></i>
-                                    </div>
-                                    <div id="hmsSubmenu" class="collapse product-submenu">
-                                        <!-- <p>Comprehensive solution for efficient hotel operations and guest
+                <div class="offcanvas-body">
+                    <div class="sidebar-menu">
+                        <div class="sidebar-item">
+                            <h2 style="font-size: 2.1rem;">Realta Chakradarma</h2>
+                            <hr>
+                            <h2 class="product-header" data-bs-toggle="collapse" data-bs-target="#productsSubmenu"
+                                aria-expanded="false">
+                                Solutions <i class="fas fa-chevron-right arrow-icon"></i>
+                            </h2>
+                            <div id="productsSubmenu" class="collapse">
+                                <ul class="product-list">
+                                    <li>
+                                        <div class="product-header" data-bs-toggle="collapse"
+                                            data-bs-target="#gcsSubmenu" aria-expanded="false"
+                                            style="font-size: 1rem; font-weight: 400;">
+                                            Golf Course Management System<i class="fas fa-chevron-right arrow-icon"></i>
+                                        </div>
+                                        <div id="gcsSubmenu" class="collapse product-submenu">
+                                            <a href="golf-micro.html" class="discover-link"
+                                                onclick="navigateWithLoading('golf-micro.html')">Discover GCS ›</a>
+                                            <h3 class="modules-heading">MODULES</h3>
+                                            <ul class="modules-list">
+                                                <li>
+                                                    <strong>Membership Management</strong>
+                                                    <span>Manage and track member information and activities with our
+                                                        integrated solution</span>
+                                                </li>
+                                                <li>
+                                                    <strong>Golf Operation</strong>
+                                                    <span>Streamline golf operations with our integrated system and
+                                                        unified platform</span>
+                                                </li>
+                                                <li>
+                                                    <strong>Tournament Management</strong>
+                                                    <span>Your all-in-one golf event solution and golf management
+                                                        system</span>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="product-header" data-bs-toggle="collapse"
+                                            data-bs-target="#hmsSubmenu" aria-expanded="false"
+                                            style="font-size: 1rem; font-weight: 400;">
+                                            Hotel Management System <i class="fas fa-chevron-right arrow-icon"></i>
+                                        </div>
+                                        <div id="hmsSubmenu" class="collapse product-submenu">
+                                            <!-- <p>Comprehensive solution for efficient hotel operations and guest
                                             management.</p> -->
-                                        <a href="rhapsody-micro.html" class="discover-link" onclick="navigateWithLoading('rhapsody-micro.html')">Discover HMS ›</a>
-                                        <h3 class="modules-heading">MODULES</h3>
-                                        <ul class="modules-list">
-                                            <li>
-                                                <strong>Front Office</strong>
-                                                <span>Simplify guest services and reception tasks with our optimized solution</span>
-                                            </li>
-                                            <li>
-                                                <strong>Logistic</strong>
-                                                <span>Optimize inventory and supply chain management</span>
-                                            </li>
-                                            <li>
-                                                <strong>Back Office</strong>
-                                                <span>Improve operations and financial management</span>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="product-header" data-bs-toggle="collapse"
-                                        data-bs-target="#hrSystemSubmenu" aria-expanded="false"
-                                        style="font-size: 1rem; font-weight: 400;">
-                                        HR System <i class="fas fa-chevron-right arrow-icon"></i>
-                                    </div>
-                                    <div id="hrSystemSubmenu" class="collapse product-submenu">
-                                        <!-- <p>Comprehensive human resource management solution for businesses of
+                                            <a href="rhapsody-micro.html" class="discover-link"
+                                                onclick="navigateWithLoading('rhapsody-micro.html')">Discover HMS ›</a>
+                                            <h3 class="modules-heading">MODULES</h3>
+                                            <ul class="modules-list">
+                                                <li>
+                                                    <strong>Front Office</strong>
+                                                    <span>Simplify guest services and reception tasks with our optimized
+                                                        solution</span>
+                                                </li>
+                                                <li>
+                                                    <strong>Logistic</strong>
+                                                    <span>Optimize inventory and supply chain management</span>
+                                                </li>
+                                                <li>
+                                                    <strong>Back Office</strong>
+                                                    <span>Improve operations and financial management</span>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="product-header" data-bs-toggle="collapse"
+                                            data-bs-target="#hrSystemSubmenu" aria-expanded="false"
+                                            style="font-size: 1rem; font-weight: 400;">
+                                            HR System <i class="fas fa-chevron-right arrow-icon"></i>
+                                        </div>
+                                        <div id="hrSystemSubmenu" class="collapse product-submenu">
+                                            <!-- <p>Comprehensive human resource management solution for businesses of
                                             all sizes.</p> -->
-                                        <a href="hr-micro.html" class="discover-link" onclick="navigateWithLoading('hr-micro.html')">Discover HR System ›</a>
-                                        <h3 class="modules-heading">MODULES</h3>
-                                        <ul class="modules-list">
-                                            <li>
-                                                <strong>HR Core</strong>
-                                                <span>HR Operation with our integrated solution and unified platform.</span>
-                                            </li>
-                                            <li>
-                                                <strong>HR Advance</strong>
-                                                <span>Integrate and optimize core business processes</span>
-                                            </li>
-                                            <li>
-                                                <strong>HR Mobile</strong>
-                                                <span>Empower and manage HR with our ESS app with ease.</span>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </li>
-                                 <li>
-                                    <div class="product-header" data-bs-toggle="collapse"
-                                        data-bs-target="#itsmSubmenu" aria-expanded="false"
-                                        style="font-size: 1rem; font-weight: 400;">
-                                        ITSM, ITAM & Unified Endpoint Management <i
-                                            class="fas fa-chevron-right arrow-icon"></i>
-                                    </div>
-                                    <div id="itsmSubmenu" class="collapse product-submenu">
-                                        <!-- <p>Comprehensive IT Service Management solution for streamlined IT
+                                            <a href="hr-micro.html" class="discover-link"
+                                                onclick="navigateWithLoading('hr-micro.html')">Discover HR System ›</a>
+                                            <h3 class="modules-heading">MODULES</h3>
+                                            <ul class="modules-list">
+                                                <li>
+                                                    <strong>HR Core</strong>
+                                                    <span>HR Operation with our integrated solution and unified
+                                                        platform.</span>
+                                                </li>
+                                                <li>
+                                                    <strong>HR Advance</strong>
+                                                    <span>Integrate and optimize core business processes</span>
+                                                </li>
+                                                <li>
+                                                    <strong>HR Mobile</strong>
+                                                    <span>Empower and manage HR with our ESS app with ease.</span>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="product-header" data-bs-toggle="collapse"
+                                            data-bs-target="#itsmSubmenu" aria-expanded="false"
+                                            style="font-size: 1rem; font-weight: 400;">
+                                            ITSM, ITAM & Unified Endpoint Management <i
+                                                class="fas fa-chevron-right arrow-icon"></i>
+                                        </div>
+                                        <div id="itsmSubmenu" class="collapse product-submenu">
+                                            <!-- <p>Comprehensive IT Service Management solution for streamlined IT
                                             aoperations.</p> -->
-                                        <a href="itsm-micro.html" class="discover-link" onclick="navigateWithLoading('itsm-micro.html')">Discover ITSM, ITAM & Unified Endpoint
-                                            Management ›</a>
-                                        <h3 class="modules-heading">MODULES</h3>
-                                        <ul class="modules-list">
-                                            <li>
-                                                <strong>Service Management</strong>
-                                                <span>Streamline IT service delivery and support</span>
-                                            </li>
-                                            <li>
-                                                <strong>Asset Management</strong>
-                                                <span>Track and manage IT assets throughout their lifecycle</span>
-                                            </li>
-                                            <li>
-                                                <strong>Endpoint Management</strong>
-                                                <span>Centrally manage and secure all your endpoints</span>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="product-header" data-bs-toggle="collapse"
-                                        data-bs-target="#propertyTenantSubmenu" aria-expanded="false"
-                                        style="font-size: 1rem; font-weight: 400;">
-                                        Property and Tenant System <i class="fas fa-chevron-right arrow-icon"></i>
-                                    </div>
-                                    <div id="propertyTenantSubmenu" class="collapse product-submenu">
-                                        <!-- <p>Efficient management solution for property owners and landlords.</p> -->
-                                        <a href="#" class="discover-link" onclick="navigateWithLoading('bimasakti-micro.html')">Discover Property and Tenant System
-                                            ›</a>
-                                        <h3 class="modules-heading">MODULES</h3>
-                                        <ul class="modules-list">
-                                            <li>
-                                                <strong>Sales & Marketing</strong>
-                                                <span>Boost Your Sales with our comprehensive, integrated solution.</span>
-                                            </li>
-                                            <li>
-                                                <strong>Tenancy Management</strong>
-                                                <span>With our comprehensive, user-friendly platform.</span>
-                                            </li>
-                                            <li>
-                                                <strong>Billing Management</strong>
-                                                <span>With our efficient handling of billing and payments.</span>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </li>
-                               
-                                <li>
-                                    <div class="product-header" data-bs-toggle="collapse"
-                                        data-bs-target="#erpSubmenu" aria-expanded="false"
-                                        style="font-size: 1rem; font-weight: 400;">
-                                        Network & System Integration <i class="fas fa-chevron-right arrow-icon"></i>
-                                    </div>
-                                    <div id="erpSubmenu" class="collapse product-submenu">
-                                        <!-- <p>Integrated Enterprise Resource Planning solution for business
+                                            <a href="itsm-micro.html" class="discover-link"
+                                                onclick="navigateWithLoading('itsm-micro.html')">Discover ITSM, ITAM &
+                                                Unified Endpoint
+                                                Management ›</a>
+                                            <h3 class="modules-heading">MODULES</h3>
+                                            <ul class="modules-list">
+                                                <li>
+                                                    <strong>Service Management</strong>
+                                                    <span>Streamline IT service delivery and support</span>
+                                                </li>
+                                                <li>
+                                                    <strong>Asset Management</strong>
+                                                    <span>Track and manage IT assets throughout their lifecycle</span>
+                                                </li>
+                                                <li>
+                                                    <strong>Endpoint Management</strong>
+                                                    <span>Centrally manage and secure all your endpoints</span>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="product-header" data-bs-toggle="collapse"
+                                            data-bs-target="#propertyTenantSubmenu" aria-expanded="false"
+                                            style="font-size: 1rem; font-weight: 400;">
+                                            Property and Tenant System <i class="fas fa-chevron-right arrow-icon"></i>
+                                        </div>
+                                        <div id="propertyTenantSubmenu" class="collapse product-submenu">
+                                            <!-- <p>Efficient management solution for property owners and landlords.</p> -->
+                                            <a href="#" class="discover-link"
+                                                onclick="navigateWithLoading('bimasakti-micro.html')">Discover Property
+                                                and Tenant System
+                                                ›</a>
+                                            <h3 class="modules-heading">MODULES</h3>
+                                            <ul class="modules-list">
+                                                <li>
+                                                    <strong>Sales & Marketing</strong>
+                                                    <span>Boost Your Sales with our comprehensive, integrated
+                                                        solution.</span>
+                                                </li>
+                                                <li>
+                                                    <strong>Tenancy Management</strong>
+                                                    <span>With our comprehensive, user-friendly platform.</span>
+                                                </li>
+                                                <li>
+                                                    <strong>Billing Management</strong>
+                                                    <span>With our efficient handling of billing and payments.</span>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </li>
+
+                                    <li>
+                                        <div class="product-header" data-bs-toggle="collapse"
+                                            data-bs-target="#erpSubmenu" aria-expanded="false"
+                                            style="font-size: 1rem; font-weight: 400;">
+                                            Network & System Integration <i class="fas fa-chevron-right arrow-icon"></i>
+                                        </div>
+                                        <div id="erpSubmenu" class="collapse product-submenu">
+                                            <!-- <p>Integrated Enterprise Resource Planning solution for business
                                             management.</p> -->
-                                        <a href="#" class="discover-link" onclick="navigateWithLoading('realnet-micro.html')">Discover Network & System Integration ›</a>
-                                        <h3 class="modules-heading">MODULES</h3>
-                                        <ul class="modules-list">
-                                            <li>
-                                                <strong>Hardware & Software</strong>
-                                                <span>Comprehensive solutions for selecting, deploying, and managing IT hardware and software tailored to your business needs</span>
-                                            </li>
-                                            <li>
-                                                <strong>Network</strong>
-                                                <span>Robust network solutions designed to ensure seamless connectivity, performance, and security across your entire business ecosystem</span>
-                                            </li>
-                                            <li>
-                                                <strong>Cloud Infrastructure</strong>
-                                                <span>Scalable cloud solutions that provide secure and flexible environments for hosting and managing your applications and data</span>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </li>
-                            </ul>
+                                            <a href="#" class="discover-link"
+                                                onclick="navigateWithLoading('realnet-micro.html')">Discover Network &
+                                                System Integration ›</a>
+                                            <h3 class="modules-heading">MODULES</h3>
+                                            <ul class="modules-list">
+                                                <li>
+                                                    <strong>Hardware & Software</strong>
+                                                    <span>Comprehensive solutions for selecting, deploying, and managing
+                                                        IT hardware and software tailored to your business needs</span>
+                                                </li>
+                                                <li>
+                                                    <strong>Network</strong>
+                                                    <span>Robust network solutions designed to ensure seamless
+                                                        connectivity, performance, and security across your entire
+                                                        business ecosystem</span>
+                                                </li>
+                                                <li>
+                                                    <strong>Cloud Infrastructure</strong>
+                                                    <span>Scalable cloud solutions that provide secure and flexible
+                                                        environments for hosting and managing your applications and
+                                                        data</span>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="sidebar-item">
+                            <h2 class="product-header">
+                                <a href="#" onclick="navigateWithLoading('hospitality.html'); return false;"
+                                    style="text-decoration: none; color: inherit;">Industry</a>
+                            </h2>
+                        </div>
+                        <div class="sidebar-item">
+                            <h2 class="product-header">
+                                <a href="#" onclick="navigateWithLoading('partners.html'); return false;"
+                                    style="text-decoration: none; color: inherit;">Partners</a>
+                            </h2>
+                        </div>
+                        <div class="sidebar-item">
+                            <h2 class="product-header">
+                                <a href="#" onclick="navigateWithLoading('contacts.html'); return false;"
+                                    style="text-decoration: none; color: inherit;">Contact</a>
+                            </h2>
+                        </div>
+                        <div class="sidebar-item">
+                            <h2 class="product-header">
+                                <a href="#" onclick="navigateWithLoading('career.html'); return false;"
+                                    style="text-decoration: none; color: inherit;">Career</a>
+                            </h2>
+                        </div>
+
+                        <div class="sidebar-item">
+                            <h2 class="product-header">
+                                <a href="#" onclick="navigateWithLoading('blog.html'); return false;"
+                                    style="text-decoration: none; color: inherit;">Blog</a>
+                            </h2>
+                        </div>
+                        <div class="sidebar-item">
+                            <h2 class="product-header">
+                                <a href="#" onclick="navigateWithLoading('about.html'); return false;"
+                                    style="text-decoration: none; color: inherit;">About Us</a>
+                            </h2>
                         </div>
                     </div>
-                    <div class="sidebar-item">
-                        <h2 class="product-header">
-                            <a href="#" onclick="navigateWithLoading('hospitality.html'); return false;"style="text-decoration: none; color: inherit;">Industry</a>
-                        </h2>
-                    </div>
-                    <div class="sidebar-item">
-                        <h2 class="product-header">
-                            <a href="#" onclick="navigateWithLoading('partners.html'); return false;" style="text-decoration: none; color: inherit;">Partners</a>
-                        </h2>
-                    </div>
-                    <div class="sidebar-item">
-                        <h2 class="product-header">
-                            <a href="#" onclick="navigateWithLoading('contacts.html'); return false;" style="text-decoration: none; color: inherit;">Contact</a>
-                        </h2>
-                    </div>
-                    <div class="sidebar-item">
-                        <h2 class="product-header">
-                            <a href="#" onclick="navigateWithLoading('career.html'); return false;" style="text-decoration: none; color: inherit;">Career</a>
-                        </h2>
-                    </div>
-                    
-                    <div class="sidebar-item">
-                        <h2 class="product-header">
-                            <a href="#" onclick="navigateWithLoading('blog.html'); return false;"
-                                style="text-decoration: none; color: inherit;">Blog</a>
-                        </h2>
-                    </div>
-                    <div class="sidebar-item">
-                        <h2 class="product-header">
-                            <a href="#" onclick="navigateWithLoading('about.html'); return false;" style="text-decoration: none; color: inherit;">About Us</a>
-                        </h2>
-                    </div>
-                </div>
-                <div class="get-started-container" style="margin-top: -10px !important;">
-                    <!-- Adjusted margin-top to move slightly to the top -->
+                    <div class="get-started-container" style="margin-top: -10px !important;">
+                        <!-- Adjusted margin-top to move slightly to the top -->
 
-                 
+
                     </div>
                 </div>
             </div>
-   
-            
+
+
             <style>
                 @media (min-width: 992px) {
                     #sidebar {
@@ -613,7 +639,7 @@
                 </ul>
                 <div class="sidebar-actions d-flex justify-content-end align-items-center"
                     style="margin-bottom: 0.5rem;">
-                    
+
                     <button id="darkModeToggleSidebar" class="btn-custom ms-2">
                         <i class="fas fa-moon"></i>
                     </button>
@@ -635,17 +661,18 @@
                 <div class="product-categories">
                     <a href="golf-micro.html" class="product-category" data-product="gcs"
                         onclick="navigateWithLoading('golf-micro.html')">Golf Course System</a>
-                    <a href="hr-micro.html" class="product-category" data-product="hrs" onclick="navigateWithLoading('hr-micro.html')">HR
+                    <a href="hr-micro.html" class="product-category" data-product="hrs"
+                        onclick="navigateWithLoading('hr-micro.html')">HR
                         System</a>
                     <a href="rhapsody-micro.html" class="product-category" data-product="hms"
                         onclick="navigateWithLoading('rhapsody-micro.html')">Hotel Management System</a>
                     <a href="itsm-micro.html" class="product-category" data-product="itm"
                         onclick="navigateWithLoading('itsm-micro.html')">ITSM, ITAM & Unified Endpoint Management</a>
-                        <a href="realnet-micro.html" class="product-category" data-product="erp"
+                    <a href="realnet-micro.html" class="product-category" data-product="erp"
                         onclick="navigateWithLoading('realnet-micro.html')">Network & System Integration</a>
                     <a href="bimasakti-micro.html" class="product-category" data-product="pts"
                         onclick="navigateWithLoading('bimasakti-micro.html')">Property & Tenancy System</a>
-                   
+
                     <div
                         style="background: linear-gradient(90deg, transparent 0%, rgba(133, 22, 188, 0.582) 50%, transparent 100%); height: 1px; margin: 10px 0; pointer-events: none;">
                     </div>
@@ -1099,15 +1126,15 @@
 </header>
 
 <body>
-       <!-- ADD WHATSAPP FLOATING BUTTON -->
-       <a href="https://api.whatsapp.com/send?phone=628111221789&text=Hallo%20PT%20Realta..." target="_blank"
-           rel="noopener noreferrer" class="whatsapp-float">
-           <i class="fab fa-whatsapp"></i>
-           <div class="text-content">
-               <span class="click-text">Click here</span>
-               <span class="sub-text">To arrange meeting and demo with us</span>
-           </div>
-       </a>
+    <!-- ADD WHATSAPP FLOATING BUTTON -->
+    <a href="https://api.whatsapp.com/send?phone=628111221789&text=Hallo%20PT%20Realta..." target="_blank"
+        rel="noopener noreferrer" class="whatsapp-float">
+        <i class="fab fa-whatsapp"></i>
+        <div class="text-content">
+            <span class="click-text">Click here</span>
+            <span class="sub-text">To arrange meeting and demo with us</span>
+        </div>
+    </a>
 
     <!-- Rest of your existing body content -->
 
@@ -1250,7 +1277,7 @@
 
 
     <!-- Add this section before the newsletter-cta section -->
-    
+
     <style>
         #technology-delivery {
             position: relative;
@@ -1293,43 +1320,43 @@
                     </h2>
                 </div>
 
-    <style>
-        /* Update gradient text styles to match contacts.html exactly */
-        #technology-delivery .gradient-text {
-            background: linear-gradient(90deg, #7209d4, #2832d4 33%, #00a5b2);
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-            font-size: 3.5rem;
-            margin-bottom: 2rem;
-            font-weight: 700;
-        }
+                <style>
+                    /* Update gradient text styles to match contacts.html exactly */
+                    #technology-delivery .gradient-text {
+                        background: linear-gradient(90deg, #7209d4, #2832d4 33%, #00a5b2);
+                        -webkit-background-clip: text;
+                        background-clip: text;
+                        color: transparent;
+                        font-size: 3.5rem;
+                        margin-bottom: 2rem;
+                        font-weight: 700;
+                    }
 
-        @media (max-width: 768px) {
-            #technology-delivery .gradient-text {
-                font-size: 2.5rem !important;
-            }
-        }
+                    @media (max-width: 768px) {
+                        #technology-delivery .gradient-text {
+                            font-size: 2.5rem !important;
+                        }
+                    }
 
-        /* Dark mode styles */
-        body.dark-mode #technology-delivery .gradient-text {
-            background: linear-gradient(90deg, #a742ff, #4b5eff 33%, #00d5e6);
-            -webkit-background-clip: text;
-            background-clip: text;
-        }
+                    /* Dark mode styles */
+                    body.dark-mode #technology-delivery .gradient-text {
+                        background: linear-gradient(90deg, #a742ff, #4b5eff 33%, #00d5e6);
+                        -webkit-background-clip: text;
+                        background-clip: text;
+                    }
 
-        /* Glass text styles */
-        #technology-delivery .glass-text {
-            font-size: 2.2rem;
-            font-weight: 600;
-            color: #333;
-            margin-top: 1rem;
-        }
+                    /* Glass text styles */
+                    #technology-delivery .glass-text {
+                        font-size: 2.2rem;
+                        font-weight: 600;
+                        color: #333;
+                        margin-top: 1rem;
+                    }
 
-        body.dark-mode #technology-delivery .glass-text {
-            color: #fff;
-        }
-    </style>
+                    body.dark-mode #technology-delivery .glass-text {
+                        color: #fff;
+                    }
+                </style>
 
                 <div id="partners-logo" class="col-8" style="cursor: default; pointer-events: none;">
                     <div class="container-fluid px-2">
@@ -1548,13 +1575,14 @@
                     <p class="mb-4">Join our newsletter for exclusive insights and expert tips.</p>
                     <form class="mb-3">
                         <div class="input-group input-group-lg" style="max-width: 500px;">
-                            <input type="email" class="form-control" placeholder="Email address" aria-label="Email address"
-                                required style="border-radius: 10px 0 0 10px;">
+                            <input type="email" class="form-control" placeholder="Email address"
+                                aria-label="Email address" required style="border-radius: 10px 0 0 10px;">
                             <button class="btn btn-primary" type="submit"
                                 style="border-radius: 0 10px 10px 0;">Subscribe</button>
                         </div>
                     </form>
-                    <p class="text-muted small">By subscribing, you agree to our <a href="#" class="text-decoration-none" 
+                    <p class="text-muted small">By subscribing, you agree to our <a href="#"
+                            class="text-decoration-none"
                             onclick="window.open('tos.html#privacy', '_blank'); return false;">Privacy
                             Policy</a> and <a href="#" class="text-decoration-none"
                             onclick="window.open('tos.html#eula', '_blank'); return false;">Terms of Service</a>.</p>
@@ -1569,22 +1597,24 @@
                             .dark-mode-image {
                                 content: url('assets/sticker.png');
                             }
-    
+
                             body.dark-mode .dark-mode-image {
                                 content: url('assets/img/footer2.png');
                             }
                         </style>
                     </div>
                     <div class="text-md-end">
-                        <p class="mb-2 text-muted small" style="font-size: 0.9rem;">&copy; 2025 PT. Realta Chakradarma. All
+                        <p class="mb-2 text-muted small" style="font-size: 0.9rem;">&copy; 2025 PT. Realta Chakradarma.
+                            All
                             rights
                             reserved.</p>
                         <a href="#" onclick="window.open('tos.html#privacy', '_blank'); return false;"
                             class="text-muted small me-3" style="font-size: 0.9rem; text-decoration: underline;">Privacy
                             Policy</a>
                         <span class="text-muted small me-3" style="font-size: 0.9rem;">|</span>
-                        <a href="#" onclick="window.open('tos.html#eula', '_blank'); return false;" class="text-muted small"
-                            style="font-size: 0.9rem; text-decoration: underline;">Terms of Service</a>
+                        <a href="#" onclick="window.open('tos.html#eula', '_blank'); return false;"
+                            class="text-muted small" style="font-size: 0.9rem; text-decoration: underline;">Terms of
+                            Service</a>
                     </div>
                 </div>
             </div>
@@ -1769,7 +1799,7 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.1.3/js/bootstrap.min.js"></script>
-    <script src="assets/js/contact-valid.js"></script>  <!-- Added contact validation script -->
+    <script src="assets/js/contact-valid.js"></script> <!-- Added contact validation script -->
 
     <!-- <script>
         document.addEventListener('DOMContentLoaded', function () {
