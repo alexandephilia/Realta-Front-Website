@@ -1011,7 +1011,7 @@
     <section class="carousel-header">
         <div id="headerCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="5000">
             <div class="carousel-inner">
-                <div class="carousel-item active" data-bg-image="assets/img/golf/Banner1.jpg">
+                <div class="carousel-item active" style="background-image: url('assets/img/golf/Banner1.jpg');">
                     <div class="carousel-overlay"></div>
                     <div class="dot-pattern-overlay"></div>
                     <div class="container-fluid carousel-container">
@@ -1046,7 +1046,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="carousel-item" data-bg-image="assets/img/golf/Banner2.jpg">
+                <div class="carousel-item" style="background-image: url('assets/img/golf/Banner2.jpg');">
                     <div class="carousel-overlay"></div>
                     <div class="dot-pattern-overlay"></div>
                     <div class="container-fluid carousel-container">
@@ -1091,85 +1091,6 @@
         </div>
 
         <style>
-            /* Override for carousel controls */
-            .carousel-control-prev-icon.styled-button-convex,
-            .carousel-control-next-icon.styled-button-convex {
-                border-radius: 50% !important;
-                width: 30px !important;
-                height: 30px !important;
-                background: #ffffff9f !important;
-                /* Keep original white background */
-                border: 1px solid #0000008a !important;
-                /* Keep original border */
-                color: inherit !important;
-                /* Let icon color be handled by ::before */
-                text-shadow: none !important;
-                /* Remove convex text shadow */
-                box-shadow:
-                    0 6px 12px rgba(0, 0, 0, 0.35),
-                    inset 0 2px 0px rgba(0, 0, 0, 0.15),
-                    /* Darken inner highlight for white bg */
-                    inset 0 -1px 1px rgba(0, 0, 0, 0.4) !important;
-                /* Use convex box shadow */
-                /* Ensure flex properties are maintained for centering */
-                display: flex !important;
-                align-items: center !important;
-                justify-content: center !important;
-            }
-
-            .carousel-control-prev-icon.styled-button-convex::before,
-            .carousel-control-next-icon.styled-button-convex::before {
-                /* Keep original icon styles */
-                content: "" !important;
-                display: block !important;
-                width: 18px !important;
-                height: 18px !important;
-                background-color: #000000 !important;
-                /* Keep original icon color */
-                mask-size: 100% !important;
-                -webkit-mask-size: 100% !important;
-                mask-repeat: no-repeat !important;
-                -webkit-mask-repeat: no-repeat !important;
-                mask-position: center !important;
-                -webkit-mask-position: center !important;
-                /* Remove potentially conflicting convex pseudo styles */
-                border-radius: 0 !important;
-                /* Override convex pseudo radius */
-                box-shadow: none !important;
-                position: static !important;
-                /* Override convex pseudo position */
-                z-index: auto !important;
-                /* Override convex pseudo z-index */
-                filter: none !important;
-                /* Override convex pseudo filter */
-            }
-
-            .carousel-control-prev-icon.styled-button-convex::before {
-                mask-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23000'%3e%3cpath d='M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z' stroke='black' stroke-width='1'/%3e%3c/svg%3e");
-                -webkit-mask-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23000'%3e%3cpath d='M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z' stroke='black' stroke-width='1'/%3e%3c/svg%3e");
-            }
-
-            .carousel-control-next-icon.styled-button-convex::before {
-                mask-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23000'%3e%3cpath d='M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z' stroke='black' stroke-width='1'/%3e%3c/svg%3e");
-                -webkit-mask-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23000'%3e%3cpath d='M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z' stroke='black' stroke-width='1'/%3e%3c/svg%3e");
-            }
-
-            .carousel-control-prev-icon.styled-button-convex:hover,
-            .carousel-control-next-icon.styled-button-convex:hover {
-                background-color: #35743f !important;
-                /* Golf green color for hover */
-                /* Keep convex shadow on hover */
-                box-shadow:
-                    0 6px 12px rgba(0, 0, 0, 0.35),
-                    inset 0 2px 0px rgba(0, 0, 0, 0.15),
-                    inset 0 -1px 1px rgba(0, 0, 0, 0.4) !important;
-            }
-
-            .carousel-control-prev-icon.styled-button-convex:hover::before,
-            .carousel-control-next-icon.styled-button-convex:hover::before {
-                background-color: #ffffff !important;
-                /* Keep original icon hover color */
-            }
 
             /* Override for rt-nav-btn to keep it circular but apply convex look */
             .rt-nav-btn.styled-button-convex {
@@ -1717,15 +1638,7 @@
         }
     </style>
 
-    <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            const carouselItems = document.querySelectorAll('.carousel-item');
-            carouselItems.forEach(item => {
-                const bgImage = item.getAttribute('data-bg-image');
-                item.style.backgroundImage = `url('${bgImage}')`;
-            });
-        });
-    </script>
+
 
 
     <style>

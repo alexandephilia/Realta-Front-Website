@@ -136,58 +136,6 @@
             filter: blur(0.5px);
         }
 
-        /* Override for carousel controls */
-        .carousel-control-prev-icon.styled-button-convex,
-        .carousel-control-next-icon.styled-button-convex {
-            border-radius: 50% !important;
-            width: 40px !important;
-            height: 40px !important;
-            background: #ffffff !important;
-            /* Keep original white background */
-            border: 1px solid #0000008a !important;
-            /* Keep original border */
-            color: inherit !important;
-            /* Let icon color be handled by ::before */
-            text-shadow: none !important;
-            /* Remove convex text shadow */
-            box-shadow:
-                0 6px 12px rgba(0, 0, 0, 0.35),
-                inset 0 2px 0px rgba(0, 0, 0, 0.15),
-                /* Darken inner highlight for white bg */
-                inset 0 -1px 1px rgba(0, 0, 0, 0.4) !important;
-            /* Use convex box shadow */
-            /* Ensure flex properties are maintained for centering */
-            display: flex !important;
-            align-items: center !important;
-            justify-content: center !important;
-        }
-
-        .carousel-control-prev-icon.styled-button-convex::before,
-        .carousel-control-next-icon.styled-button-convex::before {
-            /* Keep original icon styles */
-            content: "" !important;
-            display: block !important;
-            width: 18px !important;
-            height: 18px !important;
-            background-color: #000000 !important;
-            /* Keep original icon color */
-            mask-size: 100% !important;
-            -webkit-mask-size: 100% !important;
-            mask-repeat: no-repeat !important;
-            -webkit-mask-repeat: no-repeat !important;
-            mask-position: center !important;
-            -webkit-mask-position: center !important;
-            /* Remove potentially conflicting convex pseudo styles */
-            border-radius: 0 !important;
-            /* Override convex pseudo radius */
-            box-shadow: none !important;
-            position: static !important;
-            /* Override convex pseudo position */
-            z-index: auto !important;
-            /* Override convex pseudo z-index */
-            filter: none !important;
-            /* Override convex pseudo filter */
-        }
 
         .btn-outline-secondary {
             color: #ffffff !important;
