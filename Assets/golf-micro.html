@@ -1451,7 +1451,7 @@
         }
 
         .carousel-fade .carousel-item {
-            opacity: 0;
+            opacity: 1 !important;
             transition: opacity 1s cubic-bezier(0.4, 0, 0.2, 1);
             will-change: opacity;
             backface-visibility: hidden;
@@ -1461,19 +1461,6 @@
         .carousel-fade .carousel-item.active {
             opacity: 1;
         }
-
-        .carousel-item::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: rgba(0, 0, 0, 0.4);
-            z-index: 1;
-            transition: background 0.6s ease;
-        }
-
         .carousel-content {
             position: absolute;
             text-align: center;
