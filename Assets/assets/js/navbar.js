@@ -430,7 +430,7 @@ function handleCategories(containerSelector, detailsId, content) {
 handleDropdown('solutionsDropdown', 'solutionsDropdownContent');
 handleCategories('#solutionsDropdownContent', 'product-details', {
       eam: `
-        <div class="product-banner" style="background-image: url('assets/img/eam.jpg');" onclick="navigateWithLoading('erp-micro.html');">                
+        <div class="product-banner" style="background-image: url('assets/img/eam.jpg');" onclick="navigateWithLoading('micro/erp/');">                
             <div class="glare"></div>
             <div class="product-banner-content">
                 <h2 class="product-title">EAM & ERP</h2>
@@ -455,7 +455,7 @@ handleCategories('#solutionsDropdownContent', 'product-details', {
         </div>
     `,
     hrs: `
-    <div class="product-banner" style="background-image: url('assets/img/hr.jpg');" onclick="navigateWithLoading('hr-micro.html')">                
+    <div class="product-banner" style="background-image: url('assets/img/hr.jpg');" onclick="navigateWithLoading('micro/hr/')">                
         <div class="glare"></div>
         <div class="product-banner-content">
                 <img src="assets/img/probes3.png" class="product-title" style="width: 130px;">
@@ -532,7 +532,7 @@ handleCategories('#solutionsDropdownContent', 'product-details', {
     </div>
 `,
 pts: `
-<div class="product-banner" style="background-image: url('assets/img/property.jpg');" onclick="navigateWithLoading('bimasakti-micro.html');">                
+<div class="product-banner" style="background-image: url('assets/img/property.jpg');" onclick="navigateWithLoading('micro/bimasakti/');">                
     <div class="glare"></div>
     <div class="product-banner-content">
         <img src="assets/img/probes4.png" class="product-title" style="width: 160px;">
@@ -751,7 +751,7 @@ pts: `
 </div>
 `,
     gcs: `
-        <div class="product-banner" style="background-image: url('assets/img/gold.jpg');" onclick="navigateWithLoading('golf-micro.html');">                
+        <div class="product-banner" style="background-image: url('assets/img/gold.jpg');" onclick="navigateWithLoading('micro/golf/');">                
             <div class="glare"></div>
             <div class="product-banner-content">
                 <img src="assets/img/golf.png" class="product-title" style="width: 120px;">
@@ -867,7 +867,7 @@ pts: `
     `,
 
     hms: `
-        <div class="product-banner" style="background-image: url('assets/img/hotel.jpg');" onclick="navigateWithLoading('rhapsody-micro.html');">                
+        <div class="product-banner" style="background-image: url('assets/img/hotel.jpg');" onclick="navigateWithLoading('micro/rhapsody/');">                
             <div class="glare"></div>
             <div class="product-banner-content">
                 <img src="assets/img/probes1.png" class="product-title" style="width: 160px;">
@@ -1003,7 +1003,7 @@ pts: `
     `,
    
     itm: `
-        <div class="product-banner" style="background-image: url('assets/img/it-management.jpg');" onclick="navigateWithLoading('itsm-micro.html')">                
+        <div class="product-banner" style="background-image: url('assets/img/it-management.jpg');" onclick="navigateWithLoading('micro/itsm/')">                
             <div class="glare"></div>
             <div class="product-banner-content">
                 <img src="assets/img/probes5.png" class="product-title" style="width: 160px;">
@@ -1027,7 +1027,7 @@ pts: `
         </div>
     `,
     erp: `
-        <div class="product-banner" style="background-image: url('assets/img/erp.jpg');" onclick="navigateWithLoading('realnet-micro.html')">
+        <div class="product-banner" style="background-image: url('assets/img/erp.jpg');" onclick="navigateWithLoading('micro/realnet/')">
             <div class="glare"></div>
             <div class="product-banner-content">
                 <img src="assets/img/RealNET.png" class="product-title" style="width: 160px;">
