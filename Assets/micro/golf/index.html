@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Real Net | Network, System And Cloud infrastructure </title>
+    <title>Rhapsody Golf | To Orchestrate Your Entire Golf Operations</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
 
@@ -12,23 +12,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
 
     <!-- the favicon -->
-    <link rel="icon" type="image/png" href="assets/img/r.png">
+    <link rel="icon" type="image/png" href="../../assets/img/r.png">
 
 
     <!-- Preload fonts -->
-    <link rel="preload" href="assets/fonts/important-font.woff2" as="font" type="font/woff2" crossorigin>
-    <link rel="preload" href="assets/font/proxima-nova/ProximaNova-Regular.woff2" as="font" type="font/woff2"
+    <link rel="preload" href="../../assets/fonts/important-font.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="../../assets/font/proxima-nova/ProximaNova-Regular.woff2" as="font" type="font/woff2"
         crossorigin>
-    <link rel="preload" href="assets/font/proxima-nova/ProximaNova-Bold.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="../../assets/font/proxima-nova/ProximaNova-Bold.woff2" as="font" type="font/woff2" crossorigin>
 
     <!-- Stylesheets -->
-    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" href="assets/css/styles.css">
-    <!-- <link rel="stylesheet" href="assets/css/blog.css"> -->
-    <link rel="stylesheet" href="assets/css/responsive.css">
-    <link rel="stylesheet" href="assets/css/navbar-micro.css">
-    <link rel="stylesheet" href="assets/css/navbar.css">
-    <link rel="stylesheet" href="assets/css/mobilenav.css">
+    <link rel="stylesheet" href="../../assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../assets/css/styles.css">
+    <!-- <link rel="stylesheet" href="../../assets/css/blog.css"> -->
+    <link rel="stylesheet" href="../../assets/css/responsive.css">
+    <link rel="stylesheet" href="../../assets/css/navbar-micro.css">
+    <link rel="stylesheet" href="../../assets/css/navbar.css">
+    <link rel="stylesheet" href="../../assets/css/mobilenav.css">
 
 
     <!-- Fonts -->
@@ -42,7 +42,7 @@
     <!-- Font Awesome -->
     <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"> -->
-    <link rel="stylesheet" href="assets/fontawesome/css/all.min.css">
+    <link rel="stylesheet" href="../../assets/fontawesome/css/all.min.css">
 
     <!-- Slick Carousel -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css">
@@ -54,51 +54,63 @@
         href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
 
     <!-- Scripts -->
-    <script src="assets/js/slider.js"></script>
+    <script src="../../assets/js/slider.js"></script>
     <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-
-
-
     <style>
-        /* --- Typography Standards --- */
-        h2 {
-            font-size: 33px;
-        }
-
-        p {
+        .btn-outline-secondary {
+            color: #ffffff;
+            border-color: #35743f;
+            background-color: #35743f !important;
+            background: transparent;
+            transition: all 0.3s ease;
+            padding: 10px 25px;
+            font-weight: 500;
             font-size: 16px;
         }
 
-        .gradient-text {
-            background: linear-gradient(287deg, #625dfa, #5ebcfa, #40777a);
-            -webkit-background-clip: text;
-            background-clip: text;
-            -webkit-text-fill-color: transparent;
+        .btn-outline-secondary:hover {
+            color: #fff;
+            background-color: #35743f;
+            border-color: #35743f;
         }
 
-        .content-paragraph {
-            line-height: 1.6;
-            margin-bottom: 1rem;
-            text-align: left;
+        .btn-outline-secondary:focus {
+            box-shadow: 0 0 0 0.25rem rgba(53, 116, 63, 0.25);
         }
 
-        .menu-title {
-            margin-left: 33px;
-            margin-bottom: 20px;
-            font-size: 30px;
+        .btn-outline-secondary:active {
+            color: #fff;
+            background-color: #2b5d33;
+            border-color: #2b5d33;
+        }
+
+        @media (max-width: 768px) {
+            .btn-outline-secondary {
+                font-size: 15px;
+                padding: 8px 20px;
+            }
+        }
+
+        /* Button Custom Styles for consistency with index.html */
+        .btn-custom {
+            margin-top: 1.1vh;
+            font-size: 15px;
+            padding: 0.4em 1em;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bolder;
+            min-height: 3.6vh;
+
             color: white;
+            border: none;
+            border-radius: 5px;
+            transition: all 0.3s ease;
         }
 
-        .feature-image {
-            max-width: 100px;
-        }
-
-        .schedule-button {
-            max-width: 220px;
-            padding: 0.4rem 0.8rem;
-            transform: none;
-            transition: all 0.15s ease-out;
+        .btn-custom i {
+            margin-right: 0.4vw;
         }
 
         /* --- Base Convex Styles (Common properties) --- */
@@ -106,36 +118,36 @@
             padding: 10px 18px;
             position: relative;
             font-weight: bold;
-            color: #e0e0e0;
             text-shadow: 0 -1px 1px rgba(0, 0, 0, 0.6);
             cursor: pointer;
             transition: all 0.15s ease-out;
-            /* Core convex effect with layered shadows */
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            overflow: visible;
+            border-radius: 10px;
+            -webkit-tap-highlight-color: transparent;
+            /* Base shadow with slightly more noticeable highlight */
             box-shadow:
-                /* Outer edge highlight */
-                inset 0 1px 1px rgba(255, 255, 255, 0.6),
-                /* Inner edge shadow */
-                inset 0 -1px 1px rgba(0, 0, 0, 0.6),
-                /* Outer drop shadow */
-                0 2px 3px rgba(0, 0, 0, 0.4);
+                0 6px 12px rgba(0, 0, 0, 0.35),
+                /* Slightly stronger outer shadow */
+                inset 0 2px 0px rgba(255, 255, 255, 0.25),
+                /* Restored subtle highlight */
+                inset 0 -1px 1px rgba(0, 0, 0, 0.4);
         }
 
-        /* Pseudo-element for the 3D rim effect */
+        /* Shared ::before styles for the rim structure */
         .styled-button-convex::before {
-            content: '';
+            content: "";
             position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            border-radius: inherit;
-            /* Subtle gradient overlay for depth */
-            background: linear-gradient(to bottom,
-                    rgba(255, 255, 255, 0.2) 0%,
-                    rgba(255, 255, 255, 0.05) 40%,
-                    rgba(0, 0, 0, 0.05) 60%,
-                    rgba(0, 0, 0, 0.1) 100%);
-            z-index: 1;
+            top: -1px;
+            right: -1px;
+            bottom: -1px;
+            left: -1px;
+            z-index: -1;
+            border-radius: 23px;
+            transition: all 0.15s ease-out;
             opacity: 1;
             /* Rim gets its own subtle shadow */
             box-shadow: inset 0 0 2px rgba(0, 0, 0, 0.3);
@@ -143,57 +155,9 @@
             filter: blur(0.5px);
         }
 
-        /* Active/pressed state */
-        .styled-button-convex:active {
-            transform: translateY(1px);
-            box-shadow:
-                inset 0 1px 1px rgba(255, 255, 255, 0.4),
-                inset 0 -1px 1px rgba(0, 0, 0, 0.4),
-                0 1px 1px rgba(0, 0, 0, 0.3);
-        }
-
-        /* Hover state */
-        .styled-button-convex:hover {
-            filter: brightness(1.05);
-        }
-
-        .btn-outline-secondary {
-            color: #ffffff !important;
-            border-color: none !important;
-            background: linear-gradient(287deg, #a0783b, #833ba0, #833ba0);
-            transition: all 0.3s ease !important;
-            padding: 10px 25px !important;
-            font-weight: 500 !important;
-            font-size: 18px !important;
-            border-radius: 10px !important;
-        }
-
-        .btn-outline-secondary:hover {
-            color: #fff !important;
-            background: linear-gradient(287deg, #a0783b, #833ba0, #833ba0);
-            border-color: none !important;
-        }
-
-        .btn-outline-secondary:focus {
-            box-shadow: 0 0 0 0.25rem rgba(53, 116, 63, 0.25) !important;
-        }
-
-        .btn-outline-secondary:active {
-            color: #fff !important;
-            background: linear-gradient(287deg, #a0783b, #833ba0, #833ba0);
-            border-color: none !important;
-        }
-
-        @media (max-width: 768px) {
-            .btn-outline-secondary {
-                font-size: 15px !important;
-                padding: 8px 20px !important;
-            }
-        }
-
         /* Fix section spacing */
         section {
-            overflow: hidden !important;
+            overflow: visible !important;
             width: 100% !important;
             position: relative !important;
         }
@@ -273,7 +237,7 @@
         <nav class="navbar navbar-expand-lg sticky-top navbar-shrink navbar-light" id="mainNav">
             <div class="container-fluid ">
                 <a class="navbar-logo d-flex align-items-center" href="/">
-                    <img src="assets/img/realta.png" alt="Realta Logo" class="realta-logo">
+                    <img src="../../assets/img/realta.png" alt="Realta Logo" class="realta-logo">
                 </a>
                 <style>
                     .realta-logo {
@@ -298,8 +262,8 @@
                     <!-- Language switch button -->
                     <!-- Language switch dropdown -->
                     <div class="custom-dropdown">
-                        <button id="languageSwitch" class="btn-custom download-btn ms-1"
-                            type="button" style="border: none; min-width: fit-content; margin-right: 1.4rem;">
+                        <button id="languageSwitch" class="btn-custom download-btn ms-1" type="button"
+                            style="border: none; min-width: fit-content; margin-right: 1.4rem;">
                             <i class="fas fa-globe"></i>
                         </button>
                         <ul class="custom-dropdown-menu">
@@ -316,15 +280,16 @@
                 <div class="offcanvas offcanvas-end" tabindex="-1" id="sidebar" aria-labelledby="sidebarLabel">
                     <div class="offcanvas-header">
                         <div>
-                            <h5 class="offcanvas-title menu-title" id="sidebarLabel">Menu</h5>
+                            <h5 class="offcanvas-title" id="sidebarLabel"
+                                style="margin-left: 33px; margin-bottom: 20px; font-size: 30px; color: white;">Menu</h5>
                         </div>
-                        <button type="button" class="btn-close text-reset styled-button-convex"
-                            data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                        <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas"
+                            aria-label="Close"></button>
                     </div>
                     <div class="offcanvas-body">
                         <div class="sidebar-menu">
                             <div class="sidebar-item">
-                                <h2>Realta Chakradarma</h2>
+                                <h2 style="font-size: 2.1rem;">Realta Chakradarma</h2>
                                 <hr>
                                 <h2 class="product-header" data-bs-toggle="collapse" data-bs-target="#productsSubmenu"
                                     aria-expanded="false">
@@ -340,14 +305,15 @@
                                                     class="fas fa-chevron-right arrow-icon"></i>
                                             </div>
                                             <div id="gcsSubmenu" class="collapse product-submenu">
-                                                <a href="golf-micro.html" class="discover-link"
-                                                    onclick="navigateWithLoading('golf-micro.html')">Discover GCS ›</a>
+                                                <a href="../golf/" class="discover-link"
+                                                    onclick="navigateWithLoading('../golf/')">Discover GCS ›</a>
                                                 <h3 class="modules-heading">MODULES</h3>
                                                 <ul class="modules-list">
                                                     <li>
                                                         <strong>Membership Management</strong>
                                                         <span>Manage and track member information and activities with
-                                                            our integrated solution</span>
+                                                            our
+                                                            integrated solution</span>
                                                     </li>
                                                     <li>
                                                         <strong>Golf Operation</strong>
@@ -370,16 +336,17 @@
                                             </div>
                                             <div id="hmsSubmenu" class="collapse product-submenu">
                                                 <!-- <p>Comprehensive solution for efficient hotel operations and guest
-                                            management.</p> -->
-                                                <a href="rhapsody-micro.html" class="discover-link"
-                                                    onclick="navigateWithLoading('rhapsody-micro.html')">Discover HMS
+                                                management.</p> -->
+                                                <a href="../rhapsody/" class="discover-link"
+                                                    onclick="navigateWithLoading('../rhapsody/')">Discover HMS
                                                     ›</a>
                                                 <h3 class="modules-heading">MODULES</h3>
                                                 <ul class="modules-list">
                                                     <li>
                                                         <strong>Front Office</strong>
                                                         <span>Simplify guest services and reception tasks with our
-                                                            optimized solution</span>
+                                                            optimized
+                                                            solution</span>
                                                     </li>
                                                     <li>
                                                         <strong>Logistic</strong>
@@ -400,9 +367,9 @@
                                             </div>
                                             <div id="hrSystemSubmenu" class="collapse product-submenu">
                                                 <!-- <p>Comprehensive human resource management solution for businesses of
-                                            all sizes.</p> -->
-                                                <a href="hr-micro.html" class="discover-link"
-                                                    onclick="navigateWithLoading('hr-micro.html')">Discover HR System
+                                                all sizes.</p> -->
+                                                <a href="../hr/" class="discover-link"
+                                                    onclick="navigateWithLoading('../hr/')">Discover HR System
                                                     ›</a>
                                                 <h3 class="modules-heading">MODULES</h3>
                                                 <ul class="modules-list">
@@ -431,10 +398,11 @@
                                             </div>
                                             <div id="itsmSubmenu" class="collapse product-submenu">
                                                 <!-- <p>Comprehensive IT Service Management solution for streamlined IT
-                                            aoperations.</p> -->
-                                                <a href="itsm-micro.html" class="discover-link"
-                                                    onclick="navigateWithLoading('itsm-micro.html')">Discover ITSM, ITAM
-                                                    & Unified Endpoint
+                                                aoperations.</p> -->
+                                                <a href="../itsm/" class="discover-link"
+                                                    onclick="navigateWithLoading('../itsm/')">Discover ITSM, ITAM
+                                                    &
+                                                    Unified Endpoint
                                                     Management ›</a>
                                                 <h3 class="modules-heading">MODULES</h3>
                                                 <ul class="modules-list">
@@ -463,16 +431,18 @@
                                             </div>
                                             <div id="erpSubmenu" class="collapse product-submenu">
                                                 <!-- <p>Integrated Enterprise Resource Planning solution for business
-                                            management.</p> -->
+                                                management.</p> -->
                                                 <a href="#" class="discover-link"
-                                                    onclick="navigateWithLoading('realnet-micro.html')">Discover Network
-                                                    & System Integration ›</a>
+                                                    onclick="navigateWithLoading('../realnet/')">Discover Network
+                                                    &
+                                                    System Integration ›</a>
                                                 <h3 class="modules-heading">MODULES</h3>
                                                 <ul class="modules-list">
                                                     <li>
                                                         <strong>Hardware & Software</strong>
                                                         <span>Comprehensive solutions for selecting, deploying, and
-                                                            managing IT hardware and software tailored to your business
+                                                            managing
+                                                            IT hardware and software tailored to your business
                                                             needs</span>
                                                     </li>
                                                     <li>
@@ -498,8 +468,9 @@
                                             <div id="propertyTenantSubmenu" class="collapse product-submenu">
                                                 <!-- <p>Efficient management solution for property owners and landlords.</p> -->
                                                 <a href="#" class="discover-link"
-                                                    onclick="navigateWithLoading('bimasakti-micro.html')">Discover
-                                                    Property and Tenant System
+                                                    onclick="navigateWithLoading('../bimasakti/')">Discover
+                                                    Property
+                                                    and Tenant System
                                                     ›</a>
                                                 <h3 class="modules-heading">MODULES</h3>
                                                 <ul class="modules-list">
@@ -571,6 +542,7 @@
                         </div>
                     </div>
                 </div>
+
 
 
                 <style>
@@ -654,39 +626,10 @@
                 </style>
                 <div class="full-screen-sidebar">
                     <style>
-                        @media (min-width: 992px) {
-                            .full-screen-sidebar {
-                                margin-right: -45px;
-                            }
-                        }
-
                         @media (max-width: 768px) {
                             .full-screen-sidebar {
                                 margin-right: 0;
                             }
-                        }
-                    </style>
-                    <style>
-                        .nav-link.active {
-                            color: #8454d0 !important;
-                            /* Using the green color from your theme */
-                            font-weight: 600;
-                            position: relative;
-                        }
-
-                        .nav-link.active::after {
-                            content: '';
-                            position: absolute;
-                            bottom: -2px;
-                            left: 0;
-                            width: 100%;
-                            height: 2px;
-                            background-color: #8454d0;
-                        }
-
-                        /* For dropdown toggle when active */
-                        .nav-link.dropdown-toggle.active {
-                            color: #8454d0 !important;
                         }
                     </style>
                     <ul class="sidebar-nav justify-content-end align-items-center"
@@ -697,6 +640,7 @@
                                 Solution <i class="fas fa-chevron-down ms-1 fa-xs"></i>
                             </a></li>
 
+                        <!-- Industry dropdown -->
                         <li class="me-1">
                             <a href="hospitality.html" class="nav-link"
                                 onclick="navigateWithLoading('hospitality.html')">Industry</a>
@@ -704,12 +648,13 @@
 
                         <!-- Partner dropdown -->
                         <li class="me-1">
-                            <a href="partners.html" class="nav-link"
+                            <a href="partners.html" class="nav-link scroll-link"
                                 onclick="navigateWithLoading('partners.html')">Partners</a>
                         </li>
+
                         <!-- Contact dropdown -->
                         <li class="me-1">
-                            <a href="contacts.html" class="nav-link"
+                            <a href="contacts.html" class="nav-link scroll-link"
                                 onclick="navigateWithLoading('contacts.html')">Contact</a>
                         </li>
 
@@ -731,9 +676,7 @@
                         </li>
 
                     </ul>
-                    <div class="sidebar-actions d-flex justify-content-end align-items-center"
-                        style="margin-bottom: 0.5rem;">
-
+                    <div class="sidebar-actions d-flex justify-content-end align-items-center">
                         <button id="darkModeToggleSidebar" class="btn-custom ms-2">
                             <i class="fas fa-moon"></i>
                         </button>
@@ -753,38 +696,25 @@
             <div class="mega-dropdown" id="solutionsDropdownContent">
                 <div class="dropdown-content">
                     <div class="product-categories">
-                        <a href="golf-micro.html" class="product-category" data-product="gcs"
-                            onclick="navigateWithLoading('golf-micro.html')">Golf Course System</a>
-                        <a href="hr-micro.html" class="product-category" data-product="hrs"
-                            onclick="navigateWithLoading('hr-micro.html')">HR
-                            System</a>
-                        <a href="rhapsody-micro.html" class="product-category" data-product="hms"
-                            onclick="navigateWithLoading('rhapsody-micro.html')">Hotel Management System</a>
-                        <a href="itsm-micro.html" class="product-category" data-product="itm"
-                            onclick="navigateWithLoading('itsm-micro.html')">ITSM, ITAM & Unified Endpoint
+                        <a href="../golf/" class="product-category" data-product="gcs"
+                            onclick="navigateWithLoading('../golf/')">Golf Course System</a>
+
+                        <a href="../rhapsody/" class="product-category" data-product="hms"
+                            onclick="navigateWithLoading('../rhapsody/')">Hotel Management System</a>
+                        <a href="../hr/" class="product-category" data-product="hrs"
+                            onclick="navigateWithLoading('../hr/')">HR System</a>
+                        <a href="../itsm/" class="product-category" data-product="itm"
+                            onclick="navigateWithLoading('../itsm/')">ITSM, ITAM & Unified Endpoint
                             Management</a>
-                        <a href="realnet-micro.html" class="product-category" data-product="erp"
-                            onclick="navigateWithLoading('realnet-micro.html')">Network & System Integration</a>
-                        <a href="bimasakti-micro.html" class="product-category" data-product="pts"
-                            onclick="navigateWithLoading('bimasakti-micro.html')">Property & Tenancy System</a>
+                        <a href="../realnet/" class="product-category" data-product="erp"
+                            onclick="navigateWithLoading('../realnet/')">Network & System Integration</a>
+                        <a href="../bimasakti/" class="product-category" data-product="pts"
+                            onclick="navigateWithLoading('../bimasakti/')">Property & Tenancy System</a>
                         <div
                             style="background: linear-gradient(90deg, transparent 0%, rgba(133, 22, 188, 0.582) 50%, transparent 100%); height: 1px; margin: 10px 0; pointer-events: none;">
                         </div>
                     </div>
                     <div class="product-details" id="product-details">
-                        <!-- Content will be dynamically updated here -->
-                    </div>
-                </div>
-            </div>
-            <div class="mega-dropdown" id="industriDropdownContent">
-                <div class="dropdown-content">
-                    <div class="product-categories">
-                        <div class="product-category active" data-product="hospitality">Hospitality</div>
-                        <div class="product-category" data-product="property">Property</div>
-                        <div class="product-category" data-product="manufacturing">Manufacturing</div>
-                        <div class="product-category" data-product="fsi">FSI</div>
-                    </div>
-                    <div class="product-details" id="industri-details">
                         <!-- Content will be dynamically updated here -->
                     </div>
                 </div>
@@ -835,140 +765,6 @@
             </div>
         </nav>
 
-
-        <style>
-            /* Base announcement bar */
-            .top-announcement-bar {
-                background-color: rgb(248, 248, 248);
-                position: fixed;
-                top: 66px;
-                left: 0;
-                right: 0;
-                z-index: 1029;
-                height: 44px;
-                border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-                box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-            }
-
-            /* Content container */
-            .announcement-content {
-                display: flex;
-                justify-content: space-between;
-                /* Push items to edges */
-                align-items: center;
-                width: 100%;
-                height: 100%;
-                padding: 0 4.4%;
-                /* Match container-fluid padding */
-            }
-
-            /* Logo styling */
-            .announcement-logo {
-                flex: 0 0 auto;
-                margin-top: -2px;
-            }
-
-            .announcement-logo-img {
-                height: 25px;
-                width: auto;
-            }
-
-            /* Navigation styling */
-            .announcement-nav {
-                display: flex;
-                align-items: center;
-                gap: 30px;
-            }
-
-            .announcement-nav-item {
-                color: #464646c0;
-                text-decoration: none;
-                font-size: 13px;
-                font-weight: bold;
-                transition: color 0.3s ease;
-                display: flex;
-                align-items: center;
-                transition: all 0.3s ease;
-                gap: 5px;
-            }
-
-            .announcement-nav-item:hover {
-                color: #9054d0;
-                transform: scale(1.05);
-            }
-
-            /* Dropdown styling */
-            .announcement-dropdown {
-                position: relative;
-            }
-
-            .announcement-dropdown-content {
-                position: absolute;
-                top: calc(100% + 10px);
-                right: 0;
-                background: #ffffff;
-                min-width: 200px;
-                box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-                border-radius: 8px;
-                opacity: 0;
-                visibility: hidden;
-                transform: translateY(-10px);
-                transition: all 0.3s ease;
-            }
-
-            .announcement-dropdown:hover .announcement-dropdown-content {
-                opacity: 1;
-                visibility: visible;
-                transform: translateY(0);
-            }
-
-            .announcement-dropdown-item {
-                display: block;
-                padding: 12px 20px;
-                color: #333;
-                text-decoration: none;
-                font-size: 13px;
-                transition: all 0.2s ease;
-            }
-
-            .announcement-dropdown-item:hover {
-                background-color: #f5f5f5;
-                color: #9054d0;
-            }
-
-            /* Dark mode */
-            body.dark-mode .top-announcement-bar {
-                background-color: rgba(30, 30, 30, 0.95);
-                border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-            }
-
-            body.dark-mode .announcement-nav-item,
-            body.dark-mode .announcement-dropdown-item {
-                color: #fff;
-            }
-
-            body.dark-mode .announcement-dropdown-content {
-                background: #1a1a1a;
-            }
-
-            body.dark-mode .announcement-dropdown-item:hover {
-                background-color: #2d2d2d;
-                color: #bb86fc;
-            }
-
-            /* Mobile hide */
-            @media (max-width: 768px) {
-                .top-announcement-bar {
-                    display: none;
-                }
-
-                body {
-                    padding-top: 66px;
-                    /* Only navbar height on mobile */
-                }
-            }
-        </style>
-
         <!-- Secondary Navbar -->
         <nav class="navbar navbar-expand-lg secondary-navbar" id="secondaryNav">
             <div class="container-fluid d-flex justify-content-end">
@@ -976,15 +772,20 @@
                     <li class="nav-item">
                         <a class="nav-link" href="#headerCarousel">Home</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#ict-one-solution">Why RealNET</a>
+
+                    <li>
+                        <a class="nav-link" href="#why-rhapsody">Why Rhapsody Golf</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#technology-delivery">Our Clients</a>
+                        <a class="nav-link" href="#golf-micro">Our Solutions</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#integrations">Our Parners</a>
+                        <a class="nav-link" href="#integrations-clients">Our Clients</a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#integrations-partners">Our Partners</a>
+                    </li>
+
                 </ul>
             </div>
         </nav>
@@ -1094,7 +895,6 @@
             }
         </style>
 
-
         <div class="navbar-banner__blur navbar-banner__blur--1"></div>
         <div class="navbar-banner__blur navbar-banner__blur--2"></div>
 
@@ -1102,7 +902,7 @@
     </header>
 
 <body>
-    <!-- ADD WHATSAPP FLOATING BUTTON -->
+    <!-- Add WhatsApp floating button -->
     <a href="https://api.whatsapp.com/send?phone=628111221789&text=Hallo%20PT%20Realta..." target="_blank"
         rel="noopener noreferrer" class="whatsapp-float">
         <i class="fab fa-whatsapp"></i>
@@ -1111,6 +911,7 @@
             <span class="sub-text">To arrange meeting and demo with us</span>
         </div>
     </a>
+
     <!-- LOADING -->
     <div id="loading-overlay" class="loading-overlay">
         <div class="loading-container">
@@ -1205,74 +1006,78 @@
         }
     </style>
     <!-- LOADING -->
-    <section class="carousel-header ">
+
+
+    <section class="carousel-header">
         <div id="headerCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="5000">
             <div class="carousel-inner">
-                <div class="carousel-item active"
-                    style="background-image: url('assets/img/realnet/A_1826_1027_202104_pietro-jeng-n6B49lTx7NM-unsplash.jpg');">
+                <div class="carousel-item active" style="background-image: url('../../assets/img/golf/Banner1.jpg');">
                     <div class="carousel-overlay"></div>
                     <div class="dot-pattern-overlay"></div>
                     <div class="container-fluid carousel-container">
                         <div class="carousel-content-left">
-                            <h1>RealNet Network & System Integration</h1>
-                            <div class="badge">One Solution Concept</div>
-                            <p>One Solution concept, a strategic approach that skillfully blends various IT elements
-                                into a streamlined and efficient framework that is precisely tailored to each client's
-                                specific needs.</p>
+                            <h1>Rhapsody Golf To Orchestrate Your Entire Golf Club Operation </h1>
+                            <div class="badge">Elite Golf Operations</div>
+                            <p>Rhapsody Golf is a proven, feature-rich set of golf course system that raises the level
+                                of
+                                professionalism and service to your members and guests. Rhapsody Golf has helped many
+                                prestigious reputable golf clubs streamline their business processes, drive revenues and
+                                increase member satisfaction.</p>
                             <!-- <button class="erp-learn-btn">Learn More</button> -->
                         </div>
                         <div class="carousel-content-right">
                             <!-- <div class="floating-cards-container">
                                 <div class="floating-card card-top">
                                     <div class="card-icon">
-                                        <i class="fas fa-network-wired"></i>
+                                        <i class="fas fa-golf-ball"></i>
                                     </div>
-                                    <h3>Network Integration</h3>
-                                    <p>Seamless connectivity solutions</p>
+                                    <h3>Smart Booking</h3>
+                                    <p>Streamlined tee time management and member scheduling</p>
                                 </div>
-                                <img src="assets/img/network-integration.png" alt="Network Integration" class="center-image">
+                                <img src="../../assets/img/golf/golf-icon.png" alt="Golf Icon" class="center-image">
                                 <div class="floating-card card-bottom">
                                     <div class="card-icon">
-                                        <i class="fas fa-cogs"></i>
+                                        <i class="fas fa-chart-line"></i>
                                     </div>
-                                    <h3>System Integration</h3>
-                                    <p>Unified IT infrastructure</p>
+                                    <h3>Real-time Analytics</h3>
+                                    <p>Comprehensive insights into your golf operations</p>
                                 </div>
                             </div> -->
                         </div>
                     </div>
                 </div>
-                <div class="carousel-item"
-                    style="background-image: url('assets/img/realnet/A_1826_1027_202104_pietro-jeng-n6B49lTx7NM-unsplash.jpg');">
+                <div class="carousel-item" style="background-image: url('../../assets/img/golf/Banner2.jpg');">
                     <div class="carousel-overlay"></div>
                     <div class="dot-pattern-overlay"></div>
                     <div class="container-fluid carousel-container">
                         <div class="carousel-content-left">
-                            <h1>Comprehensive IT Solutions</h1>
-                            <div class="badge">One Solution Concept</div>
-                            <p>One Solution concept, a strategic approach that skillfully blends various IT elements
-                                into a streamlined and efficient framework that is precisely tailored to each client's
-                                specific needs.</p>
+                            <h1>Indonesian Golf Courses A Spectrum of Challenge and Beauty for Every Golfer </h1>
+                            <div class="badge">Diverse Greens in Paradise</div>
+                            <p>Indonesian golf courses appeal to every caliber of player from beginner/recreational,
+                                amateur, to professional players because of the quality of the courses and the
+                                spectacular
+                                settings of the location.</p>
                             <!-- <button class="erp-learn-btn">Discover More</button> -->
                         </div>
                         <div class="carousel-content-right">
                             <!-- <div class="floating-card card-top">
                                 <div class="card-icon">
-                                    <i class="fas fa-project-diagram"></i>
+                                    <i class="fas fa-trophy"></i>
                                 </div>
-                                <h3>Strategic Integration</h3>
-                                <p>Customized IT solutions for your business</p>
+                                <h3>Tournament Management</h3>
+                                <p>Effortlessly organize and manage golf tournaments</p>
                             </div>
                             <div class="floating-card card-bottom">
                                 <div class="card-icon">
-                                    <i class="fas fa-shield-alt"></i>
+                                    <i class="fas fa-users"></i>
                                 </div>
-                                <h3>Secure Infrastructure</h3>
-                                <p>Protected and reliable systems</p>
+                                <h3>Member Experience</h3>
+                                <p>Enhanced services for an exceptional golfing journey</p>
                             </div> -->
                         </div>
                     </div>
                 </div>
+                <!-- Similar structure for third slide -->
             </div>
 
             <button class="carousel-control-prev" type="button" data-bs-target="#headerCarousel" data-bs-slide="prev">
@@ -1286,40 +1091,34 @@
         </div>
 
         <style>
+
+            /* Override for rt-nav-btn to keep it circular but apply convex look */
+            .rt-nav-btn.styled-button-convex {
+                border-radius: 50% !important;
+                background: #35743f !important;
+                /* Golf green color */
+                color: #e0e0e0 !important;
+                text-shadow: 0 -1px 1px rgba(0, 0, 0, 0.6) !important;
+                box-shadow:
+                    0 6px 12px rgba(0, 0, 0, 0.35),
+                    inset 0 2px 0px rgba(255, 255, 255, 0.25),
+                    inset 0 -1px 1px rgba(0, 0, 0, 0.4) !important;
+            }
+
+            .rt-nav-btn.styled-button-convex i {
+                color: #e0e0e0 !important;
+            }
+
+            .rt-nav-btn.styled-button-convex::before {
+                border-radius: 50% !important;
+                box-shadow: inset 0 0 2px rgba(0, 0, 0, 0.3) !important;
+            }
+
             .carousel-header {
                 position: relative;
                 height: 100vh;
                 width: 100%;
                 overflow: hidden;
-            }
-
-            /* Add carousel arrow styles */
-            .carousel-control-prev,
-            .carousel-control-next {
-                width: 5%;
-                opacity: 0;
-                transition: opacity 0.3s ease;
-                background: none;
-            }
-
-            .carousel-header:hover .carousel-control-prev,
-            .carousel-header:hover .carousel-control-next {
-                opacity: 0.8;
-            }
-
-            .carousel-control-prev-icon,
-            .carousel-control-next-icon {
-                width: 40px;
-                height: 40px;
-                filter: drop-shadow(0 0 2px rgba(0, 0, 0, 0.3));
-            }
-
-            @media (max-width: 768px) {
-
-                .carousel-control-prev,
-                .carousel-control-next {
-                    width: 10%;
-                }
             }
 
             .carousel-item {
@@ -1371,6 +1170,7 @@
                 display: flex;
                 height: 100%;
                 z-index: 3;
+                max-width: 1755px;
                 margin: 0 auto;
                 padding: 0 2rem;
                 gap: 4rem;
@@ -1402,6 +1202,7 @@
                 flex-direction: column;
                 justify-content: center;
                 align-items: flex-start;
+                /* Align items to the left */
                 padding-right: 4rem;
                 color: #fff;
                 text-align: left;
@@ -1428,7 +1229,7 @@
 
             .carousel-content-left .badge {
                 display: inline-block;
-                background: linear-gradient(287deg, #a0783bb2, #833ba09f, #833ba091);
+                background: rgba(84, 208, 84, 0.25);
                 padding: 8px 16px;
                 border-radius: 50px;
                 font-size: 1.1rem;
@@ -1519,6 +1320,7 @@
                 margin: 0;
             }
 
+            /* Center image between cards */
             .floating-cards-container {
                 position: relative;
                 width: 100%;
@@ -1532,17 +1334,17 @@
                 transform: translate(-50%, -50%);
                 width: 200px;
                 height: 200px;
+                border-radius: 50%;
                 z-index: 3;
                 box-shadow: 0 0 30px rgba(0, 0, 0, 0.2);
                 border: 3px solid rgba(255, 255, 255, 0.3);
             }
 
             .erp-learn-btn {
-                display: inline-block;
                 width: fit-content;
                 font-size: 1rem;
                 padding: 10px 20px;
-                background: linear-gradient(287deg, #a0783b, #833ba0, #833ba0);
+                background: linear-gradient(287deg, #2ecc71, #27ae60, #106617);
                 color: #fff;
                 border: none;
                 border-radius: 6px;
@@ -1550,17 +1352,19 @@
                 transition: all 0.3s ease;
                 font-weight: 600;
                 letter-spacing: 0.5px;
-                box-shadow: 0 4px 15px rgba(144, 84, 208, 0.3);
+                box-shadow: 0 4px 15px rgba(84, 208, 105, 0.192) !important;
                 transform: translateY(20px);
                 opacity: 0;
-                display: block;
+                margin: 0;
+                /* Reset margin */
+                align-self: flex-start;
+                /* Keep left alignment */
                 transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1) 0.5s,
                     opacity 0.6s cubic-bezier(0.4, 0, 0.2, 1) 0.5s,
                     background 0.3s ease;
             }
 
             .carousel-item.active .erp-learn-btn {
-                display: inline-block;
                 transform: translateY(0);
                 margin-top: 25px;
                 opacity: 1;
@@ -1569,10 +1373,11 @@
             .erp-learn-btn:hover {
                 transform: translateY(-2px);
                 box-shadow: 0 6px 20px rgba(144, 84, 208, 0.4);
-                background: linear-gradient(287deg, #a0783b, #833ba0, #833ba0);
+                background: linear-gradient(287deg, #2ecc71, #27ae60, #106617);
             }
 
             @media (max-width: 991px) {
+
                 .carousel-content-left h1 {
                     font-size: 2.5rem;
                 }
@@ -1582,6 +1387,7 @@
                     gap: 2rem;
                     max-width: 100%;
                     height: 100vh;
+                    /* Adjusted height since we're hiding right content */
                     padding-bottom: 8rem;
                 }
 
@@ -1595,11 +1401,12 @@
 
                 .carousel-content-right {
                     display: none;
+                    /* Hide right content on mobile */
                 }
 
                 .erp-learn-btn {
-                    display: inline-block;
                     margin: 0 auto;
+                    /* Center button on mobile */
                     align-self: center;
                 }
 
@@ -1626,60 +1433,36 @@
         </style>
     </section>
 
-
-
     <style>
-        .parallax-header {
+        .carousel-header {
             position: relative;
             height: 100vh;
             width: 100%;
             overflow: hidden;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background-image: url('assets/img/realnet/A_1826_1027_202104_pietro-jeng-n6B49lTx7NM-unsplash.jpg');
-            background-attachment: fixed;
+        }
+
+        .carousel-item {
+            height: 100vh;
             background-position: center;
             background-repeat: no-repeat;
             background-size: cover;
+            transition: transform 1.2s cubic-bezier(0.4, 0, 0.2, 1);
+            will-change: transform;
         }
 
-        .parallax-content {
-            text-align: center;
-            color: #fff;
-            padding: 20px;
-            max-width: 1300px;
-            z-index: 2;
-            animation: fadeIn 1s ease-in;
+        .carousel-fade .carousel-item {
+            opacity: 0;
+            transition: opacity 1s cubic-bezier(0.4, 0, 0.2, 1);
+            will-change: opacity;
+            backface-visibility: hidden;
+            perspective: 1000px;
         }
 
-        .parallax-content h1 {
-            font-size: 3.5rem;
-            font-weight: 700;
-            margin-bottom: 1rem;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-            line-height: 1.2;
+        .carousel-fade .carousel-item.active {
+            opacity: 1;
         }
 
-        .parallax-content .badge {
-            display: inline-block;
-            background: linear-gradient(287deg, #a0783bb2, #833ba09f, #833ba091);
-            padding: 8px 16px;
-            border-radius: 50px;
-            font-size: 1.1rem;
-            font-weight: 500;
-            margin: 1rem 0;
-            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
-        }
-
-        .parallax-content p {
-            font-size: 20px !important;
-            margin-bottom: 2rem;
-            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
-            line-height: 1.6;
-        }
-
-        .parallax-header::before {
+        .carousel-item::before {
             content: '';
             position: absolute;
             top: 0;
@@ -1688,131 +1471,175 @@
             bottom: 0;
             background: rgba(0, 0, 0, 0.4);
             z-index: 1;
+            transition: background 0.6s ease;
+        }
+
+        .carousel-content {
+            position: absolute;
+            text-align: center;
+            color: #fff;
+            padding: 20px;
+            max-width: 1300px;
+            z-index: 2;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 100%;
+            opacity: 0;
+            transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .carousel-item.active .carousel-content {
+            opacity: 1;
+            transform: translate(-50%, -50%) scale(1);
+        }
+
+        .carousel-content h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+            line-height: 1.2;
+            transform: translateY(20px);
+            transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1) 0.2s;
+        }
+
+        .carousel-item.active .carousel-content h1 {
+            transform: translateY(0);
+        }
+
+        .carousel-content .badge {
+            display: inline-block;
+            background: rgba(84, 208, 84, 0.432);
+            padding: 8px 16px;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: 500;
+            margin: 1rem 0;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+            transform: translateY(20px);
+            transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1) 0.3s;
+        }
+
+        .carousel-item.active .carousel-content .badge {
+            transform: translateY(0);
+        }
+
+        .carousel-content p {
+            font-size: 20px !important;
+            margin-bottom: 2rem;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+            line-height: 1.6;
+            padding: 0 20px;
+            transform: translateY(20px);
+            transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1) 0.4s;
+        }
+
+        .carousel-item.active .carousel-content p {
+            transform: translateY(0);
+        }
+
+        .erp-learn-btn {
+            width: 100%;
+            max-width: 280px;
+            font-size: 1rem;
+            padding: 10px 20px;
+            background: linear-gradient(287deg, #2ecc71, #27ae60, #106617);
+            color: #fff;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            box-shadow: 0 4px 15px rgba(144, 84, 208, 0.3);
+            display: block;
+            transform: translateY(20px);
+            opacity: 0;
+            transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1) 0.5s,
+                opacity 0.6s cubic-bezier(0.4, 0, 0.2, 1) 0.5s,
+                background 0.3s ease;
+        }
+
+        .carousel-item.active .erp-learn-btn {
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+        .erp-learn-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(144, 84, 208, 0.4);
+            background: linear-gradient(287deg, #2ecc71, #27ae60, #106617)
+        }
+
+        /* Add carousel arrow styles */
+        .carousel-control-prev,
+        .carousel-control-next {
+            width: 5%;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            background: none;
+        }
+
+        .carousel-header:hover .carousel-control-prev,
+        .carousel-header:hover .carousel-control-next {
+            opacity: 0.8;
+        }
+
+        .carousel-control-prev-icon,
+        .carousel-control-next-icon {
+            width: 40px;
+            height: 40px;
+            filter: drop-shadow(0 0 2px rgba(0, 0, 0, 0.3));
         }
 
         @media (max-width: 768px) {
-            .parallax-content h1 {
+
+            .carousel-control-prev,
+            .carousel-control-next {
+                width: 10%;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .carousel-content h1 {
                 font-size: 2.5rem;
             }
 
-            .parallax-content p {
+            .carousel-content p {
                 font-size: 1rem !important;
             }
 
-            .parallax-content .badge {
+            .carousel-content .badge {
                 font-size: 0.9rem;
             }
-        }
-    </style>
-    <style>
-        @keyframes slideIn {
-            from {
-                transform: translateY(50px);
-                opacity: 0;
-            }
 
-            to {
-                transform: translateY(0);
-                opacity: 1;
-            }
-        }
-
-        .slide-in {
-            animation: slideIn 1s ease-out forwards;
-            opacity: 0;
-        }
-
-        .slide-in:nth-child(1) {
-            animation-delay: 0.2s;
-        }
-
-        .slide-in:nth-child(2) {
-            animation-delay: 0.4s;
-        }
-
-        .slide-in:nth-child(3) {
-            animation-delay: 0.6s;
-        }
-    </style>
-    <style>
-        .parallax-section {
-            position: relative;
-            overflow: hidden;
-            min-height: 700px;
-            display: flex;
-            font-family: 'proxima-nova', sans-serif;
-            align-items: center;
-            color: #fff;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-        }
-
-        .parallax-background {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-            background-attachment: fixed;
-            z-index: -1;
-            filter: brightness(0.7);
-        }
-
-        .parallax-background::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(128, 0, 128, 0.2);
-            /* Slight purple opacity */
-            z-index: 1;
-        }
-
-        /* Mobile responsive styles */
-        @media (max-width: 768px) {
-            .parallax-section {
-                min-height: 400px;
-
-            }
-
-            .parallax-background {
-                background-attachment: scroll;
-            }
-
-            h1.display-3 {
-                font-size: 2rem;
-            }
-
-            p.lead {
-                font-size: 1rem;
-            }
-
-            .btn-lg {
-                font-size: 1rem;
-                padding: 0.5rem 1rem;
-                width: auto;
-                display: inline-block;
-            }
-        }
-
-        @media (max-width: 576px) {
-            .parallax-section {
-                min-height: 500px;
-            }
-
-            h1.display-3 {
-                font-size: 1.5rem;
-            }
-
-            p.lead {
+            .erp-learn-btn {
+                max-width: 240px;
                 font-size: 0.9rem;
             }
+
+        }
+
+        @media (min-width: 768px) {
+            .erp-learn-btn {
+                font-size: 1.1rem;
+                padding: 11px 25px;
+                max-width: 300px;
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .erp-learn-btn {
+                font-size: 1.2rem;
+                padding: 12px 30px;
+                max-width: 320px;
+            }
         }
     </style>
+
+
+
 
     <style>
         .advanced-section {
@@ -1917,13 +1744,13 @@
         <div class="container-fluid p-0">
             <div class="card-container">
                 <div class="card">
-                    <img src="assets/img/hotel/1.jpg" alt="Advanced Feature 1" class="card-img">
+                    <img src="../../assets/img/hotel/1.jpg" alt="Advanced Feature 1" class="card-img">
                 </div>
                 <div class="card">
-                    <img src="assets/img/hotel/2.png" alt="Advanced Feature 2" class="card-img">
+                    <img src="../../assets/img/hotel/2.png" alt="Advanced Feature 2" class="card-img">
                 </div>
                 <div class="card">
-                    <img src="assets/img/hotel/3.png" alt="Advanced Feature 3" class="card-img">
+                    <img src="../../assets/img/hotel/3.png" alt="Advanced Feature 3" class="card-img">
                 </div>
             </div>
             <!-- <div class="text-center mt-4">
@@ -1932,7 +1759,7 @@
                 </a>
             </div> -->
             <style>
-                .custom-btn.styled-button-convex {
+                .custom-btn {
                     background-color: #9e44b4;
                     color: white;
                     border: 2px solid #9e44b4;
@@ -1944,6 +1771,27 @@
                     border-radius: 10px;
                     transition: all 0.3s ease;
                     box-shadow: 0 4px 6px rgba(114, 9, 212, 0.2);
+                }
+
+                .custom-btn.styled-button-convex {
+                    border: none !important;
+                    border-radius: 15px !important;
+                    text-shadow: 0 -1px 1px rgba(0, 0, 0, 0.6) !important;
+                    background: #9e44b4 !important;
+                    box-shadow:
+                        0 6px 12px rgba(0, 0, 0, 0.35),
+                        inset 0 2px 0px rgba(255, 255, 255, 0.25),
+                        inset 0 -1px 1px rgba(0, 0, 0, 0.4) !important;
+                    transition: transform 0.2s, box-shadow 0.2s !important;
+                }
+
+                .custom-btn.styled-button-convex:hover {
+                    background-color: #b44fd0 !important;
+                    transform: translateY(-2px) !important;
+                    box-shadow:
+                        0 8px 15px rgba(0, 0, 0, 0.4),
+                        inset 0 2px 0px rgba(255, 255, 255, 0.25),
+                        inset 0 -1px 1px rgba(0, 0, 0, 0.4) !important;
                 }
 
                 .custom-btn:hover {
@@ -1989,391 +1837,241 @@
     </script>
 
 
-    <section id="ict-one-solution" class="ict-one-solution py-5" style="margin-top: 5%;">
-        <div class="container-fluid ">
+    <section id="ict-one-solution" class="ict-one-solution " style="margin-top: 5%;">
+        <div class="container-fluid">
             <div class="row align-items-center">
-                <div class="col-md-6 fade-in-left text-start">
-                    <img src="assets/img/realnet/realnet-onesol-realta.png" alt="ICT One Solution" class="img-fluid"
-                        style="width: 80%; height: auto;">
+                <div class="col-md-6 fade-in-left">
+                    <img src="../../assets/img/golf/gambar_grams.jpg" alt="ICT One Solution" class="img-fluid"
+                        style="max-width: 90%; height: auto;">
                 </div>
-                <div class="col-md-6  text-center fade-in-right">
-                    <div class="medusa-btn mb-4 styled-button-convex">
-                        <span class="online-indicator"></span>
-                        RealNET
+                <div class="col-md-6 text-center fade-in-right">
+                    <h2 class="mb-4 gradient-text fw-bold"
+                        style="background: linear-gradient(287deg, #2ecc71, #27ae60, #106617); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">
+                        Orchestrate Your Entire Golf Club Operation
+                    </h2>
+                    <h3 class="mb-3">Rhapsody Golf</h3>
+                    <div class="golf-description mb-4">
+                        <p>
+                            Rhapsody Golf is a proven, feature-rich set of golf course system that raises the level of
+                            professionalism and service to your members and guests.
+                        </p>
+                        <p>
+                            Rhapsody Golf has helped many prestigious reputable golf clubs streamline their business
+                            processes, drive revenues and increase member satisfaction. By fully integrating all key
+                            aspects of golf course operation, Rhapsody Golf sets the standard for golf course system in
+                            Indonesia.
+                        </p>
+                        <p>
+                            Indonesian golf courses appeal to every caliber of player from beginner/recreational,
+                            amateur, to professional players because of the quality of the courses and the spectacular
+                            settings of the location.
+                        </p>
+                        <p>
+                            Of Course, with many VIP executives as club members, the golf course alone is not enough to
+                            attract members. Golf course owners and operators have to link a bit more outside the box
+                            than ever. They need to have the right tools to administer the entire operation of the golf
+                            course.
+                        </p>
+                        <p>
+                            As a result of accumulated experience and knowledge since 1983, we have gained a profound
+                            understanding and insight of what the golf courses really need. With our experience,
+                            knowledge and technology, we have been able to deliver a solution, rich with features that
+                            are unique to the golf industry, and this is Golf Course System Indonesia.
+                        </p>
                     </div>
                     <style>
-                        .medusa-btn {
-                            display: inline-flex;
-                            align-items: center;
-                            justify-content: center;
-                            padding: 4px 12px;
-                            border: 1px solid #E1E1E1;
-                            border-radius: 15px;
-                            background-color: #fdfdfd;
-                            font-size: 12px;
-                            font-weight: bold;
-                            color: #333;
-                            box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
-                            cursor: pointer;
-                            transition: background-color 0.2s ease, box-shadow 0.2s ease;
+                        .golf-description {
+                            max-width: 90%;
+                            margin: 0 auto;
+                            text-align: left;
                         }
 
-                        .medusa-btn:hover {
-                            background-color: #f5f5f5;
-                            box-shadow: 0 5px 7px rgba(0, 0, 0, 0.1);
+                        .golf-description p {
+                            line-height: 1.6;
+                            font-size: 16px;
+                            margin-bottom: 1rem;
                         }
 
-                        .online-indicator {
-                            width: 10px;
-                            height: 10px;
-                            border-radius: 50%;
-                            background-color: #6ee472ec;
-                            margin-right: 8px;
-                            position: relative;
-                            display: inline-block;
-                        }
-
-                        .online-indicator::after {
-                            content: '';
-                            position: absolute;
-                            top: 0;
-                            left: 0;
-                            width: 100%;
-                            height: 100%;
-                            border-radius: 50%;
-                            background-color: rgba(76, 175, 80, 0.4);
-                            animation: ripple 1.5s infinite ease-out;
-                        }
-
-                        @keyframes ripple {
-                            0% {
-                                transform: scale(1);
-                                opacity: 1;
-                            }
-
-                            100% {
-                                transform: scale(3);
-                                opacity: 0;
-                            }
+                        .golf-description p:last-child {
+                            margin-bottom: 0;
                         }
                     </style>
-
-                    <h2 class="mb-4 gradient-text fw-bold"
-                        style="background: linear-gradient(287deg, #e49e44, #6d488b); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;">
-                        UNIFIED IT MANAGEMENT SOFTWARE SOLUTIONS
-                    </h2>
-                    <div class="mb-4" style="max-width: 100%; margin: 0 auto;">
-                        <!-- Paragraph 1: The Problem -->
-                        <p class="content-paragraph">
-                            RealNET, a division of REALTA, excels at providing expert network, hardware, software and
-                            cloud infrastructure solutions that meet the unique needs of a various of industries,
-                            including real estate, hospitality and manufacturing. We pride ourselves on our innovative
-                            ONE SOLUTION concept, a strategic approach that skillfully blends various IT elements into a
-                            streamlined and efficient framework that is precisely tailored to each client's specific
-                            needs.
-                        </p>
-
-                        <!-- Paragraph 2: Ivanti's Solution -->
-                        <p class="content-paragraph">
-                            With over 40 years of technical experience and expertise in IT, consulting, and systems
-                            integration, RealNET is at the forefront of technology, offering versatile IT solutions that
-                            can be adapted to the diverse needs of various industries. Our commitment is firmly rooted
-                            in ensuring that every aspect of our clients' IT infrastructure not only supports but also
-                            enhances their business goals.
-                        </p>
-
-                        <!-- Paragraph 3: The Result -->
-                        <p class="content-paragraph">
-                            Specializing in both on-premises and cloud infrastructure solutions, we focus on delivering
-                            flexible and scalable IT solutions that optimize operational efficiency and technological
-                            capabilities. Our solutions are designed to deliver maximum uptime, the best network,
-                            hardware, software and cloud infrastructure solutions for your business, and the lowest
-                            total cost of ownership (TCO). This comprehensive approach helps organizations across a wide
-                            range of industries effectively navigate the complexities of the digital landscape, ensuring
-                            that their technology infrastructure is a powerful driver of business success.
-                        </p>
-                        <!-- Schedule Meeting button with slightly larger size -->
-                        <!-- <a href="#" class="btn btn-outline-secondary btn-sm d-inline-block mx-auto"
-                        style="max-width: 220px; font-size: 1.1rem; padding: 0.4rem 0.8rem;">Contact Us</a> -->
-                    </div>
-                </div>
-            </div>
-    </section>
-
-    <section id="ict-solution-reverse" class="ict-solution-reverse py-5" style="margin-top: 5%;">
-        <div class="container-fluid ">
-            <div class="row align-items-center">
-                <div class="col-md-6 text-center fade-in-left">
-                    <h2 class="mb-4 gradient-text fw-bold"
-                        style="background: linear-gradient(287deg, #6d488b, #e49e44); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;">
-                        WHY REALNET
-                    </h2>
-                    <div style="max-width: 100%; margin: 0 auto;">
-                        <!-- Paragraph 1: The Challenge and Problem -->
-                        <p class="content-paragraph">
-                            In the dynamic world of business, the approach to IT implementation is often oversimplified.
-                            Many companies mistakenly believe that the path to an effective IT infrastructure is simply
-                            to invest in high-end computers and premium software. However, the true key to a successful
-                            IT deployment comes from the synergy between software applications and their supporting
-                            hardware, network and cloud environments. Without this critical alignment, businesses face a
-                            number of challenges, including frequent technical glitches, slow system performance and
-                            costly downtime, all of which can significantly reduce the effectiveness of IT investments
-                            and turn them from an asset into a financial liability.
-                        </p>
-
-                        <!-- Paragraph 2: RealNET's Solution -->
-                        <p class="content-paragraph">
-                            RealNET stands out as a solution to these challenges. Our expertise is in creating network
-                            and system installations that not only enhance software performance, but are also
-                            custom-built to harmonize with your unique business landscape. At RealNET, we understand
-                            that a one-size-fits-all approach doesn't work in the nuanced world of IT. That is why we
-                            focus on creating customized solutions that are:
-                        </p>
-                    </div>
-                </div>
-                <div class="col-md-6 fade-in-right d-flex justify-content-end align-items-center">
-                    <img src="assets/img/realnet/whyrealnet---realta-chakradarma.png" alt="IT Infrastructure Solutions"
-                        class="img-fluid" style="width: 80%; height: auto;">
+                    <a href="#" class="btn btn-outline-secondary btn-sm d-inline-block mx-auto styled-button-convex"
+                        style="max-width: 200px; font-size: 14px; padding: 6px 12px;">Learn More</a>
                 </div>
             </div>
         </div>
     </section>
+    <!-- 
+    <section class="features py-5">
+        <div class="container">
+            <div class="row text-center justify-content-center">
+                <div class="col-md-2 col-sm-4 mb-4 feature-item">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" fill="url(#greenGradient)" class="bi bi-credit-card mb-3" viewBox="0 0 16 16">
+                      <defs>
+                        <linearGradient id="greenGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                          <stop offset="0%" style="stop-color:#27ae60;stop-opacity:1" />
+                          <stop offset="50%" style="stop-color:#27ae60;stop-opacity:1" />
+                          <stop offset="100%" style="stop-color:#27ae60;stop-opacity:1" />
+                        </linearGradient>
+                      </defs>
+                      <path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V4zm2-1a1 1 0 0 0-1 1v1h14V4a1 1 0 0 0-1-1H2zm13 4H1v5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V7z"/>
+                      <path d="M2 10a1 1 0 0 1 1-1h1a1 1 0 0 1 1 1v1a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1v-1z"/>
+                    </svg>
+                    <p>Passport</p>
+                </div>
+                <div class="col-md-2 col-sm-4 mb-4 feature-item">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" fill="url(#greenGradient)" class="bi bi-chat-dots mb-3" viewBox="0 0 16 16">
+                      <path d="M5 8a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm4 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm3 1a1 1 0 1 0 0-2 1 1 0 0 0 0 2z"/>
+                      <path d="m2.165 15.803.02-.004c1.83-.363 2.948-.842 3.468-1.105A9.06 9.06 0 0 0 8 15c4.418 0 8-3.134 8-7s-3.582-7-8-7-8 3.134-8 7c0 1.76.743 3.37 1.97 4.6a10.437 10.437 0 0 1-.524 2.318l-.003.011a10.722 10.722 0 0 1-.244.637c-.079.186.074.394.273.362a21.673 21.673 0 0 0 .693-.125zm.8-3.108a1 1 0 0 0-.287-.801C1.618 10.83 1 9.468 1 8c0-3.192 3.004-6 7-6s7 2.808 7 6c0 3.193-3.004 6-7 6a8.06 8.06 0 0 1-2.088-.272 1 1 0 0 0-.711.074c-.387.196-1.24.57-2.634.893a10.97 10.97 0 0 0 .398-2z"/>
+                    </svg>
+                    <p>RealSMS (Golf Messaging)</p>
+                </div>
+                <div class="col-md-2 col-sm-4 mb-4 feature-item">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" fill="url(#greenGradient)" class="bi bi-phone mb-3" viewBox="0 0 16 16">
+                      <path d="M11 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h6zM5 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H5z"/>
+                      <path d="M8 14a1 1 0 1 0 0-2 1 1 0 0 0 0 2z"/>
+                    </svg>
+                    <p>Mobile Taking Order</p>
+                </div>
+                <div class="col-md-2 col-sm-4 mb-4 feature-item">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" fill="url(#greenGradient)" class="bi bi-fingerprint mb-3" viewBox="0 0 16 16">
+                      <path d="M8.06 6.5a.5.5 0 0 1 .5.5v.776a11.5 11.5 0 0 1-.552 3.519l-1.331 4.14a.5.5 0 0 1-.952-.305l1.33-4.141a10.5 10.5 0 0 0 .504-3.213V7a.5.5 0 0 1 .5-.5Z"/>
+                      <path d="M6.06 7a2 2 0 1 1 4 0 .5.5 0 1 1-1 0 1 1 0 1 0-2 0v.332c0 .409-.022.816-.066 1.221A.5.5 0 0 1 6 8.447c.04-.37.06-.742.06-1.115V7Zm3.509 1a.5.5 0 0 1 .487.513 11.5 11.5 0 0 1-.587 3.339l-1.266 3.8a.5.5 0 0 1-.949-.317l1.267-3.8a10.5 10.5 0 0 0 .535-3.048A.5.5 0 0 1 9.569 8Zm-3.356 2.115a.5.5 0 0 1 .33.626L5.24 14.939a.5.5 0 1 1-.955-.296l1.303-4.199a.5.5 0 0 1 .625-.329Z"/>
+                      <path d="M4.759 5.833A3.501 3.501 0 0 1 11.559 7a.5.5 0 0 1-1 0 2.5 2.5 0 0 0-4.857-.833.5.5 0 1 1-.943-.334Zm.3 1.67a.5.5 0 0 1 .449.546 10.72 10.72 0 0 1-.4 2.031l-1.222 4.072a.5.5 0 1 1-.958-.287L4.15 9.793a9.72 9.72 0 0 0 .363-1.842.5.5 0 0 1 .546-.449Zm6 .647a.5.5 0 0 1 .5.5c0 1.28-.213 2.552-.632 3.762l-1.09 3.145a.5.5 0 0 1-.944-.327l1.089-3.145c.382-1.105.578-2.266.578-3.435a.5.5 0 0 1 .5-.5Z"/>
+                      <path d="M3.902 4.222a4.996 4.996 0 0 1 5.202-2.113.5.5 0 0 1-.208.979 3.996 3.996 0 0 0-4.163 1.69.5.5 0 0 1-.831-.556Zm6.72-.955a.5.5 0 0 1 .705-.052A4.99 4.99 0 0 1 13.059 7v1.5a.5.5 0 1 1-1 0V7a3.99 3.99 0 0 0-1.386-3.028.5.5 0 0 1-.051-.705ZM3.68 5.842a.5.5 0 0 1 .422.568c-.029.192-.044.39-.044.59 0 .71-.1 1.417-.298 2.1l-1.14 3.923a.5.5 0 1 1-.96-.279L2.8 8.821A6.531 6.531 0 0 0 3.058 7c0-.25.019-.496.054-.736a.5.5 0 0 1 .568-.422Zm8.882 3.66a.5.5 0 0 1 .456.54c-.084 1-.298 1.986-.64 2.934l-.744 2.068a.5.5 0 0 1-.941-.338l.745-2.07a10.51 10.51 0 0 0 .584-2.678.5.5 0 0 1 .54-.456Z"/>
+                      <path d="M4.81 1.37A6.5 6.5 0 0 1 14.56 7a.5.5 0 1 1-1 0 5.5 5.5 0 0 0-8.25-4.765.5.5 0 0 1-.5-.865Zm-.89 1.257a.5.5 0 0 1 .04.706A5.478 5.478 0 0 0 2.56 7a.5.5 0 0 1-1 0c0-1.664.626-3.184 1.655-4.333a.5.5 0 0 1 .706-.04ZM1.915 8.02a.5.5 0 0 1 .346.616l-.779 2.767a.5.5 0 1 1-.962-.27l.778-2.767a.5.5 0 0 1 .617-.346Zm12.15.481a.5.5 0 0 1 .49.51c-.03 1.499-.161 3.025-.727 4.533l-.07.187a.5.5 0 0 1-.936-.351l.07-.187c.506-1.35.634-2.74.663-4.202a.5.5 0 0 1 .51-.49Z"/>
+                    </svg>
+                    <p>Biometric Recognition</p>
+                </div>
+                <div class="col-md-2 col-sm-4 mb-4 feature-item">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" fill="url(#greenGradient)" class="bi bi-graph-up mb-3" viewBox="0 0 16 16">
+                      <path fill-rule="evenodd" d="M0 0h1v15h15v1H0V0Zm14.817 3.113a.5.5 0 0 1 .07.704l-4.5 5.5a.5.5 0 0 1-.74.037L7.06 6.767l-3.656 5.027a.5.5 0 0 1-.808-.588l4-5.5a.5.5 0 0 1 .758-.06l2.609 2.61 4.15-5.073a.5.5 0 0 1 .704-.07Z"/>
+                    </svg>
+                    <p>RealEIS (Executive Information System)</p>
+                </div>
+                <div class="col-md-2 col-sm-4 mb-4 feature-item">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" fill="url(#greenGradient)" class="bi bi-calendar-event mb-3" viewBox="0 0 16 16">
+                      <path d="M11 6.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1z"/>
+                      <path d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5zM1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4H1z"/>
+                    </svg>
+                    <p>Integrated with Banquet</p>
+                </div>
+            </div>
+        </div>
+    </section> -->
+    <section class="golf-separator">
+        <div class="container">
+            <div class="golf-divider">
+                <div class="golf-ball"></div>
+                <div class="golf-tee"></div>
+            </div>
+        </div>
+    </section>
 
-    <!-- Additional styles for the new section -->
     <style>
-        #ict-solution-reverse .gradient-text {
-            background-size: 200% auto;
-            animation: gradientShift 5s ease infinite;
+        .golf-separator {
+            padding: 40px 0;
         }
 
-        @keyframes gradientShift {
-            0% {
-                background-position: 0% 50%;
-            }
-
-            50% {
-                background-position: 100% 50%;
-            }
-
-            100% {
-                background-position: 0% 50%;
-            }
+        .golf-divider {
+            position: relative;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, #27ae60, transparent);
+            max-width: 80%;
+            margin: 0 auto;
         }
 
-        #ict-solution-reverse .fade-in-left,
-        #ict-solution-reverse .fade-in-right {
-            opacity: 0;
-            transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+        .golf-ball {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            width: 20px;
+            height: 20px;
+            background-color: #ffffff;
+            border-radius: 50%;
+            border: 2px solid #27ae60;
         }
 
-        #ict-solution-reverse .fade-in-left.visible {
-            opacity: 1;
-            transform: translateX(0);
-        }
-
-        #ict-solution-reverse .fade-in-right.visible {
-            opacity: 1;
-            transform: translateX(0);
-        }
-
-        /* Dark mode styles */
-
-
-        body.dark-mode #ict-solution-reverse .btn-outline-secondary {
-            color: #e0e0e0;
-            border-color: #e0e0e0;
-        }
-
-        body.dark-mode #ict-solution-reverse .btn-outline-secondary:hover {
-            background-color: #e0e0e0;
-            color: #2a2a2a;
+        .golf-tee {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, 50%);
+            width: 10px;
+            height: 15px;
+            background-color: #27ae60;
+            clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
         }
     </style>
 
-    <!-- Script to handle animations -->
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const handleScroll = () => {
-                const elements = document.querySelectorAll(
-                    '#ict-solution-reverse .fade-in-left, #ict-solution-reverse .fade-in-right');
-                elements.forEach((el, index) => {
-                    if (isElementInViewport(el)) {
-                        setTimeout(() => {
-                            el.classList.add('visible');
-                        }, index * 200);
-                    }
-                });
-            };
 
-            window.addEventListener('scroll', handleScroll);
-            window.addEventListener('load', handleScroll);
-            setTimeout(handleScroll, 100);
-        });
-    </script>
-
-
-
-
-    <section id="why-rhapsody" class="bimasakti-solutions-grid slide-in">
-        <div class="container-fluid">
-            <h2 class="bimasakti-title">FEATURES AND MODULE</h2>
-            <h3 class="bimasakti-description">RealNET offers more than just an IT system; it's a partnership that aligns
-                technology with your business strategy. We transform your IT infrastructure into a strategic asset,
-                driving
-                your business forward in today's competitive landscape.</h3>
-            <div class="bimasakti-button-wrapper">
-            </div>
-            <div class="bimasakti-features ">
-                <article class="bimasakti-solution-item customization">
-                    <h4>
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <!-- Customization SVG: Gear and Wrench -->
-                            <path
-                                d="M19.14 12.94c.04-.3.06-.61.06-.94 0-.32-.02-.64-.07-.94l2.03-1.58c.18-.14.23-.41.12-.61l-1.92-3.32c-.12-.22-.37-.29-.59-.22l-2.39.96c-.5-.38-1.03-.7-1.62-.94l-.36-2.54c-.04-.24-.24-.41-.48-.41h-3.84c-.24 0-.43.17-.47.41l-.36 2.54c-.59.24-1.13.57-1.62.94l-2.39-.96c-.22-.08-.47 0-.59.22L2.74 8.87c-.12.21-.08.47.12.61l2.03 1.58c-.05.3-.09.63-.09.94s.02.64.07.94l-2.03 1.58c-.18.14-.23.41-.12.61l1.92 3.32c.12.22.37.29.59.22l2.39-.96c.5.38 1.03.7 1.62.94l.36 2.54c.05.24.24.41.48.41h3.84c.24 0 .44-.17.47-.41l.36-2.54c.59-.24 1.13-.56 1.62-.94l2.39.96c.22.08.47 0 .59-.22l1.92-3.32c.12-.22.07-.47-.12-.61l-2.01-1.58zM12 15.6c-1.98 0-3.6-1.62-3.6-3.6s1.62-3.6 3.6-3.6 3.6 1.62 3.6 3.6-1.62 3.6-3.6 3.6z"
-                                fill="url(#paint0_linear_customization)" />
-                            <defs>
-                                <linearGradient id="paint0_linear_customization" x1="2" y1="2" x2="22" y2="22"
-                                    gradientUnits="userSpaceOnUse">
-                                    <stop stop-color="#783ea8" />
-                                    <stop offset="1" stop-color="#e4ac44" />
-                                </linearGradient>
-                            </defs>
-                        </svg>
-                        &nbsp;Customization for Your Business Needs
-                    </h4>
-                    <p>We ensure that your IT infrastructure is not only functional, but also aligned with your specific
-                        business goals and challenges.</p>
-                </article>
-                <article class="bimasakti-solution-item scalability">
-                    <h4>
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <!-- Scalability SVG: Ascending Graph -->
-                            <path d="M3.5 18.49l6-6.01 4 4L22 6.92l-1.41-1.41-7.09 7.97-4-4L2 16.99l1.5 1.5z"
-                                fill="url(#paint0_linear_scalability)" />
-                            <defs>
-                                <linearGradient id="paint0_linear_scalability" x1="2" y1="5.51" x2="22" y2="18.49"
-                                    gradientUnits="userSpaceOnUse">
-                                    <stop stop-color="#783ea8" />
-                                    <stop offset="1" stop-color="#e4ac44" />
-                                </linearGradient>
-                            </defs>
-                        </svg>
-                        &nbsp;Scalable for The Future
-                    </h4>
-                    <p>Our solutions are designed to be adaptable, allowing your IT infrastructure to grow and evolve
-                        with
-                        your business.</p>
-                </article>
-                <article class="bimasakti-solution-item affordability">
-                    <h4>
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <!-- Affordability SVG: Dollar Sign -->
-                            <path
-                                d="M11.8 10.9c-2.27-.59-3-1.2-3-2.15 0-1.09 1.01-1.85 2.7-1.85 1.78 0 2.44.85 2.5 2.1h2.21c-.07-1.72-1.12-3.3-3.21-3.81V3h-3v2.16c-1.94.42-3.5 1.68-3.5 3.61 0 2.31 1.91 3.46 4.7 4.13 2.5.6 3 1.48 3 2.41 0 .69-.49 1.79-2.7 1.79-2.06 0-2.87-.92-2.98-2.1h-2.2c.12 2.19 1.76 3.42 3.68 3.83V21h3v-2.15c1.95-.37 3.5-1.5 3.5-3.55 0-2.84-2.43-3.81-4.7-4.4z"
-                                fill="url(#paint0_linear_affordability)" />
-                            <defs>
-                                <linearGradient id="paint0_linear_affordability" x1="6.5" y1="3" x2="17.5" y2="21"
-                                    gradientUnits="userSpaceOnUse">
-                                    <stop stop-color="#783ea8" />
-                                    <stop offset="1" stop-color="#e4ac44" />
-                                </linearGradient>
-                            </defs>
-                        </svg>
-                        &nbsp;Affordable
-                    </h4>
-                    <p>We prioritize the efficiency and longevity of your investment by providing solutions that deliver
-                        a
-                        sustainable total cost of ownership.</p>
-                </article>
-                <article class="bimasakti-solution-item established">
-                    <h4>
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <!-- Established SVG: Building with Calendar -->
-                            <path
-                                d="M19 4h-1V2h-2v2H8V2H6v2H5c-1.11 0-1.99.9-1.99 2L3 20c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V9h14v11z"
-                                fill="url(#paint0_linear_established)" />
-                            <path d="M7 11h5v5H7v-5z" fill="url(#paint1_linear_established)" />
-                            <defs>
-                                <linearGradient id="paint0_linear_established" x1="3" y1="2" x2="21" y2="22"
-                                    gradientUnits="userSpaceOnUse">
-                                    <stop stop-color="#783ea8" />
-                                    <stop offset="1" stop-color="#e4ac44" />
-                                </linearGradient>
-                                <linearGradient id="paint1_linear_established" x1="7" y1="11" x2="12" y2="16"
-                                    gradientUnits="userSpaceOnUse">
-                                    <stop stop-color="#783ea8" />
-                                    <stop offset="1" stop-color="#e4ac44" />
-                                </linearGradient>
-                            </defs>
-                        </svg>
-                        &nbsp;Established in 1983
-                    </h4>
-                    <p>You are served by a company experienced in IT implementation since 1998.</p>
-                </article>
-                <article class="bimasakti-solution-item best-practice">
-                    <h4>
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <!-- Best Practice SVG: Trophy -->
-                            <path
-                                d="M19 5h-2V3H7v2H5c-1.1 0-2 .9-2 2v1c0 2.55 1.92 4.63 4.39 4.94.63 1.5 1.98 2.63 3.61 2.96V19H7v2h10v-2h-4v-3.1c1.63-.33 2.98-1.46 3.61-2.96C19.08 12.63 21 10.55 21 8V7c0-1.1-.9-2-2-2zM5 8V7h2v3.82C5.84 10.4 5 9.3 5 8zm14 0c0 1.3-.84 2.4-2 2.82V7h2v1z"
-                                fill="url(#paint0_linear_best_practice)" />
-                            <defs>
-                                <linearGradient id="paint0_linear_best_practice" x1="3" y1="3" x2="21" y2="21"
-                                    gradientUnits="userSpaceOnUse">
-                                    <stop stop-color="#783ea8" />
-                                    <stop offset="1" stop-color="#e4ac44" />
-                                </linearGradient>
-                            </defs>
-                        </svg>
-                        &nbsp;Best Practice Implementation
-                    </h4>
-                    <p>We have understanding of business best practice.</p>
-                </article>
-                <article class="bimasakti-solution-item expertise">
-                    <h4>
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <!-- Expertise SVG: Briefcase -->
-                            <path
-                                d="M20 6h-4V4c0-1.11-.89-2-2-2h-4c-1.11 0-2 .89-2 2v2H4c-1.11 0-1.99.89-1.99 2L2 19c0 1.11.89 2 2 2h16c1.11 0 2-.89 2-2V8c0-1.11-.89-2-2-2zm-6 0h-4V4h4v2z"
-                                fill="url(#paint0_linear_expertise)" />
-                            <defs>
-                                <linearGradient id="paint0_linear_expertise" x1="2" y1="2" x2="22" y2="21"
-                                    gradientUnits="userSpaceOnUse">
-                                    <stop stop-color="#783ea8" />
-                                    <stop offset="1" stop-color="#e4ac44" />
-                                </linearGradient>
-                            </defs>
-                        </svg>
-                        &nbsp;Expertise Professional
-                    </h4>
-                    <p>Our consultants are experienced and specialized in different business industries.</p>
-                </article>
-                <article class="bimasakti-solution-item one-solution">
-                    <h4>
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <!-- One Solution SVG: Puzzle Piece -->
-                            <path
-                                d="M20.5 11H19V7c0-1.1-.9-2-2-2h-4V3.5C13 2.12 11.88 1 10.5 1S8 2.12 8 3.5V5H4c-1.1 0-1.99.9-1.99 2v3.8H3.5c1.49 0 2.7 1.21 2.7 2.7s-1.21 2.7-2.7 2.7H2V20c0 1.1.9 2 2 2h3.8v-1.5c0-1.49 1.21-2.7 2.7-2.7 1.49 0 2.7 1.21 2.7 2.7V22H17c1.1 0 2-.9 2-2v-4h1.5c1.38 0 2.5-1.12 2.5-2.5S21.88 11 20.5 11z"
-                                fill="url(#paint0_linear_one_solution)" />
-                            <defs>
-                                <linearGradient id="paint0_linear_one_solution" x1="2" y1="1" x2="22" y2="22"
-                                    gradientUnits="userSpaceOnUse">
-                                    <stop stop-color="#783ea8" />
-                                    <stop offset="1" stop-color="#e4ac44" />
-                                </linearGradient>
-                            </defs>
-                        </svg>
-                        &nbsp;One Solution Strategy
-                    </h4>
-                    <p>You will get our comprehensive services with our "One Solution" strategy.</p>
-                </article>
-            </div>
-        </div>
-    </section>
 
     <style>
-        /* BIMASAKTI Solutions Grid Styles */
-        .bimasakti-solutions-grid {
+        .fade-in-left,
+        .fade-in-right {
+            opacity: 0;
+            transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+        }
+
+        .fade-in-left {
+            transform: translateX(-50px);
+        }
+
+        .fade-in-right {
+            transform: translateX(50px);
+        }
+
+        .fade-in-left.visible,
+        .fade-in-right.visible {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .feature-item {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+        }
+
+        .feature-item.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+
+    <script>
+        function isElementInViewport(el) {
+            var rect = el.getBoundingClientRect();
+            return (
+                rect.top <= (window.innerHeight || document.documentElement.clientHeight) &&
+                rect.bottom >= 0 &&
+                rect.left <= (window.innerWidth || document.documentElement.clientWidth) &&
+                rect.right >= 0
+            );
+        }
+
+        function handleScroll() {
+            var fadeElements = document.querySelectorAll('.fade-in-left, .fade-in-right, .feature-item');
+            fadeElements.forEach((el, index) => {
+                if (isElementInViewport(el)) {
+                    setTimeout(() => {
+                        el.classList.add('visible');
+                    }, index * 100);
+                }
+            });
+        }
+
+        window.addEventListener('scroll', handleScroll);
+        window.addEventListener('load', handleScroll);
+        // Trigger the handleScroll function immediately after page load
+        setTimeout(handleScroll, 100);
+    </script>
+
+    <style>
+        /* HR Solutions Grid Styles */
+        .hr-solutions-grid {
             display: grid;
             grid-template-areas:
                 "title"
@@ -2381,22 +2079,25 @@
                 "button"
                 "features";
             gap: 15px;
+            padding: 20px;
             border-radius: 15px;
             margin: 0 auto;
         }
 
-        .bimasakti-solution-item {
+        /* HR Solution Item Styles */
+        .hr-solution-item {
             border-radius: 10px;
             padding: 15px;
             transition: all 0.3s ease;
-            background: #FFFFFF !important;
+            background: white !important;
             border: 2px solid rgba(221, 221, 221, 0.753);
         }
 
-        .bimasakti-solution-item h4 {
-            font-size: 1rem;
+        /* HR Solution Item Header Styles */
+        .hr-solution-item h4 {
+            font-size: 1.1rem;
             margin-bottom: 10px;
-            background: linear-gradient(90deg, #783ea8, #e4ac44);
+            background: linear-gradient(287deg, #5dfa91, #35743f, #35743fa8);
             -webkit-background-clip: text;
             background-clip: text;
             color: transparent;
@@ -2407,22 +2108,46 @@
             align-items: center;
         }
 
-        .bimasakti-solution-item h4::after {
+        .hr-solution-item h4::after {
             content: '';
             position: absolute;
             bottom: 0;
             left: 0;
             right: 0;
             height: 2px;
-            background: linear-gradient(90deg, rgba(255, 255, 255, 0.767), #783ea8, #e4ac44, rgba(255, 255, 255, 0.767));
+            background: linear-gradient(287deg, rgba(255, 255, 255, 0.1), #d6dbd7, #35743f, #c2d3c24f, rgba(255, 255, 255, 0.1));
             width: 100%;
         }
 
-        .bimasakti-title {
+        /* HR Solution Item List Styles */
+        .hr-solution-item ul {
+            padding-left: 0;
+            list-style-type: none;
+        }
+
+        .hr-solution-item li {
+            margin-bottom: 0.4rem;
+            position: relative;
+            padding-left: 1.2em;
+        }
+
+        .hr-solution-item li::before {
+            content: "•";
+            background: linear-gradient(287deg, #5dfa91, #35743f, #4446464f);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+
+        /* HR Title Styles */
+        .hr-title {
             grid-area: title;
             text-align: center;
-            font-size: 33px;
-            background: linear-gradient(90deg, #783ea8, #e49144, #783ea8);
+            font-size: 2rem;
+            background: linear-gradient(287deg, #5dfa91, #35743f, #4446464f);
             -webkit-background-clip: text;
             background-clip: text;
             color: transparent;
@@ -2430,85 +2155,218 @@
             font-weight: bold;
         }
 
-        .bimasakti-description {
+        /* HR Description Styles */
+        .hr-description {
             grid-area: description;
             text-align: center;
-            max-width: 80%;
+            max-width: 60%;
             margin: 0 auto;
             margin-bottom: 15px;
             color: #666;
-            font-size: 16px !important;
+            font-size: 1rem;
         }
 
-        .bimasakti-features {
+        /* HR Button Wrapper Styles */
+        .hr-button-wrapper {
+            grid-area: button;
+            text-align: center;
+            margin-top: 10px;
+            margin-bottom: 20px;
+        }
+
+        /* HR Features Styles */
+        .hr-features {
             grid-area: features;
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
             gap: 15px;
         }
 
-        .bimasakti-solution-item {
-            flex-basis: calc(33.333% - 10px);
-            max-width: calc(33.333% - 10px);
-        }
 
-        /* Mobile responsive styles */
-        @media (max-width: 1024px) {
-            .bimasakti-solutions-grid {
-                max-width: 90%;
-            }
 
-            .bimasakti-solution-item {
-                flex-basis: calc(50% - 10px);
-                max-width: calc(50% - 10px);
-            }
-        }
 
+        /* Responsive Styles */
         @media (max-width: 768px) {
-            .bimasakti-solutions-grid {
+            .hr-solutions-grid {
+                padding: 10px;
                 max-width: 95%;
-                padding: 15px;
             }
 
-            .bimasakti-title {
-                font-size: 1.8rem;
-            }
-
-            .bimasakti-description {
-                font-size: 1em !important;
-                max-width: 90%;
-            }
-
-            .bimasakti-solution-item {
-                flex-basis: 100%;
+            .hr-description {
                 max-width: 100%;
             }
-        }
 
-        @media (max-width: 480px) {
-            .bimasakti-solutions-grid {
+            .hr-features {
+                grid-template-columns: 1fr;
+            }
+
+            .hr-solution-item {
                 padding: 10px;
             }
 
-            .bimasakti-title {
+            .hr-solution-item h4 {
+                font-size: 1rem;
+            }
+
+            .hr-title {
                 font-size: 1.5rem;
-            }
-
-            .bimasakti-description {
-                font-size: 0.9em !important;
-            }
-
-            .bimasakti-solution-item h4 {
-                font-size: 0.9rem;
-            }
-
-            .bimasakti-solution-item p {
-                font-size: 0.8rem;
             }
         }
     </style>
 
+    <section class="hr-solutions-grid" id="why-rhapsody">
+        <div class="container-fluid">
+            <h2 class="hr-title">Why Rhapsody Golf</h2>
+            <p class="hr-description" style="font-size: 16px;">Streamline your golf operations with our comprehensive
+                solutions designed to enhance player experience, course management, and organizational efficiency.</p>
+            <div class="hr-button-wrapper">
+                <a href="#" class="btn btn-outline-secondary styled-button-convex"
+                    style="font-size: 14px; padding: 8px 16px;">Explore More</a>
+            </div>
+            <div class="hr-features">
+
+                <article class="hr-solution-item attendance">
+                    <h4>
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8z"
+                                fill="url(#paint0_linear_attendance)" />
+                            <path d="M12.5 7H11v6l5.25 3.15.75-1.23-4.5-2.67z" fill="url(#paint0_linear_attendance)" />
+                            <defs>
+                                <linearGradient id="paint0_linear_attendance" x1="2" y1="2" x2="22" y2="22"
+                                    gradientUnits="userSpaceOnUse">
+                                    <stop stop-color="#5dfa91" />
+                                    <stop offset="0.5" stop-color="#35743f" />
+                                    <stop offset="1" stop-color="#4446464f" />
+                                </linearGradient>
+                            </defs>
+                        </svg>
+                        Passport
+                    </h4>
+                    <ul>
+                        <li>Smart card for express check-in</li>
+                        <li>One-stop payment</li>
+                        <li>Hassle-free transactions across all outlets</li>
+                    </ul>
+                </article>
+                <article class="hr-solution-item loan">
+                    <h4>
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M11.8 10.9C9.53 10.31 8.8 9.7 8.8 8.75C8.8 7.66 9.81 6.9 11.5 6.9C13.28 6.9 13.94 7.75 14 9H16.21C16.14 7.28 15.09 5.7 13 5.19V3H10V5.16C8.06 5.58 6.5 6.84 6.5 8.77C6.5 11.08 8.41 12.23 11.2 12.9C13.7 13.5 14.2 14.38 14.2 15.31C14.2 16 13.71 17.1 11.5 17.1C9.44 17.1 8.63 16.18 8.52 15H6.32C6.44 17.19 8.08 18.42 10 18.83V21H13V18.85C14.95 18.48 16.5 17.35 16.5 15.3C16.5 12.46 14.07 11.49 11.8 10.9Z"
+                                fill="url(#paint0_linear_loan)" />
+                            <defs>
+                                <linearGradient id="paint0_linear_loan" x1="6.32" y1="3" x2="16.5" y2="21"
+                                    gradientUnits="userSpaceOnUse">
+                                    <stop stop-color="#5dfa91" />
+                                    <stop offset="0.5" stop-color="#35743f" />
+                                    <stop offset="1" stop-color="#4446464f" />
+                                </linearGradient>
+                            </defs>
+                        </svg>
+                        RealSMS
+                    </h4>
+                    <ul>
+                        <li>Efficient SMS booking system</li>
+                        <li>Reduces no-shows</li>
+                        <li>Quick communication for promotions and updates</li>
+                    </ul>
+                </article>
+                <article class="hr-solution-item performance-appraisal">
+                    <h4>
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zM9 17H7v-7h2v7zm4 0h-2V7h2v10zm4 0h-2v-4h2v4z"
+                                fill="url(#paint0_linear_performance)" />
+                            <defs>
+                                <linearGradient id="paint0_linear_performance" x1="3" y1="3" x2="21" y2="21"
+                                    gradientUnits="userSpaceOnUse">
+                                    <stop stop-color="#5dfa91" />
+                                    <stop offset="0.5" stop-color="#35743f" />
+                                    <stop offset="1" stop-color="#4446464f" />
+                                </linearGradient>
+                            </defs>
+                        </svg>
+                        Mobile Taking Order
+                    </h4>
+                    <ul>
+                        <li>On-course food ordering</li>
+                        <li>Instant handicap updates</li>
+                        <li>Via mobile devices</li>
+                    </ul>
+                </article>
+                <article class="hr-solution-item employee-self-service">
+                    <h4>
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"
+                                fill="url(#paint0_linear_self_service)" />
+                            <defs>
+                                <linearGradient id="paint0_linear_self_service" x1="4" y1="4" x2="20" y2="20"
+                                    gradientUnits="userSpaceOnUse">
+                                    <stop stop-color="#5dfa91" />
+                                    <stop offset="0.5" stop-color="#35743f" />
+                                    <stop offset="1" stop-color="#4446464f" />
+                                </linearGradient>
+                            </defs>
+                        </svg>
+                        Biometric Recognition
+                    </h4>
+                    <ul>
+                        <li>Enhanced security</li>
+                        <li>Finger scan login for cashiers</li>
+                        <li>Prevents password misuse</li>
+                    </ul>
+                </article>
+                <article class="hr-solution-item medical">
+                    <h4>
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M19 3H5c-1.1 0-1.99.9-1.99 2L3 19c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-1 11h-4v4h-4v-4H6v-4h4V6h4v4h4v4z"
+                                fill="url(#paint0_linear_medical)" />
+                            <defs>
+                                <linearGradient id="paint0_linear_medical" x1="3" y1="3" x2="21" y2="21"
+                                    gradientUnits="userSpaceOnUse">
+                                    <stop stop-color="#5dfa91" />
+                                    <stop offset="0.5" stop-color="#35743f" />
+                                    <stop offset="1" stop-color="#4446464f" />
+                                </linearGradient>
+                            </defs>
+                        </svg>
+                        RealEIS
+                    </h4>
+                    <ul>
+                        <li>Real-time golf course performance reports</li>
+                        <li>Informed decision-making</li>
+                        <li>Accessible anytime, anywhere</li>
+                    </ul>
+                </article>
+                <article class="hr-solution-item quality-assurance">
+                    <h4>
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-5 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z"
+                                fill="url(#paint0_linear_banquet)" />
+                            <defs>
+                                <linearGradient id="paint0_linear_banquet" x1="3" y1="3" x2="21" y2="21"
+                                    gradientUnits="userSpaceOnUse">
+                                    <stop stop-color="#5dfa91" />
+                                    <stop offset="0.5" stop-color="#35743f" />
+                                    <stop offset="1" stop-color="#4446464f" />
+                                </linearGradient>
+                            </defs>
+                        </svg>
+                        Integrated Banquet Module
+                    </h4>
+                    <ul>
+                        <li>Streamlined planning and control</li>
+                        <li>Food and beverage management</li>
+                        <li>For large club events</li>
+                    </ul>
+                </article>
+            </div>
+        </div>
+    </section>
 <!-- 
     <section id="cta" class="py-5 mt-5">
         <div class="container">
@@ -2518,15 +2376,15 @@
                         <div class="row align-items-center">
                             <div class="col-lg-8 mb-4 mb-lg-0">
                                 <h2 class="mb-3 fw-bold"
-                                    style="  background: linear-gradient(90deg, #783ea8, #e4ac44); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;">
-                                    Request for Pricing, Demo or Meeting Schedule</h2>
-                                <p class="mb-0 text-muted lead">Let's discuss how RealNet can elevate your operations.
+                                    style="font-size: 30px; background: linear-gradient(287deg, #5dfa91, rgb(53, 116, 63)); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">
+                                    Ready to Transform Your Golf Operation?</h2>
+                                <p class="mb-0 text-muted lead">Let's discuss how Rhapsody Golf can elevate your
+                                    operations.
                                 </p>
                             </div>
                             <div class="col-lg-4 text-lg-end text-center">
-                                <a href="#"
-                                    class="btn btn-primary btn-lg px-4 py-3 cta-button styled-button-convex">Request
-                                    Demo</a>
+                                <a href="#" class="btn btn-primary btn-lg px-4 py-3 cta-button styled-button-convex"
+                                    style="font-size: 16px;  color: white;">Request Demo</a>
                             </div>
                         </div>
                     </div>
@@ -2537,7 +2395,7 @@
 
     <style>
         #cta .cta-card {
-            background-color: #f5f4f4 !important;
+            background-color: #f8f9fa;
             transition: all 0.3s ease;
             border: 1px solid rgba(0, 0, 0, 0.125);
         }
@@ -2551,7 +2409,7 @@
         }
 
         #cta h2 {
-            font-size: 33px;
+            font-size: 2.5rem;
             line-height: 1.2;
         }
 
@@ -2561,18 +2419,16 @@
         }
 
         #cta .cta-button {
-            background: linear-gradient(287deg, #e4b97a, #c57ee0, #c57ee0);
-            border-color: #e4b97a;
+            border-color: #35743f;
+            background-color: #35743f !important;
             color: #ffffff;
             font-weight: 600;
             font-size: 16px;
             transition: all 0.3s ease;
-            border-radius: 10px;
         }
 
         #cta .cta-button:hover {
-            background: linear-gradient(287deg, #e4b97a, #c57ee0, #c57ee0);
-            transform: translateY(-2px);
+            background-color: #35743f;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
         }
 
@@ -2594,506 +2450,202 @@
         }
     </style>
 
-    <!-- Testimonial Section with Separate Video -->
-    <section id="realnet-testimonial-showcase" class="py-5">
+    <!-- Golf Micro Section: Showcasing Our Solutions -->
+    <section id="golf-micro" class="py-5 clipped-section">
         <div class="container-fluid">
-            <!-- Background Grid Pattern -->
-            <div class="realnet-bg-grid"></div>
-
-            <!-- Advanced Floating Elements -->
-            <div class="floating-element left-element">
-                <div class="tech-icon-container">
-                    <i class="fas fa-quote-left fa-3x text-primary"></i>
-                    <div class="pulse-ring"></div>
-                </div>
-            </div>
-            <div class="floating-element right-element">
-                <div class="tech-icon-container">
-                    <i class="fas fa-star fa-3x text-primary"></i>
-                    <div class="pulse-ring"></div>
-                </div>
-            </div>
             <div class="row justify-content-center">
-                <div class="col-lg-10">
-                    <!-- Testimonial Content -->
-                    <div class="realnet-testimonial-container text-center p-5 mb-1 position-relative">
-                        <h2 class="mb-4 fw-bold bimasakti-title">What They Say</h2>
-                        <div class="realnet-testimonial-carousel">
-                            <div class="realnet-testimonial-item">
-                                <h3 class="lead mb-4 testimonial-text">RealNet's solutions
-                                    have transformed our IT infrastructure. Their expertise and customization
-                                    capabilities are unmatched in the industry.</h3>
+                <div class="col-12 py-2 px-5">
+                    <div>
+                        <div class="card-section">
+                            <div class="row gy-4">
+                                <div class="col-12">
+                                    <div class="text-center">
+                                        <h2 class="mb-2 mt-4 glass-text"
+                                            style="background: linear-gradient(287deg, #2ecc71, #27ae60, #106617); -webkit-background-clip: text; -webkit-text-fill-color: transparent; font-size: 56px; font-weight: 700; line-height: 1.2;">
+                                            Our Solutions
+                                        </h2>
+                                        <h3 class="mb-4 glass-subtext" style="font-size: 24px; font-weight: 600;">
+                                            Streamlined Solutions for Modern Golf Courses
+                                        </h3>
+                                        <p class="mb-5 glass-description" style="font-size: 16px; line-height: 1.6;">
+                                            Rhapsody Golf consists of 3 main modules that are fully integrated with each
+                                            other: Front Office, Back Office, and Logistic.
+                                            These modules cater to the entire operation of the golf club, from
+                                            Membership and Reservation to Accounting & Finance operations, Inventory,
+                                            Purchasing, and Cost Control.
+                                        </p>
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                    </div>
+                            <style>
+                                .module-grid {
+                                    display: grid;
+                                    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+                                    gap: 0.1rem;
+                                    /* Reduced gap from 2rem to 1rem */
+                                    padding: 0.5rem;
+                                    /* Reduced padding from 1rem to 0.5rem */
+                                    justify-items: center;
+                                }
 
-                    <!-- Video Section -->
-                    <div class="realnet-video-container position-relative overflow-hidden mt-0 mb-4"
-                        style="border-radius: 15px; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); max-width: 60%; margin: 0 auto;">
-                        <!-- YouTube Video Embed -->
-                        <iframe class="w-100" style="border-radius: 15px; aspect-ratio: 16 / 9;"
-                            src="https://www.youtube.com/embed/Q7kzoNEC4QU?enablejsapi=1" frameborder="0"
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                            allowfullscreen></iframe>
-                        <div class="realnet-video-overlay position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center justify-content-center"
-                            style="pointer-events: none;">
-                            <!-- Overlay content -->
+                                .module-card {
+                                    position: relative;
+                                    background: rgba(255, 255, 255, 0.1);
+                                    backdrop-filter: blur(10px);
+                                    border-radius: 20px;
+                                    padding: 1rem;
+                                    /* Reduced padding from 1.5rem to 1rem */
+                                    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+                                    overflow: hidden;
+                                    display: flex;
+                                    justify-content: center;
+                                    align-items: center;
+                                }
+
+                                .module-card:hover {
+                                    transform: translateY(-10px);
+                                }
+
+                                .module-card::before {
+                                    content: '';
+                                    position: absolute;
+                                    top: 0;
+                                    left: 0;
+                                    width: 100%;
+                                    height: 100%;
+                                    background: linear-gradient(45deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0));
+                                    opacity: 0;
+                                    transition: opacity 0.3s ease;
+                                }
+
+                                .module-card:hover::before {
+                                    opacity: 1;
+                                }
+
+                                .golf-module-img {
+                                    width: 80%;
+                                    height: auto;
+                                    border-radius: 12px;
+                                    transform: scale(0.95);
+                                    transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+                                    margin: 0 auto;
+                                    display: block;
+                                }
+
+                                .module-card:hover .golf-module-img {
+                                    transform: scale(1);
+                                }
+                            </style>
+
+                            <div class="module-grid">
+                                <div class="module-card front-office" data-aos="fade-up" data-aos-delay="100">
+                                    <img src="../../assets/img/golf/front.png" alt="Front Office Module"
+                                        class="golf-module-img">
+                                </div>
+
+                                <div class="module-card back-office" data-aos="fade-up" data-aos-delay="200">
+                                    <img src="../../assets/img/golf/back.png" alt="Back Office Module"
+                                        class="golf-module-img">
+                                </div>
+
+                                <div class="module-card logistic" data-aos="fade-up" data-aos-delay="300">
+                                    <img src="../../assets/img/golf/logistic.png" alt="Logistic Module"
+                                        class="golf-module-img">
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+        </div>
+        </div>
     </section>
+
     <style>
-        /* Advanced Floating Elements Styles */
-        .floating-element {
-            position: absolute;
-            animation: floatAndRotate 6s ease-in-out infinite;
-        }
-
-        .left-element {
-            left: 15%;
-            top: 45%;
-        }
-
-        .right-element {
-            right: 15%;
-            bottom: 5%;
-        }
-
-        .tech-icon-container {
-            position: relative;
-            width: 80px;
-            height: 80px;
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            box-shadow: 0 0 20px rgba(62, 103, 141, 0.3);
-        }
-
-        .tech-icon-container i {
-            background: linear-gradient(to right, #783ea8, #e4ac44);
-            -webkit-background-clip: text;
-            background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        .pulse-ring {
-            position: absolute;
-            width: 100%;
+        .module-card {
+            padding: 0px;
+            border-radius: 10px;
             height: 100%;
-            border-radius: 50%;
-            animation: pulse 2s linear infinite;
-            border: 2px solid rgba(192, 168, 58, 0.5);
         }
 
-        @keyframes floatAndRotate {
-
-            0%,
-            100% {
-                transform: translateY(0) rotate(0deg);
-            }
-
-            50% {
-                transform: translateY(-20px) rotate(10deg);
-            }
+        .module-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: #ffffff;
+            padding: 10px;
+            border-radius: 5px;
+            text-align: center;
         }
 
-        @keyframes pulse {
-            0% {
-                transform: scale(0.95);
-                opacity: 1;
-            }
-
-            70% {
-                transform: scale(1.1);
-                opacity: 0;
-            }
-
-            100% {
-                transform: scale(0.95);
-                opacity: 0;
-            }
+        .module-card p {
+            font-size: 0.9rem;
+            margin-bottom: 15px;
         }
 
-        /* Background Grid */
-        .realnet-bg-grid {
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background-image:
-                linear-gradient(to right, rgba(200, 200, 200, 0.1) 1px, transparent 1px),
-                linear-gradient(to bottom, rgba(200, 200, 200, 0.1) 1px, transparent 1px);
-            background-size: 20px 20px;
-            pointer-events: none;
+        .module-card h4 {
+            font-size: 1.1rem;
+            margin-bottom: 10px;
+            padding-left: 60px;
         }
 
-        /* Testimonial and Video Containers */
-        #realnet-testimonial-showcase {
-            position: relative;
-            overflow: hidden;
+        .module-card ul {
+            padding-left: 100px;
         }
 
-        .realnet-testimonial-container,
-        .realnet-video-container {
-            background-color: transparent;
-            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+        .module-card li {
+            font-size: 0.85rem;
+            margin-bottom: 5px;
         }
 
-        .realnet-video-container:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        .front-office h3 {
+            background-color: #e74c3c;
         }
 
-        .realnet-video-overlay {
-            background: rgba(0, 0, 0, 0.24);
-            transition: opacity 0.3s ease-in-out, background 0.3s ease-in-out;
+        .back-office h3 {
+            background-color: #3498db;
         }
 
-        .realnet-video-container:hover .realnet-video-overlay {
-            background: rgba(0, 0, 0, 0.4);
-        }
-
-        .realnet-play-btn {
-            background: none;
-            border: none;
-            opacity: 0.8;
-            transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out, color 0.3s ease-in-out;
-        }
-
-        .realnet-play-btn:hover {
-            opacity: 1;
-            transform: scale(1.1);
-            color: #fff;
-            /* Assuming the button has an icon, change color on hover */
-        }
-
-        /* Enhanced accessibility */
-        .realnet-play-btn:focus {
-            outline: 2px solid #fff;
-            outline-offset: 2px;
-        }
-
-        /* Smooth transition for testimonial text */
-        .realnet-testimonial-container p {
-            transition: color 0.3s ease-in-out;
-        }
-
-        .realnet-testimonial-container:hover p {
-            color: #333;
-            /* Darken text on hover for better contrast */
-        }
-
-        /* Responsive Styles */
-        @media (max-width: 1200px) {
-            .floating-element {
-                transform: scale(0.8);
-            }
-
-            .left-element {
-                left: 5%;
-            }
-
-            .right-element {
-                right: 5%;
-            }
-        }
-
-        @media (max-width: 992px) {
-            .realnet-testimonial-container {
-                padding: 4rem !important;
-            }
-
-            .realnet-video-container {
-                max-width: 70% !important;
-            }
+        .logistic h3 {
+            background-color: #2ecc71;
         }
 
         @media (max-width: 768px) {
-            .floating-element {
-                display: none !important;
-            }
-
-            .realnet-testimonial-container {
-                padding: 3rem !important;
-            }
-
-            .realnet-video-container {
-                max-width: 80% !important;
-            }
-
-            h2.bimasakti-title {
-                font-size: 2.5rem !important;
-            }
-
-            h3.lead {
-                font-size: 1.5rem !important;
+            .module-card {
+                margin-bottom: 20px;
             }
         }
 
-        @media (max-width: 576px) {
-            .realnet-testimonial-container {
-                padding: 2rem !important;
-            }
-
-            .realnet-video-container {
-                max-width: 90% !important;
-            }
-
-            h2.bimasakti-title {
-                font-size: 2rem !important;
-            }
-
-            h3.lead {
-                font-size: 1.2rem !important;
-            }
-        }
-    </style>
-
-    <script>
-        // Initialize testimonial slider (assuming you're using a library like Slick)
-        $(document).ready(function () {
-            $('.realnet-testimonial-carousel').slick({
-                dots: true,
-                infinite: true,
-                speed: 500,
-                fade: true,
-                cssEase: 'linear',
-                autoplay: true,
-                autoplaySpeed: 5000
-            });
-        });
-
-        function playRealnetVideo(button) {
-            const videoContainer = button.closest('.realnet-video-container');
-            const video = videoContainer.querySelector('video');
-            const overlay = videoContainer.querySelector('.realnet-video-overlay');
-
-            video.play();
-            overlay.style.opacity = '0';
-            setTimeout(() => {
-                overlay.style.display = 'none';
-            }, 300);
-        }
-    </script>
-
-
-    <style>
-        #technology-delivery {
-            position: relative;
-            overflow: visible;
-
+        /* Main container styles */
+        #golf-micro {
+            padding-top: 80px;
+            /* Reduced from 100px to move content up */
         }
 
-        .spline-container {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 160%;
-            height: 100%;
-            z-index: -1;
-            display: none;
+        /* Description text styles */
+        .glass-description {
+            font-size: 1.1rem;
+            color: #141414;
+            max-width: 720px;
+            margin-left: auto;
+            margin-right: auto;
         }
 
-        spline-viewer {
-            width: 100%;
-            height: 100%;
-        }
-    </style>
-
-    <style>
+        /* Media query for smaller screens */
         @media (max-width: 768px) {
             .glass-text {
                 font-size: 1.8rem !important;
             }
+
+            .glass-description {
+                font-size: 1rem;
+            }
         }
     </style>
-
-    <section id="technology-delivery" class="clipped-section">
-        <div class="container-fluid ">
-            <div class="row justify-content-center">
-
-                <div class="text-center">
-                    <h2 class="mb-2 glass-text gradient-text"
-                        style="background: linear-gradient(287deg, #e49e44, #6d488b); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;">
-                        Delivering Technology for
-                        <br>
-                        Leading Organizations
-                    </h2>
-                </div>
-
-                <div id="partners-logo" class="col-12" style="cursor: default; pointer-events: none;">
-                    <div class="container-fluid px-2">
-                        <!-- First Row -->
-                        <div
-                            class="row row-cols-3 row-cols-sm-4 row-cols-md-6 g-2 mb-2 justify-content-center align-items-center">
-                            <div class="col">
-                                <div class="partner-logo">
-                                    <img src="assets/img/partners/Accor_logo_Gold-gradient_RVB_digital.png"
-                                        alt="Partner 1" class="img-fluid" loading="lazy">
-                                </div>
-                            </div>
-                            <div class="col">
-                                <div class="partner-logo">
-                                    <img src="assets/img/partners/Logo-Astra-Otoparts-PNG-–-IfoxSoft.Com_-950x500.png"
-                                        alt="Partner 2" class="img-fluid" loading="lazy">
-                                </div>
-                            </div>
-                            <div class="col">
-                                <div class="partner-logo">
-                                    <img src="assets/img/partners/bank-tabungan-negara-seeklogo.png" alt="Partner 3"
-                                        class="img-fluid" loading="lazy">
-                                </div>
-                            </div>
-                            <div class="col">
-                                <div class="partner-logo">
-                                    <img src="assets/img/partners/Logo-BCA-PNG.png" alt="Partner 4" class="img-fluid"
-                                        loading="lazy">
-                                </div>
-                            </div>
-                            <div class="col">
-                                <div class="partner-logo">
-                                    <img src="assets/img/partners/pngegg.png" alt="Partner 5" class="img-fluid"
-                                        loading="lazy">
-                                </div>
-                            </div>
-                            <div class="col">
-                                <div class="partner-logo">
-                                    <img src="assets/img/partners/Energizer.png" alt="Partner 6" class="img-fluid"
-                                        loading="lazy">
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Second Row -->
-                        <div
-                            class="row row-cols-3 row-cols-sm-4 row-cols-md-6 g-2 mb-2 justify-content-center align-items-center">
-                            <div class="col">
-                                <div class="partner-logo">
-                                    <img src="assets/img/partners/Hilton.png" alt="Partner 7" class="img-fluid"
-                                        loading="lazy">
-                                </div>
-                            </div>
-                            <div class="col">
-                                <div class="partner-logo">
-                                    <img src="assets/img/partners/Hyundai.png" alt="Partner 8" class="img-fluid"
-                                        loading="lazy">
-                                </div>
-                            </div>
-                            <div class="col">
-                                <div class="partner-logo">
-                                    <img src="assets/img/partners/indofood.png" alt="Partner 9" class="img-fluid"
-                                        loading="lazy">
-                                </div>
-                            </div>
-                            <div class="col">
-                                <div class="partner-logo">
-                                    <img src="assets/img/partners/kalbe.png" alt="Partner 10" class="img-fluid"
-                                        loading="lazy">
-                                </div>
-                            </div>
-                            <div class="col">
-                                <div class="partner-logo">
-                                    <img src="assets/img/partners/kao.png" alt="Partner 11" class="img-fluid"
-                                        loading="lazy">
-                                </div>
-                            </div>
-                            <div class="col">
-                                <div class="partner-logo">
-                                    <img src="assets/img/partners/Mercure Hotels.png" alt="Partner 12" class="img-fluid"
-                                        loading="lazy">
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Third Row -->
-                        <div
-                            class="row row-cols-3 row-cols-sm-4 row-cols-md-6 g-2 justify-content-center align-items-center">
-                            <div class="col">
-                                <div class="partner-logo">
-                                    <img src="assets/img/partners/novotel.png" alt="Partner 13" class="img-fluid"
-                                        loading="lazy">
-                                </div>
-                            </div>
-                            <div class="col">
-                                <div class="partner-logo">
-                                    <img src="assets/img/partners/prudential.png" alt="Partner 14" class="img-fluid"
-                                        loading="lazy">
-                                </div>
-                            </div>
-                            <div class="col">
-                                <div class="partner-logo">
-                                    <img src="assets/img/partners/sultan.png" alt="Partner 15" class="img-fluid"
-                                        loading="lazy">
-                                </div>
-                            </div>
-                            <div class="col">
-                                <div class="partner-logo">
-                                    <img src="assets/img/partners/yakult.png" alt="Partner 16" class="img-fluid"
-                                        loading="lazy">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <style>
-                    .partner-logo {
-                        height: 100px;
-                        display: flex;
-                        align-items: center;
-                        justify-content: center;
-                        padding: 0.75rem;
-                        margin: 0.25rem;
-                        transition: all 0.3s ease;
-                        background: rgba(255, 255, 255, 0.05);
-                        border-radius: 8px;
-                    }
-
-                    .partner-logo img {
-                        max-width: 120%;
-                        max-height: 120%;
-                        object-fit: contain;
-                        transition: all 0.3s ease;
-                    }
-
-
-
-
-                    /* Large devices (desktops) */
-                    @media (min-width: 992px) {
-                        .partner-logo {
-                            height: 100px;
-                            padding: 1rem;
-                            margin: 0.25rem;
-                        }
-
-                    }
-
-                    #partners-logo .row {
-                        margin-right: 0;
-                        margin-left: 0;
-                    }
-
-                    /* Add gap between rows */
-                    #partners-logo .row+.row {
-                        margin-top: 1rem;
-                    }
-                </style>
-            </div>
-
-        </div>
-        <!-- Add the circle-blur2 div here -->
-        <div class="circle-blur2"></div>
     </section>
 
 
-
-    <section id="integrations" class="py-5">
+    <section id="integrations-clients" class="py-4 p-3">
         <div class="container-fluid">
             <div class="row align-items-center">
                 <style>
@@ -3145,14 +2697,136 @@
 
                     }
                 </style>
+
+                <div class="col-lg-6 order-2 order-lg-1 mt-lg-0" style="align-self: baseline;">
+                    <div class="online-indicator-container">
+
+                    </div>
+                    <div class="integration-grid">
+                        <img src="../../assets/img/golf/Clients/aomori.png" alt="Aomori" class="integration-icon">
+                        <img src="../../assets/img/golf/Clients/Bali.png" alt="Bali" class="integration-icon">
+
+                        <img src="../../assets/img/golf/Clients/Batam Hills.png" alt="Batam Hills" class="integration-icon">
+                        <img src="../../assets/img/golf/Clients/Borobudur Golf Club.png" alt="Borobudur Golf Club"
+                            class="integration-icon">
+                        <img src="../../assets/img/golf/Clients/Bukit Darmo Surabaya.png" alt="Bukit Darmo Surabaya"
+                            class="integration-icon">
+                        <img src="../../assets/img/golf/Clients/Cengkareng Golf Club.png" alt="Cengkareng Golf Club"
+                            class="integration-icon">
+                        <img src="../../assets/img/golf/Clients/Ciputra Golf Club Resto Surabaya.png"
+                            alt="Ciputra Golf Club Resto Surabaya" class="integration-icon">
+                        <img src="../../assets/img/golf/Clients/Damai Indah Golf.png" alt="Damai Indah Golf"
+                            class="integration-icon">
+                        <img src="../../assets/img/golf/Clients/Gunung Geulis.png" alt="Gunung Geulis"
+                            class="integration-icon">
+                        <img src="../../assets/img/golf/Clients/Handara Golf Resort Senayan Avenue.png"
+                            alt="Handara Golf Resort" class="integration-icon">
+                        <img src="../../assets/img/golf/Clients/Imperial Golf Club.png" alt="Imperial Golf Club"
+                            class="integration-icon">
+                        <img src="../../assets/img/golf/Clients/Jababeka Golf.png" alt="Jababeka Golf"
+                            class="integration-icon">
+                        <img src="../../assets/img/golf/Clients/Jatinangor National Golf Resort.png"
+                            alt="Jatinangor National Golf Resort" class="integration-icon">
+                        <img src="../../assets/img/golf/Clients/Lotus Lake Golf.png" alt="Lotus Lake Golf"
+                            class="integration-icon">
+                        <img src="../../assets/img/golf/Clients/Mountain View Golf Club.png" alt="Mountain View Golf Club"
+                            class="integration-icon">
+                        <img src="../../assets/img/golf/Clients/Padang Golf Modern-2.png" alt="Padang Golf Modern"
+                            class="integration-icon">
+                        <img src="../../assets/img/golf/Clients/Palm Springs karawang.png" alt="Palm Springs Karawang"
+                            class="integration-icon">
+                        <img src="../../assets/img/golf/Clients/Pondok Indah Golf.png" alt="Pondok Indah Golf"
+                            class="integration-icon">
+                        <img src="../../assets/img/golf/Clients/Sedayu Indo Golf.png" alt="Sedayu Indo Golf"
+                            class="integration-icon">
+                        <img src="../../assets/img/golf/Clients/Senayan Avenue by Ottolima.png" alt="Senayan Avenue"
+                            class="integration-icon">
+                        <img src="../../assets/img/golf/Clients/Southlinks.png" alt="Southlinks" class="integration-icon">
+                        <img src="../../assets/img/golf/Clients/Suvarna Jakarta.png" alt="Suvarna Jakarta"
+                            class="integration-icon">
+                    </div>
+                </div>
+                <div class="col-lg-6 partners-section text-end order-1 order-lg-2" style="align-self: baseline;">
+                    <h2 class="mb-2 mt-4 glass-text"
+                        style="background: linear-gradient(287deg, #2ecc71, #27ae60, #106617); -webkit-background-clip: text; -webkit-text-fill-color: transparent; font-size: 56px; font-weight: 700; line-height: 1.2;">
+                        Our Clients</h2>
+                    <p class="lead mb-3" style="max-width: 90%; font-size: 16px; line-height: 1.6; margin-left: auto;">
+                        Rhapsody Golf is
+                        deeply committed to
+                        delivering excellence and innovation that will drive our clients' success. To enhance our
+                        solutions and provide real value for our clients, Rhapsody Golf has sought like-minded
+                        partners who deliver nothing but the best of the technology.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+    <section id="integrations-partners" class="py-4 p-3">
+        <div class="container-fluid">
+            <div class="row align-items-center">
+                <style>
+                    /* Online indicator styles */
+                    .online-indicator-container {
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        margin-bottom: 20px;
+                    }
+
+                    .online-status {
+                        display: inline-flex;
+                        align-items: center;
+                        background-color: #f8f9fa;
+                        border: 1px solid #eff0f1;
+                        border-radius: 20px;
+                        padding: 8px 15px;
+                        font-weight: bold;
+                    }
+
+                    .online-text {
+                        font-size: 14px;
+                        color: #495057;
+                        margin-left: 8px;
+                    }
+
+                    .cable-icon {
+                        width: 20px;
+                        height: 20px;
+                        fill: #495057;
+                    }
+
+                    @media (max-width: 768px) {
+                        .partners-section {
+                            text-align: center;
+                        }
+
+                        .partners-section h2 {
+                            text-align: center !important;
+                        }
+
+                        .partners-section p {
+                            margin-left: auto;
+                            margin-right: auto;
+                            text-align: center;
+                            width: 96%;
+                        }
+
+                    }
+                </style>
+
                 <div class="col-lg-6 partners-section">
-                    <h2 class="display-4 fw-bold mb-4 bimasakti-title text-center">Our Partners</h2>
-                    <p class="lead mb-3"
-                        style="max-width: 90%; font-size: 16px; text-align: left; margin-left: auto; margin-right: auto;">
-                        RealNET's strategic partnerships
-                        empower us to deliver comprehensive ONE SOLUTION business implementations. By leveraging our
-                        partners' expertise, we provide seamless integration and unparalleled value to our customers
-                        across diverse technological needs.</p>
+                    <h2 class="mb-2 mt-4 glass-text"
+                        style="background: linear-gradient(287deg, #2ecc71, #27ae60, #106617); -webkit-background-clip: text; -webkit-text-fill-color: transparent; font-size: 56px; font-weight: 700; line-height: 1.2;">
+                        Our Partners</h2>
+                    <p class="lead mb-3" style="max-width: 90%; font-size: 16px; line-height: 1.6;">Rhapsody Golf is
+                        deeply committed to
+                        marketing excellence and innovation that will drive our customers' success. To enhance our
+                        solutions and provide real value for our customers, Rhapsody Golf has sought like-minded
+                        partners who deliver nothing but the best of the technology.</p>
                 </div>
                 <div class="col-lg-6  mt-lg-0">
 
@@ -3160,13 +2834,15 @@
 
                     </div>
                     <div class="integration-grid">
-                        <img src="assets/img/realnet/logo/commscope.png" alt="Commscope" class="integration-icon">
-                        <img src="assets/img/realnet/logo/dtc.png" alt="DTC" class="integration-icon">
-                        <img src="assets/img/realnet/logo/ls.png" alt="LS" class="integration-icon">
-                        <div class="centered-icons">
-                            <img src="assets/img/realnet/logo/netviel.png" alt="Netviel" class="integration-icon">
-                            <img src="assets/img/realnet/logo/nexans.png" alt="Nexans" class="integration-icon">
-                        </div>
+                        <img src="../../assets/img/golf/Partners/mirosoft-partner.png" alt="D-Link" class="integration-icon">
+                        <img src="../../assets/img/golf/Partners/cisco.jpg" alt="Cisco" class="integration-icon">
+                        <img src="../../assets/img/golf/Partners/doku.jpg" alt="Doku" class="integration-icon">
+                        <img src="../../assets/img/golf/Partners/symantec.jpg" alt="Symantec" class="integration-icon">
+                        <img src="../../assets/img/golf/Partners/easyrms.jpg" alt="Emerson" class="integration-icon">
+                        <img src="../../assets/img/golf/Partners/engenius.jpg" alt="EnGenius" class="integration-icon">
+                        <img src="../../assets/img/golf/Partners/COMMSCOPE.jpg" alt="CommScope" class="integration-icon">
+                        <img src="../../assets/img/golf/Partners/hp.jpg" alt="HP" class="integration-icon">
+                        <img src="../../assets/img/golf/Partners/siteminder.jpg" alt="SiteMinder" class="integration-icon">
                     </div>
                 </div>
             </div>
@@ -3187,6 +2863,14 @@
             gap: 0.5rem;
             justify-content: center;
             align-items: center;
+            margin: 0 auto !important;
+            justify-items: center;
+            text-align: center;
+        }
+
+        /* Center the last item if it's alone in its row */
+        .integration-grid>*:last-child:nth-child(3n-2) {
+            grid-column: 2;
         }
 
         .integration-icon {
@@ -3198,7 +2882,7 @@
             padding: 1.5rem;
             background-color: #ffffff;
             border-radius: 15px;
-            border: 1px solid rgba(228, 228, 228, 0.774) !important;
+            border: 2px solid rgba(221, 221, 221, 0.753);
         }
 
         .centered-icons {
@@ -3248,7 +2932,7 @@
             }
 
             .bimasakti-title {
-                font-size: 30px !important;
+                font-size: 2rem;
                 text-align: center !important;
             }
 
@@ -3258,7 +2942,6 @@
             }
 
             .integration-grid {
-                grid-template-columns: 1fr;
                 gap: 1rem;
             }
 
@@ -3276,9 +2959,7 @@
         }
 
         @media (max-width: 575px) {
-            .integration-grid {
-                grid-template-columns: 1fr;
-            }
+            .integration-grid {}
 
             .integration-icon,
             .centered-icons .integration-icon {
@@ -3332,18 +3013,8 @@
 
         @media (max-width: 992px) {
             .integration-grid {
-                grid-template-columns: repeat(1, 1fr);
-            }
-
-            .integration-icon {
-                max-width: 150px;
-                margin: 0 auto;
-            }
-        }
-
-        @media (max-width: 768px) {
-            .integration-grid {
-                grid-template-columns: repeat(1, 1fr);
+                grid-template-columns: repeat(2, 1fr);
+                gap: 1.5rem;
             }
 
             .integration-icon {
@@ -3352,17 +3023,51 @@
             }
 
             .centered-icons {
-                grid-column: 1;
-                flex-direction: column;
+                grid-column: 1 / -1;
+                display: flex;
+                justify-content: center;
                 align-items: center;
-                transform: translateX(0);
+                width: 100%;
+                transform: none;
                 left: 0;
             }
+
+            .integration-grid>*:last-child {
+                grid-column: 1 / -1;
+                justify-self: center;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .integration-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 1rem;
+            }
+
+            .integration-icon {
+                max-width: 150px;
+                margin: 0 auto;
+            }
+
+            .centered-icons {
+                grid-column: 1 / -1;
+                flex-direction: column;
+                align-items: center;
+                transform: none;
+                left: 0;
+                width: 100%;
+            }
+
+            .integration-grid>*:last-child {
+                grid-column: 1 / -1;
+                justify-self: center;
+            }
         }
 
         @media (max-width: 576px) {
             .integration-grid {
-                grid-template-columns: repeat(1, 1fr);
+                grid-template-columns: repeat(2, 1fr);
+                gap: 1rem;
             }
 
             .integration-icon {
@@ -3374,229 +3079,24 @@
                 flex-direction: column;
                 align-items: center;
                 margin: 0 auto;
-            }
-        }
-    </style>
-    <section id="wireless-networking" class="py-5">
-        <div class="container-fluid">
-            <div class="row justify-content-center align-items-center">
-                <div class="col-lg-6 order-lg-2">
-                    <div class="row justify-content-center align-items-center">
-                        <h3 class="mb-4 mt-5 bimasakti-title" style="text-align: center;">Hardware & Network Solutions
-                        </h3>
-                        <p class="content-paragraph text-end" style="width: 90%;">At RealNET, our comprehensive hardware
-                            and network solutions cater to businesses
-                            of all sizes, providing robust infrastructure for modern digital environments. We offer a
-                            wide range of products and services
-                            Partnering with industry-leading brands.</p>
-                    </div>
-                </div>
-                <div class="col-lg-6 order-lg-1">
-
-                    <div class="integration-grid">
-                        <img src="assets/img/realnet/logo/aruba.png" alt="Aruba" class="integration-icon">
-                        <img src="assets/img/realnet/logo/apc.png" alt="Cisco" class="integration-icon">
-                        <img src="assets/img/realnet/logo/forcepoint.png" alt="Huawei" class="integration-icon">
-                        <img src="assets/img/realnet/logo/hp_rc.png" alt="Juniper" class="integration-icon">
-                        <img src="assets/img/realnet/logo/fec.png" alt="Ruckus" class="integration-icon">
-                        <img src="assets/img/realnet/logo/hewlett_packard_enterprise_rc.png" alt="Ubiquiti"
-                            class="integration-icon">
-                        <div class="centered-icons">
-                            <img src="assets/img/realnet/logo/ruijie.png" alt="Fortinet" class="integration-icon">
-                            <img src="assets/img/realnet/logo/zkteco-logo.png" alt="Zyxel" class="integration-icon">
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <style>
-        @media (max-width: 991px) {
-            #wireless-networking .order-lg-2 {
-                order: 1;
+                width: 100%;
             }
 
-            #wireless-networking .order-lg-1 {
-                order: 2;
-            }
-
-            #wireless-networking h3,
-            #wireless-networking p {
-                text-align: center !important;
+            .integration-grid>*:last-child {
+                grid-column: 1 / -1;
+                justify-self: center;
             }
         }
     </style>
 
-    <!-- Section: Network Security Solutions -->
-    <section id="network-security" class="py-5">
-        <div class="container-fluid">
-            <div class="row align-items-center">
-                <div class="col-lg-6 description-section">
-                    <h3 class="mb-4 mt-5 bimasakti-title" style="text-align: center">Data Center Solutions</h3>
-                    <p class="lead mb-3" style="max-width: 90%; font-size: 16px;">
-                        At RealNET, we specialize in cutting-edge data center solutions. Our comprehensive services
-                        encompass design, implementation, and management of state-of-the-art data centers. We offer
-                        scalable infrastructure, efficient cooling systems, and advanced power management to ensure
-                        optimal performance and reliability for your mission-critical operations.
-                    </p>
-                </div>
-                <div class="col-lg-6 mt-lg-0">
-
-                    <div class="integration-grid">
-                        <img src="assets/img/realnet/logo/aten_logo.png" alt="Fortinet" class="integration-icon">
-                        <img src="assets/img/realnet/logo/dtc.png" alt="Cisco" class="integration-icon">
-                        <img src="assets/img/realnet/logo/nirax.png" alt="Palo Alto" class="integration-icon">
-                        <div class="centered-icons">
-                            <img src="assets/img/realnet/logo/sealent-indonesia.png" alt="Check Point"
-                                class="integration-icon">
-                            <img src="assets/img/realnet/logo/watchguard-logo.png" alt="Sophos"
-                                class="integration-icon">
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-
-
-    <style>
-        @media (max-width: 768px) {
-            #network-security .description-section {
-                text-align: center;
-                margin-bottom: 2rem;
-            }
-
-            #network-security .description-section h2 {
-                text-align: center !important;
-            }
-
-            #network-security .description-section p {
-                margin-left: auto;
-                margin-right: auto;
-                text-align: center;
-            }
-
-            #network-security .integration-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-        }
-
-        @media (max-width: 576px) {
-            #network-security .integration-grid {
-                grid-template-columns: 1fr;
-            }
-
-            #network-security .integration-icon {
-                max-width: 120px;
-                margin: 0 auto;
-            }
-
-            #network-security .centered-icons {
-                flex-direction: column;
-                align-items: center;
-            }
-        }
-    </style>
-
-
-    <section id="wireless-networking" class="py-5">
-        <div class="container-fluid">
-            <div class="row justify-content-center align-items-center">
-                <div class="col-lg-6 order-lg-2">
-                    <div class="row justify-content-center align-items-center">
-                        <h3 class="mb-4 mt-5 bimasakti-title" style="text-align: center;">License Solutions</h3>
-                        <p class="content-paragraph text-end" style="width: 90%;">At RealNET, we offer comprehensive
-                            licensing solutions to meet the software needs of businesses of all sizes. Our partnerships
-                            with industry-leading brands ensure you have access to the latest and most efficient
-                            software licenses, optimizing your digital infrastructure and ensuring compliance.</p>
-                    </div>
-                </div>
-                <div class="col-lg-6 order-lg-1">
-
-                    <div class="integration-grid">
-                        <div class="centered-icons">
-                            <img src="assets/img/realnet/logo/mirosoft-partner.png" alt="Aruba"
-                                class="integration-icon">
-                        </div>
-                        <img src="assets/img/realnet/logo/trendmicro.png" alt="Cisco" class="integration-icon">
-                        <img src="assets/img/realnet/logo/symantec.png" alt="Huawei" class="integration-icon">
-                        <img src="assets/img/realnet/logo/arcserve.png" alt="Juniper" class="integration-icon">
-                    </div>
-                </div>
-            </div>
-        </div>
-        </div>
-    </section>
-
-    <section id="network-security" class="py-5">
-        <div class="container-fluid">
-            <!-- Section Title and Description -->
-            <div class="row justify-content-center text-center mb-5">
-                <div class="col-lg-8">
-                    <h3 class="mb-4 bimasakti-title">Cloud Infrastructure Solutions</h3>
-                    <p class="content-paragraph">At RealNET, we offer cutting-edge cloud infrastructure solutions to
-                        power
-                        your business. Our scalable and flexible cloud services enable you to optimize operations,
-                        enhance collaboration, and drive innovation while reducing IT costs and complexity.</p>
-                </div>
-            </div>
-
-            <!-- Grid of Partners -->
-
-            <div class="integration-grid mt-4 d-flex justify-content-center">
-                <div class="row justify-content-center">
-                    <div class="col-md-4 col-sm-6 text-center mb-4">
-                        <img src="assets/img/realnet/logo/azure.png" alt="Fortinet" class="integration-icon">
-                    </div>
-                    <div class="col-md-4 col-sm-6 text-center mb-4">
-                        <img src="assets/img/realnet/logo/biznet.png" alt="Palo Alto" class="integration-icon">
-                    </div>
-                    <div class="col-md-4 col-sm-6 text-center mb-4">
-                        <img src="assets/img/realnet/logo/google-partner.png" alt="Check Point"
-                            class="integration-icon">
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <style>
-        #network-security .integration-icon {
-            width: 100%;
-            max-width: 350px;
-            height: auto;
-            object-fit: contain;
-            transition: transform 0.3s ease;
-            padding: 1rem;
-            background-color: #ffffff;
-            border-radius: 10px;
-            border: 1px solid rgba(228, 228, 228, 0.774) !important;
-            margin: 0 auto;
-        }
-
-        @media (max-width: 768px) {
-            #network-security .col-md-4 {
-                flex: 0 0 50%;
-                max-width: 50%;
-            }
-        }
-
-        @media (max-width: 576px) {
-            #network-security .col-md-4 {
-                flex: 0 0 100%;
-                max-width: 100%;
-            }
-        }
-    </style>
-
-
+    <!-- Testimonial -->
     <section class="rt-testimonial-section py-5" style="display: none;">
         <div class="container-fluid">
             <div class="rt-testimonial-container position-relative" style="max-width: 1000px; margin: 0 auto;">
                 <div class="text-center mb-5">
-                    <h1 class="gradient-text bimasakti-title" style="font-weight: bolder; font-size: 48px;">Testimonials
-                    </h1>
+                    <h1 class="gradient-text glass-text"
+                        style="font-weight: bolder; font-size: 48px; background: linear-gradient(287deg, #2ecc71, #27ae60, #106617); background-clip: border-box; -webkit-background-clip: text; -webkit-text-fill-color: transparent;">
+                        Testimonials</h1>
                     <p class="" style="font-weight: bold;">Stay informed and inspired with our testimonials from clients
                         who have experienced our services firsthand.</p>
                 </div>
@@ -3606,7 +3106,7 @@
                         <div class="rt-testimonial-card">
                             <div class="rt-testimonial-inner">
                                 <div class="rt-image-section">
-                                    <img src="assets/img/team/real-3.gif" alt="John Doe">
+                                    <img src="../../assets/img/team/real-3.gif" alt="John Doe">
                                 </div>
                                 <div class="rt-content-section">
                                     <div class="rt-quote-wrapper">
@@ -3625,7 +3125,7 @@
                                             <p class="rt-author-title">CEO, Tech Innovations</p>
                                         </div>
                                         <div class="rt-company-logo">
-                                            <img src="assets/img/logos/azure.png" alt="Tech Innovations Logo">
+                                            <img src="../../assets/img/logos/azure.png" alt="Tech Innovations Logo">
                                         </div>
                                     </div>
                                 </div>
@@ -3636,7 +3136,7 @@
                         <div class="rt-testimonial-card">
                             <div class="rt-testimonial-inner">
                                 <div class="rt-image-section">
-                                    <img src="assets/img/team/avatar2.jpg" alt="Sarah Wilson">
+                                    <img src="../../assets/img/team/avatar2.jpg" alt="Sarah Wilson">
                                 </div>
                                 <div class="rt-content-section">
                                     <div class="rt-quote-wrapper">
@@ -3655,7 +3155,7 @@
                                             <p class="rt-author-title">COO, Growth Dynamics</p>
                                         </div>
                                         <div class="rt-company-logo">
-                                            <img src="assets/img/logos/comms.png" alt="Growth Dynamics Logo">
+                                            <img src="../../assets/img/logos/comms.png" alt="Growth Dynamics Logo">
                                         </div>
                                     </div>
                                 </div>
@@ -3666,7 +3166,7 @@
                         <div class="rt-testimonial-card">
                             <div class="rt-testimonial-inner">
                                 <div class="rt-image-section">
-                                    <img src="assets/img/team/real2.jpg" alt="Mark Thompson">
+                                    <img src="../../assets/img/team/real2.jpg" alt="Mark Thompson">
                                     <div class="play-overlay" onclick="openVideoPopup()">
                                         <div class="play-button">
                                             <i class="fas fa-play"></i>
@@ -3690,7 +3190,7 @@
                                             <p class="rt-author-title">Director, Oracle</p>
                                         </div>
                                         <div class="rt-company-logo">
-                                            <img src="assets/img/logos/oracle.png" alt="Strategic Solutions Logo">
+                                            <img src="../../assets/img/logos/oracle.png" alt="Strategic Solutions Logo">
                                         </div>
                                     </div>
                                 </div>
@@ -4081,6 +3581,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
+            box-shadow: 0 4px 15px rgba(144, 84, 208, 0.2);
             z-index: 2;
         }
 
@@ -4526,22 +4027,24 @@
     </script>
 
     </section>
-<!-- 
-    <section id="separator" class="py-5" style="background-color: #efecff;">
+
+
+    <!-- <section id="separator" class="py-5" style="background-color: #efecff;">
         <div class="container-fluid">
             <div class="row justify-content-between">
                 <div class="col-lg-12">
                     <div class="banner p-5">
                         <div class="banner-content">
-                            <h2>Ready for Enterprise-Grade Connectivity?</h2>
-                            <p>Take the first step toward a faster, more reliable network infrastructure</p>
+                            <h2>Ready to Achieve Outstanding Results?</h2>
+                            <p>Transform your golf course management and deliver exceptional experiences to your members
+                            </p>
                             <button class="btn-custom styled-button-convex"
-                                style=" background: linear-gradient(90deg, #783ea8, #e4ac44);"
-                                onclick="navigateWithLoading('contacts.html'); return false;">
+                                onclick="navigateWithLoading('contacts.html'); return false;"
+                                style="background-color: #35743f; color: white; border-color: #35743f;">
                                 Schedule a Call
                             </button>
                         </div>
-                        <img src="assets/img/handshake.png" alt="Business Handshake" class="banner-image">
+                        <img src="../../assets/img/handshake.png" alt="Business Handshake" class="banner-image">
                     </div>
                 </div>
             </div>
@@ -4552,8 +4055,8 @@
         <div class="container-fluid ">
             <div class="row justify-content-between">
                 <div id="contact-info" class="col-lg-5 left-column >
-
-                    <p class=" text-muted mb-4 contact-text">
+                    
+                    <p class=" text-muted mb-4 contact-text" ;">
                     </p>
 
                     <div class="company-info" style="border-radius: 10px;">
@@ -4613,7 +4116,6 @@
                             }
 
                             .contact-icon {
-                                font-size: 14px;
                                 margin-right: 10px;
                                 margin-top: 3px;
                             }
@@ -4628,7 +4130,7 @@
                                 class="text-decoration-none fw-bold">info@realta.co.id</a>
                         </div>
                         <div class="contact-item">
-                            <img src="/Assets/assets/pngwing.com.png" class="contact-icon"
+                            <img src="../../assets/pngwing.com.png" class="contact-icon"
                                 style="width: 18px; height: 18px;">
                             <p class="mb-0">
                                 For sales and marketing, contact our Official WhatsApp:<br>
@@ -4903,17 +4405,17 @@
                 </div>
                 <div class="col-md-5">
                     <div class="d-flex justify-content-md-end align-items-center mb-3">
-                        <img src="assets/img/footer1.png" alt="Logo 1" class="footer-logo me-3"
+                        <img src="../../assets/img/footer1.png" alt="Logo 1" class="footer-logo me-3"
                             style="max-height: 90px; width: auto;">
-                        <img src="assets/sticker.png" alt="Logo 2" class="footer-logo dark-mode-image"
+                        <img src="../../assets/sticker.png" alt="Logo 2" class="footer-logo dark-mode-image"
                             style="max-height: 90px; width: auto;">
                         <style>
                             .dark-mode-image {
-                                content: url('assets/sticker.png');
+                                content: url('../../assets/sticker.png');
                             }
 
                             body.dark-mode .dark-mode-image {
-                                content: url('assets/img/footer2.png');
+                                content: url('../../assets/img/footer2.png');
                             }
                         </style>
                     </div>
@@ -4953,7 +4455,7 @@
                     <div class="col-md-5 text-left mb-3">
                         <h3 class="realta-icare-icon-title fs-5">Customer Support</h3>
                         <a href="https://icare.cloud.co.id/HEAT" target="_blank">
-                            <img src="assets/img/icare-customer.png" alt="Customer Support"
+                            <img src="../../assets/img/icare-customer.png" alt="Customer Support"
                                 class="realta-icare-modal-icon img-fluid">
                         </a>
                     </div>
@@ -4962,7 +4464,7 @@
                         <h3 class="realta-icare-icon-title fs-5">Product Manual</h3>
                         <a href="https://realta.co.id/site/pdf/Manual%20Guide%20Aplikasi%20iCARE-Customer%20Self%20Service(1.0).pdf"
                             target="_blank">
-                            <img src="assets/img/icare-manual.png" alt="Product Manual"
+                            <img src="../../assets/img/icare-manual.png" alt="Product Manual"
                                 class="realta-icare-modal-icon img-fluid">
                         </a>
                     </div>
@@ -5116,49 +4618,10 @@
             parallax.style.transform = 'translateY(' + (scrolled * 0.4) + 'px)';
         });
     </script>
-    <script src="assets/js/navbar.js"></script>
-    <script src="assets/js/mobilenav.js"></script>
+    <script src="../../assets/js/navbar.js"></script>
+    <script src="../../assets/js/mobilenav.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
-    <!-- <script>
-        // Slide in sections on scroll
-        document.addEventListener('DOMContentLoaded', function () {
-            const sections = document.querySelectorAll('section');
-
-            const slideInSection = (entries, observer) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('slide-in');
-                        observer.unobserve(entry.target);
-                    }
-                });
-            };
-
-            const sectionObserver = new IntersectionObserver(slideInSection, {
-                root: null,
-                threshold: 0.1
-            });
-
-            sections.forEach(section => {
-                section.classList.add('slide-out');
-                sectionObserver.observe(section);
-            });
-        });
-    </script> -->
-
-    <style>
-        /* Slide in/out styles */
-        .slide-out {
-            opacity: 0;
-            transform: translateX(-100px);
-            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-        }
-
-        .slide-in {
-            opacity: 1;
-            transform: translateX(0);
-        }
-    </style>
-
+    <script src="../../assets/js/contact-valid-micro.js" data-service-type="Golf Course System"></script>
 
 
 

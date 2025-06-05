@@ -1,7 +1,4 @@
 {
-<<<<<<< HEAD
-    "livePreview.defaultPreviewPath": "/blog.html"
-=======
+    "livePreview.defaultPreviewPath": "/blog.html",
     "liveServer.settings.port": 5502
->>>>>>> 61941b9ae30493a0ac433f63d6dc780f2068cab2
 }
