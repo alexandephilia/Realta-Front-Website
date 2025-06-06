@@ -1,3 +1,4 @@
+const BASE_PATH = window.location.pathname.includes("/micro/") ? "../.." : ".";
 function handleDropdown(dropdownId, contentId) {
     const dropdown = document.getElementById(dropdownId);
     const megaDropdown = document.getElementById(contentId);
@@ -430,7 +431,7 @@ function handleCategories(containerSelector, detailsId, content) {
 handleDropdown('solutionsDropdown', 'solutionsDropdownContent');
 handleCategories('#solutionsDropdownContent', 'product-details', {
       eam: `
-        <div class="product-banner" style="background-image: url('assets/img/eam.jpg');" onclick="navigateWithLoading('micro/erp/');">                
+        <div class="product-banner" style="background-image: url('${BASE_PATH}/assets/img/eam.jpg');" onclick="navigateWithLoading('${BASE_PATH}/micro/erp/');">
             <div class="glare"></div>
             <div class="product-banner-content">
                 <h2 class="product-title">EAM & ERP</h2>
@@ -455,10 +456,10 @@ handleCategories('#solutionsDropdownContent', 'product-details', {
         </div>
     `,
     hrs: `
-    <div class="product-banner" style="background-image: url('assets/img/hr.jpg');" onclick="navigateWithLoading('micro/hr/')">                
+    <div class="product-banner" style="background-image: url('${BASE_PATH}/assets/img/hr.jpg');" onclick="navigateWithLoading('${BASE_PATH}/micro/hr/')">
         <div class="glare"></div>
         <div class="product-banner-content">
-                <img src="assets/img/probes3.png" class="product-title" style="width: 130px;">
+                <img src="${BASE_PATH}/assets/img/probes3.png" class="product-title" style="width: 130px;">
             <p class="product-banner-description"><b>Human Resource Information System</b></p>
             <p class="product-banner-description">To Effectively Manage Human Resource</p>
 
@@ -532,10 +533,10 @@ handleCategories('#solutionsDropdownContent', 'product-details', {
     </div>
 `,
 pts: `
-<div class="product-banner" style="background-image: url('assets/img/property.jpg');" onclick="navigateWithLoading('micro/bimasakti/');">                
+<div class="product-banner" style="background-image: url('${BASE_PATH}/assets/img/property.jpg');" onclick="navigateWithLoading('${BASE_PATH}/micro/bimasakti/');">
     <div class="glare"></div>
     <div class="product-banner-content">
-        <img src="assets/img/probes4.png" class="product-title" style="width: 160px;">
+        <img src="${BASE_PATH}/assets/img/probes4.png" class="product-title" style="width: 160px;">
         <p class="product-banner-description"><b>Property and Tenancy Management System</b></p>
          <p class="product-banner-description" style="margin-top: -6px;">Design specifically to help today's Building Management work more efficiently and effectively</p>
     </div>
@@ -751,10 +752,10 @@ pts: `
 </div>
 `,
     gcs: `
-        <div class="product-banner" style="background-image: url('assets/img/gold.jpg');" onclick="navigateWithLoading('micro/golf/');">                
+        <div class="product-banner" style="background-image: url('${BASE_PATH}/assets/img/gold.jpg');" onclick="navigateWithLoading('${BASE_PATH}/micro/golf/');">
             <div class="glare"></div>
             <div class="product-banner-content">
-                <img src="assets/img/golf.png" class="product-title" style="width: 120px;">
+                <img src="${BASE_PATH}/assets/img/golf.png" class="product-title" style="width: 120px;">
                 <p class="product-banner-description" style="margin-top: -6px;"><b>Golf Course Management System</b></p>
                 <p class="product-banner-description" style="margin-top: -6px;">Supporting The Golfer's Journey On and Off The Course</p>
             </div>
@@ -867,10 +868,10 @@ pts: `
     `,
 
     hms: `
-        <div class="product-banner" style="background-image: url('assets/img/hotel.jpg');" onclick="navigateWithLoading('micro/rhapsody/');">                
+        <div class="product-banner" style="background-image: url('${BASE_PATH}/assets/img/hotel.jpg');" onclick="navigateWithLoading('${BASE_PATH}/micro/rhapsody/');">
             <div class="glare"></div>
             <div class="product-banner-content">
-                <img src="assets/img/probes1.png" class="product-title" style="width: 160px;">
+                <img src="${BASE_PATH}/assets/img/probes1.png" class="product-title" style="width: 160px;">
                 <p class="product-banner-description"><b>Hotel Management System</b></p>
                    <p class = "product-banner-description"
                    style = "margin-top: -6px;"> To Orchestrate Your Entire Hotel Operation </p>
@@ -1003,10 +1004,10 @@ pts: `
     `,
    
     itm: `
-        <div class="product-banner" style="background-image: url('assets/img/it-management.jpg');" onclick="navigateWithLoading('micro/itsm/')">                
+        <div class="product-banner" style="background-image: url('${BASE_PATH}/assets/img/it-management.jpg');" onclick="navigateWithLoading('${BASE_PATH}/micro/itsm/')">
             <div class="glare"></div>
             <div class="product-banner-content">
-                <img src="assets/img/probes5.png" class="product-title" style="width: 160px;">
+                <img src="${BASE_PATH}/assets/img/probes5.png" class="product-title" style="width: 160px;">
                 <p class="product-banner-description"><b>ITSM, ITAM & Unified Endpoint Management</b></p>
             </div>
         </div>
@@ -1027,10 +1028,10 @@ pts: `
         </div>
     `,
     erp: `
-        <div class="product-banner" style="background-image: url('assets/img/erp.jpg');" onclick="navigateWithLoading('micro/realnet/')">
+        <div class="product-banner" style="background-image: url('${BASE_PATH}/assets/img/erp.jpg');" onclick="navigateWithLoading('${BASE_PATH}/micro/realnet/')">
             <div class="glare"></div>
             <div class="product-banner-content">
-                <img src="assets/img/RealNET.png" class="product-title" style="width: 160px;">
+                <img src="${BASE_PATH}/assets/img/RealNET.png" class="product-title" style="width: 160px;">
                 <p class="product-banner-description"><b>Network & System Integration</b></p>
                 <p class="product-banner-description" style="margin-top: -6px;">One Solution concept, a strategic approach that skillfully blends various IT elements into a streamlined and efficient framework that is precisely tailored to each client's specific needs.</p>
             </div>
@@ -1056,7 +1057,7 @@ pts: `
 handleDropdown('industriDropdown', 'industriDropdownContent');
 handleCategories('#industriDropdownContent', 'industri-details', {
     hospitality: `
-        <div class="product-banner" style="background-image: url('assets/img/hospitality.jpg');" onclick="navigateWithLoading('hospitality.html');">   
+        <div class="product-banner" style="background-image: url('${BASE_PATH}/assets/img/hospitality.jpg');" onclick="navigateWithLoading('${BASE_PATH}/hospitality.html');">
             <div class="glare"></div>
             <div class="product-banner-content">
                 <h2 class="product-title">Hospitality Solutions</h2>
@@ -1080,10 +1081,10 @@ handleCategories('#industriDropdownContent', 'industri-details', {
         </div>
     `,
     property: `
-        <div class="product-banner" style="background-image: url('assets/img/property.jpg');">   
+        <div class="product-banner" style="background-image: url('${BASE_PATH}/assets/img/property.jpg');">
             <div class="glare"></div>
             <div class="product-banner-content">
-                <img src="assets/img/probes4.png" class="product-title" style="width: 160px;">
+                <img src="${BASE_PATH}/assets/img/probes4.png" class="product-title" style="width: 160px;">
                 <p class="product-banner-description"><b>Property Management Solutions</b></p>
                
             </div>
@@ -1105,7 +1106,7 @@ handleCategories('#industriDropdownContent', 'industri-details', {
         </div>
     `,
     manufacturing: `
-        <div class="product-banner" style="background-image: url('assets/img/manu.jpg');">   
+        <div class="product-banner" style="background-image: url('${BASE_PATH}/assets/img/manu.jpg');">
             <div class="glare"></div>
             <div class="product-banner-content">
                 <h2 class="product-title">Manufacturing Solutions</h2>
@@ -1129,7 +1130,7 @@ handleCategories('#industriDropdownContent', 'industri-details', {
         </div>
     `,
     fsi: `
-        <div class="product-banner" style="background-image: url('assets/img/fsi.jpg');">   
+        <div class="product-banner" style="background-image: url('${BASE_PATH}/assets/img/fsi.jpg');">
             <div class="glare"></div>
             <div class="product-banner-content">
                 <h2 class="product-title">Financial Services Solutions</h2>
@@ -1158,7 +1159,7 @@ handleCategories('#industriDropdownContent', 'industri-details', {
 handleDropdown('partnerDropdown', 'partnerDropdownContent');
 handleCategories('#partnerDropdownContent', 'partner-details', {
     reseller: `
-        <div class="product-banner" style="background-image: url('assets/img/partnership.jpg');">   
+        <div class="product-banner" style="background-image: url('${BASE_PATH}/assets/img/partnership.jpg');">
             <div class="glare"></div>
             <div class="product-banner-content">
                 <h2 class="product-title">Reseller Program</h2>
@@ -1182,7 +1183,7 @@ handleCategories('#partnerDropdownContent', 'partner-details', {
         </div>
     `,
     technology: `
-        <div class="product-banner" style="background-image: url('assets/img/technology-partners.jpg');">   
+        <div class="product-banner" style="background-image: url('${BASE_PATH}/assets/img/technology-partners.jpg');">
             <div class="glare"></div>
             <div class="product-banner-content">
                 <h2 class="product-title">Technology Partners</h2>
@@ -1211,7 +1212,7 @@ handleCategories('#partnerDropdownContent', 'partner-details', {
 handleDropdown('contactDropdown', 'contactDropdownContent');
 handleCategories('#contactDropdownContent', 'contact-details', {
     business: `
-        <div class="product-banner" style="background-image: url('assets/img/consult.png');">   
+        <div class="product-banner" style="background-image: url('${BASE_PATH}/assets/img/consult.png');">
             <div class="glare"></div>
             <div class="product-banner-content">
                 <h2 class="product-title">Business Consultation</h2>
@@ -1235,7 +1236,7 @@ handleCategories('#contactDropdownContent', 'contact-details', {
         </div>
     `,
     technical: `
-        <div class="product-banner" style="background-image: url('assets/img/technical-support.jpg');">   
+        <div class="product-banner" style="background-image: url('${BASE_PATH}/assets/img/technical-support.jpg');">
             <div class="glare"></div>
             <div class="product-banner-content">
                 <h2 class="product-title">Technical Support</h2>
@@ -1264,7 +1265,7 @@ handleCategories('#contactDropdownContent', 'contact-details', {
 handleDropdown('tentangRealtaDropdown', 'tentangRealtaDropdownContent');
 handleCategories('#tentangRealtaDropdownContent', 'tentangRealta-details', {
     about: `
-    <div class="product-banner" style="background-image: url('assets/img/tentang.jpg');" onclick="navigateWithLoading('about.html');">   
+    <div class="product-banner" style="background-image: url('${BASE_PATH}/assets/img/tentang.jpg');" onclick="navigateWithLoading('${BASE_PATH}/about.html');">
             <div class="glare"></div>
             <div class="product-banner-content">
                 <h2 class="product-title">About Realta</h2>
@@ -1294,7 +1295,7 @@ handleCategories('#tentangRealtaDropdownContent', 'tentangRealta-details', {
 handleDropdown('careerDropdown', 'careerDropdownContent');
 handleCategories('#careerDropdownContent', 'career-details', {
     openings: `
-         <div class="product-banner" style="background-image: url('assets/img/career.png');" onclick="navigateWithLoading('career.html');">       
+         <div class="product-banner" style="background-image: url('${BASE_PATH}/assets/img/career.png');" onclick="navigateWithLoading('${BASE_PATH}/career.html');">
             <div class="glare"></div>
             <div class="product-banner-content">
                 <h2 class="product-title">Careers at Realta</h2>
@@ -1318,7 +1319,7 @@ handleCategories('#careerDropdownContent', 'career-details', {
         </div>
     `,
     internships: `
-        <div class="product-banner" style="background-image: url('assets/img/internships.jpg');" onclick="navigateWithLoading('internships.html');">   
+        <div class="product-banner" style="background-image: url('${BASE_PATH}/assets/img/internships.jpg');" onclick="navigateWithLoading('${BASE_PATH}/internships.html');">
             <div class="glare"></div>
             <div class="product-banner-content">
                 <h2 class="product-title">Internship Programs</h2>
@@ -1342,7 +1343,7 @@ handleCategories('#careerDropdownContent', 'career-details', {
         </div>
     `,
     culture: `
-        <div class="product-banner" style="background-image: url('assets/img/company-culture.jpg');" onclick="navigateWithLoading('company-culture.html');">   
+        <div class="product-banner" style="background-image: url('${BASE_PATH}/assets/img/company-culture.jpg');" onclick="navigateWithLoading('${BASE_PATH}/company-culture.html');">
             <div class="glare"></div>
             <div class="product-banner-content">
                 <h2 class="product-title">Company Culture</h2>
