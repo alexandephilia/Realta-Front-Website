@@ -1,0 +1,386 @@
+/* 
+
+.search-container {
+    position: relative;
+    margin-bottom: 1.5rem;
+}
+
+.search-container input {
+    padding-right: 40px;
+}
+
+.btn-search {
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    border: none;
+    background: none;
+    color: #9054d0;
+    padding: 0.375rem 0.75rem;
+} */
+
+.sidebar-menu {
+    padding: 15px;
+    margin-top: 1.5rem;
+    background-color: var(--background-color);
+    width: 100%;
+}
+
+.product-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.offcanvas.offcanvas-end {
+    width: 100%;
+    z-index: 10000; /* Increased z-index */
+}
+
+.product-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, border-left-color 0.3s ease;
+    font-weight: bold;
+    color: var(--text-color);
+    border-left: 3px solid transparent;
+    position: relative;
+    font-size: 1.4rem;
+}
+
+.product-header:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-left-color: #9054d0;
+}
+
+.arrow-icon {
+    position: absolute;
+    right: -3px;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: transform 0.3s ease;
+    font-size: 1.1rem; /* Adjusted size for smaller chevron */
+}
+
+.product-header[aria-expanded="true"] .arrow-icon {
+    transform: translateY(-50%);
+}
+
+.product-submenu {
+    padding: 15px;
+    background-color: var(--background-color);
+    transition: max-height 0.3s ease-out, opacity 0.3s ease-out;
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    margin-left: 20px;
+}
+
+.product-submenu.show {
+    max-height: 1000px; /* Adjust this value based on your content */
+    opacity: 1;
+}
+
+.product-submenu p {
+    font-size: 0.9rem;
+    margin-bottom: 10px;
+}
+
+.discover-link {
+    color: #9054d0;
+    text-decoration: none;
+    font-size: 0.9rem;
+    display: inline-block;
+    margin-bottom: 15px;
+    transition: color 0.3s ease;
+    display: inline-block;
+    margin: 0.5rem 0 1rem;
+}
+
+.discover-link:hover {
+    color: #7041a8;
+    text-decoration: underline;
+}
+
+.modules-list {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.modules-list li {
+    margin-bottom: 15px;
+    padding: 10px;
+    transition: background-color 0.3s ease, border-left-color 0.3s ease;
+    margin-bottom: 0.75rem;
+    border-left: 3px solid transparent;
+}
+
+.modules-list li:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-left-color: #9054d0;
+}
+
+.modules-list strong {
+    display: block;
+    font-size: 0.9rem;
+    margin-bottom: 2px;
+}
+
+.modules-list span {
+    display: block;
+    font-size: 0.8rem;
+    color: var(--text-color);
+}
+
+.all-products {
+    display: block;
+    margin-top: 15px;
+    padding: 15px 10px;
+    color: #9054d0;
+    text-decoration: none;
+    transition: color 0.3s ease, background-color 0.3s ease, border-left-color 0.3s ease;
+    display: inline-block;
+    margin-top: 1rem;
+    width: 100%;
+    border-left: 3px solid transparent;
+}
+
+.all-products:hover {
+    color: #7041a8;
+    text-decoration: underline;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-left-color: #9054d0;
+}
+
+.offcanvas {
+    width: 100%; /* Change from 320px to 100% */
+    border-left: none; /* Remove the left border */
+    border-bottom-left-radius: 15px;
+    border-top-left-radius: 15px;
+    z-index: 10000; /* Increased z-index */
+}
+
+.offcanvas-body {
+    padding: 1.5rem;
+}
+
+.offcanvas-header {
+    position: relative;
+    background-image: url('../img/bg-2.avif') !important;
+    background-size: cover !important;
+    background-position: center;
+    border-top-left-radius: 10px;
+    color: #ffffff;
+    padding-bottom: 0.2rem;
+}
+
+.offcanvas-header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(144, 84, 208, 0.6); /* Adjust opacity as needed */
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px); /* For Safari support */
+    z-index: 1;
+}
+
+.offcanvas-header > * {
+    position: relative;
+    z-index: 2;
+}
+
+.offcanvas-title {
+    font-weight: bold;
+}
+
+.offcanvas-backdrop {
+    display: none;
+}
+
+@media (max-width: 991.98px) {
+    .offcanvas-backdrop {
+        display: block;
+        backdrop-filter: blur(10px);
+        background-color: rgba(135, 135, 135, 0.5);
+        pointer-events: none;
+        z-index: 9999; /* Increased z-index */
+    }
+
+    .offcanvas-backdrop.show {
+        pointer-events: auto;
+    }
+}
+
+/* Add these new styles */
+body.offcanvas-open {
+    overflow: hidden;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+}
+
+.btn-close {
+    filter: brightness(0) invert(1);
+    transform: translateY(-10px) translateX(-10px); /* Move further to the top and to the right */
+    font-size: 1.5rem; /* Increase the size */
+    padding: 0.5rem; /* Add some padding to make the clickable area larger */
+}
+
+/* Desktop styles */
+@media (min-width: 992px) {
+    .navbar-collapse {
+        display: flex !important;
+        flex-grow: 1;
+        justify-content: center;
+    }
+    .navbar-nav {
+        margin-right: 0;
+    }
+    .navbar-toggler {
+        display: none;
+    }
+}
+
+/* Mobile styles */
+@media (max-width: 991.98px) {
+    .navbar-collapse {
+        display: none !important;
+    }
+    .navbar-toggler {
+        display: block;
+    }
+}
+
+.sidebar-item {
+    border-bottom: 1px solid rgba(224, 224, 224, 0.5);
+}
+
+.sidebar-item:last-child {
+    border-bottom: none;
+}
+
+.get-started-container {
+    padding: 15px;
+    margin-top: 20px;
+}
+
+.btn-danger {
+    background-color: #9054d0;
+    border-color: #9054d0;
+    width: 100%;
+    padding: 10px;
+    font-weight: bold;
+}
+
+.btn-danger:hover {
+    background-color: #7041a8;
+    border-color: #63329c;
+}
+
+.submenu-list {
+    list-style-type: none;
+    padding-left: 15px;
+    margin-bottom: 0;
+}
+
+.submenu-list li {
+    margin-bottom: 10px;
+}
+
+.submenu-list a {
+    color: var(--text-color);
+    text-decoration: none;
+    transition: color 0.1s ease;
+    display: block;
+    padding: 5px 0;
+}
+
+.submenu-list a:hover {
+    color: #9054d0;
+}
+
+.modules-heading {
+    font-size: 0.8rem !important; /* Adjust this value as needed */
+    margin-top: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+/* Update these styles in your existing CSS */
+.collapse {
+    transition: all 0.1s ease-out;
+}
+
+.arrow-icon {
+    transition: transform 0.1s ease; /* Reduced for quicker feedback */
+}
+
+.arrow-icon.fa-chevron-down {
+    transform: rotate(90deg);
+}
+
+
+/* Dark mode styles for mobile nav */
+body.dark-mode #sidebar {
+    background-color: #261a3c;
+    color: #f0f0f0;
+}
+
+body.dark-mode .sidebar-menu {
+    background-color: #261a3c;
+}
+
+body.dark-mode .sidebar-item h2,
+body.dark-mode .product-header {
+    color: #ffffff;
+}
+
+body.dark-mode .submenu-list a {
+    color: #d0d0d0;
+}
+
+body.dark-mode .submenu-list a:hover {
+    color: #9054d0;
+}
+
+body.dark-mode .modules-heading {
+    color: #b0b0b0;
+}
+
+body.dark-mode .btn-danger {
+    background-color: #8a2c96;
+    border-color: #8a2c96;
+}
+
+body.dark-mode .btn-danger:hover {
+    background-color: #a742b3;
+    border-color: #a742b3;
+}
+
+body.dark-mode .arrow-icon {
+    color: #ffffff;
+}
+
+body.dark-mode .get-started-container .btn-success {
+    background-color: #2e7d32;
+    border-color: #2e7d32;
+}
+
+body.dark-mode .get-started-container .btn-success:hover {
+    background-color: #388e3c;
+    border-color: #388e3c;
+}
+
+body.dark-mode .offcanvas-header .btn-close {
+    filter: invert(1);
+}
+
+body.dark-mode .product-submenu.show {
+    background-color: #261a3c;
+}
