@@ -580,11 +580,46 @@ const cardContents = {
         </style>
         <div class="hospitality-grid">
             <h2 class="card-title fw-bold mb-3 title">Hospitality Solutions</h2>
-            <p class="card-text mb-3 description">Comprehensive solutions for managing multi-brand properties, enhancing guest experiences, and optimizing hotel operations with seamless integration and automation.</p>
-            <div class="button-wrapper">
+            
+            <style>
+                .hospitality-image-container img {
+                    max-height: 180px;
+                    width: auto;
+                    object-fit: contain;
+                    margin: 0 auto;
+                }
+                @media (max-width: 768px) {
+                    .hospitality-image-container img {
+                        max-height: 150px;
+                    }
+                }
+            </style>
+            
+            <div class="row justify-content-center">
+                <!-- First Image and Description -->
+                <div class="col-md-6 mb-4">
+                    <div class="hospitality-image-container text-center">
+                        <img src="assets/img/probes1.png" alt="Rhapsody Hotel Management System" class="img-fluid rounded mb-3">
+                        <h4>Rhapsody Hotel Management System</h4>
+                        <p class="card-text">Ensure on-time hotel opening and improve guest satisfaction through synergy between technology and services in the hotel.</p>
+                    </div>
+                </div>
+                
+                <!-- Second Image and Description -->
+                <div class="col-md-6 mb-4">
+                    <div class="hospitality-image-container text-center">
+                        <img src="assets/img/probes2.png" alt="Golf Course Management System" class="img-fluid rounded mb-3">
+                        <h4>Golf Course Management System</h4>
+                        <p class="card-text">Provide seamless and high quality experience for club members and guest players through technology driven operation: from bag-drop to check-out.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="button-wrapper text-center mt-3">
                 <a href="#" class="hospitality-btn btn-sm styled-button-convex">Learn More</a>
             </div>
-            <div class="properties">
+            
+            <div class="properties" style="display: none;">
                 <div class="hospitality-item business-clarity">
                     <h3><i class="fas fa-hotel"></i> Hotel Management System</h3>
                     <ul>
@@ -830,85 +865,46 @@ const cardContents = {
     }
     </style>
     <div class="manufacturing-grid">
-        <h2 class="card-title fw-bold mb-3 title">Human Resource System</h2>
-        <p class="card-text mb-3 description">Comprehensive HR solution to streamline workforce management, automate processes, and optimize employee performance. Our integrated platform offers advanced tools for every aspect of human resource management.</p>
-        <div class="button-wrapper">
+        <h2 class="card-title fw-bold mb-3 title">Manufacturing Solutions</h2>
+        
+        <style>
+            .manufacturing-image-container img, .hospitality-image-container img {
+                max-height: 180px;
+                width: auto;
+                object-fit: contain;
+                margin: 0 auto;
+            }
+            @media (max-width: 768px) {
+                .manufacturing-image-container img, .hospitality-image-container img {
+                    max-height: 150px;
+                }
+            }
+        </style>
+        
+        <div class="row justify-content-center">
+            <!-- First Image and Description -->
+            <div class="col-md-6 mb-4">
+                <div class="manufacturing-image-container text-center">
+                    <img src="assets/img/probes3.png" alt="SIAP+p Human Resource Information System" class="img-fluid rounded mb-3">
+                    <h4>SIAP<sup>+p</sup> Human Resource Information System</h4>
+                    <p class="card-text">Empower your HR to accurately manage processes from recruitment to retirement and maintain compliance with tax and labor regulations.</p>
+                </div>
+            </div>
+            
+            <!-- Second Image and Description -->
+            <div class="col-md-6 mb-4" style="display: none;">
+                <div class="manufacturing-image-container text-center">
+                    <img src="assets/img/manufacturing2.jpg" alt="Manufacturing Solution 2" class="img-fluid rounded mb-3">
+                    <h4>Smart Factory Integration</h4>
+                    <p class="card-text">Transform your factory with IoT-enabled smart manufacturing solutions. Connect your equipment, monitor performance, and make data-driven decisions.</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="button-wrapper text-center mt-3">
             <a href="#" class="manufacturing-btn btn-sm styled-button-convex">Learn More</a>
         </div>
-        <div class="solutions">
-            <div class="manufacturing-item production">
-                <h3><i class="fas fa-clock"></i> Attendance</h3>
-                <ul>
-                    <li>Time and Attendance</li>
-                    <li>Overtime Management</li>
-                    <li>Leave Management</li>
-                    <li>Attendance Machine Interface</li>
-                </ul>
-            </div>
-            <div class="manufacturing-item supply-chain">
-                <h3><i class="fas fa-money-bill"></i> Payroll</h3>
-                <ul>
-                    <li>Multi Salary Group</li>
-                    <li>e-Pay Slip</li>
-                    <li>BPJS Calculation</li>
-                    <li>PPh21 Gross, -Up, Mixed</li>
-                </ul>
-            </div>
-            <div class="manufacturing-item quality-control">
-                <h3><i class="fas fa-chart-bar"></i> Performance Appraisal</h3>
-                <ul>
-                    <li>Competency Based</li>
-                    <li>Bell Curve Analysis</li>
-                    <li>Digital Distribution Evaluation</li>
-                    <li>Evaluation Report</li>
-                </ul>
-            </div>
-            <div class="manufacturing-item analytics">
-                <h3><i class="fas fa-user-tie"></i> Recruitment</h3>
-                <ul>
-                    <li>Filter Candidate</li>
-                    <li>Test Planner</li>
-                    <li>Applicant Status Inquiry</li>
-                    <li>i-Recruitment</li>
-                </ul>
-            </div>
-            <div class="manufacturing-item lean">
-                <h3><i class="fas fa-graduation-cap"></i> Training</h3>
-                <ul>
-                    <li>Training Analysis</li>
-                    <li>Evaluation and Feedback</li>
-                    <li>Training Effectiveness</li>
-                    <li>Interface to Personnel</li>
-                </ul>
-            </div>
-            <div class="manufacturing-item automation">
-                <h3><i class="fas fa-medkit"></i> Medical</h3>
-                <ul>
-                    <li>Multi Limit Process</li>
-                    <li>Excess Claim Control</li>
-                    <li>Multi Medical Item</li>
-                    <li>Integrate With Payroll & Loan Process</li>
-                </ul>
-            </div>
-            <div class="manufacturing-item compliance">
-                <h3><i class="fas fa-user-cog"></i> Employee Self Service</h3>
-                <ul>
-                    <li>Attendance Mobile</li>
-                    <li>Team Monitoring</li>
-                    <li>Leave Request and Approval</li>
-                    <li>Medical Claim</li>
-                </ul>
-            </div>
-            <div class="manufacturing-item sustainability">
-                <h3><i class="fas fa-check-circle"></i> Quality Assurance</h3>
-                <ul>
-                    <li>ISO Document Control</li>
-                    <li>Audit Process</li>
-                    <li>Audit Control</li>
-                    <li>Audit Report</li>
-                </ul>
-            </div>
-            <div class="manufacturing-item workforce">
+            <div class="manufacturing-item workforce" style="display: none;">
                 <h3><i class="fas fa-chart-pie"></i> Human Capital Analysis</h3>
                 <ul>
                     <li>HR Dashboard</li>
@@ -916,7 +912,7 @@ const cardContents = {
                     <li>Cost Visualization</li>
                 </ul>
             </div>
-            <div class="manufacturing-item customization">
+            <div class="manufacturing-item customization" style="display: none;">
                 <h3><i class="fas fa-hand-holding-usd"></i> Loan</h3>
                 <ul>
                     <li>Loan Scheduling Process</li>
@@ -925,7 +921,7 @@ const cardContents = {
                     <li>Multi Loan Item</li>
                 </ul>
             </div>
-            <div class="manufacturing-item traceability">
+            <div class="manufacturing-item traceability" style="display: none;"ß>
                 <h3><i class="fas fa-users-cog"></i> Personnel</h3>
                 <ul>
                     <li>Comprehensive Employee Profile</li>
@@ -934,7 +930,7 @@ const cardContents = {
                     <li>Search and Match</li>
                 </ul>
             </div>
-            <div class="manufacturing-item integration">
+            <div class="manufacturing-item integration" style="display: none;">
                 <h3><i class="fas fa-tasks"></i> Job Competency</h3>
                 <ul>
                     <li>Benchmark</li>
@@ -1475,9 +1471,9 @@ const sectionStyles = {
         buttonColor: '#9054d0'
     },
     manufacturing: {
-        borderColor: '#0000FF',
-        gradientColor: '#0000FF',
-        buttonColor: '#0000FF'
+        borderColor: '#ff69b4',
+        gradientColor: '#ff69b4',
+        buttonColor: '#ff69b4'
     },
     property: {
         borderColor: '#00008B',
