@@ -2,150 +2,81 @@
 const mainBlogPosts = [
   {
     id: 1,
-    title: "Microsoft Drops From OpenAI's Boards",
-    image: "assets/img/news/new7.png",
-    imageAlt: "assets/img/news/computer.fcd1bd54.svg",
-    date: "Wednesday, 10 April 2024 09:15",
-    category: "Technology",
-    lead: `Microsoft has relinquished its observer seat on OpenAI's board amid growing antitrust scrutiny, with Apple also opting out of a similar position, as reported by the Financial Times, Bloomberg, and others. This move reflects the tech giants' efforts to address regulatory concerns about their influence in the AI sector, 
-              <br> <br> Antitrust authorities in the US, UK, and EU have been closely examining Microsoft's substantial investment in OpenAI, raising concerns about potential control over the AI startup.`,
-    features: [
-      "Enhanced Siri Integration for Comprehensive Voice Command Control",
-      "Sophisticated Smart Home Device Management and Automation",
-      "Advanced AI Algorithms for Personalized Learning and Adaptation to User Preferences",
-      "Seamless Integration with Existing Apple Ecosystem for a Unified User Experience"
-    ],
-    challenges: [
-      "Privacy and data security in the home",
-      "Balancing functionality with aesthetics",
-      "Ensuring seamless integration with existing Apple devices",
-      "Pricing strategy for mass market adoption"
-    ],
-    additionalParagraph: "This move by Apple represents a significant shift in their product strategy. While the company has long been a leader in personal computing and mobile devices, entering the home robotics market puts them in direct competition with established players like iRobot and emerging startups in the field. The potential for Apple to leverage its existing ecosystem and AI capabilities could give it a unique advantage in this space.",
+    title: "Realta Top Digital Awards 2021",
+    image: "assets/img/news/news1.jpg",
+    imageAlt: "Realta Top Digital Awards 2021",
+    date: "February 8, 2022",
+    category: "Digital Transformation",
+    lead: `Pandemi Covid-19 yang melanda seluruh dunia secara tidak langsung telah mempercepat perkembangan tranformasi digital. Di mana upaya untuk terus bertahan bagi para pelaku usaha selama masa pandemi adalah dengan terus berinovasi dan melakukan adaptasi.`,
+    content: `<p>Hal inilah yang turut dilakukan oleh PT Realta Cakradharma selama masa pandemi Covid-19. Realta terus berusaha untuk bertahan dengan menjalankan operasional bisnisnya secara lebih baik dan terus melakukan inovasi terhadap kebutuhan-kebutuhan bisnis di masa pandemi.</p>
 
-    conclusion: "If Apple succeeds in bringing home robots to market, it could transform daily life for millions. From managing smart home devices to providing companionship, these robots could become an integral part of the modern household.",
+<p>Atas dedikasi PT Realta Cakradharma (Realta) dalam melakukan inovasi selama masa pandemi Covid-19 ini, Realta mendapatkan apresiasi dari ajang Top Digital Awards 2021 menjadi salah satu dari 50 pemenang pada kategori Top Digital Implementation 2021 on Business Solution Sector #Level Stars 4 dan Top Leader on Digital Implementation 2021.</p>
+
+<h3>Penghargaan Bergengsi</h3>
+<ul>
+  <li>Top Digital Implementation 2021 on Business Solution Sector #Level Stars 4</li>
+  <li>Top Leader on Digital Implementation 2021</li>
+  <li>Penghargaan Tertinggi di bidang Teknologi Digital di Indonesia</li>
+  <li>IT Maturity Level 4: Quantitatively Managed</li>
+</ul>
+
+<h3>Tantangan yang Dihadapi</h3>
+<ul>
+  <li>Adaptasi terhadap kondisi pandemi</li>
+  <li>Implementasi sistem kerja hybrid</li>
+  <li>Peningkatan layanan digital kepada klien</li>
+  <li>Pengembangan solusi digital untuk berbagai industri</li>
+</ul>
+
+<p>Top Digital Awards merupakan kegiatan Pembelajaran dan Penghargaan Tertinggi di bidang Teknologi Digital (IT & TELCO) yang terbesar di Indonesia, yang diberikan kepada Perusahaan & Instansi Pemerintahan, sejak tahun 2016. Dengan tema Accelerating Digital Transformation in Business & Government di tahun 2021, diikuti oleh 900 perusahaan dan instansi pemerintahan. Penghargaan Top Digital Awards ini diberikan kepada Realta oleh majalah ItWorks yang bekerja sama dan didukung oleh beberapa Asosiasi dan Perusahaan Konsultan TI TELCO/ Digital, menjadi bukti nyata bahwa Realta sangat mendukung pemanfaatan teknologi digital di Indonesia.</p>
+
+<h3>Solusi Unggulan</h3>
+<p>Berdiri sejak tahun 1983 hingga sekarang, Realta telah mengembangkan solusi-solusi yang dapat mengakomodir berbagai sektor industri seperti untuk industri Hospitality, Property, Manufacturing dan lain sebagainya. Dari solusi-solusi yang dimiliki oleh Realta, terdapat 5 solusi unggulan yang terus dikembangkan selama masa pandemi ini, yaitu SIAP+P, BIMASAKTI, Rhapsody, Rhapsody Golf, RealPCR dan PASTI booking test untuk PCR.</p>`,
+
 
     featuredArticles: [
       {
         id: 2,
-        title: "Introducing Apple Intelligence",
-        image: "assets/img/news/news1.jpg",
-        imageAlt: "assets/img/news/computer.fcd1bd54.svg",
+        title: "Chatbot: Solusi di Masa Pandemi COVID-19",
+        image: "assets/img/news/news2.jpg",
+        imageAlt: "Chatbot sebagai solusi di masa pandemi",
         date: "Friday, 15 March 2024 11:30",
-        category: "Technology",
+        category: "Digital Transformation",
         type: "News",
-        lead: "Apple prepares to showcase its groundbreaking AI initiative at WWDC, with the introduction of 'Apple Intelligence' - a transformative leap forward in human-computer interaction that could redefine the Apple ecosystem.",
-        content: `<p>Apple is set to unveil a suite of artificial intelligence features called "Apple Intelligence" at the upcoming Worldwide Developers Conference (WWDC). This new technology promises to revolutionize how users interact with Apple devices. The new features include enhanced Siri integration that will provide more natural and contextual interactions, along with advanced AI algorithms that enable more sophisticated task handling and automation. Apple Intelligence will also deliver seamless integration across all Apple devices while maintaining the company's signature privacy-first approach, ensuring user data remains secure and protected throughout the experience.</p>`,
-        features: [
-          "Enhanced Siri Integration",
-          "Advanced AI Algorithms",
-          "Seamless Device Integration",
-          "Privacy-First Approach"
-        ],
-        challenges: [
-          "Privacy and Security",
-          "User Adoption",
-          "Technical Implementation",
-          "Market Competition"
-        ],
-        additionalParagraph: "The introduction of Apple Intelligence marks a significant milestone in Apple's AI strategy...",
-        conclusion: "This development could reshape how users interact with their Apple devices..."
+        lead: "Pandemi COVID-19 membawa begitu banyak perubahan dan memicu para pelaku usaha untuk melakukan megashift digital. Chatbot menjadi salah satu solusi untuk membantu bisnis tetap berjalan di tengah keterbatasan.",
+        content: `<p>Pandemi COVID-19 membawa begitu banyak perubahan. Perubahan mengenai apa yang harus digunakan dan dibawa pada saat keluar rumah dan proses bisnis perusahaan adalah beberapa contoh dari perubahan yang terjadi. Pandemi COVID-19 juga memicu para pelaku usaha untuk melakukan megashift digital. Megashift Digital merupakan merupakan perubahan besar-besaran ke platform digital. Hal ini bukan karena untuk menjadi lebih keren karena memiliki teknologi terbaru, melainkan dipicu karena tuntutan dan kebutuhan. Pelaku usaha harus tetap menjalankan bisnisnya meskipun dalam keadaan pandemi.</p>
+
+<p>Hal ini juga berlaku pada Customer Service. Customer Service harus terus berjalan untuk melayani pelanggan. Meskipun tim Customer Service ada yang terkena COVID-19, pekerjaan mereka harus tetap berjalan. Tidak mungkin Customer Service berhenti karena ada yang terkena COVID-19. Hal ini adalah karena peran Customer Service adalah melayani pelanggan 24 jam. Jadi sekarang, Customer Service harus beralih ke layanan online dan otomatis agar dapat mengakomodasi pelanggan meskipun personel berkurang.</p>
+
+<p>Di masa pandemi seperti ini, muncul juga tuntutan untuk tidak berkerumun saat melakukan training/sosialisasi mengenai aturan baru dan kebutuhan lainnya. HR wajib mencari cara untuk melakukan training dan sosialisasi tanpa membuat kerumunan dan efektif. Situasi sekarang membuat tim HR harus mengkoordinir training dan sosialisasi secara daring dan otomatis.</p>
+
+<h3>Solusi untuk Customer Service</h3>
+<p>Bagi tim Customer Service, bagaimana caranya untuk tetap melayani pelanggan di saat jumlah personel Customer Service berkurang/dikurangi karena terpapar COVID-19 atau kantor dalam keadaan tutup? Dengan chatbot di tim Customer Service, Chatbot dapat menjawab setiap pertanyaan-pertanyaan yang sudah biasa ditanyakan oleh pelanggan. Jadi chatbot dapat menjadi solusi instan di situasi jumlah personel Customer Service berkurang, personel Customer Service terpapar COVID-19, dan kantor dalam keadaan tutup.</p>
+
+<h3>Solusi untuk Tim HRD</h3>
+<p>Bagi tim HRD, ketika ada aturan baru, biasanya mereka akan melakukan sosialisasi ke karyawan dengan mengumpulkan mereka ke suatu ruangan tertentu. Hal ini sekarang tidak dimungkinkan lagi. Lalu bagaimana caranya HRD melakukan sosialisasi mengenai aturan Protokol Kesehatan terkait COVID-19? Dengan Chatbot di HRD, tim HRD dapat melakukan sosialisasi melalui Chatbot.</p>
+
+<h3>Chatbot Realta</h3>
+<p>Chatbot yang dibuat oleh PT. Realta Chakradarma memungkinkan pelaku bisnis dalam hal membantu mereka untuk mengotomatisasi proses-proses manual dan mengurangi intervensi manusia seperti di Business Operation untuk Training, Reporting, Data Entry by Voice, dan Minutes of Meeting. Konten khusus dapat mencakup Lifestyle, Weather, Al Quran, Kitab Suci, dan Chat-Chat. Untuk Customer Service dapat mencakup FAQ, Location & Direction, Survey & Feedback, Agent Request, dan Service Ticket.</p>`
       },
       {
         id: 3,
-        title: "OpenAI's: The Next Evolution in AI Language Models",
-        image: "assets/img/news/news6.jpg",
-        imageAlt: "OpenAI Language Models",
-        date: "Wednesday, 20 March 2024 13:45",
-        category: "AI",
-        type: "Analysis",
-        lead: "Exploring the anticipated capabilities and potential impact of OpenAI's upcoming GPT-5 model, which promises groundbreaking advances in natural language processing and artificial intelligence...",
-        content: `<p>OpenAI's upcoming GPT-5 model represents a significant leap forward in AI language model capabilities...</p>
-                  <h2>Key Advancements:</h2>
-                  <ul>
-                    <li>Enhanced Understanding</li>
-                    <li>Improved Reasoning</li>
-                    <li>Better Context Handling</li>
-                    <li>Reduced Hallucinations</li>
-                  </ul>`,
-        features: [
-          "Enhanced Understanding",
-          "Improved Reasoning",
-          "Better Context Handling",
-          "Reduced Hallucinations"
-        ],
-        challenges: [
-          "Computational Requirements",
-          "Training Data Quality",
-          "Ethical Considerations",
-          "Deployment Complexity"
-        ],
-        additionalParagraph: "The development of GPT-5 represents a major milestone in AI research...",
-        conclusion: "This advancement could fundamentally change how we interact with AI systems..."
-      },
-      {
-        id: 4,
-        title: "The Future of AI Regulation",
+        title: "Proses Procurement yang Dapat Dilakukan Dimanapun dan Kapanpun",
         image: "assets/img/news/news3.jpg",
-        imageAlt: "AI Regulation",
-        date: "Monday, 18 March 2024 12:30",
-        category: "AI",
+        imageAlt: "Digital Procurement Process",
+        date: "Wednesday, 20 March 2024 13:45",
+        category: "Technology Update",
         type: "Analysis",
-        lead: "Global regulatory bodies are developing comprehensive frameworks to govern artificial intelligence development and deployment, balancing innovation with ethical considerations...",
-        content: `<p>Global regulatory bodies are developing comprehensive frameworks to govern artificial intelligence development and deployment, balancing innovation with ethical considerations...</p>
-                  <h2>Key Points:</h2>
-                  <ul>
-                    <li>Comprehensive Frameworks</li>
-                    <li>Balancing Innovation</li>
-                    <li>Ethical Considerations</li>
-                    <li>Innovation and Ethical Balance</li>
-                  </ul>`,
-        features: [
-          "Comprehensive Frameworks",
-          "Balancing Innovation",
-          "Ethical Considerations",
-          "Innovation and Ethical Balance"
-        ],
-        challenges: [
-          "Complexity",
-          "Stakeholder Collaboration",
-          "Resource Allocation",
-          "Public Trust"
-        ],
-        additionalParagraph: "The development of AI regulation is a complex process that requires collaboration between various stakeholders...",
-        conclusion: "This development could reshape the landscape of AI development and deployment..."
-      },
-      {
-        id: 5,
-        title: "AI's Impact on Healthcare",
-        image: "assets/img/news/news4.jpg",
-        imageAlt: "AI in Healthcare",
-        date: "Saturday, 16 March 2024 14:15",
-        category: "Healthcare",
-        type: "Analysis",
-        lead: "Healthcare institutions are increasingly adopting AI-powered solutions for diagnosis, treatment planning, and patient care management, revolutionizing medical practices...",
-        content: `<p>Healthcare institutions are increasingly adopting AI-powered solutions for diagnosis, treatment planning, and patient care management, revolutionizing medical practices...</p>
-                  <h2>Key Impacts:</h2>
-                  <ul>
-                    <li>Improved Diagnosis</li>
-                    <li>Enhanced Treatment Planning</li>
-                    <li>Improved Patient Care</li>
-                    <li>Reduced Healthcare Costs</li>
-                  </ul>`,
-        features: [
-          "Improved Diagnosis",
-          "Enhanced Treatment Planning",
-          "Improved Patient Care",
-          "Reduced Healthcare Costs"
-        ],
-        challenges: [
-          "Data Privacy",
-          "Ethical Considerations",
-          "Resource Allocation",
-          "Public Trust"
-        ],
-        additionalParagraph: "The integration of AI in healthcare is a significant development that requires careful consideration of ethical and regulatory issues...",
-        conclusion: "This development could reshape the landscape of healthcare..."
+        lead: "Pandemi COVID-19 memaksa bisnis untuk beradaptasi dengan cepat, termasuk dalam proses procurement yang kini harus dapat dilakukan secara digital dari mana saja dan kapan saja.",
+        content: `<p>Akibat pandemi virus COVID-19 yang sedang berlangsung akhir-akhir ini, semua tatanan kehidupan menjadi berubah, salah satunya adalah pada proses bisnis. Dalam upaya untuk mencegah penularan COVID-19, tempat-tempat ramai ditutup, dan bisnis di berbagai sektor menjadi lesu. Perusahaan merumahkan karyawan mereka agar kantor tidak menjadi episentrum tempat penularan virus COVID-19. Karena perubahan-perubahan ini, perusahaan juga harus beradaptasi agar dapat bertahan dalam menjalankan usahanya.</p>
+
+<p>Pandemi COVID-19 memaksa bisnis berevolusi dalam era Digital Megashifts, yang berarti bergeser ke dunia digital secara besar-besaran. Salah satu pergeseran yang harus dilakukan perusahaan agar dapat bertahan adalah dengan Go Digiware, yang berarti bahwa bisnis mengadopsi proses digital untuk aktivitas yang seharusnya atau yang sebelumnya dilakukan secara fisik. Salah satu contoh di mana proses tersebut bisa diimplementasikan adalah proses purchasing/ pembelian.</p>
+
+<h3>Tantangan Proses Procurement di Masa Pandemi</h3>
+<p>Proses pembelian diawali dengan mengundang vendor dan menyeleksinya. Proses seleksi diawali dengan kelengkapan persyaratan vendor, kompetensi atau kemampuan vendor dalam memenuhi requirement, hingga tender atau perbandingan harga. Sebelum COVID-19, proses ini dilakukan secara tatap muka. Akan tetapi karena COVID-19, orang-orang tidak lagi bisa bertatap muka dengan mudah. Agar proses pembelian tetap berjalan dengan lancar, perusahaan mau tidak mau harus migrasi kepada proses digital.</p>
+
+<h3>Solusi N2N Systems dari Realta</h3>
+<p>Realta Chakradarma memiliki solusi N2N systems yang dapat memampukan proses procurement untuk dilakukan di mana pun dan kapan pun. N2N systems menyediakan daftar vendor yang sesuai dengan kualifikasi & kompetensi, serta mampu melakukan proses tender dan penunjukkan secara online. Proses yang sebelumnya dilakukan oleh tim Purchasing secara fisik, semua dapat disediakan platformnya oleh Realta secara online.</p>`
       }
     ]
   }
@@ -159,22 +90,30 @@ const secondPageBlogPosts = [
     imageAlt: "Fintech Revolution",
     date: "Tuesday, 9 April 2024 10:30",
     category: "Finance",
-    lead: `Fintech innovations are revolutionizing the banking sector, with companies like Stripe and Square leading the charge. These technologies are transforming how financial services are delivered, promising increased efficiency and accessibility.
-           <br><br>Recent studies show that banks adopting fintech solutions report up to 40% faster transaction processing times, though questions about security and regulatory compliance remain at the forefront of industry discussions.`,
-    features: [
-      "Seamless Digital Payments",
-      "Enhanced Customer Experience",
-      "AI-Driven Financial Insights",
-      "Blockchain-Based Security"
-    ],
-    challenges: [
-      "Regulatory Compliance",
-      "Cybersecurity Threats",
-      "Market Competition",
-      "Technology Integration"
-    ],
-    additionalParagraph: "The adoption of fintech solutions marks a significant shift in banking practices. While these technologies offer unprecedented efficiency gains, they also raise important questions about data privacy and the future role of traditional banks.",
-    conclusion: "As fintech continues to evolve, it is likely to become an integral part of the modern financial landscape, fundamentally changing how banking services are delivered.",
+    lead: `Fintech innovations are revolutionizing the banking sector, with companies like Stripe and Square leading the charge. These technologies are transforming how financial services are delivered, promising increased efficiency and accessibility.`,
+    content: `<p>Recent studies show that banks adopting fintech solutions report up to 40% faster transaction processing times, though questions about security and regulatory compliance remain at the forefront of industry discussions.</p>
+
+<h3>Key Features of Fintech Revolution</h3>
+<ul>
+  <li>Seamless Digital Payments</li>
+  <li>Enhanced Customer Experience</li>
+  <li>AI-Driven Financial Insights</li>
+  <li>Blockchain-Based Security</li>
+</ul>
+
+<h3>Major Challenges</h3>
+<ul>
+  <li>Regulatory Compliance</li>
+  <li>Cybersecurity Threats</li>
+  <li>Market Competition</li>
+  <li>Technology Integration</li>
+</ul>
+
+<p>The adoption of fintech solutions marks a significant shift in banking practices. While these technologies offer unprecedented efficiency gains, they also raise important questions about data privacy and the future role of traditional banks.</p>
+
+<h3>Future Outlook</h3>
+<p>As fintech continues to evolve, it is likely to become an integral part of the modern financial landscape, fundamentally changing how banking services are delivered.</p>`,
+
     featuredArticles: [
       {
         id: 7,
@@ -280,8 +219,8 @@ const secondPageBlogPosts = [
   }
 ];
 
-// Combine them for total count, but keep them separate for rendering
-const totalBlogPosts = [...mainBlogPosts, ...secondPageBlogPosts];
+// Combine them for total count, but keep them separate for rendering (add "secondPageBlogPosts")
+const totalBlogPosts = [...mainBlogPosts,];
 const postsPerPage = 10; // Changed from 1 to 10 items per page
 let currentPage = 1;
 
@@ -341,6 +280,7 @@ function renderBlogPosts() {
         <div class="blog-post-content">
           <p class="blog-meta mb-3">${formatDate(post.date)} in <span class="blog-category">${post.category}</span></p>
           <p class="blog-lead mb-4">${post.lead}</p>
+          ${post.content ? `<div class="blog-full-content mb-4">${post.content}</div>` : ''}
           <div class="text-end mt-4">
             <a href="article.html?id=${post.id}" class="blog-btn">
               <span class="circle"></span>

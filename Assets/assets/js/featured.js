@@ -2,8 +2,9 @@
 // The blog data is already available from blog.js through mainBlogPosts and secondPageBlogPosts
 
 // Get all articles including featured articles from blog posts (limited to 3)
+// ADD (secondPageBlogPosts) to the array if want to add more!
 function getAllArticles() {
-  const articles = [...mainBlogPosts, ...secondPageBlogPosts].flatMap(post => [
+  const articles = [...mainBlogPosts,].flatMap(post => [
     post,
     ...(post.featuredArticles || [])
   ]);
@@ -311,7 +312,7 @@ categoryStyle.textContent += `
   }
 
   .blog-lead {
-    font-size: 1.1rem;
+    font-size: 16px;
     line-height: 1.6;
     color: #333333;
     display: -webkit-box;

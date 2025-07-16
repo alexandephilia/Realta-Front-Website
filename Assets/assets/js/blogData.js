@@ -22,6 +22,11 @@ document.addEventListener('DOMContentLoaded', function () {
       position: relative;
     }
     
+    /* Special case for when there are only 2 posts */
+    .blog-posts-wrapper:has(.blog-post:nth-child(2):last-child) .blog-post {
+      flex: 0 0 calc(50% - 1rem);
+    }
+    
     .blog-post:hover {
       transform: translateY(-10px);
       z-index: 1;
@@ -142,8 +147,8 @@ document.addEventListener('DOMContentLoaded', function () {
   // Get data from blog.js
   const { mainBlogPosts, secondPageBlogPosts } = window.blogData || { mainBlogPosts: [], secondPageBlogPosts: [] };
 
-  // Combine and flatten all blog posts including featured articles
-  const blogPosts = [...mainBlogPosts, ...secondPageBlogPosts].reduce((acc, post) => {
+  // Combine and flatten all blog posts including featured articles (add  ...secondPageBlogPosts)
+  const blogPosts = [...mainBlogPosts,].reduce((acc, post) => {
     // Add main post
     acc.push({
       id: post.id,
@@ -251,7 +256,15 @@ document.addEventListener('DOMContentLoaded', function () {
           post.style.maxWidth = '100%';
           post.style.margin = '0 0 1rem 0';
       });
-    }
+    } else {
+      // For desktop, adjust layout based on number of posts
+      const posts = postsWrapper.querySelectorAll('.blog-post');
+      if (posts.length === 2) {
+        posts.forEach(post => {
+          post.style.flex = '0 0 calc(50% - 1rem)';
+        });
+      }
+     }
 
     // Add pagination container
     const paginationContainer = document.createElement('div');

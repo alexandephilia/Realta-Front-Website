@@ -220,11 +220,7 @@ function renderFullArticle(post) {
         </ul>
       ` : ''}
       
-      ${post.imageAlt ? `
-        <div class="additional-image-container d-flex justify-content-center mb-4 py-4">
-          <img src="${post.imageAlt}" alt="Additional image" class="img-fluid w-80">
-        </div>
-      ` : ''}
+   
       
       ${post.additionalParagraph ? `
         <h3 class="mt-4 mb-3">Additional Information</h3>

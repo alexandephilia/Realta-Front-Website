@@ -1418,7 +1418,7 @@ const cardContents = {
 </style>
     <div class="finance-grid">
 
-        <h2 class="card-title fw-bold mb-3 title">Financial Services Industry</h2>
+        <h2 class="card-title fw-bold mb-3 title">Financial Services Solutions</h2>
         <p class="card-text mb-3 description">Tailored solutions for enhancing security, compliance, and operational efficiency in banking, insurance, and financial services.</p>
         <div class="button-wrapper">
             <a href="#" class="finance-btn btn-sm styled-button-convex">Learn More</a>
