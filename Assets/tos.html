@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-  <title>Realta Chakradarma | Privacy Policy</title>
+  <title id="dynamic-page-title">Realta Chakradarma | Privacy Policy</title>
     <!-- Basic SEO Meta Tags -->
     <meta name="description" content="PT. Realta Chakradarma - Leading Indonesian IT consulting company providing enterprise solutions, digital transformation, cloud services, and innovative technology solutions for businesses across Indonesia.">
     <meta name="keywords" content="Realta, Chakradarma, IT solutions, digital transformation, enterprise software, cloud services, technology consulting, Indonesia, business solutions, iCare">
@@ -1385,7 +1385,7 @@
 
         <!-- Privacy Terms Section -->
         <div id="privacy-section-loading" class="col-md-10 mb-5" style="display: none;">
-          <h3 class="text-center mb-4 loading-placeholder">Privacy Policy</h3>
+          <h3 class="text-center mb-4 loading-placeholder dynamic-section-title">Privacy Policy</h3>
           <div class="card">
             <div class="card-body">
               <div class="loading-placeholder mb-4" style="height: 100px;"></div>
@@ -1447,7 +1447,7 @@
 
         <!-- EULA Section -->
         <div id="eula-section-loading" class="col-md-10 mb-5" style="display: none;">
-          <h3 class="text-center mb-4 loading-placeholder">End User License Agreement</h3>
+          <h3 class="text-center mb-4 loading-placeholder dynamic-section-title">Terms of Service</h3>
           <div class="card">
             <div class="card-body">
               <div class="legal-content">
@@ -1461,7 +1461,6 @@
           </div>
         </div>
         <div id="eula-section" class="col-md-10 mb-5" style="display: none;">
-          <h3 class="text-center mb-4">End User License Agreement</h3>
           <div class="card">
             <div class="card-body">
               
@@ -1679,6 +1678,18 @@
             // Get the hash from URL (remove the # symbol)
             const hash = window.location.hash.slice(1);
 
+            // Update page title and main heading dynamically
+            const dynamicPageTitle = document.getElementById('dynamic-page-title');
+            const mainHeading = document.querySelector('h2.gradient-text');
+            
+            if (hash === 'privacy') {
+              if (dynamicPageTitle) dynamicPageTitle.textContent = 'Realta Chakradarma | Privacy Policy';
+              if (mainHeading) mainHeading.textContent = 'Privacy Policy';
+            } else if (hash === 'eula') {
+              if (dynamicPageTitle) dynamicPageTitle.textContent = 'Realta Chakradarma | Terms of Service';
+              if (mainHeading) mainHeading.textContent = 'Terms of Service';
+            }
+
             if (hash === 'privacy' || hash === 'eula') {
               const targetSection = document.getElementById(`${hash}-section`);
               const targetLoading = document.getElementById(`${hash}-section-loading`);
@@ -1700,7 +1711,11 @@
                 }
               }, 800);
             } else {
-              // If no valid hash, hide loading overlay
+              // If no valid hash, default to privacy policy
+              if (dynamicPageTitle) dynamicPageTitle.textContent = 'Realta Chakradarma | Privacy Policy';
+              if (mainHeading) mainHeading.textContent = 'Privacy Policy';
+              
+              // Hide loading overlay
               if (overlay) {
                 overlay.style.opacity = '0';
                 setTimeout(() => {
