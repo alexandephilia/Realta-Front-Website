@@ -121,6 +121,7 @@
     <link rel="stylesheet" href="../../assets/css/navbar-micro.css">
     <link rel="stylesheet" href="../../assets/css/navbar.css">
     <link rel="stylesheet" href="../../assets/css/mobilenav.css">
+    <link rel="stylesheet" href="../../assets/css/animations.css">
 
 
     <!-- Fonts -->
@@ -1100,7 +1101,7 @@
     <!-- LOADING -->
 
 
-    <section class="carousel-header">
+    <section class="slide-in carousel-header">
         <div id="headerCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="5000">
             <div class="carousel-inner">
                 <div class="carousel-item active" style="background-image: url('../../assets/img/golf/Banner1.jpg');">
@@ -1831,7 +1832,7 @@
         }
     </style>
 
-    <section class="advanced-section">
+    <section class="slide-in advanced-section">
         <div class="container-fluid p-0">
             <div class="card-container">
                 <div class="card">
@@ -1928,7 +1929,7 @@
     </script>
 
 
-    <section id="ict-one-solution" class="ict-one-solution " style="margin-top: 5%;">
+    <section id="ict-one-solution" class="slide-in ict-one-solution " style="margin-top: 5%;">
         <div class="container-fluid">
             <div class="row align-items-center">
                 <div class="col-md-6 fade-in-left">
@@ -1994,7 +1995,7 @@
         </div>
     </section>
     <!-- 
-    <section class="features py-5">
+    <section class="slide-in features py-5">
         <div class="container">
             <div class="row text-center justify-content-center">
                 <div class="col-md-2 col-sm-4 mb-4 feature-item">
@@ -2051,7 +2052,7 @@
             </div>
         </div>
     </section> -->
-    <section class="golf-separator">
+    <section class="slide-in golf-separator">
         <div class="container">
             <div class="golf-divider">
                 <div class="golf-ball"></div>
@@ -2099,66 +2100,7 @@
 
 
 
-    <style>
-        .fade-in-left,
-        .fade-in-right {
-            opacity: 0;
-            transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
-        }
-
-        .fade-in-left {
-            transform: translateX(-50px);
-        }
-
-        .fade-in-right {
-            transform: translateX(50px);
-        }
-
-        .fade-in-left.visible,
-        .fade-in-right.visible {
-            opacity: 1;
-            transform: translateX(0);
-        }
-
-        .feature-item {
-            opacity: 0;
-            transform: translateY(20px);
-            transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
-        }
-
-        .feature-item.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-    </style>
-
-    <script>
-        function isElementInViewport(el) {
-            var rect = el.getBoundingClientRect();
-            return (
-                rect.top <= (window.innerHeight || document.documentElement.clientHeight) &&
-                rect.bottom >= 0 &&
-                rect.left <= (window.innerWidth || document.documentElement.clientWidth) &&
-                rect.right >= 0
-            );
-        }
-
-        function handleScroll() {
-            var fadeElements = document.querySelectorAll('.fade-in-left, .fade-in-right, .feature-item');
-            fadeElements.forEach((el, index) => {
-                if (isElementInViewport(el)) {
-                    setTimeout(() => {
-                        el.classList.add('visible');
-                    }, index * 100);
-                }
-            });
-        }
-
-        window.addEventListener('scroll', handleScroll);
-        window.addEventListener('load', handleScroll);
-        // Trigger the handleScroll function immediately after page load
-        setTimeout(handleScroll, 100);
-    </script>
+    <!-- Fade-in animation styles and script moved to shared files -->
 
     <style>
         /* HR Solutions Grid Styles */
@@ -2305,7 +2247,7 @@
         }
     </style>
 
-    <section class="hr-solutions-grid" id="why-rhapsody">
+    <section class="slide-in hr-solutions-grid" id="why-rhapsody">
         <div class="container-fluid">
             <h2 class="hr-title">Why Rhapsody Golf</h2>
             <p class="hr-description">Streamline your golf operations with our comprehensive
@@ -2459,7 +2401,7 @@
         </div>
     </section>
 <!-- 
-    <section id="cta" class="py-5 mt-5">
+    <section id="cta" class="slide-in py-5 mt-5">
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-lg-10">
@@ -2542,7 +2484,7 @@
     </style>
 
     <!-- Golf Micro Section: Showcasing Our Solutions -->
-    <section id="golf-micro" class="py-5 clipped-section">
+    <section id="golf-micro" class="slide-in py-5 clipped-section">
         <div class="container-fluid">
             <div class="row justify-content-center">
                 <div class="col-12 py-2 px-5">
@@ -2736,7 +2678,7 @@
     </section>
 
 
-    <section id="integrations-clients" class="py-4 p-3">
+    <section id="integrations-clients" class="slide-in py-4 p-3">
         <div class="container-fluid">
             <div class="row align-items-center">
                 <style>
@@ -2856,7 +2798,7 @@
 
 
 
-    <section id="integrations-partners" class="py-4 p-3">
+    <section id="integrations-partners" class="slide-in py-4 p-3">
         <div class="container-fluid">
             <div class="row align-items-center">
                 <style>
@@ -3182,7 +3124,7 @@
     </style>
 
     <!-- Testimonial -->
-    <section class="rt-testimonial-section py-5" style="display: none;">
+    <section class="slide-in rt-testimonial-section py-5" style="display: none;">
         <div class="container-fluid">
             <div class="rt-testimonial-container position-relative" style="max-width: 1000px; margin: 0 auto;">
                 <div class="text-center mb-5">
@@ -4121,7 +4063,7 @@
     </section>
 
 
-    <!-- <section id="separator" class="py-5" style="background-color: #efecff;">
+    <!-- <section id="separator" class="slide-in py-5" style="background-color: #efecff;">
         <div class="container-fluid">
             <div class="row justify-content-between">
                 <div class="col-lg-12">
@@ -4143,7 +4085,7 @@
         </div>
     </section> -->
 
-    <section id="contact" class="pb-5">
+    <section id="contact" class="slide-in pb-5">
         <div class="container-fluid ">
             <div class="row justify-content-between">
                 <div id="contact-info" class="col-lg-5 left-column >
@@ -4475,7 +4417,7 @@
         }
     </style>
 
-    <section id="newsletter-cta" class="py-4 mb-0">
+    <section id="newsletter-cta" class="slide-in py-4 mb-0">
         <div class="container-fluid">
             <div class="row align-items-center">
                 <div class="col-md-7 text-start">
@@ -4714,6 +4656,7 @@
     <script src="../../assets/js/mobilenav.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
     <script src="../../assets/js/contact-valid-micro.js" data-service-type="Golf Course System"></script>
+    <script src="../../assets/js/animation-handler.js"></script>
 
 
 

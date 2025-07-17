@@ -121,6 +121,7 @@
     <link rel="stylesheet" href="../../assets/css/navbar-micro.css">
     <link rel="stylesheet" href="../../assets/css/navbar.css">
     <link rel="stylesheet" href="../../assets/css/mobilenav.css">
+    <link rel="stylesheet" href="../../assets/css/animations.css">
 
 
     <!-- Fonts -->
@@ -1297,7 +1298,7 @@
         }
     </style>
     <!-- LOADING -->
-    <section class="carousel-header ">
+    <section class="slide-in carousel-header ">
         <div id="headerCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="5000">
             <div class="carousel-inner">
                 <div class="carousel-item active"
@@ -1795,36 +1796,7 @@
             }
         }
     </style>
-    <style>
-        @keyframes slideIn {
-            from {
-                transform: translateY(50px);
-                opacity: 0;
-            }
-
-            to {
-                transform: translateY(0);
-                opacity: 1;
-            }
-        }
-
-        .slide-in {
-            animation: slideIn 1s ease-out forwards;
-            opacity: 0;
-        }
-
-        .slide-in:nth-child(1) {
-            animation-delay: 0.2s;
-        }
-
-        .slide-in:nth-child(2) {
-            animation-delay: 0.4s;
-        }
-
-        .slide-in:nth-child(3) {
-            animation-delay: 0.6s;
-        }
-    </style>
+    <!-- Animation styles moved to shared file -->
     <style>
         .parallax-section {
             position: relative;
@@ -2006,7 +1978,7 @@
         }
     </style>
 
-    <section class="advanced-section">
+    <section class="slide-in advanced-section">
         <div class="container-fluid p-0">
             <div class="card-container">
                 <div class="card">
@@ -2082,7 +2054,7 @@
     </script>
 
 
-    <section id="ict-one-solution" class="ict-one-solution py-5" style="margin-top: 5%;">
+    <section id="ict-one-solution" class="slide-in ict-one-solution py-5" style="margin-top: 5%;">
         <div class="container-fluid ">
             <div class="row align-items-center">
                 <div class="col-md-6 fade-in-left text-start">
@@ -2193,7 +2165,7 @@
             </div>
     </section>
 
-    <section id="ict-solution-reverse" class="ict-solution-reverse py-5" style="margin-top: 5%;">
+    <section id="ict-solution-reverse" class="slide-in ict-solution-reverse py-5" style="margin-top: 5%;">
         <div class="container-fluid ">
             <div class="row align-items-center">
                 <div class="col-md-6 text-center fade-in-left">
@@ -2253,21 +2225,7 @@
             }
         }
 
-        #ict-solution-reverse .fade-in-left,
-        #ict-solution-reverse .fade-in-right {
-            opacity: 0;
-            transition: opacity 0.5s ease-out, transform 0.5s ease-out;
-        }
-
-        #ict-solution-reverse .fade-in-left.visible {
-            opacity: 1;
-            transform: translateX(0);
-        }
-
-        #ict-solution-reverse .fade-in-right.visible {
-            opacity: 1;
-            transform: translateX(0);
-        }
+        /* Fade-in styles moved to shared file */
 
         /* Dark mode styles */
 
@@ -2283,26 +2241,7 @@
         }
     </style>
 
-    <!-- Script to handle animations -->
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const handleScroll = () => {
-                const elements = document.querySelectorAll(
-                    '#ict-solution-reverse .fade-in-left, #ict-solution-reverse .fade-in-right');
-                elements.forEach((el, index) => {
-                    if (isElementInViewport(el)) {
-                        setTimeout(() => {
-                            el.classList.add('visible');
-                        }, index * 200);
-                    }
-                });
-            };
-
-            window.addEventListener('scroll', handleScroll);
-            window.addEventListener('load', handleScroll);
-            setTimeout(handleScroll, 100);
-        });
-    </script>
+    <!-- Animation script moved to shared file -->
 
 
 
@@ -2603,7 +2542,7 @@
     </style>
 
 <!-- 
-    <section id="cta" class="py-5 mt-5">
+    <section id="cta" class="slide-in py-5 mt-5">
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-lg-10">
@@ -2688,7 +2627,7 @@
     </style>
 
     <!-- Testimonial Section with Separate Video -->
-    <section id="realnet-testimonial-showcase" class="py-5">
+    <section id="realnet-testimonial-showcase" class="slide-in py-5">
         <div class="container-fluid">
             <!-- Background Grid Pattern -->
             <div class="realnet-bg-grid"></div>
@@ -3006,7 +2945,7 @@
         }
     </style>
 
-    <section id="technology-delivery" class="clipped-section">
+    <section id="technology-delivery" class="slide-in clipped-section">
         <div class="container-fluid ">
             <div class="row justify-content-center">
 
@@ -3186,7 +3125,7 @@
 
 
 
-    <section id="integrations" class="py-5">
+    <section id="integrations" class="slide-in py-5">
         <div class="container-fluid">
             <div class="row align-items-center">
                 <style>
@@ -3470,7 +3409,7 @@
             }
         }
     </style>
-    <section id="wireless-networking" class="py-5">
+    <section id="wireless-networking" class="slide-in py-5">
         <div class="container-fluid">
             <div class="row justify-content-center align-items-center">
                 <div class="col-lg-6 order-lg-2">
@@ -3521,7 +3460,7 @@
     </style>
 
     <!-- Section: Network Security Solutions -->
-    <section id="network-security" class="py-5">
+    <section id="network-security" class="slide-in py-5">
         <div class="container-fluid">
             <div class="row align-items-center">
                 <div class="col-lg-6 description-section">
@@ -3593,7 +3532,7 @@
     </style>
 
 
-    <section id="wireless-networking" class="py-5">
+    <section id="wireless-networking" class="slide-in py-5">
         <div class="container-fluid">
             <div class="row justify-content-center align-items-center">
                 <div class="col-lg-6 order-lg-2">
@@ -3622,7 +3561,7 @@
         </div>
     </section>
 
-    <section id="network-security" class="py-5">
+    <section id="network-security" class="slide-in py-5">
         <div class="container-fluid">
             <!-- Section Title and Description -->
             <div class="row justify-content-center text-center mb-5">
@@ -3684,7 +3623,7 @@
     </style>
 
 
-    <section class="rt-testimonial-section py-5" style="display: none;">
+    <section class="slide-in rt-testimonial-section py-5" style="display: none;">
         <div class="container-fluid">
             <div class="rt-testimonial-container position-relative" style="max-width: 1000px; margin: 0 auto;">
                 <div class="text-center mb-5">
@@ -4620,7 +4559,7 @@
 
     </section>
 <!-- 
-    <section id="separator" class="py-5" style="background-color: #efecff;">
+    <section id="separator" class="slide-in py-5" style="background-color: #efecff;">
         <div class="container-fluid">
             <div class="row justify-content-between">
                 <div class="col-lg-12">
@@ -4641,7 +4580,7 @@
         </div>
     </section> -->
 
-    <section id="contact" class="pb-5">
+    <section id="contact" class="slide-in pb-5">
         <div class="container-fluid ">
             <div class="row justify-content-between">
                 <div id="contact-info" class="col-lg-5 left-column >
@@ -4974,7 +4913,7 @@
         }
     </style>
 
-    <section id="newsletter-cta" class="py-4 mb-0">
+    <section id="newsletter-cta" class="slide-in py-4 mb-0">
         <div class="container-fluid">
             <div class="row align-items-center">
                 <div class="col-md-7 text-start">
@@ -5212,6 +5151,7 @@
     <script src="../../assets/js/navbar.js"></script>
     <script src="../../assets/js/mobilenav.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../../assets/js/animation-handler.js"></script>
     <!-- <script>
         // Slide in sections on scroll
         document.addEventListener('DOMContentLoaded', function () {
