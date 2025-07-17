@@ -1658,6 +1658,33 @@
         </style>
 
         <script>
+          // Retrieve product/micro site name from query parameter
+          function getSiteName() {
+            const params = new URLSearchParams(window.location.search);
+            const site = params.get('site');
+            if (!site) return 'Realta Chakradarma';
+
+            switch (site.toLowerCase()) {
+              case 'golf':
+                return 'Golf Rhapsody';
+              case 'rhapsody':
+                return 'Rhapsody';
+              case 'realnet':
+                return 'Real Net';
+              case 'itsm':
+                return 'ITSM';
+              case 'erp':
+                return 'ERP & EAM';
+              case 'hr':
+                return 'HRIS';
+              case 'bimasakti':
+                return 'Bimasakti';
+              default:
+                // Capitalize first letter as a fallback
+                return site.charAt(0).toUpperCase() + site.slice(1);
+            }
+          }
+
           // Function to show the appropriate section based on URL hash
           function showSection() {
             const overlay = document.getElementById('loading-overlay');
@@ -1681,12 +1708,13 @@
             // Update page title and main heading dynamically
             const dynamicPageTitle = document.getElementById('dynamic-page-title');
             const mainHeading = document.querySelector('h2.gradient-text');
+            const siteName = getSiteName();
             
             if (hash === 'privacy') {
-              if (dynamicPageTitle) dynamicPageTitle.textContent = 'Realta Chakradarma | Privacy Policy';
+              if (dynamicPageTitle) dynamicPageTitle.textContent = `${siteName} | Privacy Policy`;
               if (mainHeading) mainHeading.textContent = 'Privacy Policy';
             } else if (hash === 'eula') {
-              if (dynamicPageTitle) dynamicPageTitle.textContent = 'Realta Chakradarma | Terms of Service';
+              if (dynamicPageTitle) dynamicPageTitle.textContent = `${siteName} | Terms of Service`;
               if (mainHeading) mainHeading.textContent = 'Terms of Service';
             }
 
@@ -1712,7 +1740,7 @@
               }, 800);
             } else {
               // If no valid hash, default to privacy policy
-              if (dynamicPageTitle) dynamicPageTitle.textContent = 'Realta Chakradarma | Privacy Policy';
+              if (dynamicPageTitle) dynamicPageTitle.textContent = `${siteName} | Privacy Policy`;
               if (mainHeading) mainHeading.textContent = 'Privacy Policy';
               
               // Hide loading overlay
