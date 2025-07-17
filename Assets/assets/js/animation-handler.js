@@ -11,7 +11,7 @@ function isElementInViewport(el) {
 
 function handleAnimationScroll() {
     const elements = document.querySelectorAll(
-        '.fade-in-left, .fade-in-right, .feature-item, .card'
+        '.fade-in-left, .fade-in-right, .feature-item, .card, .slide-in'
     );
     elements.forEach((el, index) => {
         if (isElementInViewport(el)) {
