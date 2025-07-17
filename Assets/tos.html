@@ -123,6 +123,7 @@
   <link rel="stylesheet" href="assets/css/Hero-Clean-Reverse-images.css">
   <link rel="stylesheet" href="assets/css/styles.css">
   <link rel="stylesheet" href="assets/css/navbar.css">
+  <link rel="stylesheet" href="assets/css/responsive.css">
   <!-- <link rel="stylesheet" href="assets/css/blog.css"> -->
   <link rel="stylesheet" href="assets/css/responsive.css">
   <link rel="stylesheet" href="assets/css/mobilenav.css">
@@ -1562,7 +1563,6 @@
           #eula-section,
           #eula-section *:not(a) {
             cursor: default !important;
-            font-size: 20px;
           }
 
           /* Ensure links show pointer cursor */
@@ -1654,6 +1654,13 @@
           h5.loading-placeholder {
             height: 24px;
             width: 200px;
+          }
+
+          /* Ensure consistent font size for list items on mobile */
+          @media (max-width: 768px) {
+            .card-body li {
+              font-size: 14px;
+            }
           }
         </style>
 
