@@ -1939,7 +1939,7 @@
             margin: 10px;
             opacity: 0;
             transform: translateY(50px);
-            transition: opacity 0.8s ease, transform 0.8s ease;
+            transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
             display: flex;
             flex-direction: column;
         }
@@ -2070,7 +2070,7 @@
                 if (isElementInViewport(card)) {
                     setTimeout(() => {
                         card.classList.add('visible');
-                    }, index * 200); // Stagger the animation
+                    }, index * 100); // Stagger the animation
                 }
             });
         }
@@ -2256,14 +2256,18 @@
         #ict-solution-reverse .fade-in-left,
         #ict-solution-reverse .fade-in-right {
             opacity: 0;
-            transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+            transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
         }
 
-        #ict-solution-reverse .fade-in-left.visible {
-            opacity: 1;
-            transform: translateX(0);
+        #ict-solution-reverse .fade-in-left {
+            transform: translateX(-50px);
         }
 
+        #ict-solution-reverse .fade-in-right {
+            transform: translateX(50px);
+        }
+
+        #ict-solution-reverse .fade-in-left.visible,
         #ict-solution-reverse .fade-in-right.visible {
             opacity: 1;
             transform: translateX(0);
@@ -2293,7 +2297,7 @@
                     if (isElementInViewport(el)) {
                         setTimeout(() => {
                             el.classList.add('visible');
-                        }, index * 200);
+                        }, index * 100);
                     }
                 });
             };

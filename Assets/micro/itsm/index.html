@@ -1941,7 +1941,7 @@
             margin: 10px;
             opacity: 0;
             transform: translateY(50px);
-            transition: opacity 0.8s ease, transform 0.8s ease;
+            transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
             display: flex;
             flex-direction: column;
         }
@@ -2081,22 +2081,7 @@
             );
         }
 
-        function handleScroll() {
-            var cards = document.querySelectorAll('.card');
-            cards.forEach((card, index) => {
-                if (isElementInViewport(card)) {
-                    setTimeout(() => {
-                        card.classList.add('visible');
-                    }, index * 200); // Stagger the animation
-                }
-            });
-        }
 
-        window.addEventListener('scroll', handleScroll);
-        window.addEventListener('load', handleScroll);
-        // Trigger the handleScroll function immediately after page load
-        setTimeout(handleScroll, 100);
-    </script>
 
 
     <section id="ict-one-solution" class="ict-one-solution py-5" style="margin-top: 5%;">
@@ -2239,7 +2224,7 @@
         }
 
         function handleScroll() {
-            var fadeElements = document.querySelectorAll('.fade-in-left, .fade-in-right, .feature-item');
+            var fadeElements = document.querySelectorAll('.fade-in-left, .fade-in-right, .feature-item, .card');
             fadeElements.forEach((el, index) => {
                 if (isElementInViewport(el)) {
                     setTimeout(() => {

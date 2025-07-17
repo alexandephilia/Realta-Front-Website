@@ -1320,7 +1320,7 @@
             margin: 10px;
             opacity: 0;
             transform: translateY(50px);
-            transition: opacity 0.8s ease, transform 0.8s ease;
+            transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
             display: flex;
             flex-direction: column;
         }
@@ -1449,7 +1449,7 @@
                 if (isElementInViewport(card)) {
                     setTimeout(() => {
                         card.classList.add('visible');
-                    }, index * 200); // Stagger the animation
+                    }, index * 100); // Stagger the animation
                 }
             });
         }
