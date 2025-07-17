@@ -1,0 +1,46 @@
+/* Shared animations for micro pages */
+
+@keyframes slideIn {
+    from {
+        transform: translateY(50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.slide-in {
+    animation: slideIn 1s ease-out forwards;
+    opacity: 0;
+}
+
+.slide-in:nth-child(1) { animation-delay: 0.2s; }
+.slide-in:nth-child(2) { animation-delay: 0.4s; }
+.slide-in:nth-child(3) { animation-delay: 0.6s; }
+
+.fade-in-left,
+.fade-in-right {
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+}
+
+.fade-in-left { transform: translateX(-50px); }
+.fade-in-right { transform: translateX(50px); }
+
+.fade-in-left.visible,
+.fade-in-right.visible {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.feature-item {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+}
+.feature-item.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
