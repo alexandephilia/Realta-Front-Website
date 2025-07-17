@@ -2025,33 +2025,6 @@
         </div>
     </section>
 
-    <script>
-        function isElementInViewport(el) {
-            var rect = el.getBoundingClientRect();
-            return (
-                rect.top <= (window.innerHeight || document.documentElement.clientHeight) &&
-                rect.bottom >= 0 &&
-                rect.left <= (window.innerWidth || document.documentElement.clientWidth) &&
-                rect.right >= 0
-            );
-        }
-
-        function handleScroll() {
-            var cards = document.querySelectorAll('.card');
-            cards.forEach((card, index) => {
-                if (isElementInViewport(card)) {
-                    setTimeout(() => {
-                        card.classList.add('visible');
-                    }, index * 200); // Stagger the animation
-                }
-            });
-        }
-
-        window.addEventListener('scroll', handleScroll);
-        window.addEventListener('load', handleScroll);
-        // Trigger the handleScroll function immediately after page load
-        setTimeout(handleScroll, 100);
-    </script>
 
 
     <section id="ict-one-solution" class="slide-in ict-one-solution py-5" style="margin-top: 5%;">
@@ -5152,45 +5125,6 @@
     <script src="../../assets/js/mobilenav.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
     <script src="../../assets/js/animation-handler.js"></script>
-    <!-- <script>
-        // Slide in sections on scroll
-        document.addEventListener('DOMContentLoaded', function () {
-            const sections = document.querySelectorAll('section');
-
-            const slideInSection = (entries, observer) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('slide-in');
-                        observer.unobserve(entry.target);
-                    }
-                });
-            };
-
-            const sectionObserver = new IntersectionObserver(slideInSection, {
-                root: null,
-                threshold: 0.1
-            });
-
-            sections.forEach(section => {
-                section.classList.add('slide-out');
-                sectionObserver.observe(section);
-            });
-        });
-    </script> -->
-
-    <style>
-        /* Slide in/out styles */
-        .slide-out {
-            opacity: 0;
-            transform: translateX(-100px);
-            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-        }
-
-        .slide-in {
-            opacity: 1;
-            transform: translateX(0);
-        }
-    </style>
 
 
 

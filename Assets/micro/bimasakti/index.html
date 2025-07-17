@@ -2045,33 +2045,6 @@
         </div>
     </section>
 
-    <script>
-        function isElementInViewport(el) {
-            var rect = el.getBoundingClientRect();
-            return (
-                rect.top <= (window.innerHeight || document.documentElement.clientHeight) &&
-                rect.bottom >= 0 &&
-                rect.left <= (window.innerWidth || document.documentElement.clientWidth) &&
-                rect.right >= 0
-            );
-        }
-
-        function handleScroll() {
-            var cards = document.querySelectorAll('.card');
-            cards.forEach((card, index) => {
-                if (isElementInViewport(card)) {
-                    setTimeout(() => {
-                        card.classList.add('visible');
-                    }, index * 200); // Stagger the animation
-                }
-            });
-        }
-
-        window.addEventListener('scroll', handleScroll);
-        window.addEventListener('load', handleScroll);
-        // Trigger the handleScroll function immediately after page load
-        setTimeout(handleScroll, 100);
-    </script>
 
 
     <section id="ict-one-solution" class="slide-in ict-one-solution py-5" style="margin-top: 5%;">

@@ -10,7 +10,9 @@ function isElementInViewport(el) {
 }
 
 function handleAnimationScroll() {
-    const elements = document.querySelectorAll('.fade-in-left, .fade-in-right, .feature-item');
+    const elements = document.querySelectorAll(
+        '.fade-in-left, .fade-in-right, .feature-item, .card'
+    );
     elements.forEach((el, index) => {
         if (isElementInViewport(el)) {
             setTimeout(() => {
